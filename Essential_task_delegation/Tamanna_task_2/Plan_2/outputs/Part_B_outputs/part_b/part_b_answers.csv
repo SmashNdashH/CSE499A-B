@@ -1,0 +1,901 @@
+run,item,image,true_class,class_answer,vlm_class,grade_answer,vlm_grade,grade_as_class
+grader,0,hurricane_matthew_00000146_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,1,socal_fire_00000202_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,2,hurricane_harvey_00000127_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,3,hurricane_florence_00000467_post_disaster.png,Intact,Intact,Intact,,,
+grader,4,portugal_wildfire_00001801_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,5,hurricane_harvey_00000427_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,6,hurricane_harvey_00000310_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,7,hurricane_matthew_00000296_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,8,hurricane_michael_00000511_post_disaster.png,Intact,Intact,Intact,,,
+grader,9,hurricane_matthew_00000342_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,10,hurricane_michael_00000247_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,11,turkey_earthquake3_post_688.png,Intact,Intact,Intact,,,
+grader,12,palu_tsunami_00000122_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,13,hurricane_florence_00000014_post_disaster.png,Intact,Intact,Intact,,,
+grader,14,nepal_flooding_00000545_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,15,woolsey_fire_00000754_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,16,lower_puna_volcano_00000091_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,17,hawaii_wildfire_post_995.png,Destroyed,Destroyed,Destroyed,,,
+grader,18,hurricane_michael_00000287_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,19,hurricane_harvey_00000394_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,20,socal_fire_00000753_post_disaster.png,Intact,Intact,Intact,,,
+grader,21,hurricane_michael_00000043_post_disaster.png,Damaged,Intact,Intact,,,
+grader,22,turkey_earthquake1_post_573.png,Destroyed,Intact,Intact,,,
+grader,23,hurricane_florence_00000475_post_disaster.png,Destroyed,None,,,,
+grader,24,nepal_flooding_00000204_post_disaster.png,Damaged,Intact,Intact,,,
+grader,25,hurricane_michael_00000438_post_disaster.png,Intact,Intact,Intact,,,
+grader,26,socal_fire_00000202_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,27,hurricane_matthew_00000313_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,28,hurricane_matthew_00000067_post_disaster.png,Damaged,Intact,Intact,,,
+grader,29,moore_tornado_00000140_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,30,sunda_tsunami_00000004_post_disaster.png,Intact,Intact,Intact,,,
+grader,31,hurricane_matthew_00000316_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,32,turkey_earthquake3_post_640.png,Intact,Intact,Intact,,,
+grader,33,santa_rosa_wildfire_00000058_post_disaster.png,Intact,Intact,Intact,,,
+grader,34,moore_tornado_00000033_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,35,hurricane_harvey_00000255_post_disaster.png,Damaged,None,,,,
+grader,36,midwest_flooding_00000388_post_disaster.png,Intact,Intact,Intact,,,
+grader,37,socal_fire_00001360_post_disaster.png,Intact,Intact,Intact,,,
+grader,38,hurricane_michael_00000388_post_disaster.png,Intact,Intact,Intact,,,
+grader,39,hurricane_harvey_00000267_post_disaster.png,Intact,Damaged,Damaged,,,
+grader,40,portugal_wildfire_00001500_post_disaster.png,Intact,Intact,Intact,,,
+grader,41,hurricane_florence_00000191_post_disaster.png,Intact,Destroyed,Destroyed,,,
+grader,42,portugal_wildfire_00001700_post_disaster.png,Destroyed,Intact,Intact,,,
+grader,43,hurricane_florence_00000014_post_disaster.png,Intact,Intact,Intact,,,
+grader,44,santa_rosa_wildfire_00000238_post_disaster.png,Intact,Intact,Intact,,,
+grader,45,santa_rosa_wildfire_00000097_post_disaster.png,Intact,Intact,Intact,,,
+grader,46,hurricane_michael_00000133_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,47,hurricane_michael_00000033_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,48,hurricane_florence_00000109_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,49,santa_rosa_wildfire_00000227_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,50,hurricane_michael_00000133_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,51,nepal_flooding_00000225_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,52,hurricane_michael_00000055_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,53,portugal_wildfire_00000366_post_disaster.png,Intact,Intact,Intact,,,
+grader,54,kalehe_flooding_post_1008.png,Destroyed,None,,,,
+grader,55,turkey_earthquake1_post_573.png,Destroyed,Destroyed,Destroyed,,,
+grader,56,hurricane_harvey_00000384_post_disaster.png,Intact,Intact,Intact,,,
+grader,57,santa_rosa_wildfire_00000238_post_disaster.png,Intact,Intact,Intact,,,
+grader,58,hurricane_michael_00000287_post_disaster.png,Damaged,Intact,Intact,,,
+grader,59,turkey_earthquake1_post_568.png,Intact,Intact,Intact,,,
+grader,60,turkey_earthquake1_post_568.png,Destroyed,Destroyed,Destroyed,,,
+grader,61,palu_tsunami_00000045_post_disaster.png,Intact,Intact,Intact,,,
+grader,62,turkey_earthquake0_post_456.png,Intact,Intact,Intact,,,
+grader,63,hurricane_harvey_00000117_post_disaster.png,Damaged,Intact,Intact,,,
+grader,64,hurricane_florence_00000354_post_disaster.png,Damaged,None,,,,
+grader,65,hurricane_florence_00000014_post_disaster.png,Intact,Intact,Intact,,,
+grader,66,santa_rosa_wildfire_00000316_post_disaster.png,Intact,Intact,Intact,,,
+grader,67,palu_tsunami_00000125_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,68,socal_fire_00000641_post_disaster.png,Intact,Intact,Intact,,,
+grader,69,lower_puna_volcano_00000091_post_disaster.png,Damaged,Destroyed,Destroyed,,,
+grader,70,hurricane_florence_00000409_post_disaster.png,Damaged,Intact,Intact,,,
+grader,71,hurricane_michael_00000055_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,72,santa_rosa_wildfire_00000058_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,73,nepal_flooding_00000204_post_disaster.png,Damaged,Intact,Intact,,,
+grader,74,hurricane_michael_00000516_post_disaster.png,Damaged,Intact,Intact,,,
+grader,75,hurricane_matthew_00000245_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,76,turkey_earthquake1_post_481.png,Intact,Intact,Intact,,,
+grader,77,moore_tornado_00000129_post_disaster.png,Intact,Intact,Intact,,,
+grader,78,portugal_wildfire_00001693_post_disaster.png,Intact,Destroyed,Destroyed,,,
+grader,79,hurricane_matthew_00000283_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,80,pinery_bushfire_00000494_post_disaster.png,Damaged,Intact,Intact,,,
+grader,81,hurricane_harvey_00000357_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,82,hurricane_florence_00000215_post_disaster.png,Intact,Intact,Intact,,,
+grader,83,hurricane_michael_00000388_post_disaster.png,Damaged,Intact,Intact,,,
+grader,84,nepal_flooding_00000378_post_disaster.png,Intact,Damaged,Damaged,,,
+grader,85,hurricane_matthew_00000296_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,86,hurricane_harvey_00000484_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,87,midwest_flooding_00000258_post_disaster.png,Intact,Intact,Intact,,,
+grader,88,turkey_earthquake4_post_779.png,Intact,Intact,Intact,,,
+grader,89,hurricane_harvey_00000059_post_disaster.png,Intact,Intact,Intact,,,
+grader,90,hurricane_matthew_00000038_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,91,hurricane_michael_00000107_post_disaster.png,Damaged,Intact,Intact,,,
+grader,92,hurricane_michael_00000399_post_disaster.png,Intact,Intact,Intact,,,
+grader,93,palu_tsunami_00000125_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,94,turkey_earthquake0_post_456.png,Intact,Destroyed,Destroyed,,,
+grader,95,hurricane_michael_00000428_post_disaster.png,Intact,Damaged,Damaged,,,
+grader,96,nepal_flooding_00000231_post_disaster.png,Damaged,Intact,Intact,,,
+grader,97,hurricane_michael_00000247_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,98,woolsey_fire_00000754_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,99,hurricane_florence_00000232_post_disaster.png,Intact,Intact,Intact,,,
+grader,100,socal_fire_00000803_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,101,portugal_wildfire_00000757_post_disaster.png,Intact,Intact,Intact,,,
+grader,102,socal_fire_00001027_post_disaster.png,Intact,Intact,Intact,,,
+grader,103,hurricane_michael_00000399_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,104,socal_fire_00000912_post_disaster.png,Destroyed,Intact,Intact,,,
+grader,105,hurricane_harvey_00000450_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,106,moore_tornado_00000006_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,107,santa_rosa_wildfire_00000316_post_disaster.png,Intact,Intact,Intact,,,
+grader,108,hurricane_harvey_00000406_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,109,hurricane_michael_00000453_post_disaster.png,Intact,Intact,Intact,,,
+grader,110,hurricane_matthew_00000316_post_disaster.png,Damaged,Destroyed,Destroyed,,,
+grader,111,turkey_earthquake4_post_759.png,Destroyed,Intact,Intact,,,
+grader,112,turkey_earthquake1_post_573.png,Intact,Intact,Intact,,,
+grader,113,moore_tornado_00000140_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,114,hurricane_harvey_00000427_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,115,nepal_flooding_00000465_post_disaster.png,Damaged,Intact,Intact,,,
+grader,116,hurricane_matthew_00000067_post_disaster.png,Damaged,Intact,Intact,,,
+grader,117,palu_tsunami_00000122_post_disaster.png,Destroyed,None,,,,
+grader,118,hurricane_michael_00000311_post_disaster.png,Damaged,Destroyed,Destroyed,,,
+grader,119,midwest_flooding_00000287_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,120,hurricane_harvey_00000059_post_disaster.png,Intact,Intact,Intact,,,
+grader,121,hurricane_harvey_00000450_post_disaster.png,Damaged,None,,,,
+grader,122,hurricane_harvey_00000117_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,123,hurricane_harvey_00000451_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,124,nepal_flooding_00000456_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,125,socal_fire_00000817_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,126,midwest_flooding_00000049_post_disaster.png,Intact,Intact,Intact,,,
+grader,127,bata_explosion_post_23.png,Damaged,Destroyed,Destroyed,,,
+grader,128,hurricane_florence_00000097_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,129,nepal_flooding_00000019_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,130,hurricane_harvey_00000484_post_disaster.png,Damaged,Intact,Intact,,,
+grader,131,tuscaloosa_tornado_00000055_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,132,hurricane_harvey_00000484_post_disaster.png,Damaged,Intact,Intact,,,
+grader,133,hurricane_michael_00000133_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,134,kalehe_flooding_post_1008.png,Destroyed,Destroyed,Destroyed,,,
+grader,135,hurricane_michael_00000032_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,136,hurricane_matthew_00000217_post_disaster.png,Damaged,None,,,,
+grader,137,nepal_flooding_00000028_post_disaster.png,Damaged,Intact,Intact,,,
+grader,138,nepal_flooding_00000225_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,139,turkey_earthquake3_post_658.png,Intact,Intact,Intact,,,
+grader,140,nepal_flooding_00000231_post_disaster.png,Damaged,Intact,Intact,,,
+grader,141,hurricane_florence_00000324_post_disaster.png,Damaged,Intact,Intact,,,
+grader,142,hurricane_michael_00000516_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,143,turkey_earthquake4_post_776.png,Damaged,Intact,Intact,,,
+grader,144,hurricane_matthew_00000164_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,145,turkey_earthquake4_post_776.png,Destroyed,Destroyed,Destroyed,,,
+grader,146,hurricane_matthew_00000097_post_disaster.png,Damaged,None,,,,
+grader,147,portugal_wildfire_00001151_post_disaster.png,Intact,Intact,Intact,,,
+grader,148,socal_fire_00000753_post_disaster.png,Intact,Intact,Intact,,,
+grader,149,nepal_flooding_00000514_post_disaster.png,Intact,Intact,Intact,,,
+grader,150,socal_fire_00000202_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,151,hurricane_harvey_00000394_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,152,moore_tornado_00000120_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,153,hurricane_matthew_00000067_post_disaster.png,Damaged,Intact,Intact,,,
+grader,154,hurricane_harvey_00000472_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,155,hurricane_matthew_00000263_post_disaster.png,Destroyed,None,,,,
+grader,156,turkey_earthquake4_post_764.png,Destroyed,Destroyed,Destroyed,,,
+grader,157,sunda_tsunami_00000014_post_disaster.png,Intact,Intact,Intact,,,
+grader,158,hurricane_harvey_00000252_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,159,nepal_flooding_00000030_post_disaster.png,Intact,Intact,Intact,,,
+grader,160,socal_fire_00000620_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,161,hurricane_michael_00000397_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,162,turkey_earthquake5_post_792.png,Intact,Intact,Intact,,,
+grader,163,midwest_flooding_00000049_post_disaster.png,Intact,Intact,Intact,,,
+grader,164,turkey_earthquake4_post_778.png,Intact,Intact,Intact,,,
+grader,165,tuscaloosa_tornado_00000055_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,166,turkey_earthquake7_post_959.png,Destroyed,Destroyed,Destroyed,,,
+grader,167,moore_tornado_00000029_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,168,hurricane_michael_00000254_post_disaster.png,Damaged,Intact,Intact,,,
+grader,169,tuscaloosa_tornado_00000200_post_disaster.png,Intact,Intact,Intact,,,
+grader,170,tuscaloosa_tornado_00000055_post_disaster.png,Intact,Intact,Intact,,,
+grader,171,hurricane_matthew_00000305_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,172,moore_tornado_00000029_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,173,turkey_earthquake5_post_921.png,Intact,Intact,Intact,,,
+grader,174,santa_rosa_wildfire_00000238_post_disaster.png,Intact,Intact,Intact,,,
+grader,175,socal_fire_00000817_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,176,nepal_flooding_00000225_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,177,hurricane_michael_00000399_post_disaster.png,Intact,Intact,Intact,,,
+grader,178,socal_fire_00000817_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,179,hurricane_harvey_00000451_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,180,hawaii_wildfire_post_995.png,Destroyed,Destroyed,Destroyed,,,
+grader,181,midwest_flooding_00000031_post_disaster.png,Intact,Intact,Intact,,,
+grader,182,hurricane_matthew_00000305_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,183,moore_tornado_00000129_post_disaster.png,Destroyed,None,,,,
+grader,184,hurricane_harvey_00000040_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,185,santa_rosa_wildfire_00000357_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,186,turkey_earthquake1_post_573.png,Destroyed,Destroyed,Destroyed,,,
+grader,187,hurricane_michael_00000399_post_disaster.png,Damaged,None,,,,
+grader,188,lower_puna_volcano_00000078_post_disaster.png,Intact,Intact,Intact,,,
+grader,189,beriut_explosion_post_51.png,Intact,Intact,Intact,,,
+grader,190,turkey_earthquake4_post_778.png,Intact,Intact,Intact,,,
+grader,191,hurricane_matthew_00000047_post_disaster.png,Damaged,Intact,Intact,,,
+grader,192,hurricane_michael_00000055_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,193,hurricane_michael_00000133_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,194,hurricane_matthew_00000344_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,195,turkey_earthquake3_post_687.png,Intact,Intact,Intact,,,
+grader,196,santa_rosa_wildfire_00000091_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,197,palu_tsunami_00000122_post_disaster.png,Destroyed,Intact,Intact,,,
+grader,198,nepal_flooding_00000060_post_disaster.png,Intact,Intact,Intact,,,
+grader,199,moore_tornado_00000029_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,200,hurricane_florence_00000463_post_disaster.png,Intact,Intact,Intact,,,
+grader,201,hurricane_matthew_00000296_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,202,turkey_earthquake1_post_596.png,Intact,Intact,Intact,,,
+grader,203,santa_rosa_wildfire_00000058_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,204,libya_flood_post_86.png,Damaged,Intact,Intact,,,
+grader,205,hawaii_wildfire_post_995.png,Destroyed,Destroyed,Destroyed,,,
+grader,206,portugal_wildfire_00001702_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,207,portugal_wildfire_00001586_post_disaster.png,Damaged,Intact,Intact,,,
+grader,208,santa_rosa_wildfire_00000316_post_disaster.png,Intact,Intact,Intact,,,
+grader,209,hurricane_michael_00000311_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,210,hurricane_michael_00000247_post_disaster.png,Damaged,Intact,Intact,,,
+grader,211,hurricane_matthew_00000296_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,212,portugal_wildfire_00000902_post_disaster.png,Intact,Intact,Intact,,,
+grader,213,nepal_flooding_00000400_post_disaster.png,Intact,Intact,Intact,,,
+grader,214,midwest_flooding_00000301_post_disaster.png,Destroyed,Intact,Intact,,,
+grader,215,santa_rosa_wildfire_00000371_post_disaster.png,Intact,Intact,Intact,,,
+grader,216,hurricane_harvey_00000176_post_disaster.png,Intact,Intact,Intact,,,
+grader,217,portugal_wildfire_00001801_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,218,hurricane_michael_00000133_post_disaster.png,Damaged,Intact,Intact,,,
+grader,219,hurricane_florence_00000356_post_disaster.png,Intact,Intact,Intact,,,
+grader,220,hurricane_michael_00000388_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,221,tuscaloosa_tornado_00000209_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,222,turkey_earthquake4_post_776.png,Destroyed,Destroyed,Destroyed,,,
+grader,223,hurricane_michael_00000254_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,224,nepal_flooding_00000060_post_disaster.png,Intact,Intact,Intact,,,
+grader,225,turkey_earthquake4_post_764.png,Destroyed,Destroyed,Destroyed,,,
+grader,226,hurricane_harvey_00000117_post_disaster.png,Damaged,Intact,Intact,,,
+grader,227,portugal_wildfire_00000513_post_disaster.png,Intact,Intact,Intact,,,
+grader,228,hurricane_florence_00000475_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,229,turkey_earthquake4_post_779.png,Destroyed,Intact,Intact,,,
+grader,230,turkey_earthquake1_post_588.png,Intact,Intact,Intact,,,
+grader,231,tuscaloosa_tornado_00000209_post_disaster.png,Destroyed,None,,,,
+grader,232,hurricane_matthew_00000245_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,233,moore_tornado_00000033_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,234,tuscaloosa_tornado_00000108_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,235,hurricane_matthew_00000047_post_disaster.png,Intact,Intact,Intact,,,
+grader,236,nepal_flooding_00000501_post_disaster.png,Intact,Intact,Intact,,,
+grader,237,bata_explosion_post_23.png,Intact,Intact,Intact,,,
+grader,238,lower_puna_volcano_00000153_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,239,hurricane_matthew_00000344_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,240,hurricane_matthew_00000245_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,241,midwest_flooding_00000287_post_disaster.png,Destroyed,None,,,,
+grader,242,nepal_flooding_00000325_post_disaster.png,Damaged,Intact,Intact,,,
+grader,243,hurricane_harvey_00000267_post_disaster.png,Intact,Damaged,Damaged,,,
+grader,244,moore_tornado_00000140_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,245,hurricane_matthew_00000097_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,246,turkey_earthquake4_post_776.png,Damaged,Intact,Intact,,,
+grader,247,hurricane_matthew_00000316_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,248,santa_rosa_wildfire_00000058_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,249,moore_tornado_00000076_post_disaster.png,Intact,Intact,Intact,,,
+grader,250,nepal_flooding_00000400_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,251,moore_tornado_00000033_post_disaster.png,Intact,Intact,Intact,,,
+grader,252,hurricane_michael_00000043_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,253,nepal_flooding_00000585_post_disaster.png,Intact,Intact,Intact,,,
+grader,254,nepal_flooding_00000231_post_disaster.png,Damaged,Intact,Intact,,,
+grader,255,turkey_earthquake4_post_785.png,Damaged,Intact,Intact,,,
+grader,256,palu_tsunami_00000125_post_disaster.png,Intact,Intact,Intact,,,
+grader,257,beriut_explosion_post_38.png,Intact,Intact,Intact,,,
+grader,258,hurricane_matthew_00000217_post_disaster.png,Destroyed,None,,,,
+grader,259,socal_fire_00001360_post_disaster.png,Intact,Intact,Intact,,,
+grader,260,turkey_earthquake5_post_832.png,Intact,Intact,Intact,,,
+grader,261,hurricane_harvey_00000302_post_disaster.png,Intact,Intact,Intact,,,
+grader,262,portugal_wildfire_00001801_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,263,tuscaloosa_tornado_00000185_post_disaster.png,Intact,None,,,,
+grader,264,palu_tsunami_00000179_post_disaster.png,Intact,Intact,Intact,,,
+grader,265,hurricane_michael_00000438_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,266,lower_puna_volcano_00000091_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,267,moore_tornado_00000140_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,268,hurricane_harvey_00000406_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,269,turkey_earthquake4_post_764.png,Destroyed,Destroyed,Destroyed,,,
+grader,270,portugal_wildfire_00000492_post_disaster.png,Intact,Intact,Intact,,,
+grader,271,hurricane_michael_00000175_post_disaster.png,Intact,Intact,Intact,,,
+grader,272,nepal_flooding_00000069_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,273,hurricane_harvey_00000312_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,274,moore_tornado_00000120_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,275,hurricane_harvey_00000472_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,276,midwest_flooding_00000323_post_disaster.png,Damaged,Intact,Intact,,,
+grader,277,hurricane_michael_00000465_post_disaster.png,Intact,Intact,Intact,,,
+grader,278,sunda_tsunami_00000004_post_disaster.png,Intact,Intact,Intact,,,
+grader,279,kalehe_flooding_post_1008.png,Destroyed,Intact,Intact,,,
+grader,280,hurricane_matthew_00000296_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,281,santa_rosa_wildfire_00000165_post_disaster.png,Intact,Intact,Intact,,,
+grader,282,tuscaloosa_tornado_00000108_post_disaster.png,Damaged,Intact,Intact,,,
+grader,283,lower_puna_volcano_00000091_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,284,nepal_flooding_00000270_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,285,hurricane_matthew_00000344_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,286,hurricane_matthew_00000012_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,287,hurricane_harvey_00000419_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,288,portugal_wildfire_00001575_post_disaster.png,Damaged,Destroyed,Destroyed,,,
+grader,289,hurricane_harvey_00000384_post_disaster.png,Intact,Intact,Intact,,,
+grader,290,palu_tsunami_00000179_post_disaster.png,Intact,Intact,Intact,,,
+grader,291,midwest_flooding_00000139_post_disaster.png,Destroyed,None,,,,
+grader,292,hurricane_harvey_00000394_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,293,palu_tsunami_00000125_post_disaster.png,Destroyed,Destroyed,Destroyed,,,
+grader,294,nepal_flooding_00000407_post_disaster.png,Intact,Intact,Intact,,,
+grader,295,turkey_earthquake4_post_776.png,Damaged,Intact,Intact,,,
+grader,296,socal_fire_00000643_post_disaster.png,Intact,Intact,Intact,,,
+grader,297,hurricane_florence_00000470_post_disaster.png,Damaged,Damaged,Damaged,,,
+grader,298,hurricane_harvey_00000484_post_disaster.png,Destroyed,Damaged,Damaged,,,
+grader,299,hurricane_harvey_00000451_post_disaster.png,Damaged,Damaged,Damaged,,,
+finetuned,0,hurricane_matthew_00000146_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,1,socal_fire_00000202_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,2,hurricane_harvey_00000127_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,3,hurricane_florence_00000467_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,4,portugal_wildfire_00001801_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,5,hurricane_harvey_00000427_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,6,hurricane_harvey_00000310_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,7,hurricane_matthew_00000296_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,8,hurricane_michael_00000511_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,9,hurricane_matthew_00000342_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,10,hurricane_michael_00000247_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,11,turkey_earthquake3_post_688.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,12,palu_tsunami_00000122_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,13,hurricane_florence_00000014_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,14,nepal_flooding_00000545_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,15,woolsey_fire_00000754_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,16,lower_puna_volcano_00000091_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,17,hawaii_wildfire_post_995.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,18,hurricane_michael_00000287_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,19,hurricane_harvey_00000394_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,20,socal_fire_00000753_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,21,hurricane_michael_00000043_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,22,turkey_earthquake1_post_573.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,23,hurricane_florence_00000475_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,24,nepal_flooding_00000204_post_disaster.png,Damaged,Intact,Intact,Grade 2,2,Damaged
+finetuned,25,hurricane_michael_00000438_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,26,socal_fire_00000202_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,27,hurricane_matthew_00000313_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,28,hurricane_matthew_00000067_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,29,moore_tornado_00000140_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,30,sunda_tsunami_00000004_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,31,hurricane_matthew_00000316_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,32,turkey_earthquake3_post_640.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,33,santa_rosa_wildfire_00000058_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,34,moore_tornado_00000033_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,35,hurricane_harvey_00000255_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,36,midwest_flooding_00000388_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,37,socal_fire_00001360_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,38,hurricane_michael_00000388_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,39,hurricane_harvey_00000267_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,40,portugal_wildfire_00001500_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,41,hurricane_florence_00000191_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,42,portugal_wildfire_00001700_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,43,hurricane_florence_00000014_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,44,santa_rosa_wildfire_00000238_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,45,santa_rosa_wildfire_00000097_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,46,hurricane_michael_00000133_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,47,hurricane_michael_00000033_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,48,hurricane_florence_00000109_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,49,santa_rosa_wildfire_00000227_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,50,hurricane_michael_00000133_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,51,nepal_flooding_00000225_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,52,hurricane_michael_00000055_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,53,portugal_wildfire_00000366_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,54,kalehe_flooding_post_1008.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,55,turkey_earthquake1_post_573.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,56,hurricane_harvey_00000384_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,57,santa_rosa_wildfire_00000238_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,58,hurricane_michael_00000287_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,59,turkey_earthquake1_post_568.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,60,turkey_earthquake1_post_568.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,61,palu_tsunami_00000045_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,62,turkey_earthquake0_post_456.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,63,hurricane_harvey_00000117_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,64,hurricane_florence_00000354_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,65,hurricane_florence_00000014_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,66,santa_rosa_wildfire_00000316_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,67,palu_tsunami_00000125_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,68,socal_fire_00000641_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,69,lower_puna_volcano_00000091_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,70,hurricane_florence_00000409_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,71,hurricane_michael_00000055_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,72,santa_rosa_wildfire_00000058_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,73,nepal_flooding_00000204_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,74,hurricane_michael_00000516_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,75,hurricane_matthew_00000245_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,76,turkey_earthquake1_post_481.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,77,moore_tornado_00000129_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,78,portugal_wildfire_00001693_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,79,hurricane_matthew_00000283_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,80,pinery_bushfire_00000494_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,81,hurricane_harvey_00000357_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,82,hurricane_florence_00000215_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,83,hurricane_michael_00000388_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,84,nepal_flooding_00000378_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,85,hurricane_matthew_00000296_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,86,hurricane_harvey_00000484_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,87,midwest_flooding_00000258_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,88,turkey_earthquake4_post_779.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,89,hurricane_harvey_00000059_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,90,hurricane_matthew_00000038_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,91,hurricane_michael_00000107_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,92,hurricane_michael_00000399_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,93,palu_tsunami_00000125_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,94,turkey_earthquake0_post_456.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,95,hurricane_michael_00000428_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,96,nepal_flooding_00000231_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,97,hurricane_michael_00000247_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,98,woolsey_fire_00000754_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,99,hurricane_florence_00000232_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,100,socal_fire_00000803_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,101,portugal_wildfire_00000757_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,102,socal_fire_00001027_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,103,hurricane_michael_00000399_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,104,socal_fire_00000912_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,105,hurricane_harvey_00000450_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,106,moore_tornado_00000006_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,107,santa_rosa_wildfire_00000316_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,108,hurricane_harvey_00000406_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,109,hurricane_michael_00000453_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,110,hurricane_matthew_00000316_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,111,turkey_earthquake4_post_759.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,112,turkey_earthquake1_post_573.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,113,moore_tornado_00000140_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,114,hurricane_harvey_00000427_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,115,nepal_flooding_00000465_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,116,hurricane_matthew_00000067_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,117,palu_tsunami_00000122_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,118,hurricane_michael_00000311_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,119,midwest_flooding_00000287_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,120,hurricane_harvey_00000059_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,121,hurricane_harvey_00000450_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,122,hurricane_harvey_00000117_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,123,hurricane_harvey_00000451_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,124,nepal_flooding_00000456_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,125,socal_fire_00000817_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,126,midwest_flooding_00000049_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,127,bata_explosion_post_23.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,128,hurricane_florence_00000097_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,129,nepal_flooding_00000019_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,130,hurricane_harvey_00000484_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,131,tuscaloosa_tornado_00000055_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,132,hurricane_harvey_00000484_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,133,hurricane_michael_00000133_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,134,kalehe_flooding_post_1008.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,135,hurricane_michael_00000032_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,136,hurricane_matthew_00000217_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,137,nepal_flooding_00000028_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,138,nepal_flooding_00000225_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,139,turkey_earthquake3_post_658.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,140,nepal_flooding_00000231_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,141,hurricane_florence_00000324_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,142,hurricane_michael_00000516_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,143,turkey_earthquake4_post_776.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,144,hurricane_matthew_00000164_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,145,turkey_earthquake4_post_776.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,146,hurricane_matthew_00000097_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,147,portugal_wildfire_00001151_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,148,socal_fire_00000753_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,149,nepal_flooding_00000514_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,150,socal_fire_00000202_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,151,hurricane_harvey_00000394_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,152,moore_tornado_00000120_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,153,hurricane_matthew_00000067_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,154,hurricane_harvey_00000472_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,155,hurricane_matthew_00000263_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,156,turkey_earthquake4_post_764.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,157,sunda_tsunami_00000014_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,158,hurricane_harvey_00000252_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,159,nepal_flooding_00000030_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,160,socal_fire_00000620_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,161,hurricane_michael_00000397_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,162,turkey_earthquake5_post_792.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,163,midwest_flooding_00000049_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,164,turkey_earthquake4_post_778.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,165,tuscaloosa_tornado_00000055_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,166,turkey_earthquake7_post_959.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,167,moore_tornado_00000029_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,168,hurricane_michael_00000254_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,169,tuscaloosa_tornado_00000200_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,170,tuscaloosa_tornado_00000055_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,171,hurricane_matthew_00000305_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,172,moore_tornado_00000029_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,173,turkey_earthquake5_post_921.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,174,santa_rosa_wildfire_00000238_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,175,socal_fire_00000817_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,176,nepal_flooding_00000225_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,177,hurricane_michael_00000399_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,178,socal_fire_00000817_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,179,hurricane_harvey_00000451_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,180,hawaii_wildfire_post_995.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,181,midwest_flooding_00000031_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,182,hurricane_matthew_00000305_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,183,moore_tornado_00000129_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,184,hurricane_harvey_00000040_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,185,santa_rosa_wildfire_00000357_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,186,turkey_earthquake1_post_573.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,187,hurricane_michael_00000399_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,188,lower_puna_volcano_00000078_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,189,beriut_explosion_post_51.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,190,turkey_earthquake4_post_778.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,191,hurricane_matthew_00000047_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,192,hurricane_michael_00000055_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,193,hurricane_michael_00000133_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,194,hurricane_matthew_00000344_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,195,turkey_earthquake3_post_687.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,196,santa_rosa_wildfire_00000091_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,197,palu_tsunami_00000122_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,198,nepal_flooding_00000060_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,199,moore_tornado_00000029_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,200,hurricane_florence_00000463_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,201,hurricane_matthew_00000296_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,202,turkey_earthquake1_post_596.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,203,santa_rosa_wildfire_00000058_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,204,libya_flood_post_86.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,205,hawaii_wildfire_post_995.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,206,portugal_wildfire_00001702_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,207,portugal_wildfire_00001586_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,208,santa_rosa_wildfire_00000316_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,209,hurricane_michael_00000311_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,210,hurricane_michael_00000247_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,211,hurricane_matthew_00000296_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,212,portugal_wildfire_00000902_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,213,nepal_flooding_00000400_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,214,midwest_flooding_00000301_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,215,santa_rosa_wildfire_00000371_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,216,hurricane_harvey_00000176_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,217,portugal_wildfire_00001801_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,218,hurricane_michael_00000133_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,219,hurricane_florence_00000356_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,220,hurricane_michael_00000388_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,221,tuscaloosa_tornado_00000209_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,222,turkey_earthquake4_post_776.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,223,hurricane_michael_00000254_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,224,nepal_flooding_00000060_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,225,turkey_earthquake4_post_764.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,226,hurricane_harvey_00000117_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,227,portugal_wildfire_00000513_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,228,hurricane_florence_00000475_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,229,turkey_earthquake4_post_779.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,230,turkey_earthquake1_post_588.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,231,tuscaloosa_tornado_00000209_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,232,hurricane_matthew_00000245_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,233,moore_tornado_00000033_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+finetuned,234,tuscaloosa_tornado_00000108_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,235,hurricane_matthew_00000047_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,236,nepal_flooding_00000501_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,237,bata_explosion_post_23.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,238,lower_puna_volcano_00000153_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,239,hurricane_matthew_00000344_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,240,hurricane_matthew_00000245_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,241,midwest_flooding_00000287_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,242,nepal_flooding_00000325_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,243,hurricane_harvey_00000267_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,244,moore_tornado_00000140_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+finetuned,245,hurricane_matthew_00000097_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,246,turkey_earthquake4_post_776.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,247,hurricane_matthew_00000316_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,248,santa_rosa_wildfire_00000058_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,249,moore_tornado_00000076_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,250,nepal_flooding_00000400_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,251,moore_tornado_00000033_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,252,hurricane_michael_00000043_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,253,nepal_flooding_00000585_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,254,nepal_flooding_00000231_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,255,turkey_earthquake4_post_785.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,256,palu_tsunami_00000125_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,257,beriut_explosion_post_38.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,258,hurricane_matthew_00000217_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,259,socal_fire_00001360_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,260,turkey_earthquake5_post_832.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,261,hurricane_harvey_00000302_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,262,portugal_wildfire_00001801_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,263,tuscaloosa_tornado_00000185_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,264,palu_tsunami_00000179_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,265,hurricane_michael_00000438_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,266,lower_puna_volcano_00000091_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,267,moore_tornado_00000140_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,268,hurricane_harvey_00000406_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,269,turkey_earthquake4_post_764.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,270,portugal_wildfire_00000492_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,271,hurricane_michael_00000175_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,272,nepal_flooding_00000069_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,273,hurricane_harvey_00000312_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,274,moore_tornado_00000120_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,275,hurricane_harvey_00000472_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,276,midwest_flooding_00000323_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,277,hurricane_michael_00000465_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,278,sunda_tsunami_00000004_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,279,kalehe_flooding_post_1008.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,280,hurricane_matthew_00000296_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,281,santa_rosa_wildfire_00000165_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,282,tuscaloosa_tornado_00000108_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,283,lower_puna_volcano_00000091_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,284,nepal_flooding_00000270_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,285,hurricane_matthew_00000344_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,286,hurricane_matthew_00000012_post_disaster.png,Damaged,Intact,Intact,Grade 3,3,Damaged
+finetuned,287,hurricane_harvey_00000419_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,288,portugal_wildfire_00001575_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,289,hurricane_harvey_00000384_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+finetuned,290,palu_tsunami_00000179_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,291,midwest_flooding_00000139_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,292,hurricane_harvey_00000394_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+finetuned,293,palu_tsunami_00000125_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+finetuned,294,nepal_flooding_00000407_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+finetuned,295,turkey_earthquake4_post_776.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,296,socal_fire_00000643_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+finetuned,297,hurricane_florence_00000470_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+finetuned,298,hurricane_harvey_00000484_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+finetuned,299,hurricane_harvey_00000451_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+base,0,hurricane_matthew_00000146_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,1,socal_fire_00000202_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,2,hurricane_harvey_00000127_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,3,hurricane_florence_00000467_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,4,portugal_wildfire_00001801_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,5,hurricane_harvey_00000427_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,6,hurricane_harvey_00000310_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,7,hurricane_matthew_00000296_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,8,hurricane_michael_00000511_post_disaster.png,Intact,Intact,Intact,Grade 2,2,Damaged
+base,9,hurricane_matthew_00000342_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,10,hurricane_michael_00000247_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,11,turkey_earthquake3_post_688.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,12,palu_tsunami_00000122_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,13,hurricane_florence_00000014_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,14,nepal_flooding_00000545_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,15,woolsey_fire_00000754_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,16,lower_puna_volcano_00000091_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,17,hawaii_wildfire_post_995.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,18,hurricane_michael_00000287_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,19,hurricane_harvey_00000394_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,20,socal_fire_00000753_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,21,hurricane_michael_00000043_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,22,turkey_earthquake1_post_573.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,23,hurricane_florence_00000475_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,24,nepal_flooding_00000204_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,25,hurricane_michael_00000438_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,26,socal_fire_00000202_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,27,hurricane_matthew_00000313_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,28,hurricane_matthew_00000067_post_disaster.png,Damaged,Intact,Intact,Grade 2,2,Damaged
+base,29,moore_tornado_00000140_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,30,sunda_tsunami_00000004_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,31,hurricane_matthew_00000316_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,32,turkey_earthquake3_post_640.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,33,santa_rosa_wildfire_00000058_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,34,moore_tornado_00000033_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,35,hurricane_harvey_00000255_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,36,midwest_flooding_00000388_post_disaster.png,Intact,Intact,Intact,Grade 2,2,Damaged
+base,37,socal_fire_00001360_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,38,hurricane_michael_00000388_post_disaster.png,Intact,Damaged,Damaged,Grade 4,4,Destroyed
+base,39,hurricane_harvey_00000267_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,40,portugal_wildfire_00001500_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,41,hurricane_florence_00000191_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,42,portugal_wildfire_00001700_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,43,hurricane_florence_00000014_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,44,santa_rosa_wildfire_00000238_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,45,santa_rosa_wildfire_00000097_post_disaster.png,Intact,Intact,Intact,Grade 4,4,Destroyed
+base,46,hurricane_michael_00000133_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,47,hurricane_michael_00000033_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,48,hurricane_florence_00000109_post_disaster.png,Damaged,Intact,Intact,Grade 1,1,Intact
+base,49,santa_rosa_wildfire_00000227_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,50,hurricane_michael_00000133_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,51,nepal_flooding_00000225_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,52,hurricane_michael_00000055_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,53,portugal_wildfire_00000366_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,54,kalehe_flooding_post_1008.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,55,turkey_earthquake1_post_573.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,56,hurricane_harvey_00000384_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,57,santa_rosa_wildfire_00000238_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,58,hurricane_michael_00000287_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,59,turkey_earthquake1_post_568.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,60,turkey_earthquake1_post_568.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,61,palu_tsunami_00000045_post_disaster.png,Intact,Damaged,Damaged,Grade 4,4,Destroyed
+base,62,turkey_earthquake0_post_456.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,63,hurricane_harvey_00000117_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,64,hurricane_florence_00000354_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,65,hurricane_florence_00000014_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,66,santa_rosa_wildfire_00000316_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,67,palu_tsunami_00000125_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,68,socal_fire_00000641_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,69,lower_puna_volcano_00000091_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,70,hurricane_florence_00000409_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,71,hurricane_michael_00000055_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,72,santa_rosa_wildfire_00000058_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,73,nepal_flooding_00000204_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,74,hurricane_michael_00000516_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,75,hurricane_matthew_00000245_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,76,turkey_earthquake1_post_481.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,77,moore_tornado_00000129_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,78,portugal_wildfire_00001693_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,79,hurricane_matthew_00000283_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,80,pinery_bushfire_00000494_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,81,hurricane_harvey_00000357_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,82,hurricane_florence_00000215_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+base,83,hurricane_michael_00000388_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,84,nepal_flooding_00000378_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,85,hurricane_matthew_00000296_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,86,hurricane_harvey_00000484_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,87,midwest_flooding_00000258_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,88,turkey_earthquake4_post_779.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,89,hurricane_harvey_00000059_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,90,hurricane_matthew_00000038_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,91,hurricane_michael_00000107_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,92,hurricane_michael_00000399_post_disaster.png,Intact,Intact,Intact,Grade 2,2,Damaged
+base,93,palu_tsunami_00000125_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,94,turkey_earthquake0_post_456.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,95,hurricane_michael_00000428_post_disaster.png,Intact,Damaged,Damaged,Grade 4,4,Destroyed
+base,96,nepal_flooding_00000231_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,97,hurricane_michael_00000247_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,98,woolsey_fire_00000754_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,99,hurricane_florence_00000232_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,100,socal_fire_00000803_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,101,portugal_wildfire_00000757_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+base,102,socal_fire_00001027_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,103,hurricane_michael_00000399_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,104,socal_fire_00000912_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,105,hurricane_harvey_00000450_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,106,moore_tornado_00000006_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,107,santa_rosa_wildfire_00000316_post_disaster.png,Intact,Intact,Intact,Grade 4,4,Destroyed
+base,108,hurricane_harvey_00000406_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,109,hurricane_michael_00000453_post_disaster.png,Intact,Intact,Intact,Grade 3,3,Damaged
+base,110,hurricane_matthew_00000316_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,111,turkey_earthquake4_post_759.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,112,turkey_earthquake1_post_573.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,113,moore_tornado_00000140_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,114,hurricane_harvey_00000427_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,115,nepal_flooding_00000465_post_disaster.png,Damaged,Damaged,Damaged,Grade 2,2,Damaged
+base,116,hurricane_matthew_00000067_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,117,palu_tsunami_00000122_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,118,hurricane_michael_00000311_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,119,midwest_flooding_00000287_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,120,hurricane_harvey_00000059_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,121,hurricane_harvey_00000450_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,122,hurricane_harvey_00000117_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,123,hurricane_harvey_00000451_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,124,nepal_flooding_00000456_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,125,socal_fire_00000817_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,126,midwest_flooding_00000049_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,127,bata_explosion_post_23.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,128,hurricane_florence_00000097_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,129,nepal_flooding_00000019_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,130,hurricane_harvey_00000484_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,131,tuscaloosa_tornado_00000055_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,132,hurricane_harvey_00000484_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,133,hurricane_michael_00000133_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,134,kalehe_flooding_post_1008.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,135,hurricane_michael_00000032_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,136,hurricane_matthew_00000217_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,137,nepal_flooding_00000028_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,138,nepal_flooding_00000225_post_disaster.png,Damaged,Damaged,Damaged,Grade 4,4,Destroyed
+base,139,turkey_earthquake3_post_658.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,140,nepal_flooding_00000231_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,141,hurricane_florence_00000324_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,142,hurricane_michael_00000516_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,143,turkey_earthquake4_post_776.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,144,hurricane_matthew_00000164_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,145,turkey_earthquake4_post_776.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,146,hurricane_matthew_00000097_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,147,portugal_wildfire_00001151_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+base,148,socal_fire_00000753_post_disaster.png,Intact,Intact,Intact,Grade 1,1,Intact
+base,149,nepal_flooding_00000514_post_disaster.png,Intact,Intact,Intact,Grade 2,2,Damaged
+base,150,socal_fire_00000202_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,151,hurricane_harvey_00000394_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,152,moore_tornado_00000120_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,153,hurricane_matthew_00000067_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,154,hurricane_harvey_00000472_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,155,hurricane_matthew_00000263_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,156,turkey_earthquake4_post_764.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,157,sunda_tsunami_00000014_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,158,hurricane_harvey_00000252_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,159,nepal_flooding_00000030_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,160,socal_fire_00000620_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,161,hurricane_michael_00000397_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,162,turkey_earthquake5_post_792.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,163,midwest_flooding_00000049_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,164,turkey_earthquake4_post_778.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,165,tuscaloosa_tornado_00000055_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,166,turkey_earthquake7_post_959.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,167,moore_tornado_00000029_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,168,hurricane_michael_00000254_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,169,tuscaloosa_tornado_00000200_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,170,tuscaloosa_tornado_00000055_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,171,hurricane_matthew_00000305_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,172,moore_tornado_00000029_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+base,173,turkey_earthquake5_post_921.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,174,santa_rosa_wildfire_00000238_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,175,socal_fire_00000817_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,176,nepal_flooding_00000225_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,177,hurricane_michael_00000399_post_disaster.png,Intact,Damaged,Damaged,Grade 4,4,Destroyed
+base,178,socal_fire_00000817_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,179,hurricane_harvey_00000451_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,180,hawaii_wildfire_post_995.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,181,midwest_flooding_00000031_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,182,hurricane_matthew_00000305_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,183,moore_tornado_00000129_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,184,hurricane_harvey_00000040_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,185,santa_rosa_wildfire_00000357_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,186,turkey_earthquake1_post_573.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,187,hurricane_michael_00000399_post_disaster.png,Damaged,Intact,Intact,Grade 2,2,Damaged
+base,188,lower_puna_volcano_00000078_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,189,beriut_explosion_post_51.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,190,turkey_earthquake4_post_778.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,191,hurricane_matthew_00000047_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,192,hurricane_michael_00000055_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,193,hurricane_michael_00000133_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,194,hurricane_matthew_00000344_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,195,turkey_earthquake3_post_687.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,196,santa_rosa_wildfire_00000091_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,197,palu_tsunami_00000122_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,198,nepal_flooding_00000060_post_disaster.png,Intact,Damaged,Damaged,Grade 4,4,Destroyed
+base,199,moore_tornado_00000029_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,200,hurricane_florence_00000463_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,201,hurricane_matthew_00000296_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,202,turkey_earthquake1_post_596.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,203,santa_rosa_wildfire_00000058_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,204,libya_flood_post_86.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,205,hawaii_wildfire_post_995.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,206,portugal_wildfire_00001702_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,207,portugal_wildfire_00001586_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,208,santa_rosa_wildfire_00000316_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,209,hurricane_michael_00000311_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,210,hurricane_michael_00000247_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,211,hurricane_matthew_00000296_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,212,portugal_wildfire_00000902_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,213,nepal_flooding_00000400_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,214,midwest_flooding_00000301_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,215,santa_rosa_wildfire_00000371_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,216,hurricane_harvey_00000176_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,217,portugal_wildfire_00001801_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,218,hurricane_michael_00000133_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,219,hurricane_florence_00000356_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,220,hurricane_michael_00000388_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,221,tuscaloosa_tornado_00000209_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,222,turkey_earthquake4_post_776.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,223,hurricane_michael_00000254_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,224,nepal_flooding_00000060_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,225,turkey_earthquake4_post_764.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,226,hurricane_harvey_00000117_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,227,portugal_wildfire_00000513_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,228,hurricane_florence_00000475_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,229,turkey_earthquake4_post_779.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,230,turkey_earthquake1_post_588.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,231,tuscaloosa_tornado_00000209_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,232,hurricane_matthew_00000245_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,233,moore_tornado_00000033_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,234,tuscaloosa_tornado_00000108_post_disaster.png,Damaged,Intact,Intact,Grade 2,2,Damaged
+base,235,hurricane_matthew_00000047_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,236,nepal_flooding_00000501_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,237,bata_explosion_post_23.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,238,lower_puna_volcano_00000153_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,239,hurricane_matthew_00000344_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,240,hurricane_matthew_00000245_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,241,midwest_flooding_00000287_post_disaster.png,Destroyed,Intact,Intact,Grade 1,1,Intact
+base,242,nepal_flooding_00000325_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,243,hurricane_harvey_00000267_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,244,moore_tornado_00000140_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,245,hurricane_matthew_00000097_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,246,turkey_earthquake4_post_776.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,247,hurricane_matthew_00000316_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,248,santa_rosa_wildfire_00000058_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,249,moore_tornado_00000076_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,250,nepal_flooding_00000400_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,251,moore_tornado_00000033_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,252,hurricane_michael_00000043_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,253,nepal_flooding_00000585_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,254,nepal_flooding_00000231_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,255,turkey_earthquake4_post_785.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,256,palu_tsunami_00000125_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,257,beriut_explosion_post_38.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,258,hurricane_matthew_00000217_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,259,socal_fire_00001360_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,260,turkey_earthquake5_post_832.png,Intact,Damaged,Damaged,Grade 4,4,Destroyed
+base,261,hurricane_harvey_00000302_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,262,portugal_wildfire_00001801_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,263,tuscaloosa_tornado_00000185_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,264,palu_tsunami_00000179_post_disaster.png,Intact,Intact,Intact,Grade 2,2,Damaged
+base,265,hurricane_michael_00000438_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,266,lower_puna_volcano_00000091_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,267,moore_tornado_00000140_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,268,hurricane_harvey_00000406_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,269,turkey_earthquake4_post_764.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,270,portugal_wildfire_00000492_post_disaster.png,Intact,Intact,Intact,Grade 2,2,Damaged
+base,271,hurricane_michael_00000175_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,272,nepal_flooding_00000069_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,273,hurricane_harvey_00000312_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,274,moore_tornado_00000120_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,275,hurricane_harvey_00000472_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,276,midwest_flooding_00000323_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,277,hurricane_michael_00000465_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,278,sunda_tsunami_00000004_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,279,kalehe_flooding_post_1008.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,280,hurricane_matthew_00000296_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,281,santa_rosa_wildfire_00000165_post_disaster.png,Intact,Intact,Intact,Grade 2,2,Damaged
+base,282,tuscaloosa_tornado_00000108_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,283,lower_puna_volcano_00000091_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,284,nepal_flooding_00000270_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,285,hurricane_matthew_00000344_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,286,hurricane_matthew_00000012_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,287,hurricane_harvey_00000419_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,288,portugal_wildfire_00001575_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,289,hurricane_harvey_00000384_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,290,palu_tsunami_00000179_post_disaster.png,Intact,Damaged,Damaged,Grade 2,2,Damaged
+base,291,midwest_flooding_00000139_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,292,hurricane_harvey_00000394_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed
+base,293,palu_tsunami_00000125_post_disaster.png,Destroyed,Damaged,Damaged,Grade 5,5,Destroyed
+base,294,nepal_flooding_00000407_post_disaster.png,Intact,Intact,Intact,Grade 5,5,Destroyed
+base,295,turkey_earthquake4_post_776.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,296,socal_fire_00000643_post_disaster.png,Intact,Damaged,Damaged,Grade 5,5,Destroyed
+base,297,hurricane_florence_00000470_post_disaster.png,Damaged,Damaged,Damaged,Grade 5,5,Destroyed
+base,298,hurricane_harvey_00000484_post_disaster.png,Destroyed,Intact,Intact,Grade 5,5,Destroyed
+base,299,hurricane_harvey_00000451_post_disaster.png,Damaged,Intact,Intact,Grade 5,5,Destroyed

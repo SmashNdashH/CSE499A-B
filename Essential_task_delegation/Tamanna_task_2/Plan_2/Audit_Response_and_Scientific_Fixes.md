@@ -247,9 +247,6 @@ CHECKPOINT_PATH = hf_hub_download(
 
 ## Part 2: Why Agentic Vision RAG is Innovative & Essential to Our Project
 
-To answer the prompt's core question:  
-*"Remember my works main goal should be innovative and help us in our project."*
-
 ### 1. The Critical Project Bottlenecks It Solves
 
 ```
