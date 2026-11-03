@@ -39,4 +39,5 @@ def offline_pdf_search_tool(query: str) -> str:
     grades), the xBD damage scale, INSARAG (search and rescue teams, ASR levels,
     worksite triage) and Sphere (shelter, living space, household items, reconstruction).
     Each result starts with a citation ID in square brackets; cite these IDs."""
+    print(f"Guideline search: {query}")  # check_run.py counts these lines in the run log
     return format_results(search_guidelines(query, k=3))

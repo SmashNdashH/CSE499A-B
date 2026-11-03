@@ -3,10 +3,12 @@
 This folder has my work for the next update. It has three parts:
 
 1. **An offline search of disaster guidelines**, for DisasTeller (RAG v1).
-2. **Building counting with the R1 model** (KR2).
+2. **Building counting with the R1 model** (KR2): stopped on 26 Oct, see
+   review step 5 below.
 3. **The guideline lookup for T2** (DisasTeller on local models): a copy of
    DisasTeller that works offline by default, and a test of the search (the
-   "retrieval test").
+   "retrieval test"). Since 3 Nov the copy uses the team's own model instead
+   of Gemini (T2 steps 1–3), with Kaggle notebooks to run and check it.
 
 Rule: files from other folders are copied into this folder.
 The original files are never changed.
@@ -19,7 +21,11 @@ The original files are never changed.
 | DisasTeller | Our system that writes disaster reports. Four AI agents work on it together: the Expert team, the Alerts team, the Assignment team and the Emergency service team. |
 | Agent | One AI worker in DisasTeller, with its own job and its own tools. |
 | CrewAI | The Python library that runs DisasTeller's agents. |
-| Gemini | Google's online AI. DisasTeller still uses it today. |
+| Gemini | Google's online AI. The original DisasTeller uses it. The copy here uses a local model instead (since 3 Nov). |
+| Local model | A model that runs on the same computer, so nothing is sent over the internet. Here: the team's fine-tuned Qwen2.5-VL-7B. |
+| vLLM | A program that runs a model fast on GPUs. It answers in the same format as OpenAI's online service, but on the same computer (`localhost`). |
+| Token | A word or part of a word. A model's limit on how much it can read and write at once is counted in tokens. |
+| Wheel | An installer file for one Python package. With the internet off, packages are installed from wheels. |
 | LLM | Large language model: an AI that reads and writes text. |
 | RAG | Retrieval-augmented generation. The AI first looks up the right text in documents, then writes its answer with that text. |
 | Offline / online | Offline: no internet is used. Online: the internet is used. |
@@ -139,6 +145,17 @@ Abrar's review asked for 7 steps. Here is what each step did, and why.
 **disasteller_offline/**
 - A copy of DisasTeller (`support/Ridita_Integration_of_VLM__/DisasTeller/`),
   offline by default. See "DisasTeller, offline by default" below.
+- Since 3 Nov it uses a local model, not Gemini. See "DisasTeller on the local
+  model" below.
+
+**make_disasteller_upload.py**
+- Packs `disasteller_offline/` for Kaggle into
+  `kaggle_upload/disasteller-offline.zip` (the code and the pictures, with each
+  file's sha256 and the git commit).
+
+**t2_prep_packages.ipynb**, **t2_prep_model.ipynb**, **t2_disasteller_local_run.ipynb**
+- Kaggle notebooks for T2 steps 1–3: the installer files, the model files, and
+  the run with its checks. See "DisasTeller on the local model" below.
 
 **retrieval_test/**
 - `questions.csv`: 30 questions that a DisasTeller report needs, and the
@@ -207,7 +224,7 @@ Search the index:
     python guideline_index.py --query "collapsed ground floor"
 
 Count buildings in R1's masks (a mask is a picture where each pixel has a
-class number):
+class number). Work on it stopped on 26 Oct, see review step 5 above.
 
     python hybrid_bdc_counter.py --mask_dir masks/ --mode r1 --output counts.csv
 
@@ -318,10 +335,13 @@ In later notebooks (Day 3), add the same dataset and use:
   original.
 - The six `.txt` reports at the top of `disasteller_offline/` are the outputs
   of the Gemini run. They were copied without any change, to compare with
-  later.
+  later. The old labelled map, `4_anotated.png`, is there too (moved there on
+  3 Nov). Its labels name the same six places as `Expert_team_report.txt`.
 - New runs write to `reports/offline/` or `reports/online/`, so they never
   write over those six reports. As in the original, the paths start from the
   folder you run in, so run it from inside `disasteller_offline/`.
+- Since 3 Nov, a new run also saves its labelled map there, as
+  `4_anotated.png` (see "Other things to fix" below).
 
 **How the guideline search is linked**
 - `disasteller_offline/pdf_search_tool.py` keeps the tool's name,
@@ -381,30 +401,55 @@ In later notebooks (Day 3), add the same dataset and use:
   for the order of the steps instead of timelines, so no time lengths are made
   up.
 
-**What still calls Gemini (roadmap T2 steps 1–3, not changed yet)**
+**What called Gemini until 3 Nov (roadmap T2 steps 1–3), and what replaced it**
 
-| File in `disasteller_offline/` | Lines | What | Used by |
+| File in `disasteller_offline/` | Gemini did | Since 3 Nov | Used by |
 |---|---|---|---|
-| `DisasterManagement_teamwork_simulation.py` | 36–42; `llm=gemini_llm` at 93, 104, 116, 128 | `LLM(model="gemini/gemini-3.1-flash-lite")`, the LLM of all four agents | every task |
-| `local_img_tool.py` | 7, 13–14, 38, 65 | `genai.GenerativeModel("gemini-3.1-flash-lite")` describes the local images | `local_img_interpreter`: Expert and Emergency service teams |
-| `global_img_tool.py` | 7, 13–14, 38, 64 | the same, for the global map | `global_img_interpreter`: Alerts, Emergency service and Assignment teams |
-| `global_annotation_tool.py` | 5, 15–16, 62, 100 | the same, to place the grade labels on the map | `global_map_annotation`: Expert team |
+| `DisasterManagement_teamwork_simulation.py` | the LLM of all four agents (`gemini/gemini-3.1-flash-lite`) | `local_model.crew_llm()` | every task |
+| `local_img_tool.py` | described the six photos, all in one request | `local_model.ask_with_images()`, one photo per question | `local_img_interpreter`: Expert and Emergency service teams |
+| `global_img_tool.py` | read the map | the same, one picture per question | `global_img_interpreter`: Alerts, Emergency service and Assignment teams |
+| `global_annotation_tool.py` | found where to put the grade labels on the map | the same, with the map's size in the question | `global_map_annotation`: Expert team |
 
 **Other things to fix before the offline proof run (System_Design_Notes §2.4)**
-- Line 37 copies the Gemini key into `GEMINI_API_KEY`, and it fails if there
-  is no key. So until T2 step 2 is done, even offline mode needs a Gemini key
-  and the internet.
-- The three image tools call `genai.configure` and prepare (encode) their
-  images as soon as they are imported, before any task runs.
-- `from langchain.tools import tool as langchain_tool` (line 23) is never used,
-  but it still needs `langchain` to be installed. Also,
-  `global_annotation_tool.py` imports `openai` without using it.
-- On its first run, CrewAI asks if it may upload a trace (a record of the
-  run). Nothing is sent unless the answer is yes.
+- **Fixed on 3 Nov:** the main script copied the Gemini key into
+  `GEMINI_API_KEY` and stopped if there was no key. That code is gone; no key
+  is needed.
+- **Fixed on 3 Nov:** the three image tools no longer call `genai.configure`.
+  They still prepare (encode) their pictures as soon as they are imported, but
+  that needs no network.
+- **Fixed on 3 Nov:** the unused `from langchain.tools import tool as
+  langchain_tool` is gone, so `langchain` isn't needed. The unused `openai`
+  import in `global_annotation_tool.py` is gone too (`local_model.py` uses
+  `openai` now).
+- **Fixed on 3 Nov:** on its first run, CrewAI asked if it may upload a trace
+  (a record of the run). `CREWAI_TRACING_ENABLED=false` turns this off.
+- **Found and fixed on 3 Nov:** with `verbose=True`, CrewAI asks `pypi.org`
+  for its newest version. `run_with_netlog.py` caught it in the laptop test.
+  `CREWAI_DISABLE_VERSION_CHECK=true` turns it off.
 - On a new computer, the Chroma backend downloads its ONNX model (the search
   model in another file format) once, to `~/.cache/chroma`. With the internet
   off, use `GUIDELINE_BACKEND=numpy` and `models/all-MiniLM-L6-v2/`, as on
-  Kaggle.
+  Kaggle. CrewAI brings `chromadb` with it, so the Kaggle run notebook sets
+  `GUIDELINE_BACKEND=numpy` itself.
+- **Fixed on 3 Nov: each run saw the last run's labelled map.**
+  - The problem: `global_annotation_tool.py` saved its labelled map as
+    `Disaster_image/Global_image/4_anotated.png`. But this tool and
+    `global_img_tool.py` send every picture in that folder to Gemini. So the
+    agents also saw the old labels, and could copy them instead of working
+    out the answer. Each run also wrote over that file, which is in git. And
+    the labels were too big: at font size 150, a label such as "South Central
+    Asaichi Street: G5" is 2,165 pixels wide, but the map is 1,080 pixels
+    wide. So the labels covered each other and ran off the map.
+  - The fix: the old map is now at the top of `disasteller_offline/`, next to
+    the six old reports. A new run saves its map in `reports/offline/` or
+    `reports/online/`. The font size is now 40, so the same label is 575
+    pixels wide. `Global_image/` now holds only `2.jpg`, so both map tools
+    send only that picture.
+  - Fixed later on 3 Nov: the tool's question still said to find the places
+    in "the first image" and to label them in "the second image", but there
+    was only one picture left (on this PC, the second picture had been the old
+    labelled map). The question now talks about one map and gives its size in
+    pixels.
 
 **Not done here:**
 - the §2.3 rules for online mode (web findings go in their own section, and
@@ -412,17 +457,156 @@ In later notebooks (Day 3), add the same dataset and use:
 - the H2 facts and T1 hot spots as input (T2 step 5);
 - the consistency check (T2 step 7).
 
-**How it was checked.** It can't run from start to end yet, because it still
-needs Gemini.
+**How it was checked.** Until 3 Nov it couldn't run from start to end, because
+it needed Gemini. For the local-model version, see "DisasTeller on the local
+model" below.
 - Each copy was compared with its original by sha256, before any change.
 - The task wording was checked by reading both files with a program
   (DisasTeller's code was not run): the online wording is the same as the
   original for all six tasks, the offline wording never mentions the internet,
   tasks 3–6 have the offline rule, and the output paths are under
   `reports/<mode>/`.
-- `py_compile` (a check that Python code has no syntax errors) on both changed
-  files, and an import of the tool. The import finds `guideline_index` in this
-  folder without loading the index.
+- `py_compile` (a check that Python code has no syntax errors) on the two
+  files changed then (the main script and `pdf_search_tool.py`), and an import
+  of the tool. The import finds `guideline_index` in this folder without
+  loading the index.
+- The map fix (3 Nov) was tested without Gemini. A fake Gemini gave back six
+  labels, so nothing went online. The map was saved in `reports/offline/`,
+  and in `reports/online/` with `DISASTELLER_ONLINE=1`. `Global_image/` did
+  not change, and each map tool sent one picture. Compared with the
+  original, `global_annotation_tool.py` differs only in its header, the font
+  size and where it saves the map.
+
+
+## DisasTeller on the local model (T2 steps 1–3, built 3 Nov)
+
+**Goal (roadmap T2):** no Gemini calls. The four agents and the three image
+tools use the team's fine-tuned Qwen2.5-VL-7B, run by vLLM on the same Kaggle
+machine. One model does all four jobs, because it reads both text and pictures.
+The model is `AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP`, the 7B that L0
+kept on 28 Oct (to be confirmed by Abrar).
+
+**What changed in `disasteller_offline/`**
+- `local_model.py` (new): the one place that says which model is used.
+  - `crew_llm()` is the agents' LLM. `ask_with_images()` is what the image
+    tools call. Both ask the same local server.
+  - The server's address must be on the same computer (`localhost`); any other
+    address stops the program, so a wrong setting can't send data out.
+- The main script uses `local_model.crew_llm()`. No Gemini key is needed. The
+  limit of 2 requests a minute (`max_rpm=2`, for Gemini's free plan) is gone.
+- The three image tools ask the local model, one picture per question. The map
+  tool's question now talks about one map and gives its size.
+- `pdf_search_tool.py` prints each search (`Guideline search: ...`), so the
+  check can count them.
+- `run_with_netlog.py` (new) runs DisasTeller and records every network
+  connection and name lookup it makes, in `netlog.json`. This is the "log
+  proving no external API calls" that roadmap T2 asks for.
+- `check_run.py` (new) checks a run against the pass rules below.
+
+**Why these choices**
+- **Tool calls in CrewAI's text format** (`LOCAL_LLM_NATIVE_TOOLS=0`). CrewAI
+  writes the tool list into the prompt and reads the tool calls from the
+  model's text. This works with any model. The other way needs the server to
+  handle tool calls itself, and Qwen2.5-VL's standard chat template has no
+  section for tools.
+- **Stop words go to the server.** CrewAI 1.15.2 cuts an answer at
+  `Observation:` only after the whole answer arrives. Without the stop word,
+  the model can keep writing a made-up tool result for minutes on a T4.
+- **One picture per question.** A 7B handles one picture at a time better, and
+  the server then needs to allow only one.
+- **A limit of 16,384 tokens** (Abrar's vLLM setting was 4,096). CrewAI gives
+  each task all the earlier reports, so task 6 reads tasks 1–5. In the Gemini
+  run those were 3,187 words, already about 4,000 tokens or more, before task
+  6's own instructions and answer.
+
+**Settings** (environment variables, or lines in `disasteller_offline/.env`)
+
+| Setting | Default | What it is |
+|---|---|---|
+| `LOCAL_LLM_PROVIDER` | `hosted_vllm` | `hosted_vllm` (vLLM) or `ollama` |
+| `LOCAL_LLM_MODEL` | `disasterm3-7b` | the model's name on the server |
+| `LOCAL_LLM_BASE_URL` | `http://localhost:8000/v1` (Ollama: `http://localhost:11434/v1`) | the server's address; must be on this computer |
+| `LOCAL_LLM_CONTEXT` | `16384` | the server's token limit, question and answer together |
+| `LOCAL_LLM_TEMPERATURE`, `LOCAL_LLM_SEED` | `0.2`, `0` | how random the answers are; the seed makes a run repeatable |
+| `LOCAL_LLM_NATIVE_TOOLS` | `0` | `1` = the server handles tool calls itself |
+
+**How to run it on Kaggle**
+1. On the laptop: commit, then run `python make_disasteller_upload.py`. Upload
+   `kaggle_upload/disasteller-offline.zip` as a **private** dataset named
+   `disasteller-offline`. (Run the script after the commit, so the file list
+   inside the zip names a clean commit.)
+2. On Kaggle, with the internet on, run each of these once with **Save & Run
+   All (Commit)**:
+   - `t2_prep_packages.ipynb`: the installer files for vLLM 0.25.1 (the version
+     that ran on two T4s in Abrar's `3_vllm_evaluation.ipynb`) and CrewAI
+     1.15.2;
+   - `t2_prep_model.ipynb`: the model files (16.6 GB).
+3. `t2_disasteller_local_run.ipynb`, with Accelerator **GPU T4 x2** and four
+   inputs: `offline-rag-kr2`, `disasteller-offline`, and the outputs of the two
+   prep notebooks.
+   - **Practice run:** internet on. Everything is still installed and loaded
+     only from the inputs.
+   - **Proof run:** internet off, then Save & Run All (Commit). Download
+     `t2_run_internet_off.zip` and the notebook with its outputs into
+     `results/`, without changing anything.
+4. Compare the six new reports with the Gemini reports from 20 July (the six
+   `.txt` files at the top of `disasteller_offline/`), in this README. Roadmap
+   T2 asks for this.
+
+**On a laptop (a wiring check only).** With Ollama, in PowerShell, from inside
+`disasteller_offline/`:
+
+    $env:LOCAL_LLM_PROVIDER = "ollama"
+    $env:LOCAL_LLM_MODEL = "qwen3-vl:8b"
+    $env:GUIDELINE_BACKEND = "numpy"
+    python run_with_netlog.py
+
+This PC has no NVIDIA GPU and 7.8 GB of memory, so a full run here would be
+very slow.
+
+**Pass rules, fixed on 3 Nov before any run** (`check_run.py` checks them)
+1. The run finished, with no error.
+2. All six reports are in `reports/offline/`. Each starts with `Mode: offline`
+   and has at least 50 words.
+3. Nothing went outside the computer: `netlog.json` lists no connection or
+   name lookup outside `localhost`.
+4. No Gemini library was loaded.
+5. Every question to the model got an answer: the run log has no "Local model
+   gave no answer after 3 tries".
+
+The proof run must also have the internet off (Kaggle's setting, and the
+notebook's own check). If a rule fails, the run is reported as failed, and any
+fix is a new run, reported separately.
+
+Reported, not graded: words, citation IDs (real ones, and ones not in the
+index), "not available offline", searches, the labelled map, and the time.
+Report quality is judged later: the comparison with the July reports, and the
+consistency check (T2 step 7).
+
+Expected risk, written down before the run: a small model may break CrewAI's
+tool-call format, or loop (System_Design_Notes §1). If the practice run shows
+this, the fallback (a fixed flow: the code calls the tools, and the model only
+writes each section) is decided after that run.
+
+**Checked on the laptop (3 Nov), with a pretend model server**
+- The pretend server answers in vLLM's format with fixed text: "use each tool
+  once, then give a final answer that cites a section from the search".
+- A full run of all six tasks passed rules 1–5 (with the internet on):
+  - six reports, each citing a real section ID;
+  - all four tools used, and the labelled map saved (a Qwen-style box label
+    and a normal label drawn, a broken one skipped);
+  - every request named the model `disasterm3-7b`, held at most one picture,
+    and used seed 0 and temperature 0.2;
+  - the agents' requests carried the stop word `Observation:`.
+- The first try of that test found CrewAI asking `pypi.org` for its newest
+  version. That is now turned off, and the next run showed no connection
+  outside the computer.
+- With no server, a picture question tries 3 times, then returns "An error
+  occurred", and the run log gets the line that rule 5 looks for.
+- Every code cell of the three notebooks compiles. The backup chat template
+  lays out a conversation in Qwen's format.
+- **Not tested here:** vLLM, the real model and the install from wheels. The
+  practice run on Kaggle checks these first.
 
 
 ## Retrieval test of the guideline search (T2 step 4)
