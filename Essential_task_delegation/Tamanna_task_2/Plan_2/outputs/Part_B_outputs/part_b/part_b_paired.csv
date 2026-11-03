@@ -1,0 +1,13 @@
+comparison,class,buildings,both right,only the first right,only the second right,both wrong,mcnemar_p,verdict
+finetuned vs grader,Intact,100,92,8,0,0,0.0078,finetuned higher
+finetuned vs grader,Damaged,100,0,0,54,46,0.0,finetuned lower
+finetuned vs grader,Destroyed,100,0,0,66,34,0.0,finetuned lower
+finetuned vs grader,all three,300,92,8,120,80,0.0,finetuned lower
+base vs grader,Intact,100,44,5,48,3,0.0,base lower
+base vs grader,Damaged,100,27,23,27,23,0.6718,not distinguishable at this sample size
+base vs grader,Destroyed,100,0,0,66,34,0.0,base lower
+base vs grader,all three,300,71,28,141,60,0.0,base lower
+finetuned vs base,Intact,100,49,51,0,0,0.0,finetuned higher
+finetuned vs base,Damaged,100,0,0,50,50,0.0,finetuned lower
+finetuned vs base,Destroyed,100,0,0,0,100,1.0,not distinguishable at this sample size
+finetuned vs base,all three,300,49,51,50,150,1.0,not distinguishable at this sample size

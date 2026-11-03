@@ -1,0 +1,119 @@
+{
+ "label": "Part B: test against ground truth",
+ "smoke_test": false,
+ "models": {
+  "finetuned": "AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP",
+  "base": "Qwen/Qwen2.5-VL-7B-Instruct"
+ },
+ "runs": {
+  "finetuned": {
+   "model": "AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP",
+   "load_min": 2.3,
+   "seconds_per_building": 1.26,
+   "peak_gpu_memory_allocated_gb": 17.12,
+   "side_seen_px": 504
+  },
+  "base": {
+   "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+   "load_min": 2.2,
+   "seconds_per_building": 1.29,
+   "peak_gpu_memory_allocated_gb": 17.12,
+   "side_seen_px": 504
+  }
+ },
+ "n_per_class": 100,
+ "caps_used": {
+  "Intact": 3,
+  "Damaged": 3,
+  "Destroyed": 3
+ },
+ "seed": 42,
+ "min_area_px": 20,
+ "window_px": 256,
+ "zoom": 2,
+ "box_pad_px": 4,
+ "box_thickness_px": 2,
+ "context_px": 16,
+ "precision": "fp16",
+ "decoding": "greedy",
+ "class_prompt": "This satellite image was taken after a disaster. A red box marks one building.\nHow damaged is the building in the red box?\n- Intact: undisturbed; no sign of water, structural or roof damage, or burn marks.\n- Damaged: partly burnt, water or volcanic flow around it, roof elements missing, visible cracks, or partial wall or roof collapse.\n- Destroyed: scorched, completely collapsed, partly or completely covered with water or mud, or no longer present.\nAnswer with one word: Intact, Damaged or Destroyed.",
+ "grade_prompt": "This satellite image was taken after a disaster. A red box marks one building.\nGive the EMS-98 damage grade of the building in the red box, from Grade 1 (negligible to slight damage) to Grade 5 (destruction).\nAnswer with the grade only, for example: Grade 3.",
+ "grader": {
+  "file": "/kaggle/input/notebooks/abrarmohammedtanzim/r16c-step5b-third-grader-seed/step5b/grader_seed44.pth",
+  "labels": [
+   "Intact",
+   "Damaged",
+   "Destroyed",
+   "None"
+  ],
+  "bias": {
+   "Intact": 0.0,
+   "Damaged": -2.0,
+   "Destroyed": -4.0,
+   "None": -3.5
+  },
+  "crop": 128,
+  "margin": 32,
+  "regraded": [
+   [
+    17878,
+    806,
+    339,
+    601
+   ],
+   [
+    1230,
+    2842,
+    177,
+    121
+   ],
+   [
+    208,
+    229,
+    1031,
+    132
+   ]
+  ],
+  "recorded": [
+   [
+    17878,
+    806,
+    339,
+    601
+   ],
+   [
+    1230,
+    2841,
+    178,
+    121
+   ],
+   [
+    208,
+    229,
+    1031,
+    132
+   ]
+  ],
+  "grades_differing": 2,
+  "recorded_recall_on_graded": {
+   "Intact": 0.9398,
+   "Damaged": 0.6686,
+   "Destroyed": 0.7023
+  }
+ },
+ "images": {
+  "validation": 645,
+  "left_out_leaked": 40,
+  "used": 605,
+  "in_sample": 180
+ },
+ "true_buildings": {
+  "Intact": 19164,
+  "Damaged": 4348,
+  "Destroyed": 1374
+ },
+ "versions": {
+  "torch": "2.11.0+cu128",
+  "transformers": "5.16.1"
+ }
+}
