@@ -9,40 +9,43 @@ Changes from the original:
     anything else, such as costs.
   - The Emergency service and Assignment teams also get the guideline search.
   - Reports go to reports/offline/ or reports/online/, and each starts with its mode.
-  - CrewAI's usage telemetry is off, and so is its trace upload.
-  - (3 Nov 2026, roadmap T2 steps 1-3) No Gemini: the four agents' LLM and the three image
-    tools use a local model on this computer, set in local_model.py (vLLM on Kaggle, or
-    Ollama on a laptop). So no API key is needed. The crew's limit of 2 requests a minute
-    (Gemini's free plan) is gone, and so is an unused langchain import.
+  - CrewAI's usage telemetry is off.
+The LLM and the three image tools still call Gemini (roadmap T2 steps 1-3).
 """
 
 import os
 
 # CrewAI otherwise sends usage telemetry to telemetry.crewai.com
 os.environ.setdefault("CREWAI_DISABLE_TELEMETRY", "true")
-# and, on a first run, asks whether to upload a trace of the run
-os.environ.setdefault("CREWAI_TRACING_ENABLED", "false")
-# and, with verbose=True, asks pypi.org for its newest version (found by run_with_netlog.py)
-os.environ.setdefault("CREWAI_DISABLE_VERSION_CHECK", "true")
 
-from crewai import Agent, Task, Crew, Process
+from crewai import Agent, Task, Crew, Process, LLM
 
 from crewai.tools import tool
 from local_img_tool import local_img_interpreter
 from global_img_tool import global_img_interpreter
 from global_annotation_tool import global_map_annotation
 from pdf_search_tool import offline_pdf_search_tool
-import local_model
 
 from dotenv import load_dotenv
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 load_dotenv(dotenv_path=os.path.join(script_dir, ".env"))
 
-# The local model replaces Gemini (roadmap T2 steps 1-2); its settings are in local_model.py
-local_llm = local_model.crew_llm()
-print(f"Local model: {local_model.MODEL} at {local_model.BASE_URL} ({local_model.PROVIDER}), "
-      f"tool calls: {'native' if local_model.NATIVE_TOOLS else 'text'}")
+# Set up Gemini LLM
+api_key = os.getenv("GEMINI_API_KEY") or os.getenv("OPENAI_API_KEY")
+if api_key:
+    os.environ["GEMINI_API_KEY"] = api_key
+    gemini_llm = LLM(
+        model="gemini/gemini-3.1-flash-lite",
+        api_key=api_key
+    )
+else:
+    # Offline fallback LLM: points to local vLLM / OpenAI-compatible endpoint
+    gemini_llm = LLM(
+        model=os.getenv("LOCAL_LLM_MODEL", "openai/local-model"),
+        base_url=os.getenv("LOCAL_LLM_URL", "http://localhost:8000/v1"),
+        api_key="NA"
+    )
 
 # Offline by default. DISASTELLER_ONLINE=1 adds the two web tools and the
 # "search the internet" wording of tasks 3-6.
@@ -93,7 +96,7 @@ Expert_team = Agent(
     summary of the the content in the images""",
     verbbose=True,
     allow_delegation=True,
-    llm=local_llm,
+    llm=gemini_llm,
     tools=[local_img_interpreter, global_map_annotation, offline_pdf_search_tool] + langchain_tools
 )
 
@@ -104,7 +107,7 @@ Alerts_team = Agent(
      according to the contents got from the 'Expert team'. """,
     verbbose=True,
     allow_delegation=True,
-    llm=local_llm,
+    llm=gemini_llm,
     tools=[global_img_interpreter] + langchain_tools
 )
 
@@ -116,7 +119,7 @@ Assign_team = Agent(
     generate the reconstruction plan. """,
     verbbose=True,
     allow_delegation=False,  # forbid it reuse the global_map_annotation in 'expert team'
-    llm=local_llm,
+    llm=gemini_llm,
     tools=[global_img_interpreter, offline_pdf_search_tool] + langchain_tools
 )
 
@@ -128,18 +131,28 @@ Emergency_team = Agent(
     shelter and hospital, confirm the location of immediate transportation recovery.""",
     verbbose=True,
     allow_delegation=False,  # forbid it to use other agents
-    llm=local_llm,
+    llm=gemini_llm,
     tools=[local_img_interpreter, global_img_interpreter, offline_pdf_search_tool] + langchain_tools
 )
 
 agents = [Expert_team, Alerts_team, Emergency_team, Assign_team]  # Add other agents as needed
 
 # Offline, tasks 3-6 get this instead of "search the internet" (System_Design_Notes §2.2)
-OFFLINE_RULES = """
-    Work offline: use only the facts given to you (the other teams' reports and the image tools) and the
-    guideline search "offline_pdf_search_tool", and cite the section IDs it returns, e.g. [SPHERE-3-p1].
+# T2 Step 5: Inject verified spatial damage facts from R11 (buildings.sqlite) and T1 v3 (hotspots.json)
+try:
+    from disasteller_inputs import format_disaster_facts
+    TARGET_IMAGE = os.getenv("TARGET_DISASTER_IMAGE", "hurricane_florence_00000000_post_disaster.png")
+    DISASTER_FACTS_BLOCK = "\n" + format_disaster_facts(TARGET_IMAGE) + "\n"
+except Exception as e:
+    DISASTER_FACTS_BLOCK = f"\n[Disaster facts loader unavailable: {e}]\n"
+
+OFFLINE_RULES = f"""
+    Work offline: use only the facts given to you (the other teams' reports, the spatial damage facts below, and the image tools)
+    and the guideline search "offline_pdf_search_tool", and cite the section IDs it returns, e.g. [SPHERE-3-p1].
     If something needs data you do not have, such as costs, budgets, staff numbers from past disasters,
     population counts or contact details, write "not available offline" instead of estimating it.
+
+    {DISASTER_FACTS_BLOCK}
     """
 
 task1 = Task(
@@ -274,7 +287,7 @@ crew = Crew(
     tasks=[task1, task2, task3, task4, task5, task6],
     process=Process.sequential,
     verbose=True,
-    # max_rpm=2 is gone: it kept Gemini's free plan under its limit, and a local server has none
+    max_rpm=2 
 )
 
 result = crew.kickoff()
