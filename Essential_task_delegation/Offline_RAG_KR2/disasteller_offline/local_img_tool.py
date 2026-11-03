@@ -4,14 +4,23 @@ import io
 from PIL import Image
 
 from crewai.tools import tool
-import google.generativeai as genai
-from dotenv import load_dotenv
-
-load_dotenv()
+try:
+    import google.generativeai as genai
+except ImportError:
+    genai = None
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 # Set up API key
 api_key = os.getenv("GEMINI_API_KEY") or os.getenv("OPENAI_API_KEY")
-genai.configure(api_key=api_key)
+if api_key and genai is not None:
+    genai.configure(api_key=api_key)
+    model = genai.GenerativeModel("gemini-3.1-flash-lite")
+else:
+    model = None
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 folder_path = os.path.join(script_dir, "Disaster_image", "Local_image")
@@ -35,7 +44,6 @@ def encode_images_in_folder(folder_path,target_size=(256,256)):
 
 encoded_images = encode_images_in_folder(folder_path, target_size=(720,720)) #encoded_images[i]
 
-model = genai.GenerativeModel("gemini-3.1-flash-lite")
 
 @tool
 def local_img_interpreter(text: str) -> str:
@@ -49,6 +57,8 @@ def local_img_interpreter(text: str) -> str:
         str: The input from the LLM.
     """
 
+    if model is None:
+        return "[Offline Mode: Gemini API key not configured. Using local R11 building metrics and facts.]"
     prompt = "describe the disaster in detail in the images, each image requires 200 words. " + text
     print("Local information:", prompt)
 

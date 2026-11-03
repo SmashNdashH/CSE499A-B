@@ -1,3 +1,6 @@
 # Large files that make_kaggle_upload.py can make again
 models/
 kaggle_upload/
+
+# Database files rewritten on search
+local_chroma_db/

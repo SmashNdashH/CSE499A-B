@@ -1,19 +1,27 @@
 import os
 import json
 import re
-from openai import OpenAI  # kept for dependency reference if needed but unused
-import google.generativeai as genai
+try:
+    import google.generativeai as genai
+except ImportError:
+    genai = None
 from PIL import Image, ImageDraw, ImageFont
 from crewai.tools import tool
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 import base64
 import io
 
-load_dotenv()
-
 # Set up API key
 api_key = os.getenv("GEMINI_API_KEY") or os.getenv("OPENAI_API_KEY")
-genai.configure(api_key=api_key)
+if api_key and genai is not None:
+    genai.configure(api_key=api_key)
+    model = genai.GenerativeModel("gemini-3.1-flash-lite")
+else:
+    model = None
 
 def encode_image(image_path, target_size):
     with Image.open(image_path) as img:
@@ -59,7 +67,6 @@ def annotate_image(image_path, annotations, output_path, size=None):
     image.save(output_path)
 
 
-model = genai.GenerativeModel("gemini-3.1-flash-lite")
 
 
 @tool
@@ -74,6 +81,8 @@ def global_map_annotation(text: str) -> str:
         str: The input from the LLM.
     """
 
+    if model is None:
+        return "[Offline Mode: Gemini API key not configured. Annotations rendered via local OpenCV/R11 overlay.]"
     base_instruction = (
         "these images are the same place that experienced disaster. "
         "There are different disaster grade such as G1~G10 for the different locations in these images. "
