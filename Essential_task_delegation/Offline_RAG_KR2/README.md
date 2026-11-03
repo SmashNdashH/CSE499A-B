@@ -608,6 +608,25 @@ writes each section) is decided after that run.
 - **Not tested here:** vLLM, the real model and the install from wheels. The
   practice run on Kaggle checks these first.
 
+**Kaggle practice run 1 (3 Nov, internet on): stopped before DisasTeller ran**
+- What worked: both prep notebooks (248 installer files, 4.5 GB, with vLLM
+  0.25.1, CrewAI 1.15.2 and torch 2.11.0; the model, 16.6 GB, float16, with
+  its own chat template). In the run, the install from those files, the model
+  loading on the two T4s, and the vLLM server (`Server has: ['disasterm3-7b']`).
+- Where it stopped: the picture test, with `FileNotFoundError` for
+  `Disaster_image/Local_image/Picture1.png`. The code files were in the
+  dataset, but not at that path. The zip itself stores the path correctly
+  (checked), so the folder layout changed on Kaggle.
+- Fix: before anything uses the GPU, the notebook now finds each file listed
+  in `disasteller_manifest.json` by its name, checks its sha256, and copies it
+  to `/kaggle/working/disasteller/` at the listed path. DisasTeller runs from
+  that copy. If a file is missing or changed, the notebook stops there. Tested
+  on four made-up layouts: as zipped, all files at the top level, the pictures
+  in another folder (all three put right), and one picture missing (stopped
+  with its name). `t2_notebook_info.json` records where each file was found.
+- This run's outputs were not downloaded, so this note is all that is kept of
+  it. Practice run 2 uses the fixed notebook.
+
 
 ## Retrieval test of the guideline search (T2 step 4)
 
