@@ -10,6 +10,16 @@ Changes from the original (3 Nov 2026, roadmap T2 step 3):
     picture per request (the original sent all six together).
   - The photos are read in name order. os.listdir() gives a different order on different
     computers.
+
+Changes after Kaggle practice run 2 (5 Nov 2026):
+  - The agent's input text is no longer added to the question about each photo. In run 2 the
+    agent sent its own guess of a description, and the model repeated that guess: 4 of the
+    6 photo descriptions were the same text. The question now asks only about the photo,
+    and to name the place on its sticker. The agent's text is still shown in the run log.
+  - The photos are described once per run. A later call (the same team again, or the
+    Emergency service team) gets the same descriptions back without asking the model again.
+  - The tool's description tells the agent what the tool does (it was "Process the text
+    with the LLM").
 """
 import os
 import base64
@@ -44,21 +54,35 @@ def encode_images_in_folder(folder_path,target_size=(256,256)):
 image_names = image_names_in_folder(folder_path)
 encoded_images = encode_images_in_folder(folder_path, target_size=(720,720)) #encoded_images[i]
 
+PROMPT = ("describe the disaster in detail in this image, in about 200 words. "
+          "If the image has a sticker or sign with a place name, start with that place name. "
+          "Describe only what this image shows.")
+_descriptions = None  # filled by the first call; the photos don't change during a run
+
+
 @tool
 def local_img_interpreter(text: str) -> str:
     """
-    Process the text with the LLM.
+    Describes the six post-earthquake photos taken on the ground, one by one: the place
+    name on each photo's sticker, and the damage to buildings, roads and trees. The photos
+    are always the same, so the input text can be short, e.g. "describe the photos".
 
     Args:
-        text (str): The input text.
+        text (str): A short request.
 
     Returns:
-        str: The input from the LLM.
+        str: One description per photo, each starting with the photo's file name.
     """
+    global _descriptions
+    print(f"Photo tool asked: {text[:300]}")
+    if _descriptions is not None:
+        return "(The same photos, described earlier in this run.)\n\n" + _descriptions
 
-    prompt = "describe the disaster in detail in this image, in about 200 words. " + text
     answers = []
     for name, image in zip(image_names, encoded_images):
-        print(f"Local information ({name}):", prompt)
-        answers.append(f"Image {name}:\n" + ask_with_images(prompt, [image], max_tokens=600))
-    return "\n\n".join(answers)
+        print(f"Local information ({name}):", PROMPT)
+        answers.append(f"Image {name}:\n" + ask_with_images(PROMPT, [image], max_tokens=600))
+    result = "\n\n".join(answers)
+    if "An error occurred" not in result:
+        _descriptions = result
+    return result

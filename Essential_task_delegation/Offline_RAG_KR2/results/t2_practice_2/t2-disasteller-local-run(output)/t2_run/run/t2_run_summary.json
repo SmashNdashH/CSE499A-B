@@ -1,0 +1,45 @@
+{
+  "verdict": "FAILED",
+  "internet": "on",
+  "rules": {
+    "1. The run finished": false,
+    "2. All six reports, each starting 'Mode: offline', each 50+ words": false,
+    "3. Nothing went outside this computer": true,
+    "4. No Gemini library was loaded": true,
+    "5. Every model question got an answer": true
+  },
+  "signals": {
+    "minutes": 11.4,
+    "network_events": 18,
+    "external": [],
+    "guideline_searches": 1,
+    "photo_questions": 6,
+    "map_questions": 1,
+    "map_label_questions": 2,
+    "labelled_map_saved": true,
+    "model_call_retries": 0,
+    "total_words": 0,
+    "total_citations": 0,
+    "total_citations_real": 0
+  },
+  "reports": {
+    "Expert_team_report.txt": {
+      "exists": false
+    },
+    "Alerts_team_report_for_social_media.txt": {
+      "exists": false
+    },
+    "Emergency_team_report.txt": {
+      "exists": false
+    },
+    "Emergency_service_human_resource_allocation.txt": {
+      "exists": false
+    },
+    "Public_community_report.txt": {
+      "exists": false
+    },
+    "Reconstruction_plan.txt": {
+      "exists": false
+    }
+  }
+}

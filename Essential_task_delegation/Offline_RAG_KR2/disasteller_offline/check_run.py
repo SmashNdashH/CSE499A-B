@@ -12,11 +12,23 @@ and run_log.txt. The Offline_RAG_KR2 folder gives guideline_chunks.jsonl, to tel
 citation IDs from made-up ones. --internet is what the notebook measured.
 
 Writes t2_run_summary.json into the run folder. Exit code 0 = every rule passed.
+
+5 Nov 2026: more signals (the rules are unchanged), from the run log and from
+llm_calls.jsonl, which local_model.py now writes: how often a conversation was shortened,
+the biggest real prompt the server counted, how many labels the map got, how many of the
+photo descriptions differ, and how often a team hit its step limit.
+
+7 Nov 2026: latency signals, also from llm_calls.jsonl (measured, not graded; the rules
+are unchanged): the time of each guideline search, of each model call, and of each report,
+as the median, the 90th percentile ("p90": 9 in 10 were at most this fast) and the
+slowest. Calls that ended in an error are left out of these times.
 """
 
 import json
+import math
 import os
 import re
+import statistics
 import sys
 
 REPORTS = [
@@ -28,7 +40,100 @@ REPORTS = [
     "Reconstruction_plan.txt",
 ]
 FAILED_MARK = "Local model gave no answer after 3 tries"  # the same text as in local_model.py
+SHORTENED_MARK = "Model message shortened"                # the same text as in local_model.py
+FORCED_ANSWER = "MUST give your absolute best final answer"  # CrewAI's text at the step limit
 ID_PREFIXES = ("EMS98-", "XBD-", "IWGSEM-", "INSARAG3-", "INSARAG2B-", "SPHERE-")
+
+
+def call_signals(run_dir) -> dict:
+    """Signals from llm_calls.jsonl (one line per model call), if the run wrote it."""
+    path = os.path.join(run_dir, "llm_calls.jsonl")
+    if not os.path.isfile(path):
+        return {"llm_calls_log": False}
+    calls = [json.loads(line) for line in open(path, encoding="utf-8") if line.strip()]
+    agent = [c for c in calls if c.get("kind") == "agent"]
+    image = [c for c in calls if c.get("kind") == "image"]
+    real = [(c["usage"] or {}).get("prompt_tokens") for c in agent if c.get("usage")]
+    real = [r for r in real if r]
+    ratios = [c["estimated_tokens_sent"] / c["usage"]["prompt_tokens"] for c in agent
+              if c.get("usage") and c["usage"].get("prompt_tokens") and c.get("estimated_tokens_sent")]
+    photos = [c.get("answer", "") for c in image if c.get("prompt", "").startswith("describe the disaster")]
+    return {
+        "llm_calls_log": True,
+        "agent_calls": len(agent),
+        "image_calls": len(image),
+        "calls_with_errors": sum(1 for c in calls if c.get("error")),
+        "biggest_prompt_tokens_real": max(real) if real else None,
+        "biggest_prompt_tokens_estimated": max((c.get("estimated_tokens_sent", 0) for c in agent), default=None),
+        "lowest_estimate_to_real_ratio": round(min(ratios), 2) if ratios else None,
+        "answer_tokens_real": sum((c.get("usage") or {}).get("completion_tokens", 0) or 0 for c in calls),
+        "minutes_in_model_calls": round(sum(c.get("seconds", 0) for c in agent + image) / 60, 1),
+        "step_limit_reached": sum(1 for c in agent if FORCED_ANSWER in c.get("last_message", "")),
+        "photo_descriptions": len(photos),
+        "photo_descriptions_different": len(set(photos)),
+        **latency_signals(calls),
+    }
+
+
+def _median(values, digits=1):
+    return round(statistics.median(values), digits) if values else None
+
+
+def _p90(values, digits=1):
+    """The 90th percentile by nearest rank: 9 in 10 of the values are at most this."""
+    if not values:
+        return None
+    values = sorted(values)
+    return round(values[math.ceil(0.9 * len(values)) - 1], digits)
+
+
+def latency_signals(calls) -> dict:
+    """How long the searches, the model calls and the reports took (7 Nov 2026)."""
+    ok = [c for c in calls if not c.get("error") and c.get("seconds") is not None]
+    load = [c for c in ok if c.get("kind") == "search_load"]
+    search_ms = [c["seconds"] * 1000 for c in ok if c.get("kind") == "search"]
+    agent_s = [c["seconds"] for c in ok if c.get("kind") == "agent"]
+    image_s = [c["seconds"] for c in ok if c.get("kind") == "image"]
+    speeds = [c["usage"]["completion_tokens"] / c["seconds"] for c in ok
+              if c.get("kind") in ("agent", "image") and c["seconds"] > 0
+              and (c.get("usage") or {}).get("completion_tokens")]
+    return {
+        "search_index_load_seconds": round(load[0]["seconds"], 1) if load else None,
+        "search_backend": load[0].get("backend") if load else None,
+        "searches_timed": len(search_ms),
+        "search_ms_median": _median(search_ms),
+        "search_ms_p90": _p90(search_ms),
+        "search_ms_max": round(max(search_ms), 1) if search_ms else None,
+        "agent_call_seconds_median": _median(agent_s),
+        "agent_call_seconds_p90": _p90(agent_s),
+        "agent_call_seconds_max": round(max(agent_s), 1) if agent_s else None,
+        "image_call_seconds_median": _median(image_s),
+        "image_call_seconds_p90": _p90(image_s),
+        "image_call_seconds_max": round(max(image_s), 1) if image_s else None,
+        "answer_tokens_per_second_median": _median(speeds),
+        "report_minutes": {c["report"]: round(c["seconds"] / 60, 1) for c in ok if c.get("kind") == "task"},
+    }
+
+
+def print_latency(signals) -> None:
+    """A short table of the latency signals, for the notebook output."""
+    def three(prefix, unit):
+        values = [signals.get(f"{prefix}_{part}") for part in ("median", "p90", "max")]
+        return "not measured" if values[0] is None else " / ".join(f"{v:g}" for v in values) + f" {unit}"
+
+    print("\nLatency (median / p90 / slowest):")
+    load = signals.get("search_index_load_seconds")
+    searches = signals.get("searches_timed", 0)
+    print(f"  guideline search:  {three('search_ms', 'ms')}, {searches} search{'' if searches == 1 else 'es'}"
+          + (f" (loading the index once: {load:g} s, {signals.get('search_backend')})" if load is not None else ""))
+    print(f"  agent model call:  {three('agent_call_seconds', 's')}, {signals.get('agent_calls', 0)} calls")
+    print(f"  image model call:  {three('image_call_seconds', 's')}, {signals.get('image_calls', 0)} calls")
+    speed = signals.get("answer_tokens_per_second_median")
+    print(f"  answer speed:      {'not measured' if speed is None else f'{speed:g} tokens/s (median)'}")
+    reports = signals.get("report_minutes") or {}
+    print("  time per report:   " + ("" if reports else "not measured"))
+    for name, minutes in reports.items():
+        print(f"    {name:50} {minutes:g} min")
 
 
 def main(argv) -> int:
@@ -94,10 +199,13 @@ def main(argv) -> int:
             "map_questions": log.count("Global information:"),
             "map_label_questions": log.count("This image is a map of a place"),
             "labelled_map_saved": os.path.isfile(os.path.join(run_dir, "reports", "offline", "4_anotated.png")),
+            "map_labels_drawn": [int(n) for n in re.findall(r"Labelled map saved: .*? \((\d+) labels\)", log)],
+            "model_messages_shortened": log.count(SHORTENED_MARK),
             "model_call_retries": log.count("Local model call failed"),
             "total_words": sum(r.get("words", 0) for r in reports.values()),
             "total_citations": sum(r.get("citations", 0) for r in reports.values()),
             "total_citations_real": sum(r.get("citations_real", 0) for r in reports.values()),
+            **call_signals(run_dir),
         },
         "reports": reports,
     }
@@ -114,6 +222,8 @@ def main(argv) -> int:
         else:
             print(f"{name:50} MISSING")
     print("\nOther signals:", json.dumps(summary["signals"]))
+    if summary["signals"].get("llm_calls_log"):
+        print_latency(summary["signals"])
     return 0 if passed else 1
 
 

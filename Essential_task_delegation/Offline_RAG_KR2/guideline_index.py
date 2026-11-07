@@ -126,7 +126,7 @@ GUIDELINES = [
 ]
 
 TARGET_WORDS = 250     # split long sections near this size
-MAX_WORDS = 320        # never let a chunk grow past this
+MAX_WORDS = 320        # body text limit; the heading added on top can make a chunk a bit longer
 MIN_SECTION_WORDS = 25  # shorter sections are folded into the next one
 MARGIN = 0.08          # top/bottom share of a page that holds running headers and footers
 RRF_K = 60             # reciprocal rank fusion constant (the usual value)
@@ -145,8 +145,8 @@ def _read_lines(pdf_path: str, first_page: int, last_page, min_size: float = 0):
     Running headers and footers are dropped: lines in the top or bottom
     MARGIN of the page that are no larger than body text and repeat on 2+
     pages (digits ignored), or that are far smaller than body text. Large
-    titles near the top ("Appendix 1", "Appendix 2") are kept. So is text
-    smaller than min_size, used to skip figure captions and tables.
+    titles near the top ("Appendix 1", "Appendix 2") are kept. Text smaller
+    than min_size is dropped too, to skip figure captions and tables.
     """
     import fitz  # PyMuPDF; only needed to build the index
 

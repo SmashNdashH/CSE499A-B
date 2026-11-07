@@ -14,6 +14,20 @@ Changes from the original:
     tools use a local model on this computer, set in local_model.py (vLLM on Kaggle, or
     Ollama on a laptop). So no API key is needed. The crew's limit of 2 requests a minute
     (Gemini's free plan) is gone, and so is an unused langchain import.
+  - (5 Nov 2026, after Kaggle practice run 2) Each team may take at most 10 steps (tool
+    calls and answers) per task instead of CrewAI's 25, and then must give its answer. No
+    team hands work to another team ("delegation" is off for the Expert and Alerts teams).
+    In run 2 the Expert team called the same tools again and again, handed its report to
+    the Assignment team once, and tried 6 more times without naming a team (an error each
+    time); every step made the conversation longer, until the model could not read it.
+  - (7 Nov 2026) The four agents had "verbbose=True", a spelling mistake copied from the
+    original, which CrewAI ignores. It is now verbose=True, as the original meant. So the
+    run log also shows "Maximum iterations reached" when a team hits the step limit, and
+    CrewAI's error messages (a failed tool, an answer in the wrong format, a failed model
+    call). What the model is sent does not change.
+  - (7 Nov 2026, latency) When a report is finished, the run log says how long its task took
+    ("Report finished: ... after ... min"), and llm_calls.jsonl gets a line for it (kind
+    "task"). The time is CrewAI's own: from the task's start to its end.
 """
 
 import os
@@ -49,6 +63,10 @@ print(f"Local model: {local_model.MODEL} at {local_model.BASE_URL} ({local_model
 ONLINE = os.getenv("DISASTELLER_ONLINE") == "1"
 MODE = "online" if ONLINE else "offline"
 print(f"DisasTeller mode: {MODE}")
+
+# The most steps (tool calls and answers) a team takes for one task before it must answer.
+# CrewAI's default is 25; task 1 needs about 5 (photos, 1-3 searches, map, report).
+MAX_STEPS = 10
 
 if ONLINE:
     import requests
@@ -91,8 +109,9 @@ Expert_team = Agent(
     goal="Analyse the contents got from the detailed observations from the local and global disaster images",
     backstory="""Your primary role is to function as the expert team, generate a disaster report according to the 
     summary of the the content in the images""",
-    verbbose=True,
-    allow_delegation=True,
+    verbose=True,
+    allow_delegation=False,  # True in the original; off since 5 Nov (see the top of this file)
+    max_iter=MAX_STEPS,
     llm=local_llm,
     tools=[local_img_interpreter, global_map_annotation, offline_pdf_search_tool] + langchain_tools
 )
@@ -102,8 +121,9 @@ Alerts_team = Agent(
     goal="Analyse the contents got from the 'Expert team', social media news writing and danger area alerting",
     backstory="""Your primary role is to function as the Alerts team, generate danger area alert and social media news
      according to the contents got from the 'Expert team'. """,
-    verbbose=True,
-    allow_delegation=True,
+    verbose=True,
+    allow_delegation=False,  # True in the original; off since 5 Nov (see the top of this file)
+    max_iter=MAX_STEPS,
     llm=local_llm,
     tools=[global_img_interpreter] + langchain_tools
 )
@@ -114,8 +134,9 @@ Assign_team = Agent(
     backstory="""Your primary role is to function as the Assignment team, allocate human resource for carrying out the 
     post-disaster management, and finally inform the public communities about your organisation's operation, and 
     generate the reconstruction plan. """,
-    verbbose=True,
+    verbose=True,
     allow_delegation=False,  # forbid it reuse the global_map_annotation in 'expert team'
+    max_iter=MAX_STEPS,
     llm=local_llm,
     tools=[global_img_interpreter, offline_pdf_search_tool] + langchain_tools
 )
@@ -126,8 +147,9 @@ Emergency_team = Agent(
     backstory="""Your primary role is to function as the Emergency service team, according to area alerts from 
     'Alerts team', and the local inspection from 'Expert team', to ensure the locations and quantity of emergent 
     shelter and hospital, confirm the location of immediate transportation recovery.""",
-    verbbose=True,
+    verbose=True,
     allow_delegation=False,  # forbid it to use other agents
+    max_iter=MAX_STEPS,
     llm=local_llm,
     tools=[local_img_interpreter, global_img_interpreter, offline_pdf_search_tool] + langchain_tools
 )
@@ -269,11 +291,25 @@ task6 = Task(
     output_file=f'reports/{MODE}/Reconstruction_plan.txt',
 )
 
+def report_finished(output):
+    """Called by CrewAI after each task: how long the report took (latency, 7 Nov 2026)."""
+    try:
+        task = next(t for t in crew.tasks if t.output is output)
+        report = os.path.basename(task.output_file)
+        seconds = task.execution_duration or 0.0
+        print(f"Report finished: {report} after {seconds / 60:.1f} min")
+        local_model._log_call({"kind": "task", "time": round(task.end_time.timestamp(), 3),
+                               "report": report, "agent": output.agent, "seconds": round(seconds, 1)})
+    except Exception as e:  # timing must never stop the run
+        print(f"Could not time this report: {e}")
+
+
 crew = Crew(
     agents=agents,
     tasks=[task1, task2, task3, task4, task5, task6],
     process=Process.sequential,
     verbose=True,
+    task_callback=report_finished,
     # max_rpm=2 is gone: it kept Gemini's free plan under its limit, and a local server has none
 )
 

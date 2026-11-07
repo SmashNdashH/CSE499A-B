@@ -4,6 +4,9 @@ pdf_search_tool.py
 Copy of support/Ridita_Integration_of_VLM__/DisasTeller/pdf_search_tool.py,
 made offline. The original is unchanged.
 
+First version (25 Oct), kept as a record. Nothing imports it now: DisasTeller
+uses disasteller_offline/pdf_search_tool.py, which searches the same index.
+
 Changes from the original:
   - Gemini embeddings (API key + internet) -> local all-MiniLM-L6-v2 on CPU,
     via the index that guideline_index.py builds.

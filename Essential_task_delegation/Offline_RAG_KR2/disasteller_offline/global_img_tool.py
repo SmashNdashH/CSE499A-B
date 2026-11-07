@@ -8,6 +8,9 @@ Changes from the original (3 Nov 2026, roadmap T2 step 3):
   - One picture per question, as the Kaggle notebook lets vLLM take only one picture per
     request. Global_image/ holds one map (2.jpg), so this is a single question, as before.
   - The pictures are read in name order (os.listdir() differs between computers).
+  - (5 Nov 2026, after Kaggle practice run 2) The tool's description tells the agent what
+    the tool does (it was "Process the text with the LLM"). The question to the model is
+    unchanged.
 """
 import os
 import base64
@@ -42,13 +45,14 @@ encoded_images = encode_images_in_folder(folder_path, target_size=(720,720)) #en
 @tool
 def global_img_interpreter(text: str) -> str:
     """
-    Process the text with the LLM.
+    Looks at the map of the whole disaster area and finds potentially dangerous areas.
+    Give it what you know: the places and their damage grades, and what you want to find.
 
     Args:
-        text (str): The input text.
+        text (str): The places, their damage grades, and your question about the map.
 
     Returns:
-        str: The input from the LLM.
+        str: The model's reading of the map.
     """
     prompt = "Analyze the map for potential dangerous areas. " + text
     print("Global information:", prompt)

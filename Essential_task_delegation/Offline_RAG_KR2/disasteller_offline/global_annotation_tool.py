@@ -19,6 +19,19 @@ Changes from the original (all 3 Nov 2026):
   - Qwen models often give a place as a box ("bbox_2d": [x1, y1, x2, y2]) and a "label".
     Both forms are accepted; a box's label goes at its top-left corner. A label without
     a usable position is skipped instead of stopping the whole map.
+
+Changes after Kaggle practice run 2 (5 Nov 2026):
+  - The labels are found anywhere in the model's answer. In run 2 the model wrote them
+    inside a sentence ("... as follows: {"annotations": [...]}"), and the old code looked
+    only for a ```json block or an answer that was nothing but JSON, so no label was drawn.
+    If the list is cut off (the model repeated one label until its answer limit), the
+    complete labels in it are still used.
+  - The same label at the same place is drawn once, and a position outside the map is
+    skipped.
+  - The tool tells the agent what happened ("The map was labelled with 2 labels ..." or
+    "The map could not be labelled ..."). It used to give back the agent's own input, so the
+    agent could not tell whether the map step had worked.
+  - The tool's description tells the agent what the tool does and what to send.
 """
 
 import os
@@ -62,7 +75,7 @@ def annotate_image(image_path, annotations, output_path, size=None):
             font = ImageFont.load_default()
 
     # Draw annotations on the image
-    drawn = 0
+    drawn = []
     for annotation in annotations:
         if not isinstance(annotation, dict):
             print(f"Skipped a label that is not a JSON object: {annotation!r}")
@@ -74,24 +87,60 @@ def annotate_image(image_path, annotations, output_path, size=None):
         except (TypeError, ValueError, IndexError):
             print(f"Skipped a label without a usable position: {annotation!r}")
             continue
+        if not (0 <= x < image.width and 0 <= y < image.height):
+            print(f"Skipped a label outside the map: {annotation!r}")
+            continue
+        label = (round(x), round(y), str(text))
+        if label in drawn:
+            continue  # the same label at the same place: drawn once
         draw.text((x, y), str(text), font=font, fill=font_color)
-        drawn += 1
+        drawn.append(label)
 
     # Save the annotated image
     image.save(output_path)
     return drawn
 
 
+def find_annotations(answer):
+    """The list of labels in the model's answer, wherever it is: in a ```json block, in a
+    sentence, or the whole answer. Returns None if there is none."""
+    decoder = json.JSONDecoder()
+    blocks = [m.group(1) for m in re.finditer(r"```(?:json)?\s*(.*?)\s*```", answer, re.DOTALL)]
+    for candidate in blocks + [answer]:
+        candidate = re.sub(r"//[^\n]*", "", candidate)  # comments, which JSON does not allow
+        for start in (i for i, ch in enumerate(candidate) if ch in "{["):
+            try:
+                value, _ = decoder.raw_decode(candidate, start)
+            except json.JSONDecodeError:
+                continue
+            if isinstance(value, dict) and isinstance(value.get("annotations"), list):
+                return value["annotations"]
+            if isinstance(value, list) and value and all(isinstance(v, dict) for v in value):
+                return value  # a bare list of labels, as Qwen often answers
+    # A list cut off before its end: use the labels in it that are complete
+    labels = []
+    for start in (m.start() for m in re.finditer(r"\{", answer)):
+        try:
+            value, _ = decoder.raw_decode(answer, start)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(value, dict) and ("position" in value or "bbox_2d" in value):
+            labels.append(value)
+    return labels or None
+
+
 @tool
 def global_map_annotation(text: str) -> str:
     """
-    Process the text with the LLM.
+    Writes damage grades on the map of the disaster area and saves the labelled map. The
+    model finds each place on the map by its name. Send the places with their grades, e.g.
+    "Hama Street: G4, Wajima Drama Memorial Hall: G2".
 
     Args:
-        text (str): The input text.
+        text (str): Place names with their damage grades.
 
     Returns:
-        str: The input from the LLM.
+        str: Whether the map was labelled, and with which labels.
     """
 
     base_instruction = (
@@ -114,40 +163,26 @@ def global_map_annotation(text: str) -> str:
     try:
         print(llm_response)
 
-        json_match = re.search(r'```json\s*(.*?)\s*```', llm_response, re.DOTALL)
-        if not json_match:
-            json_match = re.search(r'```\s*(.*?)\s*```', llm_response, re.DOTALL)
-
-        content_dict = None
-        if json_match:
-            json_str = json_match.group(1).strip()
-            json_str = re.sub(r'//.*', '', json_str)
-            try:
-                content_dict = json.loads(json_str)
-            except json.JSONDecodeError as e:
-                print(f"Failed to decode JSON: {e}")
-        else:
-            try:
-                content_dict = json.loads(llm_response.strip())
-            except json.JSONDecodeError as e:
-                print("No JSON structure found in the content.")
-
-        if isinstance(content_dict, list):  # a bare list of labels, as Qwen often answers
-            content_dict = {"annotations": content_dict}
-
-        if content_dict and 'annotations' in content_dict:
-            print(content_dict['annotations'])
+        annotations = find_annotations(llm_response)
+        if annotations:
+            print(annotations)
             # Saved next to this run's reports, not in Global_image/: both map tools send every
             # picture there to the model. Like the reports, the path starts from the folder you run in.
             mode = "online" if os.getenv("DISASTELLER_ONLINE") == "1" else "offline"  # as in the main script
             os.makedirs(os.path.join("reports", mode), exist_ok=True)
             output_path = os.path.join("reports", mode, "4_anotated.png")
-            drawn = annotate_image(map_path, content_dict['annotations'], output_path, size=MAP_SIZE)
-            print(f"Labelled map saved: {output_path} ({drawn} labels)")
-        else:
-            print("Could not annotate image: invalid or missing annotations structure.")
+            drawn = annotate_image(map_path, annotations, output_path, size=MAP_SIZE)
+            print(f"Labelled map saved: {output_path} ({len(drawn)} labels)")
+            if drawn:
+                labels = ", ".join(f"{t} at [{x}, {y}]" for x, y, t in drawn)
+                return (f"The map was labelled with {len(drawn)} label(s): {labels}. "
+                        f"It is saved as {output_path}. The places and grades you sent: {text}")
+            return (f"The map could not be labelled: the model gave no usable position on the map. "
+                    f"The places and grades you sent: {text}")
 
-        return text
+        print("Could not annotate image: invalid or missing annotations structure.")
+        return (f"The map could not be labelled: the model's answer had no list of labels. "
+                f"The places and grades you sent: {text}")
 
     except Exception as e:
         return f"An error occurred: {str(e)}"

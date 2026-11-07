@@ -8,7 +8,9 @@ This folder has my work for the next update. It has three parts:
 3. **The guideline lookup for T2** (DisasTeller on local models): a copy of
    DisasTeller that works offline by default, and a test of the search (the
    "retrieval test"). Since 3 Nov the copy uses the team's own model instead
-   of Gemini (T2 steps 1–3), with Kaggle notebooks to run and check it.
+   of Gemini (T2 steps 1–3), with Kaggle notebooks to run and check it. On
+   5 Nov it was fixed after Kaggle practice run 2, which stopped because one
+   message to the model got too long (see "Practice run 2 and the fixes").
 
 Rule: files from other folders are copied into this folder.
 The original files are never changed.
@@ -35,8 +37,10 @@ The original files are never changed.
 | Meaning search (embeddings) | Turns each text into a list of numbers (a "vector"). Texts with the same meaning get similar numbers, so it finds a section even when the words are different. The model is all-MiniLM-L6-v2. |
 | Keyword search (BM25) | Finds sections that use the same words as the question. BM25 is the name of the scoring method. |
 | Hybrid search | Uses both searches and joins their two lists into one list (by "reciprocal rank fusion"). DisasTeller uses this one. |
-| Chroma | A small local database for this kind of search. The laptop uses it. |
-| Backend | How the search runs: Chroma on the laptop, or numpy + torch on Kaggle. |
+| Chroma | A small local database for this kind of search. The laptop used it until 4 Nov (see `local_chroma_db/` below). |
+| Backend | How the search runs: Chroma, or numpy + torch (Kaggle, and the laptop since 4 Nov). Both give the same top 3 for all 30 test questions. |
+| Delegation | In CrewAI, one agent handing part of its task to another agent. Off in this copy since 5 Nov. |
+| Step limit | The most steps (tool calls and answers) an agent may take for one task before it must give its answer (CrewAI's `max_iter`). |
 | Kaggle | A website that gives free computers for running notebooks. |
 | Hugging Face | A website that stores AI models. |
 | Notebook (`.ipynb`) | A file that holds code and the outputs of that code. |
@@ -103,12 +107,13 @@ Abrar's review asked for 7 steps. Here is what each step did, and why.
 - Runs on a normal CPU. Needs no API key (a password for an online service)
   and no internet.
 
-**pdf_search_tool.py**
-- An offline copy of DisasTeller's `pdf_search_tool.py`.
-- It is a CrewAI tool, so the agents can call it.
-- Every result starts with a citation ID, for example `[EMS98-masonry-grade-5]`.
-- DisasTeller itself imports `disasteller_offline/pdf_search_tool.py`, which
-  searches the same index.
+**pdf_search_tool.py** (first version, not used now)
+- The first offline copy of DisasTeller's `pdf_search_tool.py` (25 Oct). It is
+  a CrewAI tool, and every result starts with a citation ID, for example
+  `[EMS98-masonry-grade-5]`.
+- Nothing imports it now. DisasTeller imports
+  `disasteller_offline/pdf_search_tool.py`, which searches the same index. This
+  file is kept as a record of the first version.
 
 **hybrid_bdc_counter.py**
 - A copy of Abrar's counter
@@ -130,6 +135,13 @@ Abrar's review asked for 7 steps. Here is what each step did, and why.
   (a lock row in `chroma.sqlite3`, and an index file `length.bin`). The data
   does not change, but git then shows these two files as modified. Undo this
   with `git checkout -- local_chroma_db/` before you commit.
+- Since 4 Nov `local_chroma_db/` is no longer in git: Aryan's commit
+  `8d7203a6c` added it to `.gitignore` and removed it, so it is also gone from
+  this laptop. Without the folder, the search uses numpy + torch by itself,
+  as on Kaggle (checked on 5 Nov: `search_backend()` says `numpy + torch`).
+  It gives the same top 3 as Chroma for all 30 test questions, so nothing
+  needs to be brought back. `python guideline_index.py` would make the folder
+  again, and git now ignores it.
 
 **models/all-MiniLM-L6-v2/**
 - A PyTorch copy of the meaning-search model (90 MB). Kaggle uses it.
@@ -484,7 +496,10 @@ model" below.
 tools use the team's fine-tuned Qwen2.5-VL-7B, run by vLLM on the same Kaggle
 machine. One model does all four jobs, because it reads both text and pictures.
 The model is `AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP`, the 7B that L0
-kept on 28 Oct (to be confirmed by Abrar).
+kept on 28 Oct. It is the team's current fine-tuned 7B (confirmed 7 Nov; the
+details are in [Task_Ledger.md](../Task_Ledger.md), "L0 step 2"). Its counting
+score (BDC) is 30.31%, still below the base model's 34.2%, so it does not beat
+the base model on counting.
 
 **What changed in `disasteller_offline/`**
 - `local_model.py` (new): the one place that says which model is used.
@@ -517,7 +532,8 @@ kept on 28 Oct (to be confirmed by Abrar).
 - **A limit of 16,384 tokens** (Abrar's vLLM setting was 4,096). CrewAI gives
   each task all the earlier reports, so task 6 reads tasks 1–5. In the Gemini
   run those were 3,187 words, already about 4,000 tokens or more, before task
-  6's own instructions and answer.
+  6's own instructions and answer. **Since 5 Nov: 32,768** (see "Practice run
+  2 and the fixes").
 
 **Settings** (environment variables, or lines in `disasteller_offline/.env`)
 
@@ -526,9 +542,11 @@ kept on 28 Oct (to be confirmed by Abrar).
 | `LOCAL_LLM_PROVIDER` | `hosted_vllm` | `hosted_vllm` (vLLM) or `ollama` |
 | `LOCAL_LLM_MODEL` | `disasterm3-7b` | the model's name on the server |
 | `LOCAL_LLM_BASE_URL` | `http://localhost:8000/v1` (Ollama: `http://localhost:11434/v1`) | the server's address; must be on this computer |
-| `LOCAL_LLM_CONTEXT` | `16384` | the server's token limit, question and answer together |
+| `LOCAL_LLM_CONTEXT` | `32768` (16384 until 5 Nov) | the server's token limit, question and answer together |
+| `LOCAL_LLM_ANSWER_TOKENS` | `6144` | the longest answer an agent may write (since 5 Nov); the question is shortened to leave this much room |
 | `LOCAL_LLM_TEMPERATURE`, `LOCAL_LLM_SEED` | `0.2`, `0` | how random the answers are; the seed makes a run repeatable |
 | `LOCAL_LLM_NATIVE_TOOLS` | `0` | `1` = the server handles tool calls itself |
+| `LOCAL_LLM_CALL_LOG` | `llm_calls.jsonl` | one line per model call (since 5 Nov), and per guideline search and finished report, with its time (since 7 Nov), in the folder you run in; empty = none |
 
 **How to run it on Kaggle**
 1. On the laptop: commit, then run `python make_disasteller_upload.py`. Upload
@@ -626,6 +644,168 @@ writes each section) is decided after that run.
   with its name). `t2_notebook_info.json` records where each file was found.
 - This run's outputs were not downloaded, so this note is all that is kept of
   it. Practice run 2 uses the fixed notebook.
+
+
+## Practice run 2 and the fixes (3–5 Nov)
+
+**Kaggle practice run 2 (3 Nov, internet on): did not pass.** Rules 1 and 2
+failed; rules 3, 4 and 5 passed. Its files are in `results/t2_practice_2/`,
+as they came from Kaggle. The prep notebook's 4.2 GB of installer files were
+moved out of the project on 5 Nov, to `D:\CSE499A_kaggle_downloads\t2_practice_2\`,
+so they can't be added to git by mistake. They are also on Kaggle, as that
+notebook's output.
+- What worked:
+  - the file fix from run 1;
+  - the model: the team's 7B (`...-l0s2-mergedFP`, commit `def8f6c8`) on two
+    T4s, with vLLM 0.25.1 and CrewAI 1.15.2;
+  - all three quick tests (text, picture, CrewAI);
+  - nothing went outside the computer: 18 connections, all to `127.0.0.1`;
+  - every picture question got an answer.
+- What happened in task 1 (the Expert team), in 11.4 minutes:
+  1. **Photos.** The agent sent its own made-up description as the tool's
+     input. The tool added that text to each photo question, and the model
+     repeated it: **4 of the 6 descriptions are the same text, reworded.**
+  2. **Search.** It searched for "earthquake, disaster, building, road,
+     vegetation, Wajima, central area". The search gave `[XBD-6.2]`,
+     `[XBD-5.2.2]` and `[EMS98-notes-to-the-table]`: the xBD dataset's
+     statistics, not the damage grades.
+  3. **Map.** It sent "Wajima: G1, central area: G4". Nothing it had seen
+     before says these grades. The model wrote the labels inside a sentence,
+     and repeated one label until its answer limit cut it off. The old code
+     looked only for a ```json block, so **no label was drawn**.
+  4. **The loop.** CrewAI adds its whole tool list (about 1,200 tokens) to
+     every third tool result. Right after one such copy, the agent started
+     again from step 1. After that it called the same tools with the same
+     input, which CrewAI answers with "I tried reusing the same input".
+     It also handed its report to the Assignment team once, and tried 6
+     more times without naming a team (an error each time).
+  5. **The stop.** Every step made the conversation longer, until one
+     message had at least 16,385 tokens: one over vLLM's limit of 16,384.
+     vLLM refused it. The same happened at the later steps, and for the
+     final answer that CrewAI asks for at its step limit. CrewAI started the
+     task again 3 times, and each time it ended the same way. No report was
+     written.
+- What this showed: the model can use CrewAI's text format, because every
+  tool call was well formed. The problems are the loop, the length, and the
+  weak inputs to the tools.
+
+**The fixes (5 Nov), each for one finding above.** The pass rules are not
+changed.
+
+| Finding in run 2 | Fix | File |
+|---|---|---|
+| One message grew past 16,384 tokens | The limit is 32,768: vLLM's memory held 198,176 tokens in run 2, so this fits. Before every agent call, the conversation is measured. If it is too long, older tool results are shortened first, then the longest message (keeping its start and end). The run log says when this happens ("Model message shortened"). | `local_model.py`, run notebook |
+| vLLM got no answer length, and computed "0 tokens left" | Every agent answer may be up to 6,144 tokens long, and the question is shortened to leave that room. If vLLM still says "too long", the call is tried again with a 25% smaller limit (at most twice). | `local_model.py` |
+| The tool list came back every third tool use, and the agent started over | The copies after the first are replaced by a one-line reminder of the format. | `local_model.py` |
+| The agent looped, and handed work to other teams | Each team may take at most 10 steps per task (CrewAI's default is 25), then must answer. Delegation is off. | main script |
+| 4 of 6 photo descriptions were the agent's own text | The photo question no longer includes the agent's text. It asks for the place name on the sticker first. The photos are described once per run; later calls get the same descriptions. | `local_img_tool.py` |
+| No label was drawn on the map | The labels are found anywhere in the answer, even in a cut-off list. The same label at the same place is drawn once. A position outside the map is skipped. The tool tells the agent whether the map was labelled. | `global_annotation_tool.py` |
+| The search query was a list of loose keywords | The tool's description says: one thing at a time, in the guidelines' words, with two examples. | `pdf_search_tool.py` |
+| Three tools said only "Process the text with the LLM" | Each tool now says what it does and what to send. | the three image tools |
+| The log didn't show what the model answered | Every model call goes to `run/llm_calls.jsonl`, with vLLM's real token counts. `check_run.py` reports new signals from it. | `local_model.py`, `check_run.py` |
+
+How the size is measured: there is no tokenizer in DisasTeller, so
+`local_model.py` estimates the count on purpose a little too high. It counts
+one token per 3.5 letters, one per digit, and one per non-English character.
+Checked on 5 Nov with Qwen2.5-VL's real tokenizer:
+- On the 405 guideline sections, the six old reports, the run-2 log and
+  CrewAI's prompts, the estimate is 1.4 to 1.7 times the real count.
+- On every agent prompt in the laptop runs below, it was 1.22 to 1.32 times.
+
+**Checked on the laptop (5 Nov), with a stricter pretend server**
+
+The new pretend server:
+- counts every prompt with Qwen2.5-VL's real tokenizer;
+- refuses a prompt that doesn't fit, with vLLM's own error message;
+- reports real token counts;
+- can act like run 2: it gives the run-2 photo input and search query, gives
+  the two real map answers from run 2, then calls the same tool again and
+  again until CrewAI forces an answer.
+
+| Pretend model | Server limit | Biggest real prompt | Refused as too long | Messages shortened | Rules 1–5 |
+|---|---|---|---|---|---|
+| Uses each tool once, then answers | 32,768 | 10,921 | 0 | 0 | passed |
+| Loops like run 2 | 32,768 | 20,629 | 0 | 2 | passed |
+| Loops like run 2 | 16,384 (the old limit) | 7,668 | 0 | 35 | passed |
+| Loops; the server's real limit (24,000) is lower than DisasTeller thinks (32,768) | 24,000 | 20,629 | 6, each tried again with a smaller limit, then answered | 14 | passed |
+
+- In the loop runs, every team reached its 10-step limit and then wrote its
+  report. All six reports were written each time.
+- Run 2's first map answer (cut off) now gives 38 complete labels, which are
+  1 label after duplicates are removed (G1 at [798, 702], next to the Wajima
+  Morning Market). Its second answer gives 3 labels.
+- The two example searches in the tool's description work:
+  - "EMS-98 damage grade 4 very heavy damage masonry building" gives
+    `[EMS98-masonry-grade-4]` first;
+  - "Sphere covered living space per person" gives `[SPHERE-3-p1]` first.
+- Run 2's own query gives the same 3 sections on the laptop as on Kaggle.
+- The notebook's three quick tests work with the new `local_model.py`.
+- Only the run notebook changed. The two prep notebooks are byte for byte
+  the same, so their Kaggle outputs are used again.
+- **Not tested:** how the real 7B behaves with these changes. The pretend
+  server shows that a run can no longer stop because a message is too long,
+  and that a looping model still ends with six reports. It does not show
+  that the reports are good.
+
+**Small fixes (7 Nov)**
+- The four agents had `verbbose=True`, a spelling mistake copied from the
+  original, which CrewAI ignores. It is now `verbose=True`. So the run log
+  also shows "Maximum iterations reached" when a team hits its step limit,
+  and CrewAI's error messages. The first two laptop runs above were run
+  again: every request to the model had the same size and kind as on 5 Nov,
+  all 5 rules passed, and the looping run printed "Maximum iterations
+  reached" 6 times.
+- Two comments in `guideline_index.py` said the wrong thing, and are fixed.
+  Only comments changed, so the code and the search results are the same.
+- The top-level `pdf_search_tool.py` is marked as the first version, which
+  nothing uses (see "Files").
+
+**Latency (7 Nov): how long each step takes**
+
+Every run now records three kinds of time in `run/llm_calls.jsonl`:
+
+| What | Unit | Where it is measured |
+|---|---|---|
+| Retrieval: each guideline search | milliseconds | `pdf_search_tool.py`, around the search only. The first search of a run also loads the index and the embedding model; that load is timed on its own. |
+| Response: each model call (agent or picture question) | seconds, and answer tokens per second | `local_model.py`, from sending the question to getting the whole answer |
+| Each of the 6 reports | minutes | the main script, from CrewAI's start and end time of each task |
+
+- `check_run.py` adds the median, p90 (9 in 10 were at most this) and slowest
+  to `t2_run_summary.json`, and prints them as a short table. Calls that ended
+  in an error are left out of these times.
+- Latency is measured, not graded: no pass rule uses it.
+- On the laptop the fake model answers at once, so only the search times are
+  real there. The model times mean something only on Kaggle.
+- What the model is sent does not change. In the laptop runs, every request
+  had the same kind and order as on 5 Nov. Some prompts were up to 9 tokens
+  shorter, because each photo answer of the fake model has a random number of
+  1 to 3 digits in it.
+- Laptop, first test (7 Nov): loading the index took 23.2 s once, and the
+  search took 145 ms.
+
+**Expectation for practice run 3, written before it runs**
+- Pass: rules 1–5, the same rules as before.
+- Report quality is not graded by the rules. It is judged in the comparison
+  with the July reports.
+- Latency is recorded (see above), but no rule depends on it.
+- If every team reaches its step limit (`step_limit_reached` is 6 or more in
+  `t2_run_summary.json`), the model is not using the tools well. Then the
+  fallback should be decided before the proof run. The fallback is a fixed
+  flow: the code calls the tools, and the model only writes each section.
+
+**Next steps (practice run 3)**
+1. Commit, then run `python make_disasteller_upload.py` (it must say
+   `uncommitted changes: False`).
+2. On Kaggle, open the `disasteller-offline1` dataset → **New Version** →
+   upload the new `kaggle_upload/disasteller-offline.zip`.
+3. Open the `t2-disasteller-local-run` notebook → **File → Import Notebook** →
+   choose the new `t2_disasteller_local_run.ipynb`. Check that the 4 inputs
+   are still attached, with the newest version of `disasteller-offline1`.
+4. Accelerator **GPU T4 x2**, internet **on**, **Save Version → Save & Run All
+   (Commit)**. The prep notebooks are not run again.
+5. Check the printed git commit: it must be the new commit, not `124ad5e77`.
+   Download the outputs and the notebook into `results/t2_practice_3/`.
+6. If it passes: the proof run, the same with internet **off**.
 
 
 ## Retrieval test of the guideline search (T2 step 4)
