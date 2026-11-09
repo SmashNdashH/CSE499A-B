@@ -30,6 +30,8 @@ Settings (environment variables, or lines in disasteller_offline/.env):
                           model call (sizes, time, the answer). Empty = no file. Since 7 Nov
                           the guideline search and the main script add a line for each
                           search and each finished report, with its time (latency).
+  LOCAL_LLM_MIN_REPORT_WORDS  Default 150 (since 9 Nov). A Final Answer with fewer words is
+                          sent back to the model, at most twice (see below). 0 = off.
 The address must be on this computer (localhost, 127.0.0.1 or ::1). Anything else stops
 the program, so a wrong setting can't send data out.
 
@@ -49,6 +51,22 @@ read (16,384 tokens), and vLLM refused it. Changes:
     (at most twice).
   - Every model call is written to llm_calls.jsonl, with vLLM's real token counts, so the
     next run shows what the model answered at each step.
+
+9 Nov 2026, after Kaggle practice run 3. In that run the model often wrote a sentence about
+the report instead of the report, e.g. the Expert team's whole Final Answer was "The final
+report is generated based on the provided data and tools." (12 words). Change:
+  - If a Final Answer has fewer than LOCAL_LLM_MIN_REPORT_WORDS words (150), the model is
+    asked again in the same conversation: its short answer, then "write the complete
+    report". At most twice; after that CrewAI gets the last answer as it is, so a report
+    that stays short is still caught by the pass rules. Only CrewAI's own conversation is
+    not changed: the model sees the extra question, CrewAI sees only the final answer.
+  - Why 150: Gemini's six July reports had 379 to 912 words; in run 3 our model wrote 12
+    to 228. Every agent's Final Answer in DisasTeller is one of the six reports.
+  - The run log says when this happened ("Final Answer too short"), and llm_calls.jsonl
+    has a "short_answer" line for each time.
+  - CrewAI's own way to send a task back (a task "guardrail") is not used: in CrewAI 1.15.2
+    it saves the first answer to the report file, not the accepted one, and the second try
+    no longer sees the other teams' reports.
 """
 
 import json
@@ -76,6 +94,8 @@ TEMPERATURE = float(os.getenv("LOCAL_LLM_TEMPERATURE", "0.2"))
 SEED = int(os.getenv("LOCAL_LLM_SEED", "0"))
 NATIVE_TOOLS = os.getenv("LOCAL_LLM_NATIVE_TOOLS") == "1"
 CALL_LOG = os.getenv("LOCAL_LLM_CALL_LOG", "llm_calls.jsonl")
+MIN_REPORT_WORDS = int(os.getenv("LOCAL_LLM_MIN_REPORT_WORDS", "150"))
+REPORT_RETRIES = 2
 
 if urlparse(BASE_URL).hostname not in ("localhost", "127.0.0.1", "::1"):
     raise ValueError(f"LOCAL_LLM_BASE_URL must be on this computer (localhost), not {BASE_URL!r}.")
@@ -86,6 +106,7 @@ if ANSWER_TOKENS >= CONTEXT // 2:
 # The run log shows these lines, and check_run.py counts them
 FAILED_MARK = "Local model gave no answer after 3 tries"  # a tool that got no answer
 SHORTENED_MARK = "Model message shortened"                # the conversation was cut to fit
+SHORT_REPORT_MARK = "Final Answer too short"              # the model was asked for the whole report
 
 # ─── Measuring and shortening a conversation ─────────────────────────────────
 
@@ -209,6 +230,23 @@ def _is_too_long_error(error: Exception) -> bool:
     return "context length" in text or "maximum context" in text or "too long" in text
 
 
+FINAL_ANSWER = re.compile(r"Final Answer\s*:(.*)", re.DOTALL)
+ASK_FULL_REPORT = ("Your Final Answer above has only {words} words. It must be the complete report "
+                   "itself, not a sentence about the report. Write the whole report now, with the "
+                   "information above. Answer in this format:\n"
+                   "Thought: I now know the final answer\n"
+                   "Final Answer: <the complete report>")
+
+
+def final_answer_words(answer):
+    """The number of words after "Final Answer:", or None if the answer is not a final answer
+    (a tool call, or not text)."""
+    if not isinstance(answer, str) or "Action Input:" in answer:
+        return None
+    match = FINAL_ANSWER.search(answer)
+    return len(match.group(1).split()) if match else None
+
+
 class LocalLLM(OpenAICompatibleCompletion):
     """CrewAI's connection to a local OpenAI-style server (vLLM or Ollama), with these changes."""
 
@@ -217,6 +255,32 @@ class LocalLLM(OpenAICompatibleCompletion):
         return NATIVE_TOOLS and super().supports_function_calling()
 
     def call(self, messages, *args, **kwargs):
+        # A Final Answer that is too short to be the report: ask again for the whole report
+        # (9 Nov 2026, after practice run 3; see the top of this file)
+        self._asked_again = 0
+        answer = self._call_fitted(messages, *args, **kwargs)
+        if not MIN_REPORT_WORDS or not isinstance(messages, list):
+            return answer
+        for attempt in range(1, REPORT_RETRIES + 2):
+            words = final_answer_words(answer)
+            if words is None or words >= MIN_REPORT_WORDS:
+                return answer
+            if attempt > REPORT_RETRIES:
+                print(f"\n{SHORT_REPORT_MARK} after {REPORT_RETRIES} more tries ({words} words): "
+                      "this answer is kept")
+                _log_call({"kind": "short_answer_kept", "time": round(time.time(), 3), "words": words})
+                return answer
+            print(f"\n{SHORT_REPORT_MARK} ({words} words, fewer than {MIN_REPORT_WORDS}): asking the "
+                  f"model for the complete report (try {attempt} of {REPORT_RETRIES})")
+            _log_call({"kind": "short_answer", "time": round(time.time(), 3), "words": words,
+                       "try": attempt, "answer": answer[:1000]})
+            messages = list(messages) + [{"role": "assistant", "content": answer},
+                                         {"role": "user", "content": ASK_FULL_REPORT.format(words=words)}]
+            self._asked_again = attempt
+            answer = self._call_fitted(messages, *args, **kwargs)
+        return answer
+
+    def _call_fitted(self, messages, *args, **kwargs):
         # Too long after all (the estimate was too low): try again with a smaller limit
         self._budget_scale = 1.0
         for attempt in range(3):
@@ -254,6 +318,7 @@ class LocalLLM(OpenAICompatibleCompletion):
     def _handle_completion(self, params, *args, **kwargs):
         start = time.time()
         record = {"kind": "agent", "time": round(start, 3), **getattr(self, "_last_fit", {}),
+                  **({"asked_again": self._asked_again} if getattr(self, "_asked_again", 0) else {}),
                   "max_tokens": params.get("max_tokens"),
                   "last_message": _text(params["messages"][-1].get("content"))[-400:]
                   if params.get("messages") else ""}

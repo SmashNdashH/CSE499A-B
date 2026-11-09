@@ -200,3 +200,51 @@ model got exactly the same messages as on 5 Nov.
 `check_run.py` prints these as a short table and saves them in `t2_run_summary.json`. On my laptop
 only the search times are real, because the fake model answers at once. Practice run 3 on Kaggle
 will give the first real model times. Latency is only measured: no pass rule uses it.
+
+
+## 8. Update on 8–9 Nov: practice run 3, and the fixes
+
+The README section "Practice run 3 and the fixes" has every detail. The files are in
+`results/t2_practice_3/`.
+
+**Practice run 3 (8 Nov, internet on) did not pass.** Rule 2 failed: 3 of the 6 reports were too
+short. Rules 1, 3, 4 and 5 passed. DisasTeller took only 2.6 minutes.
+
+**What got better since run 2:**
+- The "message too long" problem is gone. The biggest message was 2,808 tokens (the limit is 32,768).
+- The 6 photo descriptions are all different now (in run 2, 4 of 6 were the same).
+- The map has 5 grade labels now (run 2 had none).
+- Nothing went online, and Gemini was not used.
+
+**What went wrong:**
+- **The model wrote a sentence about the report, not the report.** The Expert team's whole report
+  was: "The final report is generated based on the provided data and tools." (12 words).
+- **A tool was called with no input.** The Emergency team used the map tool but gave it no text.
+  The tool refused, and the team gave up (17 words).
+- **Made-up facts.** The Expert report was empty, so the later teams invented "Region A, B and C".
+- No report cites a guideline section.
+- Quality warnings: photo 5 was called a "hurricane", but it shows cracks in a building after the
+  earthquake. Some map
+  labels are in the wrong place. The broken Concrete Bridge got no grade.
+
+**Latency (the first real times):** a guideline search usually took 0.2 to 0.6 seconds (the first
+one took 6.3 seconds). One answer from our model took about 6 seconds in the middle (median) and
+18 seconds at the slowest. The model writes about 15 tokens per second.
+
+**What I changed (9 Nov):**
+- The map tool and the photo tool now work even when a team gives them no input.
+- If a team's final answer is shorter than 150 words, the model is asked again: "write the complete
+  report". At most twice; after that, the short answer is kept. Gemini's July reports had 379 to 912
+  words, so 150 is well below a real report.
+- Honest note: this makes rule 2 (at least 50 words) easier to pass. So `check_run.py` now also
+  counts how often the model was asked again, and how often the answer stayed short. Whether the
+  reports are good must be judged by reading them, in the comparison with the July reports.
+
+**Test on my laptop.** I added two new fake-model modes that act like run 3. All three tests did
+what they should:
+- like run 3: each short answer was asked again once, then full reports came back; all 5 rules passed;
+- a fake model that never writes a full report: it was asked twice per report, then the short answer
+  was kept, and rule 2 failed honestly; the run still finished;
+- a normal fake model: nothing was asked again; all 5 rules passed.
+
+**Next:** practice run 4 on Kaggle (internet on). If it passes, the proof run (internet off).

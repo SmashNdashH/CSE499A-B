@@ -547,6 +547,7 @@ the base model on counting.
 | `LOCAL_LLM_TEMPERATURE`, `LOCAL_LLM_SEED` | `0.2`, `0` | how random the answers are; the seed makes a run repeatable |
 | `LOCAL_LLM_NATIVE_TOOLS` | `0` | `1` = the server handles tool calls itself |
 | `LOCAL_LLM_CALL_LOG` | `llm_calls.jsonl` | one line per model call (since 5 Nov), and per guideline search and finished report, with its time (since 7 Nov), in the folder you run in; empty = none |
+| `LOCAL_LLM_MIN_REPORT_WORDS` | `150` | since 9 Nov: a Final Answer with fewer words is sent back to the model, at most twice (see "Practice run 3 and the fixes"); `0` = off |
 
 **How to run it on Kaggle**
 1. On the laptop: commit, then run `python make_disasteller_upload.py`. Upload
@@ -793,7 +794,7 @@ Every run now records three kinds of time in `run/llm_calls.jsonl`:
   fallback should be decided before the proof run. The fallback is a fixed
   flow: the code calls the tools, and the model only writes each section.
 
-**Next steps (practice run 3)**
+**Next steps (practice run 3)** (done 8 Nov; the result is in the next section)
 1. Commit, then run `python make_disasteller_upload.py` (it must say
    `uncommitted changes: False`).
 2. On Kaggle, open the `disasteller-offline1` dataset → **New Version** →
@@ -805,6 +806,152 @@ Every run now records three kinds of time in `run/llm_calls.jsonl`:
    (Commit)**. The prep notebooks are not run again.
 5. Check the printed git commit: it must be the new commit, not `124ad5e77`.
    Download the outputs and the notebook into `results/t2_practice_3/`.
+6. If it passes: the proof run, the same with internet **off**.
+
+
+## Practice run 3 and the fixes (8–9 Nov)
+
+**Kaggle practice run 3 (8 Nov, internet on): did not pass.** Rule 2 failed;
+rules 1, 3, 4 and 5 passed. Its files are in `results/t2_practice_3/`, as they
+came from Kaggle: `t2_run_internet_on.zip` and the notebook with its outputs.
+- The setup:
+  - code: commit `0024ae8af`, with no uncommitted changes;
+  - dataset: `disasteller-offline1`, Version 2;
+  - model: the same 7B as in run 2 (commit `def8f6c8`), with a 32,768-token
+    limit;
+  - software: vLLM 0.25.1 and CrewAI 1.15.2.
+- Timing: the notebook took 9.7 minutes, and DisasTeller itself took 2.6.
+- Against the expectation written before the run:
+  - no team reached its step limit (`step_limit_reached` is 0, not 6 or
+    more), so the fixed-flow fallback is not needed for now;
+  - rule 2 failed for a reason the expectation did not foresee: the reports
+    are too short.
+
+**What worked, compared with run 2**
+- **The "message too long" problem is gone.** The biggest message was 2,808
+  real tokens (the limit is 32,768). No conversation had to be shortened.
+- **The 6 photo descriptions are all different** (run 2: 4 of 6 were the same
+  text). Each one gives the place on its photo's sticker (the bridge photo
+  only as "a concrete bridge").
+- **The map got 5 labels** (run 2: none).
+- Nothing went outside the computer: 12 lookups and connections, all to
+  `127.0.0.1`. Gemini was not loaded. Every model question got an answer.
+
+**What went wrong**
+
+| Report | Words (July, Gemini) | What the team did |
+|---|---|---|
+| Expert team | 12 (524) | Used its three tools, then wrote as its whole report: "The final report is generated based on the provided data and tools." |
+| Alerts team | 82 (379) | Used no tool. It wrote about "Region A, B and C" with grades 2, 4 and 6. These places and grades are made up: the Expert report it was given had none. |
+| Emergency team | 17 (548) | Called the map tool with no input (`{}`). CrewAI refused the call ("Field required"), and the team wrote that the task "cannot be completed". |
+| Resource allocation | 14 (824) | Searched for "INSARAG", then wrote a sentence about the report instead of the report. |
+| Public community | 69 (912) | Repeated "Region A, B and C" and said that a full report "could not be generated". |
+| Reconstruction plan | 228 (821) | The only real report, but it is built on "Region A, B and C" too. |
+
+- No report cites a guideline ID, although each task asks for it.
+- **The model often stops early.** After a tool result, CrewAI asks it to
+  "provide the Final Answer" if the task is done. In the Expert and resource
+  allocation tasks, the model then wrote a sentence about the report (26 and
+  31 answer tokens), not the report.
+- Quality warnings (not graded by the rules):
+  - Photo 5 (North Asaichi Street) shows cracks in a building, but the model
+    called it a "hurricane", with "streets inundated with water".
+  - The Expert team gave the Wajima Drama Memorial Hall G2, although the photo
+    tool said it has no visible damage (which the photo shows). It gave the
+    four other places G4. Its only search was the five place names, which
+    found `[XBD-5.2.2]` and two EMS-98 examples, not the grade rules.
+  - The Concrete Bridge, which its photo shows broken in the middle, got no
+    grade and no label.
+  - On the map, the Hama Street label is on Hama Street, and the two Asaichi
+    Street labels are on Asaichi Street. But the hall's G2 is next to the
+    Morning Market, not on the hall. The "Central Nishikigawa Street" label is
+    on Asaichi Street too, far from Nishikigawa Street.
+
+**Latency, the first real times** (from `t2_run_summary.json`)
+
+| What | Median | p90 | Slowest | Count |
+|---|---|---|---|---|
+| Guideline search | 564 ms | 6,291 ms | 6,291 ms | 3 searches |
+| Agent model call | 6.0 s | 13.7 s | 18.3 s | 12 calls |
+| Picture model call | 5.6 s | 10.6 s | 10.6 s | 7 calls |
+
+- Loading the search index took 10.8 s, once per run.
+- The three searches took 6,291 ms (the first one), 168 ms and 564 ms. The
+  first search is probably slow because it is the first one; this is not
+  checked.
+- The model wrote 14.6 answer tokens per second (median).
+- Each report took 0.1 to 1.3 minutes, but only because the reports are so
+  short. These times will grow when the reports are full length.
+
+**The fixes (9 Nov).** The pass rules are not changed.
+
+| Finding in run 3 | Fix | File |
+|---|---|---|
+| A team called the map tool with no input, and gave up | The map tool and the photo tool now accept a call with no input. The map question is then only "Analyze the map for potential dangerous areas." The photo question never used the input. | `global_img_tool.py`, `local_img_tool.py` |
+| The model wrote a sentence about the report instead of the report | If a Final Answer has fewer than 150 words, the model is asked again in the same conversation: "write the complete report". At most twice; after that, CrewAI gets the last answer as it is. The run log says "Final Answer too short" each time. | `local_model.py` |
+| The tool error did not show in the notebook | The notebook also prints CrewAI's "Tool Error" lines and the new "Final Answer too short" lines. | run notebook |
+
+About the second fix:
+- **Why 150 words:** Gemini's six July reports had 379 to 912 words. In run 3
+  our model wrote 12 to 228. Every agent's Final Answer in DisasTeller is one
+  of the six reports.
+- **It makes rule 2 easier to pass.** Rule 2 asks for 50+ words, and the model
+  is now asked again below 150. `check_run.py` therefore reports two new
+  signals: `final_answers_asked_again` (how often the model was asked again)
+  and `final_answers_kept_short` (how often it was still short after two more
+  tries). A report that stays short still fails rule 2. Whether a report is
+  good must be judged by reading it, in the comparison with the July reports.
+- **Why not CrewAI's own way** (a task "guardrail"). In CrewAI 1.15.2, a
+  guardrail sends the whole task back, but:
+  - it saves the first answer to the report file, not the accepted one;
+  - the second try no longer sees the other teams' reports;
+  - after its last try it stops the whole run.
+- Only CrewAI's own record of the conversation is unchanged: the model sees
+  the extra question, CrewAI sees only the final answer. Both questions are
+  in `llm_calls.jsonl`.
+
+**Not changed:** the missing citations, the made-up places and the weak photo
+and map readings. They are about how well the model writes, and they are
+judged in the comparison, not fixed by the code.
+
+**Checked on the laptop (9 Nov)**, with the stricter pretend server, which
+has two new modes that act like run 3:
+
+| Pretend model | Asked again | Kept short | Tool errors | Rules 1–5 |
+|---|---|---|---|---|
+| Like run 3: calls the photo and map tools with `{}`, and its first Final Answer is run 3's 12-word sentence; asked again, it writes a full report | 6 (once per report) | 0 | 0 | passed |
+| The same, but the Final Answer stays short | 12 (twice per report) | 6 | 0 | rule 2 failed (each report 12 words); the run still finished |
+| Uses each tool once, then a full report (as on 5 and 7 Nov) | 0 | 0 | 0 | passed; the same 27 requests, of the same kinds, as on 7 Nov |
+
+- In the last run, the biggest prompt was 10,932 tokens (10,921 on 7 Nov).
+  The two tool descriptions now say the input "may be left out", and each
+  fake photo answer has a random number in it, so the sizes differ a little.
+- The run notebook was made again from its generator. Only two things in it
+  changed: the note at the top and the list of printed lines. The two prep
+  notebooks are byte for byte the same.
+
+**Expectation for practice run 4, written before it runs**
+- Pass: rules 1–5, the same rules as before.
+- `final_answers_asked_again` and `final_answers_kept_short` are recorded.
+  - If `final_answers_kept_short` is 1 or more, the model still writes
+    sentences instead of reports after being asked. Then the fixed flow (the
+    code calls the tools, and the model only writes each section) should be
+    decided before the proof run.
+- Report quality and latency are recorded, not graded.
+
+**Next steps (practice run 4)**
+1. Commit, then run `python make_disasteller_upload.py` (it must say
+   `uncommitted changes: False`).
+2. On Kaggle, open the `disasteller-offline1` dataset → **New Version** →
+   upload the new `kaggle_upload/disasteller-offline.zip`.
+3. Open the `t2-disasteller-local-run` notebook → **File → Import Notebook** →
+   choose the new `t2_disasteller_local_run.ipynb`. Check that the 4 inputs
+   are still attached, with the newest version of `disasteller-offline1`.
+4. Accelerator **GPU T4 x2**, internet **on**, **Save Version → Save & Run All
+   (Commit)**. The prep notebooks are not run again.
+5. Check the printed git commit: it must be the new commit, not `0024ae8af`.
+   Download `t2_run_internet_on.zip` and the notebook into
+   `results/t2_practice_4/`.
 6. If it passes: the proof run, the same with internet **off**.
 
 

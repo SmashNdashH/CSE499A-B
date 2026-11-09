@@ -20,6 +20,11 @@ Changes after Kaggle practice run 2 (5 Nov 2026):
     Emergency service team) gets the same descriptions back without asking the model again.
   - The tool's description tells the agent what the tool does (it was "Process the text
     with the LLM").
+
+Change after Kaggle practice run 3 (9 Nov 2026):
+  - The input text may be left out, as the question about each photo does not use it. In
+    run 3 a team called the map tool with no input ({}), CrewAI refused the call, and the
+    team gave up. This tool could have failed the same way.
 """
 import os
 import base64
@@ -61,14 +66,14 @@ _descriptions = None  # filled by the first call; the photos don't change during
 
 
 @tool
-def local_img_interpreter(text: str) -> str:
+def local_img_interpreter(text: str = "") -> str:
     """
     Describes the six post-earthquake photos taken on the ground, one by one: the place
     name on each photo's sticker, and the damage to buildings, roads and trees. The photos
     are always the same, so the input text can be short, e.g. "describe the photos".
 
     Args:
-        text (str): A short request.
+        text (str): A short request. May be left out.
 
     Returns:
         str: One description per photo, each starting with the photo's file name.

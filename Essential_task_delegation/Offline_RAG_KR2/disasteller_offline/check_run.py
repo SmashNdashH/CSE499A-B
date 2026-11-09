@@ -22,6 +22,12 @@ photo descriptions differ, and how often a team hit its step limit.
 are unchanged): the time of each guideline search, of each model call, and of each report,
 as the median, the 90th percentile ("p90": 9 in 10 were at most this fast) and the
 slowest. Calls that ended in an error are left out of these times.
+
+9 Nov 2026: two more signals (the rules are unchanged). Since practice run 3, local_model.py
+asks the model again when a Final Answer is shorter than 150 words: how often it did
+("final_answers_asked_again"), and how often the answer was still short after two more tries
+("final_answers_kept_short"). Because of this, rule 2's "50+ words" is easier to pass than
+before; the reports' quality must be judged by reading them.
 """
 
 import json
@@ -69,6 +75,8 @@ def call_signals(run_dir) -> dict:
         "answer_tokens_real": sum((c.get("usage") or {}).get("completion_tokens", 0) or 0 for c in calls),
         "minutes_in_model_calls": round(sum(c.get("seconds", 0) for c in agent + image) / 60, 1),
         "step_limit_reached": sum(1 for c in agent if FORCED_ANSWER in c.get("last_message", "")),
+        "final_answers_asked_again": sum(1 for c in calls if c.get("kind") == "short_answer"),
+        "final_answers_kept_short": sum(1 for c in calls if c.get("kind") == "short_answer_kept"),
         "photo_descriptions": len(photos),
         "photo_descriptions_different": len(set(photos)),
         **latency_signals(calls),

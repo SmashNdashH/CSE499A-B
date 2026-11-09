@@ -11,6 +11,10 @@ Changes from the original (3 Nov 2026, roadmap T2 step 3):
   - (5 Nov 2026, after Kaggle practice run 2) The tool's description tells the agent what
     the tool does (it was "Process the text with the LLM"). The question to the model is
     unchanged.
+  - (9 Nov 2026, after Kaggle practice run 3) The input text may be left out. In run 3 the
+    Emergency service team called this tool with no input ({}), CrewAI refused the call
+    ("Field required"), and the team gave up and wrote a 17-word report. With no text,
+    the model is asked only "Analyze the map for potential dangerous areas."
 """
 import os
 import base64
@@ -43,13 +47,14 @@ def encode_images_in_folder(folder_path,target_size=(256,256)):
 encoded_images = encode_images_in_folder(folder_path, target_size=(720,720)) #encoded_images[i]
 
 @tool
-def global_img_interpreter(text: str) -> str:
+def global_img_interpreter(text: str = "") -> str:
     """
     Looks at the map of the whole disaster area and finds potentially dangerous areas.
     Give it what you know: the places and their damage grades, and what you want to find.
 
     Args:
         text (str): The places, their damage grades, and your question about the map.
+            May be left out.
 
     Returns:
         str: The model's reading of the map.
