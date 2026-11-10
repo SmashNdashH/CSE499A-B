@@ -303,3 +303,63 @@ first, then practice run 5, then the proof run.
 - the old agent version: still passes, the same as on 9 Nov.
 
 **Next:** practice run 5 on Kaggle (internet on). If it passes, the proof run (internet off).
+
+
+## 10. Update on 10 Nov: practice run 5 passed
+
+The README section "Practice run 5: the fixed flow with our model" has every detail. The files
+are in `results/t2_practice_5/`.
+
+**Practice run 5 (10 Nov, internet on) passed all 5 rules.** It was the first run of the fixed
+flow with our own model. DisasTeller took 6.2 minutes.
+
+**What is good:**
+- All 6 reports are real reports, with all their sections, about the places in the photos. The
+  model wrote 192 to 787 words per report (in run 4: 28 to 49).
+- The grades now come from the photo descriptions, not from an example. For example, the hall,
+  whose photo shows no damage, got G1.
+- Nothing went online, Gemini was not used, and every question got an answer.
+- The new copy of the search dataset (`offline-rag-kr2(5)`) gives exactly the same results as my
+  laptop (18 of 18 searches).
+
+**What is not good yet.** This is about how well the model writes; the 5 rules don't grade it.
+- The Concrete Bridge got no grade. Its photo description has no place name, and the grade
+  question asked for the name.
+- The map reading said there are "no dangerous zones". Other reports repeated this, although one
+  street is G5.
+- The Public report made up a phone number (123456789).
+- Only the Expert report cites guideline IDs properly.
+- Some sections repeat each other.
+
+**Next: the proof run**, with the internet off and exactly the same code. The writing problems
+are noted for the comparison with the July reports, and can be fixed later, in a separate run.
+
+
+## 11. Update on 11 Nov: the proof run passed
+
+The README section "Proof run: internet off" has every detail. The files are in
+`results/t2_proof/`.
+
+**The proof run (internet off) passed all 5 rules.** DisasTeller wrote all 6 reports with our own
+model, with the internet switched off on Kaggle. The notebook printed "PASSED: the offline proof
+(internet off)".
+
+**How we know the internet was off:**
+- Kaggle saved its own setting in the notebook file: internet off.
+- The notebook tried to reach a website and could not. It printed "Internet is OFF".
+- The network log shows only connections inside the computer, to our model's server.
+
+**It is the same as run 5:**
+- The same code (commit `258a4f381`), the same 4 inputs and the same model.
+- The 6 reports and the labelled map are exactly the same as in run 5, letter for letter. Every
+  question to the model got the same answer. So the internet made no difference.
+
+**What this proves:** DisasTeller's fixed flow writes all 6 reports fully offline, with our own
+model and no Gemini.
+
+**What it does not prove:** that the reports are good. They are the run 5 reports, with the same
+writing problems (the map reading, the made-up phone number, few citations). These are judged in
+the comparison with the July reports.
+
+**Next:** commit the README, this file and the two notebooks. Then compare the 6 reports with
+the July Gemini reports (roadmap T2).

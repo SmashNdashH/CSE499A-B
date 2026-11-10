@@ -13,7 +13,9 @@ This folder has my work for the next update. It has three parts:
    message to the model got too long (see "Practice run 2 and the fixes").
    Since 10 Nov, after practice run 4, it runs as a "fixed flow": the code
    calls the tools, and the model writes each report section by section (see
-   "Practice run 4 and the fixed flow").
+   "Practice run 4 and the fixed flow"). On 11 Nov the proof run passed: with
+   the internet off, the fixed flow wrote all six reports with our model (see
+   "Proof run: internet off").
 
 Rule: files from other folders are copied into this folder.
 The original files are never changed.
@@ -1156,7 +1158,7 @@ answering the fixed flow's questions):
 - Time: 28 section questions of about 10 to 30 seconds each, so DisasTeller
   should take about 10 to 15 minutes. Latency is recorded, not graded.
 
-**Next steps (practice run 5)**
+**Next steps (practice run 5)** (done 10 Nov; the result is in the next section)
 1. Commit, then run `python make_disasteller_upload.py`. It must say
    `uncommitted changes: False` and pack 17 files (`fixed_flow.py` is new).
 2. On Kaggle, open the `disasteller-offline1` dataset → **New Version** →
@@ -1171,6 +1173,243 @@ answering the fixed flow's questions):
    Download `t2_run_internet_on.zip` and the notebook into
    `results/t2_practice_5/`.
 6. If it passes: the proof run, the same with internet **off**.
+
+
+## Practice run 5: the fixed flow with our model (10 Nov)
+
+**Kaggle practice run 5 (10 Nov, internet on): passed rules 1–5.** It was the
+first run of the fixed flow with our model. Its files are in
+`results/t2_practice_5/`, as they came from Kaggle: `t2_run_internet_on.zip`
+and the notebook with its outputs (`t2-disasteller-local-run-5.ipynb`, from
+the Kaggle notebook `notebookfd1ba7ee9c`, Version 2).
+- The setup:
+  - code: commit `258a4f381` (the merge after `a42622baa`), with no
+    uncommitted changes, in the newest version of the `disasteller-offline1`
+    dataset (17 files, with `fixed_flow.py`);
+  - the guideline index: another copy of the dataset, `offline-rag-kr25`
+    (its title on Kaggle is "offline-rag-kr2(5)"). All 18 searches gave the
+    same 3 IDs as the laptop's index (18 of 18);
+  - model: the same 7B (commit `def8f6c8`), with a 32,768-token limit;
+  - software: vLLM 0.25.1. CrewAI 1.15.2 is installed, but the fixed flow
+    does not run it.
+- Timing: the notebook took 13.9 minutes, and DisasTeller itself took 6.2.
+
+**Against the expectation written before the run**
+
+| Expected | Run 5 |
+|---|---|
+| Rules 1–5 pass | passed |
+| `flow` "fixed" | "fixed" |
+| `sections_written` 28 | 28 |
+| `grades_found` 6 | **5** (see below) |
+| No step limit, no re-ask | 0 and 0 |
+| `section_words_min` 20 or more | 37 |
+
+**`grades_found` is 5, not 6.** As the expectation asked, the grade lines were
+read before the proof run. The model wrote 5 lines and skipped the Concrete
+Bridge. Its photo description gives no place name ("a catastrophic collapse
+of a concrete bridge"), and the grade question says to take each place name
+from the photo's description. The code read all 5 lines correctly. So the
+bridge has no grade line and no map label. Only the Expert report's
+description of the photos mentions it, as G5.
+
+**The reports**
+
+| Report | Words (the model's own, without headings) | July, Gemini |
+|---|---|---|
+| Expert team | 647 (620) | 524 |
+| Alerts team | 211 (192) | 379 |
+| Emergency team | 312 (293) | 548 |
+| Resource allocation | 764 (736) | 824 |
+| Public community | 506 (486) | 912 |
+| Reconstruction plan | 818 (787) | 821 |
+
+**What is good**
+- Every report is a real report with all its sections, about the places in
+  the photos. No report makes up places, as run 3 did with "Region A, B and C".
+- The grades follow the photo descriptions, not an example:
+  - Wajima Drama Memorial Hall G1 (its photo shows no damage);
+  - Hama Street G4;
+  - Central Nishikigawa Street G4;
+  - North Asaichi Street G4;
+  - South Central Asaichi Street G5.
+- The Expert report cites 11 times, all real IDs.
+- The map has 5 labels, with the grades only. The hall's G1 and Hama Street's
+  G4 are in the right place.
+- Nothing went outside the computer (4 lookups and connections, all to
+  `127.0.0.1`). Gemini was not loaded. Every question got an answer. No
+  question had to be shortened: the biggest was 6,405 real tokens.
+
+**Quality problems.** The rules don't grade these; they go to the comparison
+with the July reports.
+- **The map reading was wrong, and other reports repeated it.** Asked for
+  dangerous areas, with the grades, the model answered that there are "no
+  areas with high or critical damage levels (G5)" and "no dangerous zones".
+  - The Alerts report lists the four damaged streets as dangerous, then adds
+    "No high-risk zones were detected".
+  - The Emergency report says that no extra medical points are needed.
+  - The Public report repeats "no high-risk zones".
+- **A made-up phone number.** The Public report gives "our emergency response
+  hotline at 123456789", although the offline rules say to write "not
+  available offline" for contact details. No report uses that phrase.
+- **Few citations.**
+  - Only the Expert report cites in square brackets.
+  - The Reconstruction plan names 6 real sections in its Appendices, all from
+    its own searches, but without brackets, so `check_run.py` does not count
+    them.
+  - The other four reports cite nothing, although three of them were given
+    guideline sections.
+  - One Expert citation, `[EMS98-rc-grade-5]`, is a real section that the
+    model was not shown.
+- **The bridge:** apart from the missing grade, the Reconstruction plan puts
+  "the collapsed bridge on South Central Asaichi Street", which no input says.
+- **Repetition and mix-ups.**
+  - In the resource allocation and public reports, the Introduction and the
+    Current Situation say almost the same thing.
+  - The allocation plan sends 10 medical staff "In South Central Asaichi
+    Street ... in unaffected areas like the Wajima Drama Memorial Hall".
+  - Its numbers are the model's own plan, from no input: 10 medical staff,
+    3 light, 2 medium and 1 heavy USAR teams, and 10 vehicles.
+- **Photo 5** is still called a "hurricane" (the six photo descriptions are
+  word for word the same as in runs 3 and 4), and North Asaichi Street's
+  grade line gives "water inundation" as a reason.
+- On the map, the other three labels are not on their streets. Central
+  Nishikigawa Street's G4 is on Asaichi Street, and the labels of North and
+  South Central Asaichi Street are east of Asaichi Street.
+
+**Latency** (from `t2_run_summary.json`)
+
+| What | Median | p90 | Slowest | Count |
+|---|---|---|---|---|
+| Guideline search | 118 ms | 466 ms | 6,399 ms | 18 searches |
+| Section question | 8.4 s | 14.0 s | 29.4 s | 28 questions |
+| Picture question | 6.0 s | 11.3 s | 11.3 s | 8 questions |
+
+- Loading the search index took 11.7 s, once per run. The first search then
+  took 6.4 s; the others took 20 to 466 ms.
+- The model wrote 14.9 answer tokens per second (median). Each report took
+  0.3 to 2.0 minutes.
+
+**Next: the proof run, as planned before the run.** The same notebook, inputs
+and code, with the internet off. The quality problems above are not fixed
+before it. They are about how the model writes, not about running offline.
+Any fix is a new run, reported separately.
+
+**Expectation for the proof run, written before it runs**
+- Pass: rules 1–5, with the internet off (Kaggle's setting, and the
+  notebook's own check), and the code commit `258a4f381`.
+- The model gave the same answers to the same questions in runs 3, 4 and 5
+  (seed 0). So the six reports are expected to be the same as in run 5, or
+  nearly. Any difference is recorded, not graded.
+
+**Steps for the proof run** (done 11 Nov; the result is in the next section)
+1. Upload nothing and change nothing. Open the same Kaggle notebook
+   (`notebookfd1ba7ee9c`), with the same four inputs.
+2. In Session options, set the internet **off**. Accelerator **GPU T4 x2**.
+3. **Save Version → Save & Run All (Commit)**.
+4. The notebook must print "Internet is OFF" and `git commit 258a4f381`.
+   Download `t2_run_internet_off.zip` and the notebook into
+   `results/t2_proof/`.
+
+
+## Proof run: internet off (11 Nov)
+
+**The proof run passed.** On 11 Nov (Kaggle's clock: 10 Nov, 18:31 to 18:45
+UTC), DisasTeller ran on Kaggle with the internet off, with the team's 7B and
+the fixed flow, and passed rules 1–5. The notebook printed "PASSED: the
+offline proof (internet off)". Its files are in `results/t2_proof/`, as they
+came from Kaggle: `t2_run_internet_off.zip` and the notebook with its outputs.
+Kaggle names the notebook file after the notebook's title, so it has the same
+name as run 5's (`t2-disasteller-local-run-5.ipynb`). The folder says which
+run it is.
+
+**The internet was off, checked in two ways**
+- Kaggle's own setting, saved in the notebook file: `"isInternetEnabled":
+  false` (run 5: `true`).
+- The notebook's own test could not reach `huggingface.co`, and printed
+  "Internet is OFF: nothing below can download anything. This is the proof
+  run." The test needed 32 seconds to give up. In run 5 it connected in 0.06
+  seconds.
+
+**The same setup as run 5**
+- Code: commit `258a4f381`, packed 2026-11-10 19:53:06, with no uncommitted
+  changes. All 17 files matched their sha256.
+- The same four inputs, in the same versions. The notebook file names them by
+  Kaggle's IDs, the same as in run 5: the datasets 21954144 and 21954333, and
+  the outputs of the prep notebooks 365318266 and 365326389.
+- The same model (`AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP`, commit
+  `def8f6c8`) and software (vLLM 0.25.1, CrewAI 1.15.2, torch 2.11.0+cu130,
+  transformers 5.20.2), on GPU T4 x2, with `FLOW = "fixed"`. The pip log is
+  byte for byte the same as in run 5.
+
+**The pass rules**
+
+| Rule | Result |
+|---|---|
+| 1. The run finished, with no error | PASS: exit code 0 |
+| 2. All six reports, each starting `Mode: offline`, each 50+ words | PASS: 192 to 787 words of the model's own |
+| 3. Nothing went outside the computer | PASS: 4 lookups and connections, all to `127.0.0.1:8000` (our model's server); outside: none |
+| 4. No Gemini library was loaded | PASS |
+| 5. Every question to the model got an answer | PASS: no retries, no failed calls |
+
+Also checked: no key, token or password in the notebook or in any file of the
+zip, and no web address other than `127.0.0.1` in the three logs (vLLM,
+DisasTeller and pip).
+
+**Against the expectation written before the run**
+
+| Expected | Proof run |
+|---|---|
+| Rules 1–5 pass, internet off, commit `258a4f381` | yes |
+| The six reports the same as in run 5, or nearly | exactly the same |
+
+- The six reports and the labelled map are byte for byte the same as in run 5.
+- All 61 lines of the call log are the same as in run 5, apart from the times:
+  the same 8 picture questions, 18 guideline searches and 28 section
+  questions, with the same answers and the same token counts. The four short
+  tests before the run gave the same answers too.
+- The vLLM server printed the same 20 warnings as in run 5. They are normal
+  on T4 GPUs (for example "FA2 is only supported on devices with compute
+  capability >= 8").
+
+So switching the internet off changed nothing: run 5 did not use it, and the
+proof run could not.
+
+**Time** (run 5 in brackets)
+
+| What | Median | p90 | Slowest | Count |
+|---|---|---|---|---|
+| Guideline search | 136 ms (118) | 473 ms (466) | 7,167 ms (6,399) | 18 searches |
+| Section question | 8.1 s (8.4) | 13.8 s (14.0) | 27.4 s (29.4) | 28 questions |
+| Picture question | 5.4 s (6.0) | 17.4 s (11.3) | 17.4 s (11.3) | 8 questions |
+
+- The notebook took 13.7 minutes (13.9). vLLM was ready after 7.4 minutes
+  (7.3), including 2.0 minutes of installing. DisasTeller itself took 6.1
+  minutes (6.2).
+- The model wrote 16.0 answer tokens per second (14.9).
+
+**What the proof shows, and what it does not**
+- It shows that DisasTeller's fixed flow runs with the team's 7B on two T4
+  GPUs, with no internet and no Gemini: 6 photo descriptions, the map
+  reading, 18 guideline searches, 28 sections and the labelled map. Its
+  network log is the "log proving no external API calls" that roadmap T2
+  asks for.
+- It does not show that the reports are good. They are the run 5 reports,
+  with the same quality problems (see "Practice run 5": the wrong map reading
+  repeated in three reports, the made-up hotline, few citations, the bridge).
+  Report quality is judged in the comparison with the July reports and in the
+  consistency check (T2 step 7).
+- It is the fixed flow, where the code calls the tools and the model writes.
+  The agent version, where the model chooses the tools through CrewAI, did
+  not work with the 7B (practice runs 2–4).
+
+**Next**
+- Commit this README, `offline1.md` and the two notebooks
+  (`results/t2_practice_5/` and `results/t2_proof/`). The zips are not
+  committed: git ignores `*.zip`.
+- Roadmap T2: compare the six reports with the Gemini reports of 20 July.
+- Quality fixes (the map reading, the hotline, the citations, the bridge)
+  only as a new run, reported separately.
 
 
 ## Retrieval test of the guideline search (T2 step 4)
