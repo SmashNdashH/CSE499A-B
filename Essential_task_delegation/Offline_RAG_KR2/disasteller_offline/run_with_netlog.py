@@ -18,6 +18,10 @@ main script stopped with an error. check_run.py then checks the reports.
 
 It sees only this process. The model server (vLLM) is a separate program; the Kaggle
 notebook turns the internet off for both, and starts vLLM with its usage report off.
+
+10 Nov 2026: DISASTELLER_FLOW chooses what runs. "agents" (the default) runs the main script
+as before; "fixed" runs fixed_flow.py, the fixed flow chosen after Kaggle practice run 4.
+netlog.json says which ("flow" and "main_script").
 """
 
 import ipaddress
@@ -30,7 +34,11 @@ import time
 import traceback
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-MAIN = os.path.join(HERE, "DisasterManagement_teamwork_simulation.py")
+FLOWS = {"agents": "DisasterManagement_teamwork_simulation.py", "fixed": "fixed_flow.py"}
+FLOW = os.environ.get("DISASTELLER_FLOW", "agents")
+if FLOW not in FLOWS:
+    raise SystemExit(f"DISASTELLER_FLOW must be one of {sorted(FLOWS)}, not {FLOW!r}.")
+MAIN = os.path.join(HERE, FLOWS[FLOW])
 RUN_DIR = os.getcwd()
 events = []
 
@@ -121,6 +129,7 @@ def main() -> int:
                     if m.startswith(("google.generativeai", "google.genai", "google.ai.generativelanguage")))
     report = {
         "main_script": MAIN,
+        "flow": FLOW,
         "run_folder": RUN_DIR,
         "started": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(started)),
         "seconds": round(time.time() - started, 1),

@@ -28,6 +28,13 @@ asks the model again when a Final Answer is shorter than 150 words: how often it
 ("final_answers_asked_again"), and how often the answer was still short after two more tries
 ("final_answers_kept_short"). Because of this, rule 2's "50+ words" is easier to pass than
 before; the reports' quality must be judged by reading them.
+
+10 Nov 2026: signals for the fixed flow (fixed_flow.py; the rules are unchanged). Which flow
+ran ("flow"), how many sections the model wrote and how long they are, how many grades the
+code could read from the Expert team's grade lines, and the time of each section question
+(kind "section" in llm_calls.jsonl). In the fixed flow every report is made of several
+sections, so rule 2's "50+ words" is easy to pass; it stays a minimum check, and the reports'
+quality is judged by reading them.
 """
 
 import json
@@ -59,21 +66,27 @@ def call_signals(run_dir) -> dict:
     calls = [json.loads(line) for line in open(path, encoding="utf-8") if line.strip()]
     agent = [c for c in calls if c.get("kind") == "agent"]
     image = [c for c in calls if c.get("kind") == "image"]
-    real = [(c["usage"] or {}).get("prompt_tokens") for c in agent if c.get("usage")]
+    section = [c for c in calls if c.get("kind") == "section"]  # the fixed flow (10 Nov)
+    text_calls = agent + section
+    real = [(c["usage"] or {}).get("prompt_tokens") for c in text_calls if c.get("usage")]
     real = [r for r in real if r]
-    ratios = [c["estimated_tokens_sent"] / c["usage"]["prompt_tokens"] for c in agent
+    ratios = [c["estimated_tokens_sent"] / c["usage"]["prompt_tokens"] for c in text_calls
               if c.get("usage") and c["usage"].get("prompt_tokens") and c.get("estimated_tokens_sent")]
     photos = [c.get("answer", "") for c in image if c.get("prompt", "").startswith("describe the disaster")]
+    section_words = [len(c["answer"].split()) for c in section if not c.get("error") and "answer" in c]
     return {
         "llm_calls_log": True,
         "agent_calls": len(agent),
         "image_calls": len(image),
+        "section_calls": len(section),
+        "section_words_median": _median(section_words, 0),
+        "section_words_min": min(section_words) if section_words else None,
         "calls_with_errors": sum(1 for c in calls if c.get("error")),
         "biggest_prompt_tokens_real": max(real) if real else None,
-        "biggest_prompt_tokens_estimated": max((c.get("estimated_tokens_sent", 0) for c in agent), default=None),
+        "biggest_prompt_tokens_estimated": max((c.get("estimated_tokens_sent", 0) for c in text_calls), default=None),
         "lowest_estimate_to_real_ratio": round(min(ratios), 2) if ratios else None,
         "answer_tokens_real": sum((c.get("usage") or {}).get("completion_tokens", 0) or 0 for c in calls),
-        "minutes_in_model_calls": round(sum(c.get("seconds", 0) for c in agent + image) / 60, 1),
+        "minutes_in_model_calls": round(sum(c.get("seconds", 0) for c in agent + image + section) / 60, 1),
         "step_limit_reached": sum(1 for c in agent if FORCED_ANSWER in c.get("last_message", "")),
         "final_answers_asked_again": sum(1 for c in calls if c.get("kind") == "short_answer"),
         "final_answers_kept_short": sum(1 for c in calls if c.get("kind") == "short_answer_kept"),
@@ -102,8 +115,9 @@ def latency_signals(calls) -> dict:
     search_ms = [c["seconds"] * 1000 for c in ok if c.get("kind") == "search"]
     agent_s = [c["seconds"] for c in ok if c.get("kind") == "agent"]
     image_s = [c["seconds"] for c in ok if c.get("kind") == "image"]
+    section_s = [c["seconds"] for c in ok if c.get("kind") == "section"]
     speeds = [c["usage"]["completion_tokens"] / c["seconds"] for c in ok
-              if c.get("kind") in ("agent", "image") and c["seconds"] > 0
+              if c.get("kind") in ("agent", "image", "section") and c["seconds"] > 0
               and (c.get("usage") or {}).get("completion_tokens")]
     return {
         "search_index_load_seconds": round(load[0]["seconds"], 1) if load else None,
@@ -118,6 +132,9 @@ def latency_signals(calls) -> dict:
         "image_call_seconds_median": _median(image_s),
         "image_call_seconds_p90": _p90(image_s),
         "image_call_seconds_max": round(max(image_s), 1) if image_s else None,
+        "section_call_seconds_median": _median(section_s),
+        "section_call_seconds_p90": _p90(section_s),
+        "section_call_seconds_max": round(max(section_s), 1) if section_s else None,
         "answer_tokens_per_second_median": _median(speeds),
         "report_minutes": {c["report"]: round(c["seconds"] / 60, 1) for c in ok if c.get("kind") == "task"},
     }
@@ -134,7 +151,10 @@ def print_latency(signals) -> None:
     searches = signals.get("searches_timed", 0)
     print(f"  guideline search:  {three('search_ms', 'ms')}, {searches} search{'' if searches == 1 else 'es'}"
           + (f" (loading the index once: {load:g} s, {signals.get('search_backend')})" if load is not None else ""))
-    print(f"  agent model call:  {three('agent_call_seconds', 's')}, {signals.get('agent_calls', 0)} calls")
+    if signals.get("agent_calls") or not signals.get("section_calls"):
+        print(f"  agent model call:  {three('agent_call_seconds', 's')}, {signals.get('agent_calls', 0)} calls")
+    if signals.get("section_calls"):
+        print(f"  section model call: {three('section_call_seconds', 's')}, {signals['section_calls']} calls")
     print(f"  image model call:  {three('image_call_seconds', 's')}, {signals.get('image_calls', 0)} calls")
     speed = signals.get("answer_tokens_per_second_median")
     print(f"  answer speed:      {'not measured' if speed is None else f'{speed:g} tokens/s (median)'}")
@@ -173,6 +193,10 @@ def main(argv) -> int:
             "exists": True,
             "starts_with_mode_offline": text.startswith("Mode: offline"),
             "words": len(body.split()),
+            # without the lines that start with "#": in the fixed flow the code writes the title
+            # and the section headings, so these are the model's own words (10 Nov 2026)
+            "words_outside_headings": sum(len(line.split()) for line in body.splitlines()
+                                          if not line.lstrip().startswith("#")),
             "citations": len(cited_ids),
             "citations_real": sum(c in real_ids for c in cited_ids),
             "citations_unknown": sorted({c for c in cited_ids if c not in real_ids}),
@@ -199,6 +223,7 @@ def main(argv) -> int:
         "internet": internet,
         "rules": rules,
         "signals": {
+            "flow": (netlog.get("flow") or "agents") if netlog else None,
             "minutes": round(netlog["seconds"] / 60, 1) if netlog else None,
             "network_events": netlog["lookups_and_connections"] if netlog else None,
             "external": netlog["external"] if netlog else None,
@@ -208,6 +233,8 @@ def main(argv) -> int:
             "map_label_questions": log.count("This image is a map of a place"),
             "labelled_map_saved": os.path.isfile(os.path.join(run_dir, "reports", "offline", "4_anotated.png")),
             "map_labels_drawn": [int(n) for n in re.findall(r"Labelled map saved: .*? \((\d+) labels\)", log)],
+            "sections_written": log.count("Section written: "),
+            "grades_found": [int(n) for n in re.findall(r"^Grades found: (\d+)", log, re.MULTILINE)],
             "model_messages_shortened": log.count(SHORTENED_MARK),
             "model_call_retries": log.count("Local model call failed"),
             "total_words": sum(r.get("words", 0) for r in reports.values()),
@@ -223,10 +250,11 @@ def main(argv) -> int:
     for rule, ok in rules.items():
         print(f"{'PASS' if ok else 'FAIL'}  {rule}")
     print(f"\n{verdict}\n")
-    print(f"{'report':50} words  cites(real)  'not available offline'")
+    print(f"{'report':50} words (without headings)  cites(real)  'not available offline'")
     for name, r in reports.items():
         if r["exists"]:
-            print(f"{name:50} {r['words']:5}  {r['citations']:3} ({r['citations_real']:3})  {r['not_available_offline']:3}")
+            print(f"{name:50} {r['words']:5} ({r['words_outside_headings']:5})             "
+                  f"{r['citations']:3} ({r['citations_real']:3})  {r['not_available_offline']:3}")
         else:
             print(f"{name:50} MISSING")
     print("\nOther signals:", json.dumps(summary["signals"]))

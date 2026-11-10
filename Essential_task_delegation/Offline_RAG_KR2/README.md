@@ -11,6 +11,9 @@ This folder has my work for the next update. It has three parts:
    of Gemini (T2 steps 1–3), with Kaggle notebooks to run and check it. On
    5 Nov it was fixed after Kaggle practice run 2, which stopped because one
    message to the model got too long (see "Practice run 2 and the fixes").
+   Since 10 Nov, after practice run 4, it runs as a "fixed flow": the code
+   calls the tools, and the model writes each report section by section (see
+   "Practice run 4 and the fixed flow").
 
 Rule: files from other folders are copied into this folder.
 The original files are never changed.
@@ -41,6 +44,7 @@ The original files are never changed.
 | Backend | How the search runs: Chroma, or numpy + torch (Kaggle, and the laptop since 4 Nov). Both give the same top 3 for all 30 test questions. |
 | Delegation | In CrewAI, one agent handing part of its task to another agent. Off in this copy since 5 Nov. |
 | Step limit | The most steps (tool calls and answers) an agent may take for one task before it must give its answer (CrewAI's `max_iter`). |
+| Fixed flow | Since 10 Nov: DisasTeller run by plain code (`fixed_flow.py`). The code calls the tools in a fixed order, and the model only writes the reports, one section at a time. The agents no longer choose tools. |
 | Kaggle | A website that gives free computers for running notebooks. |
 | Hugging Face | A website that stores AI models. |
 | Notebook (`.ipynb`) | A file that holds code and the outputs of that code. |
@@ -517,6 +521,8 @@ the base model on counting.
   connection and name lookup it makes, in `netlog.json`. This is the "log
   proving no external API calls" that roadmap T2 asks for.
 - `check_run.py` (new) checks a run against the pass rules below.
+- `fixed_flow.py` (new, 10 Nov): the fixed flow, which the Kaggle notebook
+  runs since practice run 5. See "Practice run 4 and the fixed flow".
 
 **Why these choices**
 - **Tool calls in CrewAI's text format** (`LOCAL_LLM_NATIVE_TOOLS=0`). CrewAI
@@ -547,7 +553,8 @@ the base model on counting.
 | `LOCAL_LLM_TEMPERATURE`, `LOCAL_LLM_SEED` | `0.2`, `0` | how random the answers are; the seed makes a run repeatable |
 | `LOCAL_LLM_NATIVE_TOOLS` | `0` | `1` = the server handles tool calls itself |
 | `LOCAL_LLM_CALL_LOG` | `llm_calls.jsonl` | one line per model call (since 5 Nov), and per guideline search and finished report, with its time (since 7 Nov), in the folder you run in; empty = none |
-| `LOCAL_LLM_MIN_REPORT_WORDS` | `150` | since 9 Nov: a Final Answer with fewer words is sent back to the model, at most twice (see "Practice run 3 and the fixes"); `0` = off |
+| `LOCAL_LLM_MIN_REPORT_WORDS` | `150` | since 9 Nov: a Final Answer with fewer words is sent back to the model, at most twice (see "Practice run 3 and the fixes"); `0` = off. The fixed flow does not use it |
+| `DISASTELLER_FLOW` | `agents` | since 10 Nov, read by `run_with_netlog.py`: `fixed` runs `fixed_flow.py`, `agents` the CrewAI version. The Kaggle notebook sets it from `FLOW` in its first cell (`"fixed"`) |
 
 **How to run it on Kaggle**
 1. On the laptop: commit, then run `python make_disasteller_upload.py`. Upload
@@ -562,7 +569,8 @@ the base model on counting.
    - `t2_prep_model.ipynb`: the model files (16.6 GB).
 3. `t2_disasteller_local_run.ipynb`, with Accelerator **GPU T4 x2** and four
    inputs: `offline-rag-kr2`, `disasteller-offline`, and the outputs of the two
-   prep notebooks.
+   prep notebooks. `FLOW` in its first cell says which DisasTeller runs
+   (`"fixed"` since 10 Nov).
    - **Practice run:** internet on. Everything is still installed and loaded
      only from the inputs.
    - **Proof run:** internet off, then Save & Run All (Commit). Download
@@ -578,6 +586,7 @@ the base model on counting.
     $env:LOCAL_LLM_PROVIDER = "ollama"
     $env:LOCAL_LLM_MODEL = "qwen3-vl:8b"
     $env:GUIDELINE_BACKEND = "numpy"
+    $env:DISASTELLER_FLOW = "fixed"   # since 10 Nov; leave it out for the agent version
     python run_with_netlog.py
 
 This PC has no NVIDIA GPU and 7.8 GB of memory, so a full run here would be
@@ -939,7 +948,7 @@ has two new modes that act like run 3:
     decided before the proof run.
 - Report quality and latency are recorded, not graded.
 
-**Next steps (practice run 4)**
+**Next steps (practice run 4)** (done 10 Nov; the result is in the next section)
 1. Commit, then run `python make_disasteller_upload.py` (it must say
    `uncommitted changes: False`).
 2. On Kaggle, open the `disasteller-offline1` dataset → **New Version** →
@@ -952,6 +961,215 @@ has two new modes that act like run 3:
 5. Check the printed git commit: it must be the new commit, not `0024ae8af`.
    Download `t2_run_internet_on.zip` and the notebook into
    `results/t2_practice_4/`.
+6. If it passes: the proof run, the same with internet **off**.
+
+
+## Practice run 4 and the fixed flow (10 Nov)
+
+**Kaggle practice run 4 (10 Nov, internet on): did not pass.** Rule 2 failed:
+every report had 28 to 49 words. Rules 1, 3, 4 and 5 passed. Its files are in
+`results/t2_practice_4/`, as they came from Kaggle: `t2_run_internet_on.zip`
+and the notebook with its outputs.
+- The setup:
+  - code: commit `d76fd99a6`, with no uncommitted changes, in the newest
+    version of the `disasteller-offline1` dataset;
+  - the guideline index: a new copy of the dataset, `offline1-rag-kr2`. Its
+    three searches gave the same 3 IDs as the laptop's index (3 of 3);
+  - model: the same 7B (commit `def8f6c8`), with a 32,768-token limit;
+  - software: vLLM 0.25.1 and CrewAI 1.15.2.
+- Timing: the notebook took 13.2 minutes, and DisasTeller itself took 6.2.
+- Against the expectation written before the run:
+  `final_answers_kept_short` is 1, so the fixed flow had to be decided before
+  the proof run. **Ridita decided on 10 Nov: the fixed flow, then practice run
+  5, then the proof run.** Four teams reached their step limit
+  (`step_limit_reached` 4).
+
+**What went wrong**
+
+| Report | Words (July, Gemini) | What the team did |
+|---|---|---|
+| Expert team | 49 (524) | Described the photos, called the search with no input, labelled the map with the example grades (point 2 below), then sent the same search 8 times in a row. The saved "report" is that search request. |
+| Alerts team | 42 (379) | Used no tool, and wrote a short answer without the "Final Answer:" label. CrewAI takes such an answer as the report. The re-ask of 9 Nov only looks at answers with that label, so it did not see this one. |
+| Emergency team | 28 (548) | Searched once, then wrote 28 words. Asked twice for the complete report, it wrote the same 28 words both times (`final_answers_kept_short` 1). |
+| Resource allocation | 44 (824) | Searched "[INSARAG]", then sent the example-grades search 10 times in a row. The saved "report" is a search request. |
+| Public community | 42 (912) | Sent the example-grades search 11 times in a row. The saved "report" is a search request. |
+| Reconstruction plan | 42 (821) | The same; its text is word for word the Public report. |
+
+1. **The model repeated the same step.** After a second identical tool call,
+   CrewAI answers "I tried reusing the same input, I must stop using this
+   action input. I'll try something else instead." The model ignored this and
+   sent the same call again. At the step limit CrewAI asks once more for the
+   final answer. The model sent the call again, and CrewAI 1.15.2
+   (`handle_max_iterations_exceeded`) saves an answer that is still a tool
+   call as the final answer, with all its text.
+2. **The grades were copied from an example (a mistake in my 5 Nov change).**
+   The map tool's description said: Send the places with their grades, e.g.
+   "Hama Street: G4, Wajima Drama Memorial Hall: G2". The Expert team labelled
+   the map with exactly this text, and searched for it; three later teams
+   searched for it too. The map got these two labels, and every report names
+   only these two of the six places. Run 3's map call started with the same
+   two grades, and gave the
+   other places G4. So the grades of runs 3 and 4 do not come from the photos
+   (the hall's photo shows no damage). The example is now gone
+   (`global_annotation_tool.py`).
+3. **The search tool was called with no input** (`{}`). CrewAI refused it 3
+   times ("Field required"). Only three searches ran: the example grades
+   (found INSARAG sections 6.1.1, 6.1.2 and 5.5.5), "Hama Street: shelter,
+   Wajima Drama Memorial Hall: hospital" (found the Sphere introduction) and
+   "[INSARAG]". No report cites a guideline.
+4. **Asking again did not help.** It made the Emergency team repeat its
+   answer.
+
+**What worked**
+- The photo tool's fix of 9 Nov: the Expert team called it with no input, and
+  it worked.
+- Nothing went outside the computer (12 lookups and connections, all to
+  `127.0.0.1`). Gemini was not loaded. Every model question got an answer.
+- No conversation had to be shortened. The biggest message was 12,480 real
+  tokens.
+- The map has 2 labels, both in the right place: Hama Street on Hama Street,
+  and the hall's label next to the hall's marker (it runs off the right edge
+  of the map).
+- The smoke test's photo answer was right this time: "The Wajima Drama
+  Memorial Hall has sustained no visible damage".
+- The six photo descriptions are word for word the same as in run 3. With
+  seed 0 and temperature 0.2 the model gives the same answer to the same
+  question, so photo 5 is still called a "hurricane".
+
+**Latency** (from `t2_run_summary.json`)
+
+| What | Median | p90 | Slowest | Count |
+|---|---|---|---|---|
+| Guideline search | 332 ms | 15,750 ms | 15,750 ms | 3 searches |
+| Agent model call | 5.9 s | 7.8 s | 8.8 s | 49 calls |
+| Picture model call | 5.8 s | 8.9 s | 8.9 s | 7 calls |
+
+- Loading the search index took 11.3 s, once per run. The first search then
+  took 15.8 s more, the other two 0.3 s each.
+- The model wrote 12.3 answer tokens per second (median).
+
+**Why the fixed flow.** In three runs, the 7B failed to lead CrewAI's tool
+loop in three different ways. In run 2 it called the same tools until a
+message was too long. In run 3 it wrote a sentence about the report instead
+of the report. In run 4 it repeated the same call until the step limit. Each
+fix showed a new problem, and asking again did not help. But the model
+answered every single question it was given: the photos, the map and the
+smoke tests. The fallback was written down on 3 Nov, before any run: "the
+code calls the tools, and the model only writes each section".
+
+**The fixed flow** (`disasteller_offline/fixed_flow.py`, 10 Nov)
+
+The order is always the same:
+1. The photo tool describes the six photos.
+2. Five searches find the EMS-98 damage grades, one search per grade.
+3. The model gives each photo's place a grade, one line per photo:
+   "<place name>: G<1-5> - <why>, with the grade's ID". The code reads the
+   grades from these lines.
+4. The map tool labels the map with these grades.
+5. The model writes the rest of the Expert report, section by section.
+6. The map tool reads the map for dangerous areas, with the grades.
+7. The other five reports follow, in the order of the main script. For each
+   one: its searches, then its sections, in the order of the report.
+
+| Report | Sections the model writes | Fixed searches | Facts it gets |
+|---|---|---|---|
+| Expert team | the grade lines; Overview; Description of the images and locations; Conclusion | "EMS-98 classification of damage to masonry buildings Grade 1 negligible to slight damage", and the same for grades 2–5 | the photo descriptions, the EMS-98 sections |
+| Alerts team | Danger area alert; Social media news | none (this team has no search in the agent version either) | the Expert report, the map reading |
+| Emergency team | Emergency shelters; Hospitals; Immediate transportation recovery | Sphere covered living space per person; Sphere settlement site area per person location and access; INSARAG handover of rescued patients to medical teams and hospitals | the Expert and Alerts reports, the map reading, the sections found |
+| Resource allocation | the 7 headings of task 4 | INSARAG light medium and heavy USAR team types; INSARAG ASR levels assessment search and rescue; INSARAG worksite triage and priorities; INSARAG rescue team shifts and rotation | the Expert, Alerts and Emergency reports, the sections found |
+| Public community | the 6 headings of task 5 | Sphere emergency shelter for displaced households; Sphere household items; INSARAG rescue operations | the same three reports, the sections found |
+| Reconstruction plan | the 6 headings of task 6 | Sphere repair retrofit or rebuild damaged houses; Sphere debris removal; Sphere technical assistance building codes and construction practices; plus the EMS-98 sections from step 2 | the same three reports, the sections found |
+
+- **What stays the same:**
+  - the six reports, their order and their files;
+  - the four teams: each team's role, goal and backstory are read from the
+    main script when the flow runs, and the model gets them the way CrewAI
+    gives them ("You are <role>. <backstory> Your personal goal is: <goal>");
+  - what each task asks for, and the headings of tasks 4–6. Tasks 1–3 have
+    no headings in the main script, so their sections are the parts their
+    task text asks for;
+  - the tools, with their questions to the model; the local model and its
+    settings; the network log; the pass rules.
+- **What changes:**
+  - the code calls the tools, and the model never writes a tool call;
+  - the searches are fixed: one per topic that the task's text names, in the
+    guidelines' words. I tried the wordings on the laptop first and chose
+    between a few for two of them (the public shelter search and the
+    building-codes search);
+  - each section asks for a size in words; the tasks' "around 2000 words"
+    is left out;
+  - no example names or grades in what the model reads. Left out are the
+    main script's "street A: G1, street B: G4" (task 1), "Area A, B, C"
+    (task 4), "such as 3" (task 3) and the example ID "[SPHERE-3-p1]". In
+    run 3 the model wrote about "Region A, B and C", and in run 4 it copied
+    the map tool's example;
+  - every report gets the offline rules (before, only tasks 3–6), and starts
+    with `Mode: offline, fixed flow`.
+- **One change from the plan of 10 Nov:** I had planned to keep CrewAI
+  running the six tasks, only without tools. CrewAI does not run in the fixed
+  flow. With no tool to choose, it would only add its answer format
+  ("Thought / Final Answer"), and that format caused two of run 4's problems.
+  The tools are still CrewAI tools; the flow calls their functions directly.
+- **Known weak spots:** two of the 18 searches find poor sections. The team
+  types search finds hazardous materials, ethics and team ID codes, not team
+  types. Of the 3 sections the shifts search finds, only INSARAG3-5.2-p1
+  mentions shifts. The search itself was not changed.
+- `DisasterManagement_teamwork_simulation.py`, the agent version, is not
+  changed and still runs (`DISASTELLER_FLOW=agents`, the default).
+
+**The pass rules are unchanged.** In the fixed flow the code writes each
+report's title and its section headings (about 10 to 25 words), and they count
+toward rule 2's 50 words. So rule 2 is now only a minimum check. `check_run.py`
+therefore also shows each report's words without the headings (the model's
+own words), and new signals: `flow`, `sections_written`, `section_words_median`
+and `section_words_min`, `grades_found`, and the time of each section question.
+
+**Checked on the laptop (10 Nov)**, with the pretend server (now also
+answering the fixed flow's questions):
+
+| Pretend model | Result |
+|---|---|
+| Fixed flow, full sections | Rules 1–5 passed. 36 model questions: 6 photos, the grade lines, the map labels, the map reading and 27 sections. 18 searches, 6 grades read, 100 citations, all real. The biggest question was 7,502 real tokens. Each text question had its team's role as the system message. |
+| Fixed flow, every section 4–6 words | Rule 2 failed for 4 reports (29 to 46 words), as it should. The run finished. |
+| Fixed flow, one section always fails | Rule 5 failed ("Local model gave no answer after 3 tries"), as it should. The run finished, with all six reports. |
+| Agent version, normal | Rules 1–5 passed: the same 27 requests, of the same kinds, as on 7 and 9 Nov. |
+| Agent version, like run 3 | Rules 1–5 passed: the 6 short answers were asked again, as on 9 Nov. |
+
+- The run notebook was made again from its generator:
+  - `FLOW = "fixed"` in the first cell;
+  - a fourth smoke test (a question the way the fixed flow asks it);
+  - more printed lines;
+  - `"flow"` in `t2_notebook_info.json`.
+
+  The two prep notebooks are byte for byte the same.
+
+**Expectation for practice run 5, written before it runs**
+- Pass: rules 1–5, the same rules as before.
+- Expected signals: `flow` "fixed", `sections_written` 28 (27 sections and
+  the grade lines), `grades_found` 6 (one per photo), and no step limit or
+  re-ask (there are no CrewAI agents).
+- If `grades_found` is less than 6, or `section_words_min` is less than 20,
+  the result says so, and those answers are read before the proof run.
+- Report quality is not graded by the rules: made-up places, citations, and
+  whether the grades fit the photos. It is judged in the comparison with the
+  July reports.
+- Time: 28 section questions of about 10 to 30 seconds each, so DisasTeller
+  should take about 10 to 15 minutes. Latency is recorded, not graded.
+
+**Next steps (practice run 5)**
+1. Commit, then run `python make_disasteller_upload.py`. It must say
+   `uncommitted changes: False` and pack 17 files (`fixed_flow.py` is new).
+2. On Kaggle, open the `disasteller-offline1` dataset → **New Version** →
+   upload the new `kaggle_upload/disasteller-offline.zip`.
+3. Open the `t2-disasteller-local-run` notebook → **File → Import Notebook** →
+   choose the new `t2_disasteller_local_run.ipynb`. Check that the 4 inputs
+   are attached (the guideline index: `offline1-rag-kr2`), with the newest
+   version of `disasteller-offline1`.
+4. Accelerator **GPU T4 x2**, internet **on**, **Save Version → Save & Run All
+   (Commit)**.
+5. Check the printed git commit: it must be the new commit, not `d76fd99a6`.
+   Download `t2_run_internet_on.zip` and the notebook into
+   `results/t2_practice_5/`.
 6. If it passes: the proof run, the same with internet **off**.
 
 

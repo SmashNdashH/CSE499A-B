@@ -248,3 +248,58 @@ what they should:
 - a normal fake model: nothing was asked again; all 5 rules passed.
 
 **Next:** practice run 4 on Kaggle (internet on). If it passes, the proof run (internet off).
+
+
+## 9. Update on 10 Nov: practice run 4, and the "fixed flow"
+
+The README section "Practice run 4 and the fixed flow" has every detail. The files are in
+`results/t2_practice_4/`.
+
+**Practice run 4 (10 Nov, internet on) did not pass.** Rule 2 failed: all 6 reports were too
+short (28 to 49 words). Rules 1, 3, 4 and 5 passed.
+
+**What went wrong:**
+- **The model repeated the same step.** 4 teams sent the same search again and again, up to 11
+  times. CrewAI told the model to stop, but it did not. At the step limit, CrewAI saved the last
+  search request as the report.
+- **Asking again did not help.** The Emergency team was asked twice for the full report, and wrote
+  the same 28 words each time.
+- **The grades were copied from an example. This was my mistake.** On 5 Nov I put an example in
+  the map tool's description: "Hama Street: G4, Wajima Drama Memorial Hall: G2". The model used
+  exactly this as its grades. Run 3 also started with these two grades. So the grades of runs 3
+  and 4 do not come from the photos. The example is removed now.
+- No report cites a guideline.
+
+**What was fine:** nothing went online, Gemini was not used, every question got an answer, and
+the 2 map labels are in the right places. The new copy of the search dataset (`offline1-rag-kr2`)
+gives exactly the same search results as my laptop.
+
+**The decision.** Before run 4, the README said: if a report stays short after the model is asked
+again, decide on the "fixed flow". This happened. So on 10 Nov Ridita decided: the fixed flow
+first, then practice run 5, then the proof run.
+
+**The fixed flow** (the new file `disasteller_offline/fixed_flow.py`):
+- The code does the steps, always in the same order: describe the photos → search the guidelines
+  → the model gives each place a grade → label the map → read the map → write the six reports.
+- The model only writes. It writes each report one section at a time (for example
+  "Introduction", then "Current Situation"). It never chooses a tool.
+- The teams, their tasks, the report files and the pass rules stay the same.
+- The model no longer sees example names or grades, because it copies them.
+- CrewAI does not run in the fixed flow. My first plan was to keep CrewAI, but with no tools to
+  choose, it would only add its answer format, and that format caused problems in run 4.
+- The old agent version is still there and still works.
+
+**Honest notes:**
+- Rule 2 (at least 50 words) is now easy to pass, because each report has several sections and
+  headings. So the check also counts the model's own words, without the headings. Whether the
+  reports are good must be judged by reading them.
+- 2 of the 18 fixed searches find weak sections (rescue team types, and work shifts).
+
+**Test on my laptop.** With the fake model, every test did what it should:
+- fixed flow, normal answers: all 5 rules passed (36 questions to the model, 6 grades read, all
+  citations real);
+- fixed flow, very short sections: rule 2 failed, as it should;
+- fixed flow, one question always fails: rule 5 failed, as it should, and the run still finished;
+- the old agent version: still passes, the same as on 9 Nov.
+
+**Next:** practice run 5 on Kaggle (internet on). If it passes, the proof run (internet off).

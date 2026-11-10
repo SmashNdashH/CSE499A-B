@@ -32,6 +32,13 @@ Changes after Kaggle practice run 2 (5 Nov 2026):
     "The map could not be labelled ..."). It used to give back the agent's own input, so the
     agent could not tell whether the map step had worked.
   - The tool's description tells the agent what the tool does and what to send.
+
+Change after Kaggle practice run 4 (10 Nov 2026):
+  - The example in the tool's description ("Hama Street: G4, Wajima Drama Memorial Hall: G2",
+    added on 5 Nov) is gone. In run 4 every team used exactly this example as its grades, and
+    run 3's grades started with it too, although the hall's photo shows no damage. The
+    description now gives only the form: "<place name>: G<grade>". The fixed flow
+    (fixed_flow.py) never shows this description to the model; it calls the tool itself.
 """
 
 import os
@@ -133,8 +140,8 @@ def find_annotations(answer):
 def global_map_annotation(text: str) -> str:
     """
     Writes damage grades on the map of the disaster area and saves the labelled map. The
-    model finds each place on the map by its name. Send the places with their grades, e.g.
-    "Hama Street: G4, Wajima Drama Memorial Hall: G2".
+    model finds each place on the map by its name. Send each place you graded with its
+    grade, as "<place name>: G<grade>", separated by commas.
 
     Args:
         text (str): Place names with their damage grades.

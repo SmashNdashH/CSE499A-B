@@ -67,6 +67,13 @@ report is generated based on the provided data and tools." (12 words). Change:
   - CrewAI's own way to send a task back (a task "guardrail") is not used: in CrewAI 1.15.2
     it saves the first answer to the report file, not the accepted one, and the second try
     no longer sees the other teams' reports.
+
+10 Nov 2026, after Kaggle practice run 4: ask_text() is new. The fixed flow (fixed_flow.py)
+asks the model with it: one question with text only, with the team's role as the system
+message, to write one section of a report. Like a picture question, it is tried 3 times, then
+the run log gets "Local model gave no answer after 3 tries". Its calls go to llm_calls.jsonl
+as kind "section". The agents' LLM above is unchanged, and so are the picture questions
+(ask_with_images now shares its try-3-times part with ask_text).
 """
 
 import json
@@ -377,6 +384,33 @@ def _openai_client():
     return _client
 
 
+def _ask(messages: list, max_tokens: int, kind: str, fields: dict) -> str:
+    """One question to the local server, tried up to 3 times. Every try is written to
+    llm_calls.jsonl as {"kind": kind, "time": ..., **fields, ...}."""
+    last_error = None
+    for attempt in range(1, 4):
+        start = time.time()
+        try:
+            response = _openai_client().chat.completions.create(
+                model=MODEL, messages=messages,
+                max_tokens=max_tokens, temperature=TEMPERATURE, seed=SEED)
+            answer = response.choices[0].message.content or ""
+            usage = response.usage.model_dump() if getattr(response, "usage", None) else None
+            _log_call({"kind": kind, "time": round(start, 3), **fields,
+                       "max_tokens": max_tokens, "usage": usage,
+                       "seconds": round(time.time() - start, 3), "answer": answer})
+            return answer
+        except Exception as e:  # server busy or not ready: wait and try again
+            last_error = e
+            _log_call({"kind": kind, "time": round(start, 3), **fields,
+                       "seconds": round(time.time() - start, 3), "error": str(e)[:500]})
+            print(f"Local model call failed (try {attempt} of 3): {e}")
+            if attempt < 3:
+                time.sleep(10)
+    print(FAILED_MARK)
+    return f"An error occurred: {last_error}"
+
+
 def ask_with_images(prompt: str, images_b64=(), max_tokens: int = 1024) -> str:
     """Ask the local model one question, with pictures (base64 PNG). Returns its answer.
 
@@ -386,26 +420,24 @@ def ask_with_images(prompt: str, images_b64=(), max_tokens: int = 1024) -> str:
     content = [{"type": "text", "text": prompt}]
     content += [{"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}}
                 for b64 in images_b64]
-    last_error = None
-    for attempt in range(1, 4):
-        start = time.time()
-        try:
-            response = _openai_client().chat.completions.create(
-                model=MODEL, messages=[{"role": "user", "content": content}],
-                max_tokens=max_tokens, temperature=TEMPERATURE, seed=SEED)
-            answer = response.choices[0].message.content or ""
-            usage = response.usage.model_dump() if getattr(response, "usage", None) else None
-            _log_call({"kind": "image", "time": round(start, 3), "images": len(images_b64),
-                       "prompt": prompt[:400], "max_tokens": max_tokens, "usage": usage,
-                       "seconds": round(time.time() - start, 3), "answer": answer})
-            return answer
-        except Exception as e:  # server busy or not ready: wait and try again
-            last_error = e
-            _log_call({"kind": "image", "time": round(start, 3), "images": len(images_b64),
-                       "prompt": prompt[:400], "seconds": round(time.time() - start, 3),
-                       "error": str(e)[:500]})
-            print(f"Local model call failed (try {attempt} of 3): {e}")
-            if attempt < 3:
-                time.sleep(10)
-    print(FAILED_MARK)
-    return f"An error occurred: {last_error}"
+    return _ask([{"role": "user", "content": content}], max_tokens, "image",
+                {"images": len(images_b64), "prompt": prompt[:400]})
+
+
+def ask_text(system: str, prompt: str, max_tokens: int = 1024, **fields) -> str:
+    """Ask the local model one question with text only (the fixed flow, 10 Nov 2026): `system`
+    is the team's role, as CrewAI gives it; `prompt` asks for one section of a report.
+    `fields` (e.g. report=..., section=...) go into its line in llm_calls.jsonl.
+
+    If the question is too long for the model, the middle of the longest message is cut
+    (fit_messages), and the run log says so. An error comes back as text that starts with
+    "An error occurred", as in ask_with_images."""
+    messages = [{"role": "system", "content": system}, {"role": "user", "content": prompt}]
+    budget = CONTEXT - max_tokens - SAFETY_TOKENS
+    before = sum(_message_tokens(m) for m in messages)
+    messages, notes = fit_messages(messages, budget)
+    after = sum(_message_tokens(m) for m in messages)
+    if before > budget:
+        print(f"\n{SHORTENED_MARK} to fit {CONTEXT} tokens (estimated {before} -> {after}): "
+              + "; ".join(notes))
+    return _ask(messages, max_tokens, "section", {**fields, "estimated_tokens_sent": after})
