@@ -1,78 +1,82 @@
-> **[Main Project Overview](README.md)** | **[Latest Team Update](UPDATE.md)** | **[CSE499B Update 1](others/CSE499B_update_1.pdf)** | **[CSE499B Review Presentation](others/CSE499B_Review_Presentation.pptx)** | **[CSE499B Review Report](others/CSE499B_Review_report.pdf)** | **[CSE499A Archive](#cse499a-senior-design-i-archived-readme)**
+> **Latest:** [Update 4 (11 Nov 2026)](others/CSE499B_update_4.pdf) | [All weekly updates and presentations](#weekly-updates-and-presentations) | [Progress tracker](Essential_task_delegation/Progress_Tracker.md) | [CSE499A archive](#cse499a-senior-design-i-archived-readme)
 
 ---
 
 # Resource-Efficient Neural Architectures for Post-Disaster Damage Assessment and Rescue Guidance
 
-> **CSE499B/EEE499B/ETE499B - Senior Design II, Section 13, Project Group 5**
+> **CSE499B/EEE499B/ETE499B - Senior Design II, Section 13, Project Group 5, North South University**
 > **Team:** Abdullah Al Noman, Tamanna Akter Mou, Aryan Sami, Ridita Afrin Riya, Abrar Mohammed Tanzim Alam
 
-## Current Documents
+## What we are building
 
-| Document | Link |
-|---|---|
-| Update 1 report (PDF): ablation sprint results | [CSE499B_update_1.pdf](others/CSE499B_update_1.pdf) |
-| Review presentation (PowerPoint) | [CSE499B_Review_Presentation.pptx](others/CSE499B_Review_Presentation.pptx) |
-| Review presentation (HTML, opens in a browser) | [CSE499B Review Presentation (2).html](<others/CSE499B Review Presentation (2).html>) |
-| Review report (PDF) | [CSE499B_Review_report.pdf](others/CSE499B_Review_report.pdf) |
-| Team updates (updated as the semester progresses) | [UPDATE.md](UPDATE.md) |
+After an earthquake, flood or storm, rescue coordinators need to know within hours which buildings collapsed, how many, and where to search first, often with no internet and only a laptop. Our system takes a satellite image of an area before the disaster and one after it, and produces:
 
-## Current State (October 2026)
+- **a damage map, building by building:** each building marked intact, damaged or destroyed;
+- **counts** of intact, damaged and destroyed buildings, answered from a table of the buildings, never guessed by a language model;
+- **a rescue-priority heatmap** with the most urgent spots circled;
+- **written reports for rescue teams** that cite official guidelines (EMS-98 damage grades, INSARAG search-and-rescue, Sphere humanitarian standards), written by our own vision-language model (VLM) with the internet switched off.
 
-Responders need to know where buildings collapsed, and how many, within hours, offline and on the hardware they actually have. CSE499A showed two weak points: the fine-tuned vision-language model (VLM) cannot count (building counting fell 10.62 points), and the U-Net segmented destroyed buildings, only 0.33% of all pixels, at 0.17 IoU. CSE499B first strengthens the segmentation stage, then turns the modules into one offline system.
+All of it is meant to run offline, on hardware small enough to take into the field.
 
-| Stage | Status |
-|---|---|
-| Segmentation ablation sprint (tracks A to D) | Done. The Focal Tversky loss was the biggest lever (+0.056 mIoU); the best run reached 0.5296 mIoU and 0.279 Destroyed IoU, passing the mIoU target (0.52) but not yet the Destroyed target (0.30). |
-| Controlled U-Net re-runs (one change per run) | Single changes done: none beat the reference, and the U-Net++ re-test also scored lower. Two combination runs in progress. |
-| SAM 3 feasibility test | Next |
-| Before/after input and two-stage grading | Planned |
-| VLM agent with offline DisasTeller reports | Planned |
-| 7B to 3B distillation and edge benchmark | Planned |
-| Integration and final report | Planned (December) |
-
-### What each sprint track tests
-
-The sprint plan, task delegation and all experiment notebooks were created by Abrar Mohammed Tanzim Alam; each member ran their own track.
-
-| Track | Owner | What it tests | Why it matters | Result |
-|---|---|---|---|---|
-| A. Data imbalance | Aryan Sami | Weighted sampler (rare-class images drawn 10x / 5x as often) and copy-paste of rare buildings | 63% of images contain no destroyed pixel | The sampler gave the clearest Destroyed gain; copy-paste was neutral |
-| B. Architecture | Abrar Mohammed Tanzim Alam | UNet++, UNet++ with scSE attention, DeepLabV3+ and MA-Net against the plain U-Net | Richer skip connections might keep small rubble | None beat the U-Net under CE + Dice; MA-Net collapsed |
-| C. Loss and backbone | Abdullah Al Noman | Focal Tversky (two settings), Lovasz phase-in, ResNet-50 and EfficientNet-B4 encoders | Cross-entropy is swamped by 93% background pixels | The biggest lever: +0.056 mIoU; best run 0.5296 mIoU |
-| D. Resolution and inference | Ridita Afrin Riya | Native 512 and 768 crops instead of resizing, 8-view test-time augmentation, sliding window | Shrinking 1024 to 512 discards 75% of the pixels | 768 crops raised Destroyed IoU 65% over 512; TTA added up to 0.015 |
-
-### Future directions and proposed architecture
-
-1. **Show the model the "before" image.** Feed the pre-disaster image with the post-disaster one; all five top xView2 solutions compare the two.
-2. **Find buildings, then grade each one.** SAM 3 outlines every building from a text prompt with no training; a small classifier grades each building from its before/after crops.
-3. **A VLM that plans rather than guesses.** The fine-tuned VLM reads exact per-building counts as text, calls tools, and drives DisasTeller's report agents on our own model, with no cloud API.
-4. **Small enough for the field.** 7B to 3B distillation, 4-bit quantisation and a lighter SAM 3, with speed, memory and accuracy measured.
+## How it works
 
 ```text
-Pre-disaster image  --> SAM 3 (finds every building) --+
-                                                       v
-Post-disaster image --> Damage grader (pre/post crops) --> Per-building map, IDs, counts
-                                                                 | counts as text
-Responder's question --> Fine-tuned VLM agent <-----------------+
-                              |
-                              v
-                     DisasTeller report agents (EMS-98, offline)
-                              |
-                              v
-        Damage map, counts, survivability heatmap, report and alerts
+Before image --> SAM 3 outlines every building --+
+                                                 v
+After image --> damage grader (compares each building's before and after crops) --> damage map + table of buildings
+                (alternative under test: R11, a U-Net that reads both images at once)
+                                                 |
+          +--------------------------------------+---------------------------------------+
+          v                                      v                                       v
+   fixed queries -> counts            heatmap -> rescue hot spots         offline guideline search
+          |                                      |                                       |
+          +---------------> our fine-tuned Qwen2.5-VL-7B writes each report section <----+
+                                                 |
+                                 six reports for rescue teams, offline
+
+For the field: an 8-bit U-Net segmenter (33 MB) and a 3B model distilled from the 7B
 ```
 
-### Key working documents
+We build on the [DisasterM3](others/lit%20review_research%20papers/) dataset and benchmark (NeurIPS 2025): before-and-after satellite images with damage masks, and six kinds of benchmark questions for VLMs.
 
-| Document | What it covers |
+## Objectives and where we stand (11 Nov 2026)
+
+| Objective | Target | Status |
+|---|---|---|
+| **O1. Damage map** | Destroyed-building IoU above 0.30 and mean IoU above 0.52 | Met on validation, narrowly: 0.307 (the mean of three graders) with find-then-grade (SAM 3 + our grader), on pairs free of training duplicates; mean IoU 0.547. A second test set of 2,007 unseen pairs is ready |
+| **O2. Counting** | Above the base VLM's 34.2% on the benchmark's counting questions | 32.96% from a table of the buildings our U-Net found (32.47% without duplicated images): 1.7 points short |
+| **O3. Offline report system** | Reports written by our own models, with no cloud service | The full report run passed with the internet switched off (11 Nov); report quality is next |
+| **O4. Field model** | A small segmenter and a 3B VLM distilled from the 7B | The 8-bit segmenter is done (1.43× faster on a CPU, accuracy unchanged); the 3B's training is next |
+
+IoU (intersection over union) measures the overlap between predicted and true pixels, from 0 to 1. Every result links to its notebook and results file in the [progress tracker](Essential_task_delegation/Progress_Tracker.md).
+
+## Weekly updates and presentations
+
+### CSE499B (Senior Design II)
+
+| Week | Documents | What it covers |
+|---|---|---|
+| 7 Oct | [Review report (PDF)](others/CSE499B_Review_report.pdf), [review presentation (PowerPoint)](others/CSE499B_Review_Presentation.pptx), [same in a browser (HTML)](<others/CSE499B Review Presentation (2).html>) | CSE499A's weak points and the plan for this semester |
+| 13 Oct | [Update 1 (PDF)](others/CSE499B_update_1.pdf) | The segmentation improvement sprint: sampling, architecture, loss and resolution |
+| 28 Oct | [Update 2 (PDF)](others/CSE499B_update_2.pdf), [literature review (PowerPoint)](others/CSE499B_Literature_Review.pptx) | Where the segmentation model fails, and the 16 papers behind our plan |
+| 4 Nov | [Update 3 (PDF)](others/CSE499B_update_3.pdf), [proposed solution (PDF)](others/CSE499B_Proposed_Solution.pdf) | The find-then-grade model, the 7B at full image size, and the system design |
+| 11 Nov | [Update 4 (PDF)](others/CSE499B_update_4.pdf) | The report system's offline proof run, the website's first version, and a second test set |
+
+### CSE499A (Senior Design I)
+
+The proposal, updates 1 to 5, the final report, the presentations and the demo video are in [others/CSE499A/](others/CSE499A/); the README from the end of CSE499A is [archived below](#cse499a-senior-design-i-archived-readme).
+
+## Where things are
+
+| Folder or file | What it holds |
 |---|---|
-| [Segmentation_Model_Explained.md](Essential_task_delegation/Segmentation_Model_Explained.md) | How the dataset, U-Net, fine-tuning and inference work, explained from scratch |
-| [Research_Directions_Beyond_Finetuning.md](Essential_task_delegation/Research_Directions_Beyond_Finetuning.md) | Related work at top venues, the xView2 winners, the SAM 3 plan and positioning |
-| [Ablation_Study_Reference_and_QA_Prep.md](Essential_task_delegation/Ablation_Study_Reference_and_QA_Prep.md) | Verified sprint numbers, errata and likely review questions |
-| [team_task_assignments.md](Essential_task_delegation/team_task_assignments.md) | The sprint plan, tasks and the Phase Gate |
-| [segmentation_improvement_guide.md](Essential_task_delegation/segmentation_improvement_guide.md) | The improvement guide (Tiers 1 to 6) behind the sprint |
-| [Champion_Task/](Essential_task_delegation/Champion_Task/) | Notebooks and results for the controlled re-runs |
+| [Essential_task_delegation/Progress_Tracker.md](Essential_task_delegation/Progress_Tracker.md) | The status of every task, and every result with its files |
+| [Essential_task_delegation/Task_Ledger.md](Essential_task_delegation/Task_Ledger.md) | Why each task ran and what it decided |
+| [Essential_task_delegation/Next_Steps_Roadmap.md](Essential_task_delegation/Next_Steps_Roadmap.md) | The plan, and the rule fixed before each run |
+| [Essential_task_delegation/System_Design_Notes.md](Essential_task_delegation/System_Design_Notes.md) | How the parts fit into one offline system |
+| [Essential_task_delegation/Champion_Task/](Essential_task_delegation/Champion_Task/) | The experiment notebooks (Kaggle and PC) and their results |
+| [Essential_task_delegation/Offline_RAG_KR2/](Essential_task_delegation/Offline_RAG_KR2/) | The offline guideline search, and the report system on our own model |
+| [others/](others/) | Reports, presentations and the papers we reviewed |
 
 ---
 
