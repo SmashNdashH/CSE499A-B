@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #070d1a;
+  --color-panel: #0d1526;
+  --color-line: #1c2a44;
+  --color-accent: #10d9a0;
+  --color-muted: #8a9bb8;
+}
+
+html { color-scheme: dark; scroll-behavior: smooth; }
+body { background: var(--color-bg); color: #e8eefc; font-family: system-ui, sans-serif; }
