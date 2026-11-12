@@ -1,0 +1,8 @@
+{
+  "name": "Remix DisasterM3 - Neural Architectures for Rescue Guidance",
+  "description": "Resource-efficient neural architectures for post-disaster damage assessment and rescue guidance. CSE499B Senior Design Project Group 5.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
