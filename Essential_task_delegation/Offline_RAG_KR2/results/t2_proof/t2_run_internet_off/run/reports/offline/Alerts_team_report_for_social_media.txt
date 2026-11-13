@@ -1,0 +1,14 @@
+Mode: offline, fixed flow
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The following areas are identified as dangerous due to significant structural damage and require avoidance:
+- Hama Street: G4 - Severe structural damage to buildings and debris blocking roads.
+- Central Nishikigawa Street: G4 - Severe structural damage to buildings and debris accumulation.
+- North Asaichi Street: G4 - Buildings show structural compromise and water inundation.
+- South Central Asaichi Street: G5 - Total or near total collapse of buildings and extensive road damage.
+No high-risk zones were detected in the analyzed region based on the provided data.
+
+## Social media news
+The earthquake caused significant damage across several locations in the region. In Hama Street, severe structural damage to buildings and debris blocking roads were observed, classified as G4. Central Nishikigawa Street also experienced severe structural damage and debris accumulation, similarly rated G4. North Asaichi Street was affected by buildings showing structural compromise and water inundation, also categorized as G4. Finally, South Central Asaichi Street faced total or near total collapse of buildings and extensive road damage, assessed as G5. Authorities are urging residents to avoid these areas due to ongoing safety concerns. For more updates, stay connected with our disaster response team. #EarthquakeImpact #SafetyFirst

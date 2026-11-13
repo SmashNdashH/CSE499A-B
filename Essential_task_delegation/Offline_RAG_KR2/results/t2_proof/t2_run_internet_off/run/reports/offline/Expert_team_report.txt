@@ -1,0 +1,26 @@
+Mode: offline, fixed flow
+
+# Expert Team Report: Post-Earthquake Images, Locations and Disaster Grades
+
+## Overview
+The earthquake caused significant damage across multiple locations. The Wajima Drama Memorial Hall remained undamaged, while Hama Street experienced severe structural damage to buildings and debris blocking roads, classified as G4. Central Nishikigawa Street also suffered severe structural damage and debris accumulation, similarly rated G4. North Asaichi Street was affected by buildings showing structural compromise and water inundation, also categorized as G4. Finally, South Central Asaichi Street faced total or near total collapse of buildings and extensive road damage, assessed as G5.
+
+## Description of the images and locations
+The Wajima Drama Memorial Hall in Picture1.png shows no visible damage, with the structure and its surroundings remaining intact. The area displays no signs of structural or non-structural damage, consistent with a G1 rating for negligible to slight damage to masonry buildings [EMS98-masonry-grade-1].
+The earthquake in Picture2.png caused significant structural damage to buildings along Hama Street. The most prominent building on the left side of the street has collapsed, leaving debris scattered across the road and partially obstructing it. Other structures exhibit visible structural weaknesses, such as broken windows and collapsed roofs. This damage aligns with a G4 rating for very heavy structural and non-structural damage [EMS98-masonry-grade-4].
+The catastrophic collapse of a concrete bridge in Picture3.png is evident in the image. The bridge structure is visibly fractured and partially submerged in water, with its central portion completely collapsed. Debris from the fallen sections is scattered along the shoreline, indicating severe structural damage. The surrounding area remains largely unaffected, consistent with a G5 rating for total or near total collapse of the bridge structure [EMS98-rc-grade-5].
+The earthquake in Picture4.png caused significant structural damage to buildings along Central Nishikigawa Street. Several structures are visibly collapsed or partially destroyed, and roads display debris accumulation, indicating potential obstructions. This damage aligns with a G4 rating for very heavy structural and non-structural damage [EMS98-masonry-grade-4].
+The hurricane in Picture5.png caused substantial damage to buildings along North Asaichi Street. Structures show signs of structural compromise, including broken windows and collapsed facades, and the streets are inundated with water and debris. This damage aligns with a G4 rating for very heavy structural and non-structural damage [EMS98-masonry-grade-4].
+The earthquake in Picture6.png caused severe destruction to the built environment along South Central Asaichi Street. Numerous buildings are completely collapsed, and debris is scattered across the streets. The road surface is heavily damaged, and there are visible signs of structural collapse, including partially collapsed walls and roofs. This damage aligns with a G5 rating for total or near total collapse of buildings and extensive road damage [EMS98-masonry-grade-5].
+
+## Disaster grade of each location
+Wajima Drama Memorial Hall: G1 - No visible damage observed [EMS98-masonry-grade-1]
+Hama Street: G4 - Significant structural damage to buildings and debris blocking roads [EMS98-masonry-grade-4]
+Central Nishikigawa Street: G4 - Severe structural damage to buildings and debris accumulation [EMS98-masonry-grade-4]
+North Asaichi Street: G4 - Buildings show structural compromise and water inundation [EMS98-masonry-grade-4]
+South Central Asaichi Street: G5 - Total or near total collapse of buildings and extensive road damage [EMS98-masonry-grade-5]
+
+Concise summary (sent to the map annotation tool): Wajima Drama Memorial Hall: G1, Hama Street: G4, Central Nishikigawa Street: G4, North Asaichi Street: G4, South Central Asaichi Street: G5.
+
+## Conclusion
+The G5 rating for South Central Asaichi Street indicates a total or near total collapse of buildings and extensive road damage, requiring immediate attention to ensure safety and facilitate rescue operations. The G4 ratings for Hama Street, Central Nishikigawa Street, and North Asaichi Street suggest significant structural damage and debris accumulation, necessitating urgent structural assessments and debris removal efforts to restore accessibility. The Wajima Drama Memorial Hall, with a G1 rating, remains unaffected and can serve as a temporary command center for coordinating relief efforts. Overall, prioritizing the most severely impacted areas will be critical for stabilizing the situation and preventing further harm.

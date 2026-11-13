@@ -1,0 +1,108 @@
+Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)
+DisasTeller mode: offline
+DisasTeller flow: fixed (the code calls the tools in a fixed order; the model writes each section)
+
+Report: Expert_team_report.txt
+Photo tool asked: describe the photos
+Local information (Picture1.png): describe the disaster in detail in this image, in about 200 words. If the image has a sticker or sign with a place name, start with that place name. Describe only what this image shows.
+Local information (Picture2.png): describe the disaster in detail in this image, in about 200 words. If the image has a sticker or sign with a place name, start with that place name. Describe only what this image shows.
+Local information (Picture3.png): describe the disaster in detail in this image, in about 200 words. If the image has a sticker or sign with a place name, start with that place name. Describe only what this image shows.
+Local information (Picture4.png): describe the disaster in detail in this image, in about 200 words. If the image has a sticker or sign with a place name, start with that place name. Describe only what this image shows.
+Local information (Picture5.png): describe the disaster in detail in this image, in about 200 words. If the image has a sticker or sign with a place name, start with that place name. Describe only what this image shows.
+Local information (Picture6.png): describe the disaster in detail in this image, in about 200 words. If the image has a sticker or sign with a place name, start with that place name. Describe only what this image shows.
+Guideline search: EMS-98 classification of damage to masonry buildings Grade 1 negligible to slight damage
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights:  44%|████▎     | 45/103 [00:00<00:00, 161.09it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 319.37it/s]
+Guideline index loaded in 10.8 s (numpy + torch), once per run
+Guideline search took 7167 ms
+Guideline search: EMS-98 classification of damage to masonry buildings Grade 2 moderate damage
+Guideline search took 79 ms
+Guideline search: EMS-98 classification of damage to masonry buildings Grade 3 substantial to heavy damage
+Guideline search took 49 ms
+Guideline search: EMS-98 classification of damage to masonry buildings Grade 4 very heavy damage
+Guideline search took 171 ms
+Guideline search: EMS-98 classification of damage to masonry buildings Grade 5 destruction
+Guideline search took 55 ms
+Section written: Expert_team_report.txt / Disaster grade of each location: 70 words in 8.8 s
+Grades found: 5: Wajima Drama Memorial Hall: G1, Hama Street: G4, Central Nishikigawa Street: G4, North Asaichi Street: G4, South Central Asaichi Street: G5
+This image is a map of a place that experienced a disaster. It is 1080 pixels wide and 1522 pixels high. There are different disaster grade such as G1~G10 for the different locations on this map. Firstly, please find the following locations on the map according to location names; Secondly, generate a json structure for all the relevant disaster locations with position and grading information to annotate these labels on the same map, where position is [x, y] in pixels from the top-left corner, like this: {"annotations": [{"position": [820, 380], "text": "G1"}, {"position": [660, 620], "text": "G2"}]}. The disaster locations with relevant grading are following: Wajima Drama Memorial Hall: G1, Hama Street: G4, Central Nishikigawa Street: G4, North Asaichi Street: G4, South Central Asaichi Street: G5
+The disaster locations with relevant grading have been identified and their positions and grades are as follows: {"annotations": [{"position": [795, 961], "text": "G1"}, {"position": [331, 750], "text": "G4"}, {"position": [488, 516], "text": "G4"}, {"position": [585, 456], "text": "G4"}, {"position": [749, 399], "text": "G5"}]}
+[{'position': [795, 961], 'text': 'G1'}, {'position': [331, 750], 'text': 'G4'}, {'position': [488, 516], 'text': 'G4'}, {'position': [585, 456], 'text': 'G4'}, {'position': [749, 399], 'text': 'G5'}]
+Labelled map saved: reports/offline/4_anotated.png (5 labels)
+Map tool: The map was labelled with 5 label(s): G1 at [795, 961], G4 at [331, 750], G4 at [488, 516], G4 at [585, 456], G5 at [749, 399]. It is saved as reports/offline/4_anotated.png. The places and grades you sent: Wajima Drama Memorial Hall: G1, Hama Street: G4, Central Nishikigawa Street: G4, North Asaich
+Section written: Expert_team_report.txt / Overview: 82 words in 13.8 s
+Section written: Expert_team_report.txt / Description of the images and locations: 336 words in 27.2 s
+Section written: Expert_team_report.txt / Conclusion: 103 words in 8.5 s
+Report finished: Expert_team_report.txt after 2.1 min
+Global information: Analyze the map for potential dangerous areas. The places and their damage grades: Wajima Drama Memorial Hall: G1, Hama Street: G4, Central Nishikigawa Street: G4, North Asaichi Street: G4, South Central Asaichi Street: G5.
+
+Report: Alerts_team_report_for_social_media.txt
+Section written: Alerts_team_report_for_social_media.txt / Danger area alert: 88 words in 7.5 s
+Section written: Alerts_team_report_for_social_media.txt / Social media news: 104 words in 7.9 s
+Report finished: Alerts_team_report_for_social_media.txt after 0.3 min
+
+Report: Emergency_team_report.txt
+Guideline search: Sphere covered living space per person
+Guideline search took 396 ms
+Guideline search: Sphere settlement site area per person location and access
+Guideline search took 152 ms
+Guideline search: INSARAG handover of rescued patients to medical teams and hospitals
+Guideline search took 473 ms
+Section written: Emergency_team_report.txt / Emergency shelters: 95 words in 13.0 s
+Section written: Emergency_team_report.txt / Hospitals: 117 words in 8.4 s
+Section written: Emergency_team_report.txt / Immediate transportation recovery: 81 words in 6.4 s
+Report finished: Emergency_team_report.txt after 0.5 min
+
+Report: Emergency_service_human_resource_allocation.txt
+Guideline search: INSARAG light medium and heavy USAR team types
+Guideline search took 203 ms
+Guideline search: INSARAG ASR levels assessment search and rescue
+Guideline search took 111 ms
+Guideline search: INSARAG worksite triage and priorities
+Guideline search took 202 ms
+Guideline search: INSARAG rescue team shifts and rotation
+Guideline search took 116 ms
+Section written: Emergency_service_human_resource_allocation.txt / Introduction: 85 words in 13.6 s
+Section written: Emergency_service_human_resource_allocation.txt / Current Situation: 91 words in 7.3 s
+Section written: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: 165 words in 12.1 s
+Section written: Emergency_service_human_resource_allocation.txt / Allocation Plan: 130 words in 10.1 s
+Section written: Emergency_service_human_resource_allocation.txt / Challenges and Considerations: 79 words in 5.8 s
+Section written: Emergency_service_human_resource_allocation.txt / Recommendations: 93 words in 6.8 s
+Section written: Emergency_service_human_resource_allocation.txt / Conclusion: 93 words in 7.0 s
+Report finished: Emergency_service_human_resource_allocation.txt after 1.1 min
+
+Report: Public_community_report.txt
+Guideline search: Sphere emergency shelter for displaced households
+Guideline search took 70 ms
+Guideline search: Sphere household items
+Guideline search took 116 ms
+Guideline search: INSARAG rescue operations
+Guideline search took 21 ms
+Section written: Public_community_report.txt / Introduction: 89 words in 13.4 s
+Section written: Public_community_report.txt / Current Situation: 91 words in 7.6 s
+Section written: Public_community_report.txt / Resource Allocation: 83 words in 6.6 s
+Section written: Public_community_report.txt / Public Advisory: 90 words in 7.0 s
+Section written: Public_community_report.txt / Organizational Operation: 63 words in 5.3 s
+Section written: Public_community_report.txt / Conclusion: 70 words in 4.9 s
+Report finished: Public_community_report.txt after 0.7 min
+
+Report: Reconstruction_plan.txt
+Guideline search: Sphere repair retrofit or rebuild damaged houses
+Guideline search took 257 ms
+Guideline search: Sphere debris removal
+Guideline search took 130 ms
+Guideline search: Sphere technical assistance building codes and construction practices
+Guideline search took 143 ms
+Section written: Reconstruction_plan.txt / Executive Summary: 84 words in 12.4 s
+Section written: Reconstruction_plan.txt / Assessment of Damage: 107 words in 8.3 s
+Section written: Reconstruction_plan.txt / Reconstruction Needs: 125 words in 9.2 s
+Section written: Reconstruction_plan.txt / Plan of Action: 357 words in 27.4 s
+Section written: Reconstruction_plan.txt / Recommendations: 86 words in 7.3 s
+Section written: Reconstruction_plan.txt / Appendices: 37 words in 6.7 s
+Report finished: Reconstruction_plan.txt after 1.2 min
+
+Fixed flow finished: 6 reports in reports/offline, grades found: 5
+
+Network log: 4 lookups and connections; on this computer: ['127.0.0.1']
+Outside this computer: none
+Gemini libraries loaded: none
+Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2_run/run

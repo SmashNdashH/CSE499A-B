@@ -1,0 +1,34 @@
+Mode: offline, fixed flow
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The earthquake caused significant damage across multiple locations, with the Wajima Drama Memorial Hall remaining undamaged. Hama Street, Central Nishikigawa Street, and North Asaichi Street experienced severe structural damage and debris accumulation, while South Central Asaichi Street faced total or near total collapse of buildings and extensive road damage. Immediate response efforts focused on establishing temporary shelters in the undamaged Wajima Drama Memorial Hall, clearing debris to restore road access, and assessing the structural integrity of damaged buildings to prioritize repairs and safety measures.
+
+## Assessment of Damage
+The earthquake caused significant damage across multiple locations. The Wajima Drama Memorial Hall in the center of the region remained undamaged, classified as G1 for negligible to slight damage to masonry buildings. Hama Street, Central Nishikigawa Street, and North Asaichi Street all experienced severe structural damage and debris accumulation, assessed as G4 for very heavy structural and non-structural damage. The most severely impacted area, South Central Asaichi Street, faced total or near total collapse of buildings and extensive road damage, classified as G5 for destruction. The disaster grades indicate the need for urgent structural assessments, debris removal, and road reopening to facilitate emergency response and recovery efforts.
+
+## Reconstruction Needs
+The reconstruction needs for the affected areas include repairing and rebuilding damaged structures, clearing debris, and restoring road access. For Hama Street, Central Nishikigawa Street, and North Asaichi Street, structural repairs and debris removal are required to stabilize the environment and facilitate safe access. Given the G4 and G5 damage categories, specialized teams will be needed to assess and address the structural integrity of buildings and bridges, ensuring safety and compliance with building codes. For South Central Asaichi Street, complete rebuilding of collapsed structures and road rehabilitation are essential. Local contractors and engineers should be mobilized to execute these tasks, supported by technical assistance to ensure adherence to safety standards. Reconstruction efforts should prioritize community engagement to ensure the resilience of rebuilt structures and infrastructure.
+
+## Plan of Action
+### Immediate Actions
+1. **Clear Debris and Open Roads:** Mobilize local labor and heavy machinery to clear debris from Hama Street, Central Nishikigawa Street, and North Asaichi Street to restore road access. Prioritize removing fallen structures and debris to enable emergency response teams and supplies to reach affected areas.
+2. **Safety Assessments:** Deploy structural engineers to conduct rapid safety assessments of all G4 and G5 damaged buildings and bridges to identify critical risks and prioritize stabilization measures. Ensure access to safety protocols and building codes for accurate evaluations.
+3. **Temporary Housing:** Utilize the Wajima Drama Memorial Hall as a temporary housing center for displaced residents while ensuring it complies with G1 standards for continued use. Coordinate with local authorities to provide basic amenities and support.
+
+### Medium-term Actions
+4. **Structural Repairs and Retrofits:** Engage local contractors and architects to begin repairs on G4 and G5 damaged buildings, focusing on reinforcing weakened structures and addressing debris impacts. Implement retrofitting measures for buildings at risk of future earthquakes, adhering to Sphere Handbook 2018 guidelines.
+5. **Bridge Reconstruction:** Develop a detailed plan for reconstructing the collapsed bridge on South Central Asaichi Street using durable materials and advanced engineering techniques. Collaborate with civil engineers to ensure alignment with safety standards and minimize disruption to transportation networks.
+6. **Community Engagement:** Organize workshops and training sessions for affected residents on earthquake-resistant construction practices and safety measures. Encourage participation in rebuilding efforts through community-led initiatives, fostering resilience and ownership in the recovery process.
+
+### Long-term Actions
+7. **Building Codes and Standards:** Work with local authorities to establish updated building codes and standards compliant with EMS-98 guidelines to mitigate future risks. Implement a phased approach to retrofitting and rebuilding, ensuring all structures meet modern seismic resistance criteria.
+8. **Monitoring and Maintenance:** Establish a long-term monitoring program to track structural stability and performance of rebuilt buildings and bridges. Provide ongoing technical support to local authorities and contractors to maintain compliance and address any emerging vulnerabilities.
+9. **Public Awareness Campaigns:** Launch public awareness campaigns emphasizing earthquake preparedness and the importance of resilient construction. Distribute educational materials and organize drills to enhance community readiness for future seismic events.
+
+## Recommendations
+To effectively support the reconstruction efforts, it is recommended to allocate resources for immediate debris clearance and road reopening, coupled with rapid structural assessments to ensure safety. Engage local contractors and engineers for repairs and retrofits, prioritizing G4 and G5 damaged buildings. For the collapsed bridge, secure funding for advanced reconstruction using durable materials. Establish a community engagement program to foster earthquake-resilient practices, and collaborate with local authorities to update building codes. Long-term monitoring and maintenance programs should be implemented to ensure structural integrity and safety.
+
+## Appendices
+Disaster grades: Wajima Drama Memorial Hall - G1, Hama Street - G4, Central Nishikigawa Street - G4, North Asaichi Street - G4, South Central Asaichi Street - G5. Guideline sections used: SPHERE-appendix-4-p1, EMS98-2.3-p2, SPHERE-1-p4, SPHERE-5-p1, SPHERE-5-p2, SPHERE-appendix-5-p2.
