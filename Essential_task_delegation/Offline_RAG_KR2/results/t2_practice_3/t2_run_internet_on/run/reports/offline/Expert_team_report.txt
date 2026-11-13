@@ -1,0 +1,3 @@
+Mode: offline
+
+The final report is generated based on the provided data and tools.

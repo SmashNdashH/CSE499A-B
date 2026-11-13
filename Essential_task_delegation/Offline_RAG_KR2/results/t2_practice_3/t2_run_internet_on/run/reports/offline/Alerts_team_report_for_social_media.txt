@@ -1,0 +1,12 @@
+Mode: offline
+
+<div class="social-media-news">
+<p>Disaster Report: Earthquake Impact Analysis</p>
+<p>Our team has analyzed the earthquake impact across various regions. The affected areas include:</p>
+<ul>
+<li><strong>Region A</strong>: Slight damage with a disaster grade of 2.</li>
+<li><strong>Region B</strong>: Moderate damage with a disaster grade of 4.</li>
+<li><strong>Region C</strong>: Severe damage with a disaster grade of 6.</li>
+</ul>
+<p>Based on the analysis of the global map, no additional dangerous areas were identified beyond the affected regions. We recommend staying informed and prepared for any further updates.</p>
+</div>
