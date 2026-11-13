@@ -1,0 +1,5 @@
+Mode: offline
+
+Thought: I have analyzed the guidelines for rescue teams, ASR levels, and worksite triage, and I will now focus on allocating human resources based on the disaster grading for specific locations.
+Action: offline_pdf_search_tool
+Action Input: {"query": "Hama Street: G4, Wajima Drama Memorial Hall: G2"}

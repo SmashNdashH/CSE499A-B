@@ -1,0 +1,5 @@
+Mode: offline
+
+Thought: I have analyzed the post-earthquake images and obtained the disaster grading for specific locations using the provided tools. Now, I will create a concise summary of the disaster region location name with their relevant grading.
+Action: offline_pdf_search_tool
+Action Input: {"query": "Hama Street: G4, Wajima Drama Memorial Hall: G2"}

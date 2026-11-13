@@ -1,0 +1,111 @@
+{
+  "main_script": "/kaggle/working/disasteller/DisasterManagement_teamwork_simulation.py",
+  "run_folder": "/kaggle/working/t2_run/run",
+  "started": "2026-11-10 04:49:57",
+  "seconds": 373.7,
+  "main_script_finished": true,
+  "error": null,
+  "settings": {
+    "CREWAI_DISABLE_TELEMETRY": "true",
+    "CREWAI_DISABLE_VERSION_CHECK": "true",
+    "CREWAI_TRACING_ENABLED": "false",
+    "GUIDELINE_BACKEND": "numpy",
+    "GUIDELINE_INDEX_DIR": "/kaggle/input/datasets/riditaafrin/offline1-rag-kr2",
+    "HF_HUB_OFFLINE": "1",
+    "LOCAL_LLM_BASE_URL": "http://127.0.0.1:8000/v1",
+    "LOCAL_LLM_CALL_LOG": "llm_calls.jsonl",
+    "LOCAL_LLM_CONTEXT": "32768",
+    "LOCAL_LLM_MODEL": "disasterm3-7b",
+    "LOCAL_LLM_PROVIDER": "hosted_vllm",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "lookups_and_connections": 12,
+  "external": [],
+  "gemini_modules_loaded": [],
+  "events": [
+    {
+      "time": 1794286206.031,
+      "kind": "lookup",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    },
+    {
+      "time": 1794286206.031,
+      "kind": "connect",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    },
+    {
+      "time": 1794286209.122,
+      "kind": "lookup",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    },
+    {
+      "time": 1794286209.122,
+      "kind": "connect",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    },
+    {
+      "time": 1794286242.478,
+      "kind": "lookup",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    },
+    {
+      "time": 1794286242.478,
+      "kind": "connect",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    },
+    {
+      "time": 1794286251.75,
+      "kind": "lookup",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    },
+    {
+      "time": 1794286251.751,
+      "kind": "connect",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    },
+    {
+      "time": 1794286261.221,
+      "kind": "lookup",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    },
+    {
+      "time": 1794286261.221,
+      "kind": "connect",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    },
+    {
+      "time": 1794286293.081,
+      "kind": "lookup",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    },
+    {
+      "time": 1794286293.081,
+      "kind": "connect",
+      "host": "127.0.0.1",
+      "port": 8000,
+      "local": true
+    }
+  ]
+}
