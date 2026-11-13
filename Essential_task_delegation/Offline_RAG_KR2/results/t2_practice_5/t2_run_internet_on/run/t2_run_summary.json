@@ -1,0 +1,143 @@
+{
+  "verdict": "PASSED as a practice run (internet on); the proof needs internet off",
+  "internet": "on",
+  "rules": {
+    "1. The run finished": true,
+    "2. All six reports, each starting 'Mode: offline', each 50+ words": true,
+    "3. Nothing went outside this computer": true,
+    "4. No Gemini library was loaded": true,
+    "5. Every model question got an answer": true
+  },
+  "signals": {
+    "flow": "fixed",
+    "minutes": 6.2,
+    "network_events": 4,
+    "external": [],
+    "guideline_searches": 18,
+    "photo_questions": 6,
+    "map_questions": 1,
+    "map_label_questions": 1,
+    "labelled_map_saved": true,
+    "map_labels_drawn": [
+      5
+    ],
+    "sections_written": 28,
+    "grades_found": [
+      5
+    ],
+    "model_messages_shortened": 0,
+    "model_call_retries": 0,
+    "total_words": 3258,
+    "total_citations": 11,
+    "total_citations_real": 11,
+    "llm_calls_log": true,
+    "agent_calls": 0,
+    "image_calls": 8,
+    "section_calls": 28,
+    "section_words_median": 90.0,
+    "section_words_min": 37,
+    "calls_with_errors": 0,
+    "biggest_prompt_tokens_real": 6405,
+    "biggest_prompt_tokens_estimated": 9062,
+    "lowest_estimate_to_real_ratio": 1.38,
+    "answer_tokens_real": 4725,
+    "minutes_in_model_calls": 5.7,
+    "step_limit_reached": 0,
+    "final_answers_asked_again": 0,
+    "final_answers_kept_short": 0,
+    "photo_descriptions": 6,
+    "photo_descriptions_different": 6,
+    "search_index_load_seconds": 11.7,
+    "search_backend": "numpy + torch",
+    "searches_timed": 18,
+    "search_ms_median": 117.5,
+    "search_ms_p90": 466.4,
+    "search_ms_max": 6399.5,
+    "agent_call_seconds_median": null,
+    "agent_call_seconds_p90": null,
+    "agent_call_seconds_max": null,
+    "image_call_seconds_median": 6.0,
+    "image_call_seconds_p90": 11.3,
+    "image_call_seconds_max": 11.3,
+    "section_call_seconds_median": 8.4,
+    "section_call_seconds_p90": 14.0,
+    "section_call_seconds_max": 29.4,
+    "answer_tokens_per_second_median": 14.9,
+    "report_minutes": {
+      "Expert_team_report.txt": 2.0,
+      "Alerts_team_report_for_social_media.txt": 0.3,
+      "Emergency_team_report.txt": 0.5,
+      "Emergency_service_human_resource_allocation.txt": 1.1,
+      "Public_community_report.txt": 0.8,
+      "Reconstruction_plan.txt": 1.3
+    }
+  },
+  "reports": {
+    "Expert_team_report.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 647,
+      "words_outside_headings": 620,
+      "citations": 11,
+      "citations_real": 11,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Alerts_team_report_for_social_media.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 211,
+      "words_outside_headings": 192,
+      "citations": 0,
+      "citations_real": 0,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Emergency_team_report.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 312,
+      "words_outside_headings": 293,
+      "citations": 0,
+      "citations_real": 0,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Emergency_service_human_resource_allocation.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 764,
+      "words_outside_headings": 736,
+      "citations": 0,
+      "citations_real": 0,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Public_community_report.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 506,
+      "words_outside_headings": 486,
+      "citations": 0,
+      "citations_real": 0,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Reconstruction_plan.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 818,
+      "words_outside_headings": 787,
+      "citations": 0,
+      "citations_real": 0,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    }
+  }
+}
