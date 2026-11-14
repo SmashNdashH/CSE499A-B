@@ -56,7 +56,7 @@ The "ours" column is the old 7B at 512 px (H1 V2). Since 28 Oct the project uses
 
 Sources: [L0 step 2, part A](../Champion_Task/L0-step2-results/new-partA/L0S2/README.md) and [part B](../Champion_Task/L0-step2-results/new-partB/L0S2/README.md); the decision in the [tracker](../Progress_Tracker.md) (L0 step 2).
 
-**Put the target beside it.** Our 7B's building counting (30.31%) is still below the base model's 34.2%, so say that next to the number; counting is answered from the building table, not the VLM.
+**A caveat to put under this table.** On building counting, a rule that never looks at the image scores 66.98%. Whenever a question's largest option is above 20, the five options are 0.6, 0.8, 1, 1.2 and 1.4 times the correct count, so the middle value is always right. Accuracy on this task can't show counting ability ([benchmark-option-rule-check.ipynb](../Champion_Task/benchmark-option-rule-check.ipynb)).
 
 ### 2.4 The segmentation table mixes two sets of images (lines 22–27)
 
@@ -79,14 +79,14 @@ Sources:
 
 Two more changes to this table:
 - **Don't highlight R11 as the best.** On clean validation it has the higher mIoU but the lower Destroyed IoU.
-- **Which model the system uses is still being decided,** so wait for that before choosing what to highlight.
+- **A new result exists.** On 2,007 test pairs no model was trained or tuned on (E7 step 2, 11 Nov), the two are close: Destroyed IoU 0.3898 for SAM 3 + grader against 0.3984 for R11, and mIoU 0.5129 against 0.5721 ([results](../Champion_Task/E7-results/step2/README.md)). Which one the system uses is being decided now, so wait for that before choosing what to highlight.
 
 ### 2.5 The goals' status lines (lines 9–12)
 
-- **O1:** "Met narrowly on leak-free data" is right for validation. Add "on validation".
-- **O2:** the text says counts are "fed to the VLM". Since H2b (23 Oct), counting questions are answered from the building table with fixed queries, not through the VLM. The counting score is 32.47% on E5's clean questions, against the base 7B's 34.2%.
+- **O1:** "Met narrowly on leak-free data" is right for validation. Add "on validation", since the test pairs now have their own number (2.4).
+- **O2:** the text says counts are "fed to the VLM". Since H2b (23 Oct), counting questions are answered from the building table with fixed queries, not through the VLM. The counting score is 32.47% on E5's clean questions, against the base 7B's 34.2%, with the caveat in 2.3.
 - **O3:** the offline proof passed on 11 Nov (Ridita, T2). DisasTeller wrote all six reports with our 7B, with the internet off, on Kaggle's two T4 GPUs. The reports' quality and the single chain of models are still open ([Offline_RAG_KR2/README.md](../Offline_RAG_KR2/README.md), "Proof run").
-- **O4:** L0 is done (28 Oct), and the 3B's training is next. The INT8 edge segmenter is done (L1b). "Next (after L0/L2)" is out of date.
+- **O4:** L0 is done (28 Oct). L2's five notebooks are built (8 Nov) but not run yet. The INT8 edge segmenter is done (L1b). "Next (after L0/L2)" is out of date.
 
 ## 3. The four wireframe images: please remove them from the repository
 
@@ -116,7 +116,7 @@ The images in `Project Website Test Wireframe/` (about 12 MB) follow the CSE499A
   - Suggested: "Planned: at the booth, the site calls a local API on the laptop with the internet off. The offline run is already proven on two T4 GPUs."
 - **"All headline scores are re-scored without them"** (`src/data/about.js`, line 13; `src/pages/Data.jsx`, line 9). That's only true once section 2.4 is fixed.
 - **"645 validation images, never trained on"** (`src/pages/Data.jsx`, line 6). 40 of them share images with training. Suggested: "645 validation images; 605 after removing 40 that leaked from training".
-- **Pipeline steps 01 and 02** (`src/data/pipeline.js`, lines 2–3). These are two alternatives, not two steps of one pipeline: either R11's pixel map or SAM 3's outlines with the grader give the damage map, and which one the system uses is being chosen. Suggested: one step, "Find and grade the buildings", that names both.
+- **Pipeline steps 01 and 02** (`src/data/pipeline.js`, lines 2–3). These are two alternatives, not two steps of one pipeline: either R11's pixel map or SAM 3's outlines with the grader give the damage map, and E7 is choosing between them. Suggested: one step, "Find and grade the buildings", that names both.
 
 ## 5. Smaller points
 

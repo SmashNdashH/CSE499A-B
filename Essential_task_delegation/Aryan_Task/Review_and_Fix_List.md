@@ -33,6 +33,33 @@ Every finding gives its evidence (file and line) and the correct value with its 
    - a junk notebook at the repository root;
    - team members' names wrong.
 
+## Where my work stands (15 Nov), so you can work in parallel
+
+These results aren't in the weekly updates yet; they go into update 5 (Wed 18 Nov).
+
+- **A second test set (E6, 7 Nov):** 2,007 clean before-and-after pairs from the benchmark's own test split, with true damage masks rebuilt from its per-class masks. The masks give the exact true count for all 3,470 counting questions on these pairs. [E6 results](../Champion_Task/E6-results/E6/README.md).
+- **The benchmark's counting questions give their answer away (7 Nov):**
+  - Whenever a question's largest option is above 20 (1,581 of the 3,583 optical counting questions), the five options are 0.6, 0.8, 1, 1.2 and 1.4 times the true count, so the middle one is always right.
+  - A rule that never sees the image scores 66.98%; always picking the middle option scores 53.95%.
+  - So accuracy on these questions can't show counting ability. That covers the 34.2% target and your v3 and v4 numbers too. We now report count error (the distance from the true count) beside accuracy.
+  - [benchmark-option-rule-check.ipynb](../Champion_Task/benchmark-option-rule-check.ipynb).
+- **Both damage-map models on unseen pairs (E7 step 2, 11 Nov):**
+  - Destroyed-building IoU 0.3898 for find-then-grade (the mean of three graders) and 0.3984 for R11; mean IoU 0.5129 and 0.5721.
+  - A resampling test (step 2b) shows the overall gap is noise, but the models split by event: R11 is clearly better outside Turkey (by 0.057), and find-then-grade is far better on Turkey (by 0.236).
+  - By the rule fixed before the run, which model feeds the building table is open again; I'm deciding it next.
+  - Counting from either model's table: 32.7% and 32.53% on the clean questions (no clear difference, p = 0.87); median count error 40% and 38%.
+  - [Step 2](../Champion_Task/E7-results/step2/README.md), [step 2b](../Champion_Task/E7-results/step2b/README.md).
+- **The 3B (L2 step 2, built 8 Nov, not run yet):** two training variants, chosen between on 1,962 held-out questions by a rule fixed before training:
+  - (b) the 7B's soft labels;
+  - (c) the 7B's answers with the options shown.
+
+  The five Kaggle notebooks are `Champion_Task/l2-step1b-soft-labels.ipynb` to `l2-step4-winner-benchmark.ipynb`.
+- **What this means for your tasks:**
+  - The bridge's table must come from whichever model is chosen (section 7).
+  - In counting work, report count error, not only accuracy.
+  - The site's building table should have exactly the chosen model's columns (H2's).
+  - Keep these results off the public website until they're in update 5. The site sticks to the facts in section 9.
+
 ## 1. The website shows invented assessments of real places (fix first)
 
 **Evidence:**
@@ -148,7 +175,7 @@ These were sent on 28 Oct and again on 4 Nov. `BDC-v4-results/README.md` hasn't 
   - Line 44 starts the counts at zero with `"status": "ok"`, so an image that isn't in the table returns 0 intact, 0 damaged and 0 destroyed with status "ok". A report could then say "0 buildings" about an image that was never analysed.
   - Return `"status": "image_not_in_table"` instead, as the hot-spot function already does (line 71, `"image_not_found"`). The caller must then stop, or write "no data" for that image.
 - **Add a self-check:** a few `assert`s for three cases: an image in the table, an image not in it, and a missing database.
-- **Don't connect it to the fixed flow yourself.** Ridita owns `fixed_flow.py`, and the model that feeds the table is chosen before T2 step 5. Keep the function's inputs and outputs stable.
+- **Don't connect it to the fixed flow yourself.** Ridita owns `fixed_flow.py`, and the model that feeds the table is chosen before T2 step 5; E7 reopened that choice on 11 Nov (see "Where my work stands"). Keep the function's inputs and outputs stable.
 - **Take both inputs from the same model.** Today the table (H2) comes from R11 and the hot spots (T1) from R9, and they share only 7 images. Make both paths required parameters, with no defaults pointing at the current, mismatched files.
 
 ## 8. The checks I'll run on your fixes
