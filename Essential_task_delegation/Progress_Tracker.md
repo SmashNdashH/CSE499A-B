@@ -1,7 +1,131 @@
 # CSE499B progress tracker
 
-**Last updated:** 28 Oct 2026.
-- **L2 step 1 again, with the new 7B as teacher: built on your go and dry-run checked (28 Oct), ready to run on account 1 (about 5.5 h).** [l2-step1-new-teacher.ipynb](Champion_Task/l2-step1-new-teacher.ipynb): full size, greedy, the plain training prompt, and the first run's entries minus road counting (3,265). Run steps under "Needs you now".
+**Last updated:** 16 Nov 2026.
+- **T3, the showcase website: phase 1 built (15–16 Nov), not deployed and not pushed yet.** [T3_Website/](T3_Website/README.md), started from a copy of Aryan's prototype; what's built and what was found is in [System_Design_Notes.md §4.6](System_Design_Notes.md).
+  - **Your choices (16 Nov):** direction A ("Aftermap", a placeholder name), with B's gridlines, a small before/after pair, the contour background, and on/off switches for the damage map and heatmap.
+  - **Brought back from Aryan's prototype on real data (16 Nov):** the Sphere and INSARAG questions as the proof run's 18 guideline searches with their passages word for word; map-picture and report downloads; the limitations; and thermal, sensor and route ideas as text under "Future ideas, not built".
+  - **Handed to Aryan (16 Nov):** [his handover](Aryan_Task/T3_Website_Handover.md) gives every path, the rules, what changed from his prototype and why, and the next tasks in order. It reaches him only once pushed: the commands are under "Needs you now".
+  - **Not built:** the separate seven pages, the 3D damage city, Try it, the gallery export (your notebook, against [DATA_CONTRACT.md](T3_Website/DATA_CONTRACT.md); four validation pairs with R9's masks stand in, marked), the booth API, the deployment. Lighthouse not measured since the scroll story went in.
+  - **Found:** four more faults in Aryan's bridge (his review, §7.2–7.5); the wireframes' damage colours fail a colour-blindness check; and xBD's original label files carry a ground resolution (1.25–2.82 m per pixel in a sample of 12) and coordinates, so metres would be possible for xBD pairs. Open questions are in [T3_Website/NOTES.md](T3_Website/NOTES.md), section 3.
+- **E7 step 2 done (account 1; its output files date from 7–8 Nov, downloaded 11 Nov): on 2,007 test pairs no model has seen, find-then-grade and R11 are level on destroyed buildings, so by the rule fixed before the run the choice of chain reopens.** Find-then-grade = SAM 3 outlines each building on the before-image, and our grader (a Siamese ResNet-18) labels it intact, damaged or destroyed. R11 = our U-Net that reads the before- and after-image, with 8-view test-time augmentation. [Results](Champion_Task/E7-results/step2/README.md).
+
+  | Clean test pairs (2,007) | Find-then-grade (mean of 3 graders) | R11 |
+  |---|---|---|
+  | Destroyed-building IoU | 0.3898 | 0.3984 |
+  | Mean IoU | 0.5129 | 0.5721 |
+  | Building IoU (finding buildings at all) | 0.5416 | 0.6944 |
+  | Turkey only (414 pairs), destroyed | **0.3233** | 0.0867 |
+  | Without Turkey, destroyed | 0.4105 | **0.4672** |
+  | Counting, E5's clean questions | 32.7% | 32.53% (p = 0.87) |
+  | Median count error | 40% | 38% |
+
+  - **The rule (roadmap G6):** find-then-grade stays the chain only if its destroyed-building IoU beats R11's. It doesn't (−0.0086), so the choice reopens.
+  - **E7 step 2b, on your PC (11 Nov), your go: is the gap noise?** [Results](Champion_Task/E7-results/step2b/README.md), [notebook](Champion_Task/e7-step2b-resampling-test.ipynb). The 2,007 pairs redrawn 10,000 times: the middle 95% of the gap runs from −0.038 to +0.022 (by pair) and from −0.098 to +0.089 (redrawing whole events). **Noise.** But the two split by event, and both splits are real: without Turkey R11 leads by 0.057 (interval −0.078 to −0.036, and still below 0 by event); on Turkey find-then-grade leads by 0.236 (0.161 to 0.304). All five expectations fixed before the run were met.
+    - Check: R11 and grader seed 42 reproduce step 2's published scores exactly from the saved maps. Seeds 43 and 44, rebuilt from scores saved to 6 decimals, match within 0.0006 (11–19 near-tied outlines per seed). The first run stopped at this check (seed 43 on Turkey off by 0.0006); the fix is recorded in the notebook's first cell.
+  - **Against the expectation of step 2:** both models scored higher on the test pairs than on clean validation (0.390 against 0.307; 0.398 against 0.269), so these pairs are easier on destroyed buildings. Counting came out level, as expected.
+  - **Also seen:** with perfect grades on SAM 3's outlines, find-then-grade would reach 0.590, so the grader is the weak part (macro F1 0.68–0.70 on the true test buildings, 0.73–0.75 on validation; "damaged" is the weakest class). The run passed its safety checks on 12 validation images, and R11's table reproduced H2's counting score (33.02% against 32.96%).
+  - **Your decision, under "Needs you now":** which model feeds the building table, the hot spots and the reports (T2 step 5).
+- **T2: the offline proof passed (Ridita's runs, 9–11 Nov), with a fixed flow instead of CrewAI's agents.** Checked in her two run notebooks: Kaggle's internet setting off in the proof, "Internet is OFF", commit `258a4f381` in both, the same 28 sections with the same word counts, 4 network connections, all to `127.0.0.1`, and "PASSED: the offline proof (internet off)". Details in her [README](Offline_RAG_KR2/README.md), sections "Practice run 3" to "Proof run".
+  - **What happened:** her run 3 failed like yours (one-sentence reports). Run 4, after her fixes (a re-ask when a report is under 150 words; tools that accept an empty input), failed rule 2 again: the 7B repeated the same tool call until the step limit, and CrewAI saved the call as the report. It also showed that runs 3 and 4 copied their grades from an example in the map tool's description (removed).
+  - **The decision:** by the rule she wrote before run 4, she switched to the fixed flow on 10 Nov, the option recommended here. Code calls the photo tool, the map tool and 18 guideline searches in a fixed order, and the 7B writes each report section by section (28 sections).
+  - **Run 5 (internet on) and the proof run (internet off) passed rules 1–5, with the same reports word for word:** 192 to 787 words of the model's own per report (Gemini's July reports: 379 to 912). DisasTeller took about 6 minutes on two T4s. Against her expectation: 5 grades found, not 6 (the bridge photo's description has no place name).
+  - **Not solved, the reports' quality** (her list, checked 15 Nov against the reports themselves, which she pushed on 14 Nov to `Offline_RAG_KR2/results/t2_practice_3` to `t2_proof`):
+    - the map reading says "no dangerous zones", and three reports repeat it;
+    - one report gives a made-up hotline, "123456789";
+    - only the Expert report cites guideline sections in brackets;
+    - photo 5 is called a "hurricane";
+    - three of the five map labels are off their streets;
+    - the staff and team numbers are the model's own invention.
+  - **Next:** the comparison with July's Gemini reports (T2's check before steps 5 and 7), and any quality fix as a new run.
+- **Noman: a website prototype (pushed 9–10 Nov), reviewed 11 Nov: [review for Noman](Noman_task/Review_AeroRescue_site.md).**
+  - **What it is:** a 7-page React site for Vercel, whose demo labels its sample output honestly.
+  - **Errors in its data files:**
+    - wrong task names (BBR shown as "bounding-box reasoning", DRE as "damage reasoning");
+    - two numbers swapped;
+    - the old 7B's scores;
+    - a segmentation table that mixes leaked and leak-free scores;
+    - Section 15 instead of 13;
+    - a claim that the booth laptop already runs every model offline.
+  - **The four wireframe images** in `Noman_task/Project Website Test Wireframe/` follow the abandoned CSE499A proposal, with results never measured (an expert "Rescue Actionability" score, wins over GPT-4o and Gemini) and FEMA and UN-OCHA sign-in pages, in our public repository. Ask him to remove them.
+  - It covers the same ground as T3 (your task, decided 24 Oct).
+- **For today's class (Wed 11 Nov, 09:40):** [others/CSE499B_update_4.pdf](../others/CSE499B_update_4.pdf).
+  - **Format:** 1 page, in update 3's format; its `.tex` stays local (git-ignored).
+  - **Contents:** Ridita's offline proof run, Noman's website, and Abrar's second test set (E6). The results table keeps update 3's figures, plus the proof run.
+  - **No section for Aryan or Tamanna:** they pushed nothing since 4 Nov.
+  - **The front-page [README](../README.md)** is rewritten as your supervisor asked: a broad overview, the four objectives with their status at the level of update 4, and every weekly update and presentation linked by date.
+  - It links the full update 2 and literature review. If you handed in the Phase A-only ("faux") versions, the links should point to those instead.
+- **L2 step 2 built (8 Nov): five notebooks, each dry-run checked on your PC. Ready to run; steps under "Needs you now".** They train two distilled 3Bs, (b) soft labels and (c) the options rerun, and keep the better one by the rule fixed this morning ([roadmap L2](Next_Steps_Roadmap.md)).
+  - **What runs, in order** (times estimated; each smoke test measures them):
+    1. [l2-step1b-soft-labels.ipynb](Champion_Task/l2-step1b-soft-labels.ipynb), account 3, about 5 h: the new 7B reads each of the 38,271 checkable training questions with its correct answer, and keeps its 20 most likely tokens at each answer token. These are (b)'s soft labels.
+    2. [l2-step1c-options-rerun.ipynb](Champion_Task/l2-step1c-options-rerun.ipynb), account 1, about 1.5 h: the new 7B answers L2 step 1's counting and relational questions again, with the benchmark's options shown; correct letters are kept for (c).
+    3. [l2-step2-train-3b.ipynb](Champion_Task/l2-step2-train-3b.ipynb), about 20 h each in two sessions: the 3B (`Qwen/Qwen2.5-VL-3B-Instruct`, 4-bit, a new LoRA adapter) learns from 53,032 training entries. `MODE = "b"` on account 3 after run 1; `MODE = "c"` on account 1 after run 2.
+    4. [l2-step3-heldout-select.ipynb](Champion_Task/l2-step3-heldout-select.ipynb), account 2, about 1–1.5 h: both 3Bs and the untrained 3B answer the 1,962 questions on the 501 held-out after-photos in the benchmark's format, and the rule names the winner.
+    5. [l2-step4-winner-benchmark.ipynb](Champion_Task/l2-step4-winner-benchmark.ipynb), account 2, about 2–3 h: the winner on the benchmark's 10,675 optical questions, beside the new 7B.
+  - **Checked on your PC:** each notebook's own cells ran on a tiny random Qwen2.5-VL with the real `train_release.json` and `benchmark_release.json`, and stand-ins for Kaggle's folders and Hugging Face.
+    - The counts match: 55,764 usable entries, 53,032 for training, 1,962 held-out questions, 10,675 benchmark questions.
+    - Run 1, the training and run 5 stop at their time limit and continue in a new session, with nothing lost or repeated.
+    - In (b)'s training, every soft label lines up with the 3B's target token (0 misaligned).
+    - Run 4's rule picks the expected winner in all five made-up cases: McNemar either way, count error either way, and a tie going to (b).
+    - In run 5, a missing and an unreadable picture are scored wrong, as L0 step 2 scored them.
+  - **Found while checking:** the held-out training questions have the benchmark's flaw too. When the largest option is above 20 (293 of the 1,045 counting questions), the middle option is right every time. The rule's primary score leaves those out, so 1,669 of the 1,962 questions count.
+  - **Changed from this morning's plan:**
+    - (b) runs on account 3, not account 4: its training pushes checkpoints with your write token, and account 4 is Tamanna's.
+    - Runs 4 and 5 remove torchao before loading the adapters (the clash that stopped L0's merge on 26 Oct).
+    - E5's clean set for the winner is scored on your PC from run 5's per-question file, as L0 step 2's was.
+    - The images are capped at 768 × 28 × 28 pixels and never enlarged; this morning's note said "between 256 × 28 × 28 and 768 × 28 × 28".
+  - **Expectations, fixed before the runs:**
+    - Run 1: the 7B's top token equals the label's on most answer tokens, lowest on counting numbers.
+    - Run 2: about 700–900 answers kept.
+    - Training: the loss starts near 0.5–1.2 and falls.
+    - Run 4: no number predicted.
+    - Run 5: below the new 7B on most tasks.
+  - **Not tested yet:** the real models' time and memory on Kaggle.
+- **T2 practice run 3 (account 3, 8 Nov, internet on, Ridita's fixes, commit `0024ae8af`): the run finished and wrote all six reports, but failed rule 2, because three reports are under 50 words.** Results in [Offline_RAG_KR2/results/t2_practice_3_abrar/](Offline_RAG_KR2/results/t2_practice_3_abrar/t2_run/run/t2_run_summary.json).
+  - **Fixed since run 2:** no loop (12 agent calls, no team at its step limit); all six photo descriptions different; 5 labels drawn on the map; 3.9 minutes; nothing outside the machine. Rules 1, 3, 4 and 5 passed.
+  - **Still wrong:** the expert, emergency and staffing reports are one sentence each (12, 17 and 14 words), for example "The final report is generated based on the provided data and tools." The emergency team called the map tool without its required input, got an error and gave up. No report cites a guideline section, although three searches ran. Two reports invent "Region A, B and C" with damage grades 2, 4 and 6 (the scale stops at 5).
+  - **What it shows:** with the loop fixed, the problem is the writing. Our 7B answers in one sentence, as it was trained to, sometimes writes about the report instead of writing it, and uses no facts from the tools.
+  - **Settled 10 Nov:** (a) the fixed flow, chosen by Ridita after her run 4, by the rule she wrote before it. Its proof run passed on 11 Nov (second item of this file).
+- **T2 practice run 2 failed (account 3, 8 Nov, internet on): DisasTeller's CrewAI agents never finished, so no report was written.** Results in [Offline_RAG_KR2/results/t2_practice_2_abrar/](Offline_RAG_KR2/results/t2_practice_2_abrar/t2_run/run/t2_run_summary.json).
+  - **Pass rules, fixed 3 Nov:** 3, 4 and 5 passed (no connection outside the machine, no Gemini library, every model call answered); 1 and 2 failed (the run didn't finish; no report).
+  - **Why (corrected 8 Nov):** the Expert team's agent looped. It called the same tools with the same input again and again (CrewAI answered "I tried reusing the same input" 33 times) and tried to hand its work to other teams, until one message passed the 16,384-token limit and vLLM refused it. Its tool calls themselves were well formed. My first reading, that the 7B copied CrewAI's template, was wrong: those lines were CrewAI's own instructions, printed in the log.
+  - **Also seen:** the photos reach the model, and two got real descriptions (Picture 1, the Wajima hall; Picture 3, a collapsed bridge). For the other four, the 7B repeated the description the agent had put into its own question.
+  - **Ridita ran the same test on 3 Nov, on the code before the file-placement fix, and it failed the same way** ([her results](Offline_RAG_KR2/results/t2_practice_2/), her notes in the Offline_RAG_KR2 README, "Practice run 2 and the fixes"). Her fixes, 5–7 Nov, pushed 8 Nov: a 32,768-token limit with older messages shortened when needed, at most 10 steps per team, delegation off, photo questions without the agent's text, map labels found anywhere in the answer, clearer tool descriptions, and a log of every model call. On her laptop, a pretend server that loops like run 2 still ends with all six reports. Not yet tested with the real 7B.
+  - **Next (8 Nov):** practice run 3 with her fixed code. *(Done: runs 3 and 4 failed, and the fixed flow passed on 11 Nov.)*
+- **E7 built (7 Nov): the whole chain on one set of images. Step 1 is done on your PC; step 2 is done too (first item of this file).** The chain: SAM 3 (prompt "building", on the before-photo in four quarters) finds each building, and a Siamese ResNet-18 trained on SAM 3's outlines labels it intact, damaged, destroyed or not a building.
+  - **Step 1, the first counting number for this chain, on the 1,055 validation questions:** 37.73% (grader seed 42) against 39.24% for R11, the U-Net with a ResNet-50 encoder and before and after photos as input; no clear difference (p = 0.39). Median count error 40% against 33%, so R11 still counts slightly better. Expected about 36–40%: met. [Results](Champion_Task/E7-results/step1/README.md).
+  - **Step 2:** [e7-step2-chain-on-test-pairs.ipynb](Champion_Task/e7-step2-chain-on-test-pairs.ipynb), about 3.5 h on a T4 (estimated; it took about 2.1 h). Dry-run checked with your real graders, masks and benchmark files, with stand-ins for SAM 3 and R11; three planted faults were caught; given H2's real counts, it reproduces 32.96% and 32.47%. Not yet tested on Kaggle: SAM 3 in its own package folder, which it needs because SAM 3 and R11's library pin different `timm` versions.
+  - **Step 3,** hot spots on the chain's maps, gets built once step 2's maps exist.
+- **The repository was renamed `SmashNdashH/CSE499A-B` (7 Nov).** The links in `others/CSE499B_update_3.tex` and `others/CSE499B_Proposed_Solution.tex` are updated; their PDFs aren't rebuilt. Teammates' PC paths such as `d:\CSE499A.15-Msrb-\` stay: they're folder names on their machines, not links.
+- **The building-counting benchmark can be scored well above our target without seeing the image (7 Nov, confirmed on all 3,583 optical questions, on your PC and on Kaggle: [benchmark-option-rule-check.ipynb](Champion_Task/benchmark-option-rule-check.ipynb)).** Whenever a question's largest option is above 20 (1,581 questions), the options are 0.6, 0.8, 1, 1.2 and 1.4 times the correct count, so the correct answer is always the middle value.
+
+  | Method, on all 3,583 questions | Uses the image? | Accuracy |
+  |---|---|---|
+  | Largest option above 20: pick the middle value; otherwise the second smallest (rule fixed on the training questions) | No | **66.98%** |
+  | Always pick the middle value | No | 53.95% |
+  | The target: DisasterM3's base 7B | Yes | 34.2% |
+  | R11's per-building table (our best) | Yes | 32.96% |
+  | Our new 7B | Yes | 30.31% |
+
+  - **What it means:** O2's "beat 34.2%" doesn't show that a model can count. Keep reporting it because the review promised it, but report the no-image rule beside it and add count error against the true masks (E7, using E6's masks). Never use the rule to raise a score.
+  - **Training risk, corrected 7 Nov:** our training prompts show only the question, without the options, and the target is a sentence stating the count. So the 7B and the planned 3B can't learn the pattern from training, which fits the 7B's 28.2% on those 1,581 questions. It only matters for L2's option (c), which would show the teacher the options.
+  - **Needs your decision:** telling your supervisor before O2 is reported. Details in the ledger, §7.
+- **Weight-space edit, step 1 (7 Nov): no loops in the 7B's answers, but a strong skew on road damage.** No answer in 10,675 contains words or repeats, so the loop that the MIT report removed isn't present here. On road damage the 7B answers B 73.1% of the time (B is right 19.9%). Disaster type is balanced, so this isn't a general letter habit. Steps 2 and 3 (a trial edit) are on hold: they need a paid OpenAI key, and the counting score can't judge an edit. Details in the ledger, §7.
+- **E6 done (account 2, 7 Nov, CPU): the test split gives 2,007 clean pairs with four-class masks, about seven times validation's destroyed pixels.** Results in [E6-results/E6/](Champion_Task/E6-results/E6/README.md).
+  - **Left out, 60 of 2,067:** 57 copying a pool image (56 training, 1 validation; reproduced exactly), 2 with an unreadable image, and `sunda_tsunami_00000042`, whose mask couldn't be read (probably the damaged one: it's asked about but shows 0 damaged pixels). E5's fingerprints cover images, not masks, so I expected 2,008.
+  - **Masks like the training masks:** only 0 and 255, all 1024 px, no overlaps (0 of 291.9 million building pixels), unasked masks empty.
+  - **Outlines drawn alike: yes, 12 of 12 shared events** within 0.67–1.5. Closest to the limits: Turkey 0.695, SoCal 1.465.
+  - **Destroyed pixels:** 13,225,057 in the clean pairs, against 1,808,111 in validation. Turkey has 414 clean pairs (validation 64).
+  - **Next:** E7 can now be built, on your go. Use only the pairs in `test_clean_pairs.csv`: the zip also holds the left-out pairs' masks.
+- **E6's first full run stopped on an unreadable image (7 Nov, about 6 min in, at Cell 4).** `mexico_earthquake_00000140_post_disaster.png` in the benchmark mirror can't be opened. E5 step 1's fingerprints show only 2 of the 2,067 test pairs are affected (also `tuscaloosa_tornado_00000278`, whose before-image is an empty file), and neither copies a pool image. The fix treats an unreadable image as a missing file, so the pair is listed and left out, as rule 1 already says. It passed a mock with both faults. **Expect 2,008 clean pairs; the rules fixed on 4 Nov stay as written, so the README will say NO on "no file missing" and on "2,010 clean".** The smoke test passed with the old Cell 4 because its 40 pairs miss both images. The fix is now in the notebook; the failed run's log is in [E6-results/run1-stopped-at-cell4/](Champion_Task/E6-results/run1-stopped-at-cell4/e6-test-split-ground-truth.log). The full run with the fix is the entry above.
+- **One-chain plan agreed (4 Nov): [roadmap §1b](Next_Steps_Roadmap.md).** Every part has been tested alone, never together, and our best numbers come from three different models: the destroyed-building target from SAM 3 + grader, counting from R11's table, the field model from R9. R11's table and T1's hot spots share only 7 images. So no new modules until one chain runs end to end, with the guideline search (RAG) in it. Two new tasks:
+  - **E7:** score the chain's map, counts and hot spots on the same images. It replaces H1 V3 and needs E6.
+  - **T2b:** who writes the report, the 7B or a small text model (`Qwen/Qwen2.5-3B-Instruct`). Same facts and same guideline search; counted by number contradictions and fake citations. A swap needs your supervisor's agreement, because O3 names our VLM.
+- **E6 built and dry-run checked (4 Nov): the test split's ground truth, ready to run (any account, CPU only, about 10–15 min).** [e6-test-split-ground-truth.ipynb](Champion_Task/e6-test-split-ground-truth.ipynb) turns the benchmark's segmentation masks (one black-and-white mask per damage class asked about) into one four-class mask per optical test pair, checks them against the training masks, and leaves out copies of segmentation-pool images.
+  - **Already known from your PC:** 2,067 optical test pairs, each with a before-image; the training masks are clean (values 0/255, 1024 px, unasked masks empty, no overlaps on 600 images); from E5 step 1's fingerprints, 57 test pairs copy a pool image (56 training, 1 validation; Woolsey 43, SoCal 11, Pinery 3), so **2,010 clean**. Turkey has 414 test pairs (validation 64).
+  - **Dry run** on a mock of the Kaggle inputs built from your real masks and manifests: the split rebuild matches every D4 run (645, 560 xBD, 1,808,111 destroyed pixels), the copy rule reproduces 57 (56/1), and all four planted mask faults were caught.
+  - **Run steps:** under "Needs you now".
+- **L2 step 1 again, with the new 7B as teacher: done (found 4 Nov, checked on your PC).** 3,265 of 3,265 entries answered, all by `l0s2-mergedFP` (full size, greedy, plain training prompt); 1,146 answers match their label and are kept (first run, old 7B: 1,085). Moved from `L2-step1-new-teacher-results/` to [L2-step1-results/new-teacher/](Champion_Task/L2-step1-results/new-teacher/L2S1-new-teacher/README.md); its 68 MB training file is git-ignored like the first run's. The answers are one sentence each (median 14 words), not reasoning. **Next: L2 step 2, training the 3B on them, which needs your choice of how the 3B learns (a, b or c; soft labels recommended; L2 step 2's row). Explanations were already decided on 19 Oct as a second skill (L2b).**
+- **L2 step 1 again, with the new 7B as teacher (ran; result above): built on your go and dry-run checked (28 Oct), on account 1 (about 5.5 h).** [l2-step1-new-teacher.ipynb](Champion_Task/l2-step1-new-teacher.ipynb): full size, greedy, the plain training prompt, and the first run's entries minus road counting (3,265). Run steps under "Needs you now".
 - **Guideline licences checked (28 Oct): none of the six documents allows posting it online.** Sphere's copyright page requires written permission for "posting online"; EMS-98 is copyright with no reuse grant; the xBD paper is on arXiv under arXiv's own licence; INSARAG and IWG-SEM carry no licence at all. Parked by you: not a concern while the work is in progress.
 - **Teammates' 27 Oct pushes reviewed (28 Oct).** Ridita's guideline search and offline DisasTeller copy hold up (T2 steps 4, 4b and 6). Aryan's v4 needs three corrections, and its data show that R11's table alone (37.0%) beats feeding its counts to the 7B (27.0%). Tamanna's rebuilt demo is honest; it shows the fine-tuned 7B calling every inspected building Intact. Feedback under "Needs you now"; details in the ledger, §9.
 - **L0 step 2 done: the new 7B is kept** by the rule fixed 19 Oct, on all questions and on E5's clean and strict sets. Against the old 7B at full size, on the 10,675 optical questions:
@@ -225,7 +349,9 @@ Kept for Abrar, and updated whenever a task starts running, finishes, or needs a
 
 | Done | Running | Ready to run | Needs your decision | Needs rerun | Not started |
 |---|---|---|---|---|---|
-| 25 | 0 | 1 | 0 | 0 | 13 |
+| 27 | 0 | 2 | 1 | 0 | 13 |
+
+(11 Nov: Ready to run = L2 step 2 and T2's next steps; Needs your decision = E7's choice of chain.)
 
 ## Pace since Phase A, and the timeline to the showcase (measured 24 Oct)
 
@@ -283,22 +409,27 @@ At the measured rate that's about a week of GPU time, and up to 120 hours a week
 
 Every notebook run so far, on Kaggle or on your PC, and every planned run. Updated with each change; details under "Needs you now" and in the task tables.
 
-**Running now** (28 Oct): nothing. All four accounts are free.
+**Running now** (11 Nov): nothing. All four accounts are free.
 
-**Ready to run** (28 Oct; run steps under "Needs you now")
+**Ready to run** (11 Nov; steps under "Needs you now")
 
 | What | Notebook | Account | Time |
 |---|---|---|---|
-| L2 step 1 again: teacher answers from the new 7B | [l2-step1-new-teacher.ipynb](Champion_Task/l2-step1-new-teacher.ipynb) | 1 | about 5.5 h, plus a 15–20 min smoke test |
+| L2 run 1: the 7B's soft labels, for (b) | [l2-step1b-soft-labels.ipynb](Champion_Task/l2-step1b-soft-labels.ipynb) | 3 | about 5 h, estimated |
+| L2 run 2: the options rerun, for (c) | [l2-step1c-options-rerun.ipynb](Champion_Task/l2-step1c-options-rerun.ipynb) | 1 | about 1.5 h, estimated |
+| L2 run 3: train the 3B, (b) after run 1 and (c) after run 2 | [l2-step2-train-3b.ipynb](Champion_Task/l2-step2-train-3b.ipynb) | (b) 3, (c) 1 | about 20 h each in two sessions, estimated |
+| L2 run 4: the held-out choice, after both trainings | [l2-step3-heldout-select.ipynb](Champion_Task/l2-step3-heldout-select.ipynb) | 2 | about 1–1.5 h, estimated |
+| L2 run 5: the winner on the benchmark, after run 4 | [l2-step4-winner-benchmark.ipynb](Champion_Task/l2-step4-winner-benchmark.ipynb) | 2 | about 2–3 h, estimated |
 
 **Later: not built yet**
 
 | What | Waits for |
 |---|---|
-| H1 V3: counting from R16c's per-building grades | counting beating R11's on validation (now 37–39% against 39.2%) |
-| L2 step 2: train the 3B | L2 step 1 again (ready to run), a fixed copy of its notebook, and your choice of how the 3B learns |
+| E7 step 3: hot spots on the chain's maps | E7 step 2's maps |
+| T2b: who writes the report, the 7B or a small text model | T2 steps 5 and 7, the flow from T2's practice run, and E7's table |
+| L0b: can the 7B learn to see damage? A small test of training its vision encoder | E6 and E7; a side experiment that blocks nothing |
 | L2b: explanations as a second skill | L2 step 1 with the final teacher |
-| T2: DisasTeller on local models (O3's missing part) | GPU time; not started |
+| T2 steps 5 and 7: this chain's facts in the reports, and the check of every number | E7's table and hot spots |
 | T3: offline demo and public showcase (Vercel website) | T2, and a gallery export |
 | L1 again on the final champion | the final champion |
 | R13 (BRIGHT footprints), R14 (rubble crops, optional), R15 (only if a change beyond R11 passes) | results and spare GPU |
@@ -344,6 +475,12 @@ Every notebook run so far, on Kaggle or on your PC, and every planned run. Updat
 | R16c step 5b: a third grader seed (44) for step 5's SAM 3 map | `r16c-step5b-third-grader-seed.ipynb`; results in [R16c-results/step5b/](Champion_Task/R16c-results/step5b/README.md) | account 1, 27 Oct | 2.3 h |
 | L0 step 2: the new 7B, part A (BDC, BBR) | `l0-step2-full-size-rescore-new-partA.ipynb`; results in [L0-step2-results/new-partA/](Champion_Task/L0-step2-results/new-partA/L0S2/README.md) | 27 Oct | 7.8 h |
 | L0 step 2: the new 7B, part B (DRE, DSR, DTR, ORR) | `l0-step2-full-size-rescore-new-partB.ipynb`; results in [L0-step2-results/new-partB/](Champion_Task/L0-step2-results/new-partB/L0S2/README.md) | 27 Oct | 5.9 h |
+| Benchmark option check: scores a rule that never sees the image | [benchmark-option-rule-check.ipynb](Champion_Task/benchmark-option-rule-check.ipynb) | 7 Nov | under 1 min, CPU |
+| T2 practice run 3: Ridita's fixes, internet on. Finished with six reports, but three are one sentence (rule 2 failed) | `t2-disasteller-local-run`; results in [Offline_RAG_KR2/results/t2_practice_3_abrar/](Offline_RAG_KR2/results/t2_practice_3_abrar/t2_run/run/t2_run_summary.json) | account 3, 8 Nov | 12 min |
+| T2 practice run 2: DisasTeller's CrewAI agents on our 7B, internet on. Failed: the agents never finished, no report written | `t2-disasteller-local-run`; results in [Offline_RAG_KR2/results/t2_practice_2_abrar/](Offline_RAG_KR2/results/t2_practice_2_abrar/t2_run/run/t2_run_summary.json) | account 3, 7–8 Nov | 17 min (the prep notebooks before it: package files, and the model download in 0.8 min) |
+| E6: the test split's ground truth (run 1 stopped on an unreadable image; run 2 was the smoke test) | [e6-test-split-ground-truth.ipynb](Champion_Task/e6-test-split-ground-truth.ipynb); results in [E6-results/E6/](Champion_Task/E6-results/E6/README.md) | account 2, 7 Nov | about 10 min, CPU |
+| E7 step 2: find-then-grade and R11 on the 2,067 test pairs. The choice of chain reopens | [e7-step2-chain-on-test-pairs.ipynb](Champion_Task/e7-step2-chain-on-test-pairs.ipynb); results in [E7-results/step2/](Champion_Task/E7-results/step2/README.md) | account 1, 7–8 Nov (downloaded 11 Nov) | about 2.1 h (SAM 3 87 min, the models 37 min) |
+| T2 practice runs 3 and 4 (CrewAI's agents, both failed rule 2), practice run 5 (fixed flow, passed) and the proof run with the internet off (passed) | Ridita's `t2-disasteller-local-run`; results in [Offline_RAG_KR2/results/](Offline_RAG_KR2/results/) (`t2_practice_3` to `t2_proof`) | Ridita's account, 8–11 Nov | 10–14 min each |
 
 **Done on your PC (CPU):** these wrote their results into `Champion_Task`, and the notebooks keep their outputs.
 
@@ -352,6 +489,8 @@ Every notebook run so far, on Kaggle or on your PC, and every planned run. Updat
 | D5: xBD converter | `d5-xbd-converter.ipynb` | `D5-results/` |
 | D5b: xBD tier3 check and masks | `d5b-xbd-tier3-converter.ipynb` | `D5b-results/` |
 | T1 v2 and v3: heatmap fixes | `t1-survivability-heatmap-v2.ipynb`, `-v3.ipynb` | `T1-results/T1-v2/`, `T1-v3/` |
+| E7 step 1: the chain's first counting number (7 Nov) | [e7-step1-validation-counting.ipynb](Champion_Task/e7-step1-validation-counting.ipynb) | [E7-results/step1/](Champion_Task/E7-results/step1/README.md) |
+| E7 step 2b: is the test gap noise? Resampling the pairs and the events (11 Nov) | [e7-step2b-resampling-test.ipynb](Champion_Task/e7-step2b-resampling-test.ipynb) | [E7-results/step2b/](Champion_Task/E7-results/step2b/README.md) |
 | R16b: the grader's prior correction | `r16b-grader-prior-correction.ipynb` | `R16b-results/` |
 | R16c step 1: the ceiling and counting | `r16c-step1-ceiling-and-counting.ipynb` | `R16c-results/step1/` |
 
@@ -359,12 +498,104 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
 
 ## Needs you now
 
-- **Next on the four free accounts (28 Oct): your pick.**
-  1. **L2 step 1 again, with the new 7B as teacher: built 28 Oct, ready on account 1** (about 5.5 h; run steps in the next item).
-  2. **L2 step 2: train the 3B** (about 20 GPU h, then about 8 h to evaluate). Its notebook needs a fixed copy first (its old installs fail on today's Kaggle), and how the 3B learns is still your choice (L2 step 2's row).
-  3. **O1:** report it as met on clean data on the mean of three grader seeds, narrowly (0.3065). More seeds aren't recommended: adding them until one passes would bend the rule fixed before the run.
-  4. **T2, DisasTeller on local models (O3's missing part):** Ridita's offline DisasTeller copy arrived on 27 Oct in `Offline_RAG_KR2/`. Reviewing it comes first.
-- **Run now: L2 step 1 again, teacher answers from the new 7B** ([l2-step1-new-teacher.ipynb](Champion_Task/l2-step1-new-teacher.ipynb)).
+- **The one-chain plan (4 Nov; [roadmap §1b](Next_Steps_Roadmap.md)). Your part:**
+  1. **E7 steps 2 and 2b are done (11 Nov). Your decision: which model feeds the building table, the hot spots and the reports (T2 step 5).** On the unseen test pairs the two are level overall (the gap is noise), R11 is clearly better outside Turkey, and find-then-grade is far better on Turkey (first item of this file).
+     - **(a) R11.** Better on the other events and at finding buildings at all (building IoU 0.69 against 0.54), and its building table exists (H2). But it fails on Turkey's earthquake (0.09), and its "buildings" are connected blobs of pixels, not outlines.
+     - **(b) Find-then-grade.** The only source of one outline per building, which the reports describe building by building; far better on Turkey; O1's pass on validation. But clearly worse outside Turkey.
+     - **(c) A mix.** SAM 3's outlines graded by R11's pixels, or by the grader and R11 together. It must be chosen on validation (the 605 clean pairs) and confirmed once on the test pairs, since nothing may be tuned on them. The test files already hold R11's pixels under every SAM 3 outline (`instances_test.csv`), so the confirmation needs no GPU.
+     - **Recommended: (c) first,** since each model wins where the other fails. If no mix beats both on validation, choose (b) for its per-building outlines, and report R11's better scores outside Turkey. Say which, and I'll check what the validation files hold before building it.
+  2. **T2: settled.** Ridita chose the fixed flow on 10 Nov, by her rule written before run 4, and its internet-off proof run passed on 11 Nov. Next, hers: the comparison with July's Gemini reports.
+  3. **Noman and Aryan: their reviews are pushed (15 Nov, commit `6ec05307e`). Ask both to fix everything by Wed 18 Nov.**
+     - **Noman:** [his review](Noman_task/Review_AeroRescue_site.md). First, remove the four wireframe images.
+     - **Aryan:** [his review and fix list](Aryan_Task/Review_and_Fix_List.md), with a ready-to-paste instruction for his AI assistant and the checks his fixes must pass. First, remove the invented damage assessments of real buildings in Pazarcık, and the reports falsely labelled as `fixed_flow.py` output.
+     - **Also open for Aryan:** his counting study's three corrections (since 28 Oct), the bridge's missing-image bug (since 4 Nov), and his update 4 section's claim about our building table.
+  4. Raise a writer swap with your supervisor only if T2b favours the text model; O3 names our VLM.
+  5. **T3, the website (16 Nov): push it so Aryan can take over.** Commands, run from `D:\CSE499AB_project`. The two E7 READMEs are included because the site's facts check needs its sources on his PC. The four core docs carry the 16 Nov updates, and also your own earlier uncommitted edits in them:
+     ```text
+     git add -- Essential_task_delegation/T3_Website Essential_task_delegation/Aryan_Task/T3_Website_Handover.md Essential_task_delegation/Aryan_Task/Review_and_Fix_List.md Essential_task_delegation/Champion_Task/E7-results/step2/README.md Essential_task_delegation/Champion_Task/E7-results/step2b/README.md Essential_task_delegation/Progress_Tracker.md Essential_task_delegation/Task_Ledger.md Essential_task_delegation/System_Design_Notes.md Essential_task_delegation/Next_Steps_Roadmap.md
+     git commit -m "T3 website: phase 1 site, features brought back on real data, its handover to Aryan; core docs updated"
+     git pull --rebase --autostash origin main
+     git push origin main
+     ```
+     Then your open questions in [T3_Website/NOTES.md](T3_Website/NOTES.md), section 3: the name, metres for xBD pairs, and which counting score leads after 18 Nov.
+- **To send Ridita (drafted 4 Nov):** "For T2 step 5: `disasteller_inputs.py` isn't called by the main script yet. When you connect it, please make two changes. First, an image that isn't in the table returns all zeros with status 'ok', so a report could say 0 buildings; missing data should stop the run or be stated as missing. Second, read the table and hot spots from one chain: today's H2 table and T1 hot spots share only 7 images, and I'll give you the new files after E7. After that comes a new task, T2b: the same facts and guideline search with two writers, our 7B and a small text model, counting number contradictions and fake citations. Details are in the roadmap."
+
+- **L2 step 2: five runs on three accounts (built 8 Nov; what each run does is in the first item of this file).** Runs 1 and 2 can start now, side by side. Account 4 isn't used: (b)'s training needs your write token, and account 4 is Tamanna's. GPU hours, estimated: account 3 about 25 h (runs 1 and 3b); account 1 about 22 h (runs 2 and 3c); account 2 about 4 h (runs 4 and 5). Each notebook's first cell repeats its steps.
+  1. **Run 1: the 7B's soft labels, for (b), on account 3 (`redwannewaz`).** About 5 h, estimated.
+     1. Sign in as account 3. **Create → New Notebook → File → Import Notebook → Browse**, pick `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\l2-step1b-soft-labels.ipynb`, then **Import**.
+     2. **Settings:** GPU **T4 x2** (the 7B needs both), Internet **On**. No secret: the 7B's repo is public.
+     3. **+ Add Input:** search `disasterm3-mirror`, click **+** on the dataset by *abrarmohammedtanzim*.
+     4. **Smoke test:** in `# ── Cell 2`, set `SMOKE_TEST = True`, then **Run All** (15–20 min with the 16 GB download). Check:
+        - Cell 1: `GPUs: ['Tesla T4', 'Tesla T4']`;
+        - Cell 3: `✓ 7B loaded; a 1024 px image reaches it at 756 px`;
+        - Cell 4: `✓ 16 questions (1,962 held out, never shown to the 7B here)`;
+        - Cell 5: three labels, each with the 7B's top 3 tokens at its first answer tokens (the label's own token should usually come first), then `Pass complete … 0 label mismatches`;
+        - Cell 6: a table by task, then `16 of 38,271 questions done; … all 38,271 would take about N h`, and `✓ Wrote /kaggle/working/L2S1b`.
+
+        A red error or any label mismatch: stop and send me a screenshot. Otherwise send me Cell 6's line with the hours.
+     5. Set `SMOKE_TEST = False`. **Save Version → Save & Run All (Commit) → Save.** Stop the editor session. It stops cleanly at 11 h.
+     6. If the version's Cell 6 ends with `NOTE: not complete`: open the notebook (**Your Work → l2-step1b-soft-labels → Edit**), **+ Add Input → Your Work →** `l2-step1b-soft-labels` (its latest version), and commit again as in step 5. Cell 5 continues from the attached shards.
+     7. When it's complete: from the version's **Output**, download `L2S1b/README.md`, `L2S1b/config.json` and `L2S1b/by_task.csv` into `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\L2-step1-results\soft-labels\L2S1b\`. Leave `shards/` on Kaggle: run 3 reads it there. Save the run notebook over `Champion_Task\l2-step1b-soft-labels.ipynb`, and tell me "L2 run 1 done".
+  2. **Run 2: the options rerun, for (c), on account 1 (`abrarmohammedtanzim`).** About 1.5 h, estimated.
+     1. Sign in as account 1. **Create → New Notebook → File → Import Notebook → Browse**, pick `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\l2-step1c-options-rerun.ipynb`, then **Import**.
+     2. **Settings:** GPU **T4 x2**, Internet **On**. No secret.
+     3. **+ Add Input:** search `disasterm3-mirror`, click **+** on the dataset by *abrarmohammedtanzim*.
+     4. **Smoke test:** in `# ── Cell 2`, set `SMOKE_TEST = True`, then **Run All** (15–20 min with the download). Check:
+        - Cell 3: `✓ 7B loaded; full size checked (1036 px)`;
+        - Cell 4: `✓ 16 questions (held-out after-photos left out)`;
+        - Cell 5: four lines like `[Building Damage Counting] label 'D', answer 'D': kept`, with single letters as answers;
+        - Cell 6: a table by task, `N kept of 16 answered`, and `✓ Wrote /kaggle/working/L2S1c`.
+
+        A red error, or answers that aren't letters: stop and send me a screenshot.
+     5. Set `SMOKE_TEST = False`. **Save Version → Save & Run All (Commit) → Save.** Stop the editor session.
+     6. When it's finished: download the version's `L2S1c` folder so that `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\L2-step1-results\options-rerun\L2S1c\README.md` exists, save the run notebook over `Champion_Task\l2-step1c-options-rerun.ipynb`, and tell me "L2 run 2 done".
+  3. **Run 3: train the 3B twice, (b) on account 3 after run 1 and (c) on account 1 after run 2.** About 20 h each, in two sessions (estimated; the smoke test measures it).
+     1. Sign in as account 3 for (b), or account 1 for (c). **Create → New Notebook → File → Import Notebook → Browse**, pick `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\l2-step2-train-3b.ipynb`, then **Import**.
+     2. **Settings:** GPU **T4 x2** (one training process per T4), Internet **On**. **Add-ons → Secrets:** turn on `HF_TOKEN` (AbrarAlam, with **write** access: checkpoints go to the private repo `AbrarAlam/disasterm3-qwen25vl3b-l2`). If Cell 2 stops on a permission error (403), that account's token is read-only: change the secret's value to a write token.
+     3. **+ Add Input:** search `disasterm3-mirror`, click **+** on the dataset by *abrarmohammedtanzim*. Then, from **Your Work**:
+        - for (b): `l2-step1b-soft-labels` (run 1's complete version);
+        - for (c): `l2-step1-new-teacher` (L2 step 1's run of 4 Nov) and `l2-step1c-options-rerun` (run 2).
+     4. In `# ── Cell 2`, set `MODE = "b"` (account 3) or `MODE = "c"` (account 1), and `SMOKE_TEST = True`. **Run All** (15–25 min with the 7.5 GB download). Check:
+        - Cell 1: a line of versions with `transformers` 5.x, then `GPUs: ['Tesla T4', 'Tesla T4']`;
+        - Cell 2: `✓ L2 step 2, option (b)  [SMOKE TEST]: config written and pushed` (or option (c)), then `Starting fresh`;
+        - Cell 4, for (b): `✓ Data, option (b): 53,032 examples … soft labels for 38,271; SMOKE TEST: 16 of them`; for (c): `✓ Data, option (c): … {'train': 53032, 'options': N} … the new 7B's checked answers in 1,079 (772 worded unlike the label)`, where N is run 2's kept count;
+        - Cell 4, then: `✓ Model: 4-bit on 2 process(es); LoRA on 252 projections (36 layers)`, about 120 million parameters, `vision tower untouched`; `✓ Longest example: … loss self-checks passed`; and `✓ Step 2 of 2 (complete)`;
+        - Cell 5: the losses (about 0.4–1.2 is normal; above 3 means misaligned labels), the peak memory (under about 14 GB) and the projected hours.
+
+        A red error: stop and send me a screenshot. Otherwise send me Cell 5's printout.
+     5. Set `SMOKE_TEST = False` (keep `MODE`). **Save Version → Save & Run All (Commit) → Save.** Stop the editor session.
+     6. After 10.5 h of training it saves, pushes a checkpoint and stops, and Cell 5 says `not complete`. Open the notebook (**Your Work → l2-step2-train-3b → Edit**) and commit again as in step 5, changing nothing: Cell 2 restores the latest checkpoint from Hugging Face.
+     7. When Cell 5 says `complete`, the finished adapter is on Hugging Face under `b/final` or `c/final`. From the version's **Output**, download the `L2S2-b` (or `L2S2-c`) folder **without its `checkpoints` folder** (up to about 1.4 GB, already on Hugging Face), so that `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\L2-step2-results\b\L2S2-b\README.md` (or `...\c\L2S2-c\README.md`) exists. Save the run notebook as `Champion_Task\l2-step2-train-3b-b.ipynb` (or `-c.ipynb`); the built `l2-step2-train-3b.ipynb` stays as it is. Tell me "L2 run 3 (b) done" or "(c) done".
+  4. **Run 4: the held-out choice, on account 2 (`abrar2222864642`), once both trainings are complete.** About 1–1.5 h, estimated.
+     1. Sign in as account 2. **Create → New Notebook → File → Import Notebook → Browse**, pick `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\l2-step3-heldout-select.ipynb`, then **Import**.
+     2. **Settings:** GPU **T4 x2** (one is used), Internet **On**. **Add-ons → Secrets:** turn on `HF_TOKEN` (the adapters are in a private repo; read access is enough).
+     3. **+ Add Input:** search `disasterm3-mirror`, click **+** on the dataset by *abrarmohammedtanzim*.
+     4. **Smoke test:** in `# ── Cell 2`, set `SMOKE_TEST = True`, then **Run All** (about 15 min). If Cell 1 says `torchao is still installed`: **Run → Restart & clear cell outputs**, then **Run All** again. Check:
+        - Cell 1: `torchao: not installed`;
+        - Cell 2: `✓ L2 step 3  [SMOKE TEST]: models ('base', 'b', 'c')`;
+        - Cell 3: `✓ 12 held-out questions`, 2 per task;
+        - Cell 4: `✓ base: 12 answers`, `✓ b: …`, `✓ c: …`, each with its first answers, which should be letters such as `'B'`;
+        - Cell 5: a table of scores, then `SMOKE TEST, no verdict.`;
+        - Cell 6: `✓ Wrote /kaggle/working/L2S3`.
+
+        A red error: stop and send me a screenshot.
+     5. Set `SMOKE_TEST = False`. **Save Version → Save & Run All (Commit) → Save.** Stop the editor session.
+     6. When it's finished, Cell 5 ends with `Winner: (b)` or `Winner: (c)` and the reason. Download the version's `L2S3` folder so that `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\L2-step3-results\L2S3\README.md` exists, save the run notebook over `Champion_Task\l2-step3-heldout-select.ipynb`, and tell me "L2 run 4 done".
+  5. **Run 5: the winner on the benchmark, on account 2, after run 4.** About 2–3 h, estimated.
+     1. On account 2: **Create → New Notebook → File → Import Notebook → Browse**, pick `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\l2-step4-winner-benchmark.ipynb`, then **Import**.
+     2. **Settings:** GPU **T4 x2** (one is used), Internet **On**. **Add-ons → Secrets:** turn on `HF_TOKEN`.
+     3. **+ Add Input:** search `disasterm3-bench-mirror-v2`, click **+** on the dataset by *redwannewaz*. From **Your Work:** `l2-step3-heldout-select` (run 4's version; its `selection.json` names the winner).
+     4. **Smoke test:** in `# ── Cell 2`, set `SMOKE_TEST = True`, then **Run All** (about 10 min); the same torchao restart as run 4 if Cell 1 asks for it. Check:
+        - Cell 2: `✓ L2 step 4  [SMOKE TEST]: the winner is (b)` or `(c)`, with run 4's reason;
+        - Cell 3: `✓ 10,675 optical questions {'BDC': 3583, 'DSR': 2007, 'BBR': 2006, 'DRE': 1868, 'ORR': 858, 'DTR': 353}; 0 with an image missing`;
+        - Cell 4: `0 already answered; 30 to do`, then `All answered`;
+        - Cell 5: a table with the 3B's and the 7B's columns, a building-counting line, and `✓ Wrote /kaggle/working/L2S4`.
+
+        A red error: stop and send me a screenshot.
+     5. Set `SMOKE_TEST = False`. **Save Version → Save & Run All (Commit) → Save.** Stop the editor session. It stops cleanly at 11 h; if Cell 5 then says `not complete`, attach that version's output (**+ Add Input → Your Work →** `l2-step4-winner-benchmark`) and commit again.
+     6. When it's finished: download the version's `L2S4` folder so that `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\L2-step4-results\L2S4\README.md` exists, save the run notebook over `Champion_Task\l2-step4-winner-benchmark.ipynb`, and tell me "L2 run 5 done". I'll then score E5's clean set from its `per_question.csv`.
+- **Still open from 28 Oct, O1:** report it as met on clean data on the mean of three grader seeds, narrowly (0.3065). More seeds aren't recommended: adding them until one passes would bend the rule fixed before the run.
+- **Done 4 Nov: L2 step 1 again, teacher answers from the new 7B** ([l2-step1-new-teacher.ipynb](Champion_Task/l2-step1-new-teacher.ipynb)). The steps below stay as the record of how it ran.
   - **What and why:** L0 kept the new 7B on 28 Oct, so it becomes the 3B's teacher. The notebook asks it the first run's training questions (minus road counting, 3,265) at full size, greedy, with the plain training prompt, and keeps only answers that match their label.
   - **Expectation, fixed before the run:** more kept answers for disaster type (first run 89.4%) and relational reasoning (13.3%), partly from memory, since L0's top-up trained on these entries again; building counting, bearing bodies and land use within about 3 points of 15.6%, 42.7% and 50.9%; at least the first run's 1,085 kept in all.
   - **Steps:**
@@ -391,7 +622,14 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
     2. His criterion 2, as written before the run, fails (the intervals overlap); a paired test shows R11 ahead (p = 0.01). He should report both instead of switching the comparison after the run.
     3. R11's table alone (the option nearest R11's count) scores 37.0% on his 1,701 questions, 10 points above the VLM given that count (27.0%). That reverses his conclusion: counts should skip the VLM.
     - Also: his subset isn't O2's measure (34.2% includes intact questions); E5's duplicate check is done (36 of his questions; nothing moves by more than 0.4); the TEOChat blockquote's second sentence isn't from the paper as far as our notes go.
+    - **4 Nov: his new `BDC-v3-results/` and `BDC-v4-results/` are the same runs refiled, and none of the three corrections is in.** New and rechecked: on 66 questions shared with H2, H2 is right on 26, R11's counts in the prompt on 20, the image alone on 10. Reminder drafted (below).
+  - **Ridita, 4 Nov: T2 steps 1–3 built.** DisasTeller's agents and image tools now call our new 7B through local vLLM, with a network log and five pass rules fixed before any run. A pretend-server laptop run passed; Kaggle practice run 1 stopped on a file path (fixed); practice run 2 and the internet-off proof run are next. `local_chroma_db/` is git-ignored as asked. Her README asks you to confirm the model: it's the right one.
+  - **Drafted 4 Nov, to send:**
+    - **Aryan:** "Thanks for filing v3 and v4 with READMEs. The three corrections from my last review aren't in yet, so the v4 README still says things the data don't support. 1) The v4 U-Net file (bdc_ft_unet-B1cls_image.csv) is byte-identical to bdc_ft_image_only.csv, so the v4 U-Net row is really the image-only result; drop it and cite v3's 23.96% as the U-Net number. 2) Criterion 2 as you wrote it before the run (non-overlapping Wilson intervals against 23.96%) fails: 27.04% [25.0–29.2] overlaps [22.0–26.0]. Report that as a fail, and add the paired test as a separate result (R11 ahead, 230 against 177 questions, p = 0.01) instead of switching to the 500-question subset afterwards. 3) 32.96% isn't the table's upper bound on your questions: it's H2's score on all optical counting questions, intact included. On your 1,701 questions, answering with the option nearest R11's own count scores 37.0%, ten points above the VLM given that count (27.0%). So the conclusion is that counts should go straight from the table to the answer; your new 66-question comparison with H2 (26 against 20) points the same way."
+    - **Ridita:** "Yes, AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP is the right model: it's the 7B we kept on 28 Oct after the full-size top-up. The T2 build reads well: the localhost-only guard, the network log, and pass rules fixed before any run are exactly what the proof needs. Go ahead with practice run 2, then the internet-off proof run, and download both outputs into results/ unchanged. If the 7B breaks CrewAI's tool format or loops, write down what happened before choosing the fixed-flow fallback. Thanks for git-ignoring local_chroma_db/."
   - **Tamanna:** the rebuild is honest and clean (validation tiles, none leaked; committed runs; no hints in the prompts). The demo shows the fine-tuned 7B calling all 30 buildings Intact, and its one-word class contradicting its own EMS-98 grade on half the crops. For Part B: score against the true validation buildings and compare with R16c's grader (F1 0.754) on the same buildings, and mark the building in each crop. Her audit response still quotes an AI prompt (line 250); your call.
+    - **29 Oct: Tamanna asked whether to start Part B; go-ahead drafted.** Setup: true validation buildings from the ground-truth mask (none of E5's 40 pairs), equal numbers per class (about 20 each), the building marked in its crop, the new 7B (`l0s2-mergedFP`) and the base 7B, scored by per-class recall against R16c step 5b's grader on the buildings it graded (Intact 0.94, Damaged 0.67, Destroyed 0.70). Details in the ledger, §9.
+    - **Part B done (pushed 2 Nov, checked 3 Nov): neither 7B grades better than our grader.** On 300 true validation buildings (100 per class, none from the 40 duplicated pairs), the grader is right on 212, the new fine-tuned 7B on 100 and the base 7B on 99 (exact McNemar, both p < 1e-18). The fine-tuned 7B answers Intact for 298 of 300, and the base 7B never answers Destroyed. The grader's saved weights regraded all 25,594 validation buildings with 2 differences. Checked: committed run, 10 cells without errors, every table recomputed from `part_b_answers.csv`, no sampled image in E5's list, no AI traces (the line-250 prompt quote is gone).
 - **CSE499B 5th class (Wed 28 Oct): two deliverables ready.**
   - **Regular progress report, update 2:** [others/CSE499B_update_2.pdf](../others/CSE499B_update_2.pdf), with its source [.tex](../others/CSE499B_update_2.tex).
     - Format: update 1's (2 pages, compiled with MiKTeX).
@@ -403,7 +641,9 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
   - **Faux versions (28 Oct): your part covers Phase A only (E1, E2, D5/D5b, E3), and the rest of it is held for next week. The four teammates' sections are kept word for word from update 2, since each presents their own part.** The originals above are unchanged.
     - [others/CSE499B_update_2_faux.pdf](../others/CSE499B_update_2_faux.pdf) and its [.tex](../others/CSE499B_update_2_faux.tex): 2 pages, a results table (test, question, result, decision), terms explained where they first appear, every number in your part checked against the Phase A briefing page.
     - `others/CSE499B_Literature_Review_faux.pptx`: 11 slides, keeping the six papers behind those tests (DisasterM3, BRIGHT, SAM 3, BDAChat, EfficientSAM3, TEOChat), with the overview, synthesis and references cut to match. Both checked for tool traces: none.
+    - **Pushed 28 Oct** (`19074e219`). The faux .tex stays local, like update 2's: `.gitignore` ignores every .tex under `others/`.
   - **Next week (6th class):** the proposed solution report (printed and PDF).
+    - **Drafted 3 Nov:** [others/CSE499B_Proposed_Solution.pdf](../others/CSE499B_Proposed_Solution.pdf) (1 page: problem, the five-part design, implementation, evaluation against the review's targets, expected outcome) and [others/CSE499B_update_3.pdf](../others/CSE499B_update_3.pdf) (2 pages: the results held back from the Phase A update, plus Ridita's, Aryan's and Tamanna's newest work). Their .tex sources stay local (`.gitignore`). Noman's update 3 section restates H2b's decision, since nothing new was pushed after 23 Oct. No tool traces in either.
 - **Done 27–28 Oct: the new 7B's six tasks and the verdict (kept; the table is at the top of this file).** The steps below stay as the record of how they ran.
   - **What and why:** L0 step 2's keep rule (fixed 19 Oct): keep the new 7B only if disaster type (DTR) and relational reasoning (ORR) rise, and no other task drops by more than 1 point, against the old 7B at full size. It will be judged on all questions and on E5's clean ones.
   - **Expectation, fixed before the run:** DTR and ORR rise by about 1–4 points; the other four stay within about a point.
@@ -718,8 +958,8 @@ Caveats on the SAM 3 map: it was singled out after seeing the scores; seed 43 cl
 - 186 of the 10,675 optical questions use an after-image copied from Instruct.
 - Without them, R11's counting is 32.47%, so the gap to 34.2% grows from 1.24 to 1.73 points. The bar is the paper's base model, which never saw Instruct, so it's unaffected.
 - The old 7B's six tasks at full size: mean 38.37% → 38.14%. Every score drops by at most 0.7 points. | Half met (counting about 1.7 points short on clean questions) |
-| O3 Offline report system | DisasTeller on our model, with damage map, counts and survivability heatmap | Damage map, counts and heatmap are done. DisasTeller on local models is not started (T2). | 3 of 4 parts |
-| O4 Edge model and distilled 3B | An edge-ready segmenter and a distilled 3B model | Edge segmenter done: the INT8 version (L1b) is 4× smaller (33 MB) and 1.43× faster than ONNX FP32, with Destroyed IoU down only 0.0003. The 3B distillation's step 1 is done (1,085 checked teacher answers); step 2 is next. | Half met |
+| O3 Offline report system | DisasTeller on our model, with damage map, counts and survivability heatmap | Damage map, counts and heatmap exist, but from different models and mostly different images (roadmap §1b). **DisasTeller on our 7B passed its offline proof run on 11 Nov** (fixed flow, internet off, six reports, nothing outside the machine); the reports' quality is still to be judged against July's Gemini reports. | Offline proof done; not yet one chain, and report quality open |
+| O4 Edge model and distilled 3B | An edge-ready segmenter and a distilled 3B model | Edge segmenter done: the INT8 version (L1b) is 4× smaller (33 MB) and 1.43× faster than ONNX FP32, with Destroyed IoU down only 0.0003. The 3B distillation's step 1 is done with the new 7B (1,146 checked teacher answers); step 2 is next. Not measured yet: any VLM on a laptop CPU or a phone (L3 step 6). | Half met |
 
 TTA means averaging the predictions of 8 flipped or rotated copies of each image.
 
@@ -735,6 +975,8 @@ TTA means averaging the predictions of 8 flipped or rotated copies of each image
 | D5b | xBD tier3 check and masks | Done | Your PC: the check took 2 s, the masks 2.3 min | Of tier3's 6,369 tiles, 2,635 are already in our segmentation data (5,786 destroyed buildings) and 612 are benchmark images (4,549 destroyed, in 227 tiles). The other 3,122 hold no destroyed building at all (2,455 outlines: 1,208 intact, 2 major damage, the rest un-classified). So no clean source of destroyed buildings exists: as in tier1, DisasterM3 put every damaged tile into its training data or its benchmark. Masks for the 612 exam tiles are made with [d5b-xbd-tier3-converter.ipynb](Champion_Task/d5b-xbd-tier3-converter.ipynb), outputs in `D5b-results/`. Its lookup table matches D5's, with 97.2% pixel agreement against DisasterM3's masks. | Upload with `D5-results/` for R12. |
 | E3 | SAM 3 building finding | Done | Kaggle GPU | SAM 3 on the before-image finds buildings better than R9 (building IoU 0.630 against 0.591). Combined with R9, it covers 86% of destroyed buildings' footprints. | R16's finding. |
 | E5 | Train/validation leak and the benchmark's copies | Done (26 Oct: steps 1 and 2 on account 2, then every affected score re-scored on your PC) | Step 1 Kaggle CPU, 0.54 h; step 2 Kaggle T4, 0.91 h, account 2 | 40 leaked pairs, confirmed by three checks. Clean, R16c step 5's SAM 3-only map is the only map passing O1's gate (0.3161 and 0.3051); steps 2 and 3 fail (0.2838–0.2980). R11 and R11s7 lose 0.027 Destroyed IoU, twice the after-only U-Nets' loss, so R11 falls 0.018 below R9 on clean data. Benchmark: 186 of 10,675 optical questions use a copied after-image; scores drop by at most 0.7 points; O2 counting 32.96% → 32.47%. Tables in [E5-results/E5/](Champion_Task/E5-results/E5/README.md). | Group every future split by before-image fingerprint. Report both numbers (all and clean) from now on. |
+| E6 | The test split's ground truth: four-class masks for the benchmark's optical test pairs | Done (7 Nov) | Kaggle CPU, account 2 | 2,007 clean of 2,067: 57 copies, 2 unreadable images, 1 unreadable mask. Masks like the training ones; outlines drawn alike in 12 of 12 events. [Results](Champion_Task/E6-results/E6/README.md). | E7 uses it. |
+| E7 | Score the chain as one: map, counts and hot spots on the same images (replaces H1 V3) | Needs your decision (steps 1, 2 and 2b done 11 Nov; the choice of chain reopened) | Your PC, then Kaggle T4 (step 2 about 2.1 h, account 1), then your PC | Step 1: 37.73% against R11's 39.24%, p = 0.39. **Step 2, 2,007 unseen test pairs:** destroyed-building IoU 0.3898 (find-then-grade, mean of 3 graders) against 0.3984 (R11), mean IoU 0.5129 against 0.5721; counting 32.7% against 32.53% (p = 0.87). **Step 2b:** the gap is noise (95% interval −0.038 to +0.022 by pair, −0.098 to +0.089 by event); R11 leads without Turkey (by 0.057), find-then-grade on Turkey (by 0.236), both clearly. [Step 2](Champion_Task/E7-results/step2/README.md), [step 2b](Champion_Task/E7-results/step2b/README.md). | By the rule fixed before the run (roadmap G6), the choice of chain reopens: your decision under "Needs you now" ((c), a mix chosen on validation, recommended). Then step 3, hot spots on the chosen maps. |
 | E4 | R12 against R11, by image source and by event | Done | Kaggle account 2, T4, 18 min | Go given 19 Oct; evaluation only. Built 19 Oct: [e4-r12-vs-r11-by-source.ipynb](Champion_Task/e4-r12-vs-r11-by-source.ipynb). Its results cell was checked on synthetic data on your PC.
 
 - **What it tests:** why R12's extra data didn't help.
@@ -865,8 +1107,9 @@ Results in [R16b-results/](Champion_Task/R16b-results/README.md). | Counting wit
 | H2c | Free-form questions, second try | Not started | CPU (data), Kaggle (adapter and test) | — | After L2: question–SQL pairs, a fine-tuned adapter, a five-sample agreement gate, a new test. Pass rule fixed 24 Oct (90% and RS(10) above 0); if it fails, the system stays as it was. Steps in the roadmap. |
 | H3 | VLM input upgrades (before + after, numbered marks, crops) | Not started | Kaggle GPU | — | After H1 V2. |
 | H4 | GEOBench-VLM external counting test | Not started | Kaggle GPU | — | — |
-| T2 | DisasTeller on local models | Not started (steps 4, 4b and 6 done by Ridita on 27 Oct, checked 28 Oct) | Kaggle T4 ×2 | The guideline search passed its retrieval test (27 of 30) and runs on Kaggle with the internet off; the DisasTeller copy is offline by default. | The biggest missing O3 piece: steps 1–3 (the LLM and the three image tools still call Gemini), then 5 and 7. |
-| T3 | Offline demo and public showcase (Vercel website) | Not started | — | — | Re-planned 24 Oct: a public showcase site and an interactive demo website on Vercel, with a live offline mode at the booth. You build it and choose the name and look later. In-browser feasibility test passed 24 Oct, in two runs: INT8 on WebAssembly took 2.1–5.5 s per image in Chrome and Edge, with output identical to the native run (System_Design_Notes §4.3; kit in `Champion_Task/T3-browser-test/`). The rest after T2. |
+| T2 | DisasTeller on local models | Ready to run: the comparison with July's reports (offline proof passed 11 Nov, fixed flow) | Kaggle T4 ×2 | The guideline search passed its retrieval test (27 of 30) and runs on Kaggle with the internet off. CrewAI's agents failed with our 7B three ways (practice runs 2–4: a loop past the 16,384-token limit; one-sentence reports; a repeated tool call saved as the report). **The fixed flow** (code calls the tools and 18 searches; the 7B writes 28 sections) passed practice run 5 and **the proof run with the internet off (11 Nov):** rules 1–5, six reports of 192–787 words, 4 connections, all on the machine. Not solved: report quality (a wrong map reading repeated in three reports, a made-up hotline, few citations). [Ridita's README](Offline_RAG_KR2/README.md). | The comparison with the Gemini reports of July (Ridita), quality fixes as a new run, then steps 5 and 7 with the chosen chain's table (after E7's decision). |
+| T2b | Who writes the report: the 7B or a small text model | Not started | Kaggle T4, about 3–4 h | — | After T2 steps 5 and 7, and E7. Rule fixed in roadmap §7. A swap needs your supervisor's agreement. |
+| T3 | Offline demo and public showcase (Vercel website) | **In progress: phase 1 built 15–16 Nov, not deployed** ([T3_Website/](T3_Website/README.md); Aryan builds the remaining pages from 16 Nov by [his handover](Aryan_Task/T3_Website_Handover.md)). Earlier: wireframes 4 Nov ([Wireframes/index.html](../Wireframes/index.html)); Noman's React prototype pushed 9–10 Nov, reviewed 11 Nov ([review](Noman_task/Review_AeroRescue_site.md)) | — | — | Re-planned 24 Oct: a public showcase site and an interactive demo website on Vercel, with a live offline mode at the booth. You build it and choose the name and look later. In-browser feasibility test passed 24 Oct, in two runs: INT8 on WebAssembly took 2.1–5.5 s per image in Chrome and Edge, with output identical to the native run (System_Design_Notes §4.3; kit in `Champion_Task/T3-browser-test/`). The rest after T2. |
 | L0 | A better 7B teacher before distilling | Done (28 Oct: the new 7B is kept by the rule fixed 19 Oct, on all questions and on E5's clean and strict sets: ORR +3.50, DTR +1.13, BBR −0.95, the others +0.22 to +0.64. It is L2's teacher. Step 2's training is complete: session 3b did steps 26–28 on 26 Oct, and checkpoint-28 is on Hugging Face. Its merge stopped on a library version clash (torchao), so a merge-only copy, `l0-step2-merge.ipynb`, merged it on 27 Oct (run 2, 10 min): exactly the 196 adapted projections changed, and `AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP` is on Hugging Face. Earlier: the old 7B's full-size re-score and the smoke test on 20 Oct; sessions 1, 2 and 3a did steps 1–25 on 21–22 Oct) | Step 1: Kaggle account 1, T4 ×2, 1.7 h. Step 2: the old 7B's re-score of four tasks (about 11 h, account 3 then account 2), training (about 7–14 h on T4 ×2, account 3), then the new 7B on six tasks (about 12 h) | Decided 19 Oct: improve the 7B before distilling.
 
 **Step 1 done (19 Oct):** [l0-step1-image-size-check.ipynb](Champion_Task/l0-step1-image-size-check.ipynb), results in [L0-step1-results/](Champion_Task/L0-step1-results/L0S1/README.md). The 1,211 optical questions, at three sizes for a 1024 px image (disaster type, 353 questions / relational, 858):
@@ -888,9 +1131,10 @@ Background:
   - tested at 512 px (about 324 tokens), where the paper used full size (about 1,300).
 - The answer format isn't the cause: our 7B answers with letters only on 99.9–100% of questions.
 - Gaps to the paper's fine-tune at 512 px were −12.5 (disaster type) and −12.9 (relational); at full size they are −8.0 and −5.1. | Decided 19 Oct: step 2, a short extra training of our adapter at full size (1036 px) on disaster type and relational plus an equal replay sample (about 7,000 samples). Both models are then scored on every optical question. Done 28 Oct: kept. Next: L2 step 1 again with the new teacher. |
-| L2 step 1 | Teacher answers for the 7B → 3B distillation | Ready to run (again, with the new 7B: `l2-step1-new-teacher.ipynb`, built 28 Oct; the first run is done) | Kaggle account 1, T4 ×2 | 4,000 answers generated; 1,085 (27%) match their label and are kept: disaster type 89.4%, land use 50.9%, bearing bodies 42.7%, building counting 15.6%, relational 13.3%, road counting 0%. Road counting labels are road-area percentages such as 5.22%, which the teacher can't hit exactly without the options; those 735 fall back to their labels. Cell 7's push failed: the dataset title already existed, and the code missed Kaggle's wording ("already in use") but still printed "Pushed". So the dataset `disasterm3-teacher-cot` doesn't hold this run's file. | L0 kept the new 7B, so run `l2-step1-new-teacher.ipynb` on account 1 (steps under "Needs you now"). Step 2 reads the manifest from the run's notebook output, not from a dataset. |
+| L0b | Can the 7B learn to see damage? A small test of training its vision encoder | Not started | Kaggle T4, a few hours (a guess; memory check first) | — | Side experiment, after E6 and E7. Scored on Part B's 300 buildings against the grader (212) and the new 7B (100). Rule fixed in roadmap §7. |
+| L2 step 1 | Teacher answers for the 7B → 3B distillation | Done (first run 19 Oct; again with the new 7B, `l2-step1-new-teacher.ipynb`, checked 4 Nov) | Kaggle account 1, T4 ×2 | **Again with the new 7B:** 3,265 of 3,265 answered, 1,146 kept: disaster type 91.2%, land use 54.2%, bearing bodies 45.2%, building counting 16.3%, relational 15.6%. Expectation met (at least 1,085 kept; disaster type and relational up). Results in [L2-step1-results/new-teacher/](Champion_Task/L2-step1-results/new-teacher/L2S1-new-teacher/README.md). **First run:** 4,000 answers generated; 1,085 (27%) match their label and are kept: disaster type 89.4%, land use 50.9%, bearing bodies 42.7%, building counting 15.6%, relational 13.3%, road counting 0%. Road counting labels are road-area percentages such as 5.22%, which the teacher can't hit exactly without the options; those 735 fall back to their labels. Cell 7's push failed: the dataset title already existed, and the code missed Kaggle's wording ("already in use") but still printed "Pushed". So the dataset `disasterm3-teacher-cot` doesn't hold this run's file. | Step 2 reads the manifest from the new-teacher run's notebook output, not from a dataset. |
 | L2b | Explanations as a second skill ("why?" on request) | Not started | Kaggle T4 ×2, about 3–5 h | Planned 19 Oct (roadmap L2b, Paper_Audit §4.12): explanations written from the correct answer plus true mask facts, checked against those facts, then trained as a second task in step 2. | Build after step 1. |
-| L2 step 2 | Train the 3B | Not started | Kaggle GPU | Its notebook still has the old installs that fail on today's Kaggle. | Fix it, as a copy, after L0. How the 3B learns is still to choose (a, b or c; soft labels recommended). |
+| L2 step 2 | Train the 3B | Ready to run (built 8 Nov: five notebooks, dry-run checked) | Kaggle T4 ×2 on accounts 3, 1 and 2, about 50 GPU h in all, estimated | Notebooks: [l2-step1b-soft-labels](Champion_Task/l2-step1b-soft-labels.ipynb), [l2-step1c-options-rerun](Champion_Task/l2-step1c-options-rerun.ipynb), [l2-step2-train-3b](Champion_Task/l2-step2-train-3b.ipynb), [l2-step3-heldout-select](Champion_Task/l2-step3-heldout-select.ipynb), [l2-step4-winner-benchmark](Champion_Task/l2-step4-winner-benchmark.ipynb). Dry runs on your PC passed: the counts, stopping and resuming, the soft labels' alignment, every branch of the rule, and missing or unreadable pictures. | **Decided 8 Nov: train two 3Bs, (b) soft labels and (c) the options rerun, and keep the better one by the rule fixed in roadmap L2** (501 held-out after-photos, 1,962 questions; counting judged only where the largest option is 20 or less; McNemar, then count error, then (b)). Order: run 1, the soft labels (account 3), and run 2, the options rerun (account 1), now; then the two trainings, the held-out choice and the winner on the benchmark (account 2). Steps under "Needs you now". |
 | L3 | 4-bit 3B with handoff to the 7B | Not started | Kaggle GPU | — | After L2. |
 | L4 | EfficientSAM3 against SAM 3 | Not started | Kaggle GPU | — | — |
 
@@ -902,6 +1146,36 @@ Background:
 | — | Update the roadmap and README with these results | Not started | — | — | Say when. |
 
 ## Change log
+
+- **16 Nov 2026: T3 phase 1 built and handed to Aryan; features brought back from his prototype on real data.** Updated: the top of this file, the T3 row, "Needs you now" (item 5), [System_Design_Notes.md §4](System_Design_Notes.md) (new §4.6), the roadmap's T3 section and the ledger (decisions, Aryan's and Noman's entries). Paper_Audit_and_Integration_Plan, Phase2_Plan and Research_Directions_Beyond_Finetuning checked: nothing in them is about the website, so no change.
+- **11 Nov 2026:**
+  - **E7 step 2's results checked:** the choice of chain reopens. Its folder was moved to `E7-results/step2/` to match the naming pattern.
+  - **E7 step 2b run on the PC, on your go:** the gap is noise, and the two models split by event. Its first run stopped at its own reproduction check, and the fix is recorded in the notebook.
+  - **T2's offline proof** (Ridita, fixed flow) recorded and checked against her run notebooks; the T2 decision is settled.
+  - **Noman's website reviewed,** in `Noman_task/Review_AeroRescue_site.md`.
+  - **Update 4 written and compiled,** and the front-page README rewritten as the supervisor asked.
+- **8 Nov 2026:**
+  - **L2 decided and built:** two 3Bs, (b) and (c), with the held-out rule fixed before any run.
+  - **T2 practice runs 2 and 3 recorded,** and the upload zips rebuilt for commit `0024ae8af`.
+
+- **7 Nov 2026:** E6 done (2,007 clean pairs). The counting benchmark's options found to reveal the answer (a no-image rule scores 66.98%), so count error is added to E7's reporting. E7 step 1 run, step 2 built. L2 step 2's options (a), (b) and (c) written down, with (b) recommended, and my claim that training could learn the option pattern corrected. Repository links updated to `CSE499A-B`.
+- **4 Nov 2026: L0b added to test later:** whether training the 7B's vision encoder helps. It has been frozen because the DisasterM3 paper's recipe freezes it, and training it has never been tested. A small crop test comes first, with its rule fixed in roadmap §7.
+
+- **4 Nov 2026 (morning): first wireframes built** in [Wireframes/index.html](../Wireframes/index.html): eight clickable screens plus three awkward states (no before-photo, facts missing, no GPU), no internet needed. Checked in headless Chrome at desktop and phone width (51 checks) and by eye. The folder is new and untracked, outside the usual `git add` scope.
+
+- **4 Nov 2026 (later): focus set to the finder and grader, with parallel owners as suggestions (roadmap §1b); T3's wireframes can start now.** Update 3's corrected PDF pushed alone (`8b6fbd319`). Item 8's hidden link stays dead until `L2-step1-results/new-teacher/` is pushed. Stageshow skill installed globally for illustrations and animated demos on the story page, not in the project.
+
+- **4 Nov 2026 (morning): one-chain plan written into the roadmap (§1b), with the guideline search in the chain; E7 and T2b added.** Update 3's two wrong lines fixed (the 7B's teacher answers are one sentence each, not reasoning; the open L2 step 2 choice is how the 3B learns from them). Stale rows here fixed: L2 step 1 is Done, T2 is Ready to run, and the Goals, run board and "At a glance" match. Ledger, System_Design_Notes, Paper_Audit, Phase2_Plan and Research_Directions got the same note.
+
+- **4 Nov 2026 (night): E6 built** (the benchmark's test masks as a second, unseen test set) and dry-run checked; ready to run. The two rules settled on your PC first: 2,067 optical test pairs, 2,010 clean after leaving out copies of segmentation-pool images.
+
+- **4 Nov 2026 (night): update 3 without Noman's section, and the file links in update 3 and the proposed solution set to white,** so the soft copies keep working links and the printed copies show none (your request).
+
+- **4 Nov 2026 (later): update 3 and the proposed solution rewritten** to say concretely what each component is (inputs, training, output) and to link every result to its file on GitHub (your request); L2 step 1's new-teacher results checked and filed; `.gitignore` extended to its 68 MB training file.
+
+- **4 Nov 2026: Aryan's and Ridita's 3–4 Nov pushes checked.** Aryan refiled v3 and v4 without the three corrections; Ridita built T2 steps 1–3 (DisasTeller on our local 7B), with the Kaggle proof run still to come. Ledger §9 and the feedback above updated; update 3's Ridita section now includes T2.
+
+- **3 Nov 2026: Tamanna's Part B checked (neither 7B grades better than the grader); update 3 and the proposed solution drafted.** Details under Tamanna's item and the 5th-class item in "Needs you now".
 
 - **28 Oct 2026 (update day): faux update 2 PDF and faux literature deck built.** Your part of the PDF covers Phase A only (E1, E2, D5/D5b, E3); the teammates' sections are kept from update 2. Details under the 5th-class item in "Needs you now".
 - **28 Oct 2026 (night): L2 step 1 again built; guideline licences checked.**

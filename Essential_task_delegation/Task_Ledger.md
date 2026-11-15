@@ -67,6 +67,17 @@ Status is kept in [Progress_Tracker.md](Progress_Tracker.md); the plans are in [
 | 24 Oct | Add H2c, a second try at free-form questions: question–SQL pairs for our table, a fine-tuned adapter, a five-sample agreement gate, and a new test with unseen question types. If it fails, fall back to the system as it was | In the literature, models passed a similar bar only with in-domain training and an abstention gate, which H2b didn't have | Roadmap H2c; [System_Design_Notes.md §3.5](System_Design_Notes.md) |
 | 24 Oct | Try running the INT8 segmenter in the visitor's browser (ONNX Runtime Web) | Uploads would work on the public site with no server, and images never leave the visitor's device | A feasibility test first, with its pass rule fixed in advance ([System_Design_Notes.md §4.3](System_Design_Notes.md)) |
 | 22 Oct | Build H2b, a graded test of the SQL agent. The deployment rule was fixed before any run: benchmark counting uses a fixed query, our VLM writes the SQL if it passes in 4-bit, and a separate model is only a fallback | H2's counting questions can't separate the models, and a second model works against the low-resource target | [h2b-sql-agent-graded-test.ipynb](Champion_Task/h2b-sql-agent-graded-test.ipynb), after H2 |
+| 4 Nov | One chain before any new module: SAM 3 → grader → one table → fixed queries + hot spots + guideline search → report. E7 replaces H1 V3 and scores it as one. L2's 3B becomes a side experiment that the main report doesn't depend on | Parts had been tested alone, never together. The best numbers came from three different models, and R11's table and T1's hot spots share only 7 images | Roadmap §1b, E7 |
+| 4 Nov | Test who writes the report: the 7B or a small text model, on the same facts and guideline search, counted by number contradictions and fake citations | The fine-tuned 7B answers in one sentence, a plain text model matched it at writing SQL, and report writing has never been tested. O3 names our VLM, so a swap needs the supervisor's agreement | Roadmap T2b |
+| 4 Nov | The focus is the finder and grader, grader first; everything else runs in parallel. T3's wireframes can start now | The rest of the chain only reads what they produce, and they have the most room left (0.33 against 0.556 with perfect grades). The screens follow the chain's steps, whichever model E7 keeps | Roadmap §1b, T3 |
+| 4 Nov | Test later whether training the 7B's vision encoder helps, starting with a small crop test (L0b) | It's frozen only to follow the DisasterM3 paper's recipe, and the 7B's weakness looks like seeing. A small test on Part B's 300 buildings settles it before about 34 GPU hours are spent on a full run | Roadmap L0b |
+| 8 Nov | L2: train two 3Bs, (b) with the 7B's soft labels and (c) with the options rerun, and keep the better one by a rule fixed before any run | (b) is the cleaner distillation O4 promises; (c) gives counting and relational reasoning more checked teacher answers, but shows the options whose middle value is always right above 20 | Five notebooks built and dry-run checked 8 Nov ([L2 step 2](#l2-step-2--two-3bs-and-the-rule-decided-and-built-8-nov)) |
+| 11 Nov | Before choosing the chain, test whether E7's 0.0086 gap is more than noise | The rule fixed before E7 step 2 reopened the choice on a small gap | E7 step 2b: noise; the models split by event |
+| 11 Nov | The front-page README gives a broad overview and links every weekly update and presentation (the supervisor's request) | — | README rewritten 11 Nov |
+| 15 Nov | T3 is built in `T3_Website/` from a copy of Aryan's prototype (Vite, React, TypeScript, Tailwind), one codebase for both pieces, deployed by hand with the Vercel CLI | His map-and-inspector layout held up in review; a manual deploy keeps teammates' pushes from going public | [T3_Website/README.md](T3_Website/README.md); [System_Design_Notes.md §4.6](System_Design_Notes.md) |
+| 16 Nov | The site's look is direction A, "Aftermap" (name not final), with B's gridlines, a small before/after pair, a contour-line background, and on/off switches for the overlays | Your pick among three working directions | [System_Design_Notes.md §4.6](System_Design_Notes.md) |
+| 16 Nov | Bring back from Aryan's prototype only what real data supports: guideline passages quoted from the proof run, local downloads, the limitations, and thermal and sensor ideas as text only | The removed features showed values our system never produced | [Aryan's handover](Aryan_Task/T3_Website_Handover.md), §3.6 |
+| 16 Nov | Aryan builds the website's remaining pages; Abrar keeps the gallery export, the deployment and the decisions | Hand-over, with rules and checks so nothing breaks | [Aryan's handover](Aryan_Task/T3_Website_Handover.md) |
 
 **Standing working rules** (from you, kept in memory):
 - Nothing is changed, installed or run without your go, and the decisions stay yours.
@@ -396,6 +407,73 @@ Status is kept in [Progress_Tracker.md](Progress_Tracker.md); the plans are in [
     - O2's counting still needs about 2 points.
     - Every future split is grouped by before-image fingerprint.
     - The new 7B's scores will be reported both ways.
+
+### E6: the test split's ground truth (7 Nov)
+
+- **What:** one four-class mask per optical test pair (0 background, 1 intact, 2 damaged, 3 destroyed), merged from the benchmark's black-and-white segmentation masks with the training rule (intact, then damaged, then destroyed). Input: the benchmark mirror, the D4 split and E5 step 1's copy list. No model is trained or scored. [Notebook](Champion_Task/e6-test-split-ground-truth.ipynb); [results](Champion_Task/E6-results/E6/README.md).
+- **Why, and what it improves:** every segmentation score so far is on 645 validation pairs (605 clean). This gives a second, larger and unseen test set, and true counts for count error. E7 scores the whole chain on it.
+- **Expectation, fixed on 4 Nov:** 2,067 pairs, 57 copies, 2,010 clean, masks like the training ones, no overlaps. No number was predicted for outlines. Revised on 7 Nov to 2,008 after the first full run stopped on an unreadable image and E5's fingerprints showed a second one.
+
+| Check | Rule | Result |
+|---|---|---|
+| Inventory | 2,067 pairs, no file missing | 2,067 pairs (1,030 / 558 / 479); **NO**: 2 with an unreadable image |
+| Masks like the training masks | values 0 and 255, 1024 px, unasked masks empty | **NO** on 1 pair: `sunda_tsunami_00000042`, an unreadable mask |
+| Overlaps | at most 0.5% of building pixels | yes: 0 of 291,904,133 |
+| Copies | 57 left out (56 training, 1 validation) | yes, exactly |
+| Clean pairs | 2,010 | **NO: 2,007** |
+| Outlines drawn alike | median piece-area ratio within 0.67–1.5 in at least 80% of shared events | yes: 12 of 12 |
+
+- **Against the expectation:** one pair fewer than the 2,008 revised figure. E5's fingerprints cover images, not masks, so they couldn't show the Sunda mask. Its intact and destroyed masks gave pixels and its damaged count is 0, so the damaged mask is probably the unreadable one; the output doesn't name it.
+- **The left-out pairs:** `mexico_earthquake_00000140` (after-image), `tuscaloosa_tornado_00000278` (before-image, an empty file) and `sunda_tsunami_00000042`. All are listed in `test_pairs.csv`. The Sunda pair's mask is in the zip but must not be used: only `test_clean_pairs.csv` counts.
+- **What the clean set holds:** intact 252,819,282, damaged 24,791,802 and destroyed 13,225,057 pixels; validation has 1,808,111 destroyed. Turkey has 414 pairs. Of the 28 events in the clean set, 16 couldn't be compared because they have fewer than 20 pairs in validation or test, including Mexico (191 test pairs), Joplin (148), Palu (124) and Ian (104).
+- **Closest to the outline limits:** Turkey 0.695 and SoCal 1.465. They pass the rule but are worth reading first if a per-event score looks odd.
+- **Why these checks, and the alternatives:** the rules were fixed before the run so an unseen set can't be shaped by its results. The median-area ratio is a limited check: it shows whether outlines are drawn at a similar size, not whether their shapes match, and it covers only 12 of the 28 events. Keeping the copied pairs was rejected, because a model has seen them in training.
+- **Runs:** [run 1, stopped at Cell 4](Champion_Task/E6-results/run1-stopped-at-cell4/e6-test-split-ground-truth.log), and [run 2, the smoke test](Champion_Task/E6-results/run2-smoke-test/e6-test-split-ground-truth.ipynb). Between the smoke test and the full run only Cell 1's flag, Cell 4's unreadable-image check and the first cell's text changed (compared cell by cell).
+
+### E7: the chain scored as one (built 7 Nov)
+
+- **Step 1, on your PC, done 7 Nov.** [Notebook](Champion_Task/e7-step1-validation-counting.ipynb); [results](Champion_Task/E7-results/step1/README.md).
+  - **What:** the first counting number for the chain: SAM 3 (prompt "building", on the before-photo in four quarters) finds each building, and a Siamese ResNet-18 trained on SAM 3's outlines labels it intact, damaged, destroyed or not a building. Each map's 8-connected blobs of at least 20 px are counted, and the nearest option is picked, on the 1,055 training-split counting questions on the 645 validation images.
+  - **Why:** no counting figure existed for this map, and step 2 needs an expectation before any test score exists.
+  - **Expectation, fixed before the run:** about 36–40%, near R11's 39.24% (R11: U-Net with a ResNet-50 encoder, before and after photos as input); median count error about R11's 33%.
+
+    | Method | Accuracy | On the 605 clean pairs | Median count error | Counts within 20% of the truth |
+    |---|---|---|---|---|
+    | Chain, grader seed 42 | 37.73% | 37.47% | 40.0% | 32.8% |
+    | Chain, grader seed 43 | 37.63% | 36.55% | 37.5% | 32.5% |
+    | Chain, grader seed 44 | 38.67% | 37.99% | 36.4% | 34.8% |
+    | R11 | 39.24% | 39.01% | 33.3% | 38.8% |
+    | Rule that never sees the image | 59.72% | 60.06% | n/a | n/a |
+
+  - **Against the expectation:** accuracy met. Seed 42 against R11 isn't clearly different (exact McNemar: 143 questions only the chain gets right, 159 only R11, p = 0.39). Count error is a little worse than expected (40% against 33%), so R11 still counts slightly better on this measure.
+  - **Checks:** the painted maps rebuild the published pixel scores (largest difference 0.0012, seed 43's known one); every one of 26,834 outlines matches its row; the true masks answer all 1,055 questions; R11 reproduces 39.24%.
+  - **Limit:** these are training-split questions, and the no-image rule was found on them, so its figure here is only a reference. Its fair test is on the benchmark's questions (66.98%).
+- **Step 2, done (account 1; output files from 7–8 Nov, downloaded 11 Nov).** [Notebook](Champion_Task/e7-step2-chain-on-test-pairs.ipynb); [results](Champion_Task/E7-results/step2/README.md).
+  - **What:** find-then-grade (SAM 3's outlines on the before-image, three grader seeds) against R11 with TTA, on the 2,065 readable optical test pairs; maps scored on E6's 2,007 clean pairs, counting on the benchmark's 3,580 askable counting questions.
+  - **Why:** every segmentation score so far came from the 645 validation pairs, which were also used to choose models. The rule fixed before the run (roadmap G6): find-then-grade stays the chain only if its destroyed-building IoU beats R11's and its counting isn't clearly below.
+  - **Expectation, fixed before the run:** both lower on test than on clean validation (0.3065 and 0.2692); counting level with R11's.
+  - **Result:**
+    - Destroyed-building IoU 0.3898 (mean of seeds 42, 43, 44: 0.4055, 0.3983, 0.3657) against R11's 0.3984.
+    - Mean IoU 0.5129 against 0.5721; building IoU 0.5416 against 0.6944.
+    - Turkey (414 pairs): 0.3233 against 0.0867. Without Turkey: 0.4105 against 0.4672.
+    - Counting on E5's clean questions: 32.7% against 32.53% (p = 0.87); median count error 40% against 38%.
+    - With perfect grades on SAM 3's outlines, 0.5898. The graders' macro F1 on the true test buildings was 0.68–0.70 (validation 0.73–0.75).
+  - **Against the expectation:** both scored higher on test (0.39 and 0.40), not lower; counting level, as expected.
+  - **By the rule:** not above, so the choice of chain reopens before T2 step 5.
+  - **Checks:** safety checks on 12 validation images passed (SAM 3 0.9997, graders within 0.0117, R11's pixels within 0.05%); R11's table reproduced H2's 32.96% (33.02% on the 3,580 askable questions).
+- **Step 2b, on your PC (11 Nov), on your go: is the gap noise?** [Notebook](Champion_Task/e7-step2b-resampling-test.ipynb); [results](Champion_Task/E7-results/step2b/README.md).
+  - **How:** step 2's saved maps and per-outline scores scored per pair; the gap (find-then-grade, mean of three, minus R11) recomputed on 10,000 redraws of the pairs, and of the 28 events with all their pairs.
+  - **Expectation, fixed before the run:** the interval includes 0 overall, at both levels; R11's lead without Turkey holds; find-then-grade's lead on Turkey holds; the intervals by event are wider. **All met.**
+  - **Result:**
+    - Overall: −0.0086, with 95% intervals of −0.038 to +0.022 by pair and −0.098 to +0.089 by event. That's noise.
+    - Without Turkey: −0.057 (−0.078 to −0.036 by pair; −0.111 to −0.020 by event).
+    - Turkey: +0.236 (0.161 to 0.304).
+  - **The first run stopped at its own check:** seed 43, rebuilt from scores saved to 6 decimals, differed from step 2 by 0.0006 on Turkey. Seed 42 is now scored from its saved maps; seeds 43 and 44 are allowed 0.001 (11–19 near-tied outlines per seed).
+  - **What it leads to:** your choice of chain (tracker, "Needs you now"). Recommended: a mix of SAM 3's outlines and R11's pixels, chosen on validation and confirmed once on test.
+  - **Dry-run checks on your PC:** the notebook's real cells ran on a mock of Kaggle's inputs, with the real benchmark, E6's pairs and masks, E5's flags and the three graders' weights, and with stand-ins for SAM 3, R11 and OpenCV. A smoke-size run used the real graders; a full-size run covered all 2,065 pairs and every code path a smoke test skips, with a quick stand-in for the graders' forward pass. Three planted faults stopped the run as they should. Given H2's real counts for R11, the notebook reports 32.96% and 32.47% and says it reproduces them.
+  - **Not tested until Kaggle:** SAM 3 installed in its own folder (SAM 3 needs `timm` 1.0.17 or later, and R11's library pins 0.9.7, so SAM 3 runs in a separate process), and all three models on real pictures. Cell 7 checks those on validation images before the long run: SAM 3 against E3's maps, the graders against their saved log-probabilities, R11 against its saved pixels.
+- **E6's masks against the benchmark, on your PC:** the merged masks give the exact true count on all 3,470 optical counting questions on the 2,007 clean pairs, so count error can be trusted on them.
+- **Why count error was added (7 Nov):** accuracy on these options can't show counting ability (§7, the benchmark option check). The alternatives are in that entry.
 
 ## 5. Phase B: structural training runs
 
@@ -757,6 +835,44 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
     - **Checks:** every published accuracy reproduces from the per-question answers for both models, and the old 7B's clean and strict numbers match E5's table; both models answer the same 10,675 questions; the 8 questions with unreadable images count as wrong for both.
     - **What it leads to:** `AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP` is our 7B and L2's teacher. L2 step 1 runs again with it, on your go.
     - Results in [L0-step2-results/new-partA/](Champion_Task/L0-step2-results/new-partA/L0S2/README.md) and [new-partB/](Champion_Task/L0-step2-results/new-partB/L0S2/README.md). The verdict was computed on your PC with a short read-only script; its numbers are all in this entry.
+- **Weight-space edit, step 1: does the 7B have a removable obstacle? (7 Nov, read-only, on your PC)**
+  - **What and why:** the MIT report "Sparks of Weight-Space Programming" raised a small text model's maths score by removing a thinking loop from its weights, and reports little gain on a model without loops. So an edit is only worth trying if the 7B has an obstacle of that kind. Input: the new 7B's saved answers to the 10,675 optical benchmark questions, and the options in `train_release.json` and Aryan's `augmented_bdc_benchmark_v4.json`.
+  - **Expectation, stated before the check:** if there is no clear pattern, stop. No numeric expectation was fixed.
+  - **Loops: none.** No answer contains words or repeats; the longest is 22 characters. Only 8 answers are empty, the same count as the unreadable images.
+  - **Skew: strong on road damage, mild on building counting.**
+
+    | Task | Accuracy | Commonest answer | Share of answers | How often that letter is right |
+    |---|---|---|---|---|
+    | Road damage | 33.03% | B | 73.1% | 19.9% |
+    | Building counting | 30.31% | D | 31.7% | 20.3% |
+    | Relational reasoning | 34.62% | B | 28.6% | 20.2% |
+    | Disaster type | 76.77% | C | 22.1% | 23.5% |
+
+    Disaster type is balanced, so this is not a general habit of favouring a letter. Options in the counting tasks are often close to size order, so a favoured letter may be a favoured size; the two can't be separated without the test questions' options for road damage.
+  - **Found on the way: the correct count can often be read from the options alone.** Checked on `benchmark_release.json` and `train_release.json`, optical questions only.
+    - **How the options are built:** on all 1,581 test questions whose largest option is above 20, the options are 0.6, 0.8, 1, 1.2 and 1.4 times the correct count (within rounding), so the correct answer is the middle value. Training shows the same on all 3,316 such questions.
+    - **The rule, fixed on the 10,667 optical training questions only:** if the largest option is above 20, pick the middle value; otherwise pick the second smallest. No image is used. It scores 59.48% on those training questions.
+    - **On all 3,583 test questions** (ids and correct letters match our L0 file on every question; the Kaggle run [benchmark-option-rule-check.ipynb](Champion_Task/benchmark-option-rule-check.ipynb), on the benchmark mirror, gives the same counts as the check on your PC):
+
+      | Question type | Questions | Always middle | Rule | New 7B |
+      |---|---|---|---|---|
+      | Intact | 1,880 | 73.9% | 77.8% | 32.9% |
+      | Damaged | 974 | 31.2% | 54.8% | 27.0% |
+      | Destroyed | 729 | 32.8% | 55.4% | 28.1% |
+      | **All** | **3,583** | **53.95%** | **66.98%** | **30.31%** |
+
+      By largest option: above 20 (1,581 questions), rule 100%, 7B 28.2%; 20 or below (2,002), rule 40.9%, 7B 32.0%. Road damage shows the same construction: always-middle scores 44.11% against the 7B's 33.03%, and all 308 questions with a largest option above 20 have the middle value correct.
+    - **Why this score was recorded:** accuracy on these options is what the review's target uses, so the comparison must sit beside it. The no-image rule measures how much of that accuracy can come from option construction alone.
+    - **What it means:** beating 34.2% doesn't show that a model can count. That covers R11's 32.96% and the base model's own 34.2%. Our 7B doesn't use the pattern, so its 30.31% isn't inflated by it. I haven't checked whether the DisasterM3 paper mentions this.
+    - **Options for scoring counts:**
+      1. Keep accuracy, with the no-image rule reported beside it. Recommended, because the review promised this measure.
+      2. Add count error against the true masks (mean absolute error, and share within a tolerance). Recommended as the main measure of counting; E7 can do it once E6's masks exist.
+      3. Report only questions with a largest option of 20 or below. Partial: the rule still beats the 7B there (40.9% against 32.0%), so these options leak too.
+      4. Rebuild the options so they don't reveal the answer. Fair, but it's no longer the benchmark the published scores use, so no direct comparison with 34.2% would be possible.
+      5. Use the rule to raise a score. Rejected: it uses no image.
+    - **Risk for training, corrected 7 Nov:** an earlier version of this note said a model trained on these options could learn the pattern. Our training can't: the prompts in `train_qwen_disasterm3_3b_distill.ipynb` and the 7B's training show only the question, without the options, and the target is a sentence stating the count (for example, "The total number of undamaged buildings after the disaster is 231."). It would only matter for L2's option (c), which shows the teacher the options, so the 3B's targets could carry the pattern. Any model is still scored on these options, so report count error for the 3B as well.
+  - **Against the expectation:** a pattern exists, so the check doesn't stop the idea, but counting can't judge an edit: an edit that nudged the model towards middle values could raise the score without improving its vision.
+  - **What it leads to:** steps 2 and 3 are on hold. They need your go on a paid OpenAI key. The cleaner target is the grading habit in Tamanna's Part B (Intact for 298 of 300 buildings), scored on those 300 true buildings against the grader's 212 correct. Why not the alternatives: road damage's skew has the same option problem; a rule that shifts answer letters after the model runs is cheaper than an edit but adds no vision; and L0b (training the vision encoder) stays the planned test of whether the 7B can learn to see damage.
 
 ### L2 step 1 · Teacher answers for the 3B
 - **What:** the 7B answers 4,000 training questions, and only answers checked correct against their labels are kept.
@@ -783,8 +899,41 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
     The answer check is unchanged.
   - **Dry run on your PC (28 Oct):** with the first run's output manifest as stand-in data, the first run's subset was reproduced exactly; the unchanged check re-kept the first run's 1,085 answers; resume and the output files worked. The first run's longest answer (177 characters) fits the new 96-token limit.
   - **Expectation, fixed before the run:** more kept answers for disaster type (89.4%) and relational reasoning (13.3%), partly from memory, since L0's top-up trained on these entries again; building counting, bearing bodies and land use within about 3 points of 15.6%, 42.7% and 50.9%; at least 1,085 kept in all; about 5.5 h on account 1.
+  - **Result (checked 4 Nov):** 3,265 of 3,265 answered; 1,146 kept. By task: disaster type 91.2%, land use 54.2%, bearing bodies 45.2%, building counting 16.3%, relational 15.6%. Expectation met. [Results](Champion_Task/L2-step1-results/new-teacher/L2S1-new-teacher/README.md).
+
+### L2 step 2 · Two 3Bs and the rule (decided and built 8 Nov)
+- **What:** two distilled 3Bs, trained alike except for what they learn from, and one rule, fixed before any run, to keep the better. Both: `Qwen/Qwen2.5-VL-3B-Instruct` in 4-bit with a new LoRA adapter (rank 64, alpha 16) on the language model, the 7B's recipe (lr 2e-4, cosine, global batch 256, one epoch), images at most 768 × 28 × 28 pixels, and 53,032 training entries.
+  - **(b) soft labels:** the new 7B reads each of the 38,271 checkable training questions with its correct answer, and its 20 most likely tokens at every answer token are saved. The 3B's loss is 0.5 × the label loss + 0.5 × the match to that spread.
+  - **(c) the options rerun:** the 7B answers L2 step 1's counting and relational questions again with the benchmark's options shown, and the correct letters are added to L2 step 1's data.
+- **Why both:** your decision of 8 Nov (§2). (b) is the cleaner distillation O4 promises. (c) gives counting more checked teacher answers, but shows the options whose middle value is always right when the largest is above 20.
+- **The rule:**
+  - All questions on 501 held-out after-photos (1,962 checkable) are left out of both trainings and both teacher passes.
+  - The winner is the more accurate on them, counting only where the largest option is 20 or less (exact McNemar, p < 0.05); then the lower median count error on held-out building counting; then (b).
+  - Only the winner is scored on the benchmark's 10,675 optical questions.
+- **How:** five Kaggle notebooks, `l2-step1b-soft-labels`, `l2-step1c-options-rerun`, `l2-step2-train-3b`, `l2-step3-heldout-select` and `l2-step4-winner-benchmark`, on accounts 3, 1 and 2. Account 4 isn't used: (b)'s training needs your write token, and account 4 is Tamanna's.
+- **Checked on your PC (dry runs):** each notebook's own cells ran on a tiny random Qwen2.5-VL with the real `train_release.json` and `benchmark_release.json`.
+  - The counts matched: 55,764 usable entries, 53,032 for training, 1,962 held-out questions, 10,675 benchmark questions.
+  - Stopping and resuming worked in the soft labels, the training and the benchmark run.
+  - Every soft label lined up with the 3B's target token.
+  - All five branches of the rule picked the expected winner on made-up answers.
+  - Missing and unreadable pictures were scored wrong, as in L0 step 2.
+  - Runs 4 and 5 remove torchao first: the clash that stopped L0's merge.
+- **Found while checking:** the held-out training questions share the benchmark's flaw. When the largest option is above 20 (293 of 1,045 counting questions), the middle option is right every time.
+- **Expectations, fixed before the runs:**
+  - Soft labels: the 7B's top token equals the label's on most answer tokens, lowest on counting numbers.
+  - Options rerun: about 700–900 kept.
+  - Training: the loss starts near 0.5–1.2 and falls.
+  - The rule: no number predicted.
+  - The winner on the benchmark: below the new 7B on most tasks.
+- **Not tested yet:** the real models' time and memory on Kaggle (the smoke tests measure them).
 
 ## 8. Housekeeping
+
+- **Step 1 again, with the new 7B as teacher (results checked 4 Nov):** 3,265 of 3,265 entries answered, all by `l0s2-mergedFP`, at full size, greedy, with the plain training prompt. 1,146 answers match their label and are kept (first run, old 7B: 1,085).
+  - **Against the expectation:** met. At least 1,085 were kept; disaster type rose to 91.2% and relational to 15.6%. Building counting (16.3%) and bearing bodies (45.2%) stayed within about 3 points; land use (54.2%) rose by 3.3.
+  - The first run changed four things at once (teacher, image size, decoding, prompt), so the comparison is a reference, not a controlled test.
+  - The answers are one sentence each (median 14 words), as L2's smoke test found, so this is answer-level distillation; explanations come from L2b.
+  - Results in [L2-step1-results/new-teacher/](Champion_Task/L2-step1-results/new-teacher/L2S1-new-teacher/README.md).
 
 ### Commit and push of the Phase A-onward work
 - **What:** `Essential_task_delegation/`, `others/`, `.gitignore`, `README.md` and `UPDATE.md` committed and pushed for the team.
@@ -822,6 +971,38 @@ Every push since 22 Oct was read file by file, and each number was checked again
   - **Still Gemini:** the four agents' LLM and the three image tools (T2 steps 1–3), so it can't run without a key and the internet yet. Her README says so.
   - **Open:** `local_chroma_db/` (8 MB, rebuilt from the chunks) is tracked and changes on every search, so it belongs in `.gitignore`. Five more guideline PDFs (EMS-98 twice, xBD, IWG-SEM, INSARAG Vol II and III) are now in the public repo. *(Licences checked 28 Oct: none of the six documents allows posting it online. Sphere's copyright page requires written permission for it, EMS-98 grants no reuse, the xBD paper is under arXiv's own licence, and INSARAG and IWG-SEM carry no licence. The options are in the tracker.)* Her miss on Q1 (masonry grade 4 found as grade 3) matters for task1, which grades buildings with this search.
   - **Next:** T2 steps 1–3, the local LLM and the local image tools.
+- **4 Nov, T2 steps 1–3 built (pushed 3–4 Nov), read:** the four agents and the three image tools now ask our new 7B (`l0s2-mergedFP`) through a local vLLM server (`local_model.py`; any address other than `localhost` stops the program). No Gemini key or 2-a-minute limit remains.
+  - **Proof tools:** `run_with_netlog.py` logs every connection and name lookup during a run; `check_run.py` checks five pass rules fixed on 3 Nov before any run (finished without error; six reports marked offline, 50+ words each; nothing outside `localhost`; no Gemini library loaded; every model call answered). The proof run must also have Kaggle's internet off.
+  - **So far:** a laptop run against a pretend model server passed all five rules, after it caught CrewAI asking `pypi.org` for updates (now off). Kaggle practice run 1 (internet on, 3 Nov) installed vLLM 0.25.1 and CrewAI 1.15.2 from wheels and served the 7B on two T4s, then stopped on a file-path error in the uploaded dataset; fixed with a manifest and sha256 check, not yet rerun. Its outputs weren't kept.
+  - **Choices worth knowing:** tool calls in CrewAI's text format with the stop word sent to the server; one picture per question; a 16,384-token context, since task 6 reads tasks 1–5.
+  - **Practice run 2 (account 3, run by Abrar, 7–8 Nov, internet on): failed.** [Results](Offline_RAG_KR2/results/t2_practice_2_abrar/t2_run/run/t2_run_summary.json).
+    - **What worked:** both prep notebooks; the install from wheels; vLLM serving the new 7B on two T4s; the three short tests (text, picture, a CrewAI call); the guideline search; the labelled map; 18 network events, all on `127.0.0.1`. Pass rules 3, 4 and 5 hold.
+    - **What failed:** rules 1 and 2. After 11 minutes the crew stopped with `LLMContextLengthExceededError` (16,385 tokens against 16,384), and no report was written.
+    - **Cause (corrected 8 Nov):** the Expert team's agent looped. It called the same tools with the same input again and again (CrewAI answered "I tried reusing the same input" 33 times) and tried to hand its work to other teams, until one message passed the 16,384-token limit and vLLM refused it. The 7B's tool calls were well formed. A first reading said the 7B copied CrewAI's template; that was wrong, because the quoted lines were CrewAI's own instructions, printed in the log.
+    - **Photos:** they do reach the model (Picture 1: the Wajima hall; Picture 3: a collapsed bridge). For Pictures 2, 4, 5 and 6, the 7B repeated the description the agent had written into its question.
+    - **Ridita's run 2 (3 Nov) and fixes (5–7 Nov, pushed 8 Nov):** her run, on the code before the file-placement fix, failed the same way (11.4 min; [results](Offline_RAG_KR2/results/t2_practice_2/)). Her fixes, one per finding: a 32,768-token limit, with older tool results and then the longest message shortened before each call; at most 10 steps per team; delegation off; photo questions without the agent's text; map labels found anywhere in the answer; clearer tool descriptions; every model call logged with vLLM's token counts. Her laptop tests with a pretend server that loops like run 2 ended with all six reports. Not tested with the real 7B.
+    - **What it leads to:** practice run 3 with her fixed code. The fixed flow (System_Design_Notes §1) stays the fallback if that run fails, or if its reports don't rest on the tools' results. O3 names our VLM, so another model as the agent isn't an option.
+  - **Practice run 3 (account 3, run by Abrar, 8 Nov, internet on, commit `0024ae8af`): failed rule 2.** [Results](Offline_RAG_KR2/results/t2_practice_3_abrar/t2_run/run/t2_run_summary.json).
+    - **Expectation (Ridita's, written before the run):** rules 1–5 pass; if 6 or more teams reach the step limit, the fixed flow is decided before the proof run.
+    - **What happened:** the run finished in 3.9 minutes with 12 agent calls, 7 picture calls and 3 guideline searches; no team reached its step limit; the six photo descriptions all differ; 5 labels were drawn on the map; no message needed shortening; every call was answered; nothing went outside the machine. Rules 1, 3, 4 and 5 passed.
+    - **Rule 2 failed:** the reports have 12, 82, 17, 14, 69 and 228 words, so three are under 50. Three are one sentence about the report instead of the report ("The final report is generated based on the provided data and tools."). The emergency team called `global_img_interpreter` without its required `text` input, got a validation error and gave up. No report cites a guideline section. Two invent "Region A, B and C" with damage grades 2, 4 and 6, on a scale that stops at 5.
+    - **Against the expectation:** the step-limit sign didn't trigger (0 of 6), but the reports fail anyway. The failure moved from the loop to the writing: our 7B answers in one sentence, as it was trained to, and uses no facts from the tools.
+    - **What it led to (8 Nov):** (a) the fixed flow, recommended, or (b) CrewAI with changed instructions and run 4. Ridita ran (b) first, then chose (a) by her own rule (below).
+  - **Her runs 3–5 and the proof run (pushed 9–11 Nov), checked 11 Nov** against her README and her two run notebooks:
+    - **Run 3 (8 Nov, hers):** failed like Abrar's run 3 (reports too short). Her fixes (9 Nov): tools accept an empty input; a Final Answer under 150 words is asked again, at most twice. Her expectation for run 4: if a report stays short after asking again, the fixed flow is decided before the proof run.
+    - **Run 4 (10 Nov): failed rule 2,** with every report 28–49 words. The 7B repeated the same tool call until the step limit (4 teams), and CrewAI 1.15.2 saved that call as the report. The grades in runs 3 and 4 came from an example in the map tool's description (her 5 Nov change; now removed). `final_answers_kept_short` was 1, so by her rule the fixed flow was decided on 10 Nov.
+    - **The fixed flow (`disasteller_offline/fixed_flow.py`):** code calls the photo tool, five EMS-98 searches, the map tool and the other teams' searches (18 in all) in a fixed order. The 7B writes the grade lines and 27 sections, with each team's role from the main script. There are no example names or grades in the prompts. The pass rules are unchanged; `check_run.py` adds the model's own word counts and the grades found.
+    - **Run 5 (10 Nov, internet on): passed rules 1–5.** 28 sections; 5 of 6 grades, since the bridge photo's description has no place name. Reports of 192–787 words of the model's own (July's Gemini reports: 379–912). The Expert report cites 11 real sections.
+    - **The proof run (11 Nov, internet off): passed rules 1–5.** It printed "PASSED: the offline proof (internet off)". Its reports are word for word run 5's. 4 network events, all to `127.0.0.1`; commit `258a4f381`; DisasTeller took 6.1 minutes. Checked on the PC: Kaggle's metadata says internet off (run 5: on), and both notebooks print the same commit and the same 28 section word counts.
+    - **Not solved (her list):**
+      - the map reading says "no dangerous zones", and three reports repeat it;
+      - a made-up hotline, "123456789";
+      - only the Expert report cites in brackets;
+      - photo 5 is called a "hurricane";
+      - three of the five map labels are off their streets;
+      - the staff and team numbers are the model's own.
+    - **What it leads to:** T2's choice is settled (the fixed flow), and O3 has its offline proof. Next: the comparison with the July Gemini reports, quality fixes as a new run, then steps 5 and 7 with the chosen chain's table.
+  - **Done as asked:** `local_chroma_db/` is git-ignored and removed from the repo.
 
 ### Ridita · The DisasterM3–BRIGHT audit (corrected 22 Oct, pushed 25 Oct)
 - **What we use:**
@@ -867,6 +1048,34 @@ Every push since 22 Oct was read file by file, and each number was checked again
     - **The duplicate check is done (E5):** 36 of the 1,703 questions use a copied after-image. Without them every number moves by 0.4 points or less.
     - **Smaller points:** the TEOChat blockquote's second sentence ("Injecting U-Net findings … closes this gap") isn't in the paper as far as our notes go; the 23.58% fine-tuned baseline in §2 doesn't match our measurements (30.09% at full size, 32.01% at 512 px, optical); everything ran in 4-bit, which cost our 7B 4.6 points in H2b; the empty `result` file can go.
   - **What we use:** the evidence that counts must not pass through the VLM ([System_Design_Notes §2.2](System_Design_Notes.md)), and the oracle ceiling (96.5%) as before.
+- **4 Nov, `BDC-v3-results/` and `BDC-v4-results/` (pushed 3–4 Nov), checked:** the same runs, filed with a README each. Every CSV matches a file already in `BDC_Results/` or `BDC_Results_v4/` by content, except v3's base image-only run on 844 questions (32.94%), which is new.
+  - **None of the three corrections is applied:** v4's U-Net file is still byte-identical to the image-only file; criterion 2 is still judged on the 500 after the run ("beats U-Net on MB") instead of as written; and the README still calls 32.96% the table's "upper bound" (it is H2's score on all optical questions, intact included), so "the prompt keeps 82–91% of it" compares different question sets. On his own 1,701 questions the table alone scores 37.0%.
+  - **New, rechecked on your PC:** on the 66 questions his set shares with H2's graded sample, H2's SQL agent is right on 26 (39.4%), the fine-tuned 7B with R11's counts on 20 (30.3%) and the image alone on 10. Same direction as the 37.0% against 27.0%; 66 questions is too few to separate H2 from the prompt on its own.
+  - Feedback drafted 4 Nov (in the tracker).
+- **15 Nov, his website (pushed 12 Nov) and his section of update 4, checked; review and fix list pushed** ([Aryan_Task/Review_and_Fix_List.md](Aryan_Task/Review_and_Fix_List.md), commit `6ec05307e`).
+  - **The website** was generated in Google AI Studio. It shows invented damage assessments (building names, floors, "pancake collapse", void likelihood, sensor advice) at real coordinates in Pazarcık, Türkiye, over real satellite tiles. It labels hand-written Turkey reports as `fixed_flow.py` output from a Kaggle offline session. Its console fills missing areas with made-up defaults. It mixes scores (0.3161 with R11's 0.588; a validation-split 39.2% as the counting headline). It loads Google Fonts and ArcGIS tiles, carries AI Studio and Gemini leftovers, copies our internal docs (the Task Ledger included) into its public folder, and gets team names wrong.
+  - **His update 4 section** claims a building table with polygons, floors, EMS-98 grades 1–5, trapped-person estimates and ingress vectors. Our H2 table has none of these.
+  - **Still open:** the three corrections to the counting study (v4's README unchanged since 27 Oct); the bridge `disasteller_inputs.py` still returns zeros with status "ok" for an image not in the table, and nothing calls it; a junk `Untitled-1.ipynb` at the repository root.
+  - **Asked for by Wed 18 Nov,** with acceptance checks and a ready-to-paste instruction for his AI assistant.
+- **15–16 Nov, the bridge rechecked while building T3:** four more faults, added to his review as §7.2–7.5. Safe areas are read with keys T1 v3's file doesn't have, so each prints at (0, 0), 0 px from damage; neither status is checked; missing fields get defaults; and model estimates are titled "GROUND TRUTH", with R11 and T1 v3 hard-coded as the sources.
+- **16 Nov, the website handed over:** he builds T3's remaining pages from [his handover](Aryan_Task/T3_Website_Handover.md), which lists every change from his prototype and why (§3), what came back on real data (§3.6), the rules, the checks before each push, and the next tasks in order. His own `Website/` stays his record, under his review.
+
+### Noman · Website prototype (`Noman_task/AeroRescue-site/`, pushed 9–10 Nov)
+- **What:** a 7-page React site for Vercel (Home, Data, Method, Results, Gallery, Demo, About) and four wireframe images. Reviewed 11 Nov from the source files (not built or run). The full review, written for him, is [Noman_task/Review_AeroRescue_site.md](Noman_task/Review_AeroRescue_site.md).
+- **Usable:**
+  - its content lives in data files;
+  - the demo labels its sample output honestly;
+  - the decision-support warning is on every page;
+  - `vercel.json` sets the cross-origin isolation headers the in-browser segmenter needs.
+- **To fix:**
+  - wrong task names (BBR, DRE, DTR, DSR);
+  - DRE's base and fine-tuned scores swapped;
+  - the old 7B's 512 px scores;
+  - a segmentation table mixing leaked (645) and leak-free (605) scores, which flatters R11;
+  - Section 15 instead of 13 (15 was CSE499A's);
+  - an offline FAQ claiming the laptop already runs every model.
+- **The wireframes:** they follow the CSE499A proposal's first plan, with metrics never measured (CSE499A's final report has no RAR, ROUGE-L or BERTScore) and FEMA and UN-OCHA sign-in pages, in the public repository. Asked to be removed.
+- **Fit:** it covers the same ground as T3 (Abrar's, decided 24 Oct); how they fit together is open. *(16 Nov: settled. T3 is built from Aryan's prototype in `T3_Website/`; Noman's pages and his pattern of keeping content in data files can be ported into it, with the corrections from his review. Nothing of his is ported yet.)*
 
 ### Tamanna · Plan 2, building-by-building crop inspection (`Tamanna_task_2/Plan_2/`, pushed 17–22 Oct)
 - **What we use:**
@@ -882,4 +1091,11 @@ Every push since 22 Oct was read file by file, and each number was checked again
 - **28 Oct, the rebuilt demo (pushed 27 Oct), checked:** both notebooks are committed Kaggle runs that finished without errors; the 10 tiles are validation pairs, none of them leaked; no prompt shows the segmenter's class. The README and the audit response now label everything "demo, not an evaluation" and list what was wrong.
   - **What the demo shows (agreement, not accuracy):** the fine-tuned 7B called all 30 inspected buildings Intact, the base 7B 24 of 30, while the segmenter said 19 Damaged, 9 Intact and 2 Destroyed. The VLM's one-word class matches its own EMS-98 grade on only 15 of 30 crops (base: 8 of 30), so its two answers often contradict each other.
   - **For Part B:** score against the true validation buildings (E1's masks), and compare with R16c's grader on the same buildings (macro F1 0.754 in step 5b), so the question becomes whether the 7B grades better than our trained grader. Mark the building in the crop: its longest side is 46 px at the median (7 of 30 under 32 px) in a 256 px window, so other buildings fill most of it.
+    - **29 Oct, the comparator:** with equal numbers per class, compare per-class recall, not F1, since precision depends on the class mix. R16c step 5b's grader on the true validation buildings it graded ([grader_true_buildings.csv](Champion_Task/R16c-results/step5b/grader_true_buildings.csv)): Intact 0.940, Damaged 0.669, Destroyed 0.702. Counting the 601, 121 and 132 ungraded buildings as wrong gives the file's 0.911, 0.650 and 0.644. The VLM sees every sampled building, so the first set is the fair one. Part B should use the new 7B (`l0s2-mergedFP`), which L0 step 2 kept.
+  - **2 Nov, Part B's result (checked 3 Nov): no.** [Tamanna_task_2/Plan_2/README.md](Tamanna_task_2/Plan_2/README.md#result), committed Kaggle run, 28 min on two T4s.
+    - Design: 300 true validation buildings, 100 per class, from the 605 clean images; a red box around the target in a 256 px window shown at 504 px; the same two prompts for every building; R16c step 5b's grader (seed 44) on the same buildings, after reproducing its recorded grades (2 of 25,594 differ). The decision rule (exact McNemar, p < 0.05) was fixed before the run.
+    - Right answers out of 300: grader 212, new fine-tuned 7B 100, base 7B 99. Recall (Intact / Damaged / Destroyed): grader 0.93 / 0.57 / 0.73 on parsed answers; fine-tuned 1.00 / 0.00 / 0.00 (it answers Intact for 298 of 300); base 0.49 / 0.50 / 0.00 (it never answers Destroyed).
+    - **What it means:** a zoomed, marked crop doesn't make either 7B a grader. Grading stays with the trained grader. The 7B's role in reports is to describe what the grader and the per-building table already decided, not to grade. This also explains Part A's all-Intact demo.
+    - **Limits stated by Tamanna:** the grader sees before and after, the 7Bs only the after-crop (a before-and-after version would be H3's V3); one prompt, one crop setting, greedy decoding.
+    - Recomputed on your PC from `part_b_answers.csv`: the confusion tables and both McNemar tests match.
   - **Open:** the older part of the audit response quotes what reads as a prompt to an AI assistant ("To answer the prompt's core question…", line 250). Your call, as with Ridita's README.

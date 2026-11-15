@@ -1,0 +1,257 @@
+[
+  {
+    "id": "vl3b_peak_memory", "value": 2.55, "display": "2.6 GB",
+    "note": "Our fine-tuned 7B language model is to be distilled into a 3B one, small enough for a laptop's graphics card: in 4-bit, a 3B model of the same family peaked at {value} of GPU memory, against 6.2 GB for our 7B. The distillation hasn't been run yet, and no language model has been measured on a laptop.",
+    "measures": "Peak GPU memory while answering one question at a time, 4-bit weights",
+    "image_set": "the counting-agent test questions, one at a time, on one T4 GPU", "model": "Base Qwen2.5-VL-3B in 4-bit (the family the 7B is distilled into); our 7B in 4-bit for comparison",
+    "source": "Essential_task_delegation/Champion_Task/H2b-results/H2b/README.md", "find": ["| VL-3B nf4       |", "2.55", "6.17"], "public_from": "2026-11-18"
+  },
+  {
+    "id": "ftg_destroyed_iou_clean", "value": 0.3065, "display": "0.307",
+    "measures": "Overlap between predicted and true destroyed-building pixels (IoU, 0 to 1), mean of three grader seeds",
+    "image_set": "605 clean validation pairs", "model": "Find-then-grade: SAM 3 outlines + our Siamese ResNet-18 grader",
+    "source": "Essential_task_delegation/Champion_Task/R16c-results/step5b/README.md", "find": ["0.3065", "0.3161", "0.3051", "0.2982"],
+    "public_from": "2026-11-11"
+  },
+  {
+    "id": "ftg_miou_clean", "value": 0.5473, "display": "0.547",
+    "measures": "Mean overlap over background, intact, damaged and destroyed (mean IoU), mean of three grader seeds",
+    "image_set": "605 clean validation pairs", "model": "Find-then-grade: SAM 3 outlines + our Siamese ResNet-18 grader",
+    "source": "Essential_task_delegation/Champion_Task/R16c-results/step5b/README.md", "find": ["mIoU 0.5473"],
+    "public_from": "2026-11-11"
+  },
+  {
+    "id": "ftg_seed_scores", "value": "0.3161, 0.3051, 0.2982", "display": "0.316, 0.305 and 0.298",
+    "measures": "Destroyed-building IoU of each of the three grader seeds",
+    "image_set": "605 clean validation pairs", "model": "Find-then-grade: SAM 3 outlines + our Siamese ResNet-18 grader",
+    "source": "Essential_task_delegation/Champion_Task/R16c-results/step5b/README.md", "find": ["0.3161", "0.3051", "0.2982"],
+    "public_from": "2026-11-11"
+  },
+  {
+    "id": "pair_unet_destroyed_iou_clean", "value": 0.2692, "display": "0.269",
+    "measures": "Overlap between predicted and true destroyed-building pixels (IoU, 0 to 1)",
+    "image_set": "605 clean validation pairs", "model": "Before-and-after U-Net with 8-view test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/R16c-results/step5b/README.md", "find": ["0.2692"],
+    "public_from": "2026-11-11"
+  },
+  {
+    "id": "pair_unet_miou_clean", "value": 0.5805, "display": "0.581",
+    "measures": "Mean overlap over background, intact, damaged and destroyed (mean IoU)",
+    "image_set": "605 clean validation pairs", "model": "Before-and-after U-Net with 8-view test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/R16c-results/step5b/README.md", "find": ["0.5805"],
+    "public_from": "2026-11-11"
+  },
+  {
+    "id": "field_unet_destroyed_iou_clean", "value": 0.2874, "display": "0.287",
+    "measures": "Overlap between predicted and true destroyed-building pixels (IoU, 0 to 1)",
+    "image_set": "605 clean validation pairs", "model": "After-image-only U-Net with 8-view test-time augmentation, full precision",
+    "source": "Essential_task_delegation/Noman_task/Review_AeroRescue_site.md", "find": ["0.2874"],
+    "public_from": "2026-11-11"
+  },
+  {
+    "id": "field_unet_miou_clean", "value": 0.5402, "display": "0.540",
+    "measures": "Mean overlap over background, intact, damaged and destroyed (mean IoU)",
+    "image_set": "605 clean validation pairs", "model": "After-image-only U-Net with 8-view test-time augmentation, full precision",
+    "source": "Essential_task_delegation/Noman_task/Review_AeroRescue_site.md", "find": ["0.5402"],
+    "public_from": "2026-11-11"
+  },
+  {
+    "id": "validation_pairs", "value": "645 / 605 / 40", "display": "605 of 645",
+    "measures": "Validation pairs kept after removing the 40 that share images with training",
+    "image_set": "645 validation pairs", "model": "none (a content hash check of the images)",
+    "source": "Essential_task_delegation/Champion_Task/R16c-results/step5b/README.md", "find": ["645 validation images, 605 of them clean", "40 leaked pairs"],
+    "public_from": "2026-11-11"
+  },
+  {
+    "id": "sam3_building_iou", "value": 0.6304, "display": "0.630",
+    "measures": "Overlap between SAM 3's building outlines on the before image and the true building pixels (IoU), with no training",
+    "image_set": "645 validation pairs", "model": "SAM 3, prompt \"building\", before image cut into four quarters",
+    "source": "Essential_task_delegation/Champion_Task/E3-results/E3/README.md", "find": ["0.6304"],
+    "public_from": "2026-11-11"
+  },
+  {
+    "id": "vlm_dtr_ours", "value": 76.77, "display": "76.77%", "measures": "Disaster Type Recognition: share of multiple-choice questions answered right (which kind of disaster happened)",
+    "image_set": "10,675 optical benchmark questions (353 on this task)", "model": "Our fine-tuned Qwen2.5-VL-7B, full image size",
+    "source": "Essential_task_delegation/Champion_Task/L0-step2-results/new-partB/L0S2/README.md", "find": ["76.77", "83.6", "66.6"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "vlm_bbr_ours", "value": 19.99, "display": "19.99%", "measures": "Disaster Bearing Bodies Recognition: share answered right (which kinds of objects were damaged)",
+    "image_set": "10,675 optical benchmark questions (2,006 on this task)", "model": "Our fine-tuned Qwen2.5-VL-7B, full image size",
+    "source": "Essential_task_delegation/Champion_Task/L0-step2-results/new-partA/L0S2/README.md", "find": ["19.99", "21.5", "4.7"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "vlm_bdc_ours", "value": 30.31, "display": "30.31%", "measures": "Building Damage Counting: share answered right (how many intact, damaged or destroyed buildings)",
+    "image_set": "10,675 optical benchmark questions (3,583 on this task)", "model": "Our fine-tuned Qwen2.5-VL-7B, full image size",
+    "source": "Essential_task_delegation/Champion_Task/L0-step2-results/new-partA/L0S2/README.md", "find": ["30.31", "34.3", "34.2"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "vlm_dre_ours", "value": 33.03, "display": "33.03%", "measures": "Road Damage Counting: share answered right (what share of the image is intact or damaged road)",
+    "image_set": "10,675 optical benchmark questions (1,868 on this task)", "model": "Our fine-tuned Qwen2.5-VL-7B, full image size",
+    "source": "Essential_task_delegation/Champion_Task/L0-step2-results/new-partB/L0S2/README.md", "find": ["33.03", "29.4", "29.3"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "vlm_dsr_ours", "value": 40.46, "display": "40.46%", "measures": "Disaster Scene Recognition: share answered right (which land-use types the scene has)",
+    "image_set": "10,675 optical benchmark questions (2,007 on this task)", "model": "Our fine-tuned Qwen2.5-VL-7B, full image size",
+    "source": "Essential_task_delegation/Champion_Task/L0-step2-results/new-partB/L0S2/README.md", "find": ["40.46", "37.7", "28.3"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "vlm_orr_ours", "value": 34.62, "display": "34.62%", "measures": "Relational Reasoning: share answered right (how two boxed objects relate in space)",
+    "image_set": "10,675 optical benchmark questions (858 on this task)", "model": "Our fine-tuned Qwen2.5-VL-7B, full image size",
+    "source": "Essential_task_delegation/Champion_Task/L0-step2-results/new-partB/L0S2/README.md", "find": ["34.62", "36.2", "23.9"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "vlm_paper_columns",
+    "value": { "DTR": [66.6, 83.6], "BBR": [4.7, 21.5], "BDC": [34.2, 34.3], "DRE": [29.3, 29.4], "DSR": [28.3, 37.7], "ORR": [23.9, 36.2] },
+    "display": "base 7B / the paper's fine-tune",
+    "measures": "The same six tasks for the base Qwen2.5-VL-7B and for the DisasterM3 paper's own fine-tune, as the paper reports them (its Table 2)",
+    "image_set": "10,675 optical benchmark questions", "model": "Base Qwen2.5-VL-7B; the DisasterM3 paper's fine-tuned 7B",
+    "source": "Essential_task_delegation/Champion_Task/L0-step2-results/new-partB/L0S2/README.md", "find": ["paper_finetuned_%", "paper_base_%", "Table 2"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "table_counting_accuracy", "value": 32.96, "display": "32.96%",
+    "measures": "Building-counting questions answered right when the count comes from the building table (the option nearest the table's count)",
+    "image_set": "3,583 optical counting questions of the benchmark", "model": "Building table from the before-and-after U-Net with test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/H2-results/H2/README.md", "find": ["32.96", "34.2%"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "base_counting_accuracy", "value": 34.2, "display": "34.2%",
+    "measures": "Building-counting questions the base Qwen2.5-VL-7B answers right, as the DisasterM3 paper reports",
+    "image_set": "3,583 optical counting questions of the benchmark", "model": "Base Qwen2.5-VL-7B (paper)",
+    "source": "Essential_task_delegation/Champion_Task/H2-results/H2/README.md", "find": ["34.2% on the optical questions (paper)"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "table_size", "value": "117687 / 2652", "display": "117,687 buildings in 2,652 images",
+    "measures": "Rows in the building table built for the benchmark's after-images",
+    "image_set": "2,652 benchmark after-images", "model": "Before-and-after U-Net with test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/H2-results/H2/README.md", "find": ["2,652 benchmark after-images, 117,687 buildings"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "free_sql_wrong_answer", "value": 33880, "display": "33,880",
+    "measures": "A language model's answer to \"how many intact buildings are within 100 pixels of a destroyed building?\" for one image, from a query it wrote itself that never filtered by image",
+    "image_set": "1 image (hurricane_florence_00000000)", "model": "Qwen2.5-Coder-3B writing its own SQL",
+    "source": "Essential_task_delegation/Champion_Task/H2-results/H2/demo_queries.csv", "find": ["33880", "within 100 pixels of a destroyed building"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "count_table_vs_model", "value": "37.0 / 27.0", "display": "37.0% against 27.0%",
+    "measures": "Counting questions answered right by taking the option nearest the table's count, against the language model given that same count",
+    "image_set": "1,701 optical counting questions about damaged or destroyed buildings", "model": "Building table alone; our fine-tuned 7B in 4-bit given the table's count",
+    "source": "Essential_task_delegation/Task_Ledger.md", "find": ["37.0% of the same 1,701 questions", "27.0% [25.0, 29.2]", "290 questions only the table gets right, 121 only the VLM"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "hotspot_point_on_damage", "value": 0.736, "display": "73.6%",
+    "measures": "Hot spots whose marked point is within 20 px of a damaged or destroyed building in the ground truth",
+    "image_set": "645 validation images (694 hot spots)", "model": "Survivability heatmap, version 3, on the after-image-only U-Net's masks with test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/T1-results/T1-v3/README.md", "find": ["Points on damage: 0.736 in v2, 0.736 in v3", "within 20 px"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "guideline_retrieval", "value": "27 / 30", "display": "27 of 30",
+    "measures": "Test questions for which the offline guideline search put a section that answers it in its top 3 (24 were needed to pass)",
+    "image_set": "30 questions written before the test", "model": "Offline hybrid search (meaning + keywords) over 405 guideline sections",
+    "source": "Essential_task_delegation/Offline_RAG_KR2/README.md", "find": ["passed, 27 of 30", "at least 24 of the 30"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "field_model_size", "value": 33.1, "display": "33 MB",
+    "measures": "File size of the 8-bit field model",
+    "image_set": "not applicable", "model": "After-image-only U-Net, INT8 ONNX, four convolutions kept in full precision",
+    "source": "Essential_task_delegation/Champion_Task/L1B-results/L1b/README.md", "find": ["33.1"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "field_model_cpu_time", "value": 1601, "display": "1.6 s",
+    "measures": "Median time per 1024 x 1024 image on a 4-thread server CPU",
+    "image_set": "50 validation images, 3 timed runs each", "model": "After-image-only U-Net, INT8 ONNX",
+    "source": "Essential_task_delegation/Champion_Task/L1B-results/L1b/README.md", "find": ["1601", "4 threads"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "field_model_speedup", "value": 1.43, "display": "1.43 times",
+    "measures": "Speed against the same model in full precision (ONNX FP32), timed in the same session",
+    "image_set": "50 validation images", "model": "After-image-only U-Net, INT8 ONNX",
+    "source": "Essential_task_delegation/Champion_Task/L1B-results/L1b/README.md", "find": ["1.43x the speed of ONNX FP32"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "field_model_iou_drop", "value": 0.0003, "display": "0.0003",
+    "measures": "Drop in destroyed-building IoU from full precision to 8-bit (0.2921 to 0.2918, without test-time augmentation)",
+    "image_set": "645 validation images", "model": "After-image-only U-Net, INT8 ONNX",
+    "source": "Essential_task_delegation/Champion_Task/L1B-results/L1b/README.md", "find": ["Destroyed IoU drop 0.0003", "0.2918"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "browser_time", "value": "2.1-5.5", "display": "2.1 to 5.5 s",
+    "measures": "Time per 1024 x 1024 image in Chrome and Edge after the first run, on a 20-thread PC",
+    "image_set": "1 xBD after-image (hurricane-harvey_00000099)", "model": "The 8-bit field model in ONNX Runtime Web 1.20.1 (WebAssembly, several threads)",
+    "source": "Essential_task_delegation/Champion_Task/T3-browser-test/README.md", "find": ["2.1–4.8 s", "3.3–5.5 s", "20 threads"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "browser_agreement", "value": 100, "display": "100% of pixels",
+    "measures": "Pixels where the browser run gives the same class as the same model run natively",
+    "image_set": "1 xBD after-image (hurricane-harvey_00000099)", "model": "The 8-bit field model in ONNX Runtime Web 1.20.1",
+    "source": "Essential_task_delegation/Champion_Task/T3-browser-test/README.md", "find": ["100% of pixels, both runs"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "proof_run", "value": { "reports": 6, "searches": 18, "sections": 28, "citations": 11, "citations_real": 11, "network_events": 4 }, "display": "6 reports, 18 guideline searches, 28 sections",
+    "measures": "The offline proof run of 11 Nov: what the report system did with the internet off, and what its network log recorded (4 connections, all to 127.0.0.1)",
+    "image_set": "DisasTeller's sample inputs: 6 ground photos from Wajima, Japan, and a map (not our satellite pairs)", "model": "Our fine-tuned Qwen2.5-VL-7B in DisasTeller's fixed flow",
+    "source": "Essential_task_delegation/Offline_RAG_KR2/results/t2_proof/t2_run_internet_off/run/t2_run_summary.json", "find": ["\"guideline_searches\": 18", "\"sections_written\": 28", "\"total_citations_real\": 11", "\"network_events\": 4", "\"external\": []"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "after_only_finder_recall", "value": 0.0894, "display": "9%",
+    "measures": "Share of the true destroyed-building pixels that SAM 3's outlines cover when it sees only the after image",
+    "image_set": "645 validation pairs", "model": "SAM 3, prompt \"building\", on the whole after image in one pass",
+    "source": "Essential_task_delegation/Champion_Task/E3-results/E3/README.md", "find": ["post_grid1  | all      |      645", "0.0894"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "misaligned_pairs", "value": 52, "display": "52%",
+    "measures": "Share of measured pairs whose before and after images are shifted by more than 2 px",
+    "image_set": "2,966 pairs that Ridita's audit could measure", "model": "none (an image alignment measurement)",
+    "source": "Essential_task_delegation/Task_Ledger.md", "find": ["52% of the 2,966 measurable pairs are shifted by more than 2 px"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "test_ftg_destroyed_iou", "value": 0.3898, "display": "0.390",
+    "note": "On 2,007 unseen test pairs, which no model was trained or tuned on",
+    "measures": "Overlap between predicted and true destroyed-building pixels (IoU), mean of three grader seeds",
+    "image_set": "2,007 unseen test pairs", "model": "Find-then-grade: SAM 3 outlines + our Siamese ResNet-18 grader",
+    "source": "Essential_task_delegation/Champion_Task/E7-results/step2/README.md", "find": ["0.3898", "2,007 clean pairs"], "public_from": "2026-11-18"
+  },
+  {
+    "id": "test_pair_unet_destroyed_iou", "value": 0.3984, "display": "0.398",
+    "measures": "Overlap between predicted and true destroyed-building pixels (IoU)",
+    "image_set": "2,007 unseen test pairs", "model": "Before-and-after U-Net with 8-view test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/E7-results/step2/README.md", "find": ["0.3984"], "public_from": "2026-11-18"
+  },
+  {
+    "id": "test_ftg_miou", "value": 0.5129, "display": "0.513",
+    "measures": "Mean IoU over background, intact, damaged and destroyed, mean of three grader seeds",
+    "image_set": "2,007 unseen test pairs", "model": "Find-then-grade: SAM 3 outlines + our Siamese ResNet-18 grader",
+    "source": "Essential_task_delegation/Champion_Task/E7-results/step2/README.md", "find": ["0.5129"], "public_from": "2026-11-18"
+  },
+  {
+    "id": "test_pair_unet_miou", "value": 0.5721, "display": "0.572",
+    "measures": "Mean IoU over background, intact, damaged and destroyed",
+    "image_set": "2,007 unseen test pairs", "model": "Before-and-after U-Net with 8-view test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/E7-results/step2/README.md", "find": ["0.5721"], "public_from": "2026-11-18"
+  },
+  {
+    "id": "test_turkey_destroyed_iou", "value": "0.0867 / 0.3233", "display": "0.087 against 0.323",
+    "note": "Some disasters are much harder. On the Turkey earthquake's unseen test pairs, the before-and-after model finds few of the destroyed buildings. Destroyed-building IoU, the before-and-after model against find-then-grade: {value}.",
+    "measures": "Destroyed-building IoU on the Turkey earthquake's test pairs: the before-and-after U-Net against find-then-grade",
+    "image_set": "414 Turkey earthquake pairs of the 2,007 unseen test pairs", "model": "Before-and-after U-Net with test-time augmentation; find-then-grade (mean of three graders)",
+    "source": "Essential_task_delegation/Champion_Task/E7-results/step2/README.md", "find": ["0.0867", "0.3233"], "public_from": "2026-11-18"
+  },
+  {
+    "id": "resampling_gap", "value": "-0.0086 [-0.0378, 0.0218]", "display": "-0.009 (95% range -0.038 to 0.022)",
+    "measures": "Find-then-grade's destroyed-building IoU minus the before-and-after U-Net's, with the middle 95% of 10,000 resamples by pair",
+    "image_set": "2,007 unseen test pairs", "model": "Find-then-grade against the before-and-after U-Net with test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/E7-results/step2b/README.md", "find": ["-0.0086", "-0.0378 to 0.0218"], "public_from": "2026-11-18"
+  },
+  {
+    "id": "no_image_rule", "value": 66.98, "display": "66.98%",
+    "note": "A rule that never looks at the image scores {value} on these questions, so we now judge counts by their error against the true masks.",
+    "measures": "Benchmark counting questions answered right by a rule that never looks at the image (when the largest option is above 20, the middle option is always right)",
+    "image_set": "3,580 optical counting questions of the benchmark", "model": "none (a rule on the answer options)",
+    "source": "Essential_task_delegation/Champion_Task/E7-results/step2/README.md", "find": ["66.98"], "public_from": "2026-11-18"
+  },
+  {
+    "id": "count_error", "value": "40 / 38", "display": "40% and 38%",
+    "measures": "Median count error as a share of the true count: find-then-grade's table (grader seed 42) and the before-and-after U-Net's table",
+    "image_set": "3,580 optical counting questions of the benchmark, true counts from the test masks", "model": "Building tables from find-then-grade (seed 42) and from the before-and-after U-Net",
+    "source": "Essential_task_delegation/Champion_Task/E7-results/step2/README.md", "find": ["median_error_%", "|             40   |", "|             38   |"], "public_from": "2026-11-18"
+  }
+]

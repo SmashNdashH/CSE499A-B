@@ -1,0 +1,11 @@
+/* The review strip and the chooser page. They exist only while a direction is being chosen. */
+.review-bar { display: flex; flex-wrap: wrap; gap: 4px 18px; padding: 6px 14px; font: 500 13px/1.6 system-ui, sans-serif; background: #111; color: #e6e6e6; }
+.review-bar a { color: #e6e6e6; text-decoration: none; padding: 2px 0; }
+.review-bar a:hover, .review-bar a.active { text-decoration: underline; text-underline-offset: 3px; }
+.review-bar a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.review-page { max-width: 720px; margin: 0 auto; padding: 48px 20px; font: 16px/1.55 system-ui, sans-serif; color: #1c1c1c; }
+.review-page h1 { margin: 0 0 8px; font-size: 1.6rem; font-weight: 700; }
+.review-page p { margin: 0 0 24px; }
+.review-page ol { display: grid; gap: 16px; }
+.review-page li a { display: block; font-size: 1.15rem; font-weight: 650; color: #0b3fae; }
+.review-page li span { display: block; color: #444; }

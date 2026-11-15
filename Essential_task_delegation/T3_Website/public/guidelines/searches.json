@@ -1,0 +1,600 @@
+{
+ "run": "Essential_task_delegation/Offline_RAG_KR2/results/t2_proof/t2_run_internet_off/run/llm_calls.jsonl",
+ "index": "Essential_task_delegation/Offline_RAG_KR2/guideline_chunks.jsonl",
+ "searches": [
+  {
+   "order": 1,
+   "query": "EMS-98 classification of damage to masonry buildings Grade 1 negligible to slight damage",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "EMS98-masonry-grade-1",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 1: Negligible to slight damage (no structural damage, slight non-structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 1: Negligible to slight damage (no structural damage, slight non-structural damage)\nHair-line cracks in very few walls. Fall of small pieces of plaster only. Fall of loose stones from upper parts of buildings in very few cases."
+    },
+    {
+     "rank": 2,
+     "id": "EMS98-masonry-grade-2",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 2: Moderate damage (slight structural damage, moderate non-structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 2: Moderate damage (slight structural damage, moderate non-structural damage)\nCracks in many walls. Fall of fairly large pieces of plaster. Partial collapse of chimneys."
+    },
+    {
+     "rank": 3,
+     "id": "EMS98-rc-grade-1",
+     "doc": "EMS-98",
+     "section": "Classification of damage to buildings of reinforced concrete: Grade 1: Negligible to slight damage (no structural damage, slight non-structural damage)",
+     "page_start": 17,
+     "page_end": 17,
+     "text": "Classification of damage to buildings of reinforced concrete: Grade 1: Negligible to slight damage (no structural damage, slight non-structural damage)\nFine cracks in plaster over frame members or in walls at the base. Fine cracks in partitions and infills."
+    }
+   ]
+  },
+  {
+   "order": 2,
+   "query": "EMS-98 classification of damage to masonry buildings Grade 2 moderate damage",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "EMS98-masonry-grade-2",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 2: Moderate damage (slight structural damage, moderate non-structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 2: Moderate damage (slight structural damage, moderate non-structural damage)\nCracks in many walls. Fall of fairly large pieces of plaster. Partial collapse of chimneys."
+    },
+    {
+     "rank": 2,
+     "id": "EMS98-masonry-grade-4",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 4: Very heavy damage (heavy structural damage, very heavy non-structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 4: Very heavy damage (heavy structural damage, very heavy non-structural damage)\nSerious failure of walls; partial structural failure of roofs and floors."
+    },
+    {
+     "rank": 3,
+     "id": "EMS98-masonry-grade-5",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 5: Destruction (very heavy structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 5: Destruction (very heavy structural damage)\nTotal or near total collapse."
+    }
+   ]
+  },
+  {
+   "order": 3,
+   "query": "EMS-98 classification of damage to masonry buildings Grade 3 substantial to heavy damage",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "EMS98-masonry-grade-3",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 3: Substantial to heavy damage (moderate structural damage, heavy non-structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 3: Substantial to heavy damage (moderate structural damage, heavy non-structural damage)\nLarge and extensive cracks in most walls. Roof tiles detach. Chimneys fracture at the roof line; failure of individual non-structural elements (partitions, gable walls)."
+    },
+    {
+     "rank": 2,
+     "id": "EMS98-masonry-grade-4",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 4: Very heavy damage (heavy structural damage, very heavy non-structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 4: Very heavy damage (heavy structural damage, very heavy non-structural damage)\nSerious failure of walls; partial structural failure of roofs and floors."
+    },
+    {
+     "rank": 3,
+     "id": "EMS98-masonry-grade-5",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 5: Destruction (very heavy structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 5: Destruction (very heavy structural damage)\nTotal or near total collapse."
+    }
+   ]
+  },
+  {
+   "order": 4,
+   "query": "EMS-98 classification of damage to masonry buildings Grade 4 very heavy damage",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "EMS98-masonry-grade-4",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 4: Very heavy damage (heavy structural damage, very heavy non-structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 4: Very heavy damage (heavy structural damage, very heavy non-structural damage)\nSerious failure of walls; partial structural failure of roofs and floors."
+    },
+    {
+     "rank": 2,
+     "id": "EMS98-masonry-grade-5",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 5: Destruction (very heavy structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 5: Destruction (very heavy structural damage)\nTotal or near total collapse."
+    },
+    {
+     "rank": 3,
+     "id": "EMS98-masonry-grade-3",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 3: Substantial to heavy damage (moderate structural damage, heavy non-structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 3: Substantial to heavy damage (moderate structural damage, heavy non-structural damage)\nLarge and extensive cracks in most walls. Roof tiles detach. Chimneys fracture at the roof line; failure of individual non-structural elements (partitions, gable walls)."
+    }
+   ]
+  },
+  {
+   "order": 5,
+   "query": "EMS-98 classification of damage to masonry buildings Grade 5 destruction",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "EMS98-masonry-grade-5",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 5: Destruction (very heavy structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 5: Destruction (very heavy structural damage)\nTotal or near total collapse."
+    },
+    {
+     "rank": 2,
+     "id": "EMS98-masonry-grade-4",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 4: Very heavy damage (heavy structural damage, very heavy non-structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 4: Very heavy damage (heavy structural damage, very heavy non-structural damage)\nSerious failure of walls; partial structural failure of roofs and floors."
+    },
+    {
+     "rank": 3,
+     "id": "EMS98-masonry-grade-2",
+     "doc": "EMS-98",
+     "section": "Classification of damage to masonry buildings: Grade 2: Moderate damage (slight structural damage, moderate non-structural damage)",
+     "page_start": 16,
+     "page_end": 16,
+     "text": "Classification of damage to masonry buildings: Grade 2: Moderate damage (slight structural damage, moderate non-structural damage)\nCracks in many walls. Fall of fairly large pieces of plaster. Partial collapse of chimneys."
+    }
+   ]
+  },
+  {
+   "order": 6,
+   "query": "Sphere covered living space per person",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "SPHERE-3-p1",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "3. Living space",
+     "page_start": 289,
+     "page_end": 292,
+     "text": "3. Living space\nLiving space is very important for people’s well-being. It is a core human need and right to have a place for a family to dwell, feel safe and perform a variety of essential domestic activities.\nShelter and settlement standard 3: Living space People have access to living spaces that are safe and adequate, enabling essential household and livelihoods activities to be undertaken with dignity.\nKey actions\n1. Ensure that each affected household has adequate living space to perform basic domestic activities.\n•• Provide living space that accommodates the diverse needs of members of the household for sleeping, food preparation and eating, respecting local culture and lifestyles. •• Provide a basic roof and walls for occupants and their household assets, offering physical security, dignity, privacy and protection from weather. •• Provide optimal lighting conditions, ventilation and thermal comfort.\n2. Ensure that the space immediately surrounding the living space supports safe access to fundamental activities.\n•• Include appropriate cooking, toilets, laundry, bathing, livelihoods activities, socialising and play areas.\n3. Promote the use of shelter solutions, construction techniques and materials that are culturally and socially acceptable and environmentally sustainable.\nKey indicators\nPercentage of the affected population who have adequate living space in and immediately around their shelters to carry out daily activities\n•• Minimum 3.5 square metres of living space per person, excluding cooking space, bathing area and sanitation facility •• 4.5–5.5 square metres of living space per person in cold climates or urban settings where internal cooking space and bathing and/or sanitation facilities are included •• Internal floor-to-ceiling height of at least 2 metres (2.6 metres in hot climates) at the highest point"
+    },
+    {
+     "rank": 2,
+     "id": "SPHERE-3-p2",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "3. Living space",
+     "page_start": 289,
+     "page_end": 292,
+     "text": "3. Living space\nPercentage of shelters that meet agreed technical and performance standards and are culturally acceptable\nPercentage of people receiving shelter assistance that feel safe in their shelter\nGuidance notes\nLiving space: Living space should be adequate for daily activities such as sleeping, preparing and eating food, washing, dressing, storing food and water, and protecting household possessions and other key assets. It must ensure privacy and separation as required between sexes, different age groups and families within a given household according to cultural and social norms ⊕ see Shelter and settlement standard 2: Location and settlement planning.\nConsider living space for household members to gather, and for the care of infants, children and persons who are ill or injured. Pay attention to changing use of space during day and night, and plan the locations of windows, doors and partitions to maximise the use of internal space and any adjacent external areas such as kitchens or play areas.\nTo accommodate these activities in dignity, shelters need an enclosed space (walls, windows, doors and roof) with adequate floor area. Overcrowding or exposure to the elements increases the risk of disease outbreak or illness. Reduced space may lead to protection risks, reduced security and privacy.\nThe minimum living space should reflect cultural and social norms, the context, the phase of response, and guidance by national authorities or the humanitarian response sector. Carefully consider the potential consequences of adopting the minimum calculated space (3.5 square metres per person, 4.5 square metres in cold climates) and agree any adaptation with partners, moving towards the minimum as quickly as possible for all."
+    },
+    {
+     "rank": 3,
+     "id": "SPHERE-3-p4",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "3. Living space",
+     "page_start": 289,
+     "page_end": 292,
+     "text": "3. Living space\nIn collective accommodation, allow the option for peer groups to share space. For example, some LGBTQI individuals prefer living with friends and peers rather than with their own families.\nProtection: Ensure there are multiple exit routes from the dwelling, and that interior spaces open into public areas. Ensure that staff know how to refer any protection concerns around domestic violence or abuse, violence, exploitation or neglect of children. Women, girls and those needing assistance with personal hygiene often require additional space ⊕ see WASH hygiene promotion standard 1.3: Menstrual hygiene management and incontinence.\nWhere temporary collective accommodations are used, take specific actions to prevent sexual exploitation and sexual violence. Work with the community members to understand the risks and address them, and establish a strong complaints system with immediate and verifiable actions.\nPsychosocial considerations: Accommodation layout and design should include open public household living spaces that increase options for socialising.\nIn warm, humid climates, design and orient shelters to maximise ventilation and minimise entry of direct sunlight. A higher ceiling helps air circulation. An attached covered outdoor space helps reduce direct sunlight and protect from rain. Consider the use of adjacent shaded or covered external space for food preparation and cooking, with separate space for other living activities. The roof should be sloped for rainwater drainage with large overhangs, except in locations vulnerable to high winds. The shelter construction material should be lightweight with a low thermal capacity, such as timber. Use raised floors to prevent water entering the covered living area ⊕ see Shelter and settlement standard 2: Location and settlement planning."
+    }
+   ]
+  },
+  {
+   "order": 7,
+   "query": "Sphere settlement site area per person location and access",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "SPHERE-2-p4",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "2. Location and settlement planning",
+     "page_start": 284,
+     "page_end": 288,
+     "text": "2. Location and settlement planning\nMaintain the privacy and dignity of separate households when creating the plot layout for temporary settlements. Each household shelter should open onto common space or a screened area, not onto the entrance of another shelter. Provide safe living areas for all potentially vulnerable groups, but avoid clustering them because that can increase their vulnerability. Group together families, extended families and groups from similar backgrounds, to retain social bonds. Consider the needs, preferences and habits of different age, sex and disability groups.\nSurface area of planned or self-settled settlements: For planned settlements, the minimum usable surface area is 45 square metres per person in camp-type settlements, including household plots. This includes space for roads and footpaths, external cooking areas or communal cooking areas, education and recreation areas, healthcare facilities, sanitation, firebreaks, administration, water storage, site drainage, religious facilities, food distribution areas, markets, storage and limited kitchen gardens for individual households (excluding significant agricultural activities or livestock). Where communal services can be provided by existing or additional facilities outside the planned settlement, the minimum surface area should be 30 square metres per person. If the minimum surface area cannot be provided, actively take steps to address the consequences of higher-density occupation. Settlement planning should also consider changes in the population.\nWhen operating in an urban area, make use of existing services and housing stock. Ensure adequate separation and privacy between individual households, and reserve space for the required facilities.\nPlot size for shelters: A ratio of shelter footprint to plot size of 1:2 or 1:3 is recommended, to allow sufficient space for the most essential outdoor activities of the households. However, a ratio closer to 1:4 or 1:5 is preferable. The ratio should consider cultural and social norms and practical space availability."
+    },
+    {
+     "rank": 2,
+     "id": "SPHERE-2-p1",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "2. Location and settlement planning",
+     "page_start": 284,
+     "page_end": 288,
+     "text": "2. Location and settlement planning\nLocation and settlement planning should promote safe, acceptable and accessible living spaces that offer access to basic services, livelihoods and opportunities to connect to a broader network.\nShelter and settlement standard 2: Location and settlement planning Shelters and settlements are located in safe and secure areas, offering adequate space and access to essential services and livelihoods.\nKey actions\n1. Work within existing planning processes and regulations and agree terms with host communities and relevant authorities.\n•• Locate any new settlements a safe distance from actual or potential threats and minimise risks from existing hazards. •• Consider the expected lifespan of the settlement to determine what essential services may need to be expanded or developed.\n2. Involve diverse stakeholders, including groups within the affected population, in site selection and settlement planning.\n•• Identify factors that could affect the location or site layout, considering sex, age, disability, ethnic or linguistic identity, and gender roles and responsibilities. •• In urban contexts, work through a geographically defined, area-based approach to better understand community dynamics.\n3. Ensure the affected population has access to essential services and facilities, including livelihoods opportunities.\n•• Work with other sectors to establish an acceptable distance and safe travel (or transport) to essential services and facilities. •• Coordinate with service providers to prioritise and deliver essential services and livelihoods opportunities where these do not already exist.\n4. Plan the use of land to provide sufficient space for all functions, accessibility to all shelters and services, and adequate safety measures throughout the settlement."
+    },
+    {
+     "rank": 3,
+     "id": "SPHERE-2-p2",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "2. Location and settlement planning",
+     "page_start": 284,
+     "page_end": 288,
+     "text": "2. Location and settlement planning\n•• Include planning for shared resources like water and sanitation facilities, communal cooking facilities, child-friendly spaces, gathering areas, religious needs and food distribution points. •• Ensure that the placement of essential services within settlements follows standards for safety, protection and dignity.\nInclude rainfall or floodwater drainage planning in site selection and settlement development.\n•• Provide appropriate drainage facilities so that all dwelling areas and services are kept free of standing water and storm water drains are kept clear. •• Anticipate and manage breeding sites of disease vectors.\nKey indicators\nPercentage of shelters and/or settlement sites that are located in areas with no or minimal known natural or man-made threats, risks and hazards\nPercentage of shelters and/or settlement sites that have safe access to essential services within an acceptable amount of time or distance\nPercentage of those receiving settlement assistance who feel safe about the location of their shelter or settlement\nPercentage of settlement sites that offer sufficient usable surface area to carry out private and public outdoor activities appropriate to the context\n•• 45 square metres for each person in camp-type settlements, including household plots •• 30 square metres for each person, including household plots, where communal services can be provided outside the planned settlement area •• Minimum ratio between covered living space and plot size is 1:2; move as soon as possible to 1:3 or more.\nGuidance notes\nPlanning processes and principles: Governments or local authorities often introduce new policies regarding no-build zones, safe zones or buffer zones after a crisis. Advocate for risk-informed planning and appropriate assistance options. A “no-build zone” does not mean a “no-assistance zone”, and should not delay shelter or settlement responses."
+    }
+   ]
+  },
+  {
+   "order": 8,
+   "query": "INSARAG handover of rescued patients to medical teams and hospitals",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "INSARAG3-6.2-p2",
+     "doc": "INSARAG Guidelines 2020, Vol. III Operational Field Guide",
+     "section": "6 Medical > 6.2 Operations",
+     "page_start": 27,
+     "page_end": 29,
+     "text": "6 Medical > 6.2 Operations\nCheck medical evacuation plan for possible emergency situation.\n Conduct a risk assessment and establish procedures for all considered situations.\nEnsure hygiene standards are maintained both at base and worksites.\n Work with logistics staff to set up base hygiene procedures.\nMaintain health checks and monitor personnel and canines continually.\n Paramedics should be assigned to the rescue teams and constantly monitoring the health of the team members.\nCheck on casualty handover procedures.\n Medical staff needs to be aware of local procedures for the acceptance of patients into the local system.\n A system of repatriation to the home country for further treatment should also be developed.\nAnnex B27\nEnsure appropriate medical transport procedures.\n As above.\nEnsure appropriate management of medical documentation.\n All documentation pertaining to patient treatments should remain confidential and be held in a secure location.\nParticipate in daily USAR Team briefings and conduct the daily medical briefing.\n A representative from the medical teams should be part of the IMT and be involved in all briefings.\nProvide ongoing clinical care as required, including psychological assessment and monitoring\nSupervise the monitoring of USAR Team members for:\n Stress-related health problems and implement stress management techniques as appropriate (e.g. fatigue).\n General state of health – monitor trends (e.g. diarrhoea).\n Hydration status.\n Nutrition status.\nCoordinate with the personnel responsible for hazmat and safety issues regarding.\n The potential for hazardous materials contamination or other exposures (and documentation of potential exposures per home team protocol)."
+    },
+    {
+     "rank": 2,
+     "id": "INSARAG3-5.2-p1",
+     "doc": "INSARAG Guidelines 2020, Vol. III Operational Field Guide",
+     "section": "5 Rescue > 5.2 Operations",
+     "page_start": 23,
+     "page_end": 24,
+     "text": "5 Rescue > 5.2 Operations\nAction Description Reference\nFollow the affected country’s policies and procedures regarding incident operations.\n Ensure that all operations are consistent with the strategic intent of the incident controller in your area of operation.\nAnnex B3\nDevelop a safety and security plan and brief the team.\n Conduct a risk assessment and ensure all team members are aware of the risks and preventative actions\nAnnex B17\nApply INSARAG Marking System.\n Only use the INSARAG system so that following teams are familiar with the markings.\nAnnex B26\nCheck assignment and define strategy and determine what equipment is required on existing information.\nLiaise with Logistics for transport/check on fuel.\n Ensure that you have large enough vehicles to carry the required equipment. Don’t have personnel carry heavy equipment long distances.\nCheck availability of extra rescue equipment.\n Local suppliers may be able to support components for rescue equipment.\nLiaise with medical for possible treatment and determine handover point.\n Set up a triage point in consultation with medical personnel.\nCheck on-site safety during tunnelling, shoring, stabilising medical treatment, victim extrication, O2 dust.\n Refer to the Risk Assessment prior to all activities.\nEnsure evacuation point.  It is good practice to clearly mark the evacuation point. Signage or flags may assist.\nAnnex B18\nAre personnel familiar with the evacuation signalling system?\n Three longs horn blasts should signal an evacuation. Annex B26\nEnsure appropriate handover to other shift or other emergency services.\n Provide a written and verbal handover to the oncoming team."
+    },
+    {
+     "rank": 3,
+     "id": "INSARAG2B-4.3-p3",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "4 USAR Detailed Operations Following the Response Cycle > 4.3 Operation",
+     "page_start": 19,
+     "page_end": 21,
+     "text": "4 USAR Detailed Operations Following the Response Cycle > 4.3 Operation\no Availability of local and international medical resources. o Local medical procedures such as; casualty handover, casualty transport, fatality management, and medical waste disposal. o Methods of regular communications with local health authorities.  Provide medical input into USAR Team decision making/planning process.  Coordinate with Safety, hazmat, and Logistics functions to promote safe health and hygiene practices (BoO and work sites).  Provide continuous health monitoring and medical care to USAR Team members (to include canines).  Evaluation, care, and stabilisation of individuals entrapped in rubble (in some instances providing advanced medical care for many hours as other USAR disciplines work to free the patient).  Initial evaluation, care, transport or referral of individuals with medical conditions encountered while the USAR Team is on reconnaissance missions.\n Assistance with medical care during transportation of patients from field to a care facility, if required.  Assistance with recovery of deceased in the collapsed structure environment with attention to cultural sensitivities and to retrieving remains without further trauma and with managing risk for workers, if necessary.  Advice as part of multi-disciplinary input through the UCC into the LEMA decision making on when emergency response to the collapsed structure incident transitions to a recovery effort (i.e. when the potential for survivability for those still entrapped).\nUSAR Team Logistics\n Establish BoO. The BoO serves as the USAR Teams’ site for headquarters, communications hub, sleeping/resting/eating/health areas, equipment stock set-up and refuge from the elements while operational in a disaster-affected country.  Run and organise the BoO over all of the operation, including perimeter control procedures.  Support the work on the worksites (e.g. transportation, food, equipment).  Ensure that all team personnel have reliable means of communications.  Coordinate transportation requirements.  Perform contingency planning for relocation of BoO and the demobilisation phase.  Support the management on the contingency planning (e.g. transportation for medevac)."
+    }
+   ]
+  },
+  {
+   "order": 9,
+   "query": "INSARAG light medium and heavy USAR team types",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "INSARAG2B-7.2",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "7 Hazardous Materials Operations > 7.2 Strategic Considerations",
+     "page_start": 54,
+     "page_end": 54,
+     "text": "7 Hazardous Materials Operations > 7.2 Strategic Considerations\nLight, Medium and Heavy international USAR Teams need to possess the inherent knowledge to recognise a hazardous environment, thus minimising the risk of harm, injury or death to its members, the affected population and the environment. It is also expected that teams will be able to communicate its findings regarding contamination to others. As indicated, an international USAR Team should:\n Have the ability to recognise situations where contaminant(s) may be suspected.  Possess the technical expertise to offer sound advice to the LEMA, UCC and other actors.  Possess the capability to provide basic protection for team members by performing environmental detection and monitoring.  Implement basic decontamination procedures.  Be aware of the team’s limitations in dealing with complex hazmat operations."
+    },
+    {
+     "rank": 2,
+     "id": "INSARAG2B-3.10-p1",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "3 Roles and Responsibilities in International USAR Response > 3.10 Ethical Considerations in International USAR",
+     "page_start": 15,
+     "page_end": 16,
+     "text": "3 Roles and Responsibilities in International USAR Response > 3.10 Ethical Considerations in International USAR\n3.9 USAR Functions During Deployment\nFigure 2: USAR functions during deployment.\nINSARAG acknowledges and embraces the cultural diversity of countries around the world.\nINSARAG operates in accordance with the Humanitarian Principles, which form the core of humanitarian action. The conduct of deployed USAR Team members is a primary concern of INSARAG, the assisting and affected countries, and the local officials of the affected country.\nUSAR Teams should always aim to be a well-organised, highly-trained group of specialists who have been assembled to help communities in need of specialist assistance. At the end of a mission, USAR Teams should have performed positively, and should be remembered for the outstanding way they conducted themselves in the work environment as well as socially.\nEthical considerations include human rights, legal, gender, moral and cultural issues, and also concern the relationship between USAR Team members and the community of the affected country. They should practice inclusiveness in their approach.\nAll members of an INSARAG USAR Team are ambassadors of their team and their country and represent the wider INSARAG community. Any violation of principles or behaviour unbecoming by team members is viewed as unprofessional. Any inappropriate behaviour may discredit the good work of the USAR Team and reflects poorly on the entire team's performance and their home country, as well as the wider INSARAG community.\nAt no time during a mission should USAR Team members take advantage of or exploit any situation or opportunity, and it is the responsibility of all team members to conduct themselves in a professional manner always."
+    },
+    {
+     "rank": 3,
+     "id": "INSARAG2B-5.6",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "5 USAR Coordination Structure > 5.6 USAR Team Identification Code",
+     "page_start": 29,
+     "page_end": 29,
+     "text": "5 USAR Coordination Structure > 5.6 USAR Team Identification Code\nTo standardise the identification of all USAR Teams within the coordination system, a Team ID is required. The Team ID is composed of two parts: The three-letter Olympic code of the home country of the team; and a double-digit number to differentiate teams from the same country.\nMulti-national teams (e.g. NGO’s) will not use the three-letter Olympic code. They will use the letters “SAR” to be identified.\nTeam designators 01 to 09 are for IEC/IER classified teams, designators 10 through 99 are to be used for non-classified teams. The INSARAG Operational Focal Point administers the country team designators and through the Secretariat updates the USAR directory on www.insarag.org.\nMore extensive information can be found in the USAR Coordination Manual."
+    }
+   ]
+  },
+  {
+   "order": 10,
+   "query": "INSARAG ASR levels assessment search and rescue",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "INSARAG2B-5.7.1-p9",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "5.7 Assessment, Search and Rescue Levels > 5.7.1 The Levels",
+     "page_start": 30,
+     "page_end": 35,
+     "text": "5.7 Assessment, Search and Rescue Levels > 5.7.1 The Levels\nOutputs 1. Report on the work carried out as agreed with the UCC/OSOCC/LEMA. 2. Maps of areas cleared as part of reporting results.\nTable 5: ASR Level 5."
+    },
+    {
+     "rank": 2,
+     "id": "INSARAG2B-5.7.1-p3",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "5.7 Assessment, Search and Rescue Levels > 5.7.1 The Levels",
+     "page_start": 30,
+     "page_end": 35,
+     "text": "5.7 Assessment, Search and Rescue Levels > 5.7.1 The Levels\no Additional resources are called in to carry out the rescue. o The Assessment team stays but must ensure the sector. o Assessment is completed by others as soon as possible. o Adopt a strategy to send a combined team able to do both ASR Level 2 sector Assessment and ASR Level 3 Rapid Search and Rescue.  An ASR Level 2 Assessment can be repeated later if it is thought necessary, e.g. a night time assessment or an assessment with additional dogs, which may produce different results. Carried out when and by who\n1. It is preferably done closely behind the Level 1 Wide Area Assessment and as soon as possible after sectors have been established. 2. The LEMA may have sectorised and started this process prior to assistance arriving. If this is not complete it may be beneficial for a USAR Team to redo this. 3. If the LEMA has not done this, then it should be the first action of the initial USAR Team(s) in a sector. 4. USAR Teams. 5. Use of dogs or technical search equipment is optional and will depend on the situation. Using these will improve the detailed results but will slow down the process; a balance is needed. INSARAG Tools"
+    },
+    {
+     "rank": 3,
+     "id": "INSARAG2B-5.7.1-p1",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "5.7 Assessment, Search and Rescue Levels > 5.7.1 The Levels",
+     "page_start": 30,
+     "page_end": 35,
+     "text": "5.7 Assessment, Search and Rescue Levels > 5.7.1 The Levels\nUSAR operations are divided into the five levels listed in the table below. These levels are defined as sequential activities, but, in reality, teams may receive assignments in any order. Especially in large scale operations where LEMA identifies worksites before teams arrive. Or when new areas are being opened throughout the response. Hence different levels of work are being carried out in different areas of the incident at the same moment.\nNote: The five levels are identified as:\n Level 1: Wide Area Assessment.  Level 2: Worksite Triage Assessment.  Level 3: Rapid Search and Rescue.  Level 4: Full Search and Rescue.  Level 5: Total Coverage Search and Recovery.\nEach level is explained and defined in more detail in the tables on the following pages.\nASR Level 1 Wide Area Assessment Definitions and purpose\n The preliminary survey of the affected or assigned area.  For the purpose of:\no Determining the scope and magnitude of the incident. o Identifying scope, location and types of damage. o Estimating the urgent resource needs. o Developing a sectorisation plan. o Establishing priorities. o Identifying general hazards. o Identifying infrastructure issues. o Identifying potential BoO locations.  Usually accomplished by; vehicle, helicopter, waterborne craft, on foot or from reports from others e.g. the LEMA.  Initial, fast visual check of the damaged or assigned area. Teams carrying out this level of assessment must remain mobile, not engage in rescue operations and report the results as quickly as possible. Carried out when and by who"
+    }
+   ]
+  },
+  {
+   "order": 11,
+   "query": "INSARAG worksite triage and priorities",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "INSARAG2B-6.2-p2",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "6 INSARAG Marking and Signalling System > 6.2 Worksite Triage Marking",
+     "page_start": 45,
+     "page_end": 46,
+     "text": "6 INSARAG Marking and Signalling System > 6.2 Worksite Triage Marking\n May draw a directional arrow to confirm exact location of worksite/worksite entry.  Inside box – displays:\no Worksite ID (app. 40cm. font). o Team ID (app. 10 cm. font). o ASR Level completed (app. 10 cm. font). o Date.  Outside of box – displays:\no Any hazard requiring identification e.g. Asbestos (top). o Triage category (bottom). o Arrow pointed to the exact location of (the entry of) the worksite  Updated with Team ID, ASR Level completed and date as further levels of work (ASR) are completed.  Material used can be spray paint, builders’ crayon, stickers, waterproof card etc. as determined by the team.  The Worksite ID should be approximately 40cm high.  Draw a box around the painted text (approximately 1.2 to 1.0 metres).  After all work on the worksite has been completed and it is determined no further work is required a horizontal line is to be drawn through the centre of the entire worksite marking.\nIf a team considers there is a need to leave critical additional information at the worksite this can be added to the worksite marking using plain language in full view when required. This and all other relevant details should be recorded on the Worksite Triage or Worksite Report forms and submitted through the ICMS."
+    },
+    {
+     "rank": 2,
+     "id": "INSARAG2B-5.8",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "5 USAR Coordination Structure > 5.8 Worksite Triage",
+     "page_start": 36,
+     "page_end": 36,
+     "text": "5 USAR Coordination Structure > 5.8 Worksite Triage\nThe objective of ASR 2 Worksite Assessment is to assess collapsed structures and identify viable sites for live rescues. The UCC will use this information to list sites in order of priority and decide which teams to assign to which sites. One of the considerations for the prioritisation of worksites is the triage category.\nThe objective of a triage process is to evaluate triage factors to compare collapsed structures and decide the order of priority. The key to triage is consistency in the comparison of triage factors"
+    },
+    {
+     "rank": 3,
+     "id": "INSARAG2B-6.2-p1",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "6 INSARAG Marking and Signalling System > 6.2 Worksite Triage Marking",
+     "page_start": 45,
+     "page_end": 46,
+     "text": "6 INSARAG Marking and Signalling System > 6.2 Worksite Triage Marking\nWorksite triage marking was originally developed to enable teams to communicate to other teams that they have already worked in a building and thus avoid duplication of effort. The marking system has since developed as a two-step communication. First of all, a communication for triage teams to mark structures that they have identified as viable worksites, and secondly, the original intent of communicating which teams have completed their work in the building.\nThe much improved ICMS system has reduced the need for a building marking system due to better coordination and communication among teams, but is still deemed an essential part of the coordination system as it displays critical information, is simple to understand and apply, and allows Worksites to be easily recognised.\nThe marking should be placed near the point of entry on the exterior of the collapsed structure that offers the best visibility, in the front, (or as close as possible) or main entry to the worksite. Whilst key information is required, teams can exercise discretion and adapt to environmental impacts within these boundaries whilst still maintaining a common, effective and consistent marking system. The system should complement the LEMA/national systems and can be adapted to work alongside these as required.\nMarkings can be made in any colour clearly contrasting to the structures surface, making it highly visible at any time.\nFigure 17: Example of completed worksite marking system, with all required work completed.\nMarking Method\nWorksite marking should be applied during initial ASR Level 2 Sector Assessment after a site has been triaged to be a worksite. The marking should be applied to the front, (or as close as possible) or main entry to the worksite. The following method should be used when applying worksite marking:"
+    }
+   ]
+  },
+  {
+   "order": 12,
+   "query": "INSARAG rescue team shifts and rotation",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "INSARAG2B-1-p1",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "1 Introduction",
+     "page_start": 6,
+     "page_end": 6,
+     "text": "1 Introduction\nThe International Search and Rescue Advisory Group (INSARAG) Guidelines are divided into three volumes:\n1. Volume I: Policy. 2. Volume II: Preparedness and Response:\na. Manual A: Capacity Building. b. Manual B: Operations. c. Manual C: INSARAG External Classification and Reclassification (IEC/IER). 3. Volume III: Operational Field Guide.\nThis manual is targeted at the INSARAG Operational Focal Point, the Urban Search and Rescue (USAR) Team Management and Focal Point, and the INSARAG Secretariat with the purpose of providing guidance in the training, preparations and coordination of a USAR Team for national and/or international operations. It is based on the minimal standards and it describes the required capabilities for coordinated operations.\nTactical and technical details are described in Volume II - Manual A: Capacity Building, Volume II - Manual C: IEC/R, Volume III: Operational Field Guide and in the Guidance Notes.\nNote: The Guidelines can be downloaded from www.insarag.org. Hard copies in English (and translated versions, where available) can be requested from the INSARAG Secretariat by email on insarag@un.org.\nThis document has been endorsed by the INSARAG Steering Group. It describes the International USAR Response Cycle, the roles and responsibilities of the key stakeholders in a USAR operation, such as the United Nations (UN), the affected and assisting countries, and the international USAR Teams.\nThis manual describes the five components of USAR capability (Management, Search, Rescue, Medical and Logistics) within the USAR Response Cycle. It also outlines the USAR coordination structures and methods, including the INSARAG Marking and Signalling System and the link to the On-Site Operations and Coordination (OSOCC) Guidelines."
+    },
+    {
+     "rank": 2,
+     "id": "INSARAG3-5.2-p1",
+     "doc": "INSARAG Guidelines 2020, Vol. III Operational Field Guide",
+     "section": "5 Rescue > 5.2 Operations",
+     "page_start": 23,
+     "page_end": 24,
+     "text": "5 Rescue > 5.2 Operations\nAction Description Reference\nFollow the affected country’s policies and procedures regarding incident operations.\n Ensure that all operations are consistent with the strategic intent of the incident controller in your area of operation.\nAnnex B3\nDevelop a safety and security plan and brief the team.\n Conduct a risk assessment and ensure all team members are aware of the risks and preventative actions\nAnnex B17\nApply INSARAG Marking System.\n Only use the INSARAG system so that following teams are familiar with the markings.\nAnnex B26\nCheck assignment and define strategy and determine what equipment is required on existing information.\nLiaise with Logistics for transport/check on fuel.\n Ensure that you have large enough vehicles to carry the required equipment. Don’t have personnel carry heavy equipment long distances.\nCheck availability of extra rescue equipment.\n Local suppliers may be able to support components for rescue equipment.\nLiaise with medical for possible treatment and determine handover point.\n Set up a triage point in consultation with medical personnel.\nCheck on-site safety during tunnelling, shoring, stabilising medical treatment, victim extrication, O2 dust.\n Refer to the Risk Assessment prior to all activities.\nEnsure evacuation point.  It is good practice to clearly mark the evacuation point. Signage or flags may assist.\nAnnex B18\nAre personnel familiar with the evacuation signalling system?\n Three longs horn blasts should signal an evacuation. Annex B26\nEnsure appropriate handover to other shift or other emergency services.\n Provide a written and verbal handover to the oncoming team."
+    },
+    {
+     "rank": 3,
+     "id": "INSARAG3-1",
+     "doc": "INSARAG Guidelines 2020, Vol. III Operational Field Guide",
+     "section": "1 Introduction",
+     "page_start": 7,
+     "page_end": 7,
+     "text": "1 Introduction\nThe INSARAG Guidelines, Volume III: Field Operational Guide targets all USAR managers and team members and is designed to be a quick-reference guide that assists with field and tactical information for all missions, exercises and training sessions.\nThis Field Handbook follows the five components of USAR capability: Management, Search, Rescue, Medical and Logistics. It also includes a section on Safety and Security.\nThe annexes of Vol III include the INSARAG Marking System and check-sheets for the establishment of a Reception Departure Centre (RDC) and a USAR Coordination Cell. They can be found in the “Guidelines Annex” sub-section of the “Guidance Notes” in www.insarag.org.\nFurther information can be found in the UCC Manual, and the Virtual OSOCC online learning module.\nThe pocket-sized handbook is designed to allow individual USAR Teams to add other reference material relevant and specific to their team to assist in rescue operations.\nOverview of Response Cycle and USAR Teams Functions:\nFigure 1: The International USAR Response Cycle.\nPreparedness\nMobilisation\nOperations Demobilisation\nPost-Mission"
+    }
+   ]
+  },
+  {
+   "order": 13,
+   "query": "Sphere emergency shelter for displaced households",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "SPHERE-1-p3",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "1. Planning",
+     "page_start": 281,
+     "page_end": 283,
+     "text": "1. Planning\nConsider different ways to deliver the chosen options, including a combination of:\n•• financial support; •• in-kind material assistance; •• contracting works/commissioned labour; •• technical assistance/quality assurance support; and •• capacity building.\nReview and adjust the combination of options over time as the situation changes.\nDisplaced people: As well as having immediate needs for shelter, displaced people also require specific support to make informed decisions about shelter solutions available to them. Examples of support include information about whether and when they will return home, how to integrate at the place of displacement or whether to resettle at a third location.\nNon-displaced households will need support to return to their original living conditions and should receive appropriate shelter assistance. If reconstruction will take a long time or people are not safe, explore temporary options such as\nhost family assistance, rental assistance, or temporary or transitional shelter. If the crisis has changed the security and safety environment, relocation might be necessary.\nHost communities also experience consequences of a crisis, as they share their public and private space. This includes sharing services such as health centres or schools, or acting as a host family. There may be real or perceived competition with displaced people for jobs, services, infrastructure and resources. Solutions need to consider equitable and targeted support that does not create additional risks or threats in the community ⊕ see Protection Principle 1.\nMarket analysis: Understanding the surrounding markets at local, national and regional level is critical for a good quality shelter response. It will inform choices on shelter options and will also capture rent and other settlement-related service information ⊕ see Delivering assistance through markets, MISMA Handbook and MERS Handbook."
+    },
+    {
+     "rank": 2,
+     "id": "SPHERE-intro-p4",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "",
+     "page_start": 275,
+     "page_end": 280,
+     "text": "Various post-crisis settlement scenarios need to be considered Where and how affected people find shelter will vary depending on their ability to remain in place or their need to move away. A systematic consideration of the post-crisis context is the first step in planning options for shelter and settlement assistance. It is important to understand the different approaches that may be appropriate for people who are displaced, directly affected but not displaced, or indirectly affected ⊕ see Figure 9 below.\nIf conditions permit, people may choose to remain in their place of origin as owner-occupier or in rented or informally occupied accommodation or land. Support to non-displaced households could include repair or reconstruction of existing dwellings.\nDisplaced populations may disperse locally, to other locations within their country of residence, or across international borders. In such situations they are likely to rent accommodation, self-settle or be hosted by others. Some displaced households may choose to gather in collective accommodation or an planned settlement, or to shelter in an unplanned settlement.\nAn understanding of the crisis through these settlement scenarios will help in planning assistance strategies. This includes selecting the most effective and appropriate type of assistance according to specific categories of the affected populations, and selecting ways of delivering the assistance. It should contribute to an incremental recovery, ideally reaching a durable solution. The standards and appendices in this chapter follow this logic and are meant to be used together ⊕ see Appendix 2: Description of settlement scenarios and Appendix 3: Additional characteristics of settlement scenarios."
+    },
+    {
+     "rank": 3,
+     "id": "SPHERE-intro-p1",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "",
+     "page_start": 275,
+     "page_end": 280,
+     "text": "Essential concepts in shelter and settlement\nEveryone has the right to adequate housing\nThe Sphere Minimum Standards for Shelter and Settlement are a practical expression of the right to adequate housing in humanitarian contexts. The standards are grounded in the beliefs, principles, duties and broader rights declared in the Humanitarian Charter. These include the right to life with dignity, the right to protection and security, and the right to receive humanitarian assistance on the basis of need.\nA list of the key legal and policy documents that inform the Humanitarian Charter is in Annex 1 with explanatory comments for humanitarian workers.\nShelters and settlements are inter-related and need to be considered as a whole. “Shelter” is the household living space, including the items necessary to support daily activities. “Settlement” is the wider locations where people and community live.\nShelter and settlement responses aim to provide a safe living environment\nTimely shelter and settlements support can save lives in the initial stages of a crisis. In addition to providing protection from weather, shelter is necessary to promote health, support family and community life, and provide dignity, security and access to livelihoods ⊕ see Figure 8 below.\nThe average time that people are displaced has continued to increase over the years. With displacement lasting years or even decades, the location of the shelters and settlement sites, as well as the planning of neighbourhoods and communities where shelters are situated, are important in supporting the dignity and the recovery of people affected by crisis."
+    }
+   ]
+  },
+  {
+   "order": 14,
+   "query": "Sphere household items",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "SPHERE-4-p1",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "4. Household items",
+     "page_start": 293,
+     "page_end": 296,
+     "text": "4. Household items\nHousehold item assistance supports restoring and maintaining health, dignity and safety and undertaking daily domestic activities in and around the home. This standard addresses items for sleeping, food preparation and storage, eating and drinking, thermal comfort, lighting and personal clothing. The WASH chapter gives additional detail about items such as bednets, buckets, water storage and hygiene items.\nShelter and settlement standard 4: Household items Household item assistance supports restoring and maintaining health, dignity and safety and the undertaking of daily domestic activities in and around the home.\nKey actions\n1. Assess and ensure access to items that enable households to restore and maintain essential domestic activities.\n•• Consider different needs according to age, sex, disability, social and cultural practices, and family size. •• Prioritise access to items for domestic activities, personal clothing, personal hygiene, and to support safety and health.\n2. Decide how to deliver the household item assistance effectively and appropriately.\n•• Consider what can be sourced locally through cash or voucher-based assistance and through local, regional or international procurement for in-kind distribution. •• Consider environmental issues related to how items are packaged or delivered.\n3. Monitor the availability, quality and use of household items, and adapt as needed.\n•• Plan to replenish in cases of extended displacement. •• Monitor the chosen markets for availability, price and quality. Adapt the way assistance is provided as the situation evolves.\nKey indicators\nPeople have sufficient and appropriate quality clothing\n•• Minimum two full sets of clothing per person, in the right size and appropriate to culture, season and climate, and adapted to any particular needs"
+    },
+    {
+     "rank": 2,
+     "id": "SPHERE-4-p4",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "4. Household items",
+     "page_start": 293,
+     "page_end": 296,
+     "text": "4. Household items\nArtificial lighting should be provided as needed to contribute to personal safety in and around settlements where general illumination is not available. Besides matches and candles, consider the use of energy-efficient artificial lighting such as light-emitting diodes (LEDs) and solar panels.\nMarket-based programming for household items: Market assessment for household items should form part of a broader market system assessment. Provision of household items should support local markets if possible. Analyse expenditure on these items as part of overall household expenditure patterns. Monitor them over time to adapt and adjust accordingly ⊕ see Delivering assistance through markets.\nDistribution: Plan efficient and equitable distribution methods in consultation with local authorities and the affected people. Ensure that vulnerable individuals or households are included on distribution lists and can access both the information and the distribution itself. Distribution sites should be chosen carefully, considering walking distance, terrain and the practicalities of transporting larger goods\nsuch as shelter support items. Consider including containers for the storage and transportation of personal and household goods.\nPost-distribution monitoring: Assess the appropriateness of both the distribution process and the household items themselves. If items are not being used or are being sold in the market, or if there are delays in accessing the items, adapt the process or products. Be aware that needs will change over time and programmes should adapt to those changes."
+    },
+    {
+     "rank": 3,
+     "id": "SPHERE-4-p2",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "4. Household items",
+     "page_start": 293,
+     "page_end": 296,
+     "text": "4. Household items\nPeople have sufficient and appropriate quality items for safe, healthy and private sleeping\n•• Minimum one blanket and bedding (floor mat, mattress, sheeting) per person. Additional blankets/ground insulation required in cold climates •• Long-lasting insecticide-treated nets where needed\nPeople have sufficient and appropriate items to prepare, eat and store food\n•• Per household or group of four to five individuals: two family-sized cooking pots with handles and lids, one basin for food preparation or serving, one kitchen knife and two serving spoons •• Per person: one dished plate, one set of eating utensils and one drinking vessel\nPercentage of the affected population who have access to a sufficient, safe and affordable energy supply to maintain thermal comfort, prepare food and provide lighting\nNumber of incidents of harm to people using stoves or storing or sourcing fuel\n•• Establish baseline and measure progress to 0\nGuidance notes\nEssential household items should be available in sufficient quantity and quality for:\n•• sleeping, thermal comfort and personal clothing; •• water storage, food preparation and storage, eating and drinking; •• lighting; •• cooking, boiling water and heating, including fuel or energy ⊕ see Food security and nutrition standard 5: General food security; •• hygiene, including menstrual hygiene or incontinence items ⊕ see WASH hygiene promotion standards 1.2 and 1.3; •• protection from vectors; for example, mosquito nets ⊕ see WASH vector control standard 4.2; and •• fire and smoke safety.\nSelecting appropriate household items: Household items should be provided as part of an overall plan. When specifying the type, quantity and quality of the items, prioritise items that are life-saving. Consider:"
+    }
+   ]
+  },
+  {
+   "order": 15,
+   "query": "INSARAG rescue operations",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "INSARAG2B-1-p1",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "1 Introduction",
+     "page_start": 6,
+     "page_end": 6,
+     "text": "1 Introduction\nThe International Search and Rescue Advisory Group (INSARAG) Guidelines are divided into three volumes:\n1. Volume I: Policy. 2. Volume II: Preparedness and Response:\na. Manual A: Capacity Building. b. Manual B: Operations. c. Manual C: INSARAG External Classification and Reclassification (IEC/IER). 3. Volume III: Operational Field Guide.\nThis manual is targeted at the INSARAG Operational Focal Point, the Urban Search and Rescue (USAR) Team Management and Focal Point, and the INSARAG Secretariat with the purpose of providing guidance in the training, preparations and coordination of a USAR Team for national and/or international operations. It is based on the minimal standards and it describes the required capabilities for coordinated operations.\nTactical and technical details are described in Volume II - Manual A: Capacity Building, Volume II - Manual C: IEC/R, Volume III: Operational Field Guide and in the Guidance Notes.\nNote: The Guidelines can be downloaded from www.insarag.org. Hard copies in English (and translated versions, where available) can be requested from the INSARAG Secretariat by email on insarag@un.org.\nThis document has been endorsed by the INSARAG Steering Group. It describes the International USAR Response Cycle, the roles and responsibilities of the key stakeholders in a USAR operation, such as the United Nations (UN), the affected and assisting countries, and the international USAR Teams.\nThis manual describes the five components of USAR capability (Management, Search, Rescue, Medical and Logistics) within the USAR Response Cycle. It also outlines the USAR coordination structures and methods, including the INSARAG Marking and Signalling System and the link to the On-Site Operations and Coordination (OSOCC) Guidelines."
+    },
+    {
+     "rank": 2,
+     "id": "INSARAG3-5.2-p1",
+     "doc": "INSARAG Guidelines 2020, Vol. III Operational Field Guide",
+     "section": "5 Rescue > 5.2 Operations",
+     "page_start": 23,
+     "page_end": 24,
+     "text": "5 Rescue > 5.2 Operations\nAction Description Reference\nFollow the affected country’s policies and procedures regarding incident operations.\n Ensure that all operations are consistent with the strategic intent of the incident controller in your area of operation.\nAnnex B3\nDevelop a safety and security plan and brief the team.\n Conduct a risk assessment and ensure all team members are aware of the risks and preventative actions\nAnnex B17\nApply INSARAG Marking System.\n Only use the INSARAG system so that following teams are familiar with the markings.\nAnnex B26\nCheck assignment and define strategy and determine what equipment is required on existing information.\nLiaise with Logistics for transport/check on fuel.\n Ensure that you have large enough vehicles to carry the required equipment. Don’t have personnel carry heavy equipment long distances.\nCheck availability of extra rescue equipment.\n Local suppliers may be able to support components for rescue equipment.\nLiaise with medical for possible treatment and determine handover point.\n Set up a triage point in consultation with medical personnel.\nCheck on-site safety during tunnelling, shoring, stabilising medical treatment, victim extrication, O2 dust.\n Refer to the Risk Assessment prior to all activities.\nEnsure evacuation point.  It is good practice to clearly mark the evacuation point. Signage or flags may assist.\nAnnex B18\nAre personnel familiar with the evacuation signalling system?\n Three longs horn blasts should signal an evacuation. Annex B26\nEnsure appropriate handover to other shift or other emergency services.\n Provide a written and verbal handover to the oncoming team."
+    },
+    {
+     "rank": 3,
+     "id": "INSARAG2B-5.7.1-p5",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "5.7 Assessment, Search and Rescue Levels > 5.7.1 The Levels",
+     "page_start": 30,
+     "page_end": 35,
+     "text": "5.7 Assessment, Search and Rescue Levels > 5.7.1 The Levels\no Use of physical, canine or technical search techniques. o Rescue operations using debris removal and limited shoring, breaking and breaching etc. o Limited penetration into the structure/rubble.  The search and/or rescues are normally possible to complete within one operational period, e.g. a few hours.  A team will not normally undertake long term operations (more than one operational period) to penetrate deeply into the structure unless there are strong indications of live victims.  Deeply entombed victims may not be found during this level  At this level teams should identify those structures or worksites where a Level 4 search might be worthwhile.  If a confirmed deeply trapped live victim is identified, team may extend to Level 4 operations if the assignment constraints and restraints allow or they get permission from sector coordination. However, they must ensure Level 3 work is completed for the remaining worksites assigned to them. In case they are not able or do not complete the rescue, they should ask for additional resources.  If additional rescue sites are identified at any time, then a new Worksite ID should be created.  The SCC/UCC must keep track of all ASR3 assignments and reassign to the site for ASR4, except for those sites being reported not to need ASR4. Carried out when and by who\n1. This is usually done when USAR Teams are initially allocated into sectors. 2. Should always be done at identified worksites. 3. Done by Light, Medium and Heavy USAR Teams. 4. This work might also be done by the LEMA’s national teams. 5. One USAR Team may be able to operate simultaneously at more than one worksite due to the limited commitment. INSARAG Tools"
+    }
+   ]
+  },
+  {
+   "order": 16,
+   "query": "Sphere repair retrofit or rebuild damaged houses",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "SPHERE-appendix-4-p1",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "Appendix 4 Assistance options",
+     "page_start": 317,
+     "page_end": 319,
+     "text": "Appendix 4 Assistance options\nA range of context-specific assistance options can be combined to meet the needs of affected people. Consider the advantages and disadvantages of each and develop the most appropriate programme.\nAssistance option Description\nHousehold items ⊕ see Shelter and settlement standard 4: Household items.\nShelter kits Construction material, tools and fixtures needed to create or improve living space. Consider whether to supply structural materials such as poles and pegs or if they can be supplied by the households. Consider the need for additional instruction, promotion, education or awareness-raising.\nShelter toolkits Construction tools and hardware needed to create or improve living space and settlement.\nTents Premanufactured portable shelters with a cover and a structure.\nReturn and transit support\nSupport for affected people who choose to return to their place of origin or relocate to a new location. Such support may include a wide range of services such as providing transport, transport fares or vouchers, or items such as tools, materials and seed stocks.\nRepairs Repair describes restoring a building from damage or decay to a sound working condition where it meets the required standards and specifications. If buildings have suffered minor damage, it is possible to repair them without a more major retrofit. For displaced people it may be necessary to repair collective centres or to upgrade pre-existing buildings such as schools for mass shelter.\nRetrofitting Retrofit of the buildings involves strengthening and/or structural system modification of the buildings’ structure. The goal is to make a building more resistant to future hazards by having safety features installed. Buildings that were damaged by the crisis may need to be retrofitted in addition to being repaired. For displaced people, it may be necessary to retrofit houses of host families, if they are at risk from a hazard."
+    },
+    {
+     "rank": 2,
+     "id": "EMS98-2.3-p2",
+     "doc": "EMS-98",
+     "section": "2 Vulnerability > 2.3 Factors affecting the seismic vulnerability of buildings",
+     "page_start": 41,
+     "page_end": 48,
+     "text": "2 Vulnerability > 2.3 Factors affecting the seismic vulnerability of buildings\nA building which has been well-maintained will perform in accordance with its expected strength from other factors. A building which has been allowed to decay may be significantly weaker, sufficiently to reduce it by at least one vulnerability class. This may be observed in cases of abandoned or derelict buildings, and also in cases where there is an evident lack of maintenance. A case particularly to be mentioned is that of buildings already damaged (most commonly by a previous earthquake, where one is dealing with a series of shocks). Such buildings can behave very poorly indeed, so that a relatively weak aftershock can cause disproportionate amounts of damage (including collapse) amongst buildings damaged by the main shock.\nOne should note that a building may appear to be in good condition because attention has been given to maintaining the aesthetic appearance of the building only, i.e. fresh plaster and nice paint do not necessarily mean that the structural system of the building is also in good repair.\n2.3.3 Regularity\nFrom the point of view of earthquake resistance, the ideal building would be a cube in which all internal variations in stiffness (like stairwells) were symmetrically arranged. Since such buildings would be impaired functionally and deplored aesthetically, one may expect greater or lesser variations from this perfect plan in most buildings one encounters. The greater the departure from regularity or symmetry, the greater the vulnerability of the building to earthquake shaking, and it is often possible to observe in damaged buildings how the irregularity has clearly contributed to the damage (e.g. in the collapse of soft storeys)."
+    },
+    {
+     "rank": 3,
+     "id": "EMS98-vi-slightly-damaging",
+     "doc": "EMS-98",
+     "section": "VI Slightly damaging",
+     "page_start": 100,
+     "page_end": 100,
+     "text": "VI Slightly damaging\nMany people are frightened and run outdoors. Some objects fall. Many houses suffer slight non-structural damage like hair-line cracks and fall of small pieces of plaster."
+    }
+   ]
+  },
+  {
+   "order": 17,
+   "query": "Sphere debris removal",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "SPHERE-1-p4",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "1. Planning",
+     "page_start": 281,
+     "page_end": 283,
+     "text": "1. Planning\nDebris removal: Initiate debris management immediately after the crisis. Debris can be reused, recycled or identified for separation, collection and/or treatment. It may provide opportunities for cash-for-work programmes. Key issues include the presence of human bodies, structurally dangerous locations and hazardous materials. Removal of debris may require specialised expertise and equipment, so must be planned with other sector specialists ⊕ see Shelter and settlement standard 7: Environmental sustainability, Health standards and WASH standards.\nLivelihood opportunities: The livelihoods that people engaged in before the crisis, and the opportunities existing after the crisis, are relevant in determining settlement options. Land availability, safe access for cultivation and grazing, access to markets and access to other employment opportunities can affect where people choose to live, even temporarily ⊕ see Food security and nutrition – Livelihoods standards 7.1 and 7.2, LEGS Handbook and MERS Handbook.\nReturn: Returning to their own land and dwellings is a major goal for most crisis-affected people. Affected people should be able to determine the need for repairing their dwellings or upgrading their shelter. Return can support communal coping strategies and retain established settlement patterns and infrastructure. The repair or reconstruction of communal infrastructure such as schools, water systems, clinics or markets is also important to enable displaced people to return. Some circumstances may prevent or delay return, such as security concerns, armed forces occupying the property or land, continuing violent conflict, ethnic or religious tension, fear of persecution, or landmines and unexploded ordnance. Inadequate or discriminatory land and property legislation, or customary procedures may prevent female-headed households, those widowed or orphaned by the crisis, or persons with disabilities from returning. Displaced populations who may not have the ability to undertake reconstruction activities may also be discouraged or prevented from returning."
+    },
+    {
+     "rank": 2,
+     "id": "INSARAG2B-6.3.1",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "6.3 Victim Marking > 6.3.1 Method",
+     "page_start": 49,
+     "page_end": 49,
+     "text": "6.3 Victim Marking > 6.3.1 Method\n6.3 Victim Marking\nVictim marking is required to identify potential or known casualty (live or dead) locations that are not obvious to rescuers e.g. below debris/entombed.\nThe following method should be used when applying victim marking:\n When teams (e.g. Search teams) are not remaining on site to immediately commence operations.  At incidents involving multiple casualties or where any confusion on exact location from search operations is possible.  Markings are done as close as physically possible to the actual surface point identified as the location of the casualty.  Material used can be spray paint, builders’ crayon, stickers, waterproof card etc. as determined by the team.  The size should approximately 50 cm.  The colour should be highly visible and contrasting to the background.  Not intended for use when rescue operations are completed.  Not to be applied to the front of a structure with the Worksite ID unless that is where the casualties are located."
+    },
+    {
+     "rank": 3,
+     "id": "INSARAG2B-6.3.4-p1",
+     "doc": "INSARAG Guidelines 2020, Vol. II Manual B Operations",
+     "section": "6.3 Victim Marking > 6.3.4 Method",
+     "page_start": 51,
+     "page_end": 51,
+     "text": "6.3 Victim Marking > 6.3.4 Method\nThe process for applying RCM is as follows:\n A decision must be made by the LEMA to implement this level of marking.  RCM can only be used when sites can be fully searched quickly or there is strong evidence confirming no live rescues are possible.  Two RCM marking options are available, they are: “Clear” and “Deceased Only.”\nClear: Equivalent to ASR Level 5 search completion – indicating that the area/structure is clear of all live and deceased casualties.\nDeceased Only: Indicates same level of comprehensive search has been completed but only deceased casualties remain in-situ. Note: When deceased are removed, apply “Clear” RCM adjacent to original mark.\nTable 11: Two RCM marking options.\n Can be applied to structures that are able to be searched rapidly or where information confirms there are no live victims or only deceased remain.  Can be applied to non-structural areas – cars/objects/outbuildings/debris piles etc. – that have been searched to standards indicated above.  Applied in the most visible/logical position on the object/area to provide the greatest visual impact.  Diamond shape with a large “C” inside for “Clear,” or with a large “D” inside for “Deceased Only.” Immediately below, the following is applied:\no Team ID: _ _ _-_ _ e.g. AUS-01. o Date of Search: _ _/ _ _ _ e.g. 19/Oct. o Material to be used can be spray paint, builders’ crayon, stickers, waterproof card etc. at the discretion of the teams. o Size: Approximately 20 cm x 20 cm. o Colour: Bright, contrasting colour to background."
+    }
+   ]
+  },
+  {
+   "order": 18,
+   "query": "Sphere technical assistance building codes and construction practices",
+   "passages": [
+    {
+     "rank": 1,
+     "id": "SPHERE-5-p2",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "5. Technical assistance",
+     "page_start": 297,
+     "page_end": 300,
+     "text": "5. Technical assistance\n•• Consider the need for specialised professional expertise, how to adhere to building codes and standards, and how to increase technical capacity among the affected population.\nPay attention to people who have reduced capacity, ability or opportunity to undertake construction-related activities in a safe and technically sound manner, or negotiate occupancy of an existing safe and technically sound property.\n5. Establish appropriate project management of materials, finance, labour, technical assistance and processes for regulatory approval requirements to ensure quality outcomes.\n•• Follow appropriate tender, bidding, procurement, contract and construction management processes and codes of conduct. •• Encourage the use of locally available, sustainable and familiar technologies, tools and materials and hire labour locally for maintaining and upgrading shelters.\nKey indicators\nPercentage of programmes where local authorities are involved in defining construction standards and in the monitoring of construction activities\nPercentage of construction activities that demonstrate active involvement of the affected population\nPercentage of shelter units that are constructed, repaired, retrofitted, upgraded or maintained according to the agreed safe building practices for the specific context and hazards\nPercentage of households that report having received appropriate technical assistance and guidance\nGuidance notes"
+    },
+    {
+     "rank": 2,
+     "id": "SPHERE-5-p1",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "5. Technical assistance",
+     "page_start": 297,
+     "page_end": 300,
+     "text": "5. Technical assistance\nTechnical assistance is an integral part of shelter and settlement responses. It supports the self-recovery of the affected people and improves the quality and safety of their shelter and settlement. It is essential that affected households or communities are actively involved in choosing their accommodation, the design of shelters, the site layout and materials, and in supervising or carrying out work to build the shelters and other construction.\nShelter and settlement standard 5: Technical assistance People have access to appropriate technical assistance in a timely manner.\nKey actions\n1. Understand the pre-crisis planning and building practices, available materials, expertise and capacities.\n•• Consult with affected people, local building professionals and authorities to agree on building practices and materials and to find the required expertise for quality assurance.\n2. Involve and support the affected people, local government and local professionals in the building process.\n•• Comply with the applicable planning and building codes, material specifications and quality standards, as appropriate for the intended lifespan of the shelter, settlement and household intervention. •• Optimise building practices and local livelihood opportunities.\n3. Promote safer building practices to meet current shelter needs and reduce future risks.\n•• For damaged or destroyed houses or shelters, identify the structural risks and hazards, the reasons for any failure, or what may fail in the future. •• Learn from, improve and innovate local building practices and techniques where possible; facilitate effective knowledge transfer to promote appropriate building practices.\n4. Ensure that people have access to adequate technical assistance."
+    },
+    {
+     "rank": 3,
+     "id": "SPHERE-appendix-5-p2",
+     "doc": "Sphere Handbook 2018, Shelter and Settlement",
+     "section": "Appendix 5 Implementation options",
+     "page_start": 320,
+     "page_end": 320,
+     "text": "Appendix 5 Implementation options\nCapacity building Skills enhancement and training offer opportunities for stakeholders to increase their ability to respond, individually and collectively, and also to interact and consider together common challenges and tools such as developing and implementing building standards and codes ⊕ see Shelter and settlement standard 5: Technical assistance. Successful capacity building should allow experts to concentrate on supervising activities undertaken by local stakeholders and to provide their assistance to a higher number of persons receiving assistance.\nFor a table with potential assistance and implementation options connected to settlement scenarios please go to www.spherestandards.org/handbook/online-resources"
+    }
+   ]
+  }
+ ]
+}

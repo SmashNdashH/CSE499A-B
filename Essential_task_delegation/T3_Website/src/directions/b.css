@@ -1,0 +1,102 @@
+/* Direction B, "Second Pass": the Signal style. Navy and bone surfaces, antique gold as the only
+   accent, Source Serif 4 headlines, IBM Plex Mono details, hairline rules, square corners. */
+.dir-b {
+  --navy: #1c2644;
+  --navy-alt: #232f55;
+  --bone: #f0ece3;
+  --bone-alt: #e6e0d4;
+  --gold: #c8a870;
+  --gold-ink: #7a5c22;
+  --font-display: 'Source Serif 4 Variable', Georgia, serif;
+  --font-body: 'DM Sans Variable', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --map-radius: 0px;
+  --bg: var(--navy);
+  --ink: #e9e4d9;
+}
+.b-navy {
+  --bg: var(--navy);
+  --surface: var(--navy);
+  --surface-2: var(--navy-alt);
+  --ink: #e9e4d9;
+  --muted: #9aa5b8;
+  --line: #2e3d5c;
+  --line-strong: #4a5a7c;
+  --accent: var(--gold);
+  --on-accent: #1a2030;
+  --link: var(--gold);
+  --focus: #ffffff;
+  --select: #ffffff;
+  --hatch: rgba(0, 0, 0, 0.6);
+  --bld-casing: rgba(0, 0, 0, 0.9);
+  --map-ground: #141c33;
+  --map-border: 1px solid #4a5a7c;
+  position: relative;
+  color: var(--ink);
+  background-color: var(--navy);
+  /* The deck's 80 px grid, as a faint fingerprint on navy. */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+.b-bone {
+  --bg: var(--bone);
+  --surface: var(--bone);
+  --surface-2: var(--bone-alt);
+  --ink: #1a2030;
+  --muted: #555d6b;
+  --line: #cac4b4;
+  --line-strong: #8f8a7c;
+  --accent: #1c2644;
+  --on-accent: #f0ece3;
+  --link: var(--gold-ink);
+  --focus: #1c2644;
+  --hatch: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+  background: var(--bone);
+}
+
+.b-chrome { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 28px; padding: 18px clamp(16px, 5vw, 72px) 14px; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.dir-b .b-name { color: var(--gold); text-decoration: none; }
+.b-chrome nav { display: flex; gap: 22px; }
+.dir-b .b-chrome nav a { color: var(--ink); text-decoration: none; }
+.dir-b .b-chrome nav a:hover { color: var(--gold); }
+.b-course { margin-left: auto; }
+
+.b-hero { display: grid; gap: 36px; padding: clamp(28px, 5vw, 64px) clamp(16px, 5vw, 72px) clamp(36px, 5vw, 72px); align-items: center; }
+@media (min-width: 980px) { .b-hero { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 56px; } }
+.b-hero h1 span { display: block; }
+.b-hero h1 { margin: 0 0 22px; font-family: var(--font-display); font-size: clamp(2.1rem, 2.6vw + 1rem, 3.5rem); font-weight: 500; line-height: 1.06; letter-spacing: -0.02em; text-wrap: balance; }
+.b-hero-text > p { margin: 0 0 18px; max-width: 46ch; font-size: 1.0625rem; color: var(--muted); }
+.b-hero-text .decision, .dir-b .team-footer .decision { padding-top: 14px; border-top: 1px solid var(--gold); font-family: var(--font-display); font-style: italic; font-size: 1.1875rem; color: var(--ink); }
+.b-hero .legend { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 18px; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--muted); }
+.b-hero .hero-pair { margin: 0; max-width: min(100%, max(360px, calc(100vh - 300px))); justify-self: center; width: 100%; }
+.b-hero .hero-pair figcaption { margin-top: 6px; padding-top: 8px; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.75rem; line-height: 1.5; color: var(--muted); }
+
+.b-wrap { max-width: 1400px; margin: 0 auto; padding: clamp(40px, 6vw, 80px) clamp(16px, 5vw, 72px); }
+.b-wrap h2 { margin: 0 0 8px; font-family: var(--font-display); font-size: clamp(1.7rem, 1.6vw + 1.1rem, 2.6rem); font-weight: 500; letter-spacing: -0.015em; line-height: 1.12; }
+.b-lede { margin: 0 0 32px; max-width: 62ch; color: var(--muted); }
+.b-bone .res-table caption, .b-bone .res-parts h3 { font-size: 1.1875rem; font-weight: 600; }
+.b-bone .res-table thead th { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.b-bone .res-table tbody td { font-size: 1.0625rem; }
+.b-bone .res-parts { border-top: 1px solid var(--line); padding-top: 22px; }
+
+.dir-b .ws { --ws-gap: 0px; border: 1px solid var(--line-strong); }
+.dir-b .ws-top { padding: 10px 12px; border-bottom: 1px solid var(--line-strong); }
+.dir-b .ws-fixture { border: none; border-bottom: 1px solid var(--line-strong); }
+.dir-b .ws-panel { border: none; background: transparent; }
+.dir-b .ws-map { padding: 14px; }
+@media (min-width: 1100px) {
+  .dir-b .ws-left { border-right: 1px solid var(--line-strong); align-self: stretch; }
+  .dir-b .ws-right { border-left: 1px solid var(--line-strong); align-self: stretch; }
+}
+.dir-b .ws-panel h3 { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.dir-b .ws { --chip-bg: transparent; }
+.dir-b .ws-dialog { background: var(--navy); }
+.dir-b .ws-dialog > header { background: var(--navy); }
+
+.dir-b .team-footer { max-width: 1400px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 72px) 56px; font-size: 0.875rem; color: var(--muted); }
+.dir-b .team-footer p { margin: 0 0 6px; }
+.dir-b .team-footer .decision { margin-bottom: 16px; }
+.dir-b .team-footer .credits { font-family: var(--font-mono); font-size: 0.75rem; }

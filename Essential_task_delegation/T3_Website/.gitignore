@@ -1,0 +1,18 @@
+node_modules/
+dist/
+dist-fixtures/
+.vercel/
+*.log
+.env*
+
+# Written by the validator on every build
+public/data/index.json
+
+# Development fixtures: remade from the repository's results files by `npm run fixtures`
+fixtures/
+
+# The field model is downloaded into place before a deploy (see README.md)
+public/model/*.onnx
+
+# Screenshots and audit output from local checks
+checks/

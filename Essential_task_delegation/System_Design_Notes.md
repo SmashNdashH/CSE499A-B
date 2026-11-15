@@ -9,20 +9,28 @@ Related: [Next_Steps_Roadmap.md](Next_Steps_Roadmap.md) (T2 and H2b), [Task_Ledg
 | 1 | Agent frameworks: LangChain, LangGraph, LangSmith | Assessment, 24 Oct |
 | 2 | DisasTeller's offline and online modes (T2) | Recommended 24 Oct; to be confirmed before T2 is built |
 | 3 | Free-form questions and the SQL agent | Decided by H2b's rule (fixed 22 Oct, run 23 Oct) |
-| 4 | The showcase: what the public sees (T3) | Agreed 24 Oct |
+| 4 | The showcase: what the public sees (T3) | Agreed 24 Oct; phase 1 built 15–16 Nov (§4.6) |
 | 5 | Beyond Layer 1: the day-1 Layers 2–5 | Order and the 3D damage city agreed 24 Oct; the rest open |
+| 6 | The one chain, and who writes the report | Agreed 4 Nov; the writer is tested by T2b |
 
 ## 1. Agent frameworks: LangChain, LangGraph, LangSmith
 
 **What DisasTeller uses today.** Ridita's implementation runs on CrewAI: four agents (the Expert, Alerts, Emergency service and Assignment teams) do six tasks in order, all on Gemini 3.1 Flash-Lite. LangChain supplies the guideline search in `pdf_search_tool.py`: a PDF loader, a text splitter, a Chroma store and Gemini embeddings.
 
 - **LangChain: keep the part we already use.** T2 swaps the Gemini embeddings for a local model and keeps Chroma (roadmap T2, step 4). In offline mode the two web tools go (§2).
-  - Ridita built the replacement on 25 Oct as hybrid search: local MiniLM embeddings plus BM25 keywords, merged by reciprocal rank fusion, over 405 cited sections from six sources.
+imzed  - Ridita built the replacement on 25 Oct as hybrid search: local MiniLM embeddings plus BM25 keywords, merged by reciprocal rank fusion, over 405 cited sections from six sources.
   - It runs on Chroma on a laptop, and on the saved vectors with numpy and torch on Kaggle.
   - Roadmap T2 step 4b tests it against meaning-only and keyword-only search before it's wired in.
 - **LangGraph: a fallback only.**
   - CrewAI lets the model choose its tools and write each call in a set format. Small local models often break that format or loop, and H2b showed the same weakness when our 7B wrote its own queries (§3).
   - If T2's first run hits this, switch to a fixed flow: code runs the segmenter, the fixed queries and the heatmap, and the model only writes each team's section from those facts.
+  - **8 Nov: partly.** In T2's practice run 2 (Ridita 3 Nov, Abrar 7 Nov) the 7B's tool calls were well formed, but its agent looped on the same tools and the conversation passed the 16,384-token limit; no report was written (Task_Ledger, T2). Ridita's fixes keep CrewAI (step limit, no delegation, message shortening, a 32,768-token limit). The fixed flow stays the fallback if practice run 3 fails.
+  - **11 Nov: yes, and the fixed flow is now T2's design.**
+    - Runs 3 and 4 with CrewAI failed in new ways: one-sentence reports, then a tool call repeated until the step limit and saved as the report.
+    - By the rule Ridita wrote before run 4, she switched to the fixed flow on 10 Nov (`disasteller_offline/fixed_flow.py`). Code calls the photo tool, the map tool and 18 guideline searches in a fixed order, and the 7B writes 28 sections, with each team's role from the main script.
+    - It passed practice run 5 and the proof run with the internet off (11 Nov; Task_Ledger, T2).
+    - The agent version still runs (`DISASTELLER_FLOW=agents`) but isn't used.
+    - The reports' quality is the open part: a wrong map reading repeated in three reports, a made-up hotline, few citations.
   - LangGraph can express that flow, with retries and saved state. Plain Python can too, with fewer packages to ship. Decide after T2's first run.
 - **LangSmith: no.**
   - It's a hosted service, so every prompt, image and report would leave the machine, which an offline product can't allow. Self-hosting it needs a paid enterprise licence.
@@ -46,10 +54,6 @@ Related: [Next_Steps_Roadmap.md](Next_Steps_Roadmap.md) (T2 and H2b), [Task_Ledg
   | task6 | Assignment team | 193, and 202–203 in its expected output | the reconstruction plan, including how much money it needs |
 
 - **The guideline search already works offline, but only the Expert team has it.** Its PDF is EMS-98 (`Guidelines/EMS98_Original_english__earthquake.pdf`), the European scale for grading earthquake damage to buildings.
-  - Ridita's offline version (25 Oct) adds five more sources: xBD's damage scale, the IWG-SEM damage guide, two INSARAG search-and-rescue manuals, and Sphere's shelter chapter.
-  - Offline, tasks 3 and 4 can then cite INSARAG (rescue teams, triage, ASR levels) and Sphere (shelter space per person).
-  - *27 Oct:* Ridita's commit `74d44059e` removed the Sphere PDF from the public repo (it needs Sphere's permission to put online). Its text is still in the tracked `guideline_chunks.jsonl` (61 chunks). Whether Sphere stays cited depends on the decision in the tracker's "Needs you now".
-  - Historical costs and hospital counts are still not available offline (§2.2).
 
 ### 2.2 What offline mode changes
 
@@ -57,7 +61,6 @@ Related: [Next_Steps_Roadmap.md](Next_Steps_Roadmap.md) (T2 and H2b), [Task_Ledg
 2. **New wording for those four tasks.**
    - EMS-98 grades damage. It holds no historical costs, staffing levels or hospital counts, so pointing these tasks at the PDF would not work.
    - Offline, the agents work only from the facts the system gives them: building counts and grades (H2's table, through fixed queries), the damage map, the hot spots (T1) and the EMS-98 grades.
-     - Why counts never pass through the VLM (checked 28 Oct on Aryan's BDC v4): given R11's count in its prompt, the fine-tuned 7B answered 27.0% of 1,701 damaged and destroyed counting questions, while the option nearest R11's count, read straight from the table, is right on 37.0% of the same questions.
    - A figure that needs outside data, such as a reconstruction budget, is written as "not available offline", never estimated.
 3. **Optional, if the team wants those figures offline:** a small local table of past disasters (costs, staffing), with a source for each row, given to the Emergency service and Assignment teams as a tool.
 4. **Each report states the mode** that produced it.
@@ -195,13 +198,13 @@ These projects do take free-form or conversational questions, but none tests tho
 - **They ask a different question.** These papers ask whether a model can produce a good answer. H2b asked whether a system can ship free-form numeric answers to responders. No paper checks free-form numbers strictly, or scores a confident wrong answer below "I can't answer".
 - **Change-Agent is the closest design to our SQL agent** (an LLM writing code to compute the answer), and its answers were only demonstrated, not measured.
 - **BDAChat's design is closest to our current system:** find each building first, then let the VLM grade it, as our segmenter and table do.
-- **Where they do count, it's weak.** In DisasterM3 the base 7B counts damaged buildings at 34.2%, and our 7B at about 30–32%. That's why counts come from the table.
+- **Where they do count, it's weak.** In DisasterM3 the base 7B counts damaged buildings at 34.2%, and our 7B at about 30–32%. That's why counts come from the table. (7 Nov: a rule that reads only the answer options scores 66.98% on these questions, so judge the table by count error against the true masks, not by this accuracy alone; Task_Ledger §7.)
 
 **What H2b did and didn't rule out.** H2b tested free-form questions turned into database queries, which produce numbers. It didn't test descriptive questions answered by the VLM, such as "what kind of disaster is this?" or "describe the damage near the river" (our 7B gets disaster type 75.6% right at full size, L0 step 1). A descriptive question box could be offered, labelled as an AI description, with numbers still routed to fixed queries. It would need its own check before shipping, for example DisasterM3's 5-point judge scoring or a human rubric fixed in advance.
 
 ## 4. The showcase: what the public sees (T3)
 
-**Status:** agreed 24 Oct. There are two pieces, and the demo (piece 2) is an interactive, animated website deployed on Vercel. Abrar builds it and chooses the name and look later. The build steps are in the roadmap's T3 section.
+**Status:** agreed 24 Oct. There are two pieces, and the demo (piece 2) is an interactive, animated website deployed on Vercel. The build steps are in the roadmap's T3 section. **16 Nov:** phase 1 is built in [T3_Website/](T3_Website/README.md), as one site holding both pieces; Abrar chose the look (direction A, name not chosen yet); Aryan builds the remaining pages from 16 Nov, by [his handover](Aryan_Task/T3_Website_Handover.md). What is built and what changed from this plan is in §4.6.
 
 ### 4.1 What last season's winner showed (observed 24 Oct)
 
@@ -227,14 +230,15 @@ The lesson: the public piece needs a clear look, results in motion, and one inte
    - the chain in roadmap T3: a gallery image or an upload, the damage map, counts linked to their buildings, the heatmap, fixed question templates, the report and the benchmark panel;
    - animated, with current UI/UX (§4.4).
 
-Both can live in one Next.js project, with a story page and a demo page: one design, one codebase, one deployment.
+Both can live in one Next.js project, with a story page and a demo page: one design, one codebase, one deployment. *(16 Nov: one project, as planned, but Vite and React (from Aryan's prototype), not Next.js; §4.6.)*
 
 ### 4.3 How the website runs our models
 
 - **Vercel can't run them.** It has no GPU, and its serverless functions are far too small for PyTorch and a 7B. So the public deployment works from results computed in advance for the gallery images.
 - **Live mode at the booth, offline:**
   - The same front end, built on the laptop, calls a local Python API (for example FastAPI). The API runs the chain: the segmenter, H2's fixed queries, T1's heatmap and T2's report, streamed as it's written.
-  - The 7B needs a GPU with about 6 GB of memory in 4-bit (H2b measured 5.8 GB). Without one, the gallery's reports computed in advance are shown, labelled as such.
+  - The 7B needs a GPU with about 6 GB of memory in 4-bit (H2b: 5.8 GB to hold the model, 6.2 GB at peak while answering). Without one, the gallery's reports computed in advance are shown, labelled as such.
+  - *(16 Nov)* The guidance step is meant to move to the 3B distilled from the 7B (L2): a 3B of the same family peaked at 2.6 GB in 4-bit (H2b), so a laptop graphics card could hold it. L2's training hasn't run, and no language model has been measured on a laptop, a phone or in a browser (L3 step 6). A browser can't run the 7B, and running even a 3B there is untested.
 - **Stretch: uploads on the public site with no server (decided 24 Oct: try it).**
   - ONNX Runtime Web can run an ONNX model in the visitor's browser, so their images never leave their device.
   - Only the segmenter, counts and heatmap could run this way, not the report.
@@ -256,7 +260,7 @@ Both can live in one Next.js project, with a story page and a demo page: one des
     - Timings vary between runs on the same PC, so read them as ranges. Agreement and the per-class pixel counts were identical in both runs, and every later run stayed under the 10 s limit.
     - The same models run natively (onnxruntime-node 1.20.1, CPU) take 0.75–1.05 s, so the browser takes about 2.5–7 times as long on WebAssembly.
     - INT8 on WebGPU fails in this version: its DequantizeLinear kernel doesn't support int32 values without a zero point. Options: a newer ONNX Runtime Web, re-quantizing with zero points, or a half-precision model (about 65 MB) for WebGPU.
-    - **Recommended setup:** INT8 on WebAssembly as the default (it works in both browsers and is a 33 MB download), and a full- or half-precision model on WebGPU as the faster option where the visitor's browser offers it.
+    - **Recommended setup:** INT8 on WebAssembly as the default (it works in both browsers and is a 33 MB download), and a full- or half-precision model on WebGPU as the faster option where the visitor's browser offers it. *(16 Nov: the site's first build uses WebAssembly and INT8 only; WebGPU comes later.)*
     - **How it was scored, and why:** agreement with the native run on every pixel, because the question was whether the browser runs the same model faithfully; and the time per image after the first run, because that's what a visitor waits. Accuracy against ground truth wasn't the question: the model is the same, and its accuracy was measured in L1b.
     - **Alternatives:** IoU against the native mask gives the same answer when agreement is 100%. A comparison on all 645 validation images is left for R11's version. A visual check is subjective.
     - **Caveats:** one image, on a fast PC, in headless browsers. A typical laptop has fewer threads and phones are slower, so re-test on the booth laptop and a mid-range phone. The test model is R9 (after image only); R11's version needs L1 again. Without the COOP and COEP headers, the browser runs on one thread.
@@ -280,8 +284,25 @@ Both can live in one Next.js project, with a story page and a demo page: one des
 - **T2's reports:** DisasTeller on local models.
 - **A gallery export:** a short Kaggle notebook that runs R11 with TTA on 4–6 validation pairs and saves the masks, the building outlines with their facts, the heatmaps and each image's accuracy.
 - **L1 repeated on R11,** if the CPU and in-browser segmenter must match the champion. L1b's INT8 model is R9, which sees only the after image.
-- **A Vercel account** linked to the repository. The free Hobby plan covers non-commercial projects.
-- **Abrar's choice of name and look,** to be made later.
+- **A Vercel account** linked to the repository. The free Hobby plan covers non-commercial projects. *(16 Nov: changed. The site is deployed by hand from Abrar's PC with the Vercel CLI, not from pushes, so nothing goes public until he deploys. Steps in [T3_Website/README.md](T3_Website/README.md).)*
+- **Abrar's choice of name and look.** *(16 Nov: the look is chosen; the name isn't.)*
+
+### 4.6 What is built (16 Nov)
+
+- **Where:** [T3_Website/](T3_Website/README.md): Vite, React 19, TypeScript and Tailwind 4, a static build, started from a copy of Aryan's prototype. Every change from the prototype, and why, is in [Aryan's handover](Aryan_Task/T3_Website_Handover.md), section 3.
+- **The look (Abrar, 16 Nov):** direction A, "Aftermap" (a placeholder name): Aryan's dark workspace made sober, with B's faint gridlines, a small before/after pair beside the headline, a slow contour-line background behind the opening section, and on/off switches for the damage map and the heatmap.
+- **Built:** the opening section; "How it works" told by scrolling, one real pair pinned and changing at each of 7 steps; the building map (layers, building inspector, counts that highlight their buildings, five fixed questions, a saved PNG of the map); the results tables; the six real reports word for word with known errors marked; "What it can't do yet"; and "Future ideas, not built".
+- **Rules the code enforces at every build:**
+  - every number comes from one facts file, checked against its source file and the anchors;
+  - facts dated after the build date (the 18 Nov results, anything about the 3B) are left out of the build;
+  - the gallery export must match [DATA_CONTRACT.md](T3_Website/DATA_CONTRACT.md);
+  - the damage colours stay distinguishable under simulated colour-vision deficiencies. The wireframes' colours failed this (damaged and destroyed 5 apart under deuteranopia), so the site uses adjusted ones;
+  - no request leaves the site's own origin.
+- **Not built:** the separate seven pages, the 3D damage city, Try it (the field model in the browser), the gallery export (four validation pairs with R9's masks stand in, marked), the booth API, and the deployment. Lighthouse was 93–96 for performance and 100 for accessibility on phone settings before the scroll story and the background went in; not measured since.
+- **Brought back from the prototype on 16 Nov, on real data:** the Sphere and INSARAG questions as the 18 guideline searches of the proof run with their passages word for word; saving a map picture and the reports; the caveats as the limitations section; thermal, sensor and route ideas as text under "Future ideas, not built". Online map tiles stay out: the booth runs offline.
+- **Found while building:**
+  - The bridge `disasteller_inputs.py` reads safe areas with keys T1 v3's file doesn't have (`point_xy`, `dist_to_damage_px` instead of `xy`, `distance_px`), so every safe area would print at (0, 0), 0 px away; it also titles model estimates "GROUND TRUTH" and hard-codes R11 and T1 v3 as the sources. In Aryan's review, §7.2–7.5.
+  - **xBD's original label files carry a ground resolution and coordinates.** A sample of 12 `*_post_disaster.json` files under `data/` gives `gsd` from 1.25 to 2.82 m per pixel and each building as a longitude/latitude polygon. DisasterM3's masks carry neither, and the Turkey pairs aren't from xBD. So metres would be possible for xBD pairs (560 of the 645 validation pairs), after checking that DisasterM3's xBD images are the same tiles. The site keeps pixels until Abrar decides.
 
 ## 5. Beyond Layer 1: the day-1 Layers 2–5
 
@@ -296,7 +317,7 @@ The day-1 proposal stacked five layers and marked only Layer 1 as this project:
 | 1 | VLM aerial image to textual rescue guidance | this project |
 
 Layer 1 grew well beyond the day-1 arrow (image, VLM, text). The VLM alone couldn't read damage reliably (our 7B counts buildings at about 30–32%), so Layer 1 now includes:
-- the damage segmenter (O1 met on all 645 validation images. On the 605 left after E5 removed 40 leaked pairs, only R16c step 5's SAM 3-only map passes: 0.3161 and 0.3051 Destroyed IoU, narrowly. A third grader seed, step 5b, scores 0.2982, so it's met on the three-seed mean only, 0.3065 (28 Oct). SAM 3 + R11's pieces scores 0.2838–0.2980, 26 Oct);
+- the damage segmenter (O1 met on all 645 validation images, but at risk until the leak check, E5, gives the clean score);
 - per-building counts from a table (H2), and the H2b test of free-form questions;
 - the heatmap (T1) and the edge segmenter (L1b);
 - the stronger 7B and the 3B path (L0, L2).
@@ -324,3 +345,19 @@ Real collapse trajectories (how each building fell) need structural data and sim
   - The final showcase is about 15 Dec (tentative, given 24 Oct), about 7 weeks away. T2, T3 (which Abrar builds), L0, L2 and H2c take most of that.
   - Layer 3 fits only as a side track: notebooks built for teammates to run on their GPU accounts, with exact steps. Decide in mid-November, from where L2 and the website stand.
 - **Recommended, not yet decided:** Layer 4 and real 3D reconstruction stay as future work.
+
+## 6. The one chain, and who writes the report
+
+**Status:** the chain was agreed on 4 Nov ([roadmap §1b](Next_Steps_Roadmap.md)). The writer is still open and is tested by T2b.
+
+**The chain:** before + after photos → SAM 3 finds each building → the grader grades each one → one per-building table → fixed queries + hot spots + guideline search → the report.
+
+- **Why one chain.** Each part was tested alone. The destroyed-building target came from SAM 3 + grader, counting from R11's table, and the field model from R9, and R11's table and T1's hot spots share only 7 images. E7 scores one chain on the same images. Where §2.2 says "H2's table" and "T1", that now means this chain's table and hot spots.
+- **The guideline search (RAG) stays in the chain.** It's the part that lets a report cite official guidance with no internet. Tamanna's "Visual RAG" is a different thing: it picks image crops for the VLM, not documents, and Tamanna's Part B showed it doesn't make the 7B a grader (grader 212 of 300 right, new 7B 100).
+- **Who writes.** O3 promises our VLM. Yet the fine-tuned 7B answers in one sentence, a plain text model matched it at writing SQL (H2b), and neither has been tested on reports. T2b gives both the same facts and guideline search, then counts number contradictions and fake citations. Scene questions stay with the VLM either way.
+- **What the 3B is for.** Size and speed, not being offline: the 7B already runs offline on two T4s. In 4-bit at peak, the 7B needs 6.2 GB and a 3B 2.6 GB (H2b). A 3B in full precision needs 7.7 GB. No VLM has been measured on a laptop CPU or a phone yet (L3 step 6).
+- **Edge cases the chain must handle:**
+  - No before-photo: on the after-photo, SAM 3 covers only 9% of destroyed buildings. Say so instead of guessing.
+  - Misaligned pairs: 52% of measured pairs are shifted by more than 2 px (Ridita's audit), so crops can be off.
+  - A building SAM 3 misses is never graded or counted.
+  - Missing facts must not read as zero: `disasteller_inputs.py` returns zeros with status "ok" for an image that isn't in the table.

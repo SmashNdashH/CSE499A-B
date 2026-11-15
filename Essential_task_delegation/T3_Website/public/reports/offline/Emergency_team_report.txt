@@ -1,0 +1,12 @@
+Mode: offline, fixed flow
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+The Wajima Drama Memorial Hall in the center of the region remains undamaged, serving as a temporary command center for relief efforts. Given its G1 rating for negligible to slight damage to masonry buildings, it provides an ideal location for emergency shelters. Based on Sphere Handbook 2018 guidelines, this area offers sufficient living space with a minimum of 3.5 square meters per person, ensuring essential household and livelihood activities can be conducted with dignity. The hall's location and access are suitable for accommodating displaced individuals, with no visible structural or non-structural damage hindering its usability.
+
+## Hospitals
+The region has sustained significant structural damage, particularly in the form of total or near total collapse of buildings and extensive road damage in South Central Asaichi Street, assessed as G5. However, no high-risk zones were identified based on the provided data. Consequently, no dangerous zones have been established. Given the absence of critical infrastructure damage, the region's existing medical facilities remain unaffected, and no additional medical points are required at this time. According to INSARAG guidelines, medical staff must be aware of local procedures for accepting patients into the local system and should be prepared to handle casualties efficiently. Any rescued individuals will be transported to nearby hospitals for treatment, ensuring timely and effective medical care.
+
+## Immediate transportation recovery
+Roads and bridges in Hama Street, Central Nishikigawa Street, and North Asaichi Street require immediate reopening to facilitate access for emergency services and aid delivery. These locations have been assessed with G4 and G5 damage, respectively, indicating critical debris blockages and structural collapses. Restoring connectivity is essential to enable rescue operations, debris clearance, and the transport of affected individuals to medical facilities. Priority should focus on clearing debris and repairing the most structurally compromised areas to ensure safe and efficient movement.

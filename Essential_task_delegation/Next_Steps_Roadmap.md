@@ -19,6 +19,7 @@ What each finished task found, and the decisions it led to, are in [Task_Ledger.
 >   - **L0 (28 Oct): the new 7B is kept** (ORR +3.5, DTR +1.1 points at full size, BBR −0.95, inside the limit). It is L2's teacher.
 >   - Benchmark copies cost at most 0.7 points; O2's counting is 32.47% on clean questions.
 >   - L0's training is complete; its merge needs a fix (proposed).
+> - **4 Nov: the one-chain plan (§1b) sets the order from here.**
 
 - **Fine-tuning is closed.** All 11 D4 training runs are done; the full table is in [Ablation_Study_Reference_and_QA_Prep.md](Ablation_Study_Reference_and_QA_Prep.md) §7.
 - **Champion:**
@@ -39,6 +40,54 @@ What each finished task found, and the decisions it led to, are in [Task_Ledger.
 | O2 Ground the VLM | Hybrid counting (U-Net + higher-resolution VLM) beats the base model's 34.2% building damage counting (BDC) accuracy, all six tasks re-scored |
 | O3 Offline system | DisasTeller on our VLM, no Gemini, returning a report, damage map, counts and survivability heatmap |
 | O4 Edge model | Distilled Qwen2.5-VL-3B in about 6 GB, per-task accuracy against the 7B |
+
+## 1b. The one chain (agreed 4 Nov 2026)
+
+**Why.** Every part has been tested on its own, but never together, and our best numbers come from three different models:
+
+| Claim | Model behind it |
+|---|---|
+| Destroyed-building target on clean data (0.3065, mean of three graders) | SAM 3 + the step-5 grader |
+| Best counting (32.96%; 32.47% on clean questions; **7 Nov: a rule that never sees the image scores 66.98%, so this doesn't show counting ability; see the ledger, §7**) | R11's per-building table |
+| Field model (33 MB, CPU) | R9 in 8-bit integers |
+
+Checked on 4 Nov: R11's table and T1's hot spots share only 7 images (2,437 images with buildings in the table, 645 with hot spots), so today no report can draw on both for almost any image. More parts would add hand-offs and edge cases. The next job is one chain, measured as one.
+
+**The chain:**
+
+`before + after photos → SAM 3 finds each building on the before-photo → the grader grades each one → one per-building table → fixed queries + hot spots + guideline search → the report`
+
+| Step | What does it | Evidence so far | Still open |
+|---|---|---|---|
+| Find | SAM 3 with the prompt "building", on the before-photo cut into four quarters | Building IoU 0.630 with no training (E3) | It misses some buildings outright; the field needs a smaller finder (L4) |
+| Grade | R16c step 5's grader: a Siamese ResNet-18 on 128 px before and after crops, labelling each outline intact, damaged, destroyed or none | Right on 212 of 300 true buildings, against 100 and 99 for the 7Bs (Tamanna's Part B) | Most of the gap to the 0.556 ceiling is still the grader |
+| Table | One row per building, in H2's columns | H2's table works, built from R11 | Not built from this chain yet (E7) |
+| Counts | Fixed queries (H2b's decision) | 37.0% from the table against 27.0% through the VLM (Aryan's questions) | This chain's own score (E7) |
+| Hot spots | T1 v3's code on this chain's map | 73.6% of circled points near true damage, on R9's map | Re-measured on this chain's map (E7) |
+| Guideline search (RAG) | Ridita's hybrid search, returning cited sections | 27 of 30 on its retrieval test | Not yet used in a full report by the real 7B (T2) |
+| Writer | The new 7B, as O3 promises | Answers questions in one sentence (L2's smoke test) | T2b tests a small text model against it |
+| Flow | CrewAI's four agents as built, or a fixed flow where code calls the tools and the model only writes | CrewAI's agents failed with our 7B in runs 2–4 (a loop past the token limit; one-sentence reports; a repeated tool call saved as the report). The fixed flow passed run 5 and the internet-off proof run (11 Nov) | **Decided 10 Nov (Ridita, by her rule written before run 4): the fixed flow.** Next: the comparison with July's Gemini reports ([System_Design_Notes §1](System_Design_Notes.md)) |
+
+**Rules:**
+1. **No new module until the chain runs end to end.** H2c, H3, H4, R13–R15 and the day-1 Layers 2–5 wait.
+2. **One set of numbers.** Headline numbers come from this chain, on the same images (E7).
+3. **Side experiments don't block the chain, and it doesn't depend on them.** L0b, L2's 3B, L3 and L4 report against it. Until L4 shows a small finder works, the 8-bit R9 is labelled as a different, lighter path, not this chain made smaller.
+4. **What the review promised stays until the supervisor agrees otherwise.** O3's DisasTeller on our VLM and O4's distilled 3B remain deliverables.
+
+**Order:**
+1. **E6:** the test split's four-class masks (done 7 Nov: 2,007 clean pairs).
+2. **T2's practice run 2:** agents or fixed flow. *Settled: runs 2–4 with CrewAI's agents failed; the fixed flow passed run 5 and the proof run with the internet off (11 Nov). The reports' quality is still to be judged against July's Gemini reports.*
+3. **E7:** the chain's map, counts and hot spots, on the same images.
+4. **T2 steps 5 and 7:** facts from this chain's table, then the check of every number in a report.
+5. **T2b:** who writes the report.
+6. **T2's internet-off proof run** on the final chain; T3's live demo then runs that chain.
+
+**Focus (4 Nov): the finder and grader, grader first.** The rest of the chain only reads what they produce, and they have the most room left: destroyed-building IoU is 0.33 on all 645 pairs, against 0.556 with perfect grades on SAM 3's outlines.
+- **Focus track:** E6, E7, grader changes one at a time on the 605 clean pairs (aligned crops first), L4 and the finder's misses, counting from the chain's table, and the chain's size and speed on a laptop CPU. The test pairs only confirm results; nothing is tuned on them.
+- **Running in parallel, not blocking it:** T2 and T2b, L2 and L3, and T3.
+- **Owners stay suggestions:** Abrar on the focus track and T3; Ridita on T2 and T2b; Noman on L2 and L3; Tamanna on L4; Aryan on the heatmap on the chain's map.
+
+**Done when:** one internet-off run takes a before-and-after test pair all the way to a report, every number in the report matches the table (zero contradictions, T2 step 7), and the chain's map and counts are scored on the same images. E7's rule can change which model is the chain; see §4.
 
 ## 2. Tasks at a glance
 
@@ -75,6 +124,8 @@ What each finished task found, and the decisions it led to, are in [Task_Ledger.
 | D5 | xBD converter check + 1,007 leak-safe tiles | Plan + Paper: xBD | O1 | CPU notebook | 0 | — | Aryan |
 | E3 | SAM 3 smoke test and building finding | Paper: SAM 3, SegEarth-OV3 | O1, O4 | Eval notebook | ~2 | HF access | Abrar |
 | E5 | Train/validation leak and the benchmark's copies (opened 26 Oct) | Innovation: Ridita's audit | O1, O2 | CPU hash check + eval notebook | ~1 | — | Abrar |
+| E6 | The test split's ground truth: four-class masks for the benchmark's optical test pairs (added 4 Nov) | Plan | O1, O2 | CPU notebook | 0 | E5 step 1 | Abrar |
+| E7 | Score the chain as one: map, counts and hot spots on the same images; replaces H1 V3 (added 4 Nov) | Plan: the one chain (§1b) | O1, O2, O3 | PC check, then eval notebook | ~2 | E6 | Abrar |
 | H1 | KR2 harness: U-Net counting + counts-as-text | Plan + Paper: TEOChat, DamageScope | O2 | Eval notebook (2×T4) | ~1 + ~6 | E1 | Noman |
 | T1 | Survivability heatmap | Plan + Paper: BDAChat | O3 | CPU notebook | 0 | E1 | Aryan |
 | L1 | Edge benchmark of the U-Net (ONNX, INT8) | Plan + Paper: AWQ; Tamanna Plan 1 | O4 | Laptop CPU | 0 | — | Tamanna |
@@ -93,8 +144,10 @@ What each finished task found, and the decisions it led to, are in [Task_Ledger.
 | H3 | VLM input upgrades (before + after, numbered marks, crops) | Paper: TEOChat, GeoPixel, ImageRAG; Tamanna Plan 2 | O2 | Variants in H1 | ~6 each | H1 | Tamanna |
 | H4 | GEOBench-VLM external counting test | Paper: GEOBench-VLM | O2 | Eval notebook | ~1 | H1 | Aryan |
 | T2 | DisasTeller on local models | Plan | O3 | GPU notebook | ~2 | — | Ridita |
+| T2b | Who writes the report: the 7B or a small text model (added 4 Nov) | Plan; evidence from H2b and L2's smoke test | O3, O4 | Eval notebook | ~3–4 | T2 steps 5 and 7, E7 | Ridita |
 | T3 | Unified offline demo and public showcase (Vercel website) | Plan + Tamanna Plan 3 | O3 | Website (Vercel) + local API | ~1 | H2, T1, T2 | Abrar (decided 24 Oct) |
 | L0 | A better 7B teacher before distilling (decided 19 Oct) | Paper: DisasterM3 (Table 2, Appendix B.3) | O4, O2 | Eval notebook, then a top-up run only if needed | ~2–3, then ~10–20 | H1 V2 | Abrar |
+| L0b | Can the 7B learn to see damage? A small test of training its vision encoder (added 4 Nov) | Plan; evidence from Aryan's study and Tamanna's Part B | O2, O3 | Train + eval notebook | a few (a guess; memory check first) | E6, E7 | Abrar |
 | L2 | 7B → 3B distillation (after L0) | Plan + Paper: QLoRA | O4 | 2 notebooks | heavy (~15–25) | L0; 3rd account | Noman |
 | L2b | Explanations as a second skill ("why?" on request) | Paper: Distilling Step-by-Step, BDAChat, ImageRAG | O4, O3 | Generation notebook + L2 step 2 change | ~3–5 | L2 step 1 | Noman |
 | L3 | AWQ 4-bit 3B + confidence handoff to 7B | Paper: AWQ, Grace | O4 | Eval notebook | ~2 | L2 | Noman |
@@ -243,6 +296,48 @@ These apply to every task, so an agent doesn't have to rediscover them.
     - Tables and caveats: [E5-results/E5/](Champion_Task/E5-results/E5/README.md).
     - **Next:** group future splits by before-image fingerprint. A third step-5 grader seed (proposed) before claiming O1. *(Ran 27 Oct: O1 met on the three-seed mean only, 0.3065.)*
   - **27 Oct:** R12's 1,619 extra xBD tiles, checked by content for the first time: two share a before-image with validation pairs outside the 40, so R12 trained on 42 leaked pairs. Its verdict (not kept) stands. E2's and E3's decisions also hold on clean data.
+
+### E6 · The test split's ground truth (added 4 Nov)
+- **Source:** [Plan] every segmentation score so far is on 645 validation pairs taken from DisasterM3's training data. The benchmark's own segmentation task has building masks for its test images.
+- **Goal:** O1 and O2: a second, larger, unseen test set.
+- **Base:** [e6-test-split-ground-truth.ipynb](Champion_Task/e6-test-split-ground-truth.ipynb), built and dry-run checked 4 Nov. CPU only, about 10–15 min.
+- **Build:** merge each optical test pair's black-and-white masks into one four-class mask with the training rule (R11's Cell 4), check them against the training masks, and leave out pairs that copy a segmentation-pool image (E5 step 1's fingerprints).
+- **Rules, fixed before the run:** in the notebook's first cell. Expected from your PC: 2,067 pairs, 57 left out (56 copy a training pair, 1 a validation pair), 2,010 clean. **Result (7 Nov): 2,007 clean; 2 unreadable images and 1 unreadable mask were also left out ([E6-results/E6/](Champion_Task/E6-results/E6/README.md)).**
+- **Alternatives:**
+  - Keep scoring only on the 605 clean validation pairs: they've been used to choose between models many times, so they're no longer unseen.
+  - A new split grouped by before-image: the right fix for future training, but it changes the validation set and breaks comparison with R1–R16c.
+- **Done when:** `test_clean_pairs.csv` and the merged masks exist, and rules 1–5 are reported against their expectations.
+
+### E7 · Score the chain as one (added 4 Nov; replaces H1 V3)
+- **Source:** [Plan] the one chain (§1b).
+- **Goal:** O1, O2 and O3: one set of numbers from one chain.
+- **Why it replaces H1 V3's rule:** H1 V3 was to wait until R16c's counting beat R11's on validation (37–39% against 39.2%, for maps that used R11's pieces). No counting figure is recorded for the SAM 3-only map, and the plan now needs this chain's number either way.
+- **Build:**
+  1. **On your PC, CPU, minutes:** count from step 5's saved per-building file on R16c step 1's 1,055 validation questions. That's this chain's first counting number, and the expectation for step 2. **Done 7 Nov: 37.73% against R11's 39.24%, p = 0.39; median count error 40% against 33% ([results](Champion_Task/E7-results/step1/README.md)).**
+  2. **Kaggle T4, about 3.5 h (estimated 7 Nov; first planned as about 2 h), on the 2,065 readable optical test pairs ([notebook](Champion_Task/e7-step2-chain-on-test-pairs.ipynb), built and dry-run checked 7 Nov):**
+     - SAM 3 on each before-photo in quarters (about 73 min at E3's 2.11 s per photo), then the three step-5 and 5b graders;
+     - R11 with TTA on the same pairs, as the baseline;
+     - the table in H2's columns from grader seed 42. Seed 42 is fixed now, from its best clean validation score (0.3161), before any test score exists.
+  3. **On your PC, CPU:** T1 v3's code on the chain's maps, for the same 20 px check.
+- **Scores:**
+  - **Map:** mean IoU and destroyed-building IoU on E6's 2,007 clean pairs, per grader and as the mean of three, per event, and with and without Turkey. Macro F1 on true buildings too, for BDAChat's comparison.
+  - **Counts:** the fixed query and nearest option, as in H2, on all optical counting questions and on E5's clean ones, against R11's table on the same questions (exact McNemar) and the 34.2% bar. Added 7 Nov, before any test score: count error against each question's true count, and the rule that never sees the image, reported beside accuracy. Neither decides anything.
+- **Rule, fixed before the run:**
+  - **How "clearly below" is read (fixed 7 Nov, before the run):** seed 42's table against R11's on E5's clean questions, the chain's accuracy lower, exact McNemar p < 0.05. All the optical questions are reported too.
+  - The chain stays SAM 3 + grader if its destroyed-building IoU (mean of three graders) is above R11's on the clean test pairs, and its counting isn't clearly below R11's (p < 0.05).
+  - If its counting is clearly below but its destroyed score is above, both results go to Abrar; there's no automatic choice.
+  - If its destroyed score isn't above R11's, the lead doesn't hold on unseen data, and the choice of chain reopens before T2 step 5.
+  - O1 stays judged on validation, as the review set it. The test score is reported beside it, and nothing is ever tuned on the test pairs.
+- **Expectation, fixed before the run:** every model scores lower on test than on validation: Turkey is 20% of the test pairs against 10%, five events are new to validation (Mexico, Joplin, Ian, Noto, Guatemala), and no twins remain. So the chain may fall below 0.30 here. Its counting should be about level with R11's (on validation: 37.73% against 39.24%, p = 0.39). No test number is predicted.
+- **Alternatives:** whole-image counting with the VLM (already below the table); the mean of three tables instead of seed 42 (not one chain); R16c's SAM 3 + R11 pieces (fails on clean validation).
+- **Step 2 done (account 1; downloaded 11 Nov): the rule's third case, so the choice of chain reopens.** [Results](Champion_Task/E7-results/step2/README.md).
+  - Destroyed-building IoU on the clean test pairs: 0.3898 (mean of three graders) against R11's 0.3984.
+  - Mean IoU 0.5129 against 0.5721. Counting level: 32.7% against 32.53% (p = 0.87).
+  - Against the expectation: both scored higher on test than on validation, not lower (0.39 and 0.40 against 0.307 and 0.269).
+- **Step 2b (11 Nov, on the PC, on Abrar's go): the gap is noise, and the models split by event.** [Results](Champion_Task/E7-results/step2b/README.md).
+  - Redrawing the pairs 10,000 times: −0.038 to +0.022; redrawing the events: −0.098 to +0.089.
+  - Without Turkey, R11 leads by 0.057, and that holds by event. On Turkey, the chain leads by 0.236.
+- **Next: Abrar chooses the chain** (tracker, "Needs you now"): (a) R11, (b) find-then-grade, or (c) a mix of SAM 3's outlines and R11's pixels, chosen on validation and confirmed once on test (recommended). Step 3 follows on the chosen maps.
 
 ### H1 · KR2 evaluation harness: U-Net counting and counts-as-text
 - **Source:**
@@ -593,14 +688,47 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
      - If meaning alone does as well, the simpler search is kept.
      - **Done 27 Oct (Ridita), checked 28 Oct: passed, 27 of 30** (meaning alone 20, keywords alone 25, so the hybrid stays). The Kaggle path gives the same top 3 on all 30, and a Kaggle run with the internet off found everything it needed.
   5. Feed the agents per-building facts (H2) and hot spots (T1) as text.
-  6. Offline by default: no web tools and no "search the internet" wording unless an online switch is turned on, and new offline wording for tasks 3–6. Details and the test rule: [System_Design_Notes.md §2](System_Design_Notes.md) (recommended 24 Oct). **Done 27 Oct (Ridita) in the copy, checked 28 Oct:** offline, the web tools aren't imported or given to any agent, and CrewAI's telemetry is off. Steps 1–3 (the LLM and the three image tools still call Gemini), 5 and 7 are left.
+     - *(4 Nov: Ridita's `disasteller_inputs.py` loads both, but the main script doesn't call it yet. Two things to change when it's connected:*
+       - *Read the chain's table and hot spots (§1b, E7). Today's two files share only 7 images.*
+       - *An image missing from the table returns all zeros with status "ok", so a report could state "0 buildings". Missing data must stop the run or be stated as missing.)*
+  6. Offline by default: no web tools and no "search the internet" wording unless an online switch is turned on, and new offline wording for tasks 3–6. Details and the test rule: [System_Design_Notes.md §2](System_Design_Notes.md) (recommended 24 Oct). **Done 27 Oct (Ridita) in the copy, checked 28 Oct:** offline, the web tools aren't imported or given to any agent, and CrewAI's telemetry is off. *(4 Nov: steps 1–3 are built too, on the new 7B through local vLLM. A laptop run against a stand-in server passed; Kaggle practice run 2 is next. Steps 5 and 7 are left.)*
   7. Consistency check (added 26 Oct, after TimeSpot's consistency-violation rates; [Paper_Audit §4.15](Paper_Audit_and_Integration_Plan.md)): every number in each report is compared with the fixed queries on H2's table, and the run passes only with zero contradictions.
 - **Outputs:** the same 6 report files as the Gemini run, a log proving no external API calls (run once with internet off after setup), and `README.md` comparing them with the Gemini reports from 20 July.
+
+### T2b · Who writes the report: the 7B or a small text model (added 4 Nov)
+- **Source:** [Plan] if the model's report job is only writing from facts, a plain text model may do it as well.
+- **Goal:** O3 and O4.
+- **Why, from our own results:**
+  - The fine-tuned 7B answers in one sentence and doesn't explain (L2's smoke test), and its weak spots are counting and grading, which the chain no longer asks of it.
+  - At writing SQL, a plain text model matched it (Coder-3B 72.0%, our 7B in 4-bit 69.0%; the difference isn't clear, H2b).
+  - Peak memory on a T4 in 4-bit: 7B 6.2 GB, VL-3B 2.6 GB, Coder-3B 2.2 GB (H2b). So against the 3B, the gain is simplicity (no distillation run), not memory.
+  - Nobody has tested either model on report writing.
+- **Needs:** T2 steps 5 and 7, the flow left by T2's practice run, and E7's table.
+- **Build:**
+  - The same 10 scenes from E6's clean test pairs, picked before the run and spread across events, Turkey included.
+  - The same facts, the same guideline search, the same flow, seed and temperature. Image tools are off for both, so the writer is the only difference.
+  - Writers: the new 7B (`AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP`) and `Qwen/Qwen2.5-3B-Instruct`, a general text model. Coder-3B is the fallback; it's built for code, not prose.
+  - About 3–4 GPU hours, estimated from H2b's 12–17 tokens per second and about 1,000 tokens per report.
+- **Scores, per report:**
+  - **Contradictions:** every number checked against the fixed queries (T2 step 7).
+  - **Fake citations:** citation IDs that aren't in the index.
+  - Real citations; figures correctly written as "not available offline"; whether the run finished without errors or loops; time and peak memory.
+  - Reported but not part of the rule: five reports per writer, read blind by a person for usefulness.
+- **Rule, fixed before the run:**
+  - The text model replaces the 7B as the writer only if, across all reports, it has no more contradictions and no more fake citations, and finishes at least as many. A tie goes to the smaller model.
+  - O3 names our VLM, so adopting it needs the supervisor's agreement first.
+  - The six benchmark tasks stay with the VLM either way.
+- **Expectation, fixed before the run:** about level on numbers, since both read the same facts. The text model writes fuller sections; the 7B's are shorter. No number is predicted.
+- **Alternatives:**
+  - The base 7B, which L2b already uses for explanations: worth adding as a third writer only if the 7B falls short.
+  - Fine-tuning a writer on DisasterM3's report task: a new module, so it waits (§1b).
+  - An AI judge or human rubric as the main score ([System_Design_Notes §2.4](System_Design_Notes.md)): both grade wording but don't check numbers exactly, so they stay secondary.
 
 ### T3 · Unified offline demo and public showcase
 - **Source:** [Plan] the CSE499A future work "unified deployment" and O3; Tamanna's [Plan 3](Tamanna_task_2/Plan_3/Plan_3_Offline_Interactive_Demo.md); the showcase plan agreed 24 Oct, with its reasoning and what last season's winner showed in [System_Design_Notes.md §4](System_Design_Notes.md).
 - **Goal:** O3 — one offline system, and a showcase the public can use.
-- **Owner:** Abrar (decided 24 Oct), who also chooses the name and look later.
+- **Owner:** Abrar (decided 24 Oct), who also chooses the name and look later. *(16 Nov: Abrar chose the look, direction A; the name is open. Aryan builds the remaining pages from 16 Nov, by [his handover](Aryan_Task/T3_Website_Handover.md); Abrar keeps the gallery export, the deployment and the decisions.)*
+- **Status (16 Nov): phase 1 built, not deployed.** The site is [T3_Website/](T3_Website/README.md), one Vite and React project holding both pieces, started from Aryan's prototype. Built: the opening section, "How it works" told by scrolling, the building map with fixed questions, the results tables, the six real reports, the limitations and "Future ideas, not built". Next, in order: the seven pages, the 3D damage city, the gallery export (Abrar), Try it with the field model in the browser, then the deployment. What's built and what was found is in [System_Design_Notes.md §4.6](System_Design_Notes.md).
 - **Two pieces (agreed 24 Oct):**
   1. **Public showcase site:** the project's story, from results computed in advance: before/after sliders with the damage map, videos of the live run, a building map where clicking a building shows its facts, the benchmark panel, the limitations and the team.
   2. **Interactive demo website, deployed on Vercel:** animated, with current UI/UX, running the chain below. Both pieces can be one Next.js project (a story page and a demo page).
@@ -608,15 +736,16 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
 - **Order (agreed 24 Oct):** T2, T3, L0 and L2 come before any work on Layers 2–4 of the day-1 vision ([System_Design_Notes.md §5](System_Design_Notes.md)).
 - **The chain** (live at the booth with internet off; the public site shows the same steps from results computed in advance):
   1. pick a gallery image, or upload a before and after pair;
-  2. the damage map (R11 with TTA on a GPU, or the INT8 edge model on a CPU);
-  3. per-building counts by fixed queries (H2), linked to their buildings on the map;
+  2. the damage map (R11 with TTA on a GPU, or the INT8 edge model on a CPU); *(4 Nov: on a GPU, this becomes whichever chain E7 keeps. The INT8 model stays the CPU fallback, labelled as a lighter path. See §1b.)*
+  3. per-building counts by fixed queries (H2), linked to their buildings on the map; *(4 Nov: from the same chain's table.)*
   4. the heatmap (T1);
   5. fixed question templates instead of a free-form question box (H2b);
-  6. the DisasTeller report on local models (T2), shown as it's written;
+  6. the DisasTeller report on local models (T2), shown as it's written; *(16 Nov: at the booth this needs a GPU for the 7B, or the 3B once L2 is distilled; it can't run in a visitor's browser. The link from the map to the report is Aryan's bridge, not connected and with known bugs.)*
   7. the benchmark panel.
 - **How the website runs the models:** Vercel has no GPU, so the public site works from results computed in advance. At the booth, the same front end runs on the laptop and calls a local Python API that runs the chain offline. Stretch, to be tried (decided 24 Oct): the INT8 segmenter in the visitor's browser (ONNX Runtime Web), so uploads work with no server. A feasibility test comes first ([System_Design_Notes.md §4.3](System_Design_Notes.md)).
 - **Base:** `support/Abrar/Implementation_DisasterM3/gradio_app.py` (already loads a U-Net and Qwen) becomes the local API's test page and the fallback if the website isn't ready. Its `share=True` opens a public tunnel, so it must be off offline.
-- **Before building:** T2's reports; a gallery export (4–6 validation pairs with masks, building facts, heatmaps and each image's accuracy); L1 repeated on R11 (R11's own INT8 export); the browser test ([Champion_Task/T3-browser-test/](Champion_Task/T3-browser-test/README.md)) repeated on the booth laptop, and on a mid-range phone once the site is on Vercel with the COOP and COEP headers; a Vercel account linked to the repository; Abrar's choice of name and look.
+- **Wireframes (first version 4 Nov): [Wireframes/index.html](../Wireframes/index.html),** eight clickable screens that work with no internet. The screens follow the chain's steps, which stay the same whichever model E7 keeps. They use sample numbers until E7, except the results screen, and they draw the honest states too: no before-photo, missing facts, "not available offline", and results computed in advance. The Stageshow skill (installed 4 Nov) makes polished product illustrations and animated demos, not wireframes, so it's for the story page later; anything made with it is labelled as an illustration, not a live run.
+- **Before building:** T2's reports; a gallery export (4–6 validation pairs with masks, building facts, heatmaps and each image's accuracy); L1 repeated on R11 (R11's own INT8 export); the browser test ([Champion_Task/T3-browser-test/](Champion_Task/T3-browser-test/README.md)) repeated on the booth laptop, and on a mid-range phone once the site is on Vercel with the COOP and COEP headers; a Vercel account linked to the repository; Abrar's choice of name and look. *(16 Nov: T2's reports exist; the look is chosen; the gallery export is to be written against [DATA_CONTRACT.md](T3_Website/DATA_CONTRACT.md); deployment is now by hand with the Vercel CLI, not linked to the repository.)*
 
   Live mode must run with internet off after setup. A container is optional, not a key result.
 
@@ -680,9 +809,35 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
        - **Done 28 Oct: kept.** The new 7B's six tasks ran in the re-score notebook's two parts (7.8 h and 5.9 h). Against the old 7B at full size: ORR +3.50, DTR +1.13, BBR −0.95 (inside the 1-point limit), the others +0.22 to +0.64. The same verdict on E5's clean and strict sets. Details in the [ledger](Task_Ledger.md).
 - **Done when:** the 7B's six-task scores are re-measured at the paper's setting, and L2 uses the better of the two models as its teacher.
 
+### L0b · Can the 7B learn to see damage? (added 4 Nov; a side experiment)
+- **Source:** [Plan] Abrar's question: why not train the vision encoder for our own benefit?
+- **Goal:** O2 and O3. It decides whether a full run with the vision encoder trained is worth its GPU hours.
+- **Why:**
+  - The encoder is frozen because the DisasterM3 paper's recipe freezes it (Appendix B.3). Training it has never been tested. Adapters that reached it by accident in July were removed to match that recipe.
+  - The weakness looks like seeing: the 7B scores 96.5% given the true count and 15.6% from the image alone, on the same questions (Aryan's study). It called 298 of 300 buildings intact (Tamanna's Part B). Language-only training left its counting below the base model (30.3% against 34.2%).
+- **Why it might not help:**
+  - **Resolution:** at full size the model gets 1,369 tokens of 28 px each, and a median building is about 45 px across, so about two tokens wide. Training changes what the tokens mean, not how many there are.
+  - **Memory:** the full-size top-up took about 20 GPU hours and once ran out of memory by 40 MiB. Gradients through the vision blocks should need more.
+  - **Payoff:** to matter for grading or counting, a 16.6 GB model must beat a 45 MB grader and a table.
+- **Build:**
+  1. Start from the new 7B, with LoRA on the language layers and on the vision blocks' layers (in July that matched 28.9 million extra trainable parameters). Check GPU memory first.
+  2. Train on labelled building crops from training images only, balanced by class, in the form Part B uses: a 256 px window enlarged 2×, shown at 504 px, with a red box around the building and the same prompt.
+  3. Score it on Part B's same 300 true validation buildings, with an exact McNemar test against the grader (212 right) and the new 7B (100 right).
+- **Rule, fixed before the run:**
+  - A full run on the six benchmark tasks (about 20 hours of training and 14 of evaluation) is worth it only if the result isn't clearly below the grader's (p < 0.05).
+  - If it beats the 7B but stays clearly below the grader, record that and stop: the grader keeps the grading, and a full run needs its own reason.
+  - If it doesn't clearly beat the 7B, the question is settled and the encoder stays frozen.
+- **Expectation, fixed before the run:** above 100, because the 7B now gets to learn the classes, but clearly below 212, because the grader also sees the before-image.
+- **Alternatives:**
+  - A full-size run straight away: about 34 GPU hours before knowing if it can work.
+  - Training only the last vision blocks: fewer settings, and worth trying if memory runs out.
+  - A different vision encoder: a much bigger change, so it waits for this result.
+- **Done when:** the 300-building result is reported against the rule, whichever way it goes.
+
 ### L2 · 7B → 3B distillation
 - **Source:** [Plan] CSE499A future work and KR4; [Paper] QLoRA (we already use it via Unsloth).
 - **Goal:** O4.
+- **Status in the one-chain plan (§1b, 4 Nov):** a side experiment. It's a promised deliverable (O4), but the main report doesn't depend on it. Step 1 ran again with the new 7B: 1,146 answers kept.
 - **Waits for L0** (decided 19 Oct): the teacher is improved first. *(L0 done 28 Oct: the new 7B is kept and is the teacher, so L2 step 1 runs again with it. Its copy is built and dry-run checked: [l2-step1-new-teacher.ipynb](Champion_Task/l2-step1-new-teacher.ipynb), about 5.5 h on account 1.)*
 - **Base:** the two ready notebooks in `support/Abrar/Implementation_DisasterM3/`, kept unchanged as the originals:
   - `generate_teacher_cot_train_3b_distill.ipynb` has never been run. Step 1 runs as its fixed copy, [Champion_Task/l2-step1-teacher-rationales.ipynb](Champion_Task/l2-step1-teacher-rationales.ipynb) (19 Oct; named `l2-stage1-teacher-rationales` until 20 Oct): Kaggle's own torch, fp16 on 2×T4 in batches, 4,000 checkable examples, and only answers that match the label kept;
@@ -691,6 +846,16 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
   1. Generate the teacher's answers on the training set. QLoRA's lesson: a smaller, cleaner set beats a large noisy one. The smoke test (19 Oct) showed that our fine-tuned 7B answers in one sentence instead of reasoning, so this is answer-level distillation; explanations come from L2b.
   2. Fine-tune Qwen2.5-VL-3B, with L2b's explanations as a second skill.
   3. Score all six tasks with the H1 harness, against the 7B.
+- **Decided 8 Nov (Abrar): train two 3Bs, (b) and (c), and keep the better one by a rule fixed now, before any run.**
+  - **(b) soft labels:** the 7B reads each checkable training question with its correct answer filled in, and its 20 most likely tokens at each answer position are saved, with their log-probabilities. The 3B trains on the labels with loss = 0.5 × cross-entropy on the label + 0.5 × the match to the 7B's top-20 spread (renormalised, temperature 1). Captions and restoration advice keep the label loss only.
+  - **(c) the options rerun:** the 7B answers L2 step 1's counting and relational entries again (building counting 1,445, road counting 735, relational 180) with the options shown, as in the benchmark, greedy; checked-correct letters are kept. The 3B trains on L2 step 1's data (its 1,146 kept answers, labels elsewhere) plus these kept examples, with their options.
+  - **The same for both:** base `Qwen/Qwen2.5-VL-3B-Instruct`, the same LoRA settings, images at most 768×28×28 pixels and never enlarged (corrected 8 Nov: an earlier line here said "between 256×28×28 and 768×28×28"), the same seed and number of steps, and the same held-out photos left out.
+  - **Held out to choose the winner:** 501 after-photos (5%, chosen by a hash of the file name; a relational question's boxed picture counts as its after-photo), with all their questions left out of both trainings and both teacher passes: 1,962 checkable questions.
+  - **The rule.** Both 3Bs answer the held-out questions with the options shown, greedy. Primary score: accuracy, with the two counting tasks limited to questions whose largest option is 20 or less, where the middle-value pattern can't help; the other four tasks use every question. If exact McNemar on that set gives p < 0.05, the more accurate 3B wins. Otherwise the lower median count error on all held-out building-counting questions wins (from the value of the chosen option); if that is equal too, (b) wins, because it's the cleaner distillation O4 promises and never saw the options.
+  - **Reported, not deciding:** accuracy on every question; on questions whose largest option is above 20; how often each 3B picks the middle option there; count error; and the rule that never sees the image, on the same questions. (c) has also seen the benchmark's letter format on three tasks; the rule can't remove that advantage, so it's reported.
+  - **Then:** only the winner is scored once on the benchmark's 10,675 optical questions, with count error and the no-image rule beside it.
+  - **Estimated GPU, to be measured in each smoke test:** the 7B's soft labels about 5 h; the options rerun about 1.5 h; each training about 20 h; the held-out scoring of both 3Bs and the base 3B about 1–1.5 h; the winner's benchmark scoring about 2–3 h (revised 8 Nov, on one T4 at the 3B's image size).
+  - **Built 8 Nov, dry-run checked on the PC:** [l2-step1b-soft-labels](Champion_Task/l2-step1b-soft-labels.ipynb) (account 3), [l2-step1c-options-rerun](Champion_Task/l2-step1c-options-rerun.ipynb) (account 1), [l2-step2-train-3b](Champion_Task/l2-step2-train-3b.ipynb) (`MODE` b on account 3, c on account 1), [l2-step3-heldout-select](Champion_Task/l2-step3-heldout-select.ipynb) and [l2-step4-winner-benchmark](Champion_Task/l2-step4-winner-benchmark.ipynb) (account 2). Run steps in the tracker; details in the [ledger](Task_Ledger.md), L2 step 2.
 
 ### L2b · Explanations as a second skill ("why?" on request)
 - **Source:** [Paper] Distilling Step-by-Step (Hsieh et al., Findings of ACL 2023; see Paper_Audit §4.12), BDAChat (explanations are its main strength) and ImageRAG (fine-tuning with reasoning added 18 points). Decided on 19 Oct, after L2's smoke test.
@@ -713,6 +878,7 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
   3. Handoff: compute the geometric mean of the probabilities of the generated tokens (`output_scores=True`). Below a threshold, send the question to the 7B.
   4. **Before choosing the threshold, check the confidence** (added 26 Oct, from TimeSpot, ICML 2026; [Paper_Audit §4.15](Paper_Audit_and_Integration_Plan.md)): the 3B's expected calibration error and its risk–coverage curve with RC-AUC on the six tasks. TimeSpot found open VLMs overconfident, so calibrate on validation data first (for example, temperature scaling), then pick the threshold from the curve.
   5. Report the share answered by the 3B, the accuracy against the 7B alone, and the latency.
+  6. **Measure it where it's meant to run** (added 4 Nov). Every VLM number so far is from a T4: 7B 6.2 GB and 3B 2.6 GB at peak in 4-bit, 3B 7.7 GB in full precision (H2b). So the 7B in 4-bit nearly meets "about 6 GB" already, and the 3B only pays off in 4-bit. Report memory and speed on a laptop with no GPU, through a CPU runtime. Make no phone claim unless it's tested on a phone.
 
 ### L4 · EfficientSAM3 against SAM 3
 - **Source:** [Paper] EfficientSAM3 (its paper reports no results yet, so we measure) and [Plan] the edge step of the SAM 3 test plan (Research_Directions §7.4).
@@ -755,6 +921,8 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
 | G3 | E3 | SAM 3 at least as good as R9 at finding buildings on pre-images: it does R16's finding |
 | G4 | H1 | V1 above 34.2% on BDC means the counting half of KR2 is met; V2 is kept only if no other task drops by more than 1 point |
 | G5 | R15 + R15s7 | Gate claim only with two seeds above 0.30, or a two-seed mean above 0.30, with TTA stated if used |
+| G6 | E7 | SAM 3 + grader stays the chain if its destroyed-building IoU beats R11's on the clean test pairs and its counting isn't clearly below R11's. If only counting is clearly below, Abrar decides. If the destroyed score isn't above, the choice of chain reopens. **11 Nov: not above (0.3898 against 0.3984; noise by step 2b), so the choice reopens** |
+| G7 | T2b | A small text model replaces the 7B as the writer only with no more contradictions, no more fake citations and at least as many finished reports, and with the supervisor's agreement |
 
 ## 10. GPU budget (approximate)
 
@@ -764,8 +932,10 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
 | Next week | R11, R12 on two accounts; T2 | about 17 |
 | Week after | R15 + R15s7 and R16 (R16 runs regardless, decided 19 Oct); H3 variants | about 17–26 |
 | Third account, any time | L2, L3 | about 15–25 |
+| One chain (added 4 Nov) | E7, then T2b | about 2, then about 3–4 |
+| Side test (added 4 Nov) | L0b | a few (a guess), and about 34 more only if its rule passes |
 
-CPU-only, any time: D5, T1, L1 and H2.
+CPU-only, any time: D5, T1, L1, H2 and E6, plus E7's PC steps.
 
 ## 11. Documents to update as results come in
 - [Ablation_Study_Reference_and_QA_Prep.md](Ablation_Study_Reference_and_QA_Prep.md) §7: new segmentation runs (R11 onwards).
