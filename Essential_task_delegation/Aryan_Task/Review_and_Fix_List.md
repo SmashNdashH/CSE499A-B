@@ -10,6 +10,11 @@ Every finding gives its evidence (file and line) and the correct value with its 
 
 **Please have everything fixed and pushed before the next update (Wed 18 Nov).** Sections 1 and 2 come first.
 
+**Updated later on 15 Nov.** What changed in this file:
+- **Section 7 has four new findings in the bridge** (7.2 to 7.5). I found them while building the showcase website, which will show the bridge's text word for word.
+- **Check 8 in section 8 and task F in section 9 are extended** to cover them.
+- **"Where my work stands" now covers the showcase website,** which is built on a copy of your prototype.
+
 ## In short
 
 **What holds up:**
@@ -26,7 +31,7 @@ Every finding gives its evidence (file and line) and the correct value with its 
 
    Your update 4 section repeats the table claim.
 3. **The three corrections to the counting study,** open since 28 Oct.
-4. **The bridge's missing-image bug,** open since 4 Nov.
+4. **The bridge's missing-image bug,** open since 4 Nov, **and four more faults in it** found on 15 Nov (section 7).
 5. **Housekeeping:**
    - our internal documents copied into the site's public folder;
    - cloud leftovers in an "offline" site;
@@ -54,6 +59,20 @@ These results aren't in the weekly updates yet; they go into update 5 (Wed 18 No
   - (c) the 7B's answers with the options shown.
 
   The five Kaggle notebooks are `Champion_Task/l2-step1b-soft-labels.ipynb` to `l2-step4-winner-benchmark.ipynb`.
+- **The showcase website (T3, started 15 Nov; not pushed or deployed yet):**
+  - **Where:** `Essential_task_delegation/T3_Website/`, built from a copy of your `Website/`. Your folder is untouched. It stays your record, and sections 1 to 5 still apply to it.
+  - **Kept from yours, reworked to our data:** the workspace layout (layers on the left, the image pair in the centre, the building inspector on the right, the class filter underneath), the offline renderer, the fixed-question console, the reports view and the benchmark panel.
+  - **Removed:** everything sections 1 to 5 list.
+  - **What it shows:** only real outputs. For each gallery pair:
+    - the damage mask;
+    - the building table in H2's columns, plus each building's outline;
+    - T1's hot spots and safe areas;
+    - that image's accuracy against the ground truth.
+
+    Until my gallery export runs, it uses four validation pairs with R9's masks as development stand-ins, marked as such.
+  - **Numbers:** every number on it comes from one facts file, checked against its source file on each build.
+  - **Look:** three looks are built, and I'm choosing one.
+  - **What it needs from you: the bridge.** For each gallery pair the site shows the exact text `format_disaster_facts` returns, under "What the report writer is given for this pair". So that text has to be right word for word (section 7).
 - **What this means for your tasks:**
   - The bridge's table must come from whichever model is chosen (section 7).
   - In counting work, report count error, not only accuracy.
@@ -171,10 +190,33 @@ These were sent on 28 Oct and again on 4 Nov. `BDC-v4-results/README.md` hasn't 
 
 ## 7. The DisasTeller bridge (`disasteller_inputs.py`)
 
-- **The bug, unchanged since 4 Nov:**
+Four of the five faults below share one cause: a value that is missing gets printed as if it were real. The fifth is a wrong label. The website shows this function's text word for word, so each one would end up on a public page.
+
+- **7.1 The missing-image bug, unchanged since 4 Nov:**
   - Line 44 starts the counts at zero with `"status": "ok"`, so an image that isn't in the table returns 0 intact, 0 damaged and 0 destroyed with status "ok". A report could then say "0 buildings" about an image that was never analysed.
   - Return `"status": "image_not_in_table"` instead, as the hot-spot function already does (line 71, `"image_not_found"`). The caller must then stop, or write "no data" for that image.
-- **Add a self-check:** a few `assert`s for three cases: an image in the table, an image not in it, and a missing database.
+- **7.2 New: safe areas are read with the wrong keys.**
+  - Lines 109 and 111 read `sa.get("point_xy", [0, 0])` and `sa.get("dist_to_damage_px", 0)`.
+  - T1 v3's safe areas have neither key. Each one has `rank`, `xy`, `distance_px`, `edge_px`, `where` and `on_gt_building` ([hotspots.json](../Champion_Task/T1-results/T1-v3/hotspots.json)). Only hot spots use `point_xy`.
+  - So every safe area prints as "centroid at (x=0, y=0) … distance from rubble: 0 px". A report would then put a triage point in the image's top-left corner, at zero distance from the damage.
+  - Fix: read `xy` and `distance_px`.
+- **7.3 New: `format_disaster_facts` never looks at either status** (lines 78 and 79).
+  - For an image with no entry in the hot-spot file, it prints "No dense collapse clusters detected" and "No sufficiently isolated open field identified". Those are claims about an image that was never analysed.
+  - For an image missing from the table, it prints the zero counts from 7.1.
+  - Fix: check both statuses first. If either isn't "ok", return text that says there is no data for this image, or raise an error the caller must handle.
+- **7.4 New: default values for missing fields.**
+  - Lines 96 to 99 and 108 to 111 fill a missing rank, position, sector, area or distance with 1, `[0, 0]`, "unspecified" or 0.
+  - Fix: no defaults. If an entry lacks a field, leave that entry out and say so in the text, for example "hot spot 2: position not available".
+- **7.5 New: the text mislabels what it holds.**
+  - **Line 82** prints `=== GROUND TRUTH DAMAGE FACTS FOR IMAGE: … ===` over counts from a model's map. Ground truth means the dataset's own labels. A report writer told these are ground truth will state them as certain. Suggested: `=== MODEL ESTIMATES FOR IMAGE: … (to be checked on the ground) ===`.
+  - **Lines 83 and 89** hard-code "R11 Dual-Input U-Net" and "T1 v3", whatever table and hot-spot file are passed in. The model that feeds the table is still open (see "Where my work stands"), so a table from find-then-grade would be labelled R11.
+  - Fix: take the two descriptions as parameters, for example `table_model` and `heatmap_source`, and print those.
+- **Add a self-check:** a few `assert`s for five cases:
+  - an image in the table;
+  - an image not in it;
+  - a missing database;
+  - an image with safe areas, whose real positions and distances must appear in the text;
+  - an image with no hot-spot entry, whose text must say there is no data.
 - **Don't connect it to the fixed flow yourself.** Ridita owns `fixed_flow.py`, and the model that feeds the table is chosen before T2 step 5; E7 reopened that choice on 11 Nov (see "Where my work stands"). Keep the function's inputs and outputs stable.
 - **Take both inputs from the same model.** Today the table (H2) comes from R11 and the hot spots (T1) from R9, and they share only 7 images. Make both paths required parameters, with no defaults pointing at the current, mismatched files.
 
@@ -187,7 +229,12 @@ These were sent on 28 Oct and again on 4 Nov. `BDC-v4-results/README.md` hasn't 
 5. **The files are gone:** `public/assets/aistudio/`, `Untitled-1.ipynb` and the AI Studio leftovers.
 6. **The site builds and type-checks:** `npm run build` and `npm run lint` pass. Paste their last lines.
 7. **The counting study:** `BDC-v4-results/README.md` and `BDC_PIPELINE_REPORT_v4.md` carry the three corrections, and the duplicate CSV is removed.
-8. **The bridge:** `get_building_counts("not_in_table.png", db_path)` returns `"image_not_in_table"`, and the self-check passes.
+8. **The bridge:**
+   - `get_building_counts("not_in_table.png", db_path)` returns `"image_not_in_table"`.
+   - `format_disaster_facts("turkey_earthquake4_post_776.png", …)` with T1 v3's file prints safe area 1 at (268, 593), 219 px from the damage. Those are its values in `hotspots.json`.
+   - For an image in neither file, the text says there is no data. It has no zero counts and no "No dense collapse clusters detected".
+   - The printed text has no "GROUND TRUTH", and names a model or a heatmap version only when one is passed in.
+   - The self-check passes.
 9. **`CHANGES.md` in `Aryan_Task/`** lists every change, with file and line.
 
 ## 9. Instruction for your AI assistant (paste everything in the box)
@@ -229,9 +276,21 @@ C. Website, offline and cleanup: self-host fonts; online tiles off by default; r
 D. Delete Untitled-1.ipynb at the repository root.
 E. Counting study: in BDC-v4-results/README.md and BDC_PIPELINE_REPORT_v4.md apply the three corrections in section 6
    of the review, word for word in meaning, and remove the duplicate U-Net CSV and the empty result file.
-F. disasteller_inputs.py: return "status": "image_not_in_table" when an image has no rows; make db_path and
-   hotspots_path required parameters; add a small assert-based self-check under if __name__ == "__main__" covering an
-   image in the table, an image not in it, and a missing database. Do not import it anywhere else.
+F. disasteller_inputs.py (details in section 7 of the review, 7.1 to 7.5):
+   - return "status": "image_not_in_table" when an image has no rows;
+   - read each safe area's position from "xy" and its distance from "distance_px" (the keys in T1 v3's hotspots.json),
+     not from "point_xy" and "dist_to_damage_px";
+   - in format_disaster_facts, check both statuses first; if either is not "ok", return text saying there is no data
+     for that image (no zero counts, no "No dense collapse clusters detected");
+   - remove every default value for a missing field (1, [0, 0], "unspecified", 0); leave such an entry out and say so;
+   - replace the header "GROUND TRUTH DAMAGE FACTS" with "MODEL ESTIMATES ... (to be checked on the ground)";
+   - take the table's model and the heatmap's source as parameters (table_model, heatmap_source) and print those,
+     instead of the hard-coded "R11 Dual-Input U-Net" and "T1 v3";
+   - make db_path and hotspots_path required parameters;
+   - add a small assert-based self-check under if __name__ == "__main__" covering: an image in the table, an image
+     not in it, a missing database, an image with safe areas (their real positions and distances must be in the text),
+     and an image with no hot-spot entry (the text must say there is no data).
+   Do not import it anywhere else.
 
 ALLOWED FACTS (from update 3 and the repository; nothing else)
 - Team: Abdullah Al Noman, Tamanna Akter Mou, Aryan Sami, Ridita Afrin Riya, Abrar Mohammed Tanzim Alam.
