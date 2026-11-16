@@ -2,6 +2,8 @@
 
 From Abrar. You're taking over the build of our showcase website. This file says where everything is, how to run it, what's settled, what's next, and what must not break. Read it all once before you change anything.
 
+> **Changed 16 Nov: don't start on the site before Wed 18 Nov.** Until the end of 17 Nov, Abrar builds as much of section 8 as he can himself. Your work until then is your review's fixes (sections 1 to 7 of [Review_and_Fix_List.md](Review_and_Fix_List.md), due 18 Nov). On 18 Nov, `git pull`, then read section 8 again: whatever is marked done there is done, and you take the rest from the first open item.
+
 The site is in [`Essential_task_delegation/T3_Website/`](../T3_Website/). It started as a copy of your prototype (`Aryan_Task/Website/`), reworked to our data. Your own `Website/` folder is untouched: it stays your record, and sections 1 to 6 of [Review_and_Fix_List.md](Review_and_Fix_List.md) still apply to it.
 
 ## 1. What the site is for
@@ -12,18 +14,28 @@ The site is in [`Essential_task_delegation/T3_Website/`](../T3_Website/). It sta
 
 ## 2. Where it stands
 
-**Done (phase 1, with Abrar's choices made):**
+**Done by the end of 16 Nov (all three phases of Abrar's brief are built):**
 - A cleaned copy of your site. Your workspace layout and your file names survive; most of the code behind them was rewritten, and some features were removed. Section 3 lists every change and why.
-- **The look is chosen: direction A, "Aftermap"** ([src/directions/DirectionA.tsx](../T3_Website/src/directions/DirectionA.tsx), [a.css](../T3_Website/src/directions/a.css)). Abrar asked for:
+- **The look is chosen: direction A, "Aftermap"**, and it is now the whole site ([src/site/Layout.tsx](../T3_Website/src/site/Layout.tsx), [site.css](../T3_Website/src/site/site.css)). Directions B and C are deleted. Abrar asked for:
   - the faint 80 px gridlines across the whole page;
   - a small before/after pair beside the headline, not a full-screen one;
-  - the slow contour-line background behind the opening section (React Bits "Topography");
+  - the slow contour-line background behind the top of **every** page (React Bits "Topography"), reacting gently to the pointer;
   - an on/off switch for the damage map and the heatmap wherever the map appears without a layers panel.
-- **"How it works"** told by scrolling: one real pair stays pinned and changes at each of 7 steps ([src/components/ChainStory.tsx](../T3_Website/src/components/ChainStory.tsx)).
-- **The building map** ([src/components/Workspace.tsx](../T3_Website/src/components/Workspace.tsx)): layers on the left, the pair in the centre, the building inspector on the right, the counts underneath.
-- **The data contract** for the gallery export, its validator, the facts file with its checks, and four development stand-in pairs.
+- **Seven pages**, one file each in [src/pages/](../T3_Website/src/pages/):
 
-**Not started (phase 2 and later):** see section 8.
+  | Address | Page | What is on it |
+  |---|---|---|
+  | `/` | Home | The small before/after pair with the damage map, one sentence, the decision-support line |
+  | `/how` | How it works | The scroll story: one real pair stays pinned and changes at each of 7 steps ([ChainStory.tsx](../T3_Website/src/components/ChainStory.tsx)) |
+  | `/explore` | Explore | The building map ([Workspace.tsx](../T3_Website/src/components/Workspace.tsx)) and, behind its "3D damage city" button, each building raised into a block ([DamageCity.tsx](../T3_Website/src/components/DamageCity.tsx)) |
+  | `/try` | Try it | The field model running in the visitor's browser on their own image ([TryItRunner.tsx](../T3_Website/src/components/TryItRunner.tsx)); result shown in the same building map |
+  | `/results` | Results | The benchmark numbers as bar charts, each bar ending in its linked number, with the table under each chart ([ResultsTables.tsx](../T3_Website/src/components/ResultsTables.tsx)) |
+  | `/reports` | Reports | The six reports in full, the guideline passages each was given, the Expert report's citations beside their passages, and the offline evidence ([pages/Reports.tsx](../T3_Website/src/pages/Reports.tsx)) |
+  | `/about` | About | The limitations, the future ideas, the team and the credits |
+- **The data contract** for the gallery export, its validator, the facts file with its checks, and four development stand-in pairs.
+- **Checks measured on 16 Nov:** type check, lint, both builds and the browser check pass on all seven pages; no request leaves 127.0.0.1; Lighthouse with phone settings gives 95 to 99 for performance and 99 to 100 for accessibility on Home, Explore, Results and Try it; the in-browser model gives the same class as the native run on 100% of pixels (README, "The model in the browser").
+
+**Still open:** see section 8.
 
 **Not decided yet:** the project's name ("Aftermap" is a placeholder), and the open questions in [NOTES.md](../T3_Website/NOTES.md), section 3. Ask Abrar; don't settle them yourself.
 
@@ -58,7 +70,7 @@ Your prototype is unchanged at [Aryan_Task/Website/](Website/), so you can compa
 These were dropped to keep the first version small, not because they were wrong. Bring them back if they're built on real data:
 
 - **Pan and zoom on the map** (mouse wheel, drag, the zoom and reset buttons).
-- **The 3D view.** It returns as the 3D damage city (section 8), built from the real outlines. Yours used invented floor counts for heights.
+- **The 3D view: back since 16 Nov** as the 3D damage city, built from the real outlines ([DamageCity.tsx](../T3_Website/src/components/DamageCity.tsx)). Yours used invented floor counts for heights; here a block's height only repeats its class, and the view says so.
 - **Hiding single buildings** (the eye icon) and **search** in the layers list.
 - **Collapsing the side panels** ("Hide").
 - **Print** in the reports view. (Copy and download are back: 3.6.)
@@ -79,7 +91,7 @@ These were dropped to keep the first version small, not because they were wrong.
 | `FixedQuestionConsole.tsx` | Six templates computed over invented buildings | Four: counts per class; buildings within 50, 100 or 200 px of a destroyed one; the largest damaged or destroyed building; the hot spots and safe areas. Each shows its fixed query and highlights its buildings | Only what the table can answer, with no defaults (review §2) |
 | `DisasTellerReportsModal.tsx` | Hand-written Turkey reports with invented citations | The six real proof-run reports, word for word, with known errors marked in place; a native dialog | Real outputs only (review §2) |
 | `BenchmarkPanelModal.tsx` | Scorecards from `mockScenarios.ts` with mixed-up numbers | Tables read from the facts file, each number linked to its source | Correct, traceable numbers (review §3) |
-| `App.tsx` | One full-screen workspace | A router: the chosen look at `/a` (B and C are removed next; section 8) | A site of several pages |
+| `App.tsx` | One full-screen workspace | A router with the seven pages inside one shared header and footer | A site of several pages |
 | `index.css` | Leaflet overrides and two Google font names | Shared styles driven by colour and font variables that each look sets | One stylesheet for every page |
 | `vite.config.ts` | Dev server open on the network (`0.0.0.0`) | Local only (`127.0.0.1`); sends the two isolation headers; leaves facts not public yet out of the build; serves the stand-in data in development | Offline, and multi-threaded in-browser models |
 | `package.json` | `lint` was `tsc --noEmit`; TypeScript 7 | `typecheck` is `tsc --noEmit` and `lint` is ESLint; TypeScript 6, because the lint tooling doesn't support 7 yet; the check scripts | Section 7 |
@@ -96,7 +108,9 @@ These were dropped to keep the first version small, not because they were wrong.
 
 - [src/core/](../T3_Website/src/core/): the building table built from a mask, the fixed queries, the facts loader, the gallery loader and the damage colours.
 - [src/components/Workspace.tsx](../T3_Website/src/components/Workspace.tsx), [ChainStory.tsx](../T3_Website/src/components/ChainStory.tsx), [ResultsTables.tsx](../T3_Website/src/components/ResultsTables.tsx): the building map, the scroll story and the results tables.
-- [src/directions/](../T3_Website/src/directions/): the three looks of phase 1.
+- [src/site/](../T3_Website/src/site/) and [src/pages/](../T3_Website/src/pages/): the shared header, footer, background and look, and the seven pages. (The three trial looks of phase 1 lived in `src/directions/`, now deleted.)
+- [src/components/DamageCity.tsx](../T3_Website/src/components/DamageCity.tsx): the 3D damage city.
+- [src/components/TryItRunner.tsx](../T3_Website/src/components/TryItRunner.tsx), [src/core/segment.worker.ts](../T3_Website/src/core/segment.worker.ts), [modelConfig.ts](../T3_Website/src/core/modelConfig.ts), [heatmap.ts](../T3_Website/src/core/heatmap.ts): the field model in the browser, and the heatmap computed from its mask.
 - [src/vendor/react-bits/](../T3_Website/src/vendor/react-bits/): the crosshair, the rolling counts and the contour background, with their licence.
 - [scripts/](../T3_Website/scripts/): the data validator, the fixture maker, and the checks for facts, colours, logic and the browser.
 - [src/data/facts.json](../T3_Website/src/data/facts.json), [public/reports/offline/](../T3_Website/public/reports/offline/), [vercel.json](../T3_Website/vercel.json), and the three documents (README, NOTES, DATA_CONTRACT).
@@ -125,7 +139,8 @@ Requirements: Node 22.18 or later (`node -v`), npm, and Chrome for the checks.
    npm run fixtures
    npm run dev
    ```
-3. Open the address it prints (http://127.0.0.1:3000, or the next free port), then `/a` for the chosen look.
+3. Open the address it prints (http://127.0.0.1:3000, or the next free port). The pages are `/`, `/how`, `/explore`, `/try`, `/results`, `/reports` and `/about`.
+4. **For Try it only:** copy `Essential_task_delegation/Champion_Task/L1B-results/L1b/r9_int8_static_keep1_3.onnx` into `T3_Website/public/model/`. The file is on Abrar's PC, not in git; ask him for it. Without it the Try it page says the model isn't part of this copy, and everything else works.
 
 **What you'll see that Abrar doesn't:** no satellite photos. The stand-in pairs take their photos from xBD's original files, which are only on Abrar's PC (`data/` is git-ignored). Without them the map shows "No photo of this pair is on this device"; the outlines, masks and numbers are still real. That's expected. If you have xBD's `train/images` folder, put it at `data/xView2 Challenge Dataset - train and test/train/images/` in the repository and run `npm run fixtures` again.
 
@@ -139,7 +154,10 @@ Requirements: Node 22.18 or later (`node -v`), npm, and Chrome for the checks.
 | [src/data/facts.json](../T3_Website/src/data/facts.json) | **Every number on the site**, with its source file and date | Only by the rules in section 6 |
 | [src/core/](../T3_Website/src/core/) | The building table from a mask, the fixed queries, the facts and gallery loaders, the damage colours | Carefully; `npm run selfcheck` and `npm run palette` test it |
 | [src/components/](../T3_Website/src/components/) | The map view (`OfflineCanvas.tsx`), the workspace and its panels, the reports and benchmark panels, the scroll story | Yes |
-| [src/directions/](../T3_Website/src/directions/) | The three looks of phase 1; A is chosen | Yes (see section 8, item 1) |
+| [src/site/](../T3_Website/src/site/) | What every page shares: header, footer, background (`Layout.tsx`, `HeroBackground.tsx`) and the look (`site.css`) | Yes |
+| [src/pages/](../T3_Website/src/pages/) | The seven pages, one file each | Yes |
+| [src/core/modelConfig.ts](../T3_Website/src/core/modelConfig.ts), [segment.worker.ts](../T3_Website/src/core/segment.worker.ts), [heatmap.ts](../T3_Website/src/core/heatmap.ts) | The in-browser model: what it reads, how it runs, and the heatmap from its mask | **Ask first.** They are matched pixel for pixel against a native run and the heatmap notebook (`npm run check:model`, `npm run check:heatmap`); a small change can break that |
+| `public/model/` | The field model file, git-ignored | Never commit it |
 | [src/vendor/react-bits/](../T3_Website/src/vendor/react-bits/) | Three third-party components, copied as source with their licence | Only as the README says |
 | [public/reports/offline/](../T3_Website/public/reports/offline/) | The six proof-run reports, byte for byte | **Never edit.** They must match Ridita's files exactly |
 | [scripts/](../T3_Website/scripts/) | The validator, the fixture maker and the checks | Don't weaken a check to make it pass |
@@ -191,8 +209,9 @@ npm run browser-check
 ```
 
 - `npm run build` runs the data validator, the facts check, the colour check and the self-checks first.
-- **Lighthouse:** the site must keep 90 or more for performance and accessibility with phone settings (Chrome's developer tools, Lighthouse tab, "Mobile"). It was last measured before the scroll story, the background and the crosshair went in, so measure it again before your first push.
-- `browser-check` takes screenshots at 390 px and 1440 px into `checks/screenshots/`, clicks a building, a count and a fixed question, and fails if any request leaves 127.0.0.1. Look at the screenshots yourself too.
+- **Lighthouse:** the site must keep 90 or more for performance and accessibility with phone settings (Chrome's developer tools, Lighthouse tab, "Mobile"). Measured on 16 Nov with everything in: Home 98 and 100, Explore 95 and 99, Results 99 and 100, Try it 97 and 100. Measure again after any change to a page's first screen.
+- `browser-check` takes screenshots of all seven pages at 390 px and 1440 px into `checks/screenshots/`; on Explore it clicks a building, a count, a fixed question and a block of the 3D view; it fails if any request leaves 127.0.0.1. Look at the screenshots yourself too.
+- **If you touched Try it or anything in `src/core/`:** with the model file in place, also run `npm run build`, then `npm run preview` in one terminal and `npm run check:model` in another (it needs one xBD after-image; README, "The model in the browser"), and `npm run check:heatmap`.
 - Then check that `git status` shows changes only inside `T3_Website/`, and stage only that folder:
   ```text
   git add -- Essential_task_delegation/T3_Website
@@ -200,26 +219,22 @@ npm run browser-check
 
 ## 8. What's next, in order
 
-Do them one at a time, push each, and tell Abrar what you changed.
+**Done on 16 Nov, so don't redo these** (the earlier version of this list had them as your items 1 and 2):
+- A is the site: directions B and C, the review bar and `review.css` are deleted; `scripts/browser-check.ts` visits the seven new addresses and runs its map checks on Explore only.
+- All seven pages (table in section 2), including the 3D damage city, Try it, the Results charts, and the Reports page with its searches, citations, offline evidence, download and copy, and 12 known errors marked in place.
 
-1. **Make A the site.** Remove directions B and C (`DirectionB.tsx`, `DirectionC.tsx`, `b.css`, `c.css`), the review bar and chooser in [src/App.tsx](../T3_Website/src/App.tsx), and [src/review.css](../T3_Website/src/review.css). Then set up the seven pages below as routes, sharing A's header and footer.
-   - **Update [scripts/browser-check.ts](../T3_Website/scripts/browser-check.ts) in the same change.** Its page list defaults to `/,/a,/b,/c`, and it expects the building map on every page it visits. Point it at the new routes, and run the map checks only on the page that has the map. Change what it visits, never what it checks.
-2. **The seven pages** (names and order can change; the content is fixed):
-   1. **Home:** the small before/after pair with the damage map, one sentence on what the system does, the decision-support line. It exists now as A's opening section.
-   2. **How it works:** the scroll story, already built ([ChainStory.tsx](../T3_Website/src/components/ChainStory.tsx)).
-   3. **Explore:** the building map ([Workspace.tsx](../T3_Website/src/components/Workspace.tsx)), plus **the 3D damage city**: each building's outline raised into a block coloured by class, with schematic heights (destroyed as low slabs), labelled "a 3D view of our 2D results, not a reconstruction". It replaces your old 3D toggle, built from the outlines in `buildings.json`.
-   4. **Try it:** the field model running in the visitor's browser. **Phase 3: ask Abrar before starting.** It has its own pass rules (the same class as the native run on at least 99.9% of pixels, and a heatmap port matched against T1 v3).
-   5. **Results:** the benchmark tables as charts, each number with its source link and its image set. The tables exist in [ResultsTables.tsx](../T3_Website/src/components/ResultsTables.tsx).
-   6. **Reports:** the six reports in full, from [DisasTellerReportsModal.tsx](../T3_Website/src/components/DisasTellerReportsModal.tsx) turned into a page, plus:
-      - above them: about DisasTeller's Wajima sample photos, not our pairs; written by our 7B with the internet off; quality not judged yet;
-      - the run's evidence from `t2_run_summary.json` and `netlog.json` (the rules it passed, 4 network connections all to 127.0.0.1, no Gemini library loaded);
-      - the 18 guideline searches behind the reports. **Done as data:** [public/guidelines/searches.json](../T3_Website/public/guidelines/searches.json) holds all 18 with their passages, and [GuidelineSearch.tsx](../T3_Website/src/components/GuidelineSearch.tsx) shows them; reuse both on the Reports page;
-      - **download and copy** for each report: done (3.6);
-      - each of the Expert team report's 11 citations beside the passage it cites, from `llm_calls.jsonl` and the guideline files in `Offline_RAG_KR2/`. If a passage can't be found, say so; don't guess. One of them, `[EMS98-rc-grade-5]`, is a real passage the model wasn't shown;
-      - say plainly that only one report cites passages by name;
-      - flag known errors inline, never edit the text. Two are flagged now (the hotline "123456789" and the hall as a "temporary command center"). The others are in Ridita's [README](../Offline_RAG_KR2/README.md), section "Practice run 5", "Quality problems" (for example the wrong map reading repeated in three reports).
-   7. **About:** the limitations below, the future ideas, the team, and the credits (DisasterM3, xBD, Qwen2.5-VL, SAM 3, DisasTeller, ONNX Runtime Web), and that the workspace began as your prototype. Leave a place for the supervisor line: Abrar adds it. **The limitations and the future ideas exist** as sections of A ([AboutSections.tsx](../T3_Website/src/components/AboutSections.tsx)); move them onto the About page and add the team and credits.
-3. **The limitations the About page states** (already written in `AboutSections.tsx`; each number from `facts.json`, in plain words, as rule 6 of section 6 says):
+**What's left, in order.** Do them one at a time, push each, and tell Abrar what you changed.
+
+1. **Look at every page on your own screen and phone,** at 390 px and 1440 px, against section 6. Report anything that reads badly, overflows or is unclear to someone who isn't a remote-sensing person. This is the most useful first thing: a second pair of eyes on wording and layout.
+2. **Bring back, on real data, what section 3.2 lists** (ask Abrar which first): pan and zoom on the map, search and hide in the buildings list, collapsing the side panels, print for a report, and the hover tooltip beside the pointer.
+3. **The Reports page's error marks.** 12 phrases are marked now (`KNOWN_ERRORS` in [DisasTellerReportsModal.tsx](../T3_Website/src/components/DisasTellerReportsModal.tsx)). Read the six reports against Ridita's [README](../Offline_RAG_KR2/README.md), section "Practice run 5", "Quality problems", and add any error it lists that isn't marked yet. Mark only what her README or the run's files support; never edit the report text.
+4. **About:** a place for the supervisor line (Abrar gives the wording).
+5. **When Abrar's gallery export lands** in `public/data/`: run `npm run validate`, then check every page with the real pairs (the fixture banner disappears by itself), and the Turkey pair where the model fails is shown with its real accuracy.
+6. **On 18 Nov:** build once with `FACTS_DATE=2026-11-18` (`npm run build:fixtures` with that variable set) and check that the test-set rows, the counting-flaw sentence and the Turkey sentence appear and read well on Results and About. Their wording lives in `facts.json` (`note` fields), never in a page.
+7. **Try it on other devices:** the README's numbered steps for the booth laptop and a mid-range phone. The phone test waits for Abrar's first deploy.
+8. **Not yours to start:** the booth's local API (a later, separate brief), the deploy (Abrar's), and anything in `src/core/` for the model (ask first).
+
+**The limitations the About page states** (already written in `AboutSections.tsx`; each number from `facts.json`, in plain words, as rule 6 of section 6 says):
    - the parts don't run as one chain yet;
    - distances and areas are in pixels;
    - building counts are weak: about a third of the benchmark's counting questions answered right, like the base 7B;
@@ -229,7 +244,7 @@ Do them one at a time, push each, and tell Abrar what you changed.
    - from 18 Nov: on the test pairs, the before-and-after model largely misses the Turkey earthquake's destroyed buildings (destroyed IoU 0.0867, against 0.3233 for find-then-grade);
    - the reports' quality hasn't been judged, and they contain errors;
    - no language model has been measured on a laptop CPU or a phone yet.
-4. **Your bridge feeds this site.** When `format_disaster_facts` is fixed (review, section 7), the gallery export writes its text as `report_inputs.txt` per pair, and the inspector shows it word for word under "What the report writer is given for this pair". Until then it shows as missing.
+**Your bridge feeds this site.** When `format_disaster_facts` is fixed (review, section 7), the gallery export writes its text as `report_inputs.txt` per pair, and the inspector shows it word for word under "What the report writer is given for this pair". Until then it shows as missing.
 
 ## 9. When you're stuck
 

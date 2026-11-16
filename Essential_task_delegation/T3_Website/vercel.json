@@ -3,7 +3,7 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "git": { "deploymentEnabled": false },
-  "rewrites": [{ "source": "/((?!data/|assets/|reports/|model/).*)", "destination": "/index.html" }],
+  "rewrites": [{ "source": "/((?!data/|assets/|reports/|guidelines/|model/|ort/).*)", "destination": "/index.html" }],
   "headers": [
     {
       "source": "/(.*)",

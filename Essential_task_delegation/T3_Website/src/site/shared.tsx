@@ -1,10 +1,12 @@
-// Pieces the three direction pages share. The words are the same in each; only the look differs.
+// Words and pieces the pages share.
 import type { PaletteId } from '../core/palette.ts';
 import { METHOD_LABELS, prettyEvent, useGalleryIndex, useMethodData } from '../core/useGallery.ts';
 import { DEFAULT_LAYERS, OfflineCanvas } from '../components/OfflineCanvas.tsx';
 import { CLASS_IDS, CLASS_NAMES } from '../types/disaster.ts';
 
-export const SENTENCE = 'From one satellite photo taken before a disaster and one taken after, this system maps which buildings are intact, damaged or destroyed, counts them, and marks where to search first, with no internet.';
+/** A placeholder until the project's name is chosen: change it here only. */
+export const SITE_NAME = 'Aftermap';
+export const SENTENCE ='From one satellite photo taken before a disaster and one taken after, this system maps which buildings are intact, damaged or destroyed, counts them, and marks where to search first, with no internet.';
 export const DECISION_LINE = 'A model\'s estimate, to be checked by people on the ground.';
 export const TEAM = ['Abdullah Al Noman', 'Tamanna Akter Mou', 'Aryan Sami', 'Ridita Afrin Riya', 'Abrar Mohammed Tanzim Alam'];
 export const COURSE = 'North South University, CSE499B, Section 13, Group 5';
@@ -38,16 +40,5 @@ export function HeroPair({ palette, cover }: { palette: PaletteId; cover?: boole
         {state.status === 'missing' && ' Its building table is missing, so no building is drawn.'}
       </figcaption>
     </figure>
-  );
-}
-
-export function TeamFooter() {
-  return (
-    <footer className="team-footer">
-      <p className="decision">{DECISION_LINE}</p>
-      <p>{TEAM.join(', ')}</p>
-      <p>{COURSE}</p>
-      <p className="credits">Built on DisasterM3, xBD, Qwen2.5-VL, SAM 3, DisasTeller and ONNX Runtime Web. The building map's workspace began as Aryan Sami's prototype.</p>
-    </footer>
   );
 }

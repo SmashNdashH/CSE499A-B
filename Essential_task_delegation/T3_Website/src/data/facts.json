@@ -174,6 +174,18 @@
     "source": "Essential_task_delegation/Champion_Task/L1B-results/L1b/README.md", "find": ["Destroyed IoU drop 0.0003", "0.2918"], "public_from": "2026-11-11"
   },
   {
+    "id": "field_model_int8_destroyed_iou", "value": 0.2918, "display": "0.292",
+    "measures": "Overlap between predicted and true destroyed-building pixels (IoU, 0 to 1), for the exact file that runs in the browser, one prediction per image",
+    "image_set": "645 validation images, 40 of which share images with training", "model": "After-image-only U-Net, INT8 ONNX, four convolutions kept in full precision, no test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/L1B-results/L1b/README.md", "find": ["INT8 static, keep 1+3 FP32", "0.2918", "645 validation images (standard prediction, no TTA)"], "public_from": "2026-11-11"
+  },
+  {
+    "id": "field_model_int8_miou", "value": 0.5363, "display": "0.536",
+    "measures": "Mean overlap over background, intact, damaged and destroyed (mean IoU), for the exact file that runs in the browser, one prediction per image",
+    "image_set": "645 validation images, 40 of which share images with training", "model": "After-image-only U-Net, INT8 ONNX, four convolutions kept in full precision, no test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/L1B-results/L1b/README.md", "find": ["INT8 static, keep 1+3 FP32", "0.5363"], "public_from": "2026-11-11"
+  },
+  {
     "id": "browser_time", "value": "2.1-5.5", "display": "2.1 to 5.5 s",
     "measures": "Time per 1024 x 1024 image in Chrome and Edge after the first run, on a 20-thread PC",
     "image_set": "1 xBD after-image (hurricane-harvey_00000099)", "model": "The 8-bit field model in ONNX Runtime Web 1.20.1 (WebAssembly, several threads)",

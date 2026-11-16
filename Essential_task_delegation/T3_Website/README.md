@@ -2,8 +2,8 @@
 
 The showcase website of Group 5 (NSU, CSE499B, Section 13): an offline system that maps disaster damage from before-and-after satellite images. It is a static site: Vite, React 19, TypeScript and Tailwind 4. The same build is served by Vercel for the public and, later, by a local API at the booth.
 
-- **Status (16 Nov 2026):** phase 1 done. Direction A (`/a`) is the chosen look; B and C are removed at the start of phase 2. The seven pages come in phase 2, the model in the browser in phase 3.
-- **Who builds it now:** Aryan Sami, from 16 Nov. His handover, with the rules, file paths and order of work: [../Aryan_Task/T3_Website_Handover.md](../Aryan_Task/T3_Website_Handover.md).
+- **Status (16 Nov 2026):** all three phases are built. The site has seven pages in the chosen look (direction A): Home `/`, How it works `/how`, Explore `/explore` (the building map and the 3D damage city), Try it `/try` (the field model in the visitor's browser), Results `/results` (charts), Reports `/reports` and About `/about`. Still open: the real gallery export (the site runs on development fixtures until then), the tests on the booth laptop and a phone (steps below), and the first deploy.
+- **Who builds it now:** Abrar until 17 Nov; Aryan Sami takes over what's left from 18 Nov. His handover, with the rules, file paths and order of work: [../Aryan_Task/T3_Website_Handover.md](../Aryan_Task/T3_Website_Handover.md).
 - **Where it began:** the map workspace started as Aryan Sami's prototype (`../Aryan_Task/Website/`), reworked to our data. His folder is unchanged. What changed from it and why, file by file: [the handover, section 3](../Aryan_Task/T3_Website_Handover.md#3-what-changed-from-your-prototype-and-why).
 - **Related files:** [NOTES.md](NOTES.md) (what was understood, contradictions found, open questions) and [DATA_CONTRACT.md](DATA_CONTRACT.md) (the files the gallery export must write).
 
@@ -28,8 +28,11 @@ npm run dev           # http://127.0.0.1:3000, serving the fixtures while public
 | `npm run selfcheck` | Self-checks of the building table, the outlines and the fixed queries. |
 | `npm run typecheck`, `npm run lint` | TypeScript and ESLint. |
 | `npm run build:fixtures`, `npm run preview:fixtures` | A build with the fixtures, into `dist-fixtures/`, and a local server for it on port 4173. For review only. |
-| `npm run browser-check` | With `preview:fixtures` running: screenshots at 390 px and 1440 px, a network log, and a click-through of the map, into `checks/`. |
-| `npm run deploy:check` | Everything a deploy needs to pass, with unpushed sources as an error. |
+| `npm run browser-check` | With `preview:fixtures` running: screenshots of all seven pages at 390 px and 1440 px, a network log, and a click-through of the map and the 3D view, into `checks/`. |
+| `npm run check:model` | With `npm run preview` running (the normal build, port 4173): runs the field model through the Try it page's file input and compares its mask with a native run, pixel by pixel. See "The model in the browser". |
+| `npm run check:heatmap` | Compares the browser's heatmap code with the heatmap notebook's saved outputs. Takes about a minute; `-- --all` runs all 645 images. |
+| `npm run check:model-file` | Fails if the field model isn't at `public/model/` with the right size. |
+| `npm run deploy:check` | Everything a deploy needs to pass, with unpushed sources or a missing model file as an error. |
 
 ## Where every number comes from
 
@@ -43,7 +46,49 @@ npm run dev           # http://127.0.0.1:3000, serving the fixtures while public
 
 - The gallery is read from `public/data/`, in the shape of [DATA_CONTRACT.md](DATA_CONTRACT.md). Until the export lands the folder is empty, and the site says it has no pairs.
 - **Fixtures** stand in during development: four real validation pairs with the after-image-only U-Net's output. They are marked, kept outside `public/`, and refused by the release build (contract, section 5).
-- **What is an illustration:** nothing. The site has no invented places, buildings, numbers or reports. The 3D view planned for phase 2 will be labelled "a 3D view of our 2D results, not a reconstruction".
+- **What is an illustration:** only the heights in the 3D damage city (`src/components/DamageCity.tsx`). The model measures no heights, so a block's height only repeats its class, and the view says so on screen: "A 3D view of our 2D results, not a reconstruction." Nothing else is: the site has no invented places, buildings, numbers or reports.
+
+## The model in the browser (Try it)
+
+The Try it page runs the field model on the visitor's own image, on their device. Nothing is uploaded.
+
+- **What runs:** the 8-bit after-image-only U-Net (`r9_int8_static_keep1_3.onnx`, 33.1 MB) in ONNX Runtime Web 1.20.1 on WebAssembly, pinned to that exact version in `package.json`. The model and the runtime's two files are served from this site (`/model/`, `/ort/`), never from a CDN. The model is downloaded only when the visitor presses Run, with its size and progress shown.
+- **One config:** [src/core/modelConfig.ts](src/core/modelConfig.ts) holds the file, its size, the input size, the normalisation and which photos the model reads. A before-and-after export needs `images: ['before', 'after']` and the new file there; the page then asks for two photos.
+- **Where the work happens:** [src/core/segment.worker.ts](src/core/segment.worker.ts) (a worker, so the page stays usable): model, then the mask, then the building table with the same code as the gallery ([buildings.ts](src/core/buildings.ts)), then the heatmap ([heatmap.ts](src/core/heatmap.ts)). The page ([src/components/TryItRunner.tsx](src/components/TryItRunner.tsx)) shows the result in the same building map as Explore.
+- **A picture that isn't 1024 x 1024:** the middle square is cut out and resized to 1024 x 1024, and the page says exactly that, with the sizes.
+- **The moving background is hidden while the model runs.** With it drawing, a run took 6.1 to 6.6 s in our test instead of 4.1 to 5.2 s.
+
+**Measured on this PC (16 Nov, 20 threads, headless Chrome), with `npm run check:model`:**
+
+| Check | Pass rule | Result |
+|---|---|---|
+| Same class as the native run (ONNX Runtime Node 1.20.1) on the October test image, `hurricane-harvey_00000099_post_disaster.png`, fed through the page's file input | at least 99.9% of pixels | 100% (0 of 1,048,576 pixels differ); the native run's class counts equal October's |
+| Time for the model per image after the first run | reported | 4.1 to 5.2 s over two runs of the check (first run 5.4 s, plus the download). Timings vary between runs on the same PC, as in October (2.1 to 5.5 s) |
+| Requests leaving 127.0.0.1 during a run | none | none |
+| Heatmap code against the notebook's version 3 outputs, from the same masks (`npm run check:heatmap`) | every map pixel within 1 grey level of 255; every hot spot and safe area identical | 23 images, 4,521,984 pixels: 5 differ, each by 1 level; 51 hot spots and 63 safe areas identical |
+
+Also run once by hand on 16 Nov: the same check against the dev server (`npm run dev`: 100% of pixels); a 1,600 x 1,200 JPEG (the page says the middle 1,200 x 1,200 square was cut out and shrunk, and a result appears); and a gallery photo through the "or use a gallery photo" buttons (the result is labelled as a gallery photo, never as the visitor's own image).
+
+The full result of the last run is in `checks/browser-model.json` (git-ignored).
+
+**To repeat the test on the booth laptop:**
+
+1. Install Node 22.18 or later and Chrome. Copy the repository (or `git pull`).
+2. Copy `Essential_task_delegation/Champion_Task/L1B-results/L1b/r9_int8_static_keep1_3.onnx` into `T3_Website/public/model/`.
+3. Copy one 1024 x 1024 xBD after-image to the laptop (the October test used `hurricane-harvey_00000099_post_disaster.png` from xBD's `train/images`).
+4. In `T3_Website/`: `npm ci`, then `npm run build`, then `npm run preview` (leave it running).
+5. In a second terminal, in PowerShell: `$env:IMAGE = "C:\path\to\hurricane-harvey_00000099_post_disaster.png"; npm run check:model`
+6. Send back the printed block (or `checks/browser-model.json`). It must end with "browser and native runs agree on ...% of pixels". Note the laptop's processor and whether it was on battery.
+7. By hand as well: open http://127.0.0.1:4173/try in Chrome and in Edge, choose the image, press Run, and note the seconds the page prints.
+
+**To test on a mid-range phone:** a phone needs HTTPS for several threads, so it is tested on the deployed site.
+
+1. Deploy (section "Deploying to Vercel").
+2. On the phone, open the site's `/try` page in Chrome (Android) or Safari (iPhone), on Wi-Fi.
+3. Choose a satellite photo (send the test image to the phone first), press Run, and wait for "Done".
+4. Write down what the page prints: the seconds for the model, the number of threads, and the seconds for the buildings and the heatmap. One thread means the two isolation headers didn't arrive.
+5. Run it twice more and note the later times. If the tab reloads or the page says the model could not run, the phone ran out of memory: note the phone's model and RAM.
+6. Check the result: the building counts under the map, a tap on a building, and "Download the raw mask".
 
 ## The six reports
 
@@ -57,7 +102,7 @@ npm run dev           # http://127.0.0.1:3000, serving the fixtures while public
 |---|---|---|
 | `Crosshair` | On the building map, for a mouse | The pointer's position in image pixels, and brackets around the building under it. Changed here to report image pixels instead of screen pixels (noted at the top of the file). |
 | `Counter` | The counts under the map | The digits roll to the new value when the pair changes: each image has its own counts. Unchanged. |
-| `Topography` | Behind the opening section, on screens 760 px and wider | Slow contour lines of a landscape, the language of maps. It is atmosphere only, so it is set quiet: thin blue-grey lines, no reaction to the pointer. Unchanged. |
+| `Topography` | Behind the top of every page, on screens 760 px and wider | Slow contour lines of a landscape, the language of maps. It is atmosphere only, so it is set quiet: thin blue-grey lines, dimmer on pages other than Home. It answers the pointer gently (the ground swells a little under it, the view leans a few degrees); clicks do nothing. Hidden while the in-browser model runs. Unchanged source. |
 
 - Both respect the reduced-motion setting.
 - To add another: download `https://reactbits.dev/r/<Component>-TS-CSS.json`, read the source, and copy it into this folder with a note of any change. Take a component only if its motion shows something; the site's rule is that motion must explain, or it goes.
@@ -89,7 +134,7 @@ Nothing goes public from a push to GitHub. The project is not connected to the r
    - Create a new project when asked. Don't connect a Git repository.
    - It writes `.vercel/`, which is git-ignored.
 3. **Put the gallery in place.** Copy the export into `public/data/` (see the data contract).
-4. **Put the field model in place** (from phase 3). Copy `../Champion_Task/L1B-results/L1b/r9_int8_static_keep1_3.onnx` to `public/model/`. It is never in git: `*.onnx` is ignored for the whole repository.
+4. **Put the field model in place.** Copy `../Champion_Task/L1B-results/L1b/r9_int8_static_keep1_3.onnx` to `public/model/`. It is never in git: `*.onnx` is ignored for the whole repository. `deploy:check` fails without it; a site deployed without it still works, and its Try it page says the model isn't part of that copy.
 5. **Run the checks.**
    ```text
    npm run deploy:check
@@ -100,7 +145,7 @@ Nothing goes public from a push to GitHub. The project is not connected to the r
    vercel build --prod
    vercel deploy --prebuilt --prod
    ```
-   - `vercel build` runs `npm run build` on this PC and packs `dist/`, with the model file. `--prebuilt` uploads that result, so nothing is built from the repository.
+   - `vercel build` runs `npm run build` on this PC and packs `dist/`, with the model file (`dist/model/`) and the runtime's two files (`dist/ort/`, copied from the installed package by the build). `--prebuilt` uploads that result, so nothing is built from the repository.
 7. **Check the live site.** Open the address Vercel prints, then in the browser's developer tools:
    - Network: every request goes to the site's own address;
    - Console: `crossOriginIsolated` prints `true`.
@@ -109,12 +154,15 @@ Nothing goes public from a push to GitHub. The project is not connected to the r
 
 | Path | What it holds |
 |---|---|
-| `src/core/` | The building table from a mask (`buildings.ts`), the fixed queries, the facts and gallery loaders, the palette |
-| `src/components/` | The map view (`OfflineCanvas.tsx`), the workspace and its panels, the reports and benchmark panels |
-| `src/directions/` | The three directions of phase 1 |
-| `src/vendor/react-bits/` | Two third-party components, copied as source with their licence |
+| `src/site/` | What every page shares: the header, footer and background (`Layout.tsx`), the look (`site.css`) |
+| `src/pages/` | The seven pages, one file each |
+| `src/core/` | The building table from a mask (`buildings.ts`), the fixed queries, the facts and gallery loaders, the palette, the heatmap (`heatmap.ts`), the in-browser model's config and worker |
+| `src/components/` | The map view (`OfflineCanvas.tsx`), the 3D view (`DamageCity.tsx`), the workspace and its panels, the Try it runner, the charts and tables, the reports |
+| `src/vendor/react-bits/` | Three third-party components, copied as source with their licence |
 | `src/data/facts.json` | Every number on the site |
 | `scripts/` | The validator, the fixture maker and the checks |
 | `public/data/` | The gallery (empty until the export) |
 | `public/reports/offline/` | The six proof-run reports |
+| `public/guidelines/searches.json` | The proof run's guideline searches, citations and offline evidence, built by `scripts/make-guidelines.ts` |
+| `public/model/` | The field model (git-ignored; copied in before a deploy) |
 | `fixtures/`, `dist/`, `dist-fixtures/`, `checks/` | Generated; git-ignored |

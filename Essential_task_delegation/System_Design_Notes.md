@@ -9,7 +9,7 @@ Related: [Next_Steps_Roadmap.md](Next_Steps_Roadmap.md) (T2 and H2b), [Task_Ledg
 | 1 | Agent frameworks: LangChain, LangGraph, LangSmith | Assessment, 24 Oct |
 | 2 | DisasTeller's offline and online modes (T2) | Recommended 24 Oct; to be confirmed before T2 is built |
 | 3 | Free-form questions and the SQL agent | Decided by H2b's rule (fixed 22 Oct, run 23 Oct) |
-| 4 | The showcase: what the public sees (T3) | Agreed 24 Oct; phase 1 built 15–16 Nov (§4.6) |
+| 4 | The showcase: what the public sees (T3) | Agreed 24 Oct; all seven pages built 15–16 Nov, not deployed (§4.6) |
 | 5 | Beyond Layer 1: the day-1 Layers 2–5 | Order and the 3D damage city agreed 24 Oct; the rest open |
 | 6 | The one chain, and who writes the report | Agreed 4 Nov; the writer is tested by T2b |
 
@@ -204,7 +204,7 @@ These projects do take free-form or conversational questions, but none tests tho
 
 ## 4. The showcase: what the public sees (T3)
 
-**Status:** agreed 24 Oct. There are two pieces, and the demo (piece 2) is an interactive, animated website deployed on Vercel. The build steps are in the roadmap's T3 section. **16 Nov:** phase 1 is built in [T3_Website/](T3_Website/README.md), as one site holding both pieces; Abrar chose the look (direction A, name not chosen yet); Aryan builds the remaining pages from 16 Nov, by [his handover](Aryan_Task/T3_Website_Handover.md). What is built and what changed from this plan is in §4.6.
+**Status:** agreed 24 Oct. There are two pieces, and the demo (piece 2) is an interactive, animated website deployed on Vercel. The build steps are in the roadmap's T3 section. **16 Nov:** phase 1 is built in [T3_Website/](T3_Website/README.md), as one site holding both pieces; Abrar chose the look (direction A, name not chosen yet); Abrar builds the remaining pages until 17 Nov, and Aryan takes over what's left from 18 Nov, by [his handover](Aryan_Task/T3_Website_Handover.md). What is built and what changed from this plan is in §4.6.
 
 ### 4.1 What last season's winner showed (observed 24 Oct)
 
@@ -290,7 +290,7 @@ Both can live in one Next.js project, with a story page and a demo page: one des
 ### 4.6 What is built (16 Nov)
 
 - **Where:** [T3_Website/](T3_Website/README.md): Vite, React 19, TypeScript and Tailwind 4, a static build, started from a copy of Aryan's prototype. Every change from the prototype, and why, is in [Aryan's handover](Aryan_Task/T3_Website_Handover.md), section 3.
-- **The look (Abrar, 16 Nov):** direction A, "Aftermap" (a placeholder name): Aryan's dark workspace made sober, with B's faint gridlines, a small before/after pair beside the headline, a slow contour-line background behind the opening section, and on/off switches for the damage map and the heatmap.
+- **The look (Abrar, 16 Nov):** direction A, "Aftermap" (a placeholder name): Aryan's dark workspace made sober, with B's faint gridlines, a small before/after pair beside the headline, a slow contour-line background behind the top of every page, and on/off switches for the damage map and the heatmap.
 - **Built:** the opening section; "How it works" told by scrolling, one real pair pinned and changing at each of 7 steps; the building map (layers, building inspector, counts that highlight their buildings, five fixed questions, a saved PNG of the map); the results tables; the six real reports word for word with known errors marked; "What it can't do yet"; and "Future ideas, not built".
 - **Rules the code enforces at every build:**
   - every number comes from one facts file, checked against its source file and the anchors;
@@ -298,7 +298,18 @@ Both can live in one Next.js project, with a story page and a demo page: one des
   - the gallery export must match [DATA_CONTRACT.md](T3_Website/DATA_CONTRACT.md);
   - the damage colours stay distinguishable under simulated colour-vision deficiencies. The wireframes' colours failed this (damaged and destroyed 5 apart under deuteranopia), so the site uses adjusted ones;
   - no request leaves the site's own origin.
-- **Not built:** the separate seven pages, the 3D damage city, Try it (the field model in the browser), the gallery export (four validation pairs with R9's masks stand in, marked), the booth API, and the deployment. Lighthouse was 93–96 for performance and 100 for accessibility on phone settings before the scroll story and the background went in; not measured since.
+- **Built on 16 Nov (evening):**
+  - **seven pages** in direction A: Home, How it works, Explore, Try it, Results, Reports, About, with the contour background behind the top of each (it reacts gently to the pointer and is hidden while the in-browser model runs);
+  - **the 3D damage city** on Explore: each building's outline raised into a block, drawn as plain SVG with no 3D library. The model measures no heights, so a block's height only repeats its class (intact tallest, destroyed almost flat), and the view says "A 3D view of our 2D results, not a reconstruction";
+  - **Try it:** the 8-bit after-image-only U-Net (33 MB) runs in the visitor's browser (ONNX Runtime Web 1.20.1, WebAssembly, in a worker) on their own image; the building table and the heatmap are then computed from its mask by the same code as the gallery, and shown in the same building map. Nothing is uploaded. A picture that isn't 1024 × 1024 has its middle square cut out and resized, and the page says so. The input spec is one config file, so a before-and-after export needs a config change and a second photo;
+  - **Results as bar charts**, each bar ending in its linked number, with the table under each chart; and **the Reports page** with the passages each report was given, the Expert report's 11 citations beside their passages, and the offline evidence.
+- **Measured on 16 Nov** (Abrar's PC, 20 threads, headless Chrome):
+  - the in-browser model gives the same class as the native run (ONNX Runtime Node 1.20.1) on **100% of pixels** of October's test image, fed through the page's real file input (the brief's rule: at least 99.9%), and the native run's class counts equal October's;
+  - **4.1–5.2 s per image** after the first run (October: 2.1–5.5 s). Drawing the moving background during a run cost about 2 s more, which is why it is hidden then;
+  - the preprocessing must round to 32-bit floats at each step as the October kit's numpy code does: with 64-bit arithmetic the 8-bit model's class counts on the test image moved by 25 pixels (so at least 25 pixels changed class);
+  - the heatmap code matches the heatmap notebook's version 3 on 23 images: 5 of 4,521,984 map pixels differ, each by 1 grey level of 255; all 51 hot spots and 63 safe areas identical;
+  - Lighthouse with phone settings: performance 95–99, accessibility 99–100 on Home, Explore, Results and Try it; no request leaves 127.0.0.1 on any page or during a model run.
+- **Not built or not done:** the gallery export (four validation pairs with R9's masks stand in, marked), the booth API (a small local FastAPI app on 127.0.0.1 serving this same build and running the language model and the guideline search; a later brief), the deployment, and the Try it test on the booth laptop and a mid-range phone (numbered steps in the site's README).
 - **Brought back from the prototype on 16 Nov, on real data:** the Sphere and INSARAG questions as the 18 guideline searches of the proof run with their passages word for word; saving a map picture and the reports; the caveats as the limitations section; thermal, sensor and route ideas as text under "Future ideas, not built". Online map tiles stay out: the booth runs offline.
 - **Found while building:**
   - The bridge `disasteller_inputs.py` reads safe areas with keys T1 v3's file doesn't have (`point_xy`, `dist_to_damage_px` instead of `xy`, `distance_px`), so every safe area would print at (0, 0), 0 px away; it also titles model estimates "GROUND TRUTH" and hard-codes R11 and T1 v3 as the sources. In Aryan's review, §7.2–7.5.

@@ -35,8 +35,10 @@ export async function exportMapPng(opts: {
   classes: Record<ClassId, boolean>;
   methodLabel: string;
   fixture: boolean;
+  /** Set for a picture that isn't in the gallery (the visitor's own): where its photo is. */
+  ownPhotoUrl?: string;
 }): Promise<void> {
-  const { pair, buildings, classes, methodLabel, fixture } = opts;
+  const { pair, buildings, classes, methodLabel, fixture, ownPhotoUrl } = opts;
   const { width: w, height: h } = pair.info;
   const canvas = document.createElement('canvas');
   canvas.width = w;
@@ -45,7 +47,7 @@ export async function exportMapPng(opts: {
 
   ctx.fillStyle = '#1a1e27';
   ctx.fillRect(0, 0, w, h);
-  const photo = pair.has_after ? await loadImage(pairUrl(pair.id, 'after.webp')) : null;
+  const photo = pair.has_after ? await loadImage(ownPhotoUrl ?? pairUrl(pair.id, 'after.webp')) : null;
   if (photo) ctx.drawImage(photo, 0, 0, w, h);
 
   const colours = DAMAGE_COLOURS.dark;
@@ -84,7 +86,9 @@ export async function exportMapPng(opts: {
   ctx.fillStyle = '#a7b0be';
   const shown = ([1, 2, 3] as ClassId[]).filter((c) => classes[c]).map((c) => `${CLASS_NAMES[c]} ${buildings.filter((b) => b.class_id === c).length}`).join(', ');
   ctx.fillText(`Damage map: output of the ${methodLabel.toLowerCase()}. Buildings found: ${shown || 'none shown'}.`, 18, h + 64);
-  ctx.fillText(`${pair.info.image} (DisasterM3, ${pair.info.source}, ${pair.info.split})${photo ? '' : '. No photo was available on this device'}.`, 18, h + 90);
+  ctx.fillText(ownPhotoUrl
+    ? `${pair.info.image}: ${pair.info.split}.`
+    : `${pair.info.image} (DisasterM3, ${pair.info.source}, ${pair.info.split})${photo ? '' : '. No photo was available on this device'}.`, 18, h + 90);
   if (fixture) {
     ctx.fillStyle = '#ffc233';
     ctx.font = '600 17px system-ui, sans-serif';

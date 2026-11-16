@@ -19,6 +19,8 @@ interface SplineInspectorPanelProps {
   onHighlight: (ids: number[] | null) => void;
   onSelect: (id: number | null) => void;
   onShowSpots: () => void;
+  /** A result made in the browser (Try it): it isn't scored here, and it has no report facts. */
+  own?: boolean;
 }
 
 const IOU_ROWS = [['destroyed', 'Destroyed'], ['damaged', 'Damaged'], ['intact', 'Intact'], ['background', 'Background']] as const;
@@ -36,7 +38,7 @@ function ReportInputs({ pair, method }: { pair: PairEntry; method: MethodEntry }
   return text === null ? <p className="ws-note">Loading.</p> : <pre className="fq-sql">{text}</pre>;
 }
 
-export function SplineInspectorPanel({ pair, method, buildings, hotspots, accuracy, selected, tab, onTab, onHighlight, onSelect, onShowSpots }: SplineInspectorPanelProps) {
+export function SplineInspectorPanel({ pair, method, buildings, hotspots, accuracy, selected, tab, onTab, onHighlight, onSelect, onShowSpots, own }: SplineInspectorPanelProps) {
   const src = method.source;
   return (
     <aside className="ws-panel ws-right" aria-label="Building inspector">
@@ -66,7 +68,8 @@ export function SplineInspectorPanel({ pair, method, buildings, hotspots, accura
           )}
 
           <h3>This image against the ground truth</h3>
-          {!accuracy && <p className="ws-missing">No accuracy file for this pair.</p>}
+          {own && <p className="ws-note">A map made on this device just now isn't scored: a picture you bring has no ground truth, and a gallery photo's stored map is scored on the Explore page. How well this model does on labelled images is stated above the map.</p>}
+          {!own && !accuracy && <p className="ws-missing">No accuracy file for this pair.</p>}
           {accuracy && (
             <>
               <table className="ws-table">
@@ -88,11 +91,11 @@ export function SplineInspectorPanel({ pair, method, buildings, hotspots, accura
             <dt>Checkpoint</dt><dd className="num">{src.checkpoint ?? 'not recorded'}</dd>
             <dt>Notebook</dt><dd><a href={sourceUrl(src.notebook)}>{src.notebook.split('/').pop()}</a></dd>
             <dt>Run on</dt><dd className="num">{src.date}</dd>
-            <dt>Image</dt><dd className="num">{pair.info.image} ({pair.info.source}, {pair.info.split})</dd>
+            <dt>Image</dt><dd className="num">{pair.info.image} ({own ? pair.info.split : `${pair.info.source}, ${pair.info.split}`})</dd>
           </dl>
 
-          <h3>What the report writer is given for this pair</h3>
-          <ReportInputs pair={pair} method={method} />
+          {!own && <h3>What the report writer is given for this pair</h3>}
+          {!own && <ReportInputs pair={pair} method={method} />}
         </>
       )}
     </aside>

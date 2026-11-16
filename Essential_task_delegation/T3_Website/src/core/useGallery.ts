@@ -33,6 +33,7 @@ export const METHOD_LABELS: Record<string, string> = {
   'before-after-unet': 'Before-and-after model',
   'find-then-grade': 'Find-then-grade',
   'after-only-unet': 'After-image-only model',
+  'field-model': 'Field model',
 };
 
 export const prettyEvent = (event: string) => {

@@ -70,6 +70,23 @@ body { margin: 0; }
 .oc-switches input:checked { background: var(--accent); border-color: var(--accent); }
 .oc-switches input:checked::after { transform: translateX(16px); background: var(--on-accent); }
 .oc-ticked .oc-switches { grid-column: 2; }
+/* The 3D damage city: blocks raised from the same outlines. Tops carry the class colour, the two
+   wall shades are the same colour darkened, so the palette still lives in one place. */
+.city .oc-stage { background: var(--map-ground); }
+.city-photo { opacity: 0.75; }
+.city-b { cursor: pointer; }
+.city-b path { stroke: var(--bld-casing); stroke-width: 0.6; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.city-top { fill: var(--c); }
+.city-b path.city-wall-left { fill: color-mix(in srgb, var(--c) 62%, #000); stroke: color-mix(in srgb, var(--c) 62%, #000); }
+.city-b path.city-wall-right { fill: color-mix(in srgb, var(--c) 40%, #000); stroke: color-mix(in srgb, var(--c) 40%, #000); }
+.city-b path.city-hatch { stroke: none; pointer-events: none; opacity: 0.5; filter: brightness(0.35); }
+.city-b:hover .city-top { fill: color-mix(in srgb, var(--c) 78%, #fff); }
+.city-b.is-dim { opacity: 0.16; }
+.city-b.is-sel .city-top { stroke: var(--select); stroke-width: 3; }
+.city-note { margin: 0; max-width: 70ch; font-size: 0.875rem; color: var(--muted); }
+.city-note b { color: var(--ink); }
+.ws-view { display: flex; gap: 6px; }
+
 .oc-readout { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; min-height: 3em; margin: 0; font-size: 0.875rem; color: var(--muted); }
 .oc-readout b { color: var(--ink); }
 .oc-readout .swatch { margin-right: -8px; }
@@ -216,6 +233,32 @@ dialog::backdrop { overflow: hidden; overscroll-behavior: contain; }
 .res-table td small { font-family: var(--font-body); white-space: normal; }
 .res-table .res-sub th { padding-top: 16px; font-size: 0.8125rem; font-weight: 500; color: var(--muted); }
 .res-figure figcaption { margin-top: 10px; max-width: 76ch; font-size: 0.875rem; color: var(--muted); }
+/* Charts on the Results page. Bars are thin, rounded at the data end and square at the baseline;
+   the three series colours passed the colour-blind separation check on this surface. */
+.res-title { margin: 0 0 14px; font-family: var(--font-display); font-size: 1.0625rem; font-weight: 650; }
+.bar-panels, .bar-tasks { display: grid; gap: 22px 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
+.bar-panel h3 { margin: 0 0 8px; font-size: 0.9375rem; font-weight: 650; }
+.bar-panel h3 small, .bar-label small { display: block; font-size: 0.8125rem; font-weight: 400; color: var(--muted); }
+.bar-row { display: grid; gap: 4px; padding: 8px 0; border-top: 1px solid var(--line); }
+.bar-row-tight { grid-template-columns: 9.5em minmax(0, 1fr); align-items: center; gap: 10px; padding: 3px 0; border-top: none; }
+.bar-label { font-weight: 600; }
+.bar-row-tight .bar-label { font-size: 0.875rem; font-weight: 400; color: var(--muted); }
+.bar-track { display: flex; align-items: center; gap: 8px; min-width: 0; padding-right: 4.6em; border-left: 1px solid var(--line-strong); }
+.bar { flex: none; block-size: 14px; min-inline-size: 2px; border-radius: 0 4px 4px 0; }
+.bar-value { flex: none; margin-right: -4.6em; font-size: 0.875rem; }
+.bar-s1 { background: #3987e5; }
+.bar-s2 { background: #d95926; }
+.bar-s3 { background: #199e70; }
+.bar-axis { display: flex; justify-content: space-between; margin-top: 4px; padding-right: 4.6em; font-size: 0.75rem; color: var(--muted); }
+.bar-legend { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 0 0 14px; padding: 0; list-style: none; font-size: 0.875rem; }
+.bar-legend li { display: flex; align-items: center; gap: 6px; }
+.bar-key { inline-size: 12px; block-size: 12px; border-radius: 3px; }
+.bar-aside, .bar-sub { margin: 12px 0 0; font-size: 0.875rem; color: var(--muted); }
+.bar-sub { margin: 22px 0 10px; font-weight: 600; color: var(--ink); }
+.res-details { margin-top: 12px; }
+.res-details summary { width: fit-content; cursor: pointer; font-size: 0.875rem; color: var(--link, inherit); }
+.res-details .res-figure { margin: 10px 0 0; }
+@media (forced-colors: active) { .bar { background: CanvasText; forced-color-adjust: none; } }
 .fact { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 .res-parts { display: grid; gap: 18px 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
 /* Room is held while the gallery loads, so nothing below jumps when it arrives. */

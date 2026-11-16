@@ -20,16 +20,16 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "browser-check": "node scripts/browser-check.ts",
-    "deploy:check": "node scripts/check-facts.ts --strict && npm run typecheck && npm run lint && npm run build"
+    "check:heatmap": "node scripts/check-heatmap.ts",
+    "check:model": "node scripts/check-browser-model.ts",
+    "check:model-file": "node --input-type=module -e \"import fs from 'node:fs'; import { FIELD_MODEL as m } from './src/core/modelConfig.ts'; if (!fs.existsSync('public' + m.file) || fs.statSync('public' + m.file).size !== m.bytes) { console.error('The field model is not at public' + m.file + ' (or has the wrong size). Copy it there before a deploy: see README.md.'); process.exit(1); }\"",
+    "deploy:check": "node scripts/check-facts.ts --strict && npm run check:model-file && npm run typecheck && npm run lint && npm run build"
   },
   "dependencies": {
-    "@fontsource-variable/archivo": "^5.0.0",
-    "@fontsource-variable/dm-sans": "^5.0.0",
     "@fontsource-variable/jetbrains-mono": "^5.0.0",
     "@fontsource-variable/plus-jakarta-sans": "^5.0.0",
-    "@fontsource-variable/source-serif-4": "^5.0.0",
-    "@fontsource/ibm-plex-mono": "^5.0.0",
     "lucide-react": "^0.546.0",
+    "onnxruntime-web": "1.20.1",
     "react": "^19.0.1",
     "react-dom": "^19.0.1",
     "react-router-dom": "^7.18.5"
@@ -44,6 +44,7 @@
     "eslint": "^10.14.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.13.0",
+    "onnxruntime-node": "1.20.1",
     "puppeteer-core": "^25.17.0",
     "sharp": "^0.34.0",
     "tailwindcss": "^4.3.3",

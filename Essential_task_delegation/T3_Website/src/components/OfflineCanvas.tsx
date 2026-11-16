@@ -40,6 +40,11 @@ interface OfflineCanvasProps {
   cover?: boolean;
   /** Pixel coordinates along the frame: distances on this site are in pixels. */
   ticks?: boolean;
+  /**
+   * For a picture that isn't in the gallery (the visitor's own): where to read the after photo and
+   * the heatmap (one channel, value x 255) instead of the gallery's files.
+   */
+  urls?: { after: string; heat: string };
   label: string;
 }
 
@@ -76,7 +81,7 @@ const BuildingLayer = memo(function BuildingLayer({ buildings, layers, selectedI
   );
 });
 
-export function OfflineCanvas({ pair, methodId, buildings, hotspots, palette, layers: wanted, selectedId = null, highlight = null, onSelect, sweep, position, switches, cover, ticks, label }: OfflineCanvasProps) {
+export function OfflineCanvas({ pair, methodId, buildings, hotspots, palette, layers: wanted, selectedId = null, highlight = null, onSelect, sweep, position, switches, cover, ticks, urls, label }: OfflineCanvasProps) {
   // The visitor's own switches. They only ever hide a layer the page asked for; they never add one.
   const [mapOff, setMapOff] = useState(false);
   const [heatOff, setHeatOff] = useState(false);
@@ -126,10 +131,10 @@ export function OfflineCanvas({ pair, methodId, buildings, hotspots, palette, la
     let current = true;
     const [r, g, b] = hexToRgb(HEAT_COLOUR[palette]);
     // The heatmap files hold value x 255; the heatmap's own pictures saturate at 0.5.
-    paintPng(methodUrl(pair.id, methodId, 'heat_priority.png'), (v) => [r, g, b, Math.round(Math.min(1, v / 127.5) * 200)])
+    paintPng(urls?.heat ?? methodUrl(pair.id, methodId, 'heat_priority.png'), (v) => [r, g, b, Math.round(Math.min(1, v / 127.5) * 200)])
       .then((u) => { if (current) setHeatUrl(u); }).catch(() => { if (current) setHeatUrl(null); });
     return () => { current = false; };
-  }, [layers.heat, pair.id, methodId, palette]);
+  }, [layers.heat, pair.id, methodId, palette, urls?.heat]);
 
   // A controlled position glides there, so the visitor sees which photo is being uncovered.
   const posNow = useRef(pos);
@@ -173,7 +178,7 @@ export function OfflineCanvas({ pair, methodId, buildings, hotspots, palette, la
           <rect className="oc-ground" width={w} height={h} />
           <g className="oc-photos">
             {pair.has_before && <image href={pairUrl(pair.id, 'before.webp')} width={w} height={h} preserveAspectRatio="none" />}
-            {pair.has_after && <image href={pairUrl(pair.id, 'after.webp')} width={w} height={h} preserveAspectRatio="none" clipPath={hasPair ? `url(#${uid}-after)` : undefined} />}
+            {pair.has_after && <image href={urls?.after ?? pairUrl(pair.id, 'after.webp')} width={w} height={h} preserveAspectRatio="none" clipPath={hasPair ? `url(#${uid}-after)` : undefined} />}
           </g>
           {layers.truth && truthUrl && <image href={truthUrl} width={w} height={h} preserveAspectRatio="none" className="oc-truth" />}
           {layers.heat && heatUrl && <image href={heatUrl} width={w} height={h} preserveAspectRatio="none" className="oc-heat" />}

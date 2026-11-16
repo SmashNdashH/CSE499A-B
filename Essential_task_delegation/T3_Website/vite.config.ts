@@ -56,8 +56,36 @@ function fixtures(mode: string): Plugin {
   };
 }
 
+/**
+ * The in-browser model's runtime (ONNX Runtime Web) fetches its own WebAssembly files when a run
+ * starts. They are served from this site at /ort/, straight from the installed package, so the
+ * version is the one pinned in package.json and nothing comes from a CDN.
+ */
+function modelRuntime(): Plugin {
+  const dir = path.resolve(import.meta.dirname, 'node_modules/onnxruntime-web/dist');
+  const files = ['ort-wasm-simd-threaded.wasm', 'ort-wasm-simd-threaded.mjs'];
+  let outDir = '';
+  return {
+    name: 'model-runtime',
+    configResolved(c) { outDir = path.resolve(c.root, c.build.outDir); },
+    configureServer(server) {
+      server.middlewares.use('/ort', (req, res, next) => {
+        const name = (req.url ?? '').split('?')[0].slice(1);
+        if (!files.includes(name)) return next();
+        res.writeHead(200, { ...ISOLATION, 'Content-Type': name.endsWith('.wasm') ? 'application/wasm' : 'text/javascript' });
+        fs.createReadStream(path.join(dir, name)).pipe(res);
+      });
+    },
+    closeBundle() {
+      fs.mkdirSync(path.join(outDir, 'ort'), { recursive: true });
+      for (const f of files) fs.copyFileSync(path.join(dir, f), path.join(outDir, 'ort', f));
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => ({
-  plugins: [react(), tailwindcss(), facts(), fixtures(mode)],
+  plugins: [react(), tailwindcss(), facts(), fixtures(mode), modelRuntime()],
+  worker: { format: 'es' },
   server: { host: '127.0.0.1', port: 3000, headers: ISOLATION },
   preview: { host: '127.0.0.1', port: 4173, headers: ISOLATION },
 }));

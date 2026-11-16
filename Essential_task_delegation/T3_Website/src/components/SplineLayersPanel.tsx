@@ -11,11 +11,13 @@ interface SplineLayersPanelProps {
   selectedId: number | null;
   onSelect: (id: number | null) => void;
   methodLabel: string;
+  /** The visitor's own image: it has no ground truth to show. */
+  own?: boolean;
 }
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
-export function SplineLayersPanel({ buildings, layers, onLayers, selectedId, onSelect, methodLabel }: SplineLayersPanelProps) {
+export function SplineLayersPanel({ buildings, layers, onLayers, selectedId, onSelect, methodLabel, own }: SplineLayersPanelProps) {
   const toggleClass = (c: ClassId) => onLayers({ ...layers, classes: { ...layers.classes, [c]: !layers.classes[c] } });
   return (
     <aside className="ws-panel ws-left" aria-label="Layers and buildings">
@@ -29,11 +31,11 @@ export function SplineLayersPanel({ buildings, layers, onLayers, selectedId, onS
         ))}
         <li><label><input type="checkbox" checked={layers.spots} onChange={() => onLayers({ ...layers, spots: !layers.spots })} /><span className="swatch swatch-spot" />Hot spots and safe areas</label></li>
         <li><label><input type="checkbox" checked={layers.heat} onChange={() => onLayers({ ...layers, heat: !layers.heat })} /><span className="swatch swatch-heat" />Danger heatmap</label></li>
-        <li><label><input type="checkbox" checked={layers.truth} onChange={() => onLayers({ ...layers, truth: !layers.truth })} /><span className="swatch swatch-truth" />Ground truth (the dataset's own labels)</label></li>
+        {!own && <li><label><input type="checkbox" checked={layers.truth} onChange={() => onLayers({ ...layers, truth: !layers.truth })} /><span className="swatch swatch-truth" />Ground truth (the dataset's own labels)</label></li>}
       </ul>
 
       <h3>Buildings</h3>
-      {!buildings && <p className="ws-missing">No building table for this pair. That is missing data, not zero buildings.</p>}
+      {!buildings && <p className="ws-missing">No building table for this image. That is missing data, not zero buildings.</p>}
       {buildings && CLASS_IDS.slice().reverse().map((c) => {
         const list = buildings.filter((b) => b.class_id === c).sort((a, b) => b.area_px - a.area_px);
         return (

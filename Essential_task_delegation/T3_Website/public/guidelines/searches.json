@@ -5,6 +5,7 @@
   {
    "order": 1,
    "query": "EMS-98 classification of damage to masonry buildings Grade 1 negligible to slight damage",
+   "report": "Expert_team_report.txt",
    "passages": [
     {
      "rank": 1,
@@ -38,6 +39,7 @@
   {
    "order": 2,
    "query": "EMS-98 classification of damage to masonry buildings Grade 2 moderate damage",
+   "report": "Expert_team_report.txt",
    "passages": [
     {
      "rank": 1,
@@ -71,6 +73,7 @@
   {
    "order": 3,
    "query": "EMS-98 classification of damage to masonry buildings Grade 3 substantial to heavy damage",
+   "report": "Expert_team_report.txt",
    "passages": [
     {
      "rank": 1,
@@ -104,6 +107,7 @@
   {
    "order": 4,
    "query": "EMS-98 classification of damage to masonry buildings Grade 4 very heavy damage",
+   "report": "Expert_team_report.txt",
    "passages": [
     {
      "rank": 1,
@@ -137,6 +141,7 @@
   {
    "order": 5,
    "query": "EMS-98 classification of damage to masonry buildings Grade 5 destruction",
+   "report": "Expert_team_report.txt",
    "passages": [
     {
      "rank": 1,
@@ -170,6 +175,7 @@
   {
    "order": 6,
    "query": "Sphere covered living space per person",
+   "report": "Emergency_team_report.txt",
    "passages": [
     {
      "rank": 1,
@@ -203,6 +209,7 @@
   {
    "order": 7,
    "query": "Sphere settlement site area per person location and access",
+   "report": "Emergency_team_report.txt",
    "passages": [
     {
      "rank": 1,
@@ -236,6 +243,7 @@
   {
    "order": 8,
    "query": "INSARAG handover of rescued patients to medical teams and hospitals",
+   "report": "Emergency_team_report.txt",
    "passages": [
     {
      "rank": 1,
@@ -269,6 +277,7 @@
   {
    "order": 9,
    "query": "INSARAG light medium and heavy USAR team types",
+   "report": "Emergency_service_human_resource_allocation.txt",
    "passages": [
     {
      "rank": 1,
@@ -302,6 +311,7 @@
   {
    "order": 10,
    "query": "INSARAG ASR levels assessment search and rescue",
+   "report": "Emergency_service_human_resource_allocation.txt",
    "passages": [
     {
      "rank": 1,
@@ -335,6 +345,7 @@
   {
    "order": 11,
    "query": "INSARAG worksite triage and priorities",
+   "report": "Emergency_service_human_resource_allocation.txt",
    "passages": [
     {
      "rank": 1,
@@ -368,6 +379,7 @@
   {
    "order": 12,
    "query": "INSARAG rescue team shifts and rotation",
+   "report": "Emergency_service_human_resource_allocation.txt",
    "passages": [
     {
      "rank": 1,
@@ -401,6 +413,7 @@
   {
    "order": 13,
    "query": "Sphere emergency shelter for displaced households",
+   "report": "Public_community_report.txt",
    "passages": [
     {
      "rank": 1,
@@ -434,6 +447,7 @@
   {
    "order": 14,
    "query": "Sphere household items",
+   "report": "Public_community_report.txt",
    "passages": [
     {
      "rank": 1,
@@ -467,6 +481,7 @@
   {
    "order": 15,
    "query": "INSARAG rescue operations",
+   "report": "Public_community_report.txt",
    "passages": [
     {
      "rank": 1,
@@ -500,6 +515,7 @@
   {
    "order": 16,
    "query": "Sphere repair retrofit or rebuild damaged houses",
+   "report": "Reconstruction_plan.txt",
    "passages": [
     {
      "rank": 1,
@@ -533,6 +549,7 @@
   {
    "order": 17,
    "query": "Sphere debris removal",
+   "report": "Reconstruction_plan.txt",
    "passages": [
     {
      "rank": 1,
@@ -566,6 +583,7 @@
   {
    "order": 18,
    "query": "Sphere technical assistance building codes and construction practices",
+   "report": "Reconstruction_plan.txt",
    "passages": [
     {
      "rank": 1,
@@ -596,5 +614,79 @@
     }
    ]
   }
- ]
+ ],
+ "citations": [
+  {
+   "id": "EMS98-masonry-grade-1",
+   "times": 2,
+   "shown": true,
+   "passage": {
+    "id": "EMS98-masonry-grade-1",
+    "doc": "EMS-98",
+    "section": "Classification of damage to masonry buildings: Grade 1: Negligible to slight damage (no structural damage, slight non-structural damage)",
+    "page_start": 16,
+    "page_end": 16,
+    "text": "Classification of damage to masonry buildings: Grade 1: Negligible to slight damage (no structural damage, slight non-structural damage)\nHair-line cracks in very few walls. Fall of small pieces of plaster only. Fall of loose stones from upper parts of buildings in very few cases."
+   }
+  },
+  {
+   "id": "EMS98-masonry-grade-4",
+   "times": 6,
+   "shown": true,
+   "passage": {
+    "id": "EMS98-masonry-grade-4",
+    "doc": "EMS-98",
+    "section": "Classification of damage to masonry buildings: Grade 4: Very heavy damage (heavy structural damage, very heavy non-structural damage)",
+    "page_start": 16,
+    "page_end": 16,
+    "text": "Classification of damage to masonry buildings: Grade 4: Very heavy damage (heavy structural damage, very heavy non-structural damage)\nSerious failure of walls; partial structural failure of roofs and floors."
+   }
+  },
+  {
+   "id": "EMS98-rc-grade-5",
+   "times": 1,
+   "shown": false,
+   "passage": {
+    "id": "EMS98-rc-grade-5",
+    "doc": "EMS-98",
+    "section": "Classification of damage to buildings of reinforced concrete: Grade 5: Destruction (very heavy structural damage)",
+    "page_start": 17,
+    "page_end": 18,
+    "text": "Classification of damage to buildings of reinforced concrete: Grade 5: Destruction (very heavy structural damage)\nCollapse of ground floor or parts (e. g. wings) of buildings.\nfew many most"
+   }
+  },
+  {
+   "id": "EMS98-masonry-grade-5",
+   "times": 2,
+   "shown": true,
+   "passage": {
+    "id": "EMS98-masonry-grade-5",
+    "doc": "EMS-98",
+    "section": "Classification of damage to masonry buildings: Grade 5: Destruction (very heavy structural damage)",
+    "page_start": 16,
+    "page_end": 16,
+    "text": "Classification of damage to masonry buildings: Grade 5: Destruction (very heavy structural damage)\nTotal or near total collapse."
+   }
+  }
+ ],
+ "evidence": {
+  "verdict": "PASSED: the offline proof (internet off)",
+  "rules": {
+   "1. The run finished": true,
+   "2. All six reports, each starting 'Mode: offline', each 50+ words": true,
+   "3. Nothing went outside this computer": true,
+   "4. No Gemini library was loaded": true,
+   "5. Every model question got an answer": true
+  },
+  "network_events": 4,
+  "hosts": [
+   "127.0.0.1:8000"
+  ],
+  "outside": [],
+  "gemini_modules_loaded": [],
+  "sources": [
+   "Essential_task_delegation/Offline_RAG_KR2/results/t2_proof/t2_run_internet_off/run/t2_run_summary.json",
+   "Essential_task_delegation/Offline_RAG_KR2/results/t2_proof/t2_run_internet_off/run/netlog.json"
+  ]
+ }
 }

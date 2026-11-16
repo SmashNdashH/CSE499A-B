@@ -14,7 +14,7 @@ import puppeteer from 'puppeteer-core';
 const BASE = process.env.BASE_URL ?? 'http://127.0.0.1:4173';
 const CHROME = process.env.CHROME_PATH ?? 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const OUT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'checks', 'screenshots');
-const PAGES = (process.env.PAGES ?? '/,/a,/b,/c').split(',');
+const PAGES = (process.env.PAGES ?? '/,/how,/explore,/try,/results,/reports,/about').split(',');
 const WIDTHS = [390, 1440];
 const problems: string[] = [];
 // Scroll a target to the middle of the screen before clicking it, so a sticky header can't cover it.
@@ -39,7 +39,7 @@ for (const route of PAGES) {
     await page.screenshot({ path: path.join(OUT, `${name}.png`), fullPage: true });
     await page.screenshot({ path: path.join(OUT, `${name}-fold.png`) });
 
-    if (route !== '/' && width === 1440) {
+    if (route === '/explore' && width === 1440) {
       // The 3-minute test, by machine: click a building, read its facts; press a count; run a fixed question.
       const pickable = await page.$('.ws .oc-b.is-pickable path');
       if (!pickable) problems.push(`${route}: no clickable building on the map`);
@@ -70,6 +70,22 @@ for (const route of PAGES) {
       const answer = await page.$eval('.fq-result', (el) => el.textContent ?? '').catch(() => '');
       if (!/\d+ buildings?|no destroyed building/.test(answer)) problems.push(`${route}: the distance question gave no answer (got "${answer}")`);
       await (await page.$('.ws'))!.screenshot({ path: path.join(OUT, `${route.slice(1)}-1440-question.png`) });
+
+      // The 3D damage city: the same buildings as blocks; clicking one opens the same facts.
+      const viewBtn = (await page.$$('.ws-view button'))[1];
+      await centre(viewBtn);
+      await viewBtn.click();
+      const blocks = await page.$$('.city .city-b');
+      if (!blocks.length) problems.push(`${route}: the 3D view drew no blocks`);
+      else {
+        const top = (await blocks[blocks.length - 1].$('.city-top'))!;
+        await centre(top);
+        await top.click();
+        const readout = await page.$eval('.city .oc-readout', (el) => el.textContent ?? '');
+        if (!/Building \d+/.test(readout)) problems.push(`${route}: clicking a block didn't show its facts (got "${readout.slice(0, 80)}")`);
+        if (!(await page.$eval('.city-note', (el) => el.textContent ?? '')).includes('not a reconstruction')) problems.push(`${route}: the 3D view lacks its "not a reconstruction" label`);
+      }
+      await (await page.$('.ws-map'))!.screenshot({ path: path.join(OUT, `${route.slice(1)}-1440-city.png`) });
     }
     await page.close();
   }

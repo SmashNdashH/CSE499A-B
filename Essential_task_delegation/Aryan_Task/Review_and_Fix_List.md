@@ -59,7 +59,7 @@ These results aren't in the weekly updates yet; they go into update 5 (Wed 18 No
   - (c) the 7B's answers with the options shown.
 
   The five Kaggle notebooks are `Champion_Task/l2-step1b-soft-labels.ipynb` to `l2-step4-winner-benchmark.ipynb`.
-- **The showcase website (T3, started 15 Nov; not deployed yet). From 16 Nov you're taking over its build: start with [T3_Website_Handover.md](T3_Website_Handover.md),** which gives every file path, how to run it, the rules that must not break, and what to do next. Its section 3 lists what changed from your prototype and why, file by file. Do your fixes in this review first (sections 1 to 7 are due 18 Nov).
+- **The showcase website (T3, started 15 Nov; not deployed yet). From Wed 18 Nov you take over what's left of its build (Abrar builds it until 17 Nov): start with [T3_Website_Handover.md](T3_Website_Handover.md),** which gives every file path, how to run it, the rules that must not break, and what to do next. Its section 3 lists what changed from your prototype and why, file by file. Do your fixes in this review first (sections 1 to 7 are due 18 Nov).
   - **Where:** `Essential_task_delegation/T3_Website/`, built from a copy of your `Website/`. Your folder is untouched. It stays your record, and sections 1 to 5 still apply to it.
   - **Kept from yours, reworked to our data:** the workspace layout (layers on the left, the image pair in the centre, the building inspector on the right, the class filter underneath), the offline renderer, the fixed-question console, the reports view and the benchmark panel.
   - **Removed:** everything sections 1 to 5 list.
