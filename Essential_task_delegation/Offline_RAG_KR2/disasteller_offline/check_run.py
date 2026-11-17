@@ -35,6 +35,12 @@ code could read from the Expert team's grade lines, and the time of each section
 (kind "section" in llm_calls.jsonl). In the fixed flow every report is made of several
 sections, so rule 2's "50+ words" is easy to pass; it stays a minimum check, and the reports'
 quality is judged by reading them.
+
+16 Nov 2026: signals for the quality-fix run (the rules are unchanged): the sticker questions
+and the words read from each sticker; the checks of each answer (how many were checked, asked
+again, kept in their second version, and kept with a problem left, with the problems); and
+whether the map reading was made by the code. "section_calls" now also counts the questions
+asked again; "sections_written" stays the number of sections.
 """
 
 import json
@@ -74,6 +80,8 @@ def call_signals(run_dir) -> dict:
               if c.get("usage") and c["usage"].get("prompt_tokens") and c.get("estimated_tokens_sent")]
     photos = [c.get("answer", "") for c in image if c.get("prompt", "").startswith("describe the disaster")]
     section_words = [len(c["answer"].split()) for c in section if not c.get("error") and "answer" in c]
+    stickers = [c for c in calls if c.get("kind") == "sticker"]  # the quality-fix run (16 Nov)
+    checks = [c for c in calls if c.get("kind") == "check"]
     return {
         "llm_calls_log": True,
         "agent_calls": len(agent),
@@ -92,6 +100,15 @@ def call_signals(run_dir) -> dict:
         "final_answers_kept_short": sum(1 for c in calls if c.get("kind") == "short_answer_kept"),
         "photo_descriptions": len(photos),
         "photo_descriptions_different": len(set(photos)),
+        "sticker_questions": len(stickers),
+        "stickers_read": sum(1 for c in stickers if c.get("words")),
+        "sticker_words": {c.get("photo"): c.get("words") for c in stickers},
+        "answers_checked": len(checks),
+        "answers_asked_again": sum(1 for c in checks if c.get("asked_again")),
+        "answers_second_kept": sum(1 for c in checks if c.get("kept") == "second"),
+        "answers_kept_with_problems": sum(1 for c in checks if c.get("problems_left")),
+        "problems_left": {f"{c.get('report')} / {c.get('section')}": c["problems_left"]
+                          for c in checks if c.get("problems_left")},
         **latency_signals(calls),
     }
 
@@ -230,6 +247,8 @@ def main(argv) -> int:
             "guideline_searches": log.count("Guideline search:"),
             "photo_questions": log.count("Local information ("),
             "map_questions": log.count("Global information:"),
+            "map_reading": ("made by the code" if "Map reading made by the code" in log
+                            else "asked of the model" if "Global information:" in log else None),
             "map_label_questions": log.count("This image is a map of a place"),
             "labelled_map_saved": os.path.isfile(os.path.join(run_dir, "reports", "offline", "4_anotated.png")),
             "map_labels_drawn": [int(n) for n in re.findall(r"Labelled map saved: .*? \((\d+) labels\)", log)],

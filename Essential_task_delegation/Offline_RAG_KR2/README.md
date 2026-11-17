@@ -15,7 +15,10 @@ This folder has my work for the next update. It has three parts:
    calls the tools, and the model writes each report section by section (see
    "Practice run 4 and the fixed flow"). On 11 Nov the proof run passed: with
    the internet off, the fixed flow wrote all six reports with our model (see
-   "Proof run: internet off").
+   "Proof run: internet off"). On 16 Nov those reports were compared with
+   Gemini's reports of 20 July (see "Comparison with the July Gemini
+   reports"), and four fixes were built for a new run, tested on the laptop
+   and waiting for the Kaggle run (see "Quality-fix run").
 
 Rule: files from other folders are copied into this folder.
 The original files are never changed.
@@ -181,6 +184,14 @@ Abrar's review asked for 7 steps. Here is what each step did, and why.
 - `run_retrieval_test.py` runs the test. It writes `results.csv` (the top 3 for
   each question, and whether it is a hit) and `results_summary.json` (the
   counts, the misses and every ranking).
+
+**report_comparison/** (16 Nov)
+- `compare_reports.py` counts measures 1–5 for any folders of the six reports,
+  with the same code for each. `--selftest` checks its counting on made-up
+  lines.
+- `results.csv` (measures 1–5), `candidates.csv` (the lines measures 4 and 5
+  found, each marked after reading) and `hand_check.csv` (measures 6–9).
+  See "Comparison with the July Gemini reports" below.
 
 `models/` and `kaggle_upload/` are listed in this folder's `.gitignore`, so git
 does not save them. They are too big for git, and both can be made again.
@@ -1410,6 +1421,494 @@ proof run could not.
 - Roadmap T2: compare the six reports with the Gemini reports of 20 July.
 - Quality fixes (the map reading, the hotline, the citations, the bridge)
   only as a new run, reported separately.
+
+
+## Comparison with the July Gemini reports (T2, started 16 Nov)
+
+**Why:** the proof run showed that the reports can be written offline, not
+that they are good (see "Proof run: internet off"). Roadmap T2 asks for a
+README that compares the six offline reports with the Gemini reports of
+20 July. This section is that comparison.
+
+**The rule:** the measures and the expectation below are written before any
+measure is computed. They are not changed after the results are seen. If our
+reports do worse on a measure, that is reported as it is. The July reports
+are only read, never changed.
+
+**The two sets of reports**
+- July (Gemini): the six `.txt` files in
+  `support/Ridita_Integration_of_VLM__/DisasTeller/`, committed on 20 July
+  (commit `2861257ef`).
+- Ours (the team's 7B): the six files in
+  `results/t2_proof/t2_run_internet_off/run/reports/offline/`, from the proof
+  run. They are byte for byte the same as practice run 5's.
+- Both runs used the same six photos and the same map (`2.jpg`), checked by
+  sha256 on 16 Nov. The July folder also holds `Global_image/4_anotated.png`,
+  the labelled map that the July run made.
+
+**What else differs between the two runs.** So this compares two systems,
+not only two models. A difference in a measure can come from any row below,
+and the write-up says which.
+
+| | July | Ours |
+|---|---|---|
+| Model | Gemini 3.1 Flash-Lite (online) | The team's fine-tuned Qwen2.5-VL-7B (local) |
+| How it runs | CrewAI agents choose their own tools | The fixed flow: the code calls the tools, the model writes |
+| Internet | On. The agents had an internet search tool (`internet_search`) | Off |
+| Guideline search | The EMS-98 PDF only, with Gemini embeddings. Results have no citation IDs | 405 sections from six sources, hybrid search. Every section has a citation ID |
+| Length asked | "around 2000 words" per task (one task: 4000) | A size for each section (100 to 300 words) |
+| Offline rules ("not available offline" for contact details, costs and so on) | None | In every report |
+| Photo descriptions | Written by Gemini | Written by our 7B |
+
+**Already known before this section was written** (so these are not part of
+the expectation)
+- The word counts of both sets: the table under "Practice run 5".
+- The quality problems of our reports, listed under "Practice run 5".
+- The July reports have no citation in our `[ID]` form, and can't have one:
+  their search gave back text with no IDs. (Checked on 16 Nov while this
+  section was written; it follows from the design.) So `[ID]` citations are
+  counted for our reports only. For both sets, measure 2 counts the
+  guidelines named in the text.
+- Read while planning on 16 Nov: the first 25 lines of the July Expert report
+  (its grades for the hall G1, Hama Street G4 and the Concrete Bridge G5) and
+  the last 15 lines of the July Public report (it sends people to the hall
+  and Central Nishikigawa Street as "the only designated safe locations").
+
+**Measures**
+
+A. Counted by a script, `report_comparison/compare_reports.py` (to be
+written). The same code reads both sets.
+
+| # | Measure | How it is counted |
+|---|---|---|
+| 1 | Words per report, without headings | The same counting as `check_run.py` |
+| 2 | Guidelines named | How often the text names "EMS-98" (or "EMS98"), "Sphere", "INSARAG", "IWG-SEM" (or "IWGSEM") and "xBD" |
+| 3 | `[ID]` citations (ours only) | How many; how many are real (in `guideline_chunks.jsonl`); how many are real but were not shown to that report |
+| 4 | Contact details | Phone numbers, e-mail addresses and web addresses, each listed with its line |
+| 5 | "No danger" sentences | Sentences saying there are no dangerous, high-risk or critical areas, each listed with its line |
+
+B. Checked by hand, one row per report, in `report_comparison/hand_check.csv`.
+
+| # | Measure | What is checked |
+|---|---|---|
+| 6 | Places and grades | Which of the six photo places the report names, and whether each grade matches the Expert report of the same set |
+| 7 | Made-up facts | Any place, event, name or number that none of the inputs gives (the photos, the map, the guideline sections, the earlier reports). Each one listed with its sentence |
+| 8 | Contradictions | Inside the report, or against an earlier report of the same set |
+| 9 | Useful for a rescue team | Does it say what to do, and where? Yes, partly or no, with one sentence why |
+
+- The July run's tool results (Gemini's photo descriptions, its internet
+  searches) were not saved. So for July, a fact counts as made up when
+  neither the photos, the map nor EMS-98 supports it. A fact that could have
+  come from its internet search is marked "maybe from the web".
+- Optional, to make part B fairer: a teammate grades it without knowing which
+  set is which. The 12 reports are renamed A1–A6 and B1–B6, the
+  "Mode: offline" line is removed, and the key is kept apart.
+
+**Exact rules** (added on 16 Nov, before any measure was computed, so that
+each count means one thing)
+- **Measure 1:** the words on lines that don't start with `#`, without our
+  reports' first line (`Mode: offline, fixed flow`). For our reports this is
+  `words_outside_headings` in `check_run.py`.
+- **Measure 2:** every citation ID is taken out of the text first, with or
+  without brackets. Otherwise `[EMS98-masonry-grade-5]` would also count as
+  naming EMS-98. Then each of these names is counted, in any capitals:
+  "EMS-98", "EMS98", "EMS 98" or "European Macroseismic Scale"; "Sphere";
+  "INSARAG"; "IWG-SEM" or "IWGSEM"; "xBD". Each match counts once, so
+  "European Macroseismic Scale (EMS-98)" counts twice.
+- **Measure 3:** a citation is what `check_run.py` counts: a known ID prefix
+  inside its own pair of square brackets. An ID was "shown" to a report if it
+  was in that report's prompt: in the results of its guideline searches (from
+  `llm_calls.jsonl`), in the EMS-98 sections that the Reconstruction plan also
+  gets, or in an earlier report that the report is given. IDs written without
+  their own brackets are counted apart: `check_run.py` doesn't count them.
+- **Measures 4 and 5:** the script lists candidate lines, and each one is then
+  read. Only the confirmed ones count.
+  - Measure 4 counts a phone number, an e-mail address or a web address that
+    is given as a way to reach someone.
+  - Measure 5 counts a sentence that says there is no dangerous, high-risk or
+    critical area or zone. A warning such as "do not enter dangerous areas"
+    doesn't count.
+- **Measure 6:** each report's grades are also listed side by side for the two
+  sets. The places where the two sets give different grades are listed, not
+  scored: no answer key says which grade is right.
+- **Measure 7:** each made-up item goes into one of four kinds:
+  - (a) scene: a place, damage or event at the site;
+  - (b) plan number: a count, size or time in the response plan that no input
+    gives (for example a number of staff or teams);
+  - (c) other: a name, an organisation or a date;
+  - (d) July only, "maybe from the web": true general knowledge that Gemini's
+    internet search or its training could give (for example a Sphere
+    standard). Kind (d) isn't counted as made up.
+
+  General advice ("stay away from damaged buildings") isn't a fact. Contact
+  details are counted in measure 4, not here.
+- **Measure 9:**
+  - yes: it names places and says what to do there, and nothing in it would
+    mislead a rescue team;
+  - partly: it does that for some places, or a useful report holds a sentence
+    that would mislead;
+  - no: general advice only, or its main message misleads.
+- **Who checks part B:** Claude (Ridita's AI assistant) on 16 Nov, knowing
+  which set is which, so not blind. A blind second check by a teammate stays
+  optional.
+
+**Expectation, written before any measure is computed**
+
+Written on 16 Nov by Claude (Ridita's AI assistant), at Ridita's request,
+before the script was written or run and before any report was read in full.
+What had been seen before is under "Already known" above.
+- **Measure 1 (words):** already known, so not forecast. The script recounts
+  it.
+- **Measure 2 (guidelines named):**
+  - Ours names guidelines at least twice as often as July in total, mostly
+    Sphere and INSARAG, which our prompts name and our searches return.
+  - July names EMS-98 in at most 2 reports, and Sphere or INSARAG at most
+    3 times in all six.
+- **Measure 3 (ours only):** the same as the run 5 notes. 11 citations in the
+  Expert report, all real, of which 1 (`[EMS98-rc-grade-5]`) was not shown to
+  it. None in the other five reports. 6 IDs without brackets in the
+  Reconstruction plan. This checks the script more than the reports.
+- **Measure 4 (contact details):** ours 1 (the hotline in the Public report,
+  known); July 0 or 1.
+- **Measure 5 ("no danger" sentences):** ours 2 to 4 (the Alerts and Public
+  reports are known); July 0.
+- **Measure 6 (places and grades):**
+  - July grades all six places; ours grades five (the bridge, known).
+  - In each set, at most 1 grade in a later report differs from its own
+    Expert report.
+  - The two sets give a different grade to at least 1 place.
+- **Measure 7 (made-up facts):**
+  - Both sets have some.
+  - July has at least as many plan numbers (b) as ours: it is longer and had
+    no offline rules.
+  - Each set has 1 to 3 made-up scene facts (a); ours has at least 1 known
+    one, the bridge on South Central Asaichi Street.
+- **Measure 8 (contradictions):** ours at least 2 (known: the Alerts report
+  lists four dangerous streets and then says there are no high-risk zones;
+  the allocation plan puts South Central Asaichi Street "in unaffected
+  areas"); July 0 or 1.
+- **Measure 9 (useful):**
+  - July "yes" for at least 4 of its 6 reports.
+  - Ours "yes" for at most 3 of 6, with the Alerts and Public reports at best
+    "partly", because of their "no high-risk zones".
+- **Overall:** neither set is better on every measure. July is longer and
+  more complete, but cites nothing a reader can check. Ours cites real
+  sections in one report, is shorter, and carries the known map-reading
+  error.
+
+**Files** (in `report_comparison/`)
+- `compare_reports.py`: measures 1–5, for any number of report folders, so
+  the quality-fix run can be measured the same way later.
+- `results.csv`: measures 1–5, one row per report.
+- `candidates.csv`: the lines that measures 4 and 5 found, each marked
+  confirmed or not after reading.
+- `hand_check.csv`: measures 6–9, one row per report.
+
+### Result (16 Nov)
+
+**How it ran**
+- The script's self-test passed. Then it read both sets (the commands are at
+  the top of `compare_reports.py`).
+- It found 7 candidate lines for measures 4 and 5, and each one was read
+  (`candidates.csv`):
+  - 5 were confirmed: 4 "no danger" sentences and the hotline;
+  - 1 was the same hotline, found by a second pattern;
+  - 1 was not a "no danger" sentence.
+- Part B was checked by reading all 12 reports (`hand_check.csv`). The July
+  reports were read first, then ours.
+- Two rules were read this way, written down after the July reports were
+  read and before ours were:
+  - "Would mislead" (measure 9) means a sentence that the inputs, the photos
+    or the map contradict, or a made-up number presented as calculated or
+    taken from history.
+  - Each made-up number counts once. A claim counts only where it first
+    appears in its set, because each report is given the earlier ones.
+
+**A. Counted by the script**
+
+| Measure | July (Gemini) | Ours (7B) |
+|---|---|---|
+| 1. Words, without headings | 3,704 in all (335 to 881 per report) | 3,114 in all (192 to 787) |
+| 2. Guidelines named | 0 | 4, in 2 reports: Sphere 2, INSARAG 1, EMS-98 1 |
+| 3. `[ID]` citations | none (its search had no IDs) | 11, all in the Expert report, all real; 1 of them (`[EMS98-rc-grade-5]`) was not shown to it. Also 6 IDs without brackets in the Reconstruction plan, all real and all shown to it |
+| 4. Contact details (confirmed) | 0 | 1: the hotline "123456789" (Public report) |
+| 5. "No danger" sentences (confirmed) | 0 (1 candidate, which talks about how damaged some buildings are) | 4: Alerts 1, Emergency 2, Public 1 |
+
+**B. Checked by hand**
+
+| Measure | July (Gemini) | Ours (7B) |
+|---|---|---|
+| 6. Places named, per report | 6 in every report | 6, 4, 5, 5, 5, 6 |
+| 6. Grades unlike the set's own Expert report | 0 | 1 (the Emergency report calls three G4 streets "G4 and G5, respectively") |
+| 7. Made up: (a) scene | 3 | 4 |
+| 7. Made up: (b) plan numbers | 33 | 5 |
+| 7. Made up: (c) other | 2 | 0 |
+| 8. Contradictions | 2, both sums that don't add up | 6 |
+| 9. Useful: yes / partly / no | 3 / 3 / 0 | 0 / 5 / 1 |
+
+- July's made-up items:
+  - (a) the Concrete Bridge as "a critical bottleneck"; the hall "equipped for
+    high-acuity surgical and trauma care"; and the G5 street "inaccessible"
+    without the bridge, which the map contradicts;
+  - (b) 33 numbers. Among them: a budget of "$850 Million to $1.2 Billion",
+    four cost ranges and 19 staff counts, which the reports say come from
+    "historical data"; and a "2:3 ratio", given as "historical reference
+    logic";
+  - (c) "Emergency services have designated" two places before any plan
+    existed, and four appendices the report doesn't contain.
+- Ours:
+  - (a) the hall "in the center of the region" (the map puts it by the river);
+    the hall "offers sufficient living space"; "existing medical facilities
+    remain unaffected"; and "the collapsed bridge on South Central Asaichi
+    Street";
+  - (b) 10 medical staff, 3 light, 2 medium and 1 heavy USAR teams, and
+    10 vehicles. The INSARAG sections it was shown name the team types, not
+    these counts.
+- The 3.5 m² per person in our Emergency report is not made up: it is in the
+  Sphere sections that report was shown.
+- Every item, with its sentence and the reason for each "useful" mark, is in
+  `hand_check.csv`.
+
+**The grades, side by side** (listed, not scored: no answer key says which is
+right)
+
+| Place | July | Ours |
+|---|---|---|
+| Wajima Drama Memorial Hall | G1 | G1 |
+| Hama Street | G4 | G4 |
+| Concrete Bridge | G5 | G5 in the photo descriptions only; not in the grade list or on the map |
+| Central Nishikigawa Street | G1 | G4 |
+| North Asaichi Street | G3 | G4 |
+| South Central Asaichi Street | G5 | G5 |
+
+**Also seen: what the photos show.** This is not one of the nine measures,
+and it isn't scored. The photos were looked at on 16 Nov to check July's facts
+against them (measure 7's rule).
+- **Picture4 (Central Nishikigawa Street):** the buildings stand undamaged,
+  with a large pit in the ground in front of them.
+  - Our 7B: "Several structures are visibly collapsed or partially
+    destroyed", so G4.
+  - July: "a planned construction/excavation site, not earthquake damage", so
+    G1.
+- **Picture5 (North Asaichi Street):** deep cracks run across a stone front,
+  and the street is dry.
+  - Our 7B: "a hurricane ... the streets appear inundated with water", so G4.
+  - July: "deep, jagged fractures across its facade", so G3.
+- **Picture3** carries the sign "Concrete Bridge". Our 7B didn't read it, so
+  our grade list has no bridge.
+- So 2 of our 6 photo descriptions contradict their photos, and 1 misses its
+  sign. July's 6 descriptions match the photos.
+- **Our map reading** was given "South Central Asaichi Street: G5" and
+  answered "there are no areas with high or critical damage levels (G5)".
+  That one answer is behind all 4 "no danger" sentences (measure 5) and 3 of
+  our 6 contradictions (measure 8).
+- **Fairness:** measure 7 judges our reports against our 7B's photo
+  descriptions, which were their inputs. July's are judged against the
+  photos, because July's inputs weren't saved. So a wrong photo description
+  counts against July in measure 7 but not against ours. This section is
+  where ours pays for it.
+
+**Against the expectation**
+
+| Forecast (written before any count) | Result | Met? |
+|---|---|---|
+| 2: ours names guidelines at least twice as often as July, mostly Sphere and INSARAG; July names EMS-98 in at most 2 reports, and Sphere or INSARAG at most 3 times | 4 against 0; 3 of the 4 are Sphere or INSARAG | Yes, but both counts are small: 4 of our 6 reports name no guideline |
+| 3: 11 in the Expert report, all real, 1 not shown; none in the other five; 6 without brackets | The same | Yes |
+| 4: ours 1, July 0 or 1 | 1 and 0 | Yes |
+| 5: ours 2 to 4, July 0 | 4 and 0 | Yes, at the top of the range |
+| 6: July grades all six, ours five; at most 1 grade unlike its Expert report in each set; at least 1 place graded differently | July 6; ours 5 in the grade list; 0 and 1; 2 places graded differently, and the bridge missing from our grade list | Yes |
+| 7: both have some; July has at least as many plan numbers (b); 1 to 3 scene facts (a) in each set | (b) 33 against 5; (a) July 3, ours 4 | Partly: ours has one scene fact more than forecast |
+| 8: ours at least 2, July 0 or 1 | 6 and 2 | Partly: July has 2 |
+| 9: July "yes" for at least 4 of 6; ours "yes" for at most 3, with Alerts and Public at best "partly" | July 3; ours 0 | Partly: July is 1 short |
+| Overall: neither set is better on every measure | True | Yes |
+
+**What it shows**
+- **July reads the photos better.** It grades all six places, its grades fit
+  the photos, and no July report says there is no danger. Its reports are
+  the more useful ones: 3 "yes" and 3 "partly", against ours 0 "yes",
+  5 "partly" and 1 "no".
+- **July makes up far more numbers.** It has 33 made-up plan numbers, among
+  them a budget and staff counts said to come from "historical data" that it
+  never gives. Nothing in it can be checked against a source.
+- **Ours can be checked, but repeats one wrong answer.** It cites 11 real
+  guideline sections, makes up fewer numbers (5) and no budget. But one wrong
+  map reading spreads into three reports as "no high-risk zones", two photo
+  descriptions are wrong, and the Public report makes up a hotline.
+
+**What this means for the quality-fix run**
+- **The map reading is the fix that matters most.** It causes all 4 "no
+  danger" sentences and 3 of the 6 contradictions.
+- **The hotline and citation fixes** target measures 4 and 3.
+- **The photo descriptions are the biggest gap the planned fixes don't
+  touch.** They need a separate decision and a later run.
+
+**Limits**
+- Part B was read by one reader (Claude), who knew which set was which. A
+  blind second check by a teammate is still optional.
+- These are two different systems (see the table above). A difference can
+  come from the model, the internet, the search or the prompts.
+- There is one run of each, and one set of six photos.
+- The words are counted the same way as in the run 5 table. With headings
+  (`words_all` in `results.csv`), our six counts match that table exactly,
+  and July's match except the Alerts report (377 here, 379 there). The
+  earlier count's method for July wasn't written down.
+
+**After this:** the quality-fix run (the map reading, the hotline, the
+citations, the bridge), as a new run reported separately, measured with the
+same script so that its numbers can sit next to these.
+
+**Found later on 16 Nov:** `compare_reports.py --selftest` failed. Its last
+case expected 7 words in a made-up July-style report that has 8
+(2 + 3 + 3). Only the test's number was wrong: the July comparison, run again
+into a scratch folder, gave `results.csv` byte for byte and the same candidate
+lines. The number is corrected, and the self-test passes.
+
+
+## Quality-fix run (T2, planned 16 Nov)
+
+**Why:** the comparison above found four problems that a change in the code
+can fix. This run fixes them and is measured the same way, so its numbers can
+sit next to the proof run's and July's.
+
+**What was wrong, and why.** Each cause was found in the proof run's
+`llm_calls.jsonl` and its reports.
+
+| Problem in the proof run | Cause | Fix |
+|---|---|---|
+| The map reading said "no dangerous zones". It caused all 4 "no danger" sentences and 3 of the 6 contradictions | The model was sent the plain map. Since 3 Nov the labelled map is saved next to the reports (so old labels can't reach a new run), so the map reading never saw the labels. It was also given "South Central Asaichi Street: G5" as text, and answered in 41 tokens that there is no area with G5 | The code writes the map reading from the Expert team's grades: the places from the highest grade down, each with EMS-98's name for its grade, then "The most dangerous: ...". The model is no longer asked to read the map |
+| The Concrete Bridge got no grade | The bridge photo's description names no place, although its sticker says "Concrete Bridge" in large letters. The grade lines took each place name from the description | One more short question per photo, after the six descriptions: "Read the sticker or sign in this photo. Write only the words on it ...". The grade lines take each place name from these words |
+| The Public report made up the hotline "123456789" | Its section "Organizational Operation" asked for "contact information for further assistance". That beat the offline rule ("not available offline") | That section now asks how people can get help, and says that no contact detail is in the facts. Every section is checked for a phone number, e-mail or web address that its facts don't give |
+| Only the Expert report cited. One of its IDs (`[EMS98-rc-grade-5]`) was not shown to it. The Reconstruction plan wrote 6 IDs without brackets | Only the grade lines asked for a citation | Ten sections must cite (below), and every section is checked for IDs that weren't shown to it and IDs without brackets |
+
+**Asked again, once.** When a section has one of the problems of the last two
+rows, the model is asked once more. It sees its first answer and a note that
+says what to change, for example "Leave out 123456789: the facts above give no
+contact detail. Where one is needed, write "not available offline"." The second
+answer is kept, unless it adds a made-up item (a contact detail, or an ID that
+wasn't shown) or is less than half as long. Then the first answer is kept. The
+grade lines are checked the same way. Their second answer is kept only if at
+least as many grades can be read from it.
+
+**The ten sections that must cite.** These are the sections whose task names
+the guidelines for that part of the report:
+- Emergency service report: Emergency shelters, Hospitals;
+- human resource allocation: Human Resource Requirements, Allocation Plan;
+- Public report: Resource Allocation, Public Advisory;
+- Reconstruction plan: Assessment of Damage, Reconstruction Needs, Plan of
+  Action, Appendices.
+
+The grade lines must cite too, as before. The other 17 sections get the proof
+run's instructions, except "Organizational Operation" (above). Their facts
+change only where a fix changes them: the sticker words, the map reading.
+
+**What stays the same:** the model and its settings (temperature 0.2,
+seed 0), the 18 guideline searches (`compare_reports.py` stops if they
+change), the size asked for each section, the photo descriptions (asked first,
+with the same question), the map labels, the notebook and the five pass rules.
+
+**What this run does not fix:** the photo descriptions (Picture4's
+"collapsed" buildings, Picture5's "hurricane"), the map labels' positions, and
+the made-up plan numbers (staff and team counts). They need a separate
+decision.
+
+**Limits of the fixes**
+- The map reading no longer uses the picture. The reports can no longer
+  contradict the grades through it, but the map adds nothing to the reports
+  either. In the proof run, the picture added only the wrong answer.
+- A must-cite check only asks for a citation. It can't tell whether the cited
+  section supports the sentence. So the reading of this run adds one check:
+  for each citation, does the cited section support its sentence?
+- Asking again makes the checks easier to pass, as the 150-word re-ask made
+  rule 2 easier in run 4. How often it was used is reported
+  (`answers_asked_again`, `answers_kept_with_problems`).
+
+**Files changed** (in `disasteller_offline/`)
+- `fixed_flow.py`: the four fixes, the checks and the one re-ask (its header
+  explains each).
+- `local_model.py`: `ask_text_again()`, the question asked again with the first
+  answer and the note.
+- `check_run.py`: new signals only. The rules are unchanged. The signals are
+  the sticker words, the checks (`answers_checked`, `answers_asked_again`,
+  `answers_second_kept`, `answers_kept_with_problems`, `problems_left`) and
+  `map_reading`.
+
+**Laptop test (16 Nov), with a pretend model server.** The pretend server gives
+back the proof run's six real photo descriptions, so the bridge's description
+has no name, as on Kaggle. Five ways of answering:
+
+| Pretend model | What it does | Result |
+|---|---|---|
+| good | answers well the first time | Rules 1–5 pass; 6 of 6 stickers read; 6 grades, with "Concrete Bridge: G5"; the map labels get the bridge; the Alerts and Emergency sections get the code's map reading; 28 sections; nothing asked again |
+| fixme | its first answers carry the proof run's problems: the hotline, no citation in the ten sections, bare IDs in the Appendices, `[EMS98-rc-grade-5]` in the grade lines and the Description | All 13 caught and asked again. All 13 second answers kept, with no problem left: no hotline, no RC ID, the IDs in brackets |
+| stubborn | asked again, it repeats its problems; for "Hospitals" it adds a new phone number | 13 kept with their problems, and all reported. "Hospitals" kept as first written, so the new number never reaches the report |
+| nosticker | the bridge's sticker answer is "none" | The bridge is graded under its file name, "Picture3.png: G5" |
+| error | one section always gets a server error | Rule 5 fails, as it must |
+
+- Also checked: 45 small checks on the proof run's real text (the hotline, the
+  RC ID, the 6 bare IDs, 16 ways of answering the sticker question, and dates
+  that must not count as phone numbers), and `compare_reports.py` on a run of
+  the new code. Its searches are unchanged, so it measures the run.
+- Not tested: the real 7B. Only the Kaggle run shows what it writes with
+  these changes.
+
+**Pass rules:** the same five, checked by `check_run.py`, with the internet
+**off**. So this run is also a second offline proof, of the new code.
+
+**How it will be measured:** the same way as the comparison above.
+`compare_reports.py` counts measures 1–5, with this run as a third set (`fix`)
+next to `july` and `ours`. Measures 6–9 are read, as new rows in
+`hand_check.csv`. One check is new: for each `[ID]` citation, does the cited
+section support its sentence (yes, partly or no)?
+
+**Expectation, written before the run.** Written on 16 Nov by Claude
+(Ridita's AI assistant), at Ridita's request, after the laptop test and before
+any Kaggle run of this code.
+- **Rules 1–5:** pass, with the internet off.
+- **The photo descriptions:** the same six answers as in the proof run, word
+  for word. They are asked first, with the same question, settings and seed.
+- **Stickers:** the words are read on at least 5 of the 6 photos. All six
+  stickers are large black words on white.
+- **Grades:** 6 found, the Concrete Bridge at G4 or G5. Map labels drawn: 5 or
+  6. The map has no place named "Concrete Bridge", so its label may land
+  anywhere.
+- **Asked again:** 3 to 14 answers, at most 3 kept with a problem.
+- **Measure 5 ("no danger" sentences):** 0 (proof run: 4).
+- **Measure 4 (contact details):** 0 (proof run: 1).
+- **Measure 3 (citations):** citations in all 5 reports that get guideline
+  sections (proof run: 1); at least 20 in all (proof run: 11); 0 not shown
+  (proof run: 1); 0 IDs without brackets (proof run: 6).
+- **Measure 6 (places and grades):** the Expert report grades all 6 places
+  (proof run: 5); at most 1 grade in a later report unlike the Expert report
+  (proof run: 1).
+- **Measure 7 (made up):** (a) scene facts at most 3 (proof run: 4; two of them,
+  "the collapsed bridge on South Central Asaichi Street" and "existing medical
+  facilities remain unaffected", came from the missing bridge and the map
+  reading); (b) plan numbers 2 to 8 (proof run: 5; nothing in this run targets
+  them); (c) other at most 1.
+- **Measure 8 (contradictions):** at most 3 (proof run: 6, 3 of them from the
+  map reading).
+- **Measure 9 (useful):** no report "no" (proof run: 1); at least 2 "yes"
+  (proof run: 0).
+- **Measure 1 (words):** 2,336 to 3,893 in all, within 25% of the proof run's
+  3,114. **Measure 2 (guidelines named):** at least 4 (proof run: 4).
+- **The new check:** at least 2 in 3 citations support their sentence at least
+  partly.
+
+**Steps (Kaggle)**
+1. On the laptop: commit, then run `python make_disasteller_upload.py`. It must
+   say `uncommitted changes: False` and pack 17 files.
+2. On Kaggle, open the `disasteller-offline1` dataset → **New Version** →
+   upload the new `kaggle_upload/disasteller-offline.zip`.
+3. Open the proof run's notebook (`t2-disasteller-local-run`) → **Edit**. The
+   notebook itself is unchanged, so no import is needed. In the **Input**
+   panel, check that the same 4 inputs are attached, with the newest version of
+   `disasteller-offline1`. If Kaggle offers a newer version of it, take it.
+4. **GPU T4 x2**, internet **off**, then **Save Version → Save & Run All
+   (Commit)**.
+5. Check the printed git commit: it must be the new commit, not `258a4f381`.
+   The notebook must print "PASSED: the offline proof (internet off)".
+6. Download `t2_run_internet_off.zip` and the notebook into
+   `results/t2_quality_fix/`, unchanged.
 
 
 ## Retrieval test of the guideline search (T2 step 4)

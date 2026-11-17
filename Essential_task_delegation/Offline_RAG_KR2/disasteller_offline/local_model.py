@@ -74,6 +74,13 @@ message, to write one section of a report. Like a picture question, it is tried 
 the run log gets "Local model gave no answer after 3 tries". Its calls go to llm_calls.jsonl
 as kind "section". The agents' LLM above is unchanged, and so are the picture questions
 (ask_with_images now shares its try-3-times part with ask_text).
+
+16 Nov 2026, for the quality-fix run: ask_text_again() is new. The fixed flow now checks each
+section the model writes (a contact detail its facts don't give, a guideline ID that wasn't
+shown or has no brackets, no citation where the section must cite), and if one is wrong it
+asks once more: the model sees its first answer and a note on what to change. That call's line
+in llm_calls.jsonl is kind "section" with "asked_again": true. ask_text() works as before; both
+now share _ask_fitted().
 """
 
 import json
@@ -433,6 +440,21 @@ def ask_text(system: str, prompt: str, max_tokens: int = 1024, **fields) -> str:
     (fit_messages), and the run log says so. An error comes back as text that starts with
     "An error occurred", as in ask_with_images."""
     messages = [{"role": "system", "content": system}, {"role": "user", "content": prompt}]
+    return _ask_fitted(messages, max_tokens, fields)
+
+
+def ask_text_again(system: str, prompt: str, first_answer: str, note: str, max_tokens: int = 1024,
+                   **fields) -> str:
+    """The same question once more (16 Nov 2026): the conversation is the first question, the
+    model's first answer, and `note`, which says what to change. Logged like ask_text, with
+    "asked_again": true."""
+    messages = [{"role": "system", "content": system}, {"role": "user", "content": prompt},
+                {"role": "assistant", "content": first_answer}, {"role": "user", "content": note}]
+    return _ask_fitted(messages, max_tokens, {**fields, "asked_again": True})
+
+
+def _ask_fitted(messages: list, max_tokens: int, fields: dict) -> str:
+    """A text-only question (kind "section"), shortened first if it is too long for the model."""
     budget = CONTEXT - max_tokens - SAFETY_TOKENS
     before = sum(_message_tokens(m) for m in messages)
     messages, notes = fit_messages(messages, budget)

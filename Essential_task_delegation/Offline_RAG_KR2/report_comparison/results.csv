@@ -1,0 +1,13 @@
+﻿set,report,exists,words_outside_headings,words_all,names_EMS-98,names_Sphere,names_INSARAG,names_IWG-SEM,names_xBD,names_total,citations,citations_real,citations_unknown,citations_not_shown,ids_without_brackets,ids_without_brackets_list,contact_candidates,no_danger_candidates,not_available_offline
+july,Expert_team_report.txt,True,468,524,0,0,0,0,0,0,0,0,,n/a (no --calls),0,,0,0,0
+july,Alerts_team_report_for_social_media.txt,True,335,377,0,0,0,0,0,0,0,0,,n/a (no --calls),0,,0,0,0
+july,Emergency_team_report.txt,True,525,548,0,0,0,0,0,0,0,0,,n/a (no --calls),0,,0,0,0
+july,Emergency_service_human_resource_allocation.txt,True,750,824,0,0,0,0,0,0,0,0,,n/a (no --calls),0,,0,0,0
+july,Public_community_report.txt,True,881,912,0,0,0,0,0,0,0,0,,n/a (no --calls),0,,0,1,0
+july,Reconstruction_plan.txt,True,745,821,0,0,0,0,0,0,0,0,,n/a (no --calls),0,,0,0,0
+ours,Expert_team_report.txt,True,620,647,0,0,0,0,0,0,11,11,,EMS98-rc-grade-5,0,,0,0,0
+ours,Alerts_team_report_for_social_media.txt,True,192,211,0,0,0,0,0,0,0,0,,,0,,0,1,0
+ours,Emergency_team_report.txt,True,293,312,0,1,1,0,0,2,0,0,,,0,,0,2,0
+ours,Emergency_service_human_resource_allocation.txt,True,736,764,0,0,0,0,0,0,0,0,,,0,,0,0,0
+ours,Public_community_report.txt,True,486,506,0,0,0,0,0,0,0,0,,,0,,2,1,0
+ours,Reconstruction_plan.txt,True,787,818,1,1,0,0,0,2,0,0,,,6,SPHERE-appendix-4-p1; EMS98-2.3-p2; SPHERE-1-p4; SPHERE-5-p1; SPHERE-5-p2; SPHERE-appendix-5-p2,0,0,0
