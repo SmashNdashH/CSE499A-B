@@ -2,7 +2,11 @@
 
 From Abrar, on your pushes of 9 and 10 Nov (`AeroRescue-site/` and `Project Website Test Wireframe/`). I read every source file. I didn't install or build the site, so this review covers content and code, not a test run.
 
-**Updated 17 Nov:** the whole project's current status, for all four of you, is in [Team_Status.md](../Team_Status.md), with your part in its section 6. Please have this review's fixes pushed by Wed 18 Nov.
+**Updated 17 Nov (evening):**
+- **Thanks for removing the four wireframe images** (section 3).
+- **If you want to keep working, work on my showcase website,** in `Essential_task_delegation/T3_Website/`. Section 7 says what to do and how.
+- **It replaces your prototype,** so the rest of this review's fixes to your own site are optional (section 7.4).
+- The whole project's current status, for all four of you, is in [Team_Status.md](../Team_Status.md), with your part in its section 6.
 
 ## In short
 
@@ -92,6 +96,8 @@ Two more changes to this table:
 
 ## 3. The four wireframe images: please remove them from the repository
 
+**Done 17 Nov:** you deleted all four (commits `6e9960dae` to `5deeeab04`). The text below stays as the record.
+
 The images in `Project Website Test Wireframe/` (about 12 MB) follow the CSE499A proposal's first plan (the archived half of the root README): Qwen2-VL-7B, FloodNet, AIDER and RescueNet, a "Rescue Actionability Rubric", comparisons with GPT-4o. That plan changed to DisasterM3 and Qwen2.5-VL-7B, and none of its metrics was ever measured: CSE499A's final report has no RAR, ROUGE-L or BERTScore. So the images show a project that doesn't exist:
 - **A different model and data:** a fine-tuned Qwen2-VL-7B, with "12.8k triplets" from xBD, FloodNet, AIDER and RescueNet drafted with GPT-4o. We use Qwen2.5-VL-7B on DisasterM3, and never used FloodNet, AIDER, RescueNet or GPT-4o.
 - **Results that don't exist:**
@@ -136,9 +142,60 @@ The images in `Project Website Test Wireframe/` (about 12 MB) follow the CSE499A
 
 ## 6. Suggested order
 
-1. Remove the wireframe images (section 3).
+1. Remove the wireframe images (section 3). *(Done 17 Nov.)*
 2. Fix `results.js` and the claims (sections 2 and 4), taking each number from the file linked next to it.
 3. Replace the README and fill or hide the gallery.
 4. Connect the demo to the local API once T2's fixed flow and the chain's building table are ready.
 
-This site covers the same ground as T3 in the roadmap (the showcase website). How the two fit together is still to be agreed.
+This site covers the same ground as T3 in the roadmap (the showcase website). *(Settled 16 Nov: the showcase website is `T3_Website/`, built from Aryan's prototype. So items 2–4 above are optional now; section 7 is how you can help instead.)*
+
+## 7. If you want to keep working: the showcase website (added 17 Nov)
+
+From Abrar. If you want to keep working, work on my showcase website, `Essential_task_delegation/T3_Website/`. It has seven pages, built from Aryan's prototype in the look I chose. Aryan takes over its build on Wed 18 Nov. Your part below is separate from his, so you two won't be changing the same files.
+
+### 7.1 Set up (about an hour)
+
+1. Pull: `git pull origin main`.
+2. Read Aryan's handover, [T3_Website_Handover.md](../Aryan_Task/T3_Website_Handover.md), sections 1, 2, 4, 5, 6 and 7. It's written to Aryan, but its rules (section 6) hold for everyone, and section 7 lists the checks to run before every push.
+3. You need Node 22.18 or later. In `T3_Website/`, run `npm install`, `npm run fixtures` and `npm run dev`, then open http://127.0.0.1:3000.
+   - Without xBD's photos on your PC, the maps show without photos. That's expected.
+   - Try it needs the model file, which isn't in git: ask me for `r9_int8_static_keep1_3.onnx` (33 MB), and put it in `T3_Website/public/model/`.
+
+### 7.2 Your part: test what nobody has tested yet
+
+So far the site has been checked in Chrome and Edge on one PC, mostly by automated tools. Nobody has tried it on these:
+1. **Firefox:**
+   - every page;
+   - on Explore, the map's controls: Ctrl with the mouse wheel to zoom, the zoom buttons, dragging, hiding and searching buildings, and the 3D view;
+   - on Try it, one after-image (the site's [README](../T3_Website/README.md), "The model in the browser", says how). Note how many seconds it took.
+2. **A screen reader:** NVDA (free, for Windows) on every page. Note anything it skips, reads wrongly or reads in a confusing order. Can the map's buildings be reached and read without a mouse?
+3. **A real printer:** on Reports, "Print this report". Is the printout complete and readable?
+4. **Safari, if you have a Mac or an iPhone:** the same as item 1, plus a two-finger pinch on the map.
+
+Write what you find in a new file, `Noman_task/T3_Site_Test.md`. For each finding, give the page, the browser or device, what you did, what happened, and a screenshot. **Don't fix anything yet.** Push the file and tell me.
+
+### 7.3 Then: the fixes I pick
+
+- **I'll pick which findings to fix.** Before you edit, tell Aryan which files you'll change, so you don't both edit the same file.
+- **One fix per push.** Pull before you start.
+- **Run the checks in the handover's section 7 before every push,** and stage only the site's folder: `git add -- Essential_task_delegation/T3_Website`.
+- **Not yours without asking me first:**
+  - anything in `src/core/` (the model, the facts and the colours);
+  - `src/data/facts.json`;
+  - the deploy;
+  - the booth's local server.
+- **The rules that matter most** (handover, section 6):
+  - no invented data;
+  - every number comes from `facts.json`, shown with `<Num id="…" />`;
+  - missing is never zero;
+  - pixels, not metres;
+  - nothing loads from another site;
+  - no mention of AI tools in the site, its code, its README or your commit messages.
+
+### 7.4 Your own prototype
+
+The showcase website replaces it, so you don't have to finish sections 2, 4 and 5 of this review. Instead, put one line at the top of `AeroRescue-site/README.md` saying:
+- it's an early prototype, replaced by the showcase website in `Essential_task_delegation/T3_Website/`;
+- its numbers aren't kept up to date.
+
+That way no one takes them for our results. The showcase site keeps its numbers in one data file, as yours did, and labels stand-in data as such.

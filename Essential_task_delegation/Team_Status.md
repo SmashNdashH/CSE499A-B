@@ -162,7 +162,7 @@ Every part below has been tested, but each with its own model and images. The pa
   - the first deploy (Abrar);
   - a test on the booth laptop and on a phone;
   - later, a small local server for the booth that runs the guideline search and the report writer.
-- **From Wed 18 Nov, Aryan takes over the build** by [his handover](Aryan_Task/T3_Website_Handover.md), which gives every path, the rules and the order of work.
+- **From Wed 18 Nov, Aryan takes over the build** by [his handover](Aryan_Task/T3_Website_Handover.md), which gives every path, the rules and the order of work. Noman can help: testing first, then the fixes Abrar picks ([his review](Noman_task/Review_AeroRescue_site.md), section 7).
 
 ## 6. What comes next, and your part
 
@@ -177,11 +177,15 @@ Every part below has been tested, but each with its own model and images. The pa
 **In parallel:** the 3B's training runs, and the website's gallery and deploy. The showcase is around 15 Dec.
 
 ### Noman
-- **Your review's fixes, by Wed 18 Nov:** [Review_AeroRescue_site.md](Noman_task/Review_AeroRescue_site.md). Remove the four wireframe images first.
+- **The four wireframe images are gone:** you deleted them on 17 Nov. Thanks.
+- **If you want to keep working, work on the showcase website.** Section 7 of [your review](Noman_task/Review_AeroRescue_site.md) gives your part:
+  - test the site where nobody has yet: Firefox, a screen reader, a real printer, and Safari if you have it;
+  - write down what you find;
+  - then fix what Abrar picks, agreeing with Aryan who edits which file.
+- **Your own site:** the showcase website replaces it, so the rest of your review's fixes are optional. Instead, add one line to the top of its README saying it's an early prototype whose numbers aren't kept up to date (review, section 7.4).
 - **The roadmap suggests you on the 3B:** L2, then L3, a 4-bit 3B that passes a question to the 7B when it's unsure.
   - L2's five notebooks are built and waiting to run. They push checkpoints to Abrar's Hugging Face account, so ask Abrar before you run any.
   - L3 starts once L2 has picked its 3B.
-- **Your site:** its pages, and its way of keeping content in data files, can be ported into the showcase site later, with your review's corrections. Nothing of it is ported yet.
 
 ### Aryan
 - **Your review's fixes:** you pushed them on 17 Nov, with a change list ([CHANGES.md](Aryan_Task/CHANGES.md)). Abrar checks them against the review's section 8 ([Review_and_Fix_List.md](Aryan_Task/Review_and_Fix_List.md)) next.
@@ -195,6 +199,7 @@ Every part below has been tested, but each with its own model and images. The pa
 - **From Wed 18 Nov, the website:** [T3_Website_Handover.md](Aryan_Task/T3_Website_Handover.md), section 8.
   - Done on 17 Nov, so not yours any more: zoom and pan, hide and search, folding panels, the hover card, print, and the reports' error marks.
   - What's left is short: look at every page on a real phone, add a place for the supervisor line, and run the checks that wait for the gallery export and for 18 Nov.
+  - **Noman may help.** He tests where nobody has yet (Firefox, a screen reader, a printer, Safari), then fixes only what Abrar picks. Before either of you edits a file, agree who has it.
 - **In counting work,** report count error, not only accuracy.
 
 ### Ridita
