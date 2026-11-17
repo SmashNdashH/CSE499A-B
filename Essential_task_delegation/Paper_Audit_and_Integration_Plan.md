@@ -35,9 +35,11 @@ The CSE499A final presentation ended with a Future Work list ([final_presentatio
 
 > **This table is the 17 Oct snapshot.** The current status of every goal is in [Progress_Tracker.md, Goals](Progress_Tracker.md#goals). The changes since:
 > - **O1:** R16c (SAM 3 + R11's pieces, then a stronger grader) passed the gate on all 645 validation images, on two U-Net seeds (20–21 Oct). E5 (26 Oct) then found validation pairs that are near-copies of training pairs, Without the 40 leaked pairs, R16c steps 2 and 3 score 0.2838–0.2980. Only R16c step 5's SAM 3-only map passes on clean data (0.3161 and 0.3051), narrowly; with a third grader seed (28 Oct, 0.2982) it's met on the three-seed mean only (0.3065). Benchmark copies move the 7B's and the counting scores by at most 0.7 points.
-> - **O2:** counting with R11's per-building table (H2) is 32.96%, 1.2 points under 34.2%.
-> - **O3:** the heatmap is done (T1 v3), and an offline guideline search is built (Ridita, 25 Oct).
-> - **O4:** the INT8 edge segmenter is done (L1b).
+> - **O2:** counting with R11's per-building table (H2) is 32.96%, 1.2 points under 34.2%. *7 Nov: a rule that reads only the answer options scores 66.98% on the same 3,583 questions, so this measure doesn't show counting ability. Report it beside the rule, with count error against the true masks (Task_Ledger §7).*
+> - **O1, 11 Nov:** on 2,007 unseen test pairs (E6, E7 step 2), find-then-grade scores 0.3898 and R11 0.3984. The gap is noise (E7 step 2b): R11 leads outside Turkey, find-then-grade on Turkey. O1 stays judged on validation.
+> - **O2, 11 Nov:** on the test pairs, counting is level: 32.7% from find-then-grade's table and 32.53% from R11's (p = 0.87).
+> - **O3:** the heatmap is done (T1 v3), and an offline guideline search is built (Ridita, 25 Oct). **11 Nov:** DisasTeller on our 7B passed its proof run with the internet off, with a fixed flow instead of CrewAI's agents (Ridita). The reports' quality is still open.
+> - **O4:** the INT8 edge segmenter is done (L1b). L2 step 1 ran twice (1,146 teacher answers from the new 7B, 4 Nov); L2 step 2's five notebooks are built (8 Nov), not run yet.
 
 | Goal | Deliverable | Status | Where to look |
 |---|---|---|---|
@@ -268,7 +270,7 @@ Across these papers, specialist models are good at finding and counting, VLMs ar
   - The base Qwen2.5-VL-7B averages 31.2% (counting 34.2%).
   - The authors' fine-tune of it on the Instruct set averages 40.4% (counting 34.3%).
   - Fine-tuning didn't help counting for them either. They report overfitting and density bias in VLM counting (§4.2).
-- **Fine-tuning recipe (Appendix B.3):** LoRA on the language model with the vision encoder frozen; rank 64, alpha 16, dropout 0.05; AdamW, lr 2e-4, β 0.9 / 0.95, cosine schedule; global batch 256; 1 epoch; 4× H100. Precision and image size aren't stated. The fine-tuned weights aren't released.
+- **Fine-tuning recipe (Appendix B.3):** LoRA on the language model with the vision encoder frozen; rank 64, alpha 16, dropout 0.05; AdamW, lr 2e-4, β 0.9 / 0.95, cosine schedule; global batch 256; 1 epoch; 4× H100. Precision and image size aren't stated. The fine-tuned weights aren't released. *(4 Nov: we've kept the encoder frozen to match this recipe, and never tested training it. Roadmap L0b tests that.)*
 - **How we use it:** like-for-like comparisons (roadmap H1) and the recipe check behind roadmap task L0, a better 7B teacher before distilling.
 
 ### 4.14 Soup (trysoup.dev), a fine-tuning tool: set aside, barely usable for us (22 October 2026)
@@ -391,6 +393,8 @@ Across these papers, specialist models are good at finding and counting, VLMs ar
 3. **The 3B is not trained to reason before every answer.** That is slower in the field, clashes with the benchmark's letters-only answers, and risks teaching invented evidence.
 
 **Update, 19 October 2026: improve the teacher first.** Like for like with the DisasterM3 paper (§4.13), our fine-tuned 7B beats the base model (36.1% against 31.2% on optical questions) but trails the authors' fine-tune of the same model (40.4%). A student learns from its teacher, so roadmap task L0 improves the 7B before L2 runs. How the 3B learns from it (answers only, or soft labels) is still to choose. *(28 Oct: L0's new 7B is kept by its rule, with ORR +3.5 and DTR +1.1 points at full size. It is L2's teacher.)*
+
+**Update, 4 November 2026: what the 3B is for.** It's there for size and speed, not for running offline: the 7B already runs offline on two T4s. H2b's memory table shows the "about 6 GB" bar is nearly met by the 7B in 4-bit (6.2 GB at peak); a 3B needs 7.7 GB in full precision and pays off only in 4-bit (2.6 GB). So the 3B stays a promised deliverable (O4), but as a side experiment the main report doesn't depend on ([roadmap §1b](Next_Steps_Roadmap.md)). Roadmap T2b tests whether a plain text model writes reports as well as the 7B, and L3 step 6 measures the 3B on a laptop with no GPU.
 
 ## 6. What not to adopt
 - **GeoPixel's single big model:** too heavy, and it has no before image.

@@ -198,6 +198,8 @@ SAM 3 connects four earlier ideas: the pre-disaster image, the find-then-grade p
 
 ### 7.2 Three-layer design
 
+> **4 Nov 2026:** this is the design as first drawn. Tests have since changed the reasoning layer: counts come from fixed queries on a table, not from the model (H2b); the trained grader does the grading (Tamanna's Part B); and whether the writer needs vision at all is open (T2b). The current chain is in [roadmap §1b](Next_Steps_Roadmap.md). *11 Nov: which model finds and grades the buildings is open again after E7's test pairs, and the report writer is a fixed flow on our 7B, which passed its offline proof run.*
+
 ```
                     ┌──────────────── REASONING LAYER ("brain") ────────────────┐
  User question ───► │ Qwen2.5-VL (7B at base / 3B in field), SAM-3-Agent style  │
@@ -240,7 +242,7 @@ SAM 3 connects four earlier ideas: the pre-disaster image, the find-then-grade p
 | **E3**, part 2 | Prompt "building" on the 645 validation images, **both pre and post**. Measure building IoU against the combined ground-truth masks and per-image building counts, and compare with R1's building-vs-background IoU. | No | 1 day | SAM 3 on the pre image ≥ R1 → it does R16's finding |
 | **S2** | Zero-shot damage prompts on post images ("destroyed building", "collapsed building", "rubble"). Compare Destroyed IoU with R1's 0.27. | No | ½ day | Likely to fail; a clear negative result is still worth reporting |
 | **R16** | The grading: train a Siamese ResNet-18 on pre+post crops of training buildings. On validation, classify the buildings SAM 3 found and score with our full-image protocol **and** the xView2 metric. | Small model only | 2–3 days | Destroyed IoU beats R1 by more than the noise bar (0.013) |
-| **S4** | Connect the VLM as the agent. Evaluate on DisasterM3's counting and referring-segmentation questions against our 499A scores (34.2% base, 23.58% fine-tuned). | No | 2–3 days | Counting beats the 34.2% base model (objective O2) |
+| **S4** | Connect the VLM as the agent. Evaluate on DisasterM3's counting and referring-segmentation questions against our 499A scores (34.2% base, 23.58% fine-tuned). | No | 2–3 days | Counting beats the 34.2% base model (objective O2). 7 Nov: a rule that reads only the answer options scores 66.98%, so add count error against the true masks (Task_Ledger §7). |
 | **L4** | Edge tier: EfficientSAM3 vs SAM 3 accuracy and latency, or distil SAM 3's pseudo-labels into our U-Net. | Optional | 2 days | A measured trade-off table for the report |
 
 E3 takes about two days and needs no training. It decides whether the whole direction is viable.

@@ -2,6 +2,9 @@
 
 Drafted 2026-10-05, while R4, R5 and R8 are still running. Nothing here needs those runs to finish except the final champion.
 
+> **4 Nov 2026:** the order from here is the one-chain plan in [Next_Steps_Roadmap.md §1b](Next_Steps_Roadmap.md). R13–R15 wait until that chain has been scored as one (E7).
+> **11 Nov 2026:** E7 step 2 scored it on 2,007 unseen test pairs: find-then-grade and R11 are level on destroyed buildings (0.3898 against 0.3984, a gap within noise), with R11 ahead outside Turkey and find-then-grade far ahead on Turkey. By the rule fixed before the run, the choice of chain is open again ([tracker](Progress_Tracker.md)).
+
 > **Names updated 2026-10-18** to the task IDs used in [Next_Steps_Roadmap.md](Next_Steps_Roadmap.md):
 > - E1 was P2-0;
 > - R11 was P2-B;
