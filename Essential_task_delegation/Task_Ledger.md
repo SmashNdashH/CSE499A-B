@@ -1013,6 +1013,16 @@ Every push since 22 Oct was read file by file, and each number was checked again
     - **Result:** ours cite 11 real sections and make up 5 plan numbers (July: 0 and 33). But ours say "no danger" 4 times (July 0) and contradict themselves 6 times (July 2). Useful, yes / partly / no: July 3 / 3 / 0, ours 0 / 5 / 1. Two of our 7B's six photo descriptions contradict their photos, and one wrong map reading caused all 4 "no danger" sentences and 3 of the 6 contradictions.
     - **Leads to:** a quality-fix run, built and tested on her laptop with a pretend model. The map reading is now written by code from the grades; one more question reads each photo's sign; sections are checked for invented contact details and for their citations. It doesn't fix the photo descriptions. Not yet run on Kaggle.
     - **Not on the website yet:** the comparison's further errors aren't marked on the Reports page.
+    - **Checked on the PC (17 Nov):**
+      - **Her script:** `compare_reports.py --selftest` passes. Re-run on both sets into a scratch folder, it gives `results.csv` byte for byte, and the same 7 candidate lines; only her reading columns differ.
+      - **Her hand check:** the totals recomputed from `hand_check.csv` match her table (made up: 3 / 33 / 2 against 4 / 5 / 0; contradictions 2 against 6; useful 3 / 3 / 0 against 0 / 5 / 1).
+      - **A sample, against the sources:** all 6 of our contradictions are in the report text, July's six grades are in its Expert report, and Pictures 3, 4 and 5 show what she says (the "Concrete Bridge" sign; standing buildings behind a pit; cracks in a dry street).
+      - **Her code:** read in full. The model client's moved code behaves as before, and every name the flow uses exists. Of 22 independent tests of the new checks on the proof run's text, 21 pass: the hotline, the 6 IDs without brackets, the RC grade-5 ID not shown, a missing citation, sticker answers, the map reading, and dates and times not taken as phone numbers. One false alarm: a plain list of numbers ("10 15 20") counts as a phone number, which would only cause one needless re-ask.
+      - **Gaps:**
+        - her laptop test (the pretend server's five modes and the 45 small checks) isn't in the repository, so it can't be re-run;
+        - the hand check and both expectations were written by her AI assistant, knowing which set was which, and her README names it in four places;
+        - git can't show that the expectations came before the counts, since all of it arrived in one commit.
+      - **Side finding:** the six "Wajima" photos show big-city skylines, not Wajima. They are sample pictures labelled with Wajima street names, so "six ground photos from Wajima" (on our site, and elsewhere) overstates them.
 
 ### Ridita · The DisasterM3–BRIGHT audit (corrected 22 Oct, pushed 25 Oct)
 - **What we use:**
@@ -1069,7 +1079,16 @@ Every push since 22 Oct was read file by file, and each number was checked again
   - **Asked for by Wed 18 Nov,** with acceptance checks and a ready-to-paste instruction for his AI assistant.
 - **15–16 Nov, the bridge rechecked while building T3:** four more faults, added to his review as §7.2–7.5. Safe areas are read with keys T1 v3's file doesn't have, so each prints at (0, 0), 0 px from damage; neither status is checked; missing fields get defaults; and model estimates are titled "GROUND TRUTH", with R11 and T1 v3 hard-coded as the sources.
 - **16 Nov, the website handed over:** he builds T3's remaining pages from [his handover](Aryan_Task/T3_Website_Handover.md), which lists every change from his prototype and why (§3), what came back on real data (§3.6), the rules, the checks before each push, and the next tasks in order. His own `Website/` stays his record, under his review.
-- **17 Nov, his review's fixes pushed** (commit `648b35c92`, with a change list, [Aryan_Task/CHANGES.md](Aryan_Task/CHANGES.md)). Not yet checked against the review's section 8. Read so far, the bridge only:
+- **17 Nov, his review's fixes pushed** (commit `648b35c92`, with a change list, [Aryan_Task/CHANGES.md](Aryan_Task/CHANGES.md)). **Checked item by item the same day: [Aryan_Task/Fix_Checklist_17Nov.md](Aryan_Task/Fix_Checklist_17Nov.md).** Of 39 items, 26 pass, 6 pass in part, 6 fail and 1 isn't due yet.
+  - **How:** his lint and build, run on a copy (both pass); headless Chrome on his built site (no request leaves the PC); the six embedded reports compared with the run's files (word for word the same); the review's bridge checks with the real files; and the counting table's U-Net row recomputed from his v3 run file.
+  - **Fails:**
+    - the bridge's safe areas, still at (0, 0);
+    - its default values;
+    - new "deploy USAR teams here" advice in the bridge's text;
+    - the counting card's "Baseline / Target 0.3009";
+    - the retrieval card's target;
+    - the 23.58% note.
+  - Read before the full check, the bridge only:
   - **fixed:** 7.1 (an image not in the table returns `image_not_in_table`) and 7.3 (both statuses checked); the hard-coded model names are gone;
   - **still open:** 7.2 (safe areas read as `point_xy` and `dist_to_damage_px`, so each still prints at (0, 0), 0 px away), 7.4 (made-up defaults for missing fields) and 7.5 (the "GROUND TRUTH" title).
   - Seen in the change list, to check: its sources for several site numbers look wrong. For example, SAM 3's 0.630 is credited to his counting report and the field model's 33 MB to the proof run's logs.
@@ -1090,6 +1109,10 @@ Every push since 22 Oct was read file by file, and each number was checked again
   - an offline FAQ claiming the laptop already runs every model.
 - **The wireframes:** they follow the CSE499A proposal's first plan, with metrics never measured (CSE499A's final report has no RAR, ROUGE-L or BERTScore) and FEMA and UN-OCHA sign-in pages, in the public repository. Asked to be removed.
 - **Fit:** it covers the same ground as T3 (Abrar's, decided 24 Oct); how they fit together is open. *(16 Nov: settled. T3 is built from Aryan's prototype in `T3_Website/`; Noman's pages and his pattern of keeping content in data files can be ported into it, with the corrections from his review. Nothing of his is ported yet.)*
+- **17 Nov:** he deleted the four wireframe images (commits `6e9960dae` to `5deeeab04`); nothing else of the review is fixed. Abrar's call the same evening: if he wants to keep working, he works on the showcase website (his review's new section 7).
+  - **His part:** testing where nobody has yet (Firefox, a screen reader, a printer, Safari), written up in `Noman_task/T3_Site_Test.md`, then only the fixes Abrar picks.
+  - **Coordination:** he and Aryan agree who edits which file. Aryan takes over the build on 18 Nov.
+  - **His own site:** the rest of its fixes become optional, given one line in its README marking it an out-of-date prototype, since T3 replaces it.
 
 ### Tamanna · Plan 2, building-by-building crop inspection (`Tamanna_task_2/Plan_2/`, pushed 17–22 Oct)
 - **What we use:**

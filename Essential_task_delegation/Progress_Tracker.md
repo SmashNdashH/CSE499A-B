@@ -11,7 +11,8 @@
       - Two of our 7B's photo descriptions contradict their photos.
       - A quality-fix run is built and laptop-tested, not yet run on Kaggle.
       - [Her README](Offline_RAG_KR2/README.md), "Comparison with the July Gemini reports".
-    - **Aryan: his review's fixes, with a change list** ([Aryan_Task/CHANGES.md](Aryan_Task/CHANGES.md)); not yet checked against the review's section 8. The bridge, read:
+    - **Checked on 17 Nov, at your request.** Aryan: [Fix_Checklist_17Nov.md](Aryan_Task/Fix_Checklist_17Nov.md), 39 items for you to confirm: 26 pass, 6 in part, 6 fail, 1 not due. Ridita: her script reproduces her counts byte for byte, and her hand-checked totals and a sample of her findings hold; her new checks pass 21 of my 22 tests on the proof run's text; her laptop test isn't in the repository. Details in the ledger, §9.
+    - **Aryan: his review's fixes, with a change list** ([Aryan_Task/CHANGES.md](Aryan_Task/CHANGES.md)). The bridge, read:
       - fixed: 7.1 (a missing image) and 7.3 (statuses checked);
       - still open: 7.2 (the safe-area keys, so each safe area still prints at (0, 0)), 7.4 (made-up defaults) and 7.5 (the "GROUND TRUTH" title).
     - **Not on the site yet:** the comparison's further errors in the reports (two photo descriptions, three made-up scene facts, one grade that differs from the Expert report) aren't marked on the Reports page. Say if you want them added.
@@ -449,6 +450,7 @@ At the measured rate that's about a week of GPU time, and up to 120 hours a week
 - **Model work should be done by about mid-November** at this pace, leaving about 3–4 weeks for the website, the report and buffer.
 - **The biggest unknown is the website,** since there's no recorded pace for it. The plan assumes about 3 weeks part-time (1–21 Nov). How many hours a week you can give it decides whether that holds.
 - Re-measure the pace each week from the run board, and update this section.
+- **17 Nov, your call: the final report, the poster, the video and the rehearsal wait.** The whole system has to work first. You'll say go when you're satisfied with what we have, so they aren't scheduled before then, and the weeks above no longer bind them.
 
 ## Run board: what ran, what's running, what's next
 
@@ -550,7 +552,7 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
      - **(c) A mix.** SAM 3's outlines graded by R11's pixels, or by the grader and R11 together. It must be chosen on validation (the 605 clean pairs) and confirmed once on the test pairs, since nothing may be tuned on them. The test files already hold R11's pixels under every SAM 3 outline (`instances_test.csv`), so the confirmation needs no GPU.
      - **Recommended: (c) first,** since each model wins where the other fails. If no mix beats both on validation, choose (b) for its per-building outlines, and report R11's better scores outside Turkey. Say which, and I'll check what the validation files hold before building it.
   2. **T2: settled.** Ridita chose the fixed flow on 10 Nov, by her rule written before run 4, and its internet-off proof run passed on 11 Nov. Her comparison with July's Gemini reports is done (16 Nov); next, hers: the quality-fix run on Kaggle.
-  3. **Noman and Aryan: their reviews are pushed (15 Nov, commit `6ec05307e`). Ask both to fix everything by Wed 18 Nov.** *(17 Nov: Aryan pushed his fixes; the bridge's 7.2, 7.4 and 7.5 are still open, and the rest is to be checked against the review's section 8. Noman hasn't pushed. Both are told in [Team_Status.md](Team_Status.md), section 6.)*
+  3. **Noman and Aryan: their reviews are pushed (15 Nov, commit `6ec05307e`). Ask both to fix everything by Wed 18 Nov.** *(17 Nov: Aryan pushed his fixes; the bridge's 7.2, 7.4 and 7.5 are still open, and the rest is to be checked against the review's section 8. Noman deleted the four wireframe images (17 Nov) and nothing else. Both are told in [Team_Status.md](Team_Status.md), section 6. 17 Nov, evening, your call: Noman is offered the showcase website instead (his review's new section 7): testing in Firefox, with a screen reader, on a printer and in Safari, then the fixes you pick, agreeing with Aryan who edits which file. His own site's remaining fixes are optional, given one line in its README marking it an out-of-date prototype. Pushed with the team status.)*
      - **Noman:** [his review](Noman_task/Review_AeroRescue_site.md). First, remove the four wireframe images.
      - **Aryan:** [his review and fix list](Aryan_Task/Review_and_Fix_List.md), with a ready-to-paste instruction for his AI assistant and the checks his fixes must pass. First, remove the invented damage assessments of real buildings in Pazarcık, and the reports falsely labelled as `fixed_flow.py` output.
      - **Also open for Aryan:** his counting study's three corrections (since 28 Oct), the bridge's missing-image bug (since 4 Nov), and his update 4 section's claim about our building table.
@@ -581,7 +583,7 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
      - **C. Left for later by the brief (only if you say so):**
        - **6. Booth API with FastAPI** (plan 1 h, build 4–6 h): a small local server on 127.0.0.1 that serves this same site and runs the parts a browser can't, the guideline search and the report writer. A one-page plan for your approval first, then the build.
        - **7. First Vercel deploy, together** (1 h): you run `vercel login` (it needs your account); the rest follows the [site's README](T3_Website/README.md), "Deploying to Vercel", then a check of the live site (isolation headers, no outside requests, Try it). The phone test of Try it can follow.
-     - **D. Showcase material beyond the website:**
+     - **D. Showcase material beyond the website** *(17 Nov, your call: these wait until the system works and you say go)*:
        - **8. A short demo video of the site** (2–3 h): under a minute (the slider sweep, a click on a building, the 3D city, a Try it run), from screen captures with captions, for the booth screen and LinkedIn.
        - **9. Booth poster** (1–2 h): one printable page with the pipeline, the key numbers (each from the site's facts file) and a QR code to the site.
        - **10. Update 5's website section** (1 h): a section in `others/CSE499B_update_5_draft.tex` on the website and the browser test, with the measured numbers and links to the files.
@@ -1216,6 +1218,12 @@ Background:
 
 ## Change log
 
+- **17 Nov 2026 (night): housekeeping, at your request.**
+  - Four superseded October docs moved, not deleted, into [Archive/](Archive/): `segmentation_improvement_guide.md`, `mIoU_vs_Recall_Talking_Points.md`, `team_task_assignments.md` and `Team_task_ablation_audit_and_lead_execution_plan.md`. The one doc that linked them (Research_Directions) now points there.
+  - Paper_Audit's three links to files that aren't in git now point to the committed CSE499A presentation (slide 22) and report (page 8), or name the local file.
+  - `.gitignore` keeps the saved DhakaDriveX LinkedIn post and `Champion_Task/CSE499B Phase A Briefing.html` out of git.
+  - The final report, poster, video and rehearsal wait for your go (timeline section).
+  - Noman is offered the showcase website (his review's section 7; pushed).
 - **17 Nov 2026 (evening): [Team_Status.md](Team_Status.md) written for the four teammates; Aryan's and Ridita's pushes of 17 Nov read for it.** Updated: the top of this file, "Needs you now" (items 2, 3 and 5, the push now covering the team status and the unpushed files of 4–11 Nov), the O3 row, the roadmap's T2 lines, the ledger (§9, Ridita and Aryan), and Aryan's and Noman's reviews (pointers to the status). Paper_Audit_and_Integration_Plan, Phase2_Plan, Research_Directions_Beyond_Finetuning and System_Design_Notes: nothing in them is stale by this, so no change.
 - **17 Nov 2026: items 1, 2 and 3 of T3's work list done and checked, not pushed yet** (the map's zoom, pan, hide, search, folding panels and pointer card; print for a report; every problem Ridita's README lists now on the Reports page; a design and accessibility pass). Updated: the top of this file, "Needs you now" (item 5), the T3 row, [System_Design_Notes.md §4.6](System_Design_Notes.md), the roadmap's T3 status, the ledger (three decision rows), [Aryan's handover](Aryan_Task/T3_Website_Handover.md) (sections 2, 3.2, 3.5, the new 3.7, 5, 7, 8 and the assistant box) and the site's README. Paper_Audit_and_Integration_Plan, Phase2_Plan and Research_Directions_Beyond_Finetuning: nothing in them is about the website, so no change.
 - **16 Nov 2026 (late): the seven pages pushed (`63d2e79e0`), and a numbered work list for 17 Nov written into "Needs you now", item 5** (the website polish left in Aryan's handover, the gallery export and the before-and-after model's 8-bit export, the booth API, the deploy, and showcase material). Updated: the top of this file and item 5. No other core doc said the work was unpushed, so no change there.
