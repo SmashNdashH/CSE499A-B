@@ -1,0 +1,8 @@
+{
+ "event": "palu_tsunami",
+ "source": "xBD",
+ "split": "validation, clean",
+ "image": "palu_tsunami_00000122_post_disaster.png",
+ "width": 1024,
+ "height": 1024
+}

@@ -555,6 +555,19 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
          - `instances_test.csv` (E7 step 2) gives the same for 138,725 outlines on 1,934 test images.
          - What's left to supply: the true pixels outside the outlines, from E5 step 2's per-image counts (validation) and E6's masks (test). They let a mix be scored as a whole map.
      - **Recommended: (c) first,** since each model wins where the other fails. If no mix beats both on validation, choose (b) for its per-building outlines, and report R11's better scores outside Turkey. Say which, and I'll check what the validation files hold before building it.
+     - **Done 17 Nov, at your go: E7 step 2c, option (c), on your PC with no GPU** ([notebook](Champion_Task/e7-step2c-mix-choice.ipynb), run in Jupyter with its outputs; [results](Champion_Task/E7-results/step2c/README.md)).
+       - **What:** six mixes, fixed before the run, scored on the 605 clean validation pairs. The rule picks the highest destroyed IoU (mean of three graders), and the pick is confirmed once on the 2,007 clean test pairs, with nothing changed.
+       - **Checks first:** every published score rebuilds from the saved files within 0.0005, except seed 43 on validation (0.3063 against 0.3051). That is a gap R16c step 5 already recorded (0.0012). The first run stopped there; the tolerance for that one check is now 0.0015, recorded in the notebook.
+       - **The pick: C4, R11's map on xBD images and find-then-grade on the other sources** (Turkey and the rest).
+         - On validation: destroyed IoU **0.3501**, against 0.3068 for find-then-grade and 0.2692 for R11, and the best mIoU (0.5881).
+         - The outline-based mixes, with R11's pixels grading SAM 3's outlines, scored 0.21–0.31.
+       - **Once on the test pairs:** destroyed IoU **0.4296**, against 0.3984 (R11) and 0.3898 (find-then-grade). Its lead holds beyond noise in 10,000 redraws: +0.031 over R11 (+0.008 to +0.057) and +0.040 over find-then-grade (+0.027 to +0.055).
+       - **The costs:**
+         - mIoU 0.5555, against R11's 0.5721, and building IoU 0.6221 against 0.6944;
+         - the system needs to know an image's source. A real one could switch by ground resolution: BRIGHT's tiles are 0.30 m per pixel, xBD's 1.25–2.82 m.
+         - The building table would mix R11's blobs (xBD images) with SAM 3's outlines (the others).
+       - **Against the expectation written before the run:** C4 strongest, as expected; C1 lower than guessed (0.21, not about 0.27); C3 near 0.31 only at w = 0.75; C4 on test at the low end of the guessed 0.43–0.45.
+       - **Your decision now:** (a) R11, (b) find-then-grade, or (c) C4. My recommendation is (c): it is the only option that leads on both validation and test on the project's main measure, beyond noise. Its mIoU cost and the mixed table are stated with it.
   2. **T2: settled.** Ridita chose the fixed flow on 10 Nov, by her rule written before run 4, and its internet-off proof run passed on 11 Nov. Her comparison with July's Gemini reports is done (16 Nov); next, hers: the quality-fix run on Kaggle.
   3. **Noman and Aryan: their reviews are pushed (15 Nov, commit `6ec05307e`). Ask both to fix everything by Wed 18 Nov.** *(17 Nov: Aryan pushed his fixes; the bridge's 7.2, 7.4 and 7.5 were still open, and the rest is to be checked against the review's section 8. Later on 17 Nov, at your request, the bridge's 7.2, 7.4 and 7.5 were fixed and self-checked on the real files (Team_Status §6, Aryan). Noman deleted the four wireframe images (17 Nov) and nothing else. Both are told in [Team_Status.md](Team_Status.md), section 6. 17 Nov, evening, your call: Noman is offered the showcase website instead (his review's new section 7): testing in Firefox, with a screen reader, on a printer and in Safari, then the fixes you pick, agreeing with Aryan who edits which file. His own site's remaining fixes are optional, given one line in its README marking it an out-of-date prototype. Pushed with the team status.)*
      - **Noman:** [his review](Noman_task/Review_AeroRescue_site.md). First, remove the four wireframe images.
@@ -588,7 +601,13 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
            - Its pixels under the SAM 3 outlines match R16c step 5's within 0.02%.
            - The truth and find-then-grade match exactly.
            - The website's validator accepts the six pairs as a real gallery.
-           - **Not done yet:** copying `gallery/` into `T3_Website/public/data/`, then `npm run validate` and `npm run build` (step 6 below).
+           - **In the website since 17 Nov (night), at your go:**
+             - the six pairs are copied into `T3_Website/public/data/` (identical to the run's zip, 120 files), so the stand-in pairs and their notice are gone from the real build;
+             - `npm run validate` accepts the six pairs, and `npm run build` passes with all its checks;
+             - the browser check passes on the real build and on the stand-in build: 7 pages at 390 and 1440 px, no request leaving 127.0.0.1.
+           - **Found on the way:**
+             - **A stale preview server.** One left running from an earlier session answered on port 4173, so the first browser check tested the old stand-in build. It was stopped, and the check re-run on the real build.
+             - **A flaw in the check, not the site.** It picked its click point on a selected building's thicker outline. On the real Santa Rosa pair that point lies just outside the building, so the second click hit the photo. `scripts/browser-check.ts` now picks a point inside the building's shape.
          - **Built 17 Nov, dry run passed on your PC: [t3-gallery-export.ipynb](Champion_Task/t3-gallery-export.ipynb).**
            - **What it does:** R11 with TTA runs on the GPU. Find-then-grade is rebuilt from saved files: E3's SAM 3 outlines and R16c step 5's grades, seed 42. From each map it writes the building table with outlines, T1 v3's heatmaps, hot spots and safe areas, and the IoU per class against the truth.
            - **The six pairs, by a rule fixed before any run** (the notebook's first cell): one event per disaster type; in each, the pair with the median R11 destroyed-building IoU among pairs with at least 5,000 true destroyed px. They are Harvey 472, Santa Rosa 58 (Home), Moore 120, Palu 122, Midwest flooding 287 and Turkey earthquake0 380.
@@ -666,7 +685,10 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
   - **The steps:** pix2pix, then a diffusion model only on your go, and one confirmation on the test pairs. Every run goes through you.
   - **Your part:**
     1. **Name the member.** My suggestion: Tamanna. She has been free since 2 Nov, L4 waits on your method choice, and her Part B was careful work.
-    2. **Before their step 1,** share a private Kaggle dataset holding R11's and R9's `final_model.pth` with their account. Their checkpoints are in your private Hugging Face repositories.
+    2. **Before their step 1,** share the checkpoint dataset with their Kaggle account. The dataset was made on 17 Nov at your request.
+       - It is private, on account 1: [disasterm3-r11-r9-checkpoints](https://www.kaggle.com/datasets/abrarmohammedtanzim/disasterm3-r11-r9-checkpoints), holding `R11/final_model.pth` and `R9/final_model.pth`, the training runs' own files (124.4 MB each), with their configs and SHA-256s.
+       - **To share:** open it → **Settings** → **Sharing** → add their Kaggle username, with view access.
+       - Notebooks that search `/kaggle/input` for an `R11` or `R9` folder (E5, E7, L1b, L1c) find these files with no `HF_TOKEN`. The gallery export downloads from Hugging Face instead, to record the commit.
     3. **At step 5,** share `e7-inputs`.
 - **L2 step 2: five runs on three accounts (built 8 Nov; what each run does is in the first item of this file).** Runs 1 and 2 can start now, side by side. Account 4 isn't used: (b)'s training needs your write token, and account 4 is Tamanna's. GPU hours, estimated: account 3 about 25 h (runs 1 and 3b); account 1 about 22 h (runs 2 and 3c); account 2 about 4 h (runs 4 and 5). Each notebook's first cell repeats its steps.
   1. **Run 1: the 7B's soft labels, for (b), on account 3 (`redwannewaz`).** About 5 h, estimated.

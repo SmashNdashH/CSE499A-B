@@ -151,18 +151,26 @@ for (const route of PAGES) {
         }, outside);
         await wait(700);
         const brought = await viewBox();
-        // A clear point on that building: inside the frame, with nothing of the page over it.
+        // A clear point on that building: inside the frame, with nothing of the page over it, and inside the
+        // building's own shape. While it is selected, its thicker outline also answers to the pointer, but a point
+        // on that outline alone is no longer on the building once it is deselected (found on the real gallery, 18 Nov).
         const target = outside === null ? null : await page.evaluate((id) => {
           const s = document.querySelector('.ws .oc-stage')!.getBoundingClientRect();
           const g = document.querySelector<SVGGElement>(`.ws .oc-b[data-building="${id}"]`);
           if (!g) return null;
+          const shape = g.querySelector<SVGGeometryElement>('path, polygon');
+          const inShape = (x: number, y: number) => {
+            const m = shape?.getScreenCTM();
+            if (!shape || !m) return true;
+            return shape.isPointInFill(new DOMPoint(x, y).matrixTransform(m.inverse()));
+          };
           const r = g.getBoundingClientRect();
           const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
           const inFrame = cx > s.left && cx < s.right && cy > s.top && cy < s.bottom;
           for (let i = 0; i < 49; i++) {
             const x = r.left + ((i % 7) + 0.5) * (r.width / 7), y = r.top + (Math.floor(i / 7) + 0.5) * (r.height / 7);
             if (x < s.left + 6 || x > s.right - 6 || y < s.top + 6 || y > s.bottom - 6) continue;
-            if (document.elementFromPoint(x, y)?.closest('.oc-b') === g) return { id, inFrame, x, y };
+            if (document.elementFromPoint(x, y)?.closest('.oc-b') === g && inShape(x, y)) return { id, inFrame, x, y };
           }
           return { id, inFrame, x: -1, y: -1 };
         }, outside);

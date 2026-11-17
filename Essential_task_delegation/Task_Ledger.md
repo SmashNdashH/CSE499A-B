@@ -482,6 +482,31 @@ Status is kept in [Progress_Tracker.md](Progress_Tracker.md); the plans are in [
 
 ## 5. Phase B: structural training runs
 
+### E7 step 2c: option (c), a mix chosen on validation (run 17 Nov, PC, no GPU)
+- **What:** [e7-step2c-mix-choice.ipynb](Champion_Task/e7-step2c-mix-choice.ipynb); [results](Champion_Task/E7-results/step2c/README.md). Built and run at Abrar's go, from saved files only:
+  - SAM 3 outlines with three graders' log-probabilities, R11's pixels and the true pixels under each (R16c steps 5 and 5b; E7 step 2);
+  - E5 step 2's per-image counts;
+  - E6's masks;
+  - R11's saved test maps.
+- **Why:** on the test pairs, R11 led outside Turkey and find-then-grade on Turkey (E7 step 2b). A mix might beat both.
+- **How, fixed before the run:**
+  - six candidates:
+    - R11 grading the outlines;
+    - the grader saying building-or-not with R11 giving the class;
+    - three blends;
+    - by source, R11 on xBD images and find-then-grade on the others;
+  - pick the highest destroyed IoU on the 605 clean validation pairs (mean of three seeds; ties to the simpler one);
+  - confirm once on the 2,007 clean test pairs, with 10,000 redraws as in step 2b.
+- **Checks:**
+  - every published score was rebuilt from the files within 0.0005;
+  - except seed 43 on validation: 0.3063 against 0.3051, the 0.0012 gap R16c step 5 recorded on 26 Oct. The first run stopped there, and that one check now allows 0.0015, recorded in the notebook.
+- **Result:** the pick is by source (C4).
+  - **Validation:** 0.3501 destroyed IoU, against 0.3068 for find-then-grade and 0.2692 for R11; mIoU 0.5881.
+  - **Test:** 0.4296, against 0.3984 and 0.3898. That's +0.031 over R11 (95%: +0.008 to +0.057) and +0.040 over find-then-grade (+0.027 to +0.055).
+  - **Costs:** test mIoU 0.5555 against R11's 0.5721; it needs the image's source, which ground resolution could stand in for; the building table would mix blobs and outlines.
+- **Against the expectation:** C4 strongest, as guessed; C1 lower than guessed; the test score at the low end of the guess.
+- **Decision:** Abrar's, between (a), (b) and (c) = C4. Recommended: C4.
+
 ### R11 · Before + after images (6 channels)
 - **What:** the U-Net sees the before-image as well as the after-image.
 - **Why it was planned:**

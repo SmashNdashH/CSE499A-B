@@ -1,0 +1,8 @@
+{
+ "event": "hurricane_harvey",
+ "source": "xBD",
+ "split": "validation, clean",
+ "image": "hurricane_harvey_00000472_post_disaster.png",
+ "width": 1024,
+ "height": 1024
+}

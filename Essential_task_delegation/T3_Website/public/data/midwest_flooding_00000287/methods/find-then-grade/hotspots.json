@@ -1,0 +1,54 @@
+{
+ "hot_spots": [
+  {
+   "rank": 1,
+   "point_xy": [
+    363,
+    374
+   ],
+   "area_px": 2918,
+   "peak": 0.097,
+   "edge_px": 363,
+   "where": "centre",
+   "on_gt_destroyed": true,
+   "on_gt_damage": true,
+   "point_on_gt_destroyed": true,
+   "point_on_gt_damage": true
+  }
+ ],
+ "safe_areas": [
+  {
+   "rank": 1,
+   "xy": [
+    923,
+    923
+   ],
+   "distance_px": 699,
+   "edge_px": 100,
+   "where": "south-east",
+   "on_gt_building": false
+  },
+  {
+   "rank": 2,
+   "xy": [
+    923,
+    100
+   ],
+   "distance_px": 609,
+   "edge_px": 100,
+   "where": "north-east",
+   "on_gt_building": false
+  },
+  {
+   "rank": 3,
+   "xy": [
+    923,
+    773
+   ],
+   "distance_px": 606,
+   "edge_px": 100,
+   "where": "south-east",
+   "on_gt_building": false
+  }
+ ]
+}

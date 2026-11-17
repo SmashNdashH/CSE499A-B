@@ -1,0 +1,9 @@
+candidate,miou,destroyed_iou,building_iou,destroyed_iou_s42,destroyed_iou_s43,destroyed_iou_s44
+R11 alone (reference),0.5805,0.2692,0.7429,0.2692,0.2692,0.2692
+Find-then-grade alone (reference),0.5474,0.3068,0.6307,0.3161,0.3063,0.2982
+"C1, R11 grades the outlines",0.5304,0.2139,0.6272,0.2139,0.2139,0.2139
+"C2, grader: building or not; R11: which class",0.5307,0.2125,0.6307,0.2127,0.2125,0.2124
+"C3, blend, w = 0.25",0.5314,0.2135,0.6293,0.2122,0.2138,0.2145
+"C3, blend, w = 0.5",0.541,0.2391,0.6314,0.238,0.2313,0.248
+"C3, blend, w = 0.75",0.5559,0.3097,0.6321,0.3058,0.3223,0.3009
+"C4, R11 on xBD images, find-then-grade on the others",0.5881,0.3501,0.6822,0.3574,0.3503,0.3426

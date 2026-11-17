@@ -290,7 +290,9 @@ Abrar reads it and decides what goes into the reports and the system.
   - About 30 GPU hours a week. Plan your sessions so long runs save checkpoints and can continue.
 - **Data:** attach `abrarmohammedtanzim/disasterm3-mirror`.
 - **R11's and R9's checkpoints** are in Abrar's private Hugging Face repositories.
-  - Abrar shares a private Kaggle dataset holding the two `final_model.pth` files with your Kaggle account, before step 1.
+  - Abrar shares his private Kaggle dataset `abrarmohammedtanzim/disasterm3-r11-r9-checkpoints` with your Kaggle account before step 1.
+  - It holds `R11/final_model.pth` and `R9/final_model.pth`, each with its training `config.json`, and its description gives each file's SHA-256.
+  - Attached to a notebook, the files are at `/kaggle/input/datasets/abrarmohammedtanzim/disasterm3-r11-r9-checkpoints/R11/final_model.pth` (and `R9/…`).
   - Never ask for or use his token.
 - **Your own checkpoints:** your own Hugging Face account or the Kaggle output. Teammates' accounts can't write to Abrar's repositories.
 - **SAM 3** (step 4 only): request access on Hugging Face with your own account.

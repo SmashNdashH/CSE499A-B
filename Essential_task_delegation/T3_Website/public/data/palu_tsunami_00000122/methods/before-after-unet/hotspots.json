@@ -1,0 +1,84 @@
+{
+ "hot_spots": [
+  {
+   "rank": 1,
+   "point_xy": [
+    786,
+    191
+   ],
+   "area_px": 84151,
+   "peak": 0.788,
+   "edge_px": 191,
+   "where": "north-east",
+   "on_gt_destroyed": true,
+   "on_gt_damage": true,
+   "point_on_gt_destroyed": false,
+   "point_on_gt_damage": false
+  },
+  {
+   "rank": 2,
+   "point_xy": [
+    45,
+    212
+   ],
+   "area_px": 12523,
+   "peak": 0.328,
+   "edge_px": 45,
+   "where": "north-west",
+   "on_gt_destroyed": false,
+   "on_gt_damage": false,
+   "point_on_gt_destroyed": false,
+   "point_on_gt_damage": false
+  },
+  {
+   "rank": 3,
+   "point_xy": [
+    988,
+    202
+   ],
+   "area_px": 13052,
+   "peak": 0.259,
+   "edge_px": 35,
+   "where": "north-east",
+   "on_gt_destroyed": false,
+   "on_gt_damage": false,
+   "point_on_gt_destroyed": false,
+   "point_on_gt_damage": false
+  }
+ ],
+ "safe_areas": [
+  {
+   "rank": 1,
+   "xy": [
+    100,
+    923
+   ],
+   "distance_px": 598,
+   "edge_px": 100,
+   "where": "south-west",
+   "on_gt_building": false
+  },
+  {
+   "rank": 2,
+   "xy": [
+    569,
+    917
+   ],
+   "distance_px": 571,
+   "edge_px": 106,
+   "where": "south",
+   "on_gt_building": false
+  },
+  {
+   "rank": 3,
+   "xy": [
+    250,
+    923
+   ],
+   "distance_px": 563,
+   "edge_px": 100,
+   "where": "south-west",
+   "on_gt_building": false
+  }
+ ]
+}

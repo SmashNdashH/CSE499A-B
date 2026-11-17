@@ -1,0 +1,3 @@
+comparison,observed,low_2.5%,high_97.5%,share_above_0
+"C4, R11 on xBD images, find-then-grade on the others minus R11 alone",0.0312,0.0075,0.0569,0.9944
+"C4, R11 on xBD images, find-then-grade on the others minus Find-then-grade alone",0.0397,0.0265,0.0545,1.0
