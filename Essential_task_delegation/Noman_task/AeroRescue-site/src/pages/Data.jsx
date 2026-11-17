@@ -3,10 +3,10 @@ import SectionHeading from '../components/ui/SectionHeading'
 
 const FACTS = [
   ['Image pairs', '6,443 before/after pairs, 4-class damage masks'],
-  ['Split', '90/10 with seed 42; 645 validation images, never trained on'],
+  ['Split', '90/10 with seed 42: 645 validation images; 605 after removing 40 that leaked from training'],
   ['Benchmark', '30,042 entries; 12,968 questions across six scored tasks'],
   ['Radar images', 'Not used for segmentation; scored separately for counting'],
-  ['Leak check', '40 validation pairs shared images with training; all scores re-scored without them'],
+  ['Leak check', '40 validation pairs shared images with training; segmentation scores are reported without them'],
 ]
 
 export default function Data() {
