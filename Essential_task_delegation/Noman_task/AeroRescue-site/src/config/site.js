@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'DisasterM3 Triage', // placeholder: pick the final name later
   tagline: 'From before/after imagery to damage maps, building counts and rescue-planning reports, offline.',
-  course: 'NSU CSE499B · Section 15 · Group 5',
+  course: 'NSU CSE499B · Section 13 · Group 5',
 }
 
 export const NAV_LINKS = [
