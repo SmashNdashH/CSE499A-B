@@ -1,0 +1,42 @@
+{
+ "task": "E7 step 1",
+ "questions": 1055,
+ "validation_images": 645,
+ "min_area": 20,
+ "biases": {
+  "42": [
+   0.0,
+   -1.75,
+   -4.0,
+   -1.25
+  ],
+  "43": [
+   0.0,
+   -1.0,
+   -4.0,
+   -2.0
+  ],
+  "44": [
+   0.0,
+   -2.0,
+   -4.0,
+   -3.5
+  ]
+ },
+ "paired_with_r11": {
+  "all": {
+   "questions": 1055,
+   "only_chain_right": 143,
+   "only_R11_right": 159,
+   "p": 0.3881
+  },
+  "clean": {
+   "questions": 974,
+   "only_chain_right": 130,
+   "only_R11_right": 145,
+   "p": 0.3986
+  }
+ },
+ "finding": "The chain with grader seed 42 answers 37.73% of the 1,055 validation questions, against 39.24% for R11 (exact McNemar p = 0.3881). Median count error: 40.0% against 33.3%. Expected about 36-40%: met.",
+ "run_time_min": 2.7
+}

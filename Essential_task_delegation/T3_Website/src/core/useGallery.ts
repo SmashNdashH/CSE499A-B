@@ -36,7 +36,12 @@ export const METHOD_LABELS: Record<string, string> = {
   'field-model': 'Field model',
 };
 
+// An event's name as a reader expects it: place names capitalised, the kind of disaster not
+// ("Santa Rosa wildfire", "Hurricane Harvey"). Only the name itself is changed: words after the
+// first space, such as "(gallery photo)", stay as they are.
+const KINDS = new Set(['earthquake', 'tsunami', 'wildfire', 'bushfire', 'fire', 'flood', 'flooding', 'volcano', 'eruption', 'tornado', 'landslide', 'explosion', 'cyclone', 'typhoon']);
 export const prettyEvent = (event: string) => {
-  const s = event.replace(/_/g, ' ');
-  return s.charAt(0).toUpperCase() + s.slice(1);
+  const [name, ...rest] = event.split(' ');
+  const words = name.split(/[_-]+/).map((word, i) => (i > 0 && KINDS.has(word.toLowerCase()) ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1)));
+  return [words.join(' '), ...rest].join(' ');
 };

@@ -43,6 +43,10 @@ export function Workspace({ palette, ticks, sweep, own }: WorkspaceProps) {
   const [tab, setTab] = useState<'building' | 'questions'>('building');
   const [modal, setModal] = useState<'reports' | 'benchmark' | null>(null);
   const [view, setView] = useState<'flat' | '3d'>('flat');
+  // Outlines the visitor has hidden, and the number typed into the list's search. Both only change
+  // what is shown: counts, answers and the saved picture always use the whole table.
+  const [hiddenIds, setHiddenIds] = useState<number[]>([]);
+  const [query, setQuery] = useState('');
 
   const pair = own?.pair ?? index?.pairs.find((p) => p.id === pickedPair) ?? index?.pairs.find((p) => p.info.hero) ?? index?.pairs[0] ?? null;
   const method = pair?.methods.find((m) => m.id === pickedMethod) ?? pair?.methods[0] ?? null;
@@ -51,8 +55,18 @@ export function Workspace({ palette, ticks, sweep, own }: WorkspaceProps) {
   // The fixture mark belongs to gallery data only; a visitor's own result is never a fixture.
   const fixture = !own && !!index?.fixture;
 
-  const clear = () => { setSelectedId(null); setHighlightIds(null); setActiveClass(null); };
+  // Building numbers start again in every table, so nothing chosen in one pair carries to the next.
+  const clear = () => { setSelectedId(null); setHighlightIds(null); setActiveClass(null); setHiddenIds([]); setQuery(''); };
   const highlight = useMemo(() => (highlightIds ? new Set(highlightIds) : null), [highlightIds]);
+  const hidden = useMemo(() => new Set(hiddenIds), [hiddenIds]);
+  const all = data?.buildings ?? null;
+  const drawn = useMemo(() => (all && hidden.size ? all.filter((b) => !hidden.has(b.building_id)) : all), [all, hidden]);
+  // Choosing a building shows it, even if its outline was hidden.
+  const select = useCallback((id: number | null) => {
+    setSelectedId(id);
+    if (id !== null) setHiddenIds((ids) => (ids.includes(id) ? ids.filter((x) => x !== id) : ids));
+  }, []);
+  const toggleHidden = useCallback((id: number) => setHiddenIds((ids) => (ids.includes(id) ? ids.filter((x) => x !== id) : [...ids, id])), []);
   const onHighlight = useCallback((ids: number[] | null) => { setHighlightIds(ids); setActiveClass(null); }, []);
   const onShowSpots = useCallback(() => setLayers((l) => (l.spots ? l : { ...l, spots: true })), []);
   const pickClass = (c: ClassId | null) => {
@@ -76,7 +90,8 @@ export function Workspace({ palette, ticks, sweep, own }: WorkspaceProps) {
       <SplineTopBar pairs={own ? [pair] : index!.pairs} pairId={pair.id} onSelectPair={(id) => { setPickedPair(id); setPickedMethod(null); clear(); }}
         methodId={method.id} onSelectMethod={(id) => { setPickedMethod(id); clear(); }}
         onOpenReports={() => setModal('reports')} onOpenBenchmark={() => setModal('benchmark')} />
-      <SplineLayersPanel buildings={data?.buildings ?? null} layers={layers} onLayers={setLayers} selectedId={selectedId} onSelect={setSelectedId} methodLabel={methodLabel} own={!!own} />
+      <SplineLayersPanel buildings={all} layers={layers} onLayers={setLayers} selectedId={selectedId} onSelect={select} methodLabel={methodLabel} own={!!own}
+        hidden={hidden} onToggleHidden={toggleHidden} onShowAll={() => setHiddenIds([])} query={query} onQuery={setQuery} />
       <div className="ws-map">
         {!own && state.status === 'missing' &&<p className="ws-missing">The building table for this pair could not be read, so no building is drawn. Missing data is not zero buildings.</p>}
         <div className="ws-view" role="group" aria-label="View of the map">
@@ -84,9 +99,9 @@ export function Workspace({ palette, ticks, sweep, own }: WorkspaceProps) {
           <button type="button" className="ws-chip" aria-pressed={view === '3d'} onClick={() => setView('3d')}>3D damage city</button>
         </div>
         {view === '3d'
-          ? <DamageCity pair={pair} buildings={data?.buildings ?? null} layers={layers} selectedId={selectedId} highlight={highlight} onSelect={setSelectedId} photoUrl={own?.urls.after} />
-          : <OfflineCanvas pair={pair} methodId={method.id} buildings={data?.buildings ?? null} hotspots={data?.hotspots ?? null} palette={palette}
-              layers={layers} selectedId={selectedId} highlight={highlight} onSelect={setSelectedId} ticks={ticks} sweep={sweep} urls={own?.urls}
+          ? <DamageCity pair={pair} buildings={drawn} layers={layers} selectedId={selectedId} highlight={highlight} onSelect={select} photoUrl={own?.urls.after} />
+          : <OfflineCanvas key={pair.id} pair={pair} methodId={method.id} buildings={drawn} hotspots={data?.hotspots ?? null} palette={palette}
+              layers={layers} selectedId={selectedId} highlight={highlight} onSelect={select} ticks={ticks} sweep={sweep} urls={own?.urls}
               label={`Damage map of ${own ? 'the picture you chose' : `the ${prettyEvent(pair.info.event)} pair`}. Model output: ${methodLabel}. Buildings are listed in the layers panel.`} />}
         <SplineBottomBar buildings={data?.buildings ?? null} activeClass={activeClass} onPickClass={pickClass} />
         {data && (
@@ -101,7 +116,8 @@ export function Workspace({ palette, ticks, sweep, own }: WorkspaceProps) {
       </div>
       <SplineInspectorPanel pair={pair} method={method} buildings={data?.buildings ?? null} hotspots={data?.hotspots ?? null} accuracy={data?.accuracy ?? null}
         selected={data?.buildings.find((b) => b.building_id === selectedId) ?? null} tab={tab} onTab={setTab}
-        onHighlight={onHighlight} onSelect={setSelectedId} onShowSpots={onShowSpots} own={!!own} />
+        onHighlight={onHighlight} onSelect={select} onShowSpots={onShowSpots} own={!!own}
+        selectedHidden={selectedId !== null && hidden.has(selectedId)} onToggleHidden={toggleHidden} />
       <DisasTellerReportsModal isOpen={modal === 'reports'} onClose={() => setModal(null)} />
       <BenchmarkPanelModal isOpen={modal === 'benchmark'} onClose={() => setModal(null)} />
     </div>

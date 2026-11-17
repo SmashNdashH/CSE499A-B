@@ -1,0 +1,3 @@
+Mode: offline
+
+The task cannot be completed with the current inputs due to an error in the "global_img_interpreter" tool.

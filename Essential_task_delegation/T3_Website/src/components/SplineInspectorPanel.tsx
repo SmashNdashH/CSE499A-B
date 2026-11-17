@@ -21,6 +21,9 @@ interface SplineInspectorPanelProps {
   onShowSpots: () => void;
   /** A result made in the browser (Try it): it isn't scored here, and it has no report facts. */
   own?: boolean;
+  /** Whether the selected building's outline is hidden on the map, and the switch for it. */
+  selectedHidden: boolean;
+  onToggleHidden: (id: number) => void;
 }
 
 const IOU_ROWS = [['destroyed', 'Destroyed'], ['damaged', 'Damaged'], ['intact', 'Intact'], ['background', 'Background']] as const;
@@ -38,10 +41,12 @@ function ReportInputs({ pair, method }: { pair: PairEntry; method: MethodEntry }
   return text === null ? <p className="ws-note">Loading.</p> : <pre className="fq-sql">{text}</pre>;
 }
 
-export function SplineInspectorPanel({ pair, method, buildings, hotspots, accuracy, selected, tab, onTab, onHighlight, onSelect, onShowSpots, own }: SplineInspectorPanelProps) {
+export function SplineInspectorPanel({ pair, method, buildings, hotspots, accuracy, selected, tab, onTab, onHighlight, onSelect, onShowSpots, own, selectedHidden, onToggleHidden }: SplineInspectorPanelProps) {
   const src = method.source;
   return (
     <aside className="ws-panel ws-right" aria-label="Building inspector">
+      <details open>
+      <summary className="ws-fold">Facts and questions</summary>
       <div className="ws-tabs" role="tablist" aria-label="Inspector">
         <button type="button" role="tab" aria-selected={tab === 'building'} onClick={() => onTab('building')}>Building</button>
         <button type="button" role="tab" aria-selected={tab === 'questions'} onClick={() => onTab('questions')}>Questions</button>
@@ -65,6 +70,11 @@ export function SplineInspectorPanel({ pair, method, buildings, hotspots, accura
               <dt>Centre</dt><dd className="num">({selected.centroid_x}, {selected.centroid_y}) px</dd>
               <dt>Bounding box</dt><dd className="num">{selected.bbox_w} x {selected.bbox_h} px at ({selected.bbox_x}, {selected.bbox_y})</dd>
             </dl>
+          )}
+          {selected && (
+            <button type="button" className="ws-chip ws-hide-one" onClick={() => onToggleHidden(selected.building_id)}>
+              {selectedHidden ? 'Show its outline on the map again' : 'Hide its outline on the map'}
+            </button>
           )}
 
           <h3>This image against the ground truth</h3>
@@ -98,6 +108,7 @@ export function SplineInspectorPanel({ pair, method, buildings, hotspots, accura
           {!own && <ReportInputs pair={pair} method={method} />}
         </>
       )}
+      </details>
     </aside>
   );
 }

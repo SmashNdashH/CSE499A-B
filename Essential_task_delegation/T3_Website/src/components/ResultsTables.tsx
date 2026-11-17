@@ -235,8 +235,8 @@ export function OtherParts() {
       )}
       {fact('hotspot_point_on_damage') && (
         <li>
-          <h3>The survivability heatmap</h3>
-          <p><Num id="hotspot_point_on_damage" /> of its hot spots have their marked point within 20 px of a building that is damaged or destroyed in the ground truth.</p>
+          <h3>The danger heatmap</h3>
+          <p><Num id="hotspot_point_on_damage" /> of its hot spots have their marked point within 20 px of a building that is damaged or destroyed in the ground truth. Our reports call it the survivability heatmap.</p>
           <Provenance id="hotspot_point_on_damage" />
         </li>
       )}

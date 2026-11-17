@@ -1,0 +1,9 @@
+Mode: offline
+
+Reconstruction Plan Report:
+- Executive Summary: The earthquake caused slight to severe damage in three regions, with no additional dangerous areas identified. Immediate response efforts focused on monitoring and preparedness.
+- Assessment of Damage: Region A experienced slight damage with a disaster grade of 2, Region B had moderate damage with a grade of 4, and Region C sustained severe damage with a grade of 6. No further dangerous areas were identified.
+- Reconstruction Needs: Based on the offline_pdf_search_tool findings, reconstruction efforts should prioritize shelter and household item repairs, along with potential shelter toolkits and tents for displaced populations. Structural repairs and retrofits are recommended for severely damaged buildings in Region C, while minor repairs and retrofits are suggested for moderately damaged structures in Region B. No specific budget figures are available offline.
+- Plan of Action: The reconstruction plan includes deploying teams to assess and repair damaged buildings, distributing shelter kits and toolkits, and providing temporary housing solutions for displaced individuals. Coordination with local authorities will ensure efficient implementation.
+- Recommendations: Policy recommendations include establishing rapid response teams for structural assessments, allocating resources for shelter and debris removal, and providing training for safe shelter construction. Funding support is crucial for rebuilding efforts.
+- Appendices: Supporting data includes recommendations from the offline_pdf_search_tool on shelter and settlement reconstruction, along with a checklist for basic tools and livelihood support activities.

@@ -1,7 +1,8 @@
 // From React Bits (https://reactbits.dev), copied as source under its licence (LICENSE.md here).
 // Changed for this site:
 //   - `coordinateSpan`: the coordinate tags show positions in the span the container stands for
-//     (our image's pixels), not in screen pixels;
+//     (our image's pixels), not in screen pixels. Its optional `x` and `y` are the position at the
+//     container's top-left corner, so a zoomed or moved view still reads true image pixels;
 //   - `showTargetSize`: the size tag under a locked target can be switched off, since a screen
 //     measurement would disagree with the building table's own numbers;
 //   - the 'use client' directive is removed (this is not a server-rendered app).
@@ -21,8 +22,8 @@ export type CrosshairProps = {
   fade?: number;
   smoothing?: number;
   showCoordinates?: boolean;
-  /** What the container's full width and height stand for, in the units to show. */
-  coordinateSpan?: { width: number; height: number } | null;
+  /** What the container's full width and height stand for, in the units to show, from its top-left corner (x, y). */
+  coordinateSpan?: { x?: number; y?: number; width: number; height: number } | null;
   showTargetSize?: boolean;
   targetEffect?: CrosshairTargetEffect;
   targetSelector?: string;
@@ -48,7 +49,7 @@ type Settings = {
   fade: number;
   smoothing: number;
   showCoordinates: boolean;
-  coordinateSpan: { width: number; height: number } | null;
+  coordinateSpan: { x?: number; y?: number; width: number; height: number } | null;
   showTargetSize: boolean;
   targetEffect: CrosshairTargetEffect;
   targetSelector: string;
@@ -277,8 +278,8 @@ const Crosshair = ({
           const span = s.coordinateSpan;
           const kx = span && size.w > 0 ? span.width / size.w : 1;
           const ky = span && size.h > 0 ? span.height / size.h : 1;
-          tag(String(Math.round(state.x * kx)), state.x, 8, 'center');
-          tag(String(Math.round(state.y * ky)), 8, state.y, 'middle');
+          tag(String(Math.round((span?.x ?? 0) + state.x * kx)), state.x, 8, 'center');
+          tag(String(Math.round((span?.y ?? 0) + state.y * ky)), 8, state.y, 'middle');
         }
       }
       if (state.lock.alpha > 0.001) {

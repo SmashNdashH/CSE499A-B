@@ -2,6 +2,8 @@
 
 From Abrar, on your pushes of 9 and 10 Nov (`AeroRescue-site/` and `Project Website Test Wireframe/`). I read every source file. I didn't install or build the site, so this review covers content and code, not a test run.
 
+**Updated 17 Nov:** the whole project's current status, for all four of you, is in [Team_Status.md](../Team_Status.md), with your part in its section 6. Please have this review's fixes pushed by Wed 18 Nov.
+
 ## In short
 
 - **The site is a good base.** It has a clear structure, its content lives in data files, the demo is honest about its sample output, and every page carries the decision-support warning.

@@ -212,7 +212,7 @@
   {
     "id": "misaligned_pairs", "value": 52, "display": "52%",
     "measures": "Share of measured pairs whose before and after images are shifted by more than 2 px",
-    "image_set": "2,966 pairs that Ridita's audit could measure", "model": "none (an image alignment measurement)",
+    "image_set": "2,966 pairs that our alignment check (by Ridita Afrin Riya) could measure", "model": "none (an image alignment measurement)",
     "source": "Essential_task_delegation/Task_Ledger.md", "find": ["52% of the 2,966 measurable pairs are shifted by more than 2 px"], "public_from": "2026-11-11"
   },
   {

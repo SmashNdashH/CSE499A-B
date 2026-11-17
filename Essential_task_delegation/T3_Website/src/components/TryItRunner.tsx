@@ -226,7 +226,7 @@ export function TryItRunner() {
 
       {run.status === 'done' && (
         <>
-          <Workspace palette="dark" own={run.result} />
+          <Workspace key={run.maskUrl} palette="dark" own={run.result} />
           <p className="try-mask">
             <a className="a-btn a-btn-quiet" href={run.maskUrl} download={`mask_${run.result.pair.info.image.replace(/\.[^.]+$/, '').replace(/[^\w-]+/g, '_')}.png`} data-mask>
               Download the raw mask (PNG)

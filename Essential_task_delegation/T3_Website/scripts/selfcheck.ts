@@ -2,8 +2,12 @@
 // The first block repeats the counting notebook's own checks (h2-sql-counting-agent.ipynb, Cell 5),
 // so the site's table follows the same rules.
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { buildingsFromMask } from '../src/core/buildings.ts';
 import { countsByClass, largestOfClass, withinOfDestroyed } from '../src/core/queries.ts';
+import { KNOWN_ERRORS, REPORT_NOTES, REPORTS } from '../src/core/reportNotes.ts';
+import { prettyEvent } from '../src/core/useGallery.ts';
+import { FULL_VIEW, MAX_ZOOM, centreOn, clampView, panBy, shows, zoomAt } from '../src/core/view.ts';
 
 const W = 200;
 const m = new Uint8Array(W * W);
@@ -48,4 +52,30 @@ assert.equal(largestOfClass(b1, 2), null, 'no damaged building is null, not a ma
 const none = buildingsFromMask(one.map((v) => (v === 3 ? 0 : v)), W, W, 'check.png');
 assert.ok(none.length === 1 && none[0].dist_to_nearest_destroyed_px === null);
 
-console.log('self-checks passed: building table, outlines and fixed queries');
+// The map's view: a zoom keeps the image point under the pointer in place, and no view leaves the image.
+const zoomed = zoomAt(FULL_VIEW, 2, 0.25, 0.75, 1024, 1024);
+assert.deepEqual(zoomed, { k: 2, x: 128, y: 384 }, 'the point under the pointer (256, 768) stays where it was');
+assert.deepEqual(zoomAt(zoomed, 0.5, 0.25, 0.75, 1024, 1024), FULL_VIEW, 'zooming back out returns to the whole image');
+assert.equal(zoomAt(FULL_VIEW, 100, 0.5, 0.5, 1024, 1024).k, MAX_ZOOM);
+assert.deepEqual(panBy(zoomed, -5, 5, 1024, 1024), { k: 2, x: 0, y: 512 }, 'a pan stops at the image\'s edge');
+assert.deepEqual(centreOn(zoomed, 1000, 20, 1024, 1024), { k: 2, x: 512, y: 0 });
+assert.ok(shows(zoomed, 256, 768, 1024, 1024) && !shows(zoomed, 100, 768, 1024, 1024));
+assert.deepEqual(clampView({ k: 0.3, x: -9, y: 9 }, 1024, 768), FULL_VIEW);
+
+// Event names: places capitalised, the kind of disaster not, and nothing after the name touched.
+assert.equal(prettyEvent('santa_rosa_wildfire'), 'Santa Rosa wildfire');
+assert.equal(prettyEvent('hurricane_harvey'), 'Hurricane Harvey');
+assert.equal(prettyEvent('palu_tsunami (gallery photo)'), 'Palu tsunami (gallery photo)');
+assert.equal(prettyEvent('your image'), 'Your image');
+
+// The reports' known errors: every marked phrase is still in a report, and no mark begins inside another.
+const reportText = Object.fromEntries(REPORTS.map(([f]) => [f, fs.readFileSync(new URL(`../public/reports/offline/${f}`, import.meta.url), 'utf8')]));
+for (const e of KNOWN_ERRORS) assert.ok(Object.values(reportText).some((t) => t.includes(e.phrase)), `the marked phrase "${e.phrase}" is in no report`);
+for (const f of Object.keys(REPORT_NOTES)) assert.ok(f in reportText, `${f} is not one of the six reports`);
+for (const [f, text] of Object.entries(reportText)) {
+  const spans = KNOWN_ERRORS.flatMap((e) => [...text.matchAll(new RegExp(e.phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'))].map((m) => [m.index, m.index + e.phrase.length, e.phrase] as const))
+    .sort((a, c) => a[0] - c[0]);
+  spans.forEach((s, i) => assert.ok(i === 0 || spans[i - 1][1] <= s[0], `${f}: the marks "${spans[i - 1]?.[2]}" and "${s[2]}" overlap`));
+}
+
+console.log('self-checks passed: building table, outlines, fixed queries, the map\'s view, event names and the reports\' marked phrases');

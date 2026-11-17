@@ -2,7 +2,7 @@
 
 The showcase website of Group 5 (NSU, CSE499B, Section 13): an offline system that maps disaster damage from before-and-after satellite images. It is a static site: Vite, React 19, TypeScript and Tailwind 4. The same build is served by Vercel for the public and, later, by a local API at the booth.
 
-- **Status (16 Nov 2026):** all three phases are built. The site has seven pages in the chosen look (direction A): Home `/`, How it works `/how`, Explore `/explore` (the building map and the 3D damage city), Try it `/try` (the field model in the visitor's browser), Results `/results` (charts), Reports `/reports` and About `/about`. Still open: the real gallery export (the site runs on development fixtures until then), the tests on the booth laptop and a phone (steps below), and the first deploy.
+- **Status (17 Nov 2026):** all three phases are built. The site has seven pages in the chosen look (direction A): Home `/`, How it works `/how`, Explore `/explore` (the building map and the 3D damage city), Try it `/try` (the field model in the visitor's browser), Results `/results` (charts), Reports `/reports` and About `/about`. Added on 17 Nov: zoom, pan, hide, search and folding panels on the building map, a card beside the pointer, print for a report, the rest of the reports' known problems, and a design and accessibility pass over every page. Still open: the real gallery export (the site runs on development fixtures until then), the tests on the booth laptop and a phone (steps below), and the first deploy.
 - **Who builds it now:** Abrar until 17 Nov; Aryan Sami takes over what's left from 18 Nov. His handover, with the rules, file paths and order of work: [../Aryan_Task/T3_Website_Handover.md](../Aryan_Task/T3_Website_Handover.md).
 - **Where it began:** the map workspace started as Aryan Sami's prototype (`../Aryan_Task/Website/`), reworked to our data. His folder is unchanged. What changed from it and why, file by file: [the handover, section 3](../Aryan_Task/T3_Website_Handover.md#3-what-changed-from-your-prototype-and-why).
 - **Related files:** [NOTES.md](NOTES.md) (what was understood, contradictions found, open questions) and [DATA_CONTRACT.md](DATA_CONTRACT.md) (the files the gallery export must write).
@@ -25,10 +25,10 @@ npm run dev           # http://127.0.0.1:3000, serving the fixtures while public
 | `npm run facts` | Checks the facts file against its source files and the anchors, and lists sources git doesn't track. |
 | `npm run guidelines` | Checks that `public/guidelines/searches.json` (the proof run's 18 guideline searches and their passages) is word for word from its sources. `node scripts/make-guidelines.ts` rebuilds it. |
 | `npm run palette` | Checks the damage colours under simulated colour-vision deficiencies. |
-| `npm run selfcheck` | Self-checks of the building table, the outlines and the fixed queries. |
+| `npm run selfcheck` | Self-checks of the building table, the outlines, the fixed queries, the map's zoom and pan arithmetic, event names, and the reports' marks (every marked phrase is still in a report; no two marks overlap). |
 | `npm run typecheck`, `npm run lint` | TypeScript and ESLint. |
 | `npm run build:fixtures`, `npm run preview:fixtures` | A build with the fixtures, into `dist-fixtures/`, and a local server for it on port 4173. For review only. |
-| `npm run browser-check` | With `preview:fixtures` running: screenshots of all seven pages at 390 px and 1440 px, a network log, and a click-through of the map and the 3D view, into `checks/`. |
+| `npm run browser-check` | With `preview:fixtures` running: screenshots of all seven pages at 390 px and 1440 px, a network log, and a click-through of the map (click, count, question, the wheel with and without Ctrl, zoom, a building chosen from the list while zoomed, drag, hide, search, fold), of the 3D view from the keyboard alone, and of what "Print this report" puts on paper (saved as `checks/report-print.pdf`), into `checks/`. |
 | `npm run check:model` | With `npm run preview` running (the normal build, port 4173): runs the field model through the Try it page's file input and compares its mask with a native run, pixel by pixel. See "The model in the browser". |
 | `npm run check:heatmap` | Compares the browser's heatmap code with the heatmap notebook's saved outputs. Takes about a minute; `-- --all` runs all 645 images. |
 | `npm run check:model-file` | Fails if the field model isn't at `public/model/` with the right size. |
@@ -69,6 +69,8 @@ The Try it page runs the field model on the visitor's own image, on their device
 
 Also run once by hand on 16 Nov: the same check against the dev server (`npm run dev`: 100% of pixels); a 1,600 x 1,200 JPEG (the page says the middle 1,200 x 1,200 square was cut out and shrunk, and a result appears); and a gallery photo through the "or use a gallery photo" buttons (the result is labelled as a gallery photo, never as the visitor's own image).
 
+Run again on 17 Nov, after the building map's changes (the result view is the same map): `npm run check:model` gave 100% of pixels again, at 3.1 to 3.3 s per image after the first run (4.4 s); the JPEG and the gallery photo behaved as on 16 Nov; and on a result, zooming worked and hiding one outline left the counts as they were.
+
 The full result of the last run is in `checks/browser-model.json` (git-ignored).
 
 **To repeat the test on the booth laptop:**
@@ -90,9 +92,31 @@ The full result of the last run is in `checks/browser-model.json` (git-ignored).
 5. Run it twice more and note the later times. If the tab reloads or the page says the model could not run, the phone ran out of memory: note the phone's model and RAM.
 6. Check the result: the building counts under the map, a tap on a building, and "Download the raw mask".
 
+## The building map (Explore, and a Try it result)
+
+Five things from Aryan Sami's prototype came back on 17 Nov, built on the real building table:
+
+- **Zoom and pan** on the flat map: the three buttons on the map, Ctrl (⌘ on a Mac) with the wheel, a two-finger pinch, and a drag once zoomed.
+  - A plain wheel still scrolls the page; the map then says which key to hold.
+  - From the keyboard: the zoom buttons, `+` and `-`, and the arrow keys while a zoom button has the focus. A building chosen from the list is brought into a zoomed view.
+  - The view stays in image pixels ([src/core/view.ts](src/core/view.ts)), so the crosshair still reads true positions. The before/after line stays at its place on the screen.
+- **A card beside the pointer** with the facts of the building under a mouse, on the flat map and the 3D view ([BuildingTip.tsx](src/components/BuildingTip.tsx)). A touch screen has no pointer to follow: a tap selects the building, and its line shows under the map.
+- **Hide and search in the buildings list.** The eye hides one outline; the search keeps the buildings whose number starts with the digits typed (buildings have no names).
+  - Both change only what is shown. Counts, answers and the saved picture always use the whole table, and the panel says how many outlines are hidden.
+  - The eyes are out of the Tab order, so the list stays one stop a building. From the keyboard the same switch is the "Hide its outline on the map" button under the selected building's facts.
+- **Folding side panels:** each panel folds to its title ("Hide", "Show").
+- **Print for a report:** see the next section.
+
 ## The six reports
 
-`public/reports/offline/` holds the six reports of the 11 Nov proof run, byte for byte as in `../Offline_RAG_KR2/results/t2_proof/t2_run_internet_off/run/reports/offline/`. The site never edits them: known errors are marked in place by `src/components/DisasTellerReportsModal.tsx`.
+`public/reports/offline/` holds the six reports of the 11 Nov proof run, byte for byte as in `../Offline_RAG_KR2/results/t2_proof/t2_run_internet_off/run/reports/offline/`. The site never edits them.
+
+- **What is known to be wrong is listed in [src/core/reportNotes.ts](src/core/reportNotes.ts),** following the report system's own README ("Practice run 5", "Quality problems"):
+  - 14 wrong phrases, marked wherever they occur in a report;
+  - 8 notes for problems with no single phrase to mark (something left out, a repeated section, the run's labelled map), listed under the report.
+- **To add one:** check it against the report text and the run's files first. `npm run selfcheck` fails if a marked phrase is in no report, or if two marks overlap.
+- **"Print this report"** (on the Reports page) prints the chosen report alone, with the page's four caveats above it, its marks and notes, each link's address, and the decision-support line. A printed sheet travels without the page, so it carries what the page says around the report.
+- **Any page can be printed:** on paper the dark look turns to dark ink on white.
 
 ## Third-party component source
 
@@ -100,7 +124,7 @@ The full result of the last run is in `checks/browser-model.json` (git-ignored).
 
 | Component | Where it is used | What it shows |
 |---|---|---|
-| `Crosshair` | On the building map, for a mouse | The pointer's position in image pixels, and brackets around the building under it. Changed here to report image pixels instead of screen pixels (noted at the top of the file). |
+| `Crosshair` | On the building map, for a mouse | The pointer's position in image pixels, and brackets around the building under it. Changed here to report image pixels instead of screen pixels, from the corner of a zoomed view (noted at the top of the file). |
 | `Counter` | The counts under the map | The digits roll to the new value when the pair changes: each image has its own counts. Unchanged. |
 | `Topography` | Behind the top of every page, on screens 760 px and wider | Slow contour lines of a landscape, the language of maps. It is atmosphere only, so it is set quiet: thin blue-grey lines, dimmer on pages other than Home. It answers the pointer gently (the ground swells a little under it, the view leans a few degrees); clicks do nothing. Hidden while the in-browser model runs. Unchanged source. |
 
@@ -156,8 +180,8 @@ Nothing goes public from a push to GitHub. The project is not connected to the r
 |---|---|
 | `src/site/` | What every page shares: the header, footer and background (`Layout.tsx`), the look (`site.css`) |
 | `src/pages/` | The seven pages, one file each |
-| `src/core/` | The building table from a mask (`buildings.ts`), the fixed queries, the facts and gallery loaders, the palette, the heatmap (`heatmap.ts`), the in-browser model's config and worker |
-| `src/components/` | The map view (`OfflineCanvas.tsx`), the 3D view (`DamageCity.tsx`), the workspace and its panels, the Try it runner, the charts and tables, the reports |
+| `src/core/` | The building table from a mask (`buildings.ts`), the fixed queries, the facts and gallery loaders, the palette, the heatmap (`heatmap.ts`), the in-browser model's config and worker, the map's zoom and pan arithmetic (`view.ts`), the reports' known problems (`reportNotes.ts`) |
+| `src/components/` | The map view (`OfflineCanvas.tsx`), the 3D view (`DamageCity.tsx`), the card beside the pointer (`BuildingTip.tsx`), the workspace and its panels, the Try it runner, the charts and tables, the reports |
 | `src/vendor/react-bits/` | Three third-party components, copied as source with their licence |
 | `src/data/facts.json` | Every number on the site |
 | `scripts/` | The validator, the fixture maker and the checks |

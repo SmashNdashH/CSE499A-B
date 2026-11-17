@@ -1,0 +1,109 @@
+10.0s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.0s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.0s 3 0.00s - to python to disable frozen modules.
+10.0s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.7s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.7s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.7s 7 0.00s - to python to disable frozen modules.
+10.7s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+18.2s 9 ✓ E6: Instruct /kaggle/input/datasets/abrarmohammedtanzim/disasterm3-mirror/DisasterM3_Instruct; benchmark /kaggle/input/datasets/redwannewaz/disasterm3-bench-mirror-v2; 4 worker(s); outputs /kaggle/working/E6
+254.0s 10 ✓ Pairs 6,443: training 5,798, validation 645 (560 xBD); destroyed pixels in validation 1,808,111
+254.0s 11 ✓ The split matches every D4 run
+298.3s 12 ✓ Optical test pairs: 2,067 (expected 2,067); by number of masks asked about: {1: 1030, 2: 558, 3: 479} (expected {1: 1030, 2: 558, 3: 479}); SAR after-images skipped: 829
+298.3s 13 Pairs with a missing or mismatched file: 0
+298.3s 14 Before-images shared by two or more test pairs: 0
+333.7s 15 test: 500/2,067 (0.6 min)
+352.7s 16 Traceback (most recent call last):
+352.7s 17 File "<string>", line 1, in <module>
+352.7s 18 import sys;import papermill as pm;pm.execute_notebook("__notebook__.ipynb","__notebook__.ipynb",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)
+352.7s 19 ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+352.7s 20 File "/usr/local/lib/python3.13/dist-packages/papermill/execute.py", line 131, in execute_notebook
+352.7s 21 raise_for_execution_errors(nb, output_path)
+352.7s 22 ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+352.7s 23 File "/usr/local/lib/python3.13/dist-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+352.7s 24 raise error
+352.7s 25 papermill.exceptions.PapermillExecutionError:
+352.7s 26 ---------------------------------------------------------------------------
+352.7s 27 Exception encountered at "In [4]":
+352.7s 28 ---------------------------------------------------------------------------
+352.7s 29 _RemoteTraceback                          Traceback (most recent call last)
+352.7s 30 _RemoteTraceback:
+352.7s 31 """
+352.7s 32 Traceback (most recent call last):
+352.7s 33 File "/usr/lib/python3.13/concurrent/futures/process.py", line 255, in _process_worker
+352.7s 34 r = call_item.fn(*call_item.args, **call_item.kwargs)
+352.7s 35 File "/usr/lib/python3.13/concurrent/futures/process.py", line 204, in _process_chunk
+352.7s 36 return [fn(*args) for args in chunk]
+352.7s 37 ~~^^^^^^^
+352.7s 38 File "/tmp/ipykernel_16/4019184956.py", line 17, in check_and_merge
+352.7s 39 size = image_size(r.get("image_path"))
+352.7s 40 File "/tmp/ipykernel_16/4019184956.py", line 6, in image_size
+352.7s 41 with Image.open(path) as im:
+352.7s 42 ~~~~~~~~~~^^^^^^
+352.7s 43 File "/usr/local/lib/python3.13/dist-packages/PIL/Image.py", line 3730, in open
+352.7s 44 raise UnidentifiedImageError(msg)
+352.7s 45 PIL.UnidentifiedImageError: cannot identify image file '/kaggle/input/datasets/redwannewaz/disasterm3-bench-mirror-v2/test_images/mexico_earthquake_00000140_post_disaster.png'
+352.7s 46 """
+352.7s 47 
+352.7s 48 The above exception was the direct cause of the following exception:
+352.7s 49 
+352.7s 50 UnidentifiedImageError                    Traceback (most recent call last)
+352.7s 51 /tmp/ipykernel_16/4019184956.py in <cell line: 0>()
+352.7s 52 99 if SMOKE_TEST:
+352.7s 53 100     test_jobs, val_jobs = test_jobs[:40], val_pool[:40]
+352.7s 54 --> 101 TEST_STATS = run_all([("test", r) for r in test_jobs], "test")
+352.7s 55 102 VAL_STATS = run_all([("val", r) for r in val_jobs], "validation")
+352.7s 56 103 TEST_MASKS, VAL_MASKS = mask_summary(TEST_STATS), mask_summary(VAL_STATS)
+352.7s 57 
+352.7s 58 /tmp/ipykernel_16/4019184956.py in run_all(jobs, label)
+352.7s 59 68     ex = ProcessPoolExecutor(max_workers=WORKERS, mp_context=ctx) if WORKERS > 1 and ctx else None
+352.7s 60 69     out, t0 = [], time.time()
+352.7s 61 ---> 70     for i, res in enumerate(ex.map(check_and_merge, jobs, chunksize=8) if ex else map(check_and_merge, jobs), 1):
+352.7s 62 71         out.append(res)
+352.7s 63 72         if i % 500 == 0 or i == len(jobs):
+352.7s 64 
+352.7s 65 /usr/lib/python3.13/concurrent/futures/process.py in _chain_from_iterable_of_lists(iterable)
+352.7s 66 619     careful not to keep references to yielded objects.
+352.7s 67 620     """
+352.7s 68 --> 621     for element in iterable:
+352.7s 69 622         element.reverse()
+352.7s 70 623         while element:
+352.7s 71 
+352.7s 72 /usr/lib/python3.13/concurrent/futures/_base.py in result_iterator()
+352.7s 73 623                     # Careful not to keep a reference to the popped future
+352.7s 74 624                     if timeout is None:
+352.7s 75 --> 625                         yield _result_or_cancel(fs.pop())
+352.7s 76 626                     else:
+352.7s 77 627                         yield _result_or_cancel(fs.pop(), end_time - time.monotonic())
+352.7s 78 
+352.7s 79 /usr/lib/python3.13/concurrent/futures/_base.py in _result_or_cancel(***failed resolving arguments***)
+352.7s 80 316     try:
+352.7s 81 317         try:
+352.7s 82 --> 318             return fut.result(timeout)
+352.7s 83 319         finally:
+352.7s 84 320             fut.cancel()
+352.7s 85 
+352.7s 86 /usr/lib/python3.13/concurrent/futures/_base.py in result(self, timeout)
+352.7s 87 451                     raise CancelledError()
+352.7s 88 452                 elif self._state == FINISHED:
+352.7s 89 --> 453                     return self.__get_result()
+352.7s 90 454
+352.7s 91 455                 self._condition.wait(timeout)
+352.7s 92 
+352.7s 93 /usr/lib/python3.13/concurrent/futures/_base.py in __get_result(self)
+352.7s 94 400         if self._exception is not None:
+352.7s 95 401             try:
+352.7s 96 --> 402                 raise self._exception
+352.7s 97 403             finally:
+352.7s 98 404                 # Break a reference cycle with the exception in self._exception
+352.7s 99 
+352.7s 100 UnidentifiedImageError: cannot identify image file '/kaggle/input/datasets/redwannewaz/disasterm3-bench-mirror-v2/test_images/mexico_earthquake_00000140_post_disaster.png'
+352.7s 101 
+355.1s 102 /usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+355.1s 103 cells[i][c] = re.sub('\\\\\|', '|', cell)
+355.3s 104 /usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+355.3s 105 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+356.1s 106 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+356.1s 107 [NbConvertApp] Writing 56205 bytes to __notebook__.ipynb
+358.7s 108 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+359.3s 109 [NbConvertApp] Writing 443583 bytes to __results__.html

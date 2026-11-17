@@ -1,4 +1,4 @@
-# Handover: the showcase website (T3), 16 Nov 2026
+# Handover: the showcase website (T3), 16 Nov 2026, updated 17 Nov
 
 From Abrar. You're taking over the build of our showcase website. This file says where everything is, how to run it, what's settled, what's next, and what must not break. Read it all once before you change anything.
 
@@ -33,7 +33,11 @@ The site is in [`Essential_task_delegation/T3_Website/`](../T3_Website/). It sta
   | `/reports` | Reports | The six reports in full, the guideline passages each was given, the Expert report's citations beside their passages, and the offline evidence ([pages/Reports.tsx](../T3_Website/src/pages/Reports.tsx)) |
   | `/about` | About | The limitations, the future ideas, the team and the credits |
 - **The data contract** for the gallery export, its validator, the facts file with its checks, and four development stand-in pairs.
-- **Checks measured on 16 Nov:** type check, lint, both builds and the browser check pass on all seven pages; no request leaves 127.0.0.1; Lighthouse with phone settings gives 95 to 99 for performance and 99 to 100 for accessibility on Home, Explore, Results and Try it; the in-browser model gives the same class as the native run on 100% of pixels (README, "The model in the browser").
+- **Added on 17 Nov** (the old items 2 and 3 of section 8, and a design pass; details in 3.7):
+  - on the building map: zoom and pan, a card beside the pointer, hide and search in the buildings list, folding side panels;
+  - on the Reports page: print for a report, and the rest of the known problems from Ridita's README;
+  - a design and accessibility pass over all seven pages.
+- **Checks measured on 17 Nov:** type check, lint, both builds and the browser check pass on all seven pages; no request leaves 127.0.0.1; no page is wider than the screen from 320 px to 1920 px; Lighthouse with phone settings gives 94 to 99 for performance and 100 for accessibility on all seven pages; the in-browser model gives the same class as the native run on 100% of pixels (README, "The model in the browser").
 
 **Still open:** see section 8.
 
@@ -67,15 +71,15 @@ Your prototype is unchanged at [Aryan_Task/Website/](Website/), so you can compa
 
 ### 3.2 Not carried over yet, and allowed to return
 
-These were dropped to keep the first version small, not because they were wrong. Bring them back if they're built on real data:
+These were dropped to keep the first version small, not because they were wrong. Most are back, built on real data:
 
-- **Pan and zoom on the map** (mouse wheel, drag, the zoom and reset buttons).
+- **Pan and zoom on the map: back since 17 Nov** (3.7).
 - **The 3D view: back since 16 Nov** as the 3D damage city, built from the real outlines ([DamageCity.tsx](../T3_Website/src/components/DamageCity.tsx)). Yours used invented floor counts for heights; here a block's height only repeats its class, and the view says so.
-- **Hiding single buildings** (the eye icon) and **search** in the layers list.
-- **Collapsing the side panels** ("Hide").
-- **Print** in the reports view. (Copy and download are back: 3.6.)
-- **The hover tooltip** beside the pointer. Today the facts of the building under the pointer show in a line under the map.
-- **The "team" tab** of the benchmark panel. The team will go on the About page instead.
+- **Hiding single buildings** (the eye icon) and **search** in the layers list: **back since 17 Nov** (3.7).
+- **Collapsing the side panels** ("Hide"): **back since 17 Nov** (3.7).
+- **Print** in the reports view: **back since 17 Nov** (3.7). (Copy and download came back on 16 Nov: 3.6.)
+- **The hover tooltip** beside the pointer: **back since 17 Nov** (3.7).
+- **The "team" tab** of the benchmark panel. The team is on the About page instead.
 - **The `motion` package** was dropped because nothing used it after the rework. Ask before adding it back.
 
 ### 3.3 Reworked: same name, new inside
@@ -111,6 +115,7 @@ These were dropped to keep the first version small, not because they were wrong.
 - [src/site/](../T3_Website/src/site/) and [src/pages/](../T3_Website/src/pages/): the shared header, footer, background and look, and the seven pages. (The three trial looks of phase 1 lived in `src/directions/`, now deleted.)
 - [src/components/DamageCity.tsx](../T3_Website/src/components/DamageCity.tsx): the 3D damage city.
 - [src/components/TryItRunner.tsx](../T3_Website/src/components/TryItRunner.tsx), [src/core/segment.worker.ts](../T3_Website/src/core/segment.worker.ts), [modelConfig.ts](../T3_Website/src/core/modelConfig.ts), [heatmap.ts](../T3_Website/src/core/heatmap.ts): the field model in the browser, and the heatmap computed from its mask.
+- [src/core/view.ts](../T3_Website/src/core/view.ts), [src/components/BuildingTip.tsx](../T3_Website/src/components/BuildingTip.tsx), [src/core/reportNotes.ts](../T3_Website/src/core/reportNotes.ts): the map's zoom and pan arithmetic, the card beside the pointer, and the list of the reports' known problems (17 Nov).
 - [src/vendor/react-bits/](../T3_Website/src/vendor/react-bits/): the crosshair, the rolling counts and the contour background, with their licence.
 - [scripts/](../T3_Website/scripts/): the data validator, the fixture maker, and the checks for facts, colours, logic and the browser.
 - [src/data/facts.json](../T3_Website/src/data/facts.json), [public/reports/offline/](../T3_Website/public/reports/offline/), [vercel.json](../T3_Website/vercel.json), and the three documents (README, NOTES, DATA_CONTRACT).
@@ -127,6 +132,21 @@ Abrar asked for whatever could come back. Each item below is real output or plai
 | Thermal, void radar, K9 and sensor advice, ingress routes | "Future ideas, not built": each described in words only, with why it isn't built, beside the team's own planned extras (a generated before photo, real 3D reconstruction, shaking from damage) | [AboutSections.tsx](../T3_Website/src/components/AboutSections.tsx) |
 
 Two kinds of item stay out: online map tiles (they need the internet, and the booth runs offline) and sounds and confetti.
+
+### 3.7 Brought back on 17 Nov, built on the real table
+
+| Was in your prototype | Now | Where |
+|---|---|---|
+| Pan and zoom (wheel, drag, zoom and reset buttons) | Three buttons on the map, Ctrl (⌘ on a Mac) with the wheel, a two-finger pinch, a drag once zoomed, and the arrow keys from the zoom buttons. A plain wheel still scrolls the page: your canvas filled the screen, ours sits in a page that scrolls, so the map says which key to hold. The view stays in image pixels, so the crosshair still reads true positions | [OfflineCanvas.tsx](../T3_Website/src/components/OfflineCanvas.tsx); the arithmetic in [src/core/view.ts](../T3_Website/src/core/view.ts), tested by `npm run selfcheck` |
+| The hover tooltip | A card beside the pointer with the building's row: number, class, area in pixels, distance to the nearest destroyed building. On the flat map and the 3D view. Nothing is defaulted: a missing distance is said in words | [BuildingTip.tsx](../T3_Website/src/components/BuildingTip.tsx) |
+| The eye icon and the search box | The eye hides one outline on the map. The search takes digits only and keeps the buildings whose number starts with them, because our buildings have numbers, not names. **Both change only what is shown:** counts, answers and the saved picture always use the whole table, and the panel says how many outlines are hidden | [SplineLayersPanel.tsx](../T3_Website/src/components/SplineLayersPanel.tsx), [Workspace.tsx](../T3_Website/src/components/Workspace.tsx) |
+| "Hide" on the side panels | Each panel folds to its title and opens again ("Hide", "Show"), with the browser's own `<details>` element | [SplineLayersPanel.tsx](../T3_Website/src/components/SplineLayersPanel.tsx), [SplineInspectorPanel.tsx](../T3_Website/src/components/SplineInspectorPanel.tsx) |
+| Print in the reports view | "Print this report" on the Reports page prints the chosen report alone, with the four caveats, its marks and notes, each link's address and the decision-support line. Any page can also be printed: on paper the dark look turns to dark ink on white | [DisasTellerReportsModal.tsx](../T3_Website/src/components/DisasTellerReportsModal.tsx); the print rules at the end of [index.css](../T3_Website/src/index.css) |
+
+**Three rules these keep, which a later change must not break:**
+- **Hiding never changes a number.** If you ever make the saved picture leave hidden buildings out, print how many are hidden in its label band.
+- **Building numbers start again in every table.** So the hidden set, the search and the selection are cleared when the pair or the method changes (`clear()` in `Workspace.tsx`), and the zoom when the pair changes.
+- **The keyboard reaches everything.** The eyes are out of the Tab order so the list stays one stop a building; the same switch is the "Hide its outline on the map" button under the selected building's facts. The browser check runs the 3D view from the keyboard alone.
 
 ## 4. Run it on your PC
 
@@ -152,7 +172,7 @@ Requirements: Node 22.18 or later (`node -v`), npm, and Chrome for the checks.
 | [T3_Website/NOTES.md](../T3_Website/NOTES.md) | Contradictions found and open questions for Abrar | Add to it; don't delete his questions |
 | [T3_Website/DATA_CONTRACT.md](../T3_Website/DATA_CONTRACT.md) | The exact files the gallery export must write | **No.** Abrar's export notebook is built against it. Ask first |
 | [src/data/facts.json](../T3_Website/src/data/facts.json) | **Every number on the site**, with its source file and date | Only by the rules in section 6 |
-| [src/core/](../T3_Website/src/core/) | The building table from a mask, the fixed queries, the facts and gallery loaders, the damage colours | Carefully; `npm run selfcheck` and `npm run palette` test it |
+| [src/core/](../T3_Website/src/core/) | The building table from a mask, the fixed queries, the facts and gallery loaders, the damage colours, the map's zoom and pan arithmetic (`view.ts`), the reports' known problems (`reportNotes.ts`) | Carefully; `npm run selfcheck` and `npm run palette` test it |
 | [src/components/](../T3_Website/src/components/) | The map view (`OfflineCanvas.tsx`), the workspace and its panels, the reports and benchmark panels, the scroll story | Yes |
 | [src/site/](../T3_Website/src/site/) | What every page shares: header, footer, background (`Layout.tsx`, `HeroBackground.tsx`) and the look (`site.css`) | Yes |
 | [src/pages/](../T3_Website/src/pages/) | The seven pages, one file each | Yes |
@@ -209,8 +229,13 @@ npm run browser-check
 ```
 
 - `npm run build` runs the data validator, the facts check, the colour check and the self-checks first.
-- **Lighthouse:** the site must keep 90 or more for performance and accessibility with phone settings (Chrome's developer tools, Lighthouse tab, "Mobile"). Measured on 16 Nov with everything in: Home 98 and 100, Explore 95 and 99, Results 99 and 100, Try it 97 and 100. Measure again after any change to a page's first screen.
-- `browser-check` takes screenshots of all seven pages at 390 px and 1440 px into `checks/screenshots/`; on Explore it clicks a building, a count, a fixed question and a block of the 3D view; it fails if any request leaves 127.0.0.1. Look at the screenshots yourself too.
+- **Lighthouse:** the site must keep 90 or more for performance and accessibility with phone settings (Chrome's developer tools, Lighthouse tab, "Mobile"). Measured on 17 Nov with everything in, performance and accessibility: Home 98 and 100, How it works 96 and 100, Explore 94 and 100, Try it 97 and 100, Results 99 and 100, Reports 96 and 100, About 98 and 100. Performance moves by a point or two between runs. Measure again after any change to a page's first screen.
+- `browser-check` takes screenshots of all seven pages at 390 px and 1440 px into `checks/screenshots/`, and fails if any request leaves 127.0.0.1. Look at the screenshots yourself too. On 17 Nov it passed against the built copy and against the dev server (`BASE_URL=http://127.0.0.1:<the port npm run dev prints> npm run browser-check`). It also works the site:
+  - on Explore it clicks a building, a count and a fixed question;
+  - it turns the wheel over the map without Ctrl (the page must scroll, and the map must say which key zooms) and with Ctrl (the map must zoom about the pointer, and the page must stay);
+  - it zooms with the buttons, chooses a building outside the zoomed view from the list (the view must go to it), clicks it there (the facts must be that building's), drags the view, hides an outline (the counts must stay), searches the list and folds a panel;
+  - it runs the 3D view from the keyboard alone: a building from the list, the turn slider, and the hide switch;
+  - on Reports it reads what "Print this report" puts on paper, and saves it as `checks/report-print.pdf`.
 - **If you touched Try it or anything in `src/core/`:** with the model file in place, also run `npm run build`, then `npm run preview` in one terminal and `npm run check:model` in another (it needs one xBD after-image; README, "The model in the browser"), and `npm run check:heatmap`.
 - Then check that `git status` shows changes only inside `T3_Website/`, and stage only that folder:
   ```text
@@ -223,16 +248,31 @@ npm run browser-check
 - A is the site: directions B and C, the review bar and `review.css` are deleted; `scripts/browser-check.ts` visits the seven new addresses and runs its map checks on Explore only.
 - All seven pages (table in section 2), including the 3D damage city, Try it, the Results charts, and the Reports page with its searches, citations, offline evidence, download and copy, and 12 known errors marked in place.
 
+**Done on 17 Nov, so don't redo these either** (they were items 2 and 3 of this list, and part of item 1):
+- **Everything section 3.2 listed for the map and the reports:** pan and zoom, search and hide in the buildings list, folding side panels, the card beside the pointer, and print for a report. How each was built, and three rules they keep, are in 3.7.
+- **The Reports page's known problems.** Every problem that Ridita's [README](../Offline_RAG_KR2/README.md) lists ("Practice run 5", "Quality problems") is now on the page:
+  - 14 wrong phrases are marked in the text (12 before; new: the 10 vehicles, and the sentence that sends the medical staff to two places at once);
+  - 8 notes sit under the reports, for problems with no single phrase to mark: the bridge's missing grade, the misplaced labels on the run's map, the two sections that repeat each other, the reports that were given guideline passages and cite none, and the Reconstruction plan's passage names without brackets (real passages, so a note, not an error mark);
+  - the list moved to [src/core/reportNotes.ts](../T3_Website/src/core/reportNotes.ts). `npm run selfcheck` fails if a marked phrase is in no report or if two marks overlap;
+  - one line of the page was wrong and is corrected: it said the other five reports "cite nothing by name", but the Reconstruction plan names its passages in an appendix.
+- **A design and accessibility pass over all seven pages**, at 390 px and 1440 px, with nine more widths checked for overflow. What it changed:
+  - one name for the heatmap, "danger heatmap", on every page (Results says once that our reports call it the survivability heatmap);
+  - SAM 3 and U-Net are explained where How it works first uses them, and "safe areas" are described as what they are, the open ground farthest from any damage;
+  - event names read as names ("Hurricane Harvey", "Santa Rosa wildfire");
+  - on a phone, the header's row of links fades at its right edge, to show it goes on;
+  - the selected row of the buildings list had numbers at too low a contrast (about 4 to 1; now 4.9 to 1);
+  - How it works skipped a heading level, which Lighthouse counts as a fault;
+  - the team's five names sit on one line on a wide screen;
+  - an alignment figure on About named "Ridita's audit"; it now gives her full name.
+
 **What's left, in order.** Do them one at a time, push each, and tell Abrar what you changed.
 
-1. **Look at every page on your own screen and phone,** at 390 px and 1440 px, against section 6. Report anything that reads badly, overflows or is unclear to someone who isn't a remote-sensing person. This is the most useful first thing: a second pair of eyes on wording and layout.
-2. **Bring back, on real data, what section 3.2 lists** (ask Abrar which first): pan and zoom on the map, search and hide in the buildings list, collapsing the side panels, print for a report, and the hover tooltip beside the pointer.
-3. **The Reports page's error marks.** 12 phrases are marked now (`KNOWN_ERRORS` in [DisasTellerReportsModal.tsx](../T3_Website/src/components/DisasTellerReportsModal.tsx)). Read the six reports against Ridita's [README](../Offline_RAG_KR2/README.md), section "Practice run 5", "Quality problems", and add any error it lists that isn't marked yet. Mark only what her README or the run's files support; never edit the report text.
-4. **About:** a place for the supervisor line (Abrar gives the wording).
-5. **When Abrar's gallery export lands** in `public/data/`: run `npm run validate`, then check every page with the real pairs (the fixture banner disappears by itself), and the Turkey pair where the model fails is shown with its real accuracy.
-6. **On 18 Nov:** build once with `FACTS_DATE=2026-11-18` (`npm run build:fixtures` with that variable set) and check that the test-set rows, the counting-flaw sentence and the Turkey sentence appear and read well on Results and About. Their wording lives in `facts.json` (`note` fields), never in a page.
-7. **Try it on other devices:** the README's numbered steps for the booth laptop and a mid-range phone. The phone test waits for Abrar's first deploy.
-8. **Not yours to start:** the booth's local API (a later, separate brief), the deploy (Abrar's), and anything in `src/core/` for the model (ask first).
+1. **Look at every page on a real phone and on your own screen,** against section 6. The 17 Nov pass used a desktop browser at phone width, never a real phone, and one person's eyes. Report anything that reads badly, overflows or is unclear to someone who isn't a remote-sensing person. On the phone, also try the new map controls: pinch to zoom, drag the zoomed map, tap a building in it.
+2. **About:** a place for the supervisor line (Abrar gives the wording).
+3. **When Abrar's gallery export lands** in `public/data/`: run `npm run validate`, then check every page with the real pairs (the fixture banner disappears by itself), and the Turkey pair where the model fails is shown with its real accuracy. Check the buildings list too: a pair with several hundred buildings is the first real test of its length.
+4. **On 18 Nov:** build once with `FACTS_DATE=2026-11-18` (`npm run build:fixtures` with that variable set) and check that the test-set rows, the counting-flaw sentence and the Turkey sentence appear and read well on Results and About. Their wording lives in `facts.json` (`note` fields), never in a page.
+5. **Try it on other devices:** the README's numbered steps for the booth laptop and a mid-range phone. The phone test waits for Abrar's first deploy.
+6. **Not yours to start:** the booth's local API (a later, separate brief), the deploy (Abrar's), and anything in `src/core/` for the model (ask first).
 
 **The limitations the About page states** (already written in `AboutSections.tsx`; each number from `facts.json`, in plain words, as rule 6 of section 6 says):
    - the parts don't run as one chain yet;
@@ -271,8 +311,8 @@ HARD RULES (from the handover, section 6)
 - Every number shown comes from src/data/facts.json via fact(id) or <Num id=...>. Never hard-code a number in a page.
   If two source files disagree, stop and report it.
 - Never edit public/reports/offline/ (the six real reports), public/data/ or DATA_CONTRACT.md.
-- Never weaken a check in scripts/. You may change which pages scripts/browser-check.ts visits (section 8, item 1),
-  never what it checks.
+- Never weaken a check in scripts/. You may add a check to scripts/browser-check.ts or scripts/selfcheck.ts,
+  never remove or loosen one.
 - No request may leave the site's own origin: no CDN, web font, analytics, map tiles or online AI service.
 - No internal run labels (R9, R11, E7, H2, T1, O3) in visible text; plain words instead.
 - "A model's estimate, to be checked by people on the ground." on every page.

@@ -2,7 +2,8 @@
 // which guideline searches fed each report, and each citation beside the passage it names.
 import { useState } from 'react';
 import { sourceUrl } from '../core/facts.ts';
-import { REPORTS, ReportCaveats, ReportsBody } from '../components/DisasTellerReportsModal.tsx';
+import { REPORTS } from '../core/reportNotes.ts';
+import { ReportCaveats, ReportsBody } from '../components/DisasTellerReportsModal.tsx';
 import { GuidelineSearch, PassageQuote, useRunFile } from '../components/GuidelineSearch.tsx';
 
 export default function Reports() {
@@ -19,7 +20,7 @@ export default function Reports() {
       <section className="a-section" aria-labelledby="reports-read">
         <h2 id="reports-read">Read a report</h2>
         <div className="a-reports">
-          <div className="a-panel"><ReportsBody tab={tab} onTab={setTab} /></div>
+          <div className="a-panel"><ReportsBody tab={tab} onTab={setTab} print /></div>
           <aside className="a-panel" aria-label={`Guideline passages given to the ${name} report`}>
             <h3>What the guidelines gave this report</h3>
             <p className="ws-note">Before writing the {name} report, the system ran these guideline searches and gave the model the passages they returned.</p>
@@ -30,7 +31,7 @@ export default function Reports() {
 
       <section className="a-section" aria-labelledby="reports-cites">
         <h2 id="reports-cites">The citations, beside what they cite</h2>
-        <p className="a-lede">Only the Expert team report cites guideline passages by name. Each citation is shown here with the passage it names, word for word.</p>
+        <p className="a-lede">Only the Expert team report cites guideline passages in square brackets. Each citation is shown here with the passage it names, word for word.</p>
         {run === undefined && <p className="ws-note">Loading the citations.</p>}
         {run === null && <p className="ws-missing">The citations file is missing from this build.</p>}
         {run && (

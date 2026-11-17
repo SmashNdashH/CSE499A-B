@@ -1,0 +1,13 @@
+scope,method,destroyed_iou_rebuilt,miou_rebuilt,destroyed_iou_published,miou_published,largest_difference
+clean pairs,chain_s42,0.4055,0.5179,0.4055,0.5179,0.0
+clean pairs,chain_s43,0.3982,0.5121,0.3983,0.5121,0.0001
+clean pairs,chain_s44,0.3657,0.5086,0.3657,0.5087,0.0001
+clean pairs,R11_tta,0.3984,0.5721,0.3984,0.5721,0.0
+"clean pairs, without Turkey",chain_s42,0.423,0.5263,0.423,0.5263,0.0
+"clean pairs, without Turkey",chain_s43,0.4189,0.5173,0.4189,0.5173,0.0
+"clean pairs, without Turkey",chain_s44,0.3896,0.5215,0.3896,0.5216,0.0001
+"clean pairs, without Turkey",R11_tta,0.4672,0.5948,0.4672,0.5948,0.0
+Turkey only,chain_s42,0.3446,0.4592,0.3446,0.4592,0.0
+Turkey only,chain_s43,0.3293,0.467,0.3299,0.4671,0.0006
+Turkey only,chain_s44,0.2954,0.4447,0.2954,0.4447,0.0
+Turkey only,R11_tta,0.0867,0.4305,0.0867,0.4305,0.0

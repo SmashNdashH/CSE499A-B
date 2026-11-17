@@ -1,0 +1,126 @@
+{
+ "task": "E6",
+ "smoke_test": false,
+ "test_pairs": 2067,
+ "by_masks_asked": {
+  "3": 479,
+  "1": 1030,
+  "2": 558
+ },
+ "sar_after_images_skipped": 829,
+ "inventory_problems": 2,
+ "test_masks": {
+  "pairs": 2065,
+  "fail_rule_2": 1,
+  "values_not_0_or_255": 0,
+  "mask_not_1024_or_not_image_size": 0,
+  "before_image_other_size": 0,
+  "unreadable_mask": 1,
+  "unasked_mask_not_empty": 0,
+  "pairs_with_overlap": 0,
+  "overlap_px": 0,
+  "building_px": 291904133,
+  "overlap_share": 0.0,
+  "class_px": [
+   253553184,
+   24819074,
+   13531875
+  ],
+  "pieces": [
+   111782,
+   13125,
+   10677
+  ],
+  "median_piece_area_px": 983.0
+ },
+ "validation_masks": {
+  "pairs": 645,
+  "fail_rule_2": 0,
+  "values_not_0_or_255": 0,
+  "mask_not_1024_or_not_image_size": 0,
+  "before_image_other_size": 0,
+  "unreadable_mask": 0,
+  "unasked_mask_not_empty": 0,
+  "pairs_with_overlap": 0,
+  "overlap_px": 0,
+  "building_px": 50379382,
+  "overlap_share": 0.0,
+  "class_px": [
+   42206205,
+   6365066,
+   1808111
+  ],
+  "pieces": [
+   19624,
+   4370,
+   1600
+  ],
+  "median_piece_area_px": 1008.5
+ },
+ "copies": {
+  "source": "E5 step 1's Kaggle output (/kaggle/input/notebooks/abrar2222864642/e5-step1-hash-check/E5-step1/bench_copies.csv)",
+  "left_out": 57,
+  "left_out_training": 56,
+  "left_out_validation": 1,
+  "kept_copy_outside_pool": 2,
+  "by_kind": {
+   "after same pixels (training)": 3,
+   "after near copy (training); before same pixels (training)": 31,
+   "before same pixels (training)": 22,
+   "after near copy (validation); before same pixels (validation)": 1,
+   "before same pixels (Instruct, outside the pool)": 2
+  },
+  "events": {
+   "pinery_bushfire": 3,
+   "socal_fire": 11,
+   "woolsey_fire": 43
+  }
+ },
+ "clean_pairs": 2007,
+ "clean_class_px": {
+  "intact": 252819282,
+  "damaged": 24791802,
+  "destroyed": 13225057
+ },
+ "clean_by_event": {
+  "turkey_earthquake": 414,
+  "mexico_earthquake": 191,
+  "joplin_tornado": 148,
+  "palu_tsunami": 124,
+  "ian_hurricane": 104,
+  "nepal_flooding": 60,
+  "santa_rosa_wildfire": 60,
+  "beriut_explosion": 59,
+  "hurricane_florence": 59,
+  "hurricane_michael": 59,
+  "moore_tornado": 59,
+  "portugal_wildfire": 59,
+  "hurricane_harvey": 58,
+  "hurricane_matthew": 58,
+  "libya_flood": 58,
+  "midwest_flooding": 58,
+  "tuscaloosa_tornado": 56,
+  "lower_puna_volcano": 55,
+  "pinery_bushfire": 51,
+  "noto_earthquake": 44,
+  "sunda_tsunami": 40,
+  "hawaii_wildfire": 30,
+  "socal_fire": 30,
+  "guatemala_volcano": 26,
+  "woolsey_fire": 17,
+  "kalehe_flooding": 15,
+  "shovi_landslide": 11,
+  "bata_explosion": 4
+ },
+ "style_events_compared": 12,
+ "style_share_within_range": 1.0,
+ "style_pass": true,
+ "checks": {
+  "1. inventory: 2,067 pairs (1,030 / 558 / 479), no file missing": "NO (2067 pairs, {1: 1030, 2: 558, 3: 479}, 2 with a missing file)",
+  "2. every checked test pair's masks like the training masks": "NO (1 pairs fail)",
+  "3. overlapping pixels at most 0.5% of building pixels": "yes; 0 pixels",
+  "4. copies: 57 left out (56 training, 1 validation)": "yes",
+  "4. clean test pairs: 2,010": "NO (2,007)",
+  "5. outlines drawn alike (piece-area ratio 0.67-1.5 in at least 80% of shared events)": "yes (12 of 12 events)"
+ }
+}

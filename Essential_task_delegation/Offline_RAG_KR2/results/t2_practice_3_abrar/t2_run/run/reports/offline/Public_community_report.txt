@@ -1,0 +1,3 @@
+Mode: offline
+
+The earthquake impact analysis reveals that the affected areas include Region A with slight damage, Region B with moderate damage, and Region C with severe damage. No additional dangerous areas were identified beyond the affected regions. The offline_pdf_search_tool was utilized to gather information on shelter and household items (Sphere) and rescue operations (INSARAG). However, due to an error in the "global_img_interpreter" tool, a comprehensive report could not be generated.

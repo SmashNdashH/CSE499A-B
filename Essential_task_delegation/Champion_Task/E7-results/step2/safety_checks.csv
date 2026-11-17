@@ -1,0 +1,13 @@
+image,sam_iou,logp_max_difference,r11_px_share_different
+bata_explosion_post_14.png,1.0,0.0078,0.0
+hurricane_florence_00000443_post_disaster.png,0.9999,0.0043,0.0001
+hurricane_harvey_00000451_post_disaster.png,0.9986,0.0101,0.0001
+hurricane_michael_00000407_post_disaster.png,0.9999,0.0117,0.0
+midwest_flooding_00000287_post_disaster.png,0.9997,0.0041,0.0
+nepal_flooding_00000339_post_disaster.png,1.0,0.0048,0.0
+pinery_bushfire_00001507_post_disaster.png,0.9995,0.0047,0.0005
+portugal_wildfire_00000758_post_disaster.png,0.9999,0.0077,0.0
+portugal_wildfire_00001764_post_disaster.png,0.9997,0.0046,0.0
+socal_fire_00000614_post_disaster.png,0.9998,0.0098,0.0
+turkey_earthquake1_post_481.png,0.9998,0.0077,0.0
+tuscaloosa_tornado_00000026_post_disaster.png,1.0,0.0108,0.0

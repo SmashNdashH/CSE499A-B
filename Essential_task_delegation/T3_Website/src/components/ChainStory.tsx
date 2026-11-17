@@ -69,8 +69,8 @@ export function ChainStory({ palette }: { palette: PaletteId }) {
     {
       title: 'Every building gets a class',
       body: <>The damage map marks each building intact, damaged or destroyed. We have two ways to make it, and haven't chosen between them yet. {onThisPair}</>,
-      model: 'Find-then-grade (SAM 3 outlines each building, our grader compares its before and after crops), or a U-Net that reads both photos together.',
-      number: <>Overlap with the true destroyed buildings (IoU, from 0 to 1): <Num id="ftg_destroyed_iou_clean" /> for find-then-grade and <Num id="pair_unet_destroyed_iou_clean" /> for the U-Net.{data?.accuracy.iou.destroyed != null && <> On this image: {data.accuracy.iou.destroyed.toFixed(3)}.</>} <Provenance id="ftg_destroyed_iou_clean" /></>,
+      model: 'Either find-then-grade (SAM 3, a model that outlines objects, finds each building on the before photo, and our grader compares its before and after crops), or a U-Net (a network that labels every pixel) that reads both photos together.',
+      number: <>Overlap with the true destroyed buildings (IoU, from 0 to 1): <Num id="ftg_destroyed_iou_clean" /> for find-then-grade and <Num id="pair_unet_destroyed_iou_clean" /> for the U-Net.{data?.accuracy.iou.destroyed != null && <> The map shown on this image scores {data.accuracy.iou.destroyed.toFixed(3)}.</>} <Provenance id="ftg_destroyed_iou_clean" /></>,
     },
     {
       title: 'Each building becomes a row',
@@ -86,7 +86,7 @@ export function ChainStory({ palette }: { palette: PaletteId }) {
     },
     {
       title: 'Where to look first',
-      body: <>A heatmap of damage density, with up to three hot spots (circles) and the safest open areas (squares). It is a guide to where to search first. It doesn't detect survivors.</>,
+      body: <>The danger heatmap shows where damage is densest, with up to three hot spots (circles) and the open ground farthest from any damage (squares, called safe areas). It is a guide to where to search first. It doesn't detect survivors.</>,
       model: 'No model: a density map computed from the damage map.',
       number: <><Num id="hotspot_point_on_damage" /> of hot spots have their marked point within 20 px of a building that is truly damaged or destroyed. <Provenance id="hotspot_point_on_damage" /></>,
     },

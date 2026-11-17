@@ -1,0 +1,23 @@
+{
+  "made": "2026-11-07 08:54:12",
+  "git_commit": "8b6fbd319",
+  "uncommitted_changes_in_disasteller_offline": false,
+  "sha256": {
+    "DisasterManagement_teamwork_simulation.py": "0dc7708ccfbb4248b08f811b59427204fe859950f54de12c80d30dd322340398",
+    "Disaster_image/Global_image/2.jpg": "12b95f24db53f46e9832f0d76f9b36834de4133567ff54ea624f938790f08862",
+    "Disaster_image/Local_image/Picture1.png": "4494ed686d31f456be73ec3ed26a19964cd4a02397033602fc2d8ef0c72e953e",
+    "Disaster_image/Local_image/Picture2.png": "d692dae0e36744a7340e3f8f90c53301134450eee9a29122ee113b70c2b9f48b",
+    "Disaster_image/Local_image/Picture3.png": "33b322a9b0a4db6b289b992876b12ebbb7c1b6435e402f1cdd909ee1e04e19ed",
+    "Disaster_image/Local_image/Picture4.png": "b6af2ab5941f0db6f6085d186eb910fe86875c60b9ffd0103fddf3f671079049",
+    "Disaster_image/Local_image/Picture5.png": "6c376f2a1cfc9446e7e5ee2cbf51c0f4290a338c9a0f7b8967e9fe9136f2475f",
+    "Disaster_image/Local_image/Picture6.png": "a0762b6155f86b7d538d79be7eaaa1d236db0ae3d1fcb3e020d6d1fcd9538b4b",
+    "check_run.py": "ae24eca06a347853115519cc71cb76fe7865534101b2e3b9bbfbc78fc31cec7f",
+    "disasteller_inputs.py": "f3c8b57dfc474a3f2218ed439633cbf6c7815da4820dbc57408dc636d3bb26a4",
+    "global_annotation_tool.py": "2f7bda9dbc9144b5d4a2aa30b1cf08c3a74e85292d5472432f0f26683f11b70c",
+    "global_img_tool.py": "fa74d4d25dc667130dd5415c429b4e672837dcf22cc48b0a6ecb8f580d2a7b91",
+    "local_img_tool.py": "a46f512ebd1cc2a968c1a0d367d729414af05cc67ec912bf5f48c47efc42e0ee",
+    "local_model.py": "128ba9a780e10351e240b37ac809abc70874b9ec47ef5b27d0c7078d40e026d3",
+    "pdf_search_tool.py": "2f90a76f03daeacc7975c9299a13fea825c22528f292279e747f790cb1d97df0",
+    "run_with_netlog.py": "b1656cc1c7cb8beb7bff3ddf77115b0e7b3396ae91909e546f07b293d5333920"
+  }
+}

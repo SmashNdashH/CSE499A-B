@@ -110,7 +110,7 @@ export function FixedQuestionConsole({ buildings, hotspots, onHighlight, onSelec
         )}
         {template === 3 && (
           <>
-            <p className="ws-note">From the survivability heatmap, not the building table. The markers are now on the map.</p>
+            <p className="ws-note">From the danger heatmap, not the building table. The markers are now on the map.</p>
             {hotspots.hot_spots.length === 0 && <p className="fq-result">The heatmap marked no hot spot in this image.</p>}
             <ul className="fq-spots">
               {hotspots.hot_spots.map((s) => <li key={`h${s.rank}`}><b>Hot spot {s.rank}</b>: {s.where} of the image, marked point at ({s.point_xy[0]}, {s.point_xy[1]}) px.</li>)}

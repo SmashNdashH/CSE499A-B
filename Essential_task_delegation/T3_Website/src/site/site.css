@@ -38,6 +38,10 @@
 /* On a narrow screen the section links scroll sideways inside their pill, instead of widening the page. */
 .a-bar nav { min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .dir-a .a-name { flex: none; }
+/* Where the six links don't fit, the right edge of their row fades, to say that it goes on. */
+@media (max-width: 660px) {
+  .a-bar nav { padding-right: 22px; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 30px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 30px), transparent); }
+}
 @media (max-width: 480px) {
   .a-bar { gap: 6px; margin: 0 8px; }
   .dir-a .a-name { padding: 8px 12px; }
@@ -88,7 +92,7 @@ html[data-model-running] .hero-bg { display: none; }
 .a-next li { padding-top: 12px; border-top: 1px solid var(--line-strong); }
 .dir-a .a-next a { display: block; margin-bottom: 4px; font-size: 1.0625rem; font-weight: 650; }
 .a-next span { color: var(--muted); }
-.a-team { display: grid; gap: 4px 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); margin-bottom: 12px; font-size: 1.0625rem; font-weight: 600; }
+.a-team { display: flex; flex-wrap: wrap; gap: 4px 36px; margin-bottom: 12px; font-size: 1.0625rem; font-weight: 600; }
 .a-reports { display: grid; gap: 14px; align-items: start; }
 @media (min-width: 1100px) { .a-reports { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); } }
 .a-reports .a-panel { margin: 0; }

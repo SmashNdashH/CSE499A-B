@@ -1,0 +1,76 @@
+{
+ "task": "E7 step 2",
+ "smoke_test": false,
+ "sam3_commit": "7f473cfd983d5eb43040ff608f66bff0d7bdcb53",
+ "prompt": "building",
+ "confidence": 0.5,
+ "grid": 2,
+ "precision": "fp16",
+ "seeds": [
+  42,
+  43,
+  44
+ ],
+ "table_seed": 42,
+ "biases": {
+  "42": [
+   0.0,
+   -1.75,
+   -4.0,
+   -1.25
+  ],
+  "43": [
+   0.0,
+   -1.0,
+   -4.0,
+   -2.0
+  ],
+  "44": [
+   0.0,
+   -2.0,
+   -4.0,
+   -3.5
+  ]
+ },
+ "unet_checkpoint": "/root/.cache/huggingface/hub/models--AbrarAlam--disasterm3-d4-R11/snapshots/31974dacfee2125a66639858433a113704edf9b3/final_model.pth",
+ "test_pairs_run": 2065,
+ "not_run": [],
+ "questions_answered": 3580,
+ "table_buildings": 104596,
+ "table_by_class": {
+  "damaged": 9968,
+  "destroyed": 7629,
+  "intact": 86999
+ },
+ "sam_minutes": 87.4,
+ "run_minutes": 37.3,
+ "outcome": "reopen",
+ "paired": {
+  "E5's clean questions": {
+   "only_chain_right": 502,
+   "only_R11_right": 496,
+   "p": 0.8743
+  },
+  "all optical questions": {
+   "only_chain_right": 508,
+   "only_R11_right": 513,
+   "p": 0.9004
+  }
+ },
+ "closer_to_truth": {
+  "chain_closer": 1406,
+  "same": 730,
+  "r11_closer": 1444
+ },
+ "macro_f1_true_buildings": {
+  "42": 0.6979,
+  "43": 0.683,
+  "44": 0.686
+ },
+ "r11_reproduces_h2": "yes",
+ "expectation": {
+  "chain lower on test than on clean validation (0.3065)": false,
+  "R11 lower on test than on clean validation (0.2692)": false,
+  "counting about level with R11's (p of at least 0.05)": true
+ }
+}

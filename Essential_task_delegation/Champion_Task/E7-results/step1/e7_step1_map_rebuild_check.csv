@@ -1,0 +1,4 @@
+seed,miou,published_miou,destroyed_iou,published_destroyed_iou,clean_miou,clean_destroyed_iou
+42,0.552,0.552,0.3347,0.3347,0.5469,0.3161
+43,0.5525,0.5522,0.3254,0.3242,0.5473,0.3063
+44,0.5528,0.5527,0.3156,0.3156,0.548,0.2982
