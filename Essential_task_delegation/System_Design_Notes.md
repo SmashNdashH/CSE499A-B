@@ -18,7 +18,7 @@ Related: [Next_Steps_Roadmap.md](Next_Steps_Roadmap.md) (T2 and H2b), [Task_Ledg
 **What DisasTeller uses today.** Ridita's implementation runs on CrewAI: four agents (the Expert, Alerts, Emergency service and Assignment teams) do six tasks in order, all on Gemini 3.1 Flash-Lite. LangChain supplies the guideline search in `pdf_search_tool.py`: a PDF loader, a text splitter, a Chroma store and Gemini embeddings.
 
 - **LangChain: keep the part we already use.** T2 swaps the Gemini embeddings for a local model and keeps Chroma (roadmap T2, step 4). In offline mode the two web tools go (§2).
-imzed  - Ridita built the replacement on 25 Oct as hybrid search: local MiniLM embeddings plus BM25 keywords, merged by reciprocal rank fusion, over 405 cited sections from six sources.
+  - Ridita built the replacement on 25 Oct as hybrid search: local MiniLM embeddings plus BM25 keywords, merged by reciprocal rank fusion, over 405 cited sections from six sources.
   - It runs on Chroma on a laptop, and on the saved vectors with numpy and torch on Kaggle.
   - Roadmap T2 step 4b tests it against meaning-only and keyword-only search before it's wired in.
 - **LangGraph: a fallback only.**
@@ -371,6 +371,10 @@ Real collapse trajectories (how each building fell) need structural data and sim
   - The final showcase is about 15 Dec (tentative, given 24 Oct), about 7 weeks away. T2, T3 (which Abrar builds), L0, L2 and H2c take most of that.
   - Layer 3 fits only as a side track: notebooks built for teammates to run on their GPU accounts, with exact steps. Decide in mid-November, from where L2 and the website stand.
   - **17 Nov: still open, and parked.** Abrar finishes the system work first: the damage-map method, the chain to the reports, the 3B. L2 hasn't started training yet, so the mid-November check found no room for it. It is decided later, or left as future work.
+  - **17 Nov, later: delegated as a side track.** One member, full-time, reporting every run through Abrar, under [Layer3_Task/Layer3_Task_Brief.md](Layer3_Task/Layer3_Task_Brief.md). The member is still to be named.
+    - **The question:** can a before-photo generated from the after-photo let R11 beat R9 when the real one is missing?
+    - **The rule, fixed before any training:** on the 605 clean pairs, R11 with the generated before-photo must reach R9's mIoU plus half the gap to R11 with the real one (0.5604), above noise, and beat the after-photo copied in its place.
+    - **The steps:** pix2pix first, a diffusion model only on Abrar's go, and one confirmation on the test pairs.
 - **Recommended, not yet decided:** Layer 4 and real 3D reconstruction stay as future work.
 
 ## 6. The one chain, and who writes the report

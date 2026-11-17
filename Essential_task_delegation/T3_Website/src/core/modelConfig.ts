@@ -1,9 +1,9 @@
 // The one place that says what the in-browser model reads. The page, the worker and the parity
 // check all take it from here.
 //
-// A before-and-after export would read both photos as 6 channels. For that, change `images` to
-// ['before', 'after'] and point `file` (and `bytes`) at the new model: the page then asks for two
-// photos and the worker stacks them in that order.
+// A before-and-after export would read both photos as 6 channels. For R11's (L1c), change `images` to
+// ['after', 'before'], R11's channel order (the after-photo first, as it was trained), and point `file`
+// (and `bytes`) at the new model: the page then asks for two photos and the worker stacks them in that order.
 export const FIELD_MODEL = {
   /** Shown wherever the result is labelled. */
   label: 'Field model',

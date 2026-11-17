@@ -1,0 +1,578 @@
+{
+ "date": "2026-11-17",
+ "dry_run": false,
+ "smoke_test": false,
+ "notebook": "Essential_task_delegation/Champion_Task/t3-gallery-export.ipynb",
+ "rule": "605 clean validation pairs with at least 5,000 true destroyed px; one event per disaster type (most candidates); per event the median of R11's destroyed IoU (E5 step 2, TTA); Home: the largest destroyed area outside Turkey",
+ "pairs": [
+  {
+   "image": "hurricane_harvey_00000472_post_disaster.png",
+   "type": "hurricane",
+   "candidates": 5,
+   "expect": {
+    "truth_px": [
+     924432,
+     0,
+     109775,
+     14369
+    ],
+    "r11_iou": [
+     0.9562,
+     null,
+     0.6616,
+     0.0
+    ],
+    "ftg_iou": [
+     0.9546,
+     0.0,
+     0.5871,
+     0.0
+    ]
+   }
+  },
+  {
+   "image": "santa_rosa_wildfire_00000058_post_disaster.png",
+   "type": "wildfire",
+   "candidates": 7,
+   "hero": true,
+   "expect": {
+    "truth_px": [
+     744246,
+     233505,
+     0,
+     70825
+    ],
+    "r11_iou": [
+     0.9006,
+     0.795,
+     0.0,
+     0.7517
+    ],
+    "ftg_iou": [
+     0.9234,
+     0.8246,
+     0.0,
+     0.7619
+    ]
+   }
+  },
+  {
+   "image": "moore_tornado_00000120_post_disaster.png",
+   "type": "tornado",
+   "candidates": 5,
+   "expect": {
+    "truth_px": [
+     1014876,
+     0,
+     8295,
+     25405
+    ],
+    "r11_iou": [
+     0.9928,
+     0.0,
+     0.4001,
+     0.6592
+    ],
+    "ftg_iou": [
+     0.9889,
+     0.0,
+     0.366,
+     0.5311
+    ]
+   }
+  },
+  {
+   "image": "palu_tsunami_00000122_post_disaster.png",
+   "type": "tsunami",
+   "candidates": 2,
+   "expect": {
+    "truth_px": [
+     781314,
+     253942,
+     1123,
+     12197
+    ],
+    "r11_iou": [
+     0.8927,
+     0.6914,
+     0.0,
+     0.2769
+    ],
+    "ftg_iou": [
+     0.9077,
+     0.6992,
+     0.0888,
+     0.3142
+    ]
+   }
+  },
+  {
+   "image": "midwest_flooding_00000287_post_disaster.png",
+   "type": "flood",
+   "candidates": 1,
+   "expect": {
+    "truth_px": [
+     995127,
+     0,
+     0,
+     53449
+    ],
+    "r11_iou": [
+     0.9716,
+     null,
+     0.0,
+     0.0
+    ],
+    "ftg_iou": [
+     0.9496,
+     null,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "image": "turkey_earthquake0_post_380.png",
+   "type": "earthquake",
+   "candidates": 13,
+   "expect": {
+    "truth_px": [
+     696943,
+     320493,
+     0,
+     31140
+    ],
+    "r11_iou": [
+     0.8511,
+     0.6495,
+     null,
+     0.0
+    ],
+    "ftg_iou": [
+     0.8536,
+     0.699,
+     null,
+     0.4596
+    ]
+   }
+  }
+ ],
+ "methods": {
+  "before-after-unet": {
+   "model": "A U-Net that reads the before and after images together",
+   "tta": true,
+   "checkpoint": "AbrarAlam/disasterm3-d4-R11@31974dac"
+  },
+  "find-then-grade": {
+   "model": "SAM 3 outlines each building on the before image, and our grader (a Siamese ResNet-18 that compares the before and after crops) labels each outline",
+   "tta": false,
+   "checkpoint": "grader_seed42.pth, seed 42: its saved grades (Kaggle output r16c-step5-grader-on-sam3-outlines), on SAM 3's saved outlines (e3-sam3-building-finding)"
+  }
+ },
+ "table_seed": 42,
+ "biases": {
+  "Intact": 0.0,
+  "Damaged": -1.75,
+  "Destroyed": -4.0,
+  "None": -1.25
+ },
+ "settings": {
+  "min_area_px": 20,
+  "outline_tolerance_px": 0.75,
+  "webp_quality": 82,
+  "heatmap": {
+   "sigma_px": 25,
+   "damaged_weight": 0.5,
+   "safe_scale_px": 200,
+   "hot_threshold": 0.05,
+   "min_spot_px": 500,
+   "point_edge_margin_px": 32,
+   "safe_min_gap_px": 150,
+   "safe_edge_margin_px": 100,
+   "point_radius_px": 20
+  }
+ },
+ "limits": {
+  "r11_iou": 0.002,
+  "r11_px": 0.02,
+  "ftg_iou": 0.0001,
+  "truth_px_share": 0.0
+ },
+ "inputs": {
+  "sam3_maps": "/kaggle/input/notebooks/abrarmohammedtanzim/e3-sam3-building-finding/E3/masks/pre_grid2",
+  "grades": "/kaggle/input/notebooks/abrarmohammedtanzim/r16c-step5-grader-on-sam3-outlines/step5/instances_val.csv",
+  "biases": "/kaggle/input/notebooks/abrarmohammedtanzim/r16c-step5-grader-on-sam3-outlines/step5/calibration.json"
+ },
+ "checks": [
+  {
+   "image": "hurricane_harvey_00000472_post_disaster.png",
+   "check": "1. truth = E1's saved truth (pixels per class)",
+   "result": "[924432, 0, 109775, 14369] against [924432, 0, 109775, 14369]",
+   "pass": true
+  },
+  {
+   "image": "hurricane_harvey_00000472_post_disaster.png",
+   "check": "2. truth under the outlines = R16c step 5's",
+   "result": "0 of 103,939 px differ",
+   "pass": true
+  },
+  {
+   "image": "santa_rosa_wildfire_00000058_post_disaster.png",
+   "check": "1. truth = E1's saved truth (pixels per class)",
+   "result": "[744246, 233505, 0, 70825] against [744246, 233505, 0, 70825]",
+   "pass": true
+  },
+  {
+   "image": "santa_rosa_wildfire_00000058_post_disaster.png",
+   "check": "2. truth under the outlines = R16c step 5's",
+   "result": "0 of 293,545 px differ",
+   "pass": true
+  },
+  {
+   "image": "moore_tornado_00000120_post_disaster.png",
+   "check": "1. truth = E1's saved truth (pixels per class)",
+   "result": "[1014876, 0, 8295, 25405] against [1014876, 0, 8295, 25405]",
+   "pass": true
+  },
+  {
+   "image": "moore_tornado_00000120_post_disaster.png",
+   "check": "2. truth under the outlines = R16c step 5's",
+   "result": "0 of 37,114 px differ",
+   "pass": true
+  },
+  {
+   "image": "palu_tsunami_00000122_post_disaster.png",
+   "check": "1. truth = E1's saved truth (pixels per class)",
+   "result": "[781314, 253942, 1123, 12197] against [781314, 253942, 1123, 12197]",
+   "pass": true
+  },
+  {
+   "image": "palu_tsunami_00000122_post_disaster.png",
+   "check": "2. truth under the outlines = R16c step 5's",
+   "result": "0 of 224,471 px differ",
+   "pass": true
+  },
+  {
+   "image": "midwest_flooding_00000287_post_disaster.png",
+   "check": "1. truth = E1's saved truth (pixels per class)",
+   "result": "[995127, 0, 0, 53449] against [995127, 0, 0, 53449]",
+   "pass": true
+  },
+  {
+   "image": "midwest_flooding_00000287_post_disaster.png",
+   "check": "2. truth under the outlines = R16c step 5's",
+   "result": "0 of 3,747 px differ",
+   "pass": true
+  },
+  {
+   "image": "turkey_earthquake0_post_380.png",
+   "check": "1. truth = E1's saved truth (pixels per class)",
+   "result": "[696943, 320493, 0, 31140] against [696943, 320493, 0, 31140]",
+   "pass": true
+  },
+  {
+   "image": "turkey_earthquake0_post_380.png",
+   "check": "2. truth under the outlines = R16c step 5's",
+   "result": "0 of 291,620 px differ",
+   "pass": true
+  },
+  {
+   "image": "hurricane_harvey_00000472_post_disaster.png",
+   "check": "3a. R11's IoU per class = E5 step 2's (within 0.002)",
+   "result": "[0.9562, None, 0.6615, 0.0] against [0.9562, None, 0.6616, 0.0]",
+   "pass": true
+  },
+  {
+   "image": "hurricane_harvey_00000472_post_disaster.png",
+   "check": "3b. R11's pixels under the outlines = R16c step 5's (within 2%)",
+   "result": "0.0000 differ",
+   "pass": true
+  },
+  {
+   "image": "hurricane_harvey_00000472_post_disaster.png",
+   "check": "4. find-then-grade's IoU per class = the PC's",
+   "result": "[0.9546, 0.0, 0.5871, 0.0] against [0.9546, 0.0, 0.5871, 0.0]",
+   "pass": true
+  },
+  {
+   "image": "santa_rosa_wildfire_00000058_post_disaster.png",
+   "check": "3a. R11's IoU per class = E5 step 2's (within 0.002)",
+   "result": "[0.9006, 0.795, 0.0, 0.7517] against [0.9006, 0.795, 0.0, 0.7517]",
+   "pass": true
+  },
+  {
+   "image": "santa_rosa_wildfire_00000058_post_disaster.png",
+   "check": "3b. R11's pixels under the outlines = R16c step 5's (within 2%)",
+   "result": "0.0000 differ",
+   "pass": true
+  },
+  {
+   "image": "santa_rosa_wildfire_00000058_post_disaster.png",
+   "check": "4. find-then-grade's IoU per class = the PC's",
+   "result": "[0.9234, 0.8246, 0.0, 0.7619] against [0.9234, 0.8246, 0.0, 0.7619]",
+   "pass": true
+  },
+  {
+   "image": "moore_tornado_00000120_post_disaster.png",
+   "check": "3a. R11's IoU per class = E5 step 2's (within 0.002)",
+   "result": "[0.9928, 0.0, 0.4001, 0.6592] against [0.9928, 0.0, 0.4001, 0.6592]",
+   "pass": true
+  },
+  {
+   "image": "moore_tornado_00000120_post_disaster.png",
+   "check": "3b. R11's pixels under the outlines = R16c step 5's (within 2%)",
+   "result": "0.0002 differ",
+   "pass": true
+  },
+  {
+   "image": "moore_tornado_00000120_post_disaster.png",
+   "check": "4. find-then-grade's IoU per class = the PC's",
+   "result": "[0.9889, 0.0, 0.366, 0.5311] against [0.9889, 0.0, 0.366, 0.5311]",
+   "pass": true
+  },
+  {
+   "image": "palu_tsunami_00000122_post_disaster.png",
+   "check": "3a. R11's IoU per class = E5 step 2's (within 0.002)",
+   "result": "[0.8927, 0.6914, 0.0, 0.2769] against [0.8927, 0.6914, 0.0, 0.2769]",
+   "pass": true
+  },
+  {
+   "image": "palu_tsunami_00000122_post_disaster.png",
+   "check": "3b. R11's pixels under the outlines = R16c step 5's (within 2%)",
+   "result": "0.0002 differ",
+   "pass": true
+  },
+  {
+   "image": "palu_tsunami_00000122_post_disaster.png",
+   "check": "4. find-then-grade's IoU per class = the PC's",
+   "result": "[0.9077, 0.6992, 0.0888, 0.3142] against [0.9077, 0.6992, 0.0888, 0.3142]",
+   "pass": true
+  },
+  {
+   "image": "midwest_flooding_00000287_post_disaster.png",
+   "check": "3a. R11's IoU per class = E5 step 2's (within 0.002)",
+   "result": "[0.9716, None, 0.0, 0.0] against [0.9716, None, 0.0, 0.0]",
+   "pass": true
+  },
+  {
+   "image": "midwest_flooding_00000287_post_disaster.png",
+   "check": "3b. R11's pixels under the outlines = R16c step 5's (within 2%)",
+   "result": "0.0000 differ",
+   "pass": true
+  },
+  {
+   "image": "midwest_flooding_00000287_post_disaster.png",
+   "check": "4. find-then-grade's IoU per class = the PC's",
+   "result": "[0.9496, None, 0.0, 0.0] against [0.9496, None, 0.0, 0.0]",
+   "pass": true
+  },
+  {
+   "image": "turkey_earthquake0_post_380.png",
+   "check": "3a. R11's IoU per class = E5 step 2's (within 0.002)",
+   "result": "[0.8511, 0.6495, None, 0.0] against [0.8511, 0.6495, None, 0.0]",
+   "pass": true
+  },
+  {
+   "image": "turkey_earthquake0_post_380.png",
+   "check": "3b. R11's pixels under the outlines = R16c step 5's (within 2%)",
+   "result": "0.0001 differ",
+   "pass": true
+  },
+  {
+   "image": "turkey_earthquake0_post_380.png",
+   "check": "4. find-then-grade's IoU per class = the PC's",
+   "result": "[0.8536, 0.699, None, 0.4596] against [0.8536, 0.699, None, 0.4596]",
+   "pass": true
+  }
+ ],
+ "summary": [
+  {
+   "pair": "hurricane_harvey_00000472",
+   "method": "before-after-unet",
+   "intact_buildings": 0,
+   "damaged_buildings": 52,
+   "destroyed_buildings": 0,
+   "background_iou": 0.9562,
+   "intact_iou": NaN,
+   "damaged_iou": 0.6615,
+   "destroyed_iou": 0.0,
+   "hot_spots": 3,
+   "safe_areas": 3,
+   "buildings_json_kb": 47.3
+  },
+  {
+   "pair": "hurricane_harvey_00000472",
+   "method": "find-then-grade",
+   "intact_buildings": 5,
+   "damaged_buildings": 73,
+   "destroyed_buildings": 0,
+   "background_iou": 0.9546,
+   "intact_iou": 0.0,
+   "damaged_iou": 0.5871,
+   "destroyed_iou": 0.0,
+   "hot_spots": 3,
+   "safe_areas": 3,
+   "buildings_json_kb": 51.7
+  },
+  {
+   "pair": "santa_rosa_wildfire_00000058",
+   "method": "before-after-unet",
+   "intact_buildings": 100,
+   "damaged_buildings": 5,
+   "destroyed_buildings": 39,
+   "background_iou": 0.9006,
+   "intact_iou": 0.795,
+   "damaged_iou": 0.0,
+   "destroyed_iou": 0.7517,
+   "hot_spots": 3,
+   "safe_areas": 3,
+   "buildings_json_kb": 109.7
+  },
+  {
+   "pair": "santa_rosa_wildfire_00000058",
+   "method": "find-then-grade",
+   "intact_buildings": 180,
+   "damaged_buildings": 2,
+   "destroyed_buildings": 63,
+   "background_iou": 0.9234,
+   "intact_iou": 0.8246,
+   "damaged_iou": 0.0,
+   "destroyed_iou": 0.7619,
+   "hot_spots": 3,
+   "safe_areas": 3,
+   "buildings_json_kb": 134.0
+  },
+  {
+   "pair": "moore_tornado_00000120",
+   "method": "before-after-unet",
+   "intact_buildings": 0,
+   "damaged_buildings": 7,
+   "destroyed_buildings": 14,
+   "background_iou": 0.9928,
+   "intact_iou": 0.0,
+   "damaged_iou": 0.4001,
+   "destroyed_iou": 0.6592,
+   "hot_spots": 3,
+   "safe_areas": 3,
+   "buildings_json_kb": 12.9
+  },
+  {
+   "pair": "moore_tornado_00000120",
+   "method": "find-then-grade",
+   "intact_buildings": 1,
+   "damaged_buildings": 5,
+   "destroyed_buildings": 14,
+   "background_iou": 0.9889,
+   "intact_iou": 0.0,
+   "damaged_iou": 0.366,
+   "destroyed_iou": 0.5311,
+   "hot_spots": 3,
+   "safe_areas": 3,
+   "buildings_json_kb": 12.1
+  },
+  {
+   "pair": "palu_tsunami_00000122",
+   "method": "before-after-unet",
+   "intact_buildings": 84,
+   "damaged_buildings": 13,
+   "destroyed_buildings": 10,
+   "background_iou": 0.8927,
+   "intact_iou": 0.6914,
+   "damaged_iou": 0.0,
+   "destroyed_iou": 0.2769,
+   "hot_spots": 3,
+   "safe_areas": 3,
+   "buildings_json_kb": 89.1
+  },
+  {
+   "pair": "palu_tsunami_00000122",
+   "method": "find-then-grade",
+   "intact_buildings": 95,
+   "damaged_buildings": 3,
+   "destroyed_buildings": 8,
+   "background_iou": 0.9077,
+   "intact_iou": 0.6992,
+   "damaged_iou": 0.0888,
+   "destroyed_iou": 0.3142,
+   "hot_spots": 3,
+   "safe_areas": 3,
+   "buildings_json_kb": 80.9
+  },
+  {
+   "pair": "midwest_flooding_00000287",
+   "method": "before-after-unet",
+   "intact_buildings": 0,
+   "damaged_buildings": 8,
+   "destroyed_buildings": 0,
+   "background_iou": 0.9716,
+   "intact_iou": NaN,
+   "damaged_iou": 0.0,
+   "destroyed_iou": 0.0,
+   "hot_spots": 2,
+   "safe_areas": 3,
+   "buildings_json_kb": 7.7
+  },
+  {
+   "pair": "midwest_flooding_00000287",
+   "method": "find-then-grade",
+   "intact_buildings": 0,
+   "damaged_buildings": 2,
+   "destroyed_buildings": 0,
+   "background_iou": 0.9496,
+   "intact_iou": NaN,
+   "damaged_iou": 0.0,
+   "destroyed_iou": 0.0,
+   "hot_spots": 1,
+   "safe_areas": 3,
+   "buildings_json_kb": 1.0
+  },
+  {
+   "pair": "turkey_earthquake0_post_380",
+   "method": "before-after-unet",
+   "intact_buildings": 42,
+   "damaged_buildings": 0,
+   "destroyed_buildings": 0,
+   "background_iou": 0.8511,
+   "intact_iou": 0.6495,
+   "damaged_iou": NaN,
+   "destroyed_iou": 0.0,
+   "hot_spots": 0,
+   "safe_areas": 0,
+   "buildings_json_kb": 49.6
+  },
+  {
+   "pair": "turkey_earthquake0_post_380",
+   "method": "find-then-grade",
+   "intact_buildings": 32,
+   "damaged_buildings": 0,
+   "destroyed_buildings": 2,
+   "background_iou": 0.8536,
+   "intact_iou": 0.699,
+   "damaged_iou": NaN,
+   "destroyed_iou": 0.4596,
+   "hot_spots": 2,
+   "safe_areas": 3,
+   "buildings_json_kb": 50.8
+  }
+ ],
+ "photos": {
+  "hurricane_harvey_00000472_post_disaster.png": "the DisasterM3 mirror",
+  "santa_rosa_wildfire_00000058_post_disaster.png": "the DisasterM3 mirror",
+  "moore_tornado_00000120_post_disaster.png": "the DisasterM3 mirror",
+  "palu_tsunami_00000122_post_disaster.png": "the DisasterM3 mirror",
+  "midwest_flooding_00000287_post_disaster.png": "the DisasterM3 mirror",
+  "turkey_earthquake0_post_380.png": "the DisasterM3 mirror"
+ },
+ "before_photo_resized": [],
+ "versions": {
+  "numpy": "2.1.3",
+  "opencv-python": "4.14.0.94",
+  "opencv-python-headless": "4.14.0.94",
+  "scipy": "1.16.3",
+  "pandas": "2.3.3",
+  "pillow": "13.0.0",
+  "torch": "2.11.0+cu130",
+  "segmentation-models-pytorch": "0.3.4",
+  "huggingface-hub": "1.33.0"
+ }
+}

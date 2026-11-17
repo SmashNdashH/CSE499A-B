@@ -191,10 +191,12 @@ Every part below has been tested, but each with its own model and images. The pa
 - **Your review's fixes:** you pushed them on 17 Nov, with a change list ([CHANGES.md](Aryan_Task/CHANGES.md)). Abrar checks them against the review's section 8 ([Review_and_Fix_List.md](Aryan_Task/Review_and_Fix_List.md)) next.
 - **Already seen in the bridge** (`disasteller_inputs.py`, as pushed on 17 Nov):
   - **fixed:** an image that isn't in the table now returns the status `image_not_in_table`, not zeros with "ok" (7.1), and both statuses are checked (7.3); the hard-coded model names are gone;
-  - **still open (7.2):** safe areas are still read as `point_xy` and `dist_to_damage_px`. The heatmap's file calls them `xy` and `distance_px`, so every safe area still prints at (0, 0), 0 px from damage;
-  - **still open (7.4):** missing fields still get made-up defaults (`rank` 1, `point_xy` [0, 0], `area_px` 0);
-  - **still open (7.5):** the text is still titled "GROUND TRUTH DAMAGE FACTS", over counts that are a model's estimate.
-  - The website shows this text word for word, so these three need fixing before it can.
+  - **fixed by Abrar on 17 Nov, so don't redo them** (pull first):
+    - safe areas are read with the heatmap file's own keys, `xy` and `distance_px` (7.2);
+    - a missing field prints "missing", never a made-up 0 (7.4);
+    - the text is titled "MODEL-ESTIMATED DAMAGE FACTS", says the counts are estimates, and no longer adds its own "deploy USAR teams here" advice (7.5).
+
+    The file's self-check now tests all three on the real building table and heatmap file.
 - **The bridge must also read the table of whichever method is chosen** (section 4), not a fixed one.
 - **From Wed 18 Nov, the website:** [T3_Website_Handover.md](Aryan_Task/T3_Website_Handover.md), section 8.
   - Done on 17 Nov, so not yours any more: zoom and pan, hide and search, folding panels, the hover card, print, and the reports' error marks.
@@ -204,9 +206,17 @@ Every part below has been tested, but each with its own model and images. The pa
 
 ### Ridita
 - **Done on 16 Nov:** the comparison with July's Gemini reports (section 3, item 5).
-- **Next in T2: the quality-fix run on Kaggle,** by the steps in your README ("Quality-fix run"), measured with the same script so its numbers sit beside the proof run's and July's.
+- **Your next task, now (Abrar, 17 Nov): run the quality-fix run on Kaggle.** It's built and laptop-tested, so it's ready.
+  - **How:** the six steps in your README, "Quality-fix run", "Steps (Kaggle)": commit, pack the upload, a new version of `disasteller-offline1`, then the proof run's notebook with GPU T4 x2 and the internet **off**.
+  - **Done when:**
+    - the printed commit is the new one, not `258a4f381`;
+    - it prints "PASSED: the offline proof (internet off)";
+    - `t2_run_internet_off.zip` and the notebook are in `results/t2_quality_fix/`, unchanged.
+  - **Then measure it the same way as the comparison:** `compare_reports.py` with this run as the third set, the new rows in `hand_check.csv`, and the new citation check.
+  - **Write the result against the expectation** you wrote on 16 Nov, before the run.
+  - **Push, and tell Abrar.** It is also our second offline proof, of the new code.
 - **T2 step 5, connecting the bridge:** `disasteller_inputs.py` isn't called by the main script yet. When you connect it:
-  - **Missing must not read as zero.** Aryan's fix of 17 Nov does the first half: an image that isn't in the table now returns `image_not_in_table`. The safe areas are still read with the wrong keys (Aryan's part, above).
+  - **Missing must not read as zero.** Done on 17 Nov. An image that isn't in the table returns `image_not_in_table` (Aryan). Safe areas are read with the right keys, and a missing field prints "missing" (Abrar).
   - **One method for both inputs.** The table and the hot spots must come from the same method: today H2's table and T1's hot spots share only 7 images. Wait for the method choice (section 4) for the files.
 - **Then T2b:** the same facts and guideline search with two writers, our 7B and a small text-only model, counted by number contradictions and invented citations.
 - **The website's Reports page** shows your proof run's reports word for word, with the problems from your README's "Quality problems" list marked: 14 phrases, plus 8 notes for problems with no single phrase to mark ([reportNotes.ts](T3_Website/src/core/reportNotes.ts)). Your comparison's further findings (the two photo descriptions that contradict their photos, the hall "in the center of the region", "existing medical facilities remain unaffected", the Emergency report's "G4 and G5, respectively") aren't marked yet. Tell Abrar if any mark is wrong.

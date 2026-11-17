@@ -340,6 +340,87 @@ We can borrow BDAChat's strength cheaply: after the classifier grades a building
 - **BDAChat** is our *closest competitor* in design. Position against it carefully.
 - **Our SAM 3 design** is BDAChat's object-level idea, rebuilt to be cheap, countable and offline.
 
+### 8.5 Why we don't fine-tune SAM 3 directly on the damage classes (added 17 Nov)
+
+The question: one model from the after-photo straight to damage classes would be simpler than SAM 3 plus a grader. Why not fine-tune SAM 3 to do it all?
+
+1. **A destroyed building stops looking like a building in the after-photo.**
+   - E1: 59.5% of the destroyed pixels R9 missed were called background ([E1 README](Champion_Task/E1-results/E1/README.md)).
+   - SAM 3 on the after-photo covers only 9% of the destroyed-building area (System_Design_Notes §6).
+   - On the before-photo it finds buildings well: building IoU 0.630 against R9's 0.591. With R9's pieces added, it covers 86% of destroyed footprints (E3, [Task_Ledger](Task_Ledger.md)).
+
+   So the outline has to come from the before-photo.
+2. **Damage is a change between two photos.** SAM 3's image encoder reads one picture. Two ways to give it both:
+   - **Six input channels:** this replaces the first layer's pretrained weights, so the encoder would need retraining. SAM 3 has about 848M parameters (vision about 450M) and about 3.4 GB of weights (§6.2 and §7.1), far beyond a T4.
+   - **Running the encoder twice (Siamese):** this doubles its memory.
+
+   Our arithmetic, not a measurement: at 1008 px with 14 px patches, SAM 3's encoder reads 72 × 72 = 5,184 tokens per picture. Our 7B reads about 1,300 per full-size picture (L0 step 1), and its training already peaked at 14.2–14.5 GB of a T4's 16 (L0 step 2, with the vision encoder frozen and the model in 4-bit; Progress_Tracker).
+3. **The weak part is grading, not outlining.** With perfect grades on SAM 3's outlines, destroyed IoU would reach:
+   - 0.556 on validation (Task_Ledger);
+   - 0.590 on the test pairs (E7 step 2);
+   - 0.614 with R11's pieces added (R16c step 1).
+
+   Our grader reaches 0.3065 on clean validation (mean of three seeds) and 0.3898 on the test pairs. Most of the loss is in grading the before and after crops.
+
+**If it were ever tried, as an ablation** (not planned):
+- keep SAM 3's encoder frozen, and save its embeddings of each before-photo and after-photo once;
+- train only a small neck that compares the two, plus a decoder with four classes.
+
+Two known costs:
+- a pixel map of classes merges touching buildings back into blobs, which is what made counting from masks hard (H1);
+- prompting SAM 3 three times ("intact building", "damaged building", "destroyed building") gives overlapping masks that need a rule to settle them.
+
+### 8.6 How published systems split the work (added 17 Nov)
+
+| System | Who finds the buildings | Who grades the damage | Who writes the text | How ours compares |
+|---|---|---|---|---|
+| xView2 winners (§4) | 1st (Durnov): models trained on before-photos only; 2nd (Seferbekov): a U-Net | Siamese networks that compare before and after with shared weights | Nobody (vision only) | The same split. SAM 3 finds the buildings with no training, and a ResNet-18 grades them. |
+| BRIGHT (2025) | Two-stage models | Before-and-after models (ChangeMamba 67.63 mIoU against a one-step U-Net's 64.94) | Nobody | Supports finding first, then grading (Paper_Audit). |
+| BDAChat (2026) | SAM ViT-B with an adapter, a LinkNet decoder and Multi-LoRA, fine-tuned on building and road masks | Video-LLaVA-7B (LoRA, 8-bit) on every building's crops: macro F1 0.763 | The same 7B | Trained with DeepSpeed ZeRO-3 and CPU offload on several GPUs. Our grader reached macro F1 0.778–0.784 on the true validation buildings (R16c step 2). It is a small network, not a 7B per building. |
+| TEOChat (2025) | A specialist model: a VLM alone finds xBD buildings at F1 38.9, against 85.9 for a specialist | The VLM, given the boxes | The VLM | Matches our evidence: on 300 true buildings the fine-tuned 7B was right on 100 and our grader on 212 (Tamanna's Part B). |
+| GeoPixel (2025) | One 7B VLM that draws masks from text | Not damage-specific, and one picture only | The same 7B | Trained for about 3 days on 2× A6000 48 GB GPUs (Paper_Audit). |
+| DamageScope (2026) | Known footprints | A damage database | Cloud GPT-4o answers questions over it | The model for our building table and fixed queries, but offline and with a local model. |
+
+### 8.7 Counts go through the table, not the language model (added 17 Nov)
+
+In Aryan's counting study, rechecked (Task_Ledger §9, "Aryan · Counts in the prompt"):
+- on 1,701 counting questions, taking the option nearest R11's own count scored 37.0%;
+- giving the same count to the fine-tuned 7B in its prompt scored 27.0%. Only the table was right on 290 questions, only the 7B on 121 (p < 10⁻¹⁶).
+- **The 7B picks the option nearest the count it was given only 56% of the time.** It changes or misreads the number 44% of the time.
+
+So the chain turns the map into a building table, answers counts with fixed queries, and gives the report writer the numbers as text.
+
+A caveat: on these questions, a rule that never looks at the image scores 66.98% (benchmark-option-rule-check.ipynb). Accuracy there can't show counting ability, so counts are also judged by their error against the true masks.
+
+### 8.8 Our supervisor's two suggestions: super-resolution and reinforcement learning (recorded 17 Nov)
+
+**Super-resolution (SR): a sharper picture before a model reads it.**
+- **Where it could help:** the grader's small crops.
+  - In Tamanna's Part B, a building's longest side was 46 px at the median, and 7 of 30 were under 32 px, within a 256 px window (Task_Ledger).
+  - Our grader enlarges each crop to 128 px by ordinary resizing (R16c steps 2 and 5).
+  - Resolution differs by source: DisasterM3's copies of BRIGHT tiles (Turkey among them) are 0.30 m per pixel (Ridita's audit, Task_Ledger §9). xBD tiles are 1.25–2.82 m per pixel (a sample of 12 label files, T3_Website/NOTES.md). So small crops are mostly an xBD problem.
+- **A clean test:** replace the resize with an SR model only for crops under 48 px, change nothing else, and score:
+  - the grader's macro F1 on the true validation buildings;
+  - find-then-grade's destroyed IoU on the 605 clean pairs.
+
+  Noman's VRT super-resolution notebook is a starting point (`support/Noman_Super Resolution/Noman_VRT_SuperResolution_Pipeline.ipynb`; CSE499A's final presentation, slide 16).
+- **Risk:** an SR model trained on ordinary photos invents texture. On rubble that can look like damage, or hide it.
+- **A cheaper, related fix:** align the two crops before grading. In 52% of the pairs, the before-photo and after-photo are shifted by more than 2 px; in 10%, by more than 5 px; the worst by 56 px (Ridita's audit). Aligning is already a candidate in the roadmap.
+
+**Reinforcement learning (RL): training a model on a reward for its whole answer.**
+- **Where it is used in our reading:** GeoDisaster's tool-calling agents were trained with supervised fine-tuning, then reinforcement learning with GRPO (System_Design_Notes §3.5).
+- **Where it fits us:** the text side, not segmentation.
+  - Our 7B's tool-calling failures in T2 were solved without training, by the fixed flow.
+  - What's left is report quality: contradictions, made-up numbers, citations.
+  - T2's checks can serve as a reward that a program computes:
+    - numbers that disagree with the building table, invented contact details or citations: penalised;
+    - citations of passages the model was really shown: rewarded.
+  - Such a reward could drive DPO or GRPO on the 7B or the 3B.
+- **Cost:**
+  - many generations per prompt, so heavy on a T4;
+  - the reward must be checked against the reports' measured quality (Ridita's comparison) before it is trusted.
+- **Status:** not planned. A candidate after T2b decides who writes the reports. H2b showed no model met the reliability bar for writing SQL, so a reward for SQL is a second candidate.
+
 ---
 
 ## 9. Recommended order for the rest of 499B
