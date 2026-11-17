@@ -63,6 +63,8 @@ What I understood from the brief and the files it lists, the contradictions I fo
 
 ## 3. Open questions
 
+**Parked (17 Nov, Abrar's call):** Abrar finishes the system work first: the damage-map method, the chain to the reports, the 3B. These questions wait until then. Nothing here blocks the gallery export: it writes both methods under the contract's ids.
+
 1. **The name.** *(The direction is answered: A, on 16 Nov.)* Is "Aftermap" the project's name, or another?
 2. **The repeated "temporary command center" sentence.** The brief names it as made up in the Public community report. The same claim is in the Expert, Emergency team and Resource allocation reports. I flag it in all four. Say if it should be flagged only where the brief names it. *(17 Nov, from the run's call log: the phrase first appears in the model's own answer for the Expert report's conclusion, as a suggestion ("can serve as"), and in none of the photo descriptions or the map reading. The later reports state it as a fact.)*
 3. **After 18 Nov, which counting score leads:** 32.96% (3,583 questions) or 33.02% (3,580, with the count-error numbers beside it)?
@@ -76,3 +78,5 @@ What I understood from the brief and the files it lists, the contradictions I fo
 11. **Metres for xBD pairs?** xBD's label files give each tile's ground resolution (finding 14). For the xBD gallery pairs, the site could show distances and areas in metres beside pixels; the Turkey pairs would stay in pixels. That would change the brief's "never metres" rule, and needs a check that DisasterM3's xBD images are xBD's tiles unchanged. Yours to decide.
 13. **The mouse wheel on the map (17 Nov).** A plain wheel scrolls the page, and zooming takes Ctrl with the wheel, a pinch or the buttons; the map says which key to hold. Aryan's prototype zoomed on a plain wheel, but its map filled the screen. Say if you want the plain wheel to zoom: the page would then stop scrolling while the pointer is on the map.
 12. **Motion beyond the brief's rule.** Three React Bits components are in: a crosshair with live pixel coordinates on the map and rolling digits in the counts, because each shows something, and the contour background you chose. Most of that library is decorative (glitch text, sparks, shader backgrounds), which the brief rules out. Say if you want that rule relaxed.
+14. **The comparison's further errors on the Reports page (17 Nov).** Ridita's comparison with July's reports found errors that aren't marked yet: two photo descriptions that contradict their photos, the hall "in the center of the region", "existing medical facilities remain unaffected", and the Emergency report's "G4 and G5, respectively". Mark them on the page, or wait for her quality-fix run's reports?
+15. **The contour background:** is its pointer response, and its dimmer look on the inner pages, what you want? (`npm run dev`)

@@ -19,7 +19,7 @@ Source: the Objectives section of the submitted CSE499B review report ([others/C
 
 ### 1.1 The CSE499A future-work items are part of these goals
 
-The CSE499A final presentation ended with a Future Work list ([final_presentation.html:657-662](../final_presentation.html#L657-L662); in more detail in [CSE499A_Final_report.tex:507-515](../CSE499A_Final_report.tex#L507-L515)). The CSE499B review report turned most of it into the goals above:
+The CSE499A final presentation ended with a Future Work list (slide 22 of [CSE499A_Final_Presentation.pptx](../others/CSE499A/CSE499A_Final_Presentation.pptx); in more detail in the final report's section VIII, "Conclusion and Future Work", on page 8 of [CSE499A_Final_report.pdf](../others/CSE499A/CSE499A_Final_report.pdf)). The CSE499B review report turned most of it into the goals above:
 
 | CSE499A future-work item | CSE499B goal | Where the review report says so |
 |---|---|---|
@@ -45,7 +45,7 @@ The CSE499A final presentation ended with a Future Work list ([final_presentatio
 |---|---|---|---|
 | O1 | Phase Gate | **Not met; fine-tuning closed (18 Oct).** mIoU passes in every run. R9 (sampler + copy-paste) is the best Destroyed recipe: 0.3001 with TTA on seed 42, but 0.2941 on its seed-7 repeat (R9s7), so the two-seed mean is 0.2971. Next is the E1 diagnosis, then R11 (before + after input). | `Champion_Task/R9-results/`, `Champion_Task/R9s7-results/`, [Ablation_Study_Reference_and_QA_Prep.md](Ablation_Study_Reference_and_QA_Prep.md) §7 |
 | O1 | Extra training data (BRIGHT) | Planned; the plan's files disagree with each other (see 2.2) | [BRIGHT_DisasterM3_Integration/](BRIGHT_DisasterM3_Integration/) |
-| O2 | Hybrid counting | Never re-measured since the intact-building counting bug was fixed. The only recorded number is 13.11%. | [hybrid_intermediate_results.md:13](../hybrid_intermediate_results.md#L13) |
+| O2 | Hybrid counting | Never re-measured since the intact-building counting bug was fixed. The only recorded number is 13.11%. | `hybrid_intermediate_results.md`, line 13, at the repository root (on Abrar's PC only; it's git-ignored) |
 | O2, O3 | Textual bridge ("counts as text") | Not built, but the interactive demo is one change away. Its hybrid mode prints the U-Net counts (e.g. "Intact 51, Damaged 3") but sends Qwen only the collage image and the original question (`ask_model(collage_img, question)`). Adding the counts to that question is the textual bridge. | [test_qwen_disasterm3_interactive.ipynb](../support/Abrar/Implementation_DisasterM3/test_qwen_disasterm3_interactive.ipynb); screenshots `Screenshot 2026-08-14 022013.png` and `022552.png` |
 | O2 | Higher-resolution VLM | Not started (ImageRAG and GeoPixel's tiling are the references; section 4) | — |
 | O3 | DisasTeller on our model | Not started. Every model call is Gemini: `gemini-3.1-flash-lite` for the agents and image tools, and `gemini-embedding-001` for the guideline search. Both must be replaced and the Chroma database rebuilt. Six reports from a Gemini run exist (20 Jul). | [DisasTeller/](../support/Ridita_Integration_of_VLM__/DisasTeller/) |

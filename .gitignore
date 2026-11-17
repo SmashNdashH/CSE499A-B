@@ -228,7 +228,7 @@ Essential_task_delegation/Champion_Task/T1-results/T1-v2/maps/
 Essential_task_delegation/Champion_Task/E3-results/E3/masks/pre_grid1/
 Essential_task_delegation/Champion_Task/E3-results/E3/masks/post_grid1/
 
-# Claude Code's local settings and scheduler lock
+# The editor's local settings and scheduler lock
 .claude/
 
 # Personal samples and the next report's draft, kept local like the files above
@@ -236,3 +236,7 @@ Minhaj_sample_*
 Sample_Abrar_*
 CSE499B_Review_report_update.tex
 Essential_task_delegation/Offline_RAG_KR2/guidelines/Sphere_Handbook_2018_EN.pdf
+
+# Local-only copies (17 Nov): a saved LinkedIn post (DhakaDriveX) and the Phase A briefing page
+Essential_task_delegation/(*)Post _ LinkedIn.mhtml
+Essential_task_delegation/Champion_Task/CSE499B Phase A Briefing.html

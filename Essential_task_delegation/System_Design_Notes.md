@@ -370,6 +370,7 @@ Real collapse trajectories (how each building fell) need structural data and sim
 - **Open:** Layer 3, if time allows after the above; recommended as the one extra layer, because it uses data we already have, plugs into R11 and gives a measured answer either way.
   - The final showcase is about 15 Dec (tentative, given 24 Oct), about 7 weeks away. T2, T3 (which Abrar builds), L0, L2 and H2c take most of that.
   - Layer 3 fits only as a side track: notebooks built for teammates to run on their GPU accounts, with exact steps. Decide in mid-November, from where L2 and the website stand.
+  - **17 Nov: still open, and parked.** Abrar finishes the system work first: the damage-map method, the chain to the reports, the 3B. L2 hasn't started training yet, so the mid-November check found no room for it. It is decided later, or left as future work.
 - **Recommended, not yet decided:** Layer 4 and real 3D reconstruction stay as future work.
 
 ## 6. The one chain, and who writes the report

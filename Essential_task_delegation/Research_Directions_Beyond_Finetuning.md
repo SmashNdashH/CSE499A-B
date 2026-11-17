@@ -9,7 +9,7 @@
 > - E5 then found leaked validation pairs, Without the 40 leaked pairs, R16c steps 2 and 3 score 0.2838–0.2980, so their claim doesn't hold on clean data. Only R16c step 5's SAM 3-only map passes there (0.3161 and 0.3051), narrowly (26 Oct); with a third grader seed (0.2982), on the three-seed mean only (0.3065, 28 Oct).
 > - The current status is in [Progress_Tracker.md](Progress_Tracker.md).
 
-**Related docs:** [Segmentation_Model_Explained.md](Segmentation_Model_Explained.md) (how our U-Net and dataset work) · [segmentation_improvement_guide.md](segmentation_improvement_guide.md) (Tiers 1–6) · [team_task_assignments.md](team_task_assignments.md) (Phase Gate, Task D5) · [Ablation_Study_Reference_and_QA_Prep.md](Ablation_Study_Reference_and_QA_Prep.md) (verified sprint numbers and errata).
+**Related docs:** [Segmentation_Model_Explained.md](Segmentation_Model_Explained.md) (how our U-Net and dataset work) · [segmentation_improvement_guide.md](Archive/segmentation_improvement_guide.md) (Tiers 1–6; archived) · [team_task_assignments.md](Archive/team_task_assignments.md) (Phase Gate, Task D5; archived) · [Ablation_Study_Reference_and_QA_Prep.md](Ablation_Study_Reference_and_QA_Prep.md) (verified sprint numbers and errata).
 
 ## Contents
 1. [Why look beyond fine-tuning](#1-why-look-beyond-fine-tuning)

@@ -712,6 +712,16 @@ notebook's output.
   tool call was well formed. The problems are the loop, the length, and the
   weak inputs to the tools.
 
+**Practice run 2, repeated by Abrar (7 Nov, account 3, internet on): the
+same result.** It ran the 4 Nov code (commit `8b6fbd319`: the file fix from
+run 1, but not the fixes below). Rules 1 and 2 failed and rules 3, 4 and 5
+passed, in 11.2 minutes, with 18 network events, all on `127.0.0.1`. The
+Expert team looped in the same way ("I tried reusing the same input", 33
+times) until one message passed 16,384 tokens, and no report was written.
+Again 4 of the 6 photo descriptions repeated the agent's own text. One
+difference: its map got 3 labels. Its files are in
+`results/t2_practice_2_abrar/`, as they came from Kaggle.
+
 **The fixes (5 Nov), each for one finding above.** The pass rules are not
 changed.
 
@@ -829,6 +839,24 @@ Every run now records three kinds of time in `run/llm_calls.jsonl`:
 5. Check the printed git commit: it must be the new commit, not `124ad5e77`.
    Download the outputs and the notebook into `results/t2_practice_3/`.
 6. If it passes: the proof run, the same with internet **off**.
+
+**Practice run 3, run by Abrar (8 Nov, account 3, internet on, commit
+`0024ae8af`): failed rule 2.** Its files are in
+`results/t2_practice_3_abrar/`, as they came from Kaggle.
+- Fixed since run 2: the run finished, in 3.9 minutes; no team reached its step
+  limit; all six photo descriptions differ; 5 labels were drawn on the map; no
+  message needed shortening. Rules 1, 3, 4 and 5 passed.
+- Rule 2 failed: the six reports have 12, 82, 17, 14, 69 and 228 words. Three
+  are one sentence about the report, such as "The final report is generated
+  based on the provided data and tools." The emergency team called
+  `global_img_interpreter` without its `text` input, got a validation error and
+  gave up. No report cites a guideline section, although three searches ran.
+  Two reports invent "Region A, B and C" with damage grades 2, 4 and 6.
+- What it shows: the loop is fixed; now the writing fails. The model answers
+  in one sentence, as it was trained to, and uses no facts from the tools.
+- Next (to decide with Abrar): the fixed flow, or CrewAI with changed
+  instructions and run 4. *(Decided 10 Nov: the fixed flow, after run 4; see
+  "Practice run 4 and the fixed flow".)*
 
 
 ## Practice run 3 and the fixes (8–9 Nov)

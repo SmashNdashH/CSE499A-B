@@ -579,6 +579,37 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
        - **For you to look at:** the zoom needs Ctrl with the mouse wheel (a plain wheel scrolls the page, and the map says so). If you'd rather the plain wheel zoomed, as in Aryan's full-screen prototype, say so: it is a two-line change, at the cost of the page no longer scrolling while the pointer is on the map.
      - **B. Make the site show your best results (you run the notebooks on Kaggle):**
        - **4. Gallery export notebook** (2 h to write, then your Kaggle run): replaces the four stand-in pairs. It runs the before-and-after model (and find-then-grade) on 6 clean validation pairs, including a Turkey pair where it fails, and writes the files in [DATA_CONTRACT.md](T3_Website/DATA_CONTRACT.md). The most important item: until it exists, the site shows the weaker after-image-only model, marked as stand-in data.
+         - **Built 17 Nov, dry run passed on your PC: [t3-gallery-export.ipynb](Champion_Task/t3-gallery-export.ipynb).**
+           - **What it does:** R11 with TTA runs on the GPU. Find-then-grade is rebuilt from saved files: E3's SAM 3 outlines and R16c step 5's grades, seed 42. From each map it writes the building table with outlines, T1 v3's heatmaps, hot spots and safe areas, and the IoU per class against the truth.
+           - **The six pairs, by a rule fixed before any run** (the notebook's first cell): one event per disaster type; in each, the pair with the median R11 destroyed-building IoU among pairs with at least 5,000 true destroyed px. They are Harvey 472, Santa Rosa 58 (Home), Moore 120, Palu 122, Midwest flooding 287 and Turkey earthquake0 380.
+           - **What the pairs show:** R11 finds no destroyed building on three of them (Harvey, the flood, Turkey). Find-then-grade finds 46% of Turkey's destroyed area and misses the other two.
+           - **Dry run:** the notebook's own cells, with local files and E1's R9 maps standing in for R11, passed every check except check 3, which needs the GPU. The checks:
+             - the truth equals E1's on all 6 pairs;
+             - the truth under every outline equals R16c step 5's (0 px differ);
+             - find-then-grade's IoU equals the PC's computation;
+             - the website's validator accepts all six pairs;
+             - the hot spots and maps equal T1 v3's saved outputs, 6 of 6;
+             - the building tables equal the site's own code on all 720 rows. One outline of the 720 is simplified at a different but equally valid corner: two points tie for farthest, and JavaScript's and Python's square roots differ in the last digit.
+         - **Run steps (account 1, about 10 min with the smoke test):**
+           1. Sign in as account 1 (`abrarmohammedtanzim`). **Create → New Notebook → File → Import Notebook → Browse**, pick `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\t3-gallery-export.ipynb`, then **Import**.
+           2. **Settings:** GPU **T4 x2** (one is used), Internet **On**. **Add-ons → Secrets:** turn on `HF_TOKEN` (AbrarAlam; read access is enough: R11's checkpoint is private).
+           3. **+ Add Input:** search `disasterm3-mirror`, click **+** on the dataset by *abrarmohammedtanzim*. Then **Your Work →** `e3-sam3-building-finding` and `r16c-step5-grader-on-sam3-outlines`.
+           4. **Smoke test:** in `# ── Cell 2`, set `SMOKE_TEST = True`, then **Run All** (a few minutes). If Cell 1 says to restart: **Run → Restart & clear cell outputs**, then **Run All** again. Check:
+              - Cell 2: `✓ T3 gallery export  [SMOKE TEST]: 1 pair(s)`, and the paths of the SAM 3 maps and the grades;
+              - Cell 3: `✓ Helpers ready (self-checks passed)`;
+              - Cell 4: `hurricane_harvey_00000472_post_disaster.png: 1024 x 1024, 107 graded outlines (0 without a grade), photos: the DisasterM3 mirror`, a table of checks all `True`, and `✓ Checks 1 and 2 pass on 1 pair(s)`;
+              - Cell 5: `✓ R11 loaded: AbrarAlam/disasterm3-d4-R11@…, on Tesla T4`, then checks 3a, 3b and 4 `True`;
+              - Cell 6: a summary table and `✓ 1 pair folder(s) written`;
+              - Cell 7: the README text and `✓ Wrote … t3_gallery.zip`.
+
+              A red error or any `False`: stop and send me a screenshot of that cell.
+           5. Set `SMOKE_TEST = False`. **Save Version → Save & Run All (Commit) → Save.** Stop the editor session.
+           6. When it's finished, from the version's **Output**, download:
+              - `README.md` and `config.json`, into `D:\CSE499AB_project\Essential_task_delegation\Champion_Task\T3-gallery-results\`;
+              - `t3_gallery.zip`. Unzip it into `D:\CSE499AB_project\Essential_task_delegation\T3_Website\public\data\`, so that `public\data\santa_rosa_wildfire_00000058\pair.json` exists. The zip itself stays out of git.
+
+              Save the run notebook over `Champion_Task\t3-gallery-export.ipynb`.
+           7. In `T3_Website\`: `npm run validate`, then `npm run build`. Tell me "gallery done", and I'll check the site with the real pairs.
        - **5. 8-bit export of the before-and-after model** (1–2 h to write, then your Kaggle run): Try it runs the weaker field model today. This notebook exports the better model to 8-bit and checks its accuracy loss, the same way [L1b](Champion_Task/L1B-results/L1b/README.md) did for the field model. The site reads its model settings from one file ([modelConfig.ts](T3_Website/src/core/modelConfig.ts)), so afterwards it needs only a config change and a second photo input.
      - **C. Left for later by the brief (only if you say so):**
        - **6. Booth API with FastAPI** (plan 1 h, build 4–6 h): a small local server on 127.0.0.1 that serves this same site and runs the parts a browser can't, the guideline search and the report writer. A one-page plan for your approval first, then the build.
@@ -589,6 +620,7 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
        - **10. Update 5's website section** (1 h): a section in `others/CSE499B_update_5_draft.tex` on the website and the browser test, with the measured numbers and links to the files.
      - **Why that order:** items 4 and 5 change what judges see most (real gallery pairs from the better model, and the better model in Try it), and both need Kaggle runs, so writing them early leaves time to run them. Items 6, 8 and 9 are larger; take one only if the day goes fast.
      - **Still open from before:** whether the contour background's pointer response and its dimmer look on the inner pages are what you want (`npm run dev` in `T3_Website/`), and your questions in [T3_Website/NOTES.md](T3_Website/NOTES.md), section 3: the name, metres for xBD pairs, and which counting score leads after 18 Nov.
+     - **Parked (17 Nov, your call):** all the website's open questions (NOTES.md, section 3, now 15, including whether to mark the comparison's further errors on the Reports page) wait until the system work is done. So does the decision on Layer 3 (System_Design_Notes §5.2). The gallery export goes ahead now, since it feeds both.
 - **To send Ridita (drafted 4 Nov):** "For T2 step 5: `disasteller_inputs.py` isn't called by the main script yet. When you connect it, please make two changes. First, an image that isn't in the table returns all zeros with status 'ok', so a report could say 0 buildings; missing data should stop the run or be stated as missing. Second, read the table and hot spots from one chain: today's H2 table and T1 hot spots share only 7 images, and I'll give you the new files after E7. After that comes a new task, T2b: the same facts and guideline search with two writers, our 7B and a small text model, counting number contradictions and fake citations. Details are in the roadmap."
 
 - **L2 step 2: five runs on three accounts (built 8 Nov; what each run does is in the first item of this file).** Runs 1 and 2 can start now, side by side. Account 4 isn't used: (b)'s training needs your write token, and account 4 is Tamanna's. GPU hours, estimated: account 3 about 25 h (runs 1 and 3b); account 1 about 22 h (runs 2 and 3c); account 2 about 4 h (runs 4 and 5). Each notebook's first cell repeats its steps.
