@@ -1,0 +1,21 @@
+Mode: offline, fixed flow
+
+# Public Community Report
+
+## Introduction
+The earthquake caused significant damage across multiple locations, with the Wajima Drama Memorial Hall remaining undamaged. Hama Street, Central Nishikigawa Street, and South Central Asaichi Street all experienced severe structural damage to buildings and debris obstruction, while the concrete bridge was completely collapsed. The disaster report indicates widespread destruction to infrastructure and housing, with the most critical areas requiring immediate intervention for debris clearance, road repairs, and safety assessments. The alerts team has identified dangerous zones, emphasizing the need for urgent response measures to mitigate further risks.
+
+## Current Situation
+The Wajima Drama Memorial Hall, located in the center of Picture1.png, remains undamaged and classified as G1, indicating no visible damage. This location serves as an emergency shelter for displaced residents, meeting the Sphere Handbook 2018 guidelines on living space. The hall offers a basic roof and walls, ensuring physical security and privacy, with an internal floor-to-ceiling height of at least 2 meters. Given its structural integrity and lack of debris, the hall can accommodate 100 people, adhering to the minimum 3.5 square meters of living space per person requirement. The hall's location is easily accessible, with no obstructions to its surroundings, facilitating safe and dignified shelter provision.
+
+## Resource Allocation
+The emergency services have allocated resources to prioritize the recovery of critical infrastructure and housing. The Wajima Drama Memorial Hall has been designated as an emergency shelter for displaced residents, with 100 people accommodated. Efforts are underway to clear debris and repair roads in Hama Street, Central Nishikigawa Street, and South Central Asaichi Street to restore accessibility. The collapsed concrete bridge requires urgent stabilization to prevent further risks. Resource allocation is guided by the Sphere Handbook 2018 [SPHERE-3-p1] for shelter provision and [SPHERE-4-p1] for household item assistance, ensuring displaced individuals receive adequate support.
+
+## Public Advisory
+The earthquake has caused significant damage to infrastructure and housing, with critical areas requiring immediate intervention. The Wajima Drama Memorial Hall remains undamaged and serves as an emergency shelter for displaced residents. Please avoid the collapsed concrete bridge and obstructed roads in Hama Street, Central Nishikigawa Street, and South Central Asaichi Street to prevent further risks. For urgent assistance, contact local emergency services. Follow official announcements for updates and safety protocols. Your cooperation is vital in facilitating recovery efforts.
+
+## Organizational Operation
+Our organization is actively managing the post-disaster response, focusing on providing emergency shelters, clearing debris, repairing roads, and stabilizing the collapsed bridge. We are coordinating with local authorities and the affected community to ensure safety and facilitate recovery. For further assistance, please contact local emergency services or visit our website for updates.
+
+## Conclusion
+We are committed to restoring safety and stability in the affected areas. Our priority is to clear debris and repair roads swiftly, ensuring safe access for emergency services and residents. We urge everyone to stay vigilant and avoid hazardous zones. Your cooperation is crucial as we work together to rebuild and recover. Stay safe and informed.

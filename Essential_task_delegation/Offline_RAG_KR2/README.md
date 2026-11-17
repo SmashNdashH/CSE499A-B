@@ -17,8 +17,10 @@ This folder has my work for the next update. It has three parts:
    the internet off, the fixed flow wrote all six reports with our model (see
    "Proof run: internet off"). On 16 Nov those reports were compared with
    Gemini's reports of 20 July (see "Comparison with the July Gemini
-   reports"), and four fixes were built for a new run, tested on the laptop
-   and waiting for the Kaggle run (see "Quality-fix run").
+   reports"), and four fixes were built for a new run. On 17 Nov that run
+   passed with the internet off: no "no danger" sentence, no made-up
+   hotline, and real citations in four reports instead of one, but new
+   problems too (see "Quality-fix run").
 
 Rule: files from other folders are copied into this folder.
 The original files are never changed.
@@ -1792,7 +1794,7 @@ into a scratch folder, gave `results.csv` byte for byte and the same candidate
 lines. The number is corrected, and the self-test passes.
 
 
-## Quality-fix run (T2, planned 16 Nov)
+## Quality-fix run (T2, planned 16 Nov, run 17 Nov)
 
 **Why:** the comparison above found four problems that a change in the code
 can fix. This run fixes them and is measured the same way, so its numbers can
@@ -1927,7 +1929,11 @@ any Kaggle run of this code.
    say `uncommitted changes: False` and pack 17 files.
 2. On Kaggle, open the `disasteller-offline1` dataset → **New Version** →
    upload the new `kaggle_upload/disasteller-offline.zip`.
-3. Open the proof run's notebook (`t2-disasteller-local-run`) → **Edit**. The
+3. Open the proof run's notebook → **Edit**. In Kaggle's **Your Work** it is
+   listed as `t2-disasteller-local-run-5` (not `t2_disasteller_local_run(4)`,
+   which is run 4's notebook); its address is now
+   `kaggle.com/code/riditaafrin/t2-disasteller-local-run-5` (before, Kaggle
+   had named it `notebookfd1ba7ee9c`). The
    notebook itself is unchanged, so no import is needed. In the **Input**
    panel, check that the same 4 inputs are attached, with the newest version of
    `disasteller-offline1`. If Kaggle offers a newer version of it, take it.
@@ -1937,6 +1943,201 @@ any Kaggle run of this code.
    The notebook must print "PASSED: the offline proof (internet off)".
 6. Download `t2_run_internet_off.zip` and the notebook into
    `results/t2_quality_fix/`, unchanged.
+
+### Result (17 Nov)
+
+**How it ran**
+- Kaggle notebook `t2-disasteller-local-run-5`, Version 5, GPU T4 x2,
+  internet **off**. Code: commit `aaabf5bd4`, packed on 17 Nov at 13:02, no
+  uncommitted changes. Model: the same as in the proof run
+  (`AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP`). The notebook took
+  14.1 minutes, DisasTeller itself 7.0.
+- **"PASSED: the offline proof (internet off)"**. All five rules pass, nothing
+  went outside `127.0.0.1`, and no Gemini library was loaded. So this is also
+  a second offline proof, of the new code.
+- The files are in `results/t2_quality_fix/`, as downloaded. The unpacked
+  folder matches the zip (sha256, all 14 files).
+- Measured as planned: `compare_reports.py` with this run as a third set,
+  `fix`. The `july` and `ours` rows came out the same as before, and the
+  script found no candidate line for measures 4 and 5 in the new reports, so
+  `candidates.csv` is unchanged. Part B was checked by reading all six
+  reports (`hand_check.csv`, set `fix`), and each citation was checked
+  (`citation_support_fix.csv`).
+- One reading rule for the new check was added while reading, because the
+  plan didn't cover it: a citation written after a paragraph's last sentence
+  (all 12 in the Reconstruction plan) is judged against the whole paragraph.
+
+```
+python report_comparison/compare_reports.py
+    --set july=../../support/Ridita_Integration_of_VLM__/DisasTeller
+    --set ours=results/t2_proof/t2_run_internet_off/run/reports/offline
+    --set fix=results/t2_quality_fix/t2_run_internet_off/run/reports/offline
+    --calls ours=results/t2_proof/t2_run_internet_off/run/llm_calls.jsonl
+    --calls fix=results/t2_quality_fix/t2_run_internet_off/run/llm_calls.jsonl
+    --chunks guideline_chunks.jsonl --out report_comparison
+```
+
+**What the fixes did** (from `run_log.txt` and `t2_run_summary.json`)
+- **Stickers:** read on 6 of 6 photos, word for word: Wajima Drama Memorial
+  Hall, Hama Street, Concrete Bridge, Central Nishikigawa Street, North
+  Asaichi Street, South Central Asaichi Street.
+- **Grades:** 6, with "Concrete Bridge: G5" (proof run: 5, no bridge).
+- **Map reading:** written by the code from the grades. It names the bridge
+  and South Central Asaichi Street (G5) as the most dangerous.
+- **Checks:** 28 answers checked. 4 were asked again, all for a missing
+  citation (Human Resource Requirements, Allocation Plan, Public Advisory,
+  Plan of Action). All 4 second answers were kept; 3 still have no citation
+  (all but Plan of Action).
+- **Photo descriptions:** the same six answers as in the proof run, word for
+  word.
+
+**A. Counted by the script**
+
+| Measure | July (Gemini) | Proof run (ours) | Quality-fix run |
+|---|---|---|---|
+| 1. Words, without headings | 3,704 | 3,114 | 3,148 (273 to 811 per report) |
+| 2. Guidelines named | 0 | 4, in 2 reports | 6, in 3 reports, all "Sphere" |
+| 3. `[ID]` citations | none | 11, in 1 report; 1 not shown; 6 IDs without brackets | 24, in 4 reports (Expert 6, Emergency 4, Public 2, Reconstruction 12); all real, all shown; 0 without brackets |
+| 4. Contact details | 0 | 1 (the hotline) | 0 |
+| 5. "No danger" sentences | 0 | 4 | 0 |
+
+**B. Checked by hand**
+
+| Measure | July (Gemini) | Proof run (ours) | Quality-fix run |
+|---|---|---|---|
+| 6. Places named, per report | 6 in every report | 6, 4, 5, 5, 5, 6 | 6, 6, 3, 6, 5, 5 |
+| 6. Grades unlike the set's own Expert report | 0 | 1 | 1 (the Reconstruction plan puts the undamaged hall among the places "classified as G4 and G5") |
+| 7. Made up: (a) scene | 3 | 4 | 1 |
+| 7. Made up: (b) plan numbers | 33 | 5 | 6 |
+| 7. Made up: (c) other | 2 | 0 | 0 |
+| 8. Contradictions | 2 | 6 | 3 |
+| 9. Useful: yes / partly / no | 3 / 3 / 0 | 0 / 5 / 1 | 2 / 4 / 0 |
+
+- Made up:
+  - (a) the hall meets Sphere's living-space standard, with "an internal
+    floor-to-ceiling height of at least 2 meters": no input gives the hall's
+    size or height;
+  - (b) the hall as a shelter "for 100 people", and five team counts in the
+    allocation report (20 rescue teams, 10 medical staff, 10 heavy
+    construction teams, 10 rescue teams, 5 medical staff).
+- Contradictions:
+  - the Expert report's "hurricane" in Picture5, the same photo description
+    as before;
+  - the Expert report's conclusion puts North Asaichi Street (G4) among "the
+    least impacted";
+  - the Reconstruction plan says the hall "remained undamaged", then lists it
+    among the places "classified as G4 and G5".
+- **One "yes" is borderline:** the allocation report. By the reading rule of
+  16 Nov, its team counts don't mislead, because it doesn't present them as
+  calculated or taken from past disasters. But it sends 20 rescue teams to
+  the G4 streets, and only "road clearance" to the G5 street where buildings
+  totally collapsed. A stricter reader would mark it "partly", which makes
+  measure 9 1 / 5 / 0.
+
+**The new check: does each citation support its sentence?** Of 24
+citations, 13 yes, 6 partly and 5 no. So 19 of 24 (79%) support their
+sentence at least partly.
+- The 5 "no":
+  - the bridge's grade line, "Concrete Bridge: G5 - Complete collapse",
+    cites `[EMS98-rc-grade-1]`, EMS-98's Grade 1 (negligible damage);
+  - the Reconstruction plan cites `[SPHERE-3-p1]` (living space) 4 times,
+    for damage, repairs and reconstruction steps.
+- The 6 "partly":
+  - the Emergency report's 4: the section gives Sphere's standard, not the
+    hall's size or its 100 people;
+  - 2 in Reconstruction Needs: Sphere's technical assistance covers
+    structural risks, not debris or roads.
+
+**The grades, side by side**
+
+| Place | July | Proof run | Quality-fix run |
+|---|---|---|---|
+| Wajima Drama Memorial Hall | G1 | G1 | G1 |
+| Hama Street | G4 | G4 | G4 |
+| Concrete Bridge | G5 | G5 in the photo descriptions only | G5 |
+| Central Nishikigawa Street | G1 | G4 | G4 |
+| North Asaichi Street | G3 | G4 | G4 |
+| South Central Asaichi Street | G5 | G5 | G5 |
+
+The two G4s that the photos don't support (Central Nishikigawa Street and
+North Asaichi Street, see "Also seen" above) are unchanged: they come from
+the photo descriptions, which this run didn't fix.
+
+**New problems, not forecast**
+1. **The labelled map wasn't made.** It was asked the same question as before,
+   now with six places. The 7B answered with one sentence (24 tokens) and no
+   list of labels: "... have been annotated using the specified JSON format."
+   So the run has no `4_anotated.png`. No report changed because of this:
+   the map reading now comes from the grades, not from the map. In the proof
+   run, the 7B gave 5 labels.
+2. **The Hospitals section copies the Shelters section.** It is the same
+   text with "The report reveals that" added at the start. So the Emergency
+   report names no hospital or medical point. The copy carries the Shelters
+   section's citations, so the must-cite check passed it: the checks can't
+   see copying. In the proof run, this section said no medical points were
+   needed, from the wrong map reading.
+3. **North Asaichi Street (G4) drops out** of the Emergency, Public and
+   Reconstruction reports. So the Public report doesn't tell people to avoid
+   it.
+4. **A wrong citation in the grade lines** (the bridge, above). The check
+   only asks for a real ID that was shown, and it was. No search returned
+   EMS-98's Grade 5 for reinforced concrete.
+5. **The Public report's contact line** gives no number now, but says
+   "contact local emergency services or visit our website for updates"
+   instead of "not available offline", as its instruction asked.
+
+**Against the expectation** (written on 16 Nov, before the run)
+
+| Forecast | Result | Met? |
+|---|---|---|
+| Rules 1–5 pass, internet off | Passed | Yes |
+| The photo descriptions are the proof run's, word for word | The same | Yes |
+| Stickers read on at least 5 of 6 photos | 6 of 6 | Yes |
+| 6 grades, the bridge at G4 or G5; map labels drawn: 5 or 6 | 6 grades, the bridge at G5; 0 labels | Partly: the map labels failed |
+| Asked again: 3 to 14; at most 3 kept with a problem | 4; 3 | Yes, at the edge |
+| 5. "No danger" sentences: 0 | 0 | Yes |
+| 4. Contact details: 0 | 0 | Yes |
+| 3. Citations in all 5 reports that get guideline sections; at least 20; 0 not shown; 0 without brackets | 4 of the 5 (none in the allocation report); 24; 0; 0 | Partly |
+| 6. The Expert report grades all 6; at most 1 later grade unlike it | 6; 1 | Yes |
+| 7. (a) at most 3; (b) 2 to 8; (c) at most 1 | 1; 6; 0 | Yes |
+| 8. Contradictions: at most 3 | 3 | Yes, at the top |
+| 9. No report "no"; at least 2 "yes" | 0 "no"; 2 "yes" | Yes, only just: one "yes" is borderline, and without it this forecast fails |
+| 1. Words: 2,336 to 3,893 | 3,148 | Yes |
+| 2. Guidelines named: at least 4 | 6 | Yes |
+| New check: at least 2 in 3 citations support their sentence at least partly | 19 of 24 | Yes |
+
+**What it shows**
+- **The four fixes did what they aimed at.**
+  - No "no danger" sentence (proof run: 4).
+  - No contact detail (proof run: the hotline).
+  - Citations in 4 reports instead of 1, all real and shown, none without
+    brackets.
+  - The bridge is graded and appears in all six reports.
+  - With them, there are fewer made-up scene facts (1, before 4) and fewer
+    contradictions (3, before 6). Two reports are now useful ("yes"), and
+    none is "no".
+- **The 7B's own habits remain, and the checks can't see them.** It copies a
+  section, drops a G4 street from three reports, picks a wrong ID when it
+  has to cite, and makes up team counts (6, before 5; no fix aimed at them).
+- **The photo descriptions are now the largest known source of error.**
+  They are unchanged, and two of the six grades still come from wrong
+  descriptions.
+- **Against July:** July still reads the photos better, names every place in
+  every report, and has more "yes" reports (3 against 2). It still makes up
+  far more numbers (33 against 6) and cites nothing a reader can check.
+
+**Limits**
+- One reader (Claude), not blind. The same assistant wrote the fixes and the
+  expectation. A blind check by a teammate is still optional.
+- One run, one set of six photos.
+- Asking again made the checks easier to pass (4 answers), and the checks
+  count citations: they can't tell a copy or a wrong ID (problems 2 and 4).
+
+**Possible next steps** (not started; a decision for Ridita)
+- Small code checks: no section may repeat an earlier one, and a grade
+  line's EMS-98 ID must carry the same grade number.
+- Ask the map labels again when the answer has no list.
+- The photo descriptions need their own decision (as noted before this run).
 
 
 ## Retrieval test of the guideline search (T2 step 4)

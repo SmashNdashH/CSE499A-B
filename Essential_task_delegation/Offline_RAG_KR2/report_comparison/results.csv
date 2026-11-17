@@ -11,3 +11,9 @@ ours,Emergency_team_report.txt,True,293,312,0,1,1,0,0,2,0,0,,,0,,0,2,0
 ours,Emergency_service_human_resource_allocation.txt,True,736,764,0,0,0,0,0,0,0,0,,,0,,0,0,0
 ours,Public_community_report.txt,True,486,506,0,0,0,0,0,0,0,0,,,0,,2,1,0
 ours,Reconstruction_plan.txt,True,787,818,1,1,0,0,0,2,0,0,,,6,SPHERE-appendix-4-p1; EMS98-2.3-p2; SPHERE-1-p4; SPHERE-5-p1; SPHERE-5-p2; SPHERE-appendix-5-p2,0,0,0
+fix,Expert_team_report.txt,True,677,704,0,0,0,0,0,0,6,6,,,0,,0,0,0
+fix,Alerts_team_report_for_social_media.txt,True,273,292,0,0,0,0,0,0,0,0,,,0,,0,0,0
+fix,Emergency_team_report.txt,True,314,333,0,2,0,0,0,2,4,4,,,0,,0,0,0
+fix,Emergency_service_human_resource_allocation.txt,True,811,839,0,2,0,0,0,2,0,0,,,0,,0,0,0
+fix,Public_community_report.txt,True,475,495,0,2,0,0,0,2,2,2,,,0,,0,0,0
+fix,Reconstruction_plan.txt,True,598,620,0,0,0,0,0,0,12,12,,,0,,0,0,0

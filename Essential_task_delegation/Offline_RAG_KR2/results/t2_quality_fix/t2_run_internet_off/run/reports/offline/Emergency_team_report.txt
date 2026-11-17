@@ -1,0 +1,12 @@
+Mode: offline, fixed flow
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+The Wajima Drama Memorial Hall, located in the center of Picture1.png, remains undamaged and is classified as G1, indicating no visible damage. This location provides an adequate living space for the displaced residents, meeting the Sphere Handbook 2018 guidelines on living space [SPHERE-3-p1]. The hall offers a basic roof and walls, ensuring physical security and privacy, with an internal floor-to-ceiling height of at least 2 meters. Given its structural integrity and lack of debris, the hall can serve as an emergency shelter for 100 people, adhering to the minimum 3.5 square meters of living space per person requirement [SPHERE-3-p1]. The hall's location is easily accessible, with no obstructions to its surroundings, facilitating safe and dignified shelter provision.
+
+## Hospitals
+The report reveals that the Wajima Drama Memorial Hall, located in the center of Picture1.png, remains undamaged and classified as G1, indicating no visible damage. This location provides an adequate living space for the displaced residents, meeting the Sphere Handbook 2018 guidelines on living space [SPHERE-3-p1]. The hall offers a basic roof and walls, ensuring physical security and privacy, with an internal floor-to-ceiling height of at least 2 meters. Given its structural integrity and lack of debris, the hall can serve as an emergency shelter for 100 people, adhering to the minimum 3.5 square meters of living space per person requirement [SPHERE-3-p1]. The hall's location is easily accessible, with no obstructions to its surroundings, facilitating safe and dignified shelter provision.
+
+## Immediate transportation recovery
+The collapsed concrete bridge and the severely damaged roads in South Central Asaichi Street are the top priorities for immediate transportation recovery. The bridge's complete collapse poses severe risks to passersby, necessitating urgent intervention to prevent further hazards. Additionally, the blocked roads in South Central Asaichi Street require immediate clearance of debris to restore accessibility and enable emergency response teams to reach affected areas effectively. Both locations must be prioritized to ensure safe and efficient transportation recovery.
