@@ -3,14 +3,11 @@ import {
   HelpCircle, 
   Search, 
   CheckCircle2, 
-  AlertCircle, 
-  Compass, 
-  Layers, 
-  ShieldCheck, 
-  Droplet, 
-  Users, 
+  Database, 
   Activity,
-  ArrowRight
+  ArrowRight,
+  Filter,
+  Layers
 } from 'lucide-react';
 import { BuildingFeature, DisasterScenario } from '../types/disaster';
 import { sound } from '../utils/audio';
@@ -21,307 +18,281 @@ interface FixedQuestionConsoleProps {
   selectedBuilding: BuildingFeature | null;
 }
 
-type TemplateType = 
-  | 'count_by_grade'
-  | 'nearest_intact'
-  | 'void_sensors'
-  | 'collapse_perimeter'
-  | 'sphere_shelter'
-  | 'insarag_triage';
+type QueryType = 
+  | 'count_by_class'
+  | 'filter_by_area'
+  | 'dist_to_destroyed'
+  | 'largest_damaged'
+  | 'class_summary';
 
 export const FixedQuestionConsole: React.FC<FixedQuestionConsoleProps> = ({
   scenario,
   onSelectBuilding,
   selectedBuilding
 }) => {
-  const [template, setTemplate] = useState<TemplateType>('count_by_grade');
+  const [queryType, setQueryType] = useState<QueryType>('count_by_class');
   
-  // Template 1 state
-  const [selectedDamage, setSelectedDamage] = useState<'destroyed' | 'major-damage' | 'minor-damage' | 'no-damage'>('destroyed');
-  const [selectedQuadrant, setSelectedQuadrant] = useState<'all' | 'NE' | 'NW' | 'Central' | 'SE' | 'SW'>('all');
-  
-  // Template 2 & 4 state
-  const [targetBuildingId, setTargetBuildingId] = useState<string>(
-    selectedBuilding?.id || scenario.buildings.find((b) => b.damage === 'destroyed')?.id || scenario.buildings[0]?.id || ''
+  // Query 1: Count by class & quadrant
+  const [targetClass, setTargetClass] = useState<'destroyed' | 'damaged' | 'intact'>('destroyed');
+  const [targetQuadrant, setTargetQuadrant] = useState<'all' | 'NE' | 'NW' | 'Central' | 'SE' | 'SW'>('all');
+
+  // Query 2: Area filter
+  const [minAreaPx, setMinAreaPx] = useState<number>(3000);
+
+  // Query 3: Target building for proximity query
+  const [targetBuildingId, setTargetBuildingId] = useState<number>(
+    selectedBuilding?.building_id || scenario.buildings.find((b) => b.class_name === 'destroyed')?.building_id || scenario.buildings[0]?.building_id || 1
   );
 
-  // Template 3 state
-  const [targetVoidLikelihood, setTargetVoidLikelihood] = useState<'High' | 'Medium' | 'Low'>('High');
-
-  // Template 5 state
-  const [displacedCount, setDisplacedCount] = useState<number>(150);
-
-  // Update target building if selected building changes
   React.useEffect(() => {
     if (selectedBuilding) {
-      setTargetBuildingId(selectedBuilding.id);
+      setTargetBuildingId(selectedBuilding.building_id);
     }
   }, [selectedBuilding]);
 
-  // Deterministic calculation from H2 per-building table
+  // Deterministic calculation strictly from H2 per-building table
   const queryResult = useMemo(() => {
-    switch (template) {
-      case 'count_by_grade': {
+    switch (queryType) {
+      case 'count_by_class': {
         const matches = scenario.buildings.filter((b) => {
-          const matchDamage = b.damage === selectedDamage;
-          const matchQuad = selectedQuadrant === 'all' || b.quadrant === selectedQuadrant;
-          return matchDamage && matchQuad;
+          const matchClass = b.class_name === targetClass;
+          const matchQuad = targetQuadrant === 'all' || b.quadrant === targetQuadrant;
+          return matchClass && matchQuad;
         });
 
-        const totalArea = matches.reduce((acc, b) => acc + (b.areaM2 || 300), 0);
+        const totalAreaPx = matches.reduce((acc, b) => acc + b.area_px, 0);
+        const quadClause = targetQuadrant === 'all' ? '' : ` AND quadrant = '${targetQuadrant}'`;
+        const sqlQuery = `SELECT COUNT(*), SUM(area_px) FROM buildings WHERE class_name = '${targetClass}'${quadClause};`;
 
         return {
-          title: `COUNT QUERY: ${selectedDamage.toUpperCase()} in ${selectedQuadrant === 'all' ? 'Entire Sector' : `Zone ${selectedQuadrant}`}`,
+          title: `COUNT QUERY: ${targetClass.toUpperCase()} in ${targetQuadrant === 'all' ? 'Entire Sector' : `Zone ${targetQuadrant}`}`,
+          sql: sqlQuery,
           count: matches.length,
-          summary: `Identified ${matches.length} structures matching criteria (${totalArea} m² total footprint).`,
+          summary: `Identified ${matches.length} structures matching criteria (${totalAreaPx.toLocaleString()} px total footprint area).`,
           buildings: matches,
-          details: matches.map((b) => `${b.id} (${b.name}) · ${b.collapseType} · ${b.floors} storeys · Void: ${b.voidLikelihood}`)
+          details: matches.map((b) => `#${b.id} (${b.name}) · Class: ${b.class_name} · Area: ${b.area_px.toLocaleString()} px · Centroid: (${b.centroid_x}, ${b.centroid_y})`)
         };
       }
 
-      case 'nearest_intact': {
-        const target = scenario.buildings.find((b) => b.id === targetBuildingId) || scenario.buildings[0];
-        const intactBuildings = scenario.buildings.filter((b) => b.damage === 'no-damage');
-        
-        if (!target || intactBuildings.length === 0) {
-          return { title: 'Nearest Intact Query', count: 0, summary: 'No intact buildings available in sector.', buildings: [], details: [] };
+      case 'filter_by_area': {
+        const matches = scenario.buildings.filter((b) => b.area_px >= minAreaPx);
+        const sqlQuery = `SELECT building_id, class_name, area_px FROM buildings WHERE area_px >= ${minAreaPx} ORDER BY area_px DESC;`;
+
+        return {
+          title: `FOOTPRINT AREA QUERY: Structures >= ${minAreaPx.toLocaleString()} px`,
+          sql: sqlQuery,
+          count: matches.length,
+          summary: `Found ${matches.length} structures with footprint area >= ${minAreaPx.toLocaleString()} px.`,
+          buildings: matches,
+          details: matches.map((b) => `#${b.id} (${b.name}) · Class: ${b.class_name} · Area: ${b.area_px.toLocaleString()} px · Nearest Destroyed: ${b.dist_to_nearest_destroyed_px !== null ? `${b.dist_to_nearest_destroyed_px} px` : 'N/A'}`)
+        };
+      }
+
+      case 'dist_to_destroyed': {
+        const target = scenario.buildings.find((b) => b.building_id === targetBuildingId) || scenario.buildings[0];
+        if (!target) {
+          return { title: 'Proximity Query', sql: '', count: 0, summary: 'No building selected.', buildings: [], details: [] };
         }
 
-        // Calculate Euclidean distance in meters (approx 111,000m per degree lat)
-        const sorted = [...intactBuildings].map((b) => {
-          const dLat = (b.lat - target.lat) * 111000;
-          const dLng = (b.lng - target.lng) * 88000;
-          const distM = Math.round(Math.sqrt(dLat * dLat + dLng * dLng));
-          return { building: b, distM };
-        }).sort((a, b) => a.distM - b.distM);
-
-        const nearest = sorted[0];
+        const sqlQuery = `SELECT building_id, class_name, dist_to_nearest_destroyed_px FROM buildings WHERE building_id = ${target.building_id};`;
+        const distText = target.dist_to_nearest_destroyed_px === 0
+          ? '0 px (This building is classified as destroyed)'
+          : target.dist_to_nearest_destroyed_px !== null
+          ? `${target.dist_to_nearest_destroyed_px} px`
+          : 'NULL (No destroyed building in this tile)';
 
         return {
-          title: `PROXIMITY QUERY: Nearest Intact Facility to #${target.id} (${target.name})`,
-          count: sorted.length,
-          summary: `Nearest intact structure is #${nearest.building.id} (${nearest.building.name}) located ${nearest.distM} meters away.`,
-          buildings: [nearest.building],
-          details: [
-            `Primary Facility: #${nearest.building.id} (${nearest.building.name}) · Distance: ${nearest.distM}m`,
-            `Status: Intact Grade 1 · Usable for field command & triage staging`,
-            `Facility Notes: ${nearest.building.notes}`,
-            ...sorted.slice(1).map((s) => `Secondary Facility: #${s.building.id} (${s.building.name}) · Distance: ${s.distM}m`)
-          ]
-        };
-      }
-
-      case 'void_sensors': {
-        const matches = scenario.buildings.filter((b) => b.voidLikelihood === targetVoidLikelihood);
-        return {
-          title: `TACTICAL SENSOR QUERY: Structures with ${targetVoidLikelihood} Void Likelihood`,
-          count: matches.length,
-          summary: `Found ${matches.length} structures with ${targetVoidLikelihood} probability survivable air voids.`,
-          buildings: matches,
-          details: matches.map((b) => 
-            `#${b.id} (${b.name}) · Collapse: ${b.collapseType} · Recommendation: ${b.sensorRecommendation} · ${b.notes}`
-          )
-        };
-      }
-
-      case 'collapse_perimeter': {
-        const target = scenario.buildings.find((b) => b.id === targetBuildingId) || scenario.buildings[0];
-        const heightMeters = target.floors * 3.2;
-        const standoffRadius = Math.round(heightMeters * 1.5);
-
-        return {
-          title: `SAFETY STANDOFF QUERY: Secondary Fall Zone for #${target.id}`,
+          title: `PROXIMITY QUERY: Distance to Nearest Destruction for #${target.id}`,
+          sql: sqlQuery,
           count: 1,
-          summary: `Estimated structural height is ${heightMeters.toFixed(1)}m. Mandatory standoff perimeter radius is ${standoffRadius}m.`,
+          summary: `Distance to centroid of nearest destroyed building: ${distText}.`,
           buildings: [target],
           details: [
-            `Structure: #${target.id} (${target.name}) · ${target.floors} Storeys (${heightMeters.toFixed(1)}m elevation)`,
-            `Collapse Risk Type: ${target.collapseType}`,
-            `Mandatory Red-Tag Perimeter: ${standoffRadius} meters around exterior foundation footprint`,
-            `Tactical Directive: Halt heavy machinery along adjacent avenue until hydraulic shoring is installed.`
+            `Target: #${target.id} (${target.name}) · Class: ${target.class_name}`,
+            `Footprint Area: ${target.area_px.toLocaleString()} px · Bounding Box: [${target.bbox_x}, ${target.bbox_y}, ${target.bbox_w}, ${target.bbox_h}]`,
+            `Distance to nearest destroyed: ${distText}`
           ]
         };
       }
 
-      case 'sphere_shelter': {
-        const requiredLivingSpaceM2 = displacedCount * 3.5; // Sphere Standard
-        const requiredWaterLitresDay = displacedCount * 15; // 15L / person / day
-        const intactShelters = scenario.buildings.filter((b) => b.damage === 'no-damage');
-        const availableShelterAreaM2 = intactShelters.reduce((acc, b) => acc + (b.areaM2 || 250), 0);
-        const shelterSurplusM2 = availableShelterAreaM2 - requiredLivingSpaceM2;
-        const maxCapacity = Math.floor(availableShelterAreaM2 / 3.5);
+      case 'largest_damaged': {
+        const damagedOrDestroyed = scenario.buildings
+          .filter((b) => b.class_name === 'destroyed' || b.class_name === 'damaged')
+          .sort((a, b) => b.area_px - a.area_px)
+          .slice(0, 5);
+
+        const sqlQuery = `SELECT building_id, class_name, area_px FROM buildings WHERE class_name IN ('damaged', 'destroyed') ORDER BY area_px DESC LIMIT 5;`;
 
         return {
-          title: `SPHERE HUMANITARIAN QUERY: Shelter & Water for ${displacedCount} Displaced Survivors`,
-          count: intactShelters.length,
-          summary: `Requires ${requiredLivingSpaceM2} m² covered shelter space & ${requiredWaterLitresDay} L/day potable water.`,
-          buildings: intactShelters,
-          details: [
-            `Sphere Standard [SPHERE-3-p1]: 3.5 m² living space/person -> ${requiredLivingSpaceM2} m² required`,
-            `Sector Intact Shelter Capacity: ${availableShelterAreaM2} m² available (Max capacity: ${maxCapacity} persons)`,
-            `Shelter Buffer: ${shelterSurplusM2 >= 0 ? `+${shelterSurplusM2} m² surplus` : `${Math.abs(shelterSurplusM2)} m² deficit`}`,
-            `Sphere Water Standard [SPHERE-1-p4]: 15 L/person/day -> ${requiredWaterLitresDay} litres/day required`,
-            `Approved Shelter Facilities: ${intactShelters.map((s) => `#${s.id} (${s.name}, ${s.areaM2 || 250}m²)`).join(', ')}`
-          ]
+          title: 'EXTENT QUERY: Top 5 Largest Damaged/Destroyed Structures',
+          sql: sqlQuery,
+          count: damagedOrDestroyed.length,
+          summary: `Top ${damagedOrDestroyed.length} damaged/destroyed footprints by pixel area.`,
+          buildings: damagedOrDestroyed,
+          details: damagedOrDestroyed.map((b, idx) => `Rank ${idx + 1}: #${b.id} (${b.name}) · Class: ${b.class_name} · Area: ${b.area_px.toLocaleString()} px`)
         };
       }
 
-      case 'insarag_triage': {
-        // INSARAG Worksite Triage Order: Pancake/Confirmed Live -> Soft-Story -> Lean-Over -> Rubble Heap
-        const triageOrder = [...scenario.buildings].filter((b) => b.damage === 'destroyed' || b.damage === 'major-damage').sort((a, b) => {
-          const score = (b: BuildingFeature) => {
-            if (b.collapseType === 'Pancake') return 4;
-            if (b.collapseType === 'Lean-Over') return 3;
-            if (b.collapseType === 'Soft-Story') return 2;
-            return 1;
-          };
-          return score(b) - score(a);
+      case 'class_summary': {
+        const summaryByClass = (['intact', 'damaged', 'destroyed'] as const).map((cls) => {
+          const list = scenario.buildings.filter((b) => b.class_name === cls);
+          const totalArea = list.reduce((acc, b) => acc + b.area_px, 0);
+          const avgArea = list.length > 0 ? Math.round(totalArea / list.length) : 0;
+          return { cls, count: list.length, totalArea, avgArea };
         });
 
+        const sqlQuery = `SELECT class_name, COUNT(*), AVG(area_px), SUM(area_px) FROM buildings GROUP BY class_name;`;
+
         return {
-          title: 'INSARAG WORKSITE TRIAGE QUERY: Ranked Victim Extraction Priority',
-          count: triageOrder.length,
-          summary: `Ranked ${triageOrder.length} damaged worksites under INSARAG Guidelines Vol II Manual B.`,
-          buildings: triageOrder,
-          details: triageOrder.map((b, idx) => 
-            `Priority ${idx + 1}: #${b.id} (${b.name}) · ${b.collapseType} · ASR Level ${b.collapseType === 'Pancake' ? '4 (Heavy Search)' : '3 (Rapid Search)'} · Sensor: ${b.sensorRecommendation}`
-          )
+          title: 'AGGREGATE SUMMARY: Building Damage Distribution',
+          sql: sqlQuery,
+          count: scenario.buildings.length,
+          summary: `Total of ${scenario.buildings.length} buildings indexed in spatial table.`,
+          buildings: scenario.buildings,
+          details: summaryByClass.map((s) => `${s.cls.toUpperCase()}: ${s.count} buildings · Total Area: ${s.totalArea.toLocaleString()} px · Mean Area: ${s.avgArea.toLocaleString()} px`)
         };
       }
     }
-  }, [template, selectedDamage, selectedQuadrant, targetBuildingId, targetVoidLikelihood, displacedCount, scenario]);
+  }, [queryType, targetClass, targetQuadrant, minAreaPx, targetBuildingId, scenario]);
 
   return (
-    <div className="p-3 bg-black/40 border-t border-white/10 space-y-3 font-mono text-xs">
-      <div className="flex items-center justify-between">
-        <span className="font-bold text-white text-[11px] uppercase tracking-wider flex items-center gap-1.5">
-          <HelpCircle className="w-3.5 h-3.5 text-[#0084ff]" />
-          <span>Fixed Question Templates (Section 3.4)</span>
-        </span>
-        <span className="text-[10px] text-emerald-400">100% Reliable · No GPU</span>
+    <div className="space-y-3 font-mono text-xs select-text">
+      {/* Template Selector */}
+      <div className="space-y-1">
+        <label className="text-[11px] text-slate-400 flex items-center gap-1.5">
+          <Database className="w-3.5 h-3.5 text-[#0084ff]" />
+          <span>H2 Spatial SQL Query Templates:</span>
+        </label>
+        <select
+          value={queryType}
+          onChange={(e) => {
+            sound.playRadioChirp();
+            setQueryType(e.target.value as QueryType);
+          }}
+          className="w-full p-2 rounded-xl bg-black/40 border border-white/10 text-white text-xs focus:outline-none focus:border-[#0084ff]"
+        >
+          <option value="count_by_class">1. Count Buildings by Damage Class &amp; Zone</option>
+          <option value="filter_by_area">2. Filter Structures by Footprint Pixel Area</option>
+          <option value="dist_to_destroyed">3. Distance to Nearest Destroyed Structure</option>
+          <option value="largest_damaged">4. Top 5 Largest Damaged / Destroyed Footprints</option>
+          <option value="class_summary">5. Aggregate Class &amp; Area Summary</option>
+        </select>
       </div>
 
-      {/* Template Category Selector */}
-      <select
-        value={template}
-        onChange={(e) => {
-          sound.playRadioChirp();
-          setTemplate(e.target.value as TemplateType);
-        }}
-        className="w-full px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white font-medium text-[11px] focus:outline-none focus:border-[#0084ff]"
-      >
-        <option value="count_by_grade" className="bg-slate-900 text-white">1. Count Buildings by Damage &amp; Zone</option>
-        <option value="nearest_intact" className="bg-slate-900 text-white">2. Find Nearest Intact Shelter / Hospital</option>
-        <option value="void_sensors" className="bg-slate-900 text-white">3. Search Survivable Air Voids &amp; Sensors</option>
-        <option value="collapse_perimeter" className="bg-slate-900 text-white">4. Calculate Standoff Collapse Perimeter</option>
-        <option value="sphere_shelter" className="bg-slate-900 text-white">5. Sphere Standard Shelter &amp; Water Needs</option>
-        <option value="insarag_triage" className="bg-slate-900 text-white">6. INSARAG Worksite Triage Priority</option>
-      </select>
+      {/* Query Parameters */}
+      <div className="p-2.5 rounded-xl bg-white/5 border border-white/5 space-y-2">
+        <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+          Query Parameters
+        </div>
 
-      {/* Dynamic Template Parameters */}
-      <div className="flex flex-wrap items-center gap-2 pt-1 text-[11px]">
-        {template === 'count_by_grade' && (
-          <>
-            <select
-              value={selectedDamage}
-              onChange={(e) => setSelectedDamage(e.target.value as any)}
-              className="px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-200"
-            >
-              <option value="destroyed" className="bg-slate-900">Destroyed</option>
-              <option value="major-damage" className="bg-slate-900">Major Damage</option>
-              <option value="minor-damage" className="bg-slate-900">Minor Damage</option>
-              <option value="no-damage" className="bg-slate-900">Intact / No Damage</option>
-            </select>
-
-            <select
-              value={selectedQuadrant}
-              onChange={(e) => setSelectedQuadrant(e.target.value as any)}
-              className="px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-200"
-            >
-              <option value="all" className="bg-slate-900">Whole Sector</option>
-              <option value="NE" className="bg-slate-900">Zone NE (Pancake)</option>
-              <option value="Central" className="bg-slate-900">Zone Central (Lean-Over)</option>
-              <option value="NW" className="bg-slate-900">Zone NW (Staging)</option>
-              <option value="SE" className="bg-slate-900">Zone SE (Rubble Heap)</option>
-              <option value="SW" className="bg-slate-900">Zone SW</option>
-            </select>
-          </>
+        {queryType === 'count_by_class' && (
+          <div className="grid grid-cols-2 gap-2">
+            <div>
+              <label className="text-[10px] text-slate-400 block mb-1">Damage Class:</label>
+              <select
+                value={targetClass}
+                onChange={(e) => setTargetClass(e.target.value as any)}
+                className="w-full p-1.5 rounded-lg bg-black/60 border border-white/10 text-white text-[11px]"
+              >
+                <option value="destroyed">Destroyed (Class 3)</option>
+                <option value="damaged">Damaged (Class 2)</option>
+                <option value="intact">Intact (Class 1)</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-[10px] text-slate-400 block mb-1">Quadrant Zone:</label>
+              <select
+                value={targetQuadrant}
+                onChange={(e) => setTargetQuadrant(e.target.value as any)}
+                className="w-full p-1.5 rounded-lg bg-black/60 border border-white/10 text-white text-[11px]"
+              >
+                <option value="all">Entire Tile (All)</option>
+                <option value="NE">Zone NE</option>
+                <option value="NW">Zone NW</option>
+                <option value="Central">Zone Central</option>
+                <option value="SE">Zone SE</option>
+                <option value="SW">Zone SW</option>
+              </select>
+            </div>
+          </div>
         )}
 
-        {(template === 'nearest_intact' || template === 'collapse_perimeter') && (
-          <select
-            value={targetBuildingId}
-            onChange={(e) => setTargetBuildingId(e.target.value)}
-            className="w-full px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-200"
-          >
-            {scenario.buildings.map((b) => (
-              <option key={b.id} value={b.id} className="bg-slate-900">
-                #{b.id}: {b.name} ({b.damage.toUpperCase()})
-              </option>
-            ))}
-          </select>
-        )}
-
-        {template === 'void_sensors' && (
-          <select
-            value={targetVoidLikelihood}
-            onChange={(e) => setTargetVoidLikelihood(e.target.value as any)}
-            className="px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-200"
-          >
-            <option value="High" className="bg-slate-900">High Void Likelihood</option>
-            <option value="Medium" className="bg-slate-900">Medium Void Likelihood</option>
-            <option value="Low" className="bg-slate-900">Low Void Likelihood</option>
-          </select>
-        )}
-
-        {template === 'sphere_shelter' && (
-          <div className="flex items-center gap-2 w-full">
-            <span className="text-[10px] text-slate-400">Displaced survivors:</span>
+        {queryType === 'filter_by_area' && (
+          <div>
+            <label className="text-[10px] text-slate-400 block mb-1">
+              Minimum Footprint Area (pixels): {minAreaPx.toLocaleString()} px
+            </label>
             <input
-              type="number"
-              min={10}
-              max={1000}
-              step={10}
-              value={displacedCount}
-              onChange={(e) => setDisplacedCount(Number(e.target.value))}
-              className="w-20 px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-white font-bold"
+              type="range"
+              min="1000"
+              max="5000"
+              step="200"
+              value={minAreaPx}
+              onChange={(e) => setMinAreaPx(Number(e.target.value))}
+              className="w-full accent-[#0084ff]"
             />
-            <span className="text-[10px] text-slate-500">persons</span>
+          </div>
+        )}
+
+        {queryType === 'dist_to_destroyed' && (
+          <div>
+            <label className="text-[10px] text-slate-400 block mb-1">Target Building:</label>
+            <select
+              value={targetBuildingId}
+              onChange={(e) => setTargetBuildingId(Number(e.target.value))}
+              className="w-full p-1.5 rounded-lg bg-black/60 border border-white/10 text-white text-[11px]"
+            >
+              {scenario.buildings.map((b) => (
+                <option key={b.building_id} value={b.building_id}>
+                  #{b.id} ({b.name}) · {b.class_name} · {b.area_px.toLocaleString()} px
+                </option>
+              ))}
+            </select>
           </div>
         )}
       </div>
 
-      {/* Query Output Card */}
-      <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 space-y-2 text-[11px]">
-        <div className="font-bold text-white flex items-center justify-between text-xs">
-          <span>{queryResult.summary}</span>
-          <span className="px-1.5 py-0.5 rounded bg-[#0084ff]/20 text-[#0084ff] font-bold">
-            {queryResult.count} matches
+      {/* SQL Query Preview */}
+      {queryResult.sql && (
+        <div className="p-2.5 rounded-xl bg-black/60 border border-white/10 space-y-1">
+          <div className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider flex items-center justify-between">
+            <span>Executed H2 SQL Query</span>
+            <span className="text-[9px] text-slate-400">Read-Only Guard</span>
+          </div>
+          <code className="text-[11px] text-emerald-300 block break-all">
+            {queryResult.sql}
+          </code>
+        </div>
+      )}
+
+      {/* Query Result Card */}
+      <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-2">
+        <div className="flex items-center justify-between">
+          <span className="font-bold text-white text-xs">{queryResult.title}</span>
+          <span className="px-2 py-0.5 rounded-full bg-[#0084ff]/20 text-[#0084ff] text-[10px] font-bold border border-[#0084ff]/30">
+            {queryResult.count} {queryResult.count === 1 ? 'Match' : 'Matches'}
           </span>
         </div>
 
-        <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin text-slate-300 pr-1">
+        <p className="text-slate-300 text-[11px] leading-relaxed">
+          {queryResult.summary}
+        </p>
+
+        <div className="space-y-1.5 pt-1">
           {queryResult.details.map((line, idx) => (
-            <div key={idx} className="p-1 rounded hover:bg-white/5 flex items-start gap-1.5">
-              <span className="text-[#0084ff] mt-0.5">•</span>
-              <span className="leading-tight">{line}</span>
+            <div 
+              key={idx}
+              className="p-1.5 rounded-lg bg-black/40 border border-white/5 text-[10px] text-slate-300 flex items-center justify-between hover:bg-white/5 cursor-pointer transition-colors"
+              onClick={() => {
+                const targetB = queryResult.buildings[idx];
+                if (targetB) onSelectBuilding(targetB);
+              }}
+            >
+              <span className="truncate">{line}</span>
+              <ArrowRight className="w-3 h-3 text-slate-400 shrink-0 ml-1" />
             </div>
           ))}
         </div>
-
-        {/* Action button to select first matching building */}
-        {queryResult.buildings.length > 0 && (
-          <button
-            onClick={() => {
-              sound.playSonarPing();
-              onSelectBuilding(queryResult.buildings[0]);
-            }}
-            className="w-full mt-1 py-1 px-2 rounded-lg bg-white/10 hover:bg-white/15 text-white font-bold text-[10px] flex items-center justify-center gap-1 transition-colors border border-white/10"
-          >
-            <span>Focus on #{queryResult.buildings[0].id}</span>
-            <ArrowRight className="w-3 h-3" />
-          </button>
-        )}
       </div>
     </div>
   );

@@ -48,11 +48,11 @@ export const BenchmarkPanelModal: React.FC<BenchmarkPanelModalProps> = ({
                   Research Scorecard &amp; Architecture Audit
                 </h2>
                 <span className="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono text-[10px] border border-blue-500/30 font-bold">
-                  CSE499B / EEE499B / ETE499B
+                  CSE499B Senior Design Group 5
                 </span>
               </div>
               <p className="text-xs text-slate-400 font-mono">
-                Verified Benchmark Gates O1–O4 · Clean Data Validation · Group 5 Senior Design Project
+                Verified Benchmark Gates O1–O4 · Clean Data Validation · North South University
               </p>
             </div>
           </div>
@@ -114,10 +114,10 @@ export const BenchmarkPanelModal: React.FC<BenchmarkPanelModalProps> = ({
               <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 space-y-1">
                 <div className="font-bold text-white flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  <span>All Four Core Project Milestones (O1–O4) Verified</span>
+                  <span>Verified Project Milestones (O1–O4) with Source Provenance</span>
                 </div>
                 <div className="text-[11px] leading-relaxed">
-                  Every metric reflects strict evaluations on Kaggle T4 GPUs and offline CPU benchmarks under pre-registered keep rules.
+                  Every metric reflects strict evaluations recorded in the repository task ledger and experimental result logs.
                 </div>
               </div>
 
@@ -128,7 +128,7 @@ export const BenchmarkPanelModal: React.FC<BenchmarkPanelModalProps> = ({
                       <div className="flex items-center justify-between">
                         <span className="font-bold text-white text-sm">{track.name}</span>
                         <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${track.badgeColor}`}>
-                          PASSED
+                          VERIFIED
                         </span>
                       </div>
                       <div className="text-[11px] text-amber-300 font-bold">
@@ -140,13 +140,17 @@ export const BenchmarkPanelModal: React.FC<BenchmarkPanelModalProps> = ({
                       <p className="text-slate-400 text-[11px] leading-relaxed">
                         {track.resultSummary}
                       </p>
+                      <div className="text-[10px] text-slate-400 pt-1">
+                        <span className="text-slate-400 font-semibold">Source: </span>
+                        <code className="text-blue-300">{track.sourcePath}</code>
+                      </div>
                     </div>
 
                     <div className="p-2.5 rounded-lg bg-black/40 border border-white/5 space-y-1">
                       <div className="flex items-center justify-between text-[11px]">
                         <span className="text-slate-400">{track.metricLabel}:</span>
                         <span className="text-emerald-400 font-bold text-xs">
-                          {track.finalScore} <span className="text-slate-500 text-[10px]">(Baseline: {track.baselineScore})</span>
+                          {track.finalScore} <span className="text-slate-400 text-[10px]">(Baseline / Target: {track.baselineScore})</span>
                         </span>
                       </div>
                       <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
@@ -182,18 +186,18 @@ export const BenchmarkPanelModal: React.FC<BenchmarkPanelModalProps> = ({
                   During Task E5 (26 October 2026), our team audited the original 645 validation pairs and discovered that 40 pairs in xBD's Southern California and Woolsey Fire sets shared before-images with training data.
                 </p>
                 <div className="p-2.5 rounded-lg bg-black/40 border border-amber-500/20 text-xs">
-                  <strong>The Team Decision:</strong> Every score was re-evaluated on the 605 clean pairs without the 40 leaked pairs. On clean data, SAM 3 + R16c step 5b achieves <strong>0.3161 Destroyed IoU</strong> (three-seed mean: 0.3065), officially meeting O1 on verified clean data.
+                  <strong>The Team Decision:</strong> Every damage score was re-evaluated on the 605 clean pairs without the 40 leaked pairs. On clean validation pairs, find-then-grade (SAM 3 outlines + Siamese ResNet-18 grader) achieved destroyed IoU <strong>0.316, 0.305, 0.298</strong> across three grader seeds (mean <strong>0.307</strong>, mIoU 0.547), officially exceeding baseline R1 with TTA on clean pairs (<strong>0.2689</strong>).
                 </div>
               </div>
 
               <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-2">
                 <span className="font-bold text-white text-xs block uppercase">
-                  Honest Research Limitations &amp; Caveats (System Design Notes Section 4.4):
+                  Rigorous Research Boundaries &amp; Findings:
                 </span>
                 <ul className="list-disc list-inside space-y-1.5 text-slate-300 text-[11px] leading-relaxed">
-                  <li><strong>VLM Counting Weakness:</strong> When asked to count buildings directly, 7B VLMs answer correctly only 30.3% of the time. Counting in DisasterM3 is routed strictly through H2's per-building spatial table (39.2% accuracy).</li>
-                  <li><strong>Turkey Earthquake Attenuation:</strong> Concrete slab compaction attenuates thermal IR drone cameras. Structural pancaking requires seismic geophones and Ground Penetrating Radar rather than optical thermal imaging alone.</li>
-                  <li><strong>Strict Offline Cost Rule:</strong> Historical reconstruction budgets and casualties from past disasters are explicitly declared "not available offline" to avoid small-LLM hallucinations.</li>
+                  <li><strong>VLM Direct Counting Limitation:</strong> When asked to count buildings directly, 7B VLMs achieve only 30.09% native optical accuracy (or 27.04% in BDC study). Direct generation fails; counting must skip direct VLM generation and route to spatial SQLite table queries (37.0% on 1,701 subset, beating VLM given count by 10 points, p &lt; 10^-16).</li>
+                  <li><strong>Sensor &amp; Modality Scope:</strong> Our system operates strictly on optical satellite and aerial imagery. Sub-surface structural scanning or non-optical sensors are outside the system scope.</li>
+                  <li><strong>Strict Offline Cost Rule (Rule 2.2):</strong> External economic costs, casualties, and financial budgets from past events are explicitly declared "not available offline" to avoid small-LLM hallucinations.</li>
                 </ul>
               </div>
             </div>
@@ -207,6 +211,7 @@ export const BenchmarkPanelModal: React.FC<BenchmarkPanelModalProps> = ({
                 </span>
                 <p className="text-slate-300 text-[11px]">
                   Resource-Efficient Neural Architectures for Post-Disaster Damage Assessment &amp; Rescue Guidance.
+                  Department of Electrical &amp; Computer Engineering, North South University.
                 </p>
               </div>
 
@@ -225,11 +230,11 @@ export const BenchmarkPanelModal: React.FC<BenchmarkPanelModalProps> = ({
 
               <div className="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1 text-[11px]">
                 <strong className="text-white block uppercase">Tracked Engineering Deliverables:</strong>
-                <div className="text-slate-400">
-                  • Champion Model: <code className="text-amber-300">AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP</code> (Hugging Face)<br/>
-                  • Edge Segmenter: <code className="text-emerald-300">L1b INT8 keep1+3 static ONNX (33 MB)</code><br/>
-                  • Offline RAG: <code className="text-blue-300">DisasTeller fixed_flow.py + hybrid MiniLM/BM25 (405 sections)</code><br/>
-                  • Spatial Database: <code className="text-purple-300">H2 SQLite Table (117,687 buildings, 2,652 benchmark images)</code>
+                <div className="text-slate-400 space-y-1">
+                  <div>• Champion Model: <code className="text-amber-300">AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP</code> (Hugging Face)</div>
+                  <div>• Edge Segmenter: <code className="text-emerald-300">L1b INT8 static ONNX (33 MB, 1.6s CPU)</code></div>
+                  <div>• Offline RAG: <code className="text-blue-300">DisasTeller fixed flow + hybrid MiniLM/BM25 (405 sections)</code></div>
+                  <div>• Spatial Database: <code className="text-purple-300">H2 SQLite Table (117,687 buildings, 2,652 benchmark images)</code></div>
                 </div>
               </div>
             </div>
@@ -239,7 +244,7 @@ export const BenchmarkPanelModal: React.FC<BenchmarkPanelModalProps> = ({
         {/* Footer */}
         <div className="flex items-center justify-between pt-3 border-t border-white/10 font-mono text-xs">
           <div className="text-[11px] text-slate-400">
-            DisasterM3 Engine · CSE499B Senior Design Project
+            DisasterM3 Engine · CSE499B Senior Design Project Group 5
           </div>
           <button
             onClick={() => {

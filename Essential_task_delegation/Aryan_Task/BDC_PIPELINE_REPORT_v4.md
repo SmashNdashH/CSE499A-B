@@ -30,14 +30,14 @@ The fine-tuned model (`AbrarAlam/disasterm3-qwen2.5vl7b-mergedFP`, trained on Di
 
 **What is BDC?** The model is given a post-disaster satellite image and asked to count buildings that are damaged or totally destroyed, selecting from 5 multiple-choice options (A–E). Random guessing gives ~20%.
 
-*Note: The 34.20% / 23.58% figures come from the full benchmark evaluation (which includes intact buildings and SAR imagery). Sections 6 and 7 evaluate the controlled optical damaged and destroyed subset.*
+*Note: The 34.20% / 23.58% figures come from the full benchmark evaluation (including intact buildings and SAR imagery). The measured fine-tuned baseline on optical questions at native full resolution is 30.09% (32.01% at 512 px). Sections 6 and 7 evaluate the controlled optical damaged and destroyed subset.*
 
 ---
 
 ## 3. Motivation & Academic Foundation
 
 The pipeline adheres to the **TEOChat** framework (ICLR 2025):
-> *"Pure VLMs achieve 38.9% F1 on building localization vs. U-Net at 85.9% F1. Injecting U-Net findings as text grounding closes this gap substantially."*
+> *"Pure VLMs achieve 38.9% F1 on building localization vs. U-Net at 85.9% F1."*
 
 VLMs possess strong semantic and linguistic reasoning but struggle with dense spatial counting in high-resolution overhead imagery. Conversely, specialized segmentation architectures localise building instances with high spatial precision but cannot converse or answer free-form queries. Injecting structured segmentation facts directly into the VLM prompt synthesizes both strengths.
 
@@ -148,7 +148,7 @@ All experiments run in 4-bit NF4 precision with greedy decoding (`temperature=No
 | Fine-Tuned 7B | `text_only` | 1,701 | 21.11% | 19.2–23.1 | 21.11% | 19.2–23.1 | 21.11% | 21.11% | 21.00% | 21.00% | 0 | 0 | 39.4% (n=66) |
 | Fine-Tuned 7B | `image_only` | 1,703 | 15.56% | 13.9–17.4 | 16.85% | 15.1–18.7 | 15.58% | 16.81% | 18.00% | 18.60% | 192 | 192 | 39.4% (n=66) |
 | Fine-Tuned 7B | **`r11_image`** | 1,701 | **27.04%** | **25.0–29.2** | **27.10%** | **25.0–29.3** | **27.04%** | **27.10%** | **29.80%** | **30.00%** | 14 | 7 | **39.4% (n=66)** |
-| Fine-Tuned 7B | `unet-B1cls_image` | 1,703 | 15.56% | 13.9–17.4 | 16.85% | 15.1–18.7 | 15.58% | 16.81% | 18.00% | 18.60% | 192 | 192 | 39.4% (n=66) |
+| Fine-Tuned 7B | `unet-B1cls_image` (v3) | 1,703 | 23.96% | 22.0–26.0 | 23.96% | 22.0–26.0 | 23.96% | 23.96% | 23.00% | 23.00% | 0 | 0 | 39.4% (n=66) |
 | Fine-Tuned 7B | `oracle_text` | 1,701 | 92.71% | 91.4–93.9 | 92.71% | 91.4–93.9 | 92.71% | 92.71% | 93.20% | 93.20% | 0 | 0 | 39.4% (n=66) |
 | Fine-Tuned 7B | `oracle_image` | 1,701 | 96.47% | 95.5–97.2 | 96.47% | 95.5–97.2 | 96.47% | 96.47% | 97.20% | 97.20% | 0 | 0 | 39.4% (n=66) |
 
@@ -179,13 +179,14 @@ Performance is well-balanced across both damage categories, showing that the R11
 
 ## 8. Evaluation Against the Pre-Stated Pass Rule
 
-1. **Beats Unaided Baseline:** **PASSED.**  
-   `ft_r11_image` scores **27.04% [25.0–29.2]** vs **15.56% [13.9–17.4]** for `image_only` (+11.48 percentage points). The 95% Wilson intervals do not overlap.
-2. **Beats U-Net Baseline on Sample MB:** **PASSED.**  
-   On the shared 500-entry sample MB, `ft_r11_image` achieves **29.80% / 30.00%**, outperforming both `unet-B1cls_image` (23.00%) and `text_only` (21.00%) by +6.8–9.0 percentage points.
-3. **O2 Bar Gate (34.20%):** **FAILED.**  
-   `ft_r11_image` (27.04% on M, 30.00% on MB) does not reach the 34.20% paper bar.  
-   *Diagnosis:* R11's own underlying database achieves **32.96%** oracle accuracy on optical BDC questions (when every query is executed perfectly). The VLM prompt-injection pipeline retains **82.0% to 91.0%** of the underlying database's accuracy (27.04%–30.00% vs 32.96%), but cannot exceed the upper bound of the segmentation table itself.
+1. **Criterion 1 (O2 Bar Gate, 34.20%):** **FAILED.**  
+   `ft_r11_image` reaches **27.04% [25.0–29.2]** on M and **30.00% [26.1–34.2]** on MB, failing to meet the 34.20% base model benchmark bar.
+2. **Criterion 2 (U-Net Separation via Non-Overlapping 95% Wilson CIs):** **FAILED as written before the run.**  
+   `ft_r11_image`'s 27.04% [25.0–29.2] and v3's real U-Net baseline of 23.96% [22.0–26.0] have overlapping intervals. However, an exact paired test demonstrates that R11 is statistically significantly ahead: R11 was correct on 230 questions where U-Net failed, whereas U-Net was correct on 177 where R11 failed (exact McNemar test, p = 0.01). (The comparison on sample MB, 29.80% vs 23.00%, was chosen post-hoc after observing the results).
+3. **Beats Unaided Baseline:** **PASSED.**  
+   `ft_r11_image` scores **27.04% [25.0–29.2]** vs **15.56% [13.9–17.4]** for `image_only` (+11.48 percentage points).
+4. **Table Direct Counting vs. Prompt Injection:**  
+   The claim that 32.96% represents the upper bound on this subset is incorrect; 32.96% is H2's accuracy on all 3,583 optical questions (including intact). On these specific 1,701 damaged and destroyed questions, picking the option nearest R11's count from `buildings.sqlite` scores **37.0%** (35.4% if ties count as wrong). Passing that count through the fine-tuned 7B VLM drops accuracy to **27.04%** (a loss of 10.0 percentage points): 290 questions are answered correctly only by the table, while only 121 are answered correctly only by the VLM (p < 10⁻¹⁶). Therefore, counting numbers should be routed directly from the SQL table to the output rather than filtered through VLM text generation.
 
 ---
 
@@ -195,8 +196,8 @@ Performance is well-balanced across both damage categories, showing that the R11
    Without findings, the fine-tuned model collapses to 15.56%–16.85% (worse than random 20% guessing). Supplying R11 counts raises performance to 27.04%–30.00%, recovering the majority of the loss.
 2. **Oracle Ceiling Remains Extreme (96.47%):**  
    When the prompt contains accurate ground-truth mask counts, the model achieves 96.47% accuracy. This confirms that the VLM's instruction-following and option-selection faculties are intact; the counting bottleneck is purely visual.
-3. **Prompt Injection vs. Database Querying:**  
-   Comparing `r11_image` (30.3% on n=66) against `H2` (39.4% on n=66) highlights that while prompt injection provides strong reasoning context, deterministic SQL execution avoids language generation variance.
+3. **Counts Must Skip the VLM:**  
+   Comparing `r11_image` (27.04%) against the table alone (37.0% on the same 1,701 questions) shows that feeding counts into the VLM prompt loses 10 percentage points. The fine-tuned 7B selects the option nearest the count it was provided only 56% of the time. Deterministic SQL execution avoids language generation variance and delivers significantly higher accuracy.
 4. **Sentence Mapping Effect:**  
    Mapping the 189 sentence responses in `image_only` yielded a modest gain (+1.29 percentage points: 15.56% $\to$ 16.85%), proving that the primary failure mode of `image_only` is perceptual miscounting rather than output formatting.
 
@@ -205,7 +206,7 @@ Performance is well-balanced across both damage categories, showing that the R11
 ## 10. Limitations
 
 1. **Benchmark Duplicate Check Pending:** The benchmark test images have not yet been cross-checked for potential duplicate or near-identical tiles from the training split (Abrar's dataset overlap check is pending).
-2. **Segmentation Table Ceiling:** The R11 per-building table tops out at 32.96% oracle optical accuracy due to merged contiguous building blobs and missing small structures in dense urban rubble.
+2. **Segmentation Table Accuracy:** The R11 per-building table achieves 32.96% on all optical benchmark questions and 37.0% on the damaged/destroyed subset. BDC counting queries should draw directly from this table.
 3. **SAR Imagery Excluded:** 608 SAR counting questions remain excluded due to sensor mismatch.
 
 ---

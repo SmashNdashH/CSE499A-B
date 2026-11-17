@@ -1,20 +1,24 @@
 /**
- * Web Audio API synthesizer for Tactical Rescue Operations & Triage Console:
- * - Tactical radio squelch / dispatch beep ("chirp")
- * - Sonar / Penetrative radar ping
- * - Emergency triage alert tone
+ * Web Audio API synthesizer for Tactical Operations & Console.
+ * NOTE: Muted by default per review requirement. Decision-support tools
+ * should not emit audio effects unless explicitly enabled by the user.
  */
 
 class TacticalSoundEngine {
   private ctx: AudioContext | null = null;
-  private isMuted = false;
+  private isMuted = true; // Off by default
 
-  private getContext(): AudioContext {
+  private getContext(): AudioContext | null {
+    if (this.isMuted) return null;
     if (!this.ctx) {
-      const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-      this.ctx = new AudioCtx();
+      try {
+        const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+        this.ctx = new AudioCtx();
+      } catch {
+        return null;
+      }
     }
-    if (this.ctx.state === 'suspended') {
+    if (this.ctx && this.ctx.state === 'suspended') {
       this.ctx.resume();
     }
     return this.ctx;
@@ -28,88 +32,70 @@ class TacticalSoundEngine {
     return this.isMuted;
   }
 
-  // Tactical radio squelch / confirmation beep
   playRadioChirp(): void {
     if (this.isMuted) return;
     try {
       const ctx = this.getContext();
+      if (!ctx) return;
       const now = ctx.currentTime;
 
-      // High burst 1
       const osc1 = ctx.createOscillator();
       const gain1 = ctx.createGain();
       osc1.type = 'sine';
-      osc1.frequency.setValueAtTime(880, now); // A5
+      osc1.frequency.setValueAtTime(880, now);
       gain1.gain.setValueAtTime(0.08, now);
       gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
       osc1.connect(gain1);
       gain1.connect(ctx.destination);
       osc1.start(now);
       osc1.stop(now + 0.09);
-
-      // Higher burst 2
-      const osc2 = ctx.createOscillator();
-      const gain2 = ctx.createGain();
-      osc2.type = 'sine';
-      osc2.frequency.setValueAtTime(1174.66, now + 0.07); // D6
-      gain2.gain.setValueAtTime(0.09, now + 0.07);
-      gain2.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
-      osc2.connect(gain2);
-      gain2.connect(ctx.destination);
-      osc2.start(now + 0.07);
-      osc2.stop(now + 0.19);
-    } catch (e) {
-      console.warn('Audio radio chirp error:', e);
+    } catch {
+      // ignore
     }
   }
 
-  // Sonar / Subsurface sensor ping for building scan
-  playSonarPing(): void {
+  playRadarPing(): void {
     if (this.isMuted) return;
     try {
       const ctx = this.getContext();
+      if (!ctx) return;
       const now = ctx.currentTime;
 
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.type = 'sine';
       osc.frequency.setValueAtTime(1400, now);
-      osc.frequency.exponentialRampToValueAtTime(700, now + 0.4);
-
+      osc.frequency.exponentialRampToValueAtTime(440, now + 0.35);
       gain.gain.setValueAtTime(0.12, now);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.5);
-
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
       osc.connect(gain);
       gain.connect(ctx.destination);
       osc.start(now);
-      osc.stop(now + 0.52);
-    } catch (e) {
-      console.warn('Audio sonar ping error:', e);
+      osc.stop(now + 0.36);
+    } catch {
+      // ignore
     }
   }
 
-  // Alert tone for destroyed building detection
-  playAlert(): void {
+  playTriageAlert(): void {
     if (this.isMuted) return;
     try {
       const ctx = this.getContext();
+      if (!ctx) return;
       const now = ctx.currentTime;
 
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.type = 'triangle';
       osc.frequency.setValueAtTime(520, now);
-      osc.frequency.setValueAtTime(440, now + 0.1);
-
-      gain.gain.setValueAtTime(0.12, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
-
+      gain.gain.setValueAtTime(0.15, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
       osc.connect(gain);
       gain.connect(ctx.destination);
       osc.start(now);
-      osc.stop(now + 0.36);
-    } catch (e) {
-      console.warn('Audio alert error:', e);
+      osc.stop(now + 0.23);
+    } catch {
+      // ignore
     }
   }
 }

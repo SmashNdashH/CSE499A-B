@@ -4,8 +4,8 @@ import { sound } from '../utils/audio';
 
 interface SplineBottomBarProps {
   scenario: DisasterScenario;
-  activeFilter: 'all' | 'destroyed' | 'major' | 'voids' | 'ingress';
-  setActiveFilter: (filter: 'all' | 'destroyed' | 'major' | 'voids' | 'ingress') => void;
+  activeFilter: 'all' | 'destroyed' | 'damaged' | 'intact';
+  setActiveFilter: (filter: 'all' | 'destroyed' | 'damaged' | 'intact') => void;
 }
 
 export const SplineBottomBar: React.FC<SplineBottomBarProps> = ({
@@ -13,7 +13,7 @@ export const SplineBottomBar: React.FC<SplineBottomBarProps> = ({
   activeFilter,
   setActiveFilter
 }) => {
-  const handleFilterClick = (filter: 'all' | 'destroyed' | 'major' | 'voids' | 'ingress') => {
+  const handleFilterClick = (filter: 'all' | 'destroyed' | 'damaged' | 'intact') => {
     sound.playRadioChirp();
     setActiveFilter(filter);
   };
@@ -45,52 +45,34 @@ export const SplineBottomBar: React.FC<SplineBottomBarProps> = ({
         </button>
 
         <button
-          onClick={() => handleFilterClick('major')}
+          onClick={() => handleFilterClick('damaged')}
           className={`px-3 py-1.5 rounded-xl transition-all ${
-            activeFilter === 'major'
+            activeFilter === 'damaged'
               ? 'bg-amber-500 text-slate-950 font-bold shadow-sm'
               : 'text-amber-400/90 hover:text-amber-300 hover:bg-white/5'
           }`}
         >
-          Major ({scenario.damageCounts.major})
+          Damaged ({scenario.damageCounts.damaged})
         </button>
 
         <button
-          onClick={() => handleFilterClick('voids')}
+          onClick={() => handleFilterClick('intact')}
           className={`px-3 py-1.5 rounded-xl transition-all ${
-            activeFilter === 'voids'
-              ? 'bg-sky-500 text-slate-950 font-bold shadow-sm'
-              : 'text-sky-400/90 hover:text-sky-300 hover:bg-white/5'
-          }`}
-        >
-          Air Voids (3)
-        </button>
-
-        <button
-          onClick={() => handleFilterClick('ingress')}
-          className={`px-3 py-1.5 rounded-xl transition-all ${
-            activeFilter === 'ingress'
+            activeFilter === 'intact'
               ? 'bg-emerald-500 text-slate-950 font-bold shadow-sm'
               : 'text-emerald-400/90 hover:text-emerald-300 hover:bg-white/5'
           }`}
         >
-          Ingress Path
+          Intact ({scenario.damageCounts.intact})
         </button>
       </div>
 
-      <div className="hidden lg:flex items-center gap-3 pl-3 border-l border-white/10 text-[11px] text-slate-400">
-        <span>
-          Sector: <strong className="text-white">{scenario.title}</strong>
-        </span>
-        <span className="text-slate-600">·</span>
-        <span className="text-emerald-400">
-          Route Alpha Cleared
-        </span>
-        <span className="text-slate-600">·</span>
-        <span className="text-slate-500 text-[10px]">
-          QWEN2.5-VL 4-BIT EDGE
-        </span>
-      </div>
+      <div className="h-4 w-px bg-white/10 mx-1" />
+
+      {/* Persistent Illustration Watermark */}
+      <span className="text-[11px] text-amber-400/90 font-bold whitespace-nowrap">
+        Illustration: not real data
+      </span>
     </footer>
   );
 };

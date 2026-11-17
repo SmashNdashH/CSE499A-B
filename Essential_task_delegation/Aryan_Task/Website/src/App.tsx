@@ -16,14 +16,14 @@ import { sound } from './utils/audio';
 export default function App() {
   const [selectedScenarioIndex, setSelectedScenarioIndex] = useState(0);
   const [selectedBuilding, setSelectedBuilding] = useState<BuildingFeature | null>(
-    SCENARIOS[0].buildings[3] // Default to #B-104 (Pancake collapse in Zone A)
+    SCENARIOS[0].buildings[0] || null
   );
-  const [activeFilter, setActiveFilter] = useState<'all' | 'destroyed' | 'major' | 'voids' | 'ingress'>('all');
-  const [activeTool, setActiveTool] = useState<'select' | 'thermal' | 'ingress' | 'radar'>('select');
+  const [activeFilter, setActiveFilter] = useState<'all' | 'destroyed' | 'damaged' | 'intact'>('all');
+  const [activeTool, setActiveTool] = useState<'select' | 'pan' | 'measure' | 'inspect'>('select');
   const [hiddenBuildingIds, setHiddenBuildingIds] = useState<string[]>([]);
   const [isLayersCollapsed, setIsLayersCollapsed] = useState(false);
   const [isInspectorCollapsed, setIsInspectorCollapsed] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true); // Audio muted by default
   
   // Modals state
   const [showSitrepModal, setShowSitrepModal] = useState(false);
@@ -32,8 +32,8 @@ export default function App() {
   const [showBenchmarkModal, setShowBenchmarkModal] = useState(false);
   const [copiedSitrep, setCopiedSitrep] = useState(false);
 
-  // New system design features (Offline, 3D City, Heatmap, Before/After)
-  const [isOfflineOnly, setIsOfflineOnly] = useState(true); // 100% Offline Safe by default (0 API calls)
+  // Offline mode (True by default = 100% Offline Safe, 0 external API calls)
+  const [isOfflineOnly, setIsOfflineOnly] = useState(true);
   const [show3DCity, setShow3DCity] = useState(false);
   const [showHeatmap, setShowHeatmap] = useState(false);
   const [showBeforeAfter, setShowBeforeAfter] = useState(false);
@@ -66,7 +66,7 @@ export default function App() {
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-[#090a0f] text-slate-100 font-sans select-none">
       
-      {/* 1. CENTRAL MAP ENGINE: OFFLINE AUTONOMOUS CANVAS OR ONLINE ESRI TILES */}
+      {/* 1. CENTRAL MAP ENGINE: OFFLINE AUTONOMOUS CANVAS OR ONLINE SATELLITE TILES */}
       {isOfflineOnly ? (
         <OfflineCanvas
           scenario={scenario}
@@ -155,14 +155,14 @@ export default function App() {
         onToggleCollapse={() => setIsInspectorCollapsed(!isInspectorCollapsed)}
       />
 
-      {/* 5. FLOATING BOTTOM QUICK FILTER & TELEMETRY BAR */}
+      {/* 5. FLOATING BOTTOM QUICK FILTER BAR */}
       <SplineBottomBar
         scenario={scenario}
         activeFilter={activeFilter}
         setActiveFilter={setActiveFilter}
       />
 
-      {/* 6. DISASTELLER OFFLINE REPORT SYSTEM (O3 - 6 TEAMS MODAL) */}
+      {/* 6. DISASTELLER OFFLINE REPORT SYSTEM (O3 PROOF RUN MODAL) */}
       <DisasTellerReportsModal
         isOpen={showDisasTellerModal}
         onClose={() => setShowDisasTellerModal(false)}
@@ -175,14 +175,14 @@ export default function App() {
         onClose={() => setShowBenchmarkModal(false)}
       />
 
-      {/* 8. EMS-98 INCIDENT ACTION PLAN MODAL */}
+      {/* 8. INCIDENT ACTION PLAN MODAL */}
       {showSitrepModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
           <div className="relative w-full max-w-xl bg-[#121214] rounded-2xl border border-white/10 shadow-2xl p-5 text-slate-200 font-mono text-xs space-y-3">
             <div className="flex items-center justify-between pb-2 border-b border-white/10">
               <span className="font-bold text-white text-sm flex items-center gap-2">
                 <FileText className="w-4 h-4 text-amber-400" />
-                <span>EMS-98 Tactical Incident Action Plan</span>
+                <span>Sector Damage Assessment Summary</span>
               </span>
               <button
                 onClick={() => setShowSitrepModal(false)}
@@ -195,32 +195,29 @@ export default function App() {
             <div className="space-y-2.5 text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
               <div className="p-2.5 rounded-xl bg-white/5 border border-white/5 space-y-1">
                 <div><strong>OPERATIONAL SECTOR:</strong> {scenario.location} ({scenario.title})</div>
-                <div><strong>MISSION WINDOW:</strong> 08h 42m elapsed / 72h Critical Survival Phase</div>
-                <div><strong>PLATFORM ARCHITECTURE:</strong> 4-Bit Edge VLM (Qwen2.5-VL) with SAM 3 Foundation Model</div>
+                <div><strong>PROVENANCE:</strong> Illustration: not real data</div>
+                <div><strong>TOTAL FOOTPRINTS:</strong> {scenario.totalBuildings}</div>
               </div>
 
               <div className="p-3 bg-amber-500/10 rounded-xl border border-amber-500/20 space-y-1.5 text-amber-200">
                 <div className="font-bold text-white text-[11px] uppercase tracking-wider">
-                  Tactical Action Directives:
+                  Damage Distribution:
                 </div>
-                <div>• <strong>Zone A (#B-104, #B-106):</strong> Pancake collapse. Concrete slabs attenuate thermal IR. Deploy Ground Penetrating Radar (GPR) and acoustic geophones.</div>
-                <div>• <strong>Zone B (#B-108):</strong> Lean-over void cavity on south perimeter. Ingress via ground south window.</div>
-                <div>• <strong>Zone SE (#B-112):</strong> Red-tagged. Secondary collapse risk from compromised brick firewall.</div>
-              </div>
-
-              <div className="p-2.5 bg-emerald-500/10 rounded-xl border border-emerald-500/20 text-emerald-300">
-                • <strong>Ingress Route Alpha:</strong> Cleared from north entrance along Avenue Central up to Grid 46. Municipal Annex (#B-101) active as primary casualty triage point.
+                <div>• <strong>Destroyed:</strong> {scenario.damageCounts.destroyed} structures</div>
+                <div>• <strong>Damaged:</strong> {scenario.damageCounts.damaged} structures</div>
+                <div>• <strong>Intact:</strong> {scenario.damageCounts.intact} structures</div>
               </div>
 
               <div className="p-2 bg-white/5 rounded-xl border border-white/5 text-[10px] text-slate-400">
-                Research Project: Resource-Efficient Neural Architectures for Post-Disaster Damage Assessment &amp; Rescue Guidance (CSE499B/EEE499B/ETE499B, Group 5).
+                Research Project: Resource-Efficient Neural Architectures for Post-Disaster Damage Assessment &amp; Rescue Guidance (CSE499B Group 5, North South University).
               </div>
             </div>
 
             <div className="flex items-center justify-end gap-2 pt-2 border-t border-white/10">
               <button
                 onClick={() => {
-                  const text = `${scenario.title} Incident Action Plan\n${scenario.sampleVlmResponse}`;
+                  const text = `${scenario.title} Damage Summary [Illustration: not real data]
+Total: ${scenario.totalBuildings} | Destroyed: ${scenario.damageCounts.destroyed} | Damaged: ${scenario.damageCounts.damaged} | Intact: ${scenario.damageCounts.intact}`;
                   navigator.clipboard?.writeText(text);
                   setCopiedSitrep(true);
                   setTimeout(() => setCopiedSitrep(false), 2000);
@@ -228,7 +225,7 @@ export default function App() {
                 className="px-3.5 py-1.5 rounded-xl bg-[#0084ff] hover:bg-[#0070d8] text-white font-bold text-xs flex items-center gap-1.5 transition-colors"
               >
                 {copiedSitrep ? <Check className="w-3.5 h-3.5" /> : null}
-                <span>{copiedSitrep ? 'Copied' : 'Copy SitRep'}</span>
+                <span>{copiedSitrep ? 'Copied' : 'Copy Summary'}</span>
               </button>
               <button
                 onClick={() => setShowSitrepModal(false)}

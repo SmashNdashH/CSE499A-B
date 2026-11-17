@@ -8,8 +8,6 @@ import {
   Eye, 
   Wifi, 
   WifiOff, 
-  Route, 
-  Radar, 
   ShieldAlert,
   RotateCcw
 } from 'lucide-react';
@@ -20,9 +18,9 @@ interface OfflineCanvasProps {
   scenario: DisasterScenario;
   selectedBuilding: BuildingFeature | null;
   onSelectBuilding: (building: BuildingFeature) => void;
-  activeTool: 'select' | 'thermal' | 'ingress' | 'radar';
+  activeTool: 'select' | 'pan' | 'measure' | 'inspect';
   hiddenBuildingIds: string[];
-  activeFilter: 'all' | 'destroyed' | 'major' | 'voids' | 'ingress';
+  activeFilter: 'all' | 'destroyed' | 'damaged' | 'intact';
   isOfflineOnly: boolean;
   onToggleOffline: () => void;
   show3DCity: boolean;
@@ -43,11 +41,8 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
   isOfflineOnly,
   onToggleOffline,
   show3DCity,
-  onToggle3DCity,
   showHeatmap,
-  onToggleHeatmap,
-  showBeforeAfter,
-  onToggleBeforeAfter
+  showBeforeAfter
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
@@ -62,7 +57,7 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
   const [isSliding, setIsSliding] = useState(false);
   
   // 3D Isometric rotation angle
-  const [isometricAngle, setIsometricAngle] = useState(35); // degrees
+  const isometricAngle = 35; // degrees
   const [hoveredBuilding, setHoveredBuilding] = useState<BuildingFeature | null>(null);
 
   // Reset viewport when scenario changes
@@ -88,13 +83,12 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
   const visibleBuildings = useMemo(() => {
     return scenario.buildings.filter((b) => {
       if (hiddenBuildingIds.includes(b.id)) return false;
-      if (activeFilter === 'destroyed') return b.damage === 'destroyed';
-      if (activeFilter === 'major') return b.damage === 'major-damage';
-      if (activeFilter === 'voids' || activeTool === 'radar') return b.voidLikelihood === 'High';
-      if (activeFilter === 'ingress') return b.damage === 'no-damage' || b.damage === 'minor-damage';
+      if (activeFilter === 'destroyed') return b.class_name === 'destroyed';
+      if (activeFilter === 'damaged') return b.class_name === 'damaged';
+      if (activeFilter === 'intact') return b.class_name === 'intact';
       return true;
     });
-  }, [scenario.buildings, hiddenBuildingIds, activeFilter, activeTool]);
+  }, [scenario.buildings, hiddenBuildingIds, activeFilter]);
 
   // Core High-Performance Canvas Renderer (100% Offline, Zero External APIs)
   useEffect(() => {
@@ -116,8 +110,7 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
       ctx.translate(pan.x, pan.y);
       ctx.scale(zoom, zoom);
 
-      // 1. RENDER ORTHOMOSAIC SATELLITE TERRAIN (OFFLINE AUTONOMOUS ENGINE)
-      // Base dark satellite earth palette
+      // 1. RENDER TERRAIN (OFFLINE GRID)
       const groundGrad = ctx.createLinearGradient(0, 0, width, height);
       groundGrad.addColorStop(0, '#13171f');
       groundGrad.addColorStop(0.5, '#171b24');
@@ -125,7 +118,7 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
       ctx.fillStyle = groundGrad;
       ctx.fillRect(0, 0, width, height);
 
-      // Procedural orthorectified urban street grid
+      // Procedural urban street grid
       ctx.lineWidth = 1;
       ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
       const gridSize = 40;
@@ -142,7 +135,7 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
         ctx.stroke();
       }
 
-      // Asphalt Primary Arterials & Avenues
+      // Procedural primary road grid
       const drawRoad = (x1: number, y1: number, x2: number, y2: number, roadWidth: number, name: string) => {
         ctx.strokeStyle = '#222733';
         ctx.lineWidth = roadWidth;
@@ -152,7 +145,6 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
         ctx.lineTo(x2, y2);
         ctx.stroke();
 
-        // Asphalt road surface texture & center dashed marking
         ctx.strokeStyle = '#2d3444';
         ctx.lineWidth = roadWidth - 4;
         ctx.stroke();
@@ -163,7 +155,6 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
         ctx.stroke();
         ctx.setLineDash([]);
 
-        // Road Name Watermark
         ctx.fillStyle = 'rgba(148, 163, 184, 0.35)';
         ctx.font = '10px ui-monospace, monospace';
         const midX = (x1 + x2) / 2;
@@ -171,61 +162,30 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
         ctx.fillText(name, midX + 8, midY - 6);
       };
 
-      // Main Road Network
-      drawRoad(width * 0.1, height * 0.28, width * 0.9, height * 0.28, 22, 'Avenue Central North');
-      drawRoad(width * 0.1, height * 0.55, width * 0.9, height * 0.55, 20, 'Boulevard Central');
-      drawRoad(width * 0.1, height * 0.82, width * 0.9, height * 0.82, 18, 'South Perimeter Way');
-      drawRoad(width * 0.26, height * 0.05, width * 0.26, height * 0.95, 18, 'West Axis Street');
+      drawRoad(width * 0.1, height * 0.28, width * 0.9, height * 0.28, 22, 'Sector Grid Axis North');
+      drawRoad(width * 0.1, height * 0.55, width * 0.9, height * 0.55, 20, 'Sector Grid Axis Central');
+      drawRoad(width * 0.1, height * 0.82, width * 0.9, height * 0.82, 18, 'Sector Grid Axis South');
+      drawRoad(width * 0.26, height * 0.05, width * 0.26, height * 0.95, 18, 'West Perimeter Way');
       drawRoad(width * 0.50, height * 0.05, width * 0.50, height * 0.95, 20, 'Central Meridian');
-      drawRoad(width * 0.74, height * 0.05, width * 0.74, height * 0.95, 22, 'East Industrial Corridor');
+      drawRoad(width * 0.74, height * 0.05, width * 0.74, height * 0.95, 22, 'East Perimeter Way');
 
-      // 2. CLEARED INGRESS ROUTE ALPHA (Polyline & Waypoints)
-      if (activeTool === 'ingress' || activeFilter === 'ingress' || activeFilter === 'all') {
-        ctx.strokeStyle = '#10b981';
-        ctx.lineWidth = 4;
-        ctx.setLineDash([8, 6]);
-        ctx.beginPath();
-        ctx.moveTo(width * 0.12, height * 0.08);
-        ctx.lineTo(width * 0.26, height * 0.28);
-        ctx.lineTo(width * 0.50, height * 0.45);
-        ctx.lineTo(width * 0.65, height * 0.72);
-        ctx.stroke();
-        ctx.setLineDash([]);
-
-        // Ingress route glow
-        ctx.strokeStyle = 'rgba(16, 185, 129, 0.25)';
-        ctx.lineWidth = 14;
-        ctx.stroke();
-
-        // Ingress Entry Flag
-        ctx.fillStyle = '#10b981';
-        ctx.beginPath();
-        ctx.arc(width * 0.12, height * 0.08, 6, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.fillStyle = '#ffffff';
-        ctx.font = 'bold 9px ui-monospace, monospace';
-        ctx.fillText('ENTRY ALPHA (CLEARED)', width * 0.12 + 10, height * 0.08 + 3);
-      }
-
-      // 3. SURVIVABILITY HEATMAP LAYER (T1 v3 Engine)
+      // 2. DAMAGE DENSITY HEATMAP LAYER
       if (showHeatmap) {
         scenario.buildings.forEach((b) => {
           const bx = (b.x / 100) * width;
           const by = (b.y / 100) * height;
 
-          if (b.damage === 'destroyed' || b.damage === 'major-damage') {
-            // Danger gradient (crimson / orange core)
-            const rad = b.damage === 'destroyed' ? 70 : 50;
+          if (b.class_name === 'destroyed' || b.class_name === 'damaged') {
+            const rad = b.class_name === 'destroyed' ? 70 : 50;
             const heatGrad = ctx.createRadialGradient(bx, by, 0, bx, by, rad);
-            heatGrad.addColorStop(0, b.damage === 'destroyed' ? 'rgba(244, 63, 94, 0.45)' : 'rgba(245, 158, 11, 0.35)');
-            heatGrad.addColorStop(0.6, b.damage === 'destroyed' ? 'rgba(244, 63, 94, 0.15)' : 'rgba(245, 158, 11, 0.1)');
+            heatGrad.addColorStop(0, b.class_name === 'destroyed' ? 'rgba(244, 63, 94, 0.45)' : 'rgba(245, 158, 11, 0.35)');
+            heatGrad.addColorStop(0.6, b.class_name === 'destroyed' ? 'rgba(244, 63, 94, 0.15)' : 'rgba(245, 158, 11, 0.1)');
             heatGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
             ctx.fillStyle = heatGrad;
             ctx.beginPath();
             ctx.arc(bx, by, rad, 0, Math.PI * 2);
             ctx.fill();
-          } else if (b.damage === 'no-damage') {
-            // Safety zone gradient (emerald green buffer)
+          } else if (b.class_name === 'intact') {
             const safeGrad = ctx.createRadialGradient(bx, by, 0, bx, by, 45);
             safeGrad.addColorStop(0, 'rgba(16, 185, 129, 0.3)');
             safeGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
@@ -237,7 +197,7 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
         });
       }
 
-      // 4. BUILDING FOOTPRINTS / 3D DAMAGE CITY LAYER
+      // 3. BUILDING FOOTPRINTS / 3D CITY LAYER
       visibleBuildings.forEach((b) => {
         const bx = (b.x / 100) * width;
         const by = (b.y / 100) * height;
@@ -250,26 +210,23 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
           switch (dmg) {
             case 'destroyed':
               return { border: '#f43f5e', fill: 'rgba(244, 63, 94, 0.35)', top: '#e11d48' };
-            case 'major-damage':
+            case 'damaged':
               return { border: '#f59e0b', fill: 'rgba(245, 158, 11, 0.35)', top: '#d97706' };
-            case 'minor-damage':
-              return { border: '#eab308', fill: 'rgba(234, 179, 8, 0.25)', top: '#ca8a04' };
-            case 'no-damage':
+            case 'intact':
             default:
               return { border: '#10b981', fill: 'rgba(16, 185, 129, 0.25)', top: '#059669' };
           }
         };
 
-        const colors = getColor(b.damage);
+        const colors = getColor(b.class_name);
 
         if (show3DCity) {
-          // LAYER 5: 3D DAMAGE CITY EXTRUSION (Isometric Blocks)
-          // Height based on storeys: collapsed pancake has compressed height (4px), intact is tall (floors * 12px)
-          const baseHeight = b.collapseType === 'Pancake' || b.collapseType === 'Rubble Heap'
+          // 3D Extrusion based on building area and damage class
+          const baseHeight = b.class_name === 'destroyed'
             ? 6
-            : b.damage === 'major-damage'
-            ? b.floors * 8
-            : b.floors * 13;
+            : b.class_name === 'damaged'
+            ? 16
+            : 28;
           
           const angleRad = (isometricAngle * Math.PI) / 180;
           const dx = Math.sin(angleRad) * baseHeight;
@@ -280,7 +237,6 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
           ctx.strokeStyle = isSelected ? '#38bdf8' : colors.border;
           ctx.lineWidth = isSelected ? 2.5 : 1;
 
-          // Front-facing vertical extrusion
           ctx.beginPath();
           ctx.moveTo(bx, by + bh);
           ctx.lineTo(bx + bw, by + bh);
@@ -301,7 +257,7 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
           ctx.fill();
           ctx.stroke();
 
-          // Top Roof Face
+          // Top Face
           ctx.fillStyle = isSelected ? '#0084ff' : colors.top;
           ctx.beginPath();
           ctx.moveTo(bx + dx, by + dy);
@@ -312,24 +268,13 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
           ctx.fill();
           ctx.stroke();
 
-          // Collapse debris rubble texture for destroyed buildings in 3D
-          if (b.damage === 'destroyed') {
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
-            ctx.beginPath();
-            ctx.arc(bx + dx + bw * 0.4, by + dy + bh * 0.5, 3, 0, Math.PI * 2);
-            ctx.arc(bx + dx + bw * 0.7, by + dy + bh * 0.3, 2.5, 0, Math.PI * 2);
-            ctx.arc(bx + dx + bw * 0.2, by + dy + bh * 0.7, 3.5, 0, Math.PI * 2);
-            ctx.fill();
-          }
-
           // Building ID tag above 3D block
           ctx.fillStyle = isSelected ? '#ffffff' : 'rgba(241, 245, 249, 0.9)';
           ctx.font = 'bold 9px ui-monospace, monospace';
           ctx.fillText(`${b.id}`, bx + dx + 3, by + dy - 4);
         } else {
           // STANDARD 2D AERIAL FOOTPRINT
-          // Debris scatter perimeter for collapsed buildings
-          if (b.damage === 'destroyed') {
+          if (b.class_name === 'destroyed') {
             ctx.fillStyle = 'rgba(244, 63, 94, 0.12)';
             ctx.strokeStyle = 'rgba(244, 63, 94, 0.3)';
             ctx.lineWidth = 1;
@@ -339,7 +284,6 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
             ctx.setLineDash([]);
           }
 
-          // Main Building Polygon Footprint
           ctx.fillStyle = isSelected ? 'rgba(0, 132, 255, 0.65)' : colors.fill;
           ctx.strokeStyle = isSelected ? '#0084ff' : colors.border;
           ctx.lineWidth = isSelected ? 3 : isHovered ? 2.5 : 1.5;
@@ -360,52 +304,29 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
           ctx.fillText(`${b.id}`, bx + 4, by + 12);
           ctx.fillStyle = 'rgba(241, 245, 249, 0.7)';
           ctx.font = '8px ui-monospace, monospace';
-          ctx.fillText(`${b.ems98Grade || 'G?'} · ${b.floors}F`, bx + 4, by + 22);
-        }
-
-        // 5. AIR VOID RADAR RINGS (T1 v3 Specification)
-        if (b.voidLikelihood === 'High' && (activeTool === 'radar' || activeFilter === 'voids' || isSelected)) {
-          ctx.strokeStyle = '#38bdf8';
-          ctx.lineWidth = 1.5;
-          ctx.setLineDash([4, 4]);
-          ctx.beginPath();
-          ctx.arc(bx + bw / 2, by + bh / 2, Math.max(bw, bh) * 0.85, 0, Math.PI * 2);
-          ctx.stroke();
-
-          ctx.fillStyle = 'rgba(56, 189, 248, 0.15)';
-          ctx.fill();
-          ctx.setLineDash([]);
-
-          // Center Radar Ping Dot
-          ctx.fillStyle = '#38bdf8';
-          ctx.beginPath();
-          ctx.arc(bx + bw / 2, by + bh / 2, 3, 0, Math.PI * 2);
-          ctx.fill();
+          ctx.fillText(`${b.class_name} · ${b.area_px}px`, bx + 4, by + 22);
         }
       });
 
-      // 6. BEFORE / AFTER COMPARISON SLIDER OVERLAY (Section 4.2)
+      // 4. BEFORE / AFTER COMPARISON SLIDER OVERLAY
       if (showBeforeAfter) {
         const splitX = (sliderPos / 100) * width;
 
-        // Render Pre-Disaster Intact Overlay on the Left Side
         ctx.save();
         ctx.beginPath();
         ctx.rect(0, 0, splitX, height);
         ctx.clip();
 
-        // Pre-disaster green intact baseline tint
         ctx.fillStyle = 'rgba(16, 185, 129, 0.08)';
         ctx.fillRect(0, 0, splitX, height);
 
-        // Pre-disaster intact labels
         ctx.fillStyle = '#10b981';
         ctx.font = 'bold 11px ui-monospace, monospace';
-        ctx.fillText(`PRE-DISASTER SATELLITE BASELINE: ${scenario.beforeDate || 'Pre-Event'}`, 24, 40);
+        ctx.fillText(`PRE-DISASTER BASELINE: ${scenario.beforeDate || 'Pre-Event'} [Illustration: not real data]`, 24, 40);
 
         ctx.restore();
 
-        // Vertical Split Divider Line
+        // Split Divider Line
         ctx.strokeStyle = '#0084ff';
         ctx.lineWidth = 2.5;
         ctx.beginPath();
@@ -413,7 +334,6 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
         ctx.lineTo(splitX, height);
         ctx.stroke();
 
-        // Split Line Handle Knob
         ctx.fillStyle = '#0084ff';
         ctx.beginPath();
         ctx.arc(splitX, height / 2, 14, 0, Math.PI * 2);
@@ -422,16 +342,15 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
         ctx.font = 'bold 10px ui-monospace, monospace';
         ctx.fillText('◄►', splitX - 8, height / 2 + 4);
 
-        // Right side post-disaster label
         ctx.fillStyle = '#f43f5e';
         ctx.font = 'bold 11px ui-monospace, monospace';
-        ctx.fillText(`POST-EVENT DAMAGE SURVEY: ${scenario.afterDate || scenario.date}`, splitX + 16, 40);
+        ctx.fillText(`POST-EVENT EVALUATION: ${scenario.afterDate || scenario.date} [Illustration: not real data]`, splitX + 16, 40);
       }
 
       // Restore root transform
       ctx.restore();
 
-      // 7. CENTER TARGET RETICLE (HUD)
+      // 5. CENTER TARGET RETICLE (HUD)
       const cx = width / 2;
       const cy = height / 2;
       ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
@@ -443,6 +362,18 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
       ctx.moveTo(cx, cy - 45);
       ctx.lineTo(cx, cy + 45);
       ctx.stroke();
+
+      // 6. PERSISTENT WATERMARK BANNER (TOP-RIGHT)
+      ctx.fillStyle = 'rgba(18, 18, 20, 0.85)';
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+      ctx.lineWidth = 1;
+      const wmText = 'Illustration: not real data';
+      ctx.font = 'bold 11px ui-monospace, monospace';
+      const textW = ctx.measureText(wmText).width;
+      ctx.fillRect(width - textW - 28, 16, textW + 18, 24);
+      ctx.strokeRect(width - textW - 28, 16, textW + 18, 24);
+      ctx.fillStyle = '#fbbf24';
+      ctx.fillText(wmText, width - textW - 19, 32);
     };
 
     render();
@@ -472,7 +403,6 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
     showBeforeAfter,
     showHeatmap,
     show3DCity,
-    isometricAngle,
     activeTool,
     activeFilter
   ]);
@@ -502,7 +432,6 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
       return;
     }
 
-    // Hit test buildings on hover
     if (canvasRef.current) {
       const rect = canvasRef.current.getBoundingClientRect();
       const mouseX = (e.clientX - rect.left - pan.x) / zoom;
@@ -544,7 +473,7 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
       });
 
       if (hit) {
-        sound.playSonarPing();
+        sound.playRadioChirp();
         onSelectBuilding(hit);
       }
     }
@@ -566,11 +495,7 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
         onMouseUp={handleMouseUp}
         onClick={handleClick}
         onWheel={handleWheel}
-        className={`w-full h-full cursor-grab active:cursor-grabbing transition-all ${
-          activeTool === 'thermal'
-            ? 'filter contrast-150 saturate-200 hue-rotate-190 brightness-90'
-            : ''
-        }`}
+        className="w-full h-full cursor-grab active:cursor-grabbing transition-all"
       />
 
       {/* Offline Status Badge (Top Center-Left) */}
@@ -583,18 +508,16 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
         ) : (
           <div className="flex items-center gap-2 text-amber-400">
             <span className="w-2 h-2 rounded-full bg-amber-400" />
-            <span>ONLINE TILE MODE</span>
+            <span>ONLINE SATELLITE BASEMAP (REQUIRES INTERNET)</span>
           </div>
         )}
         <button
           onClick={onToggleOffline}
           className="ml-1 px-2 py-0.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 text-[10px] transition-colors border border-white/10"
         >
-          {isOfflineOnly ? 'Switch to Online Stream' : 'Switch to Pure Offline'}
+          {isOfflineOnly ? 'Switch to Online Satellite' : 'Switch to Pure Offline'}
         </button>
       </div>
-
-
 
       {/* Hover Tooltip when cursor over building */}
       {hoveredBuilding && (
@@ -608,18 +531,18 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
           <div className="font-bold text-white flex items-center justify-between gap-3">
             <span>{hoveredBuilding.id}: {hoveredBuilding.name}</span>
             <span className={`px-1.5 py-0.5 rounded text-[10px] uppercase font-bold ${
-              hoveredBuilding.damage === 'destroyed' ? 'bg-rose-500/20 text-rose-300' :
-              hoveredBuilding.damage === 'major-damage' ? 'bg-amber-500/20 text-amber-300' :
+              hoveredBuilding.class_name === 'destroyed' ? 'bg-rose-500/20 text-rose-300' :
+              hoveredBuilding.class_name === 'damaged' ? 'bg-amber-500/20 text-amber-300' :
               'bg-emerald-500/20 text-emerald-300'
             }`}>
-              {hoveredBuilding.ems98Grade || hoveredBuilding.damage}
+              {hoveredBuilding.class_name}
             </span>
           </div>
           <div className="text-[10px] text-slate-400">
-            {hoveredBuilding.collapseType} · {hoveredBuilding.floors} Storeys · Area: {hoveredBuilding.areaM2 || 320} m²
+            Area: {hoveredBuilding.area_px.toLocaleString()} px · Centroid: ({hoveredBuilding.centroid_x}, {hoveredBuilding.centroid_y})
           </div>
           <div className="text-[10px] text-slate-400">
-            Dist to Collapse: <strong className="text-amber-300">{hoveredBuilding.distanceToNearestDestroyedM ?? 0}m</strong> · Void: {hoveredBuilding.voidLikelihood}
+            Dist to Collapse: <strong className="text-amber-300">{hoveredBuilding.dist_to_nearest_destroyed_px !== null ? `${hoveredBuilding.dist_to_nearest_destroyed_px} px` : 'N/A'}</strong>
           </div>
         </div>
       )}
@@ -656,7 +579,7 @@ export const OfflineCanvas: React.FC<OfflineCanvasProps> = ({
       {/* Spatial HUD Badge (Bottom-Left above controls) */}
       <div className="absolute bottom-32 left-3 z-20 flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-[#121214]/90 backdrop-blur-xl border border-white/10 text-[10px] font-mono text-slate-300 shadow-2xl">
         <Compass className="w-3.5 h-3.5 text-amber-400" />
-        <span>GSD 0.3m/px · {scenario.location} ({scenario.centerLat}°N, {scenario.centerLng}°E)</span>
+        <span>0.3m/px equivalent · Illustration: not real data · Fictional Grid</span>
       </div>
     </div>
   );

@@ -2,8 +2,8 @@
 @import "leaflet/dist/leaflet.css";
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
 }
 
 html, body {
@@ -18,7 +18,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom Leaflet overrides for dark Spline aesthetic */
+/* Custom Leaflet overrides for dark aesthetic */
 .leaflet-container {
   background-color: #090a0f !important;
   font-family: inherit;
@@ -53,5 +53,5 @@ html, body {
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.25);
 }
