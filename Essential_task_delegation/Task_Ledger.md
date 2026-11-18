@@ -739,6 +739,20 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
     - V2: Destroyed IoU 0.3014, mIoU 0.5437, Building IoU 0.6306, agrees 0.8168 (xBD 0.3520, other sources 0.2546).
   - **Verdict (V1 minus V0, 10,000 redraws):** −0.0018 (95% interval −0.0072 to +0.0029; share above 0: 0.2412). **Does not pass (`passes: false`).**
 - **What it led to:** aligning crops only at grading time does not help graders that were trained on unaligned crops with a 32 px margin; step 6b on the test pairs is not needed.
+- **Why it didn't help (checked 18 Nov from `grades_aligned.csv` and `shifts.csv`, all three graders pooled):**
+  - **Alignment changed few grades, and the changes cancel.** V1 changed 3,371 of 78,525 outline grades (4.3%): 1,481 became right, 1,564 became wrong.
+  - **Shifted pairs weren't graded worse to begin with.** Agreement with the outline's main true class, V0 against V1: 0.820 and 0.819 on pairs shifted 0–2 px (277 pairs), 0.815 and 0.815 at 2–5 px (172), 0.818 and 0.817 above 5 px (90). If misalignment caused the grader's errors, the shifted pairs would score lower before alignment and rise after it. Neither happens.
+  - **The errors come from elsewhere.** V0's 14,275 wrong grades (18.2%) are mostly:
+    - SAM 3 outlines that aren't buildings, graded intact (26%);
+    - damaged buildings graded intact (20%);
+    - intact buildings graded damaged (20%);
+    - intact buildings graded "not a building" (12%).
+  - **By true class (V0):**
+    - intact: 91% graded intact;
+    - damaged: 69% damaged, 25% intact;
+    - destroyed: 65% destroyed, 19% damaged, 10% intact, 6% "not a building";
+    - SAM 3 outlines over no building: 32% graded "not a building", 51% intact.
+  - **So retraining on aligned crops is unlikely to pay.** The room is in the intact–damaged boundary, the non-building outlines, and the share of destroyed buildings graded damaged.
 
 ## 7. The 7B and distillation
 

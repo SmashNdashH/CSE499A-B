@@ -1,7 +1,0 @@
-{
- "model": "SAM 3 outlines each building on the before image, and our grader (a Siamese ResNet-18 that compares the before and after crops) labels each outline",
- "tta": false,
- "checkpoint": "grader_seed42.pth, seed 42: its saved grades (Kaggle output r16c-step5-grader-on-sam3-outlines), on SAM 3's saved outlines (e3-sam3-building-finding)",
- "notebook": "Essential_task_delegation/Champion_Task/t3-gallery-export.ipynb",
- "date": "2026-11-17"
-}

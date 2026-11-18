@@ -117,7 +117,7 @@ Every part below has been tested, but each with its own model and images. The pa
 
    - **July reads the photos better.** Two of our 7B's six photo descriptions contradict their photos (undamaged buildings called collapsed; a dry street called flooded by a "hurricane"), and it missed the sign that names the bridge.
    - **One wrong answer spreads.** Our 7B's reading of the map caused all 4 "no danger" sentences and 3 of the 6 contradictions.
-   - **Next: a quality-fix run, built and tested on Ridita's laptop, not yet run on Kaggle.** The map reading is now written by code from the grades; one more question reads each photo's sign; and every section is checked for invented contact details and for its citations. It doesn't fix the photo descriptions.
+   - **Then the quality-fix run (Ridita, 17 Nov, Kaggle, internet off; commit `aaabf5bd4`).** The map reading is now written by code from the grades; one more question reads each photo's sign; and every section is checked for invented contact details and for its citations. It passed the offline proof again. "No danger" sentences 4 → 0, made-up contact details 1 → 0, citations 11 in 1 report → 24 in 4, all real, and 19 of the 24 support their sentence fully or partly; contradictions 6 → 3; useful yes / partly / no 2 / 4 / 0 (one "yes" borderline). New problems the checks can't see: the Hospitals section copies the Shelters section, the bridge's G5 cites `[EMS98-rc-grade-1]`, the labelled map wasn't made, and the Public report says "visit our website". The photo descriptions are unchanged and now the largest known source of error.
    - [Ridita's README](Offline_RAG_KR2/README.md), "Comparison with the July Gemini reports" and "Quality-fix run"; the counts in [report_comparison/](Offline_RAG_KR2/report_comparison/results.csv).
 6. **The showcase website is built** (15–17 Nov), not deployed: section 5.
 
@@ -211,20 +211,15 @@ Every part below has been tested, but each with its own model and images. The pa
 ### Ridita
 - **Started 18 Nov: Layer 3, generated before-photos** ([Layer3_Task/Layer3_Task_Brief.md](Layer3_Task/Layer3_Task_Brief.md)). Step 0's smoke test passed all 7 checks (6,443 pairs, 5,798 training and 645 validation with 560 xBD, 1,808,111 destroyed pixels, E5's 40 leaked pairs found again, 0 new leaks, 605 clean pairs); go given for Step 0's full run and Step 1's smoke test. `abrarmohammedtanzim/disasterm3-r11-r9-checkpoints` is shared with the Kaggle group for Step 1.
 - **Done on 16 Nov:** the comparison with July's Gemini reports (section 3, item 5).
-- **Your next task, now (Abrar, 17 Nov): run the quality-fix run on Kaggle.** It's built and laptop-tested, so it's ready.
-  - **How:** the six steps in your README, "Quality-fix run", "Steps (Kaggle)": commit, pack the upload, a new version of `disasteller-offline1`, then the proof run's notebook with GPU T4 x2 and the internet **off**.
-  - **Done when:**
-    - the printed commit is the new one, not `258a4f381`;
-    - it prints "PASSED: the offline proof (internet off)";
-    - `t2_run_internet_off.zip` and the notebook are in `results/t2_quality_fix/`, unchanged.
-  - **Then measure it the same way as the comparison:** `compare_reports.py` with this run as the third set, the new rows in `hand_check.csv`, and the new citation check.
-  - **Write the result against the expectation** you wrote on 16 Nov, before the run.
-  - **Push, and tell Abrar.** It is also our second offline proof, of the new code.
+- **Done on 17 Nov: the quality-fix run,** our second offline proof (section 3, item 5). Checked on 18 Nov against your files: "PASSED", internet off, all five rules, commit `aaabf5bd4`; 24 citations, 13 supporting their sentence, 6 partly, 5 not. It is in update 5.
+- **Your questions of 18 Nov:**
+  - **Is T2 step 5 yours, and which method?** Yes, it's yours. The method: the mix (the before-and-after U-Net on xBD's images, find-then-grade on the others) leads on both the validation and the test pairs, and Abrar confirms it this week (update 5, "Next Week"). Both methods' tables have H2's columns, so write step 5 with the table file and the hot-spot file as inputs, never fixed paths. The hot spots get drawn on the chosen method's maps first; until then, test the wiring on the 7 images H2's table and T1's hot spots share.
+  - **Should you add your laptop tests to the repository?** Yes: the pretend server's five modes and the 45 small checks, in `Offline_RAG_KR2/`, with a line in your README on how to run them. Today nobody else can re-run them.
 - **T2 step 5, connecting the bridge:** `disasteller_inputs.py` isn't called by the main script yet. When you connect it:
   - **Missing must not read as zero.** Done on 17 Nov. An image that isn't in the table returns `image_not_in_table` (Aryan). Safe areas are read with the right keys, and a missing field prints "missing" (Abrar).
-  - **One method for both inputs.** The table and the hot spots must come from the same method: today H2's table and T1's hot spots share only 7 images. Wait for the method choice (section 4) for the files.
+  - **One method for both inputs.** The table and the hot spots must come from the same method: today H2's table and T1's hot spots share only 7 images.
 - **Then T2b:** the same facts and guideline search with two writers, our 7B and a small text-only model, counted by number contradictions and invented citations.
-- **The website's Reports page** shows your proof run's reports word for word, with the problems from your README's "Quality problems" list marked: 14 phrases, plus 8 notes for problems with no single phrase to mark ([reportNotes.ts](T3_Website/src/core/reportNotes.ts)). Your comparison's further findings (the two photo descriptions that contradict their photos, the hall "in the center of the region", "existing medical facilities remain unaffected", the Emergency report's "G4 and G5, respectively") aren't marked yet. Tell Abrar if any mark is wrong.
+- **The website's Reports page** shows your proof run's reports word for word, with the problems from your README's "Quality problems" list marked: 14 phrases, plus 8 notes for problems with no single phrase to mark ([reportNotes.ts](T3_Website/src/core/reportNotes.ts)). Your comparison's further findings (the two photo descriptions that contradict their photos, the hall "in the center of the region", "existing medical facilities remain unaffected", the Emergency report's "G4 and G5, respectively") aren't marked yet. You checked all 14 marks and 8 notes against the proof run on 17 Nov: all correct.
 
 ### Tamanna
 - **Your Part B result is part of the design** (section 4): grading stays with the trained grader.

@@ -1,8 +1,0 @@
-{
- "event": "midwest_flooding",
- "source": "xBD",
- "split": "validation, clean",
- "image": "midwest_flooding_00000287_post_disaster.png",
- "width": 1024,
- "height": 1024
-}

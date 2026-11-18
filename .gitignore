@@ -227,6 +227,8 @@ Essential_task_delegation/Champion_Task/T1-results/T1/maps/
 Essential_task_delegation/Champion_Task/T1-results/T1-v2/maps/
 Essential_task_delegation/Champion_Task/E3-results/E3/masks/pre_grid1/
 Essential_task_delegation/Champion_Task/E3-results/E3/masks/post_grid1/
+# The gallery export's copy of the six pairs (18 Nov): the website's public/data/ holds the same files
+Essential_task_delegation/Champion_Task/T3-gallery-export-results/gallery/
 
 # The editor's local settings and scheduler lock
 .claude/

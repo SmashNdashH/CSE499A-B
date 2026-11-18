@@ -1,8 +1,0 @@
-{
- "event": "turkey_earthquake",
- "source": "other",
- "split": "validation, clean",
- "image": "turkey_earthquake0_post_380.png",
- "width": 1024,
- "height": 1024
-}

@@ -1,9 +1,0 @@
-{
- "event": "santa_rosa_wildfire",
- "source": "xBD",
- "split": "validation, clean",
- "image": "santa_rosa_wildfire_00000058_post_disaster.png",
- "width": 1024,
- "height": 1024,
- "hero": true
-}
