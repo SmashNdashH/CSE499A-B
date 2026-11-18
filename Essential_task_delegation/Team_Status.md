@@ -209,6 +209,7 @@ Every part below has been tested, but each with its own model and images. The pa
 - **In counting work,** report count error, not only accuracy.
 
 ### Ridita
+- **Started 18 Nov: Layer 3, generated before-photos** ([Layer3_Task/Layer3_Task_Brief.md](Layer3_Task/Layer3_Task_Brief.md)). Step 0's smoke test passed all 7 checks (6,443 pairs, 5,798 training and 645 validation with 560 xBD, 1,808,111 destroyed pixels, E5's 40 leaked pairs found again, 0 new leaks, 605 clean pairs); go given for Step 0's full run and Step 1's smoke test. `abrarmohammedtanzim/disasterm3-r11-r9-checkpoints` is shared with the Kaggle group for Step 1.
 - **Done on 16 Nov:** the comparison with July's Gemini reports (section 3, item 5).
 - **Your next task, now (Abrar, 17 Nov): run the quality-fix run on Kaggle.** It's built and laptop-tested, so it's ready.
   - **How:** the six steps in your README, "Quality-fix run", "Steps (Kaggle)": commit, pack the upload, a new version of `disasteller-offline1`, then the proof run's notebook with GPU T4 x2 and the internet **off**.

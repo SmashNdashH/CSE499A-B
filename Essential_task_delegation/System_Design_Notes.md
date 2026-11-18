@@ -371,7 +371,7 @@ Real collapse trajectories (how each building fell) need structural data and sim
   - The final showcase is about 15 Dec (tentative, given 24 Oct), about 7 weeks away. T2, T3 (which Abrar builds), L0, L2 and H2c take most of that.
   - Layer 3 fits only as a side track: notebooks built for teammates to run on their GPU accounts, with exact steps. Decide in mid-November, from where L2 and the website stand.
   - **17 Nov: still open, and parked.** Abrar finishes the system work first: the damage-map method, the chain to the reports, the 3B. L2 hasn't started training yet, so the mid-November check found no room for it. It is decided later, or left as future work.
-  - **17 Nov, later: delegated as a side track.** One member, full-time, reporting every run through Abrar, under [Layer3_Task/Layer3_Task_Brief.md](Layer3_Task/Layer3_Task_Brief.md). The member is still to be named.
+  - **17 Nov, later: delegated as a side track.** One member, full-time, reporting every run through Abrar, under [Layer3_Task/Layer3_Task_Brief.md](Layer3_Task/Layer3_Task_Brief.md). *(18 Nov: Ridita started Layer 3; Step 0's smoke test passed all 7 checks, and `disasterm3-r11-r9-checkpoints` is shared with the Kaggle group for Step 1.)*
     - **The question:** can a before-photo generated from the after-photo let R11 beat R9 when the real one is missing?
     - **The rule, fixed before any training:** on the 605 clean pairs, R11 with the generated before-photo must reach R9's mIoU plus half the gap to R11 with the real one (0.5604), above noise, and beat the after-photo copied in its place.
     - **The steps:** pix2pix first, a diffusion model only on Abrar's go, and one confirmation on the test pairs.
