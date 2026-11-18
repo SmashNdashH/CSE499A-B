@@ -4,6 +4,9 @@ From Abrar, on your pushes of 9 and 10 Nov (`AeroRescue-site/` and `Project Webs
 
 **Updated 17 Nov (evening):**
 - **Thanks for removing the four wireframe images** (section 3).
+- **Your pushes later on 17 Nov fixed sections 2 and 4 and most of section 5.** I checked every number you changed against the files linked below, and they all match. Two things are left:
+  - the one line at the top of your README from section 7.4: your README now presents the site as the project's showcase, but `T3_Website/` is that now;
+  - the Gallery page's heading still says "Drag the slider to compare" above the "coming soon" note.
 - **If you want to keep working, work on my showcase website,** in `Essential_task_delegation/T3_Website/`. Section 7 says what to do and how.
 - **It replaces your prototype,** so the rest of this review's fixes to your own site are optional (section 7.4).
 - The whole project's current status, for all four of you, is in [Team_Status.md](../Team_Status.md), with your part in its section 6.

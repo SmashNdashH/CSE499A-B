@@ -1,0 +1,7 @@
+{
+ "model": "A U-Net that reads the before and after images together",
+ "tta": true,
+ "checkpoint": "AbrarAlam/disasterm3-d4-R11@31974dac",
+ "notebook": "Essential_task_delegation/Champion_Task/t3-gallery-export.ipynb",
+ "date": "2026-11-17"
+}

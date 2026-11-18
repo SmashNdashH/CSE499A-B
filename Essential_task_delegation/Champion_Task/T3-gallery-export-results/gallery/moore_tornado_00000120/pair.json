@@ -1,0 +1,8 @@
+{
+ "event": "moore_tornado",
+ "source": "xBD",
+ "split": "validation, clean",
+ "image": "moore_tornado_00000120_post_disaster.png",
+ "width": 1024,
+ "height": 1024
+}

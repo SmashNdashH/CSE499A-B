@@ -1,0 +1,8 @@
+{
+ "iou": {
+  "background": 0.9077,
+  "intact": 0.6992,
+  "damaged": 0.0888,
+  "destroyed": 0.3142
+ }
+}

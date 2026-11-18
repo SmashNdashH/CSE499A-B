@@ -177,12 +177,12 @@ Every part below has been tested, but each with its own model and images. The pa
 **In parallel:** the 3B's training runs, and the website's gallery and deploy. The showcase is around 15 Dec.
 
 ### Noman
-- **The four wireframe images are gone:** you deleted them on 17 Nov. Thanks.
+- **The four wireframe images are gone,** and your later pushes of 17 Nov fixed the numbers, names and claims in your review's sections 2 and 4, plus the README and the gallery. I checked every number against its source file: they all match. Thanks.
 - **If you want to keep working, work on the showcase website.** Section 7 of [your review](Noman_task/Review_AeroRescue_site.md) gives your part:
   - test the site where nobody has yet: Firefox, a screen reader, a real printer, and Safari if you have it;
   - write down what you find;
   - then fix what Abrar picks, agreeing with Aryan who edits which file.
-- **Your own site:** the showcase website replaces it, so the rest of your review's fixes are optional. Instead, add one line to the top of its README saying it's an early prototype whose numbers aren't kept up to date (review, section 7.4).
+- **Your own site:** the showcase website replaces it, so nothing more is needed there except one thing still missing: add one line to the top of its README saying it's an early prototype whose numbers aren't kept up to date (review, section 7.4).
 - **The roadmap suggests you on the 3B:** L2, then L3, a 4-bit 3B that passes a question to the 7B when it's unsure.
   - L2's five notebooks are built and waiting to run. They push checkpoints to Abrar's Hugging Face account, so ask Abrar before you run any.
   - L3 starts once L2 has picked its 3B.
