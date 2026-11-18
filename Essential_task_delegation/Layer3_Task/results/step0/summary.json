@@ -1,0 +1,161 @@
+{
+ "task": "Layer 3 step 0",
+ "smoke_test": false,
+ "minutes": 31.3,
+ "fingerprint_minutes": 7.8,
+ "versions": {
+  "python": "3.13.18",
+  "numpy": "2.1.3",
+  "opencv": "4.14.0",
+  "pandas": "2.3.3",
+  "scikit-learn": "1.6.1"
+ },
+ "pairs": 6443,
+ "train": 5798,
+ "val": 645,
+ "val_xbd": 560,
+ "val_destroyed_px": 1808111,
+ "clean": 605,
+ "clean_by_source": {
+  "other": 85,
+  "xBD": 520
+ },
+ "clean_turkey": 64,
+ "val_by_event": {
+  "bata_explosion": {
+   "pairs": 3,
+   "clean": 3
+  },
+  "beriut_explosion": {
+   "pairs": 4,
+   "clean": 4
+  },
+  "hawaii_wildfire": {
+   "pairs": 1,
+   "clean": 1
+  },
+  "hurricane_florence": {
+   "pairs": 57,
+   "clean": 57
+  },
+  "hurricane_harvey": {
+   "pairs": 44,
+   "clean": 44
+  },
+  "hurricane_matthew": {
+   "pairs": 25,
+   "clean": 25
+  },
+  "hurricane_michael": {
+   "pairs": 42,
+   "clean": 42
+  },
+  "kalehe_flooding": {
+   "pairs": 5,
+   "clean": 5
+  },
+  "libya_flood": {
+   "pairs": 4,
+   "clean": 4
+  },
+  "lower_puna_volcano": {
+   "pairs": 8,
+   "clean": 8
+  },
+  "midwest_flooding": {
+   "pairs": 35,
+   "clean": 35
+  },
+  "moore_tornado": {
+   "pairs": 16,
+   "clean": 16
+  },
+  "morroco_earthquake": {
+   "pairs": 3,
+   "clean": 3
+  },
+  "nepal_flooding": {
+   "pairs": 48,
+   "clean": 48
+  },
+  "palu_tsunami": {
+   "pairs": 7,
+   "clean": 7
+  },
+  "pinery_bushfire": {
+   "pairs": 40,
+   "clean": 40
+  },
+  "portugal_wildfire": {
+   "pairs": 105,
+   "clean": 105
+  },
+  "santa_rosa_wildfire": {
+   "pairs": 20,
+   "clean": 20
+  },
+  "shovi_landslide": {
+   "pairs": 1,
+   "clean": 1
+  },
+  "socal_fire": {
+   "pairs": 54,
+   "clean": 38
+  },
+  "sunda_tsunami": {
+   "pairs": 4,
+   "clean": 4
+  },
+  "turkey_earthquake": {
+   "pairs": 64,
+   "clean": 64
+  },
+  "tuscaloosa_tornado": {
+   "pairs": 23,
+   "clean": 23
+  },
+  "woolsey_fire": {
+   "pairs": 32,
+   "clean": 8
+  }
+ },
+ "photos_fingerprinted": 12886,
+ "pairs_fingerprinted": 6443,
+ "before_photo_other_size": 0,
+ "unreadable_photos": [],
+ "bad_masks": [],
+ "leaks": {
+  "counted_pairs": 40,
+  "destroyed_px": 155812,
+  "by_combination": {
+   "validation before = training before": 40
+  },
+  "e5_40_found": 40,
+  "e5_40_missing": [],
+  "new": []
+ },
+ "near_copies": {
+  "near_copy": 23,
+  "near_copy_in_e5_40": 23,
+  "review": 28,
+  "clean_pairs_with_a_near_copy": []
+ },
+ "same_picture_within_a_pair": [],
+ "thresholds": {
+  "near_dhash": 6,
+  "near_corr": 0.95,
+  "review_dhash": 10,
+  "review_corr": 0.85,
+  "dark": 0.5,
+  "flat_std": 4.0
+ },
+ "checks": {
+  "1. 6,443 pairs, each with a before-photo": "passed",
+  "2. 5,798 training and 645 validation pairs (560 xBD)": "passed",
+  "3. 1,808,111 destroyed pixels in the validation masks": "passed",
+  "4. E5's 40 leaked pairs found again": "passed",
+  "5. Nothing new leaks": "passed",
+  "6. 605 clean validation pairs": "passed",
+  "7. Every photo and every mask can be read": "passed"
+ }
+}
