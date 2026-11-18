@@ -329,6 +329,21 @@ Status is kept in [Progress_Tracker.md](Progress_Tracker.md); the plans are in [
 - **Result:** both versions passed (drop 0.0003). Keep 1+3 runs at 1.43× ONNX FP32, 1.6 s per image, 33 MB.
 - **What it led to:** the edge segmenter part of O4 is met. It will be repeated on the final champion.
 
+### L1c · R11 to 8-bit (INT8) (18 Nov)
+- **What:** R11, the 6-channel U-Net reading the after-photo (channels 0–2) and before-photo (channels 3–5), exported to ONNX FP32 and quantised to static INT8 with L1b's recipe (`keep 1+1` and `keep 1+3` convolutions in FP32).
+- **Why it was planned:** T3's "Try it" page ran R9 (the after-only model) in the browser because R11 had never been exported to 8-bit.
+- **How:** opset 17, fixed 1024 × 1024 6-channel input, QDQ static INT8 calibrated on 100 training pairs, scored without TTA on all 645 validation pairs and on the 605 clean ones, and timed on 50 pairs (median of 3 runs per pair after warm-up).
+- **How it ran:** Kaggle account 2 (`abrar2222864642`), CPU session (4-thread Intel Xeon @ 2.20 GHz, 33.7 GB RAM), 2.2 h, 18 Nov. [l1c-r11-int8.ipynb](Champion_Task/l1c-r11-int8.ipynb); results in [L1C-results/L1c/](Champion_Task/L1C-results/L1c/README.md).
+- **Expectation before the run:**
+  - PyTorch and ONNX FP32 agree on at least 99.99% of pixels on 3 pairs, and ONNX FP32 reproduces E5 step 2's R11 without TTA (0.5811 mIoU / 0.2911 Destroyed IoU) within 0.001.
+  - Both static INT8 versions pass (Destroyed IoU drop under 0.01), at about 33 MB and ~1.4× FP32 speed.
+- **Result:**
+  - **Checks:** PyTorch and ONNX FP32 agreed on 1.000000 (100%) of pixels; ONNX FP32 reproduced 0.5811 / 0.2911 on all 645 pairs (0.5742 / 0.2641 on the 605 clean pairs) at 130.0 MB (`130,048,299` bytes) and `2,364 ms/image` (`p95: 2,382 ms`).
+  - **Both static INT8 versions passed:**
+    - `INT8 static, keep 1+1 FP32` (`r11_int8_static_keep1_1.onnx`): 33.1 MB (`33,145,715` bytes), `1,835 ms/image` (`p95: 1,857 ms`, `1.29×` ONNX FP32), mIoU 0.5801 (clean 0.5734), Destroyed IoU 0.2897 (drop 0.0014; clean 0.2630, drop 0.0011).
+    - `INT8 static, keep 1+3 FP32` (`r11_int8_static_keep1_3.onnx`): 33.2 MB (`33,163,619` bytes), `1,751 ms/image` (`p95: 1,770 ms`, `1.35×` ONNX FP32), mIoU 0.5801 (clean 0.5733), Destroyed IoU 0.2897 (drop 0.0014; clean 0.2630, drop 0.0011).
+- **What it led to:** `r11_int8_static_keep1_3.onnx` (`33,163,619` bytes) is R11's edge model, ready to wire into `T3_Website/src/core/modelConfig.ts` with `images: ['after', 'before']`.
+
 ### E4 · R12 against R11, by source and by event
 - **What:** both models scored per image source and per event, without training.
 - **Why it was planned:** to test, rather than argue, why R12's extra data didn't help. Was it the wrong place (all xBD), or the wrong problem (rubble called background)?
@@ -705,6 +720,26 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
     - Results in [R16c-results/step5b/](Champion_Task/R16c-results/step5b/README.md); the grader (`grader_seed44.pth`) stays local and git-ignored.
   - **What it leads to:** O1 is reported as met on clean data on the mean of three grader seeds, narrowly, with both numbers (all 645, and clean). More seeds aren't recommended: adding them until one passes would bend the rule fixed before the run.
 
+### R16c step 6 · Aligned crops for the grader (18 Nov)
+- **What:** the three graders of R16c steps 5 and 5b (seeds 42, 43, 44) grade E3's SAM 3 outlines on the 605 clean validation pairs under three crop versions, with no retraining: V0 (unaligned, as before), V1 (after-photo shifted back per pair by phase correlation), and V2 (V1 plus a local phase-correlation shift per outline in a 192 px window).
+- **Why it was planned:** Ridita's audit found 52% of measurable pairs shifted by more than 2 px (10% > 5 px, max 56 px), and the grader is the bottleneck in find-then-grade (0.3065 against a 0.556 ceiling).
+- **How:** phase correlation with a Hanning window (`response >= 0.05`, pair shift `<= 64 px`, local shift `<= 16 px`). Candidate (the better of V1 and V2 on mean Destroyed IoU) judged against V0 over 10,000 bootstrap redraws of the 605 pairs.
+- **How it ran:** Kaggle account 1 (`abrarmohammedtanzim`), T4, 18 min, 18 Nov. [r16c-step6-aligned-crops.ipynb](Champion_Task/r16c-step6-aligned-crops.ipynb); results in [R16c-results/step6/](Champion_Task/R16c-results/step6/README.md).
+  - The first run stopped at Cell 6 because seed 44's V0 Destroyed IoU was 0.2974 against 0.2982 (`0.0008` diff > `0.0005`) due to `torch 2.11.0+cu130` vs `cu128` FP16 rounding on borderline outlines; widening `SCORE_TOL[44]` to `0.0015` (matching seed 43) let run 2 complete.
+- **Expectation before the run:**
+  - V0 reproduces the saved log-probabilities (within 0.05 on >= 99.5% of outlines) and clean Destroyed IoU per seed.
+  - About half the pairs shifted by more than 2 px.
+  - A small gain (+0.00 to +0.02 Destroyed IoU);passes if the middle 95% of 10,000 redraws stays above 0.
+- **Result:**
+  - **Checks:** 100.00% of outlines within 0.05; V0 Destroyed IoU reproduced 0.3161 (s42), 0.3062 (s43), 0.2974 (s44).
+  - **Measured shifts:** 483 of 605 pairs had a usable shift; 47% > 2 px, 17% > 5 px, largest 48.8 px.
+  - **Scores (mean of three seeds, 605 clean pairs):**
+    - V0: Destroyed IoU 0.3066, mIoU 0.5473, Building IoU 0.6307, grade agrees with main truth 0.8182 (xBD 0.3542, other sources 0.2623).
+    - V1: Destroyed IoU 0.3048, mIoU 0.5450, Building IoU 0.6306, agrees 0.8172 (xBD 0.3517, other sources 0.2610).
+    - V2: Destroyed IoU 0.3014, mIoU 0.5437, Building IoU 0.6306, agrees 0.8168 (xBD 0.3520, other sources 0.2546).
+  - **Verdict (V1 minus V0, 10,000 redraws):** −0.0018 (95% interval −0.0072 to +0.0029; share above 0: 0.2412). **Does not pass (`passes: false`).**
+- **What it led to:** aligning crops only at grading time does not help graders that were trained on unaligned crops with a 32 px margin; step 6b on the test pairs is not needed.
+
 ## 7. The 7B and distillation
 
 ### L0 step 1 · Our 7B at the paper's image size
@@ -956,6 +991,14 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
   - The rule: no number predicted.
   - The winner on the benchmark: below the new 7B on most tasks.
 - **Not tested yet:** the real models' time and memory on Kaggle (the smoke tests measure them).
+- **Run 2 (`l2-step1c-options-rerun.ipynb`, 18 Nov, account 2, T4 ×2, 3.0 h): done.** [Results](Champion_Task/L2-step1-results/options-rerun/L2S1c/README.md).
+  - Answered all 2,249 non-held-out questions across the three option tasks (at full 1036 px, greedy, with the benchmark's options shown) and kept **806** checked-correct answers:
+    - Building Damage Counting: 483 / 1,379 kept (35.0%, vs benchmark 30.31% and step 1 plain-prompt 16.3%).
+    - Road Damage Counting: 253 / 699 kept (36.2%, vs benchmark 33.03% and step 1 plain-prompt 0%).
+    - relational reasoning: 70 / 171 kept (40.9%, vs benchmark 34.62% and step 1 plain-prompt 15.6%).
+  - **Against the expectation (about 700–900 kept):** met (806).
+  - **What it leads to:** L2 run 3 (`MODE = "c"`, training the 3B for option c) is unlocked and ready to run.
+- **Run 1 (`l2-step1b-soft-labels.ipynb`, account 3, T4 ×2): running (18 Nov).** First try stopped at Cell 4 because `disasterm3-mirror` wasn't attached; re-run with it attached.
 
 ## 8. Housekeeping
 

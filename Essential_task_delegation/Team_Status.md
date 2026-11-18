@@ -1,6 +1,6 @@
-# Where the project stands (17 Nov 2026, evening)
+# Where the project stands (18 Nov 2026)
 
-From Abrar, for Noman, Aryan, Ridita and Tamanna. This puts you where I am: what the system is, every result so far, what's decided, what's still open and what comes next. It includes Aryan's and Ridita's pushes of 17 Nov. Your own part is in section 6. Every number links to the file it comes from: quote numbers from those files, not from this page.
+From Abrar, for Noman, Aryan, Ridita and Tamanna. This puts you where I am: what the system is, every result so far, what's decided, what's still open and what comes next. It includes Aryan's and Ridita's pushes of 17 Nov and Abrar's runs of 17–18 Nov. Your own part is in section 6. Every number links to the file it comes from: quote numbers from those files, not from this page.
 
 **Two things first:**
 - **Update 5 is tomorrow, Wed 18 Nov.** Section 3's results aren't in a weekly update yet. Until they are, keep them out of anything our supervisor or the public sees: the update PDFs, the README front page and any public website. Inside the team, use them freely.
@@ -62,8 +62,8 @@ Every part below has been tested, but each with its own model and images. The pa
 | Guideline search | Ridita's hybrid search | 27 of 30 test questions answered from the right section (24 were needed) | [Offline_RAG_KR2 README](Offline_RAG_KR2/README.md) |
 | Reports | DisasTeller on our 7B in a fixed flow: code calls the tools in a fixed order, and the 7B writes each section | Passed its internet-off proof run on 11 Nov: six reports, 18 guideline searches, 4 network connections, all to the model's own server on the same machine. Against July's reports written by Gemini (16 Nov): ours cite real guideline sections and invent fewer numbers, but read the photos worse, and none was judged fully useful (section 3, item 5) | [Ridita's README](Offline_RAG_KR2/README.md), "Proof run" and "Comparison with the July Gemini reports" |
 | The benchmark's six tasks | Our fine-tuned 7B, at full image size | Kind of disaster 76.77%; kinds of objects damaged 19.99%; building counting 30.31%; share of damaged road 33.03%; land-use types 40.46%; how two objects relate 34.62%. Mean 39.20% | [part A](Champion_Task/L0-step2-results/new-partA/L0S2/README.md), [part B](Champion_Task/L0-step2-results/new-partB/L0S2/README.md) |
-| Field model | The after-photo U-Net stored as 8-bit numbers | 33 MB, 1.6 s a photo on a 4-thread server CPU, destroyed IoU down only 0.0003. In a web browser it gives the same map as a native run on 100% of pixels, in about 3 to 5 s | [L1b](Champion_Task/L1B-results/L1b/README.md); [website README](T3_Website/README.md) |
-| 3B | The 3B learns from the 7B | Step 1 done: 1,146 checked answers from the 7B. Step 2's five training notebooks are built, not run | [L2 step 1](Champion_Task/L2-step1-results/new-teacher/L2S1-new-teacher/README.md) |
+| Field model | The after-photo U-Net and the before-and-after U-Net, stored as 8-bit numbers | After-photo U-Net (R9): 33 MB, 1.6 s a photo on a 4-thread server CPU, destroyed IoU down only 0.0003; in a web browser it gives the same map as a native run on 100% of pixels, in about 3 to 5 s. Before-and-after U-Net (R11, 18 Nov): 33.2 MB (`33,163,619` bytes), 1.75 s a pair (`1.35×` ONNX FP32), destroyed IoU down 0.0014 (0.0011 on the 605 clean pairs) | [L1b](Champion_Task/L1B-results/L1b/README.md); [L1c](Champion_Task/L1C-results/L1c/README.md); [website README](T3_Website/README.md) |
+| 3B | The 3B learns from the 7B | Step 1 done: 1,146 checked answers from the 7B. Step 1c (the options rerun for Mode c, 18 Nov) done: 806 kept of 2,249. Step 1b (soft labels for Mode b) is running on account 3, and Mode c's training is ready to start | [L2 step 1](Champion_Task/L2-step1-results/new-teacher/L2S1-new-teacher/README.md); [L2 step 1c](Champion_Task/L2-step1-results/options-rerun/L2S1c/README.md) |
 
 **Our four goals** (from our review report):
 
@@ -72,7 +72,7 @@ Every part below has been tested, but each with its own model and images. The pa
 | O1: a damage map with mean IoU above 0.52 and destroyed IoU above 0.30 | **Met on the clean validation pairs, narrowly,** by find-then-grade: only as the mean of its three graders (0.3065); one grader alone is at 0.2982 |
 | O2: counting above the base 7B's 34.2%, and all six tasks re-scored | Six tasks re-scored. Counting not met: 32.96% at best. And this score can't show counting ability (section 3, item 1) |
 | O3: one offline system, DisasTeller on our 7B with the damage map, counts and heatmap | The offline report run is done (11 Nov). Not one chain yet: the reports don't read our maps |
-| O4: a 3B in about 6 GB, measured against the 7B | The field segmenter is done (33 MB). The 3B: training built, not run |
+| O4: a 3B in about 6 GB, measured against the 7B | Both field segmenters are done in 8-bit (33 MB and 33.2 MB). The 3B: options rerun done (806 kept), soft labels running, training ready |
 
 ## 3. Results since update 4 (they go into update 5)
 
@@ -96,13 +96,15 @@ Every part below has been tested, but each with its own model and images. The pa
    - **Is the overall gap real? No.** Redrawing the 2,007 pairs 10,000 times, the middle 95% of the gap runs from −0.038 to +0.022: it's noise (11 Nov).
    - **But the split by event is real.** Without Turkey the U-Net leads by 0.057; on Turkey, find-then-grade leads by 0.236. The U-Net almost never finds Turkey's destroyed buildings.
    - **The grader is the weak part:** with perfect grades on SAM 3's outlines, find-then-grade would reach 0.590. "Damaged" is its weakest class.
+   - **Option (c), a mix chosen on validation and confirmed once on test (17 Nov):** C4 (the before-and-after U-Net on xBD images, find-then-grade on the other sources) leads on validation (**0.3501** destroyed IoU, 0.5881 mean IoU) and confirms once on the 2,007 test pairs (**0.4296** destroyed IoU, +0.031 over the U-Net and +0.040 over find-then-grade, both beyond noise). [The mix comparison](Champion_Task/E7-results/step2c/README.md).
+   - **Aligning each pair's crops at grading time does not help (18 Nov):** moving the after-photo back by phase correlation (47% of clean pairs shifted > 2 px, 17% > 5 px, max 48.8 px) gives 0.3048 destroyed IoU against 0.3066 unaligned (95% interval −0.0072 to +0.0029). [Results](Champion_Task/R16c-results/step6/README.md).
    - [The comparison](Champion_Task/E7-results/step2/README.md), [the resampling](Champion_Task/E7-results/step2b/README.md). Find-then-grade's building table on all the test pairs: [buildings_chain_s42.sqlite](Champion_Task/E7-results/step2/buildings_chain_s42.sqlite) (grader seed 42), in the same columns as H2's.
 3. **On validation, counting from either method's table is level:** find-then-grade 37.73% against the U-Net's 39.24% on 1,055 questions (no clear difference, p = 0.39); median count error 40% against 33%. [Results](Champion_Task/E7-results/step1/README.md).
-4. **The 3B's training is designed and built** (8 Nov). The 3B learns from the 7B in one of two ways:
-   - (b) from the 7B's probabilities for each word of the answer, not only its final answer ("soft labels");
-   - (c) from the 7B's answers with the benchmark's options shown.
+4. **The 3B's training is designed and built** (8 Nov), and **the teacher passes are running / done** (18 Nov). The 3B learns from the 7B in one of two ways:
+   - (b) from the 7B's probabilities for each word of the answer, not only its final answer ("soft labels"; running on account 3);
+   - (c) from the 7B's answers with the benchmark's options shown (done 18 Nov: **806 kept of 2,249** answered across building counting, road counting and relational reasoning, meeting the 700–900 expectation; [results](Champion_Task/L2-step1-results/options-rerun/L2S1c/README.md)).
 
-   A rule fixed before training picks the better one on 1,962 held-out questions. Five Kaggle notebooks, [l2-step1b-soft-labels.ipynb](Champion_Task/l2-step1b-soft-labels.ipynb) to [l2-step4-winner-benchmark.ipynb](Champion_Task/l2-step4-winner-benchmark.ipynb); not run yet.
+   A rule fixed before training picks the better one on 1,962 held-out questions. Five Kaggle notebooks, [l2-step1b-soft-labels.ipynb](Champion_Task/l2-step1b-soft-labels.ipynb) to [l2-step4-winner-benchmark.ipynb](Champion_Task/l2-step4-winner-benchmark.ipynb); Mode (c)'s 3B training is ready to start now.
 5. **Our six offline reports against July's six, written by Gemini with the internet on** (Ridita, 16 Nov, pushed 17 Nov). The same six photos and map; the measures and the expectation were written before anything was counted.
 
    | | July (Gemini) | Ours (7B) |
@@ -157,8 +159,10 @@ Every part below has been tested, but each with its own model and images. The pa
   - nothing loads from another site, so it runs offline at the booth;
   - distances in pixels;
   - "A model's estimate, to be checked by people on the ground." on every page.
+- **Done on 17–18 Nov:**
+  - the real gallery: Abrar's export ([T3-gallery-export-results/](Champion_Task/T3-gallery-export-results/README.md), 6 validation pairs) replaced the four stand-in pairs in `T3_Website/public/data/`;
+  - the before-and-after U-Net's 8-bit export ([L1c](Champion_Task/L1C-results/L1c/README.md), `33,163,619` bytes, `1.35×` ONNX FP32, Destroyed IoU drop 0.0014 / 0.0011 clean).
 - **Still to do:**
-  - the real gallery: Abrar's export replaces the four stand-in pairs;
   - the first deploy (Abrar);
   - a test on the booth laptop and on a phone;
   - later, a small local server for the booth that runs the guideline search and the report writer.

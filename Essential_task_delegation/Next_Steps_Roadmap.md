@@ -337,7 +337,9 @@ These apply to every task, so an agent doesn't have to rediscover them.
 - **Step 2b (11 Nov, on the PC, on Abrar's go): the gap is noise, and the models split by event.** [Results](Champion_Task/E7-results/step2b/README.md).
   - Redrawing the pairs 10,000 times: −0.038 to +0.022; redrawing the events: −0.098 to +0.089.
   - Without Turkey, R11 leads by 0.057, and that holds by event. On Turkey, the chain leads by 0.236.
-- **Next: Abrar chooses the chain** (tracker, "Needs you now"): (a) R11, (b) find-then-grade, or (c) a mix of SAM 3's outlines and R11's pixels, chosen on validation and confirmed once on test (recommended). Step 3 follows on the chosen maps.
+- **Step 2c (17 Nov, on the PC, on Abrar's go): option (c), six mixes scored on validation and confirmed once on test.** [Results](Champion_Task/E7-results/step2c/README.md), [notebook](Champion_Task/e7-step2c-mix-choice.ipynb).
+  - C4 (R11 on xBD images, find-then-grade on the other sources) leads on the 605 clean validation pairs (**0.3501** Destroyed IoU, 0.5881 mIoU) and confirms once on the 2,007 clean test pairs (**0.4296** Destroyed IoU, +0.031 over R11 and +0.040 over find-then-grade, both beyond noise in 10,000 redraws).
+- **Next: Abrar chooses the chain** (tracker, "Needs you now"): (a) R11, (b) find-then-grade, or (c) C4 (recommended). Step 3 follows on the chosen maps.
 
 ### H1 · KR2 evaluation harness: U-Net counting and counts-as-text
 - **Source:**
@@ -443,6 +445,9 @@ These apply to every task, so an agent doesn't have to rediscover them.
      - mIoU and Destroyed IoU.
 - **Outputs:** `edge_benchmark.csv`, a speed-against-accuracy plot, and `README.md` with the CPU model.
 - **Done when:** all four rows are measured on the same machine. INT8 is usable if Destroyed IoU drops by less than 0.01.
+- **Results:**
+  - **L1 and L1b (18–19 Oct, R9 after-only U-Net):** static INT8 `keep 1+3 FP32` passes (`33 MB`, `1.43×` ONNX FP32, `1.6 s/image`, Destroyed IoU drop `0.0003`; [L1B-results/L1b/](Champion_Task/L1B-results/L1b/README.md)).
+  - **L1c (18 Nov, R11 6-channel before+after U-Net):** static INT8 `keep 1+3 FP32` (`r11_int8_static_keep1_3.onnx`, `33,163,619` bytes, `33.2 MB`) passes at `1.35×` ONNX FP32 (`1,751 ms/image` vs `2,364 ms`), Destroyed IoU drop `0.0014` on all 645 and `0.0011` on the 605 clean pairs ([L1C-results/L1c/](Champion_Task/L1C-results/L1c/README.md)).
 
 ## 5. Phase B: next week, structural training runs
 
@@ -595,6 +600,7 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
     - **Step 5b, a third grader seed (44): done 27 Oct (account 1, 2.3 h).** Seed 44 scores 0.2982 on the clean pairs (0.3156 on all 645), so O1 on clean data is met on the three-seed mean only (0.3065), narrowly. Results in [R16c-results/step5b/](Champion_Task/R16c-results/step5b/README.md).
       - Its verdict rule, fixed before the run: all three seeds above 0.30 on clean data means met; otherwise met on the mean only; otherwise not met.
       - [r16c-step5b-third-grader-seed.ipynb](Champion_Task/r16c-step5b-third-grader-seed.ipynb).
+    - **Step 6, aligned crops for the grader: done 18 Nov (account 1, 18 min).** Shifting the after-photo back by phase correlation at grading time does not help the three step-5/5b graders on the 605 clean pairs: V1 (pair-aligned) scores 0.3048 Destroyed IoU and V2 (pair + local shift) 0.3014, against V0's 0.3066 (10,000 redraws of V1 minus V0: −0.0018, 95% interval −0.0072 to +0.0029, `passes: false`). Results in [R16c-results/step6/](Champion_Task/R16c-results/step6/README.md); [r16c-step6-aligned-crops.ipynb](Champion_Task/r16c-step6-aligned-crops.ipynb).
 
 ## 7. System track: in parallel, mostly no segmentation training
 
@@ -856,7 +862,7 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
   - **Reported, not deciding:** accuracy on every question; on questions whose largest option is above 20; how often each 3B picks the middle option there; count error; and the rule that never sees the image, on the same questions. (c) has also seen the benchmark's letter format on three tasks; the rule can't remove that advantage, so it's reported.
   - **Then:** only the winner is scored once on the benchmark's 10,675 optical questions, with count error and the no-image rule beside it.
   - **Estimated GPU, to be measured in each smoke test:** the 7B's soft labels about 5 h; the options rerun about 1.5 h; each training about 20 h; the held-out scoring of both 3Bs and the base 3B about 1–1.5 h; the winner's benchmark scoring about 2–3 h (revised 8 Nov, on one T4 at the 3B's image size).
-  - **Built 8 Nov, dry-run checked on the PC:** [l2-step1b-soft-labels](Champion_Task/l2-step1b-soft-labels.ipynb) (account 3), [l2-step1c-options-rerun](Champion_Task/l2-step1c-options-rerun.ipynb) (account 1), [l2-step2-train-3b](Champion_Task/l2-step2-train-3b.ipynb) (`MODE` b on account 3, c on account 1), [l2-step3-heldout-select](Champion_Task/l2-step3-heldout-select.ipynb) and [l2-step4-winner-benchmark](Champion_Task/l2-step4-winner-benchmark.ipynb) (account 2). Run steps in the tracker; details in the [ledger](Task_Ledger.md), L2 step 2.
+  - **Built 8 Nov, dry-run checked on the PC:** [l2-step1b-soft-labels](Champion_Task/l2-step1b-soft-labels.ipynb) (account 3; **running 18 Nov**), [l2-step1c-options-rerun](Champion_Task/l2-step1c-options-rerun.ipynb) (account 2; **done 18 Nov: 806 kept of 2,249 answered, [results](Champion_Task/L2-step1-results/options-rerun/L2S1c/README.md)**), [l2-step2-train-3b](Champion_Task/l2-step2-train-3b.ipynb) (`MODE` b on account 3, c ready now), [l2-step3-heldout-select](Champion_Task/l2-step3-heldout-select.ipynb) and [l2-step4-winner-benchmark](Champion_Task/l2-step4-winner-benchmark.ipynb) (account 2). Run steps in the tracker; details in the [ledger](Task_Ledger.md), L2 step 2.
 
 ### L2b · Explanations as a second skill ("why?" on request)
 - **Source:** [Paper] Distilling Step-by-Step (Hsieh et al., Findings of ACL 2023; see Paper_Audit §4.12), BDAChat (explanations are its main strength) and ImageRAG (fine-tuning with reasoning added 18 points). Decided on 19 Oct, after L2's smoke test.

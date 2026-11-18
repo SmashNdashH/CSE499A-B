@@ -1,0 +1,4 @@
+task,answered,kept,kept_%,benchmark_accuracy_%
+Building Damage Counting,1379,483,35.0,30.31
+Road Damage Counting,699,253,36.2,33.03
+relational reasoning,171,70,40.9,34.62
