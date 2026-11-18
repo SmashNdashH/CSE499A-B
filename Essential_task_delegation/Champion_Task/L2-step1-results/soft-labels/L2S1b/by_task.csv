@@ -1,0 +1,3 @@
+task,questions,answer_tokens,top1_is_label_%,mean_label_prob
+Building Damage Counting,9019,147701,86.7,0.835
+Disaster Bearing Bodies Recognition,7381,162383,90.8,0.872

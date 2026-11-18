@@ -1,0 +1,20 @@
+{
+ "task": "L2 step 1b: soft labels from the new 7B",
+ "smoke_test": false,
+ "teacher": "AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP",
+ "teacher_commit": "def8f6c81889ffb68904afdc90c3a1389697d73b",
+ "topk": 20,
+ "max_pixels": 602112,
+ "answer": "the dataset's label (training_answer)",
+ "positions": "every answer token and the end-of-answer token",
+ "questions_done": 16400,
+ "complete": false,
+ "held_out_every": 20,
+ "label_mismatches": 0,
+ "seconds_per_question": 1.035,
+ "projected_hours_all": 11.0,
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2"
+ }
+}

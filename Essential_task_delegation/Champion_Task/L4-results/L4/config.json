@@ -1,0 +1,66 @@
+{
+ "task": "L4",
+ "smoke_test": false,
+ "efficientsam3_commit": "bd0936c788fed8d51fa799437f05abd97b401b06",
+ "hf_repo": "Simon7108528/EfficientSAM3@85b05896",
+ "students": [
+  {
+   "label": "EV-M",
+   "rfilename": "efficientsam3_ft/efficientsam3_efficientvit.pt",
+   "backbone_type": "efficientvit",
+   "model_name": "b1",
+   "readme_params_m": 89.2,
+   "size_bytes": 468394477,
+   "text_encoder_type": "MobileCLIP-S0",
+   "text_context": 16,
+   "coverage": 1.0,
+   "params_m": 97.44
+  },
+  {
+   "label": "RV-M",
+   "rfilename": "efficientsam3_ft/efficientsam3_repvit.pt",
+   "backbone_type": "repvit",
+   "model_name": "m1.1",
+   "readme_params_m": 92.7,
+   "size_bytes": 482292909,
+   "text_encoder_type": "MobileCLIP-S0",
+   "text_context": 16,
+   "coverage": 1.0,
+   "params_m": 100.83
+  },
+  {
+   "label": "TV-M",
+   "rfilename": "efficientsam3_ft/efficientsam3_tinyvit.pt",
+   "backbone_type": "tinyvit",
+   "model_name": "11m",
+   "readme_params_m": 95.3,
+   "size_bytes": 492809614,
+   "text_encoder_type": "MobileCLIP-S0",
+   "text_context": 16,
+   "coverage": 1.0,
+   "params_m": 103.53
+  }
+ ],
+ "chosen_precision": {
+  "EV-M": "fp16",
+  "RV-M": "fp16",
+  "TV-M": "fp16"
+ },
+ "prompt": "building",
+ "confidence": 0.5,
+ "runs": [
+  [
+   "pre",
+   1
+  ],
+  [
+   "pre",
+   2
+  ]
+ ],
+ "min_instance_px": 10,
+ "val_pairs": 645,
+ "clean_pairs": 605,
+ "rule_bar_building_iou": 0.5905,
+ "verdict": "No EfficientSAM3 student passes L4's rule (bar >= 0.5905 on the 605 clean pairs, faster than 2.11 s/image, under 4.07 GB): the best is TV-M at pre_grid2 Building IoU 0.0541 (0.73 s/image), vs full SAM 3's 0.6302 and R9's 0.5905. Full SAM 3 stays the base-station finder and the 8-bit U-Net (L1b/L1c, 33 MB) stays the field model."
+}

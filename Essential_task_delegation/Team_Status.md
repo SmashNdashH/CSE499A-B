@@ -223,7 +223,7 @@ Every part below has been tested, but each with its own model and images. The pa
 
 ### Tamanna
 - **Your Part B result is part of the design** (section 4): grading stays with the trained grader.
-- **The roadmap suggests you on L4:** can EfficientSAM3, a smaller version of SAM 3, find buildings nearly as well, so the chain could run on a laptop? Not started, and it depends on the method choice: ask Abrar before you start.
+- **L4, once suggested for you, is done (Abrar, 18 Nov):** EfficientSAM3's three released models find almost no buildings in our satellite photos. Building IoU is 0.010–0.054 against full SAM 3's 0.6302, so SAM 3 stays the finder ([results](Champion_Task/L4-results/L4/README.md)).
 
 ## 7. Where to look
 

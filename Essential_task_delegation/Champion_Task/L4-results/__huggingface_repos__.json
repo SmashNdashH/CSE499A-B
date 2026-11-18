@@ -1,0 +1,1 @@
+{"repos": [{"repoId": "Simon7108528/EfficientSAM3", "repoType": "model", "commitHash": "85b05896928f974e308f889d7ccb2eefc069de98", "filePaths": ["efficientsam3_ft/efficientsam3_tinyvit.pt", "efficientsam3_ft/efficientsam3_efficientvit.pt", "efficientsam3_ft/efficientsam3_repvit.pt"]}]}

@@ -1,0 +1,8 @@
+student,rfilename,params_m,file_mb,ckpt_coverage,precision,t4_ms_grid1,t4_ms_grid2,peak_gpu_gb,probe_instances_grid1,iou_vs_fp32,cpu_ms_grid1,cpu_ms_grid2,error
+EV-M,efficientsam3_ft/efficientsam3_efficientvit.pt,97.44,468.4,1.0,fp32,319.9,1269.0,1.45,0,1.0,5112.3,20481.3,
+EV-M,efficientsam3_ft/efficientsam3_efficientvit.pt,97.44,468.4,1.0,fp16,144.7,588.8,1.15,0,1.0,5112.3,20481.3,
+RV-M,efficientsam3_ft/efficientsam3_repvit.pt,100.83,482.3,1.0,fp32,359.5,1438.8,1.46,0,1.0,5396.8,21704.7,
+RV-M,efficientsam3_ft/efficientsam3_repvit.pt,100.83,482.3,1.0,fp16,155.9,634.4,1.17,0,1.0,5396.8,21704.7,
+TV-M,efficientsam3_ft/efficientsam3_tinyvit.pt,103.53,492.8,1.0,fp32,402.3,1604.1,1.49,0,1.0,6273.6,24841.5,
+TV-M,efficientsam3_ft/efficientsam3_tinyvit.pt,103.53,492.8,1.0,fp16,176.9,712.6,1.19,0,1.0,6273.6,24841.5,
+SAM 3 (E3 ref),facebook/sam3 (sam3.pt),841.0,3450.0,,fp16,540.0,2110.0,4.07,11,0.9998,,,

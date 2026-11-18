@@ -891,6 +891,7 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
 - **Source:** [Paper] EfficientSAM3 (its paper reports no results yet, so we measure) and [Plan] the edge step of the SAM 3 test plan (Research_Directions §7.4).
 - **Goal:** O4 — a field-sized building finder.
 - **Build:** repeat E3's part 2 (building finding) with the smallest and medium EfficientSAM3 students. Report building IoU, milliseconds per image on a T4 and on a CPU, and memory.
+- *(18 Nov: done with the three released models instead, EV-M, RV-M and TV-M, since the repo releases no small full model. None passes. Building IoU is 0.010–0.054 on the 605 clean pairs against SAM 3's 0.6302, and a CPU takes 5–25 s per photo. Full SAM 3 stays the finder and the 8-bit U-Net the field model. Open: a 10-minute check that the setup finds objects in an ordinary photo. [Results](Champion_Task/L4-results/L4/README.md); details in the ledger.)*
 
 ## 8. Brief for an AI coding agent (copy, then paste one task under it)
 

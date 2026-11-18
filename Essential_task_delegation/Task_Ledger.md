@@ -344,6 +344,20 @@ Status is kept in [Progress_Tracker.md](Progress_Tracker.md); the plans are in [
     - `INT8 static, keep 1+3 FP32` (`r11_int8_static_keep1_3.onnx`): 33.2 MB (`33,163,619` bytes), `1,751 ms/image` (`p95: 1,770 ms`, `1.35×` ONNX FP32), mIoU 0.5801 (clean 0.5733), Destroyed IoU 0.2897 (drop 0.0014; clean 0.2630, drop 0.0011).
 - **What it led to:** `r11_int8_static_keep1_3.onnx` (`33,163,619` bytes) is R11's edge model, ready to wire into `T3_Website/src/core/modelConfig.ts` with `images: ['after', 'before']`.
 
+### L4 · EfficientSAM3 against SAM 3 as the building finder (18 Nov)
+- **What:** EfficientSAM3's three released full models, EV-M, RV-M and TV-M (EfficientViT-B1, RepViT-M1.1 and TinyViT-11M vision backbones, each with the MobileCLIP-S0 text encoder at 16 tokens), prompted with "building" on the 645 validation before-photos as in E3, whole (`pre_grid1`) and in four quarters (`pre_grid2`).
+- **Why it was planned:** full SAM 3 finds buildings best (Building IoU 0.6302 on the 605 clean pairs) but is server-sized (841M parameters, 2.11 s per photo on a T4). A field-sized finder would let find-then-grade run on a laptop (goal O4).
+- **How:** the repo's README settings, weights pinned to `Simon7108528/EfficientSAM3@85b05896`, code `SimonZeng7108/efficientsam3@bd0936c`, confidence 0.5 as in E3. Every checkpoint had to fill at least 95% of its model's parameters.
+- **How it ran:** Kaggle, T4, 18 Nov. Run 1 stopped in Cell 1: `pip install -e` isn't seen by a running kernel. Three more faults were fixed before run 2, with no result seen: students guessed from file names, a 77-token text context, and the rule's memory condition missing. [l4-efficientsam3-building-finding.ipynb](Champion_Task/l4-efficientsam3-building-finding.ipynb); results in [L4-results/L4/](Champion_Task/L4-results/L4/README.md).
+- **Expectation before the run:** the students are about 9× smaller and faster. Zero-shot aerial recall may drop a lot, likely below R9's 0.5905.
+- **Result:**
+  - **Checks:** E3's SAM 3 reference reproduced (0.6304 on all 645, 0.6302 clean); every checkpoint filled 100% of its model (97.4M, 100.8M and 103.5M parameters).
+  - **Building IoU on the 605 clean pairs:** 0.010–0.054 for the three students in both runs; the best is TV-M with quarters, at 0.0541. SAM 3 scores 0.6302.
+  - **Detections:** with no student does any photo get more than a few. 56–94% of photos got no detection at all, and the median is 0 against 20 true buildings. Where something was found, its overlap with the buildings was only 0.08–0.17, so a lower score threshold wouldn't rescue them. On the densest probe photo, every student found 0 buildings; SAM 3 found 11.
+  - **Speed:** on a T4 in fp16, 0.59–0.71 s per photo in quarters, about 3× faster than SAM 3, at 1.15–1.19 GB. On a 4-thread CPU, 5.1–6.3 s per whole photo and 20–25 s in quarters, against 1.6 s for the 8-bit U-Net.
+  - **Verdict:** no student passes the rule (Building IoU at least 0.5905, faster, lighter). The expectation's direction held, but the drop was far larger than guessed.
+- **What it led to:** full SAM 3 stays the base-station finder, and the 8-bit U-Net stays the field model. This doesn't prove EfficientSAM3 can't see buildings in satellite photos: the run had no check that our setup finds objects in an ordinary photo. A 10-minute check would settle it: the README's own example photo and prompt, plus the score distribution on 20 satellite photos.
+
 ### E4 · R12 against R11, by source and by event
 - **What:** both models scored per image source and per event, without training.
 - **Why it was planned:** to test, rather than argue, why R12's extra data didn't help. Was it the wrong place (all xBD), or the wrong problem (rubble called background)?
