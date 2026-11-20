@@ -83,6 +83,10 @@ Status is kept in [Progress_Tracker.md](Progress_Tracker.md); the plans are in [
 | 17 Nov | On the building map, a plain mouse wheel keeps scrolling the page; zooming takes Ctrl with the wheel, a pinch or the map's buttons (built so; Abrar can overrule it) | The map sits in a page that scrolls, where Aryan's prototype filled the screen. A wheel that zoomed would hold the page still whenever the pointer crossed the map | [Aryan's handover](Aryan_Task/T3_Website_Handover.md), §3.7 |
 | 17 Nov | Hiding a building's outline, and searching the buildings list, change only what is shown. Counts, answers to the fixed questions and the saved picture always use the whole building table | A count or a picture labelled as model output, with buildings quietly removed, would break the site's honest-labelling rule | [Aryan's handover](Aryan_Task/T3_Website_Handover.md), §3.7 |
 | 17 Nov | A known problem in a report that has no wrong phrase (something left out, a section that repeats another, real passage names written without brackets) is listed as a note under the report, not marked in its text | A red error mark on words that aren't wrong would say the opposite of the truth. All of Ridita's listed problems are now on the page: 14 marked phrases and 8 notes | [reportNotes.ts](T3_Website/src/core/reportNotes.ts); her [README](Offline_RAG_KR2/README.md), "Practice run 5" |
+| 19 Nov | **The 3B's GPU hours: option A, both 3Bs with one full epoch each.** (c) runs on account 1; (b) runs on accounts 2 and 3 taking turns, each session continuing from the last checkpoint on Hugging Face | It keeps the comparison the 8 Nov rule was built on. With account 1's permanent Colab boost (about 55 GPU h a week), the two 53 h trainings fit in about 7–10 days, which leaves about 2 weeks before the 15 Dec showcase. The other options were one 3B only (it loses the comparison) or both on half the data (weaker) | [l2-step2-train-3b.ipynb](Champion_Task/l2-step2-train-3b.ipynb), with step 2b's fix and the faster image lookup in place. A v2 copy was built first, then folded in on Abrar's call. The failed checkpoint is deleted on Hugging Face, so the notebook keeps its folders `b/` and `c/`, where steps 3 and 4 read the adapters |
+| 19 Nov | **L2 run 3's sessions are started by a script on your PC** (option (b) of three): [kaggle-runner/runner.ps1](Champion_Task/kaggle-runner/runner.ps1), run by Windows Task Scheduler every 15 minutes (every 3 minutes from 20 Nov, 07:05, your call, so a finished session waits at most 3 minutes for the next). Each account's Kaggle API token is stored encrypted for your Windows user, outside the project | Five sessions of about 10.5 h per 3B, on three accounts, would each need you to start it by hand. The script checks each ended session (finite losses, real updates, the step count up, the right checkpoint on Hugging Face) before it starts the next one, and stops the lane on anything unexpected. The alternatives were starting each session by hand, or a timer that lives only as long as an open editor session | Built 19 Nov and checked offline (the notebook copies it pushes differ from the notebook only in the three settings). Next: one real session as its test (mode c's smoke test, account 1), then the timer |
+| 20 Nov | **Runs started by the runner get their Hugging Face write token from a private Kaggle dataset** (option (a) of three). It's a fine-grained token that can write only to `AbrarAlam/disasterm3-qwen25vl3b-l2`, kept as the dataset `l2-hf-write-token` on each account, shared with no one | The runner's test showed that Kaggle won't give runs started from the command line the notebook's secrets ("400 Bad Request" in Cell 2). The alternatives were starting each session by hand on Kaggle's page (about 10 starts), or a changed notebook that keeps checkpoints on Kaggle instead of Hugging Face (about a day of work) | The repository re-created empty and private; the runner and the setup double-click extended and checked; the token deleted on Hugging Face when the training ends |
+| 19 Nov | **The damage map comes from option C4.** R11, our pixel model, maps the coarser xBD photos, and find-then-grade (SAM 3 outlines each building, then our grader labels it) maps the sharper photos, such as Turkey's | The only option ahead on destroyed buildings on both the 605 validation pairs (0.35) and the 2,007 unseen test pairs (0.43), by more than chance. It also passes the project's promised 0.30 on validation with room to spare. Its costs are recorded with it | E7 step 3 (the "where to search first" heatmaps on C4's maps) and Ridita's T2 step 5 (her reports read C4's building table). Every option explained in plain words: [§4, E7 step 2c](#e7-step-2c-option-c-a-mix-chosen-on-validation-run-17-nov-pc-no-gpu) |
 
 **Standing working rules** (from you, kept in memory):
 - Nothing is changed, installed or run without your go, and the decisions stay yours.
@@ -356,7 +360,24 @@ Status is kept in [Progress_Tracker.md](Progress_Tracker.md); the plans are in [
   - **Detections:** with no student does any photo get more than a few. 56–94% of photos got no detection at all, and the median is 0 against 20 true buildings. Where something was found, its overlap with the buildings was only 0.08–0.17, so a lower score threshold wouldn't rescue them. On the densest probe photo, every student found 0 buildings; SAM 3 found 11.
   - **Speed:** on a T4 in fp16, 0.59–0.71 s per photo in quarters, about 3× faster than SAM 3, at 1.15–1.19 GB. On a 4-thread CPU, 5.1–6.3 s per whole photo and 20–25 s in quarters, against 1.6 s for the 8-bit U-Net.
   - **Verdict:** no student passes the rule (Building IoU at least 0.5905, faster, lighter). The expectation's direction held, but the drop was far larger than guessed.
-- **What it led to:** full SAM 3 stays the base-station finder, and the 8-bit U-Net stays the field model. This doesn't prove EfficientSAM3 can't see buildings in satellite photos: the run had no check that our setup finds objects in an ordinary photo. A 10-minute check would settle it: the README's own example photo and prompt, plus the score distribution on 20 satellite photos.
+- **What it led to:** full SAM 3 stays the base-station finder, and the 8-bit U-Net stays the field model. This doesn't prove EfficientSAM3 can't see buildings in satellite photos: the run had no check that our setup finds objects in an ordinary photo. A 10-minute check would settle it: the README's own example photo and prompt, plus the score distribution on 20 satellite photos. *(Built the same night as L4b, [l4b-efficientsam3-sanity-check.ipynb](Champion_Task/l4b-efficientsam3-sanity-check.ipynb), and run; see below.)*
+
+### L4b · Was L4's near-zero result EfficientSAM3 or our setup? (18 Nov)
+- **What:** the three models of L4.
+  - Check A: on the repo's own example photo with "dog" and "person".
+  - Check B: on 21 satellite before-photos (L4's first 20 clean validation pairs and its probe), whole, at score thresholds 0.5, 0.3, 0.1 and 0.05, with the prompts "building", "house" and "roof".
+- **How it ran:** Kaggle T4, 18 Nov. Check 1 passed (the photos and masks equal E3's). Every checkpoint filled its model. Results in [L4b-results/L4b/](Champion_Task/L4b-results/L4b/README.md); the overlay pictures are kept local.
+- **Expectation before the run:** A passes; with "building", no model reaches Building IoU 0.10 at any threshold.
+- **Result:**
+  - **Check A:** EV-M and TV-M found the dog and the people at 0.5. RV-M found the people (0.82), but the dog only at 0.325.
+    - **By the reading fixed before the run, that makes it "setup":** the rule failed A if any model missed either object.
+    - **That rule was too strict.** The same code found both objects with two of the three models, so the setup works. RV-M is just less sure of the dog. The recorded reading stays as it came out; this note explains it.
+  - **Check B, "building":** at 0.5, IoU 0.002–0.017, as in L4. At lower thresholds it rises: TV-M 0.285 at 0.1 and 0.365 at 0.05; RV-M 0.320 at 0.1. SAM 3 scores 0.281 on the same photos at 0.5. "house" and "roof" do no better.
+  - **But the masks don't outline buildings.**
+    - The overlay of the Moore tornado photo at 0.05 shows large nested blobs over whole blocks, car parks and roads.
+    - Over the 21 photos at 0.05, the masks cover 33–42% of the area, against 15% that is building. Only 25–39% of what they mark is building.
+    - TV-M's 0.365 comes from the five dense Turkey city photos (0.600), where marking nearly everything scores well. On the 16 xBD and other photos it is 0.128.
+- **What it led to:** the models sense built-up areas weakly but don't find buildings one by one, which find-then-grade needs. L4's verdict stands: full SAM 3 stays the finder, and the 8-bit U-Net the field model. A re-run at a low threshold isn't recommended, since Building IoU would reward blanket coverage.
 
 ### E4 · R12 against R11, by source and by event
 - **What:** both models scored per image source and per event, without training.
@@ -534,7 +555,195 @@ Status is kept in [Progress_Tracker.md](Progress_Tracker.md); the plans are in [
   - **Test:** 0.4296, against 0.3984 and 0.3898. That's +0.031 over R11 (95%: +0.008 to +0.057) and +0.040 over find-then-grade (+0.027 to +0.055).
   - **Costs:** test mIoU 0.5555 against R11's 0.5721; it needs the image's source, which ground resolution could stand in for; the building table would mix blobs and outlines.
 - **Against the expectation:** C4 strongest, as guessed; C1 lower than guessed; the test score at the low end of the guess.
-- **Decision:** Abrar's, between (a), (b) and (c) = C4. Recommended: C4.
+- **Decision (19 Nov): C4, Abrar's choice,** made from the plain comparison below.
+
+#### Every option in plain words (written 19 Nov, for the decision)
+
+**What was decided.** Our system takes two satellite photos of the same place, one from before a disaster and one from after. It produces a **damage map**: a copy of the after-photo where every pixel is marked as not a building, an undamaged building, a damaged building or a destroyed building. Everything after that is built from this map: the table of buildings and their counts, the "where to search first" heatmap, the written reports for rescue teams, and the website's pictures. So the decision was which method makes the map.
+
+**The two methods.**
+- **Method 1, the pixel model (R11).** A neural network we trained ourselves, of the kind called a U-Net. It takes the before-photo and the after-photo together and marks each pixel in one go. To be more accurate, it looks at each photo 8 times, flipped and rotated, and averages its answers. It never decides where one building ends and the next begins, so two buildings that touch come out as one coloured patch.
+- **Method 2, outline first, then grade each building (find-then-grade).** Two programs in a row:
+  1. **Find:** SAM 3, a large image model made by Meta, is given the before-photo and the word "building", and draws a separate outline around every building it sees.
+  2. **Grade:** for each outlined building, a small network we trained (the grader) compares that building's patch of the before-photo with the same patch of the after-photo. It decides whether the building is undamaged, damaged or destroyed, or whether the outline isn't a building at all.
+
+  The result is a list of individual buildings, each with its own outline and its own damage label.
+
+**Why the type of photo matters.** Our photos come from two kinds of sources:
+- **xBD photos**, from an older dataset (hurricanes, wildfires, floods). They're coarser: one pixel covers about 1.25–2.8 m of ground.
+- **The other photos**, including Turkey's 2023 earthquake. They're sharper: one pixel covers about 0.3 m.
+
+Method 1 does better on the xBD photos. Method 2 does far better on Turkey, where Method 1 misses almost all the destroyed buildings.
+
+**How the scores work.**
+- **Destroyed-building score (destroyed IoU):** take every pixel that truly is a destroyed building, plus every pixel the method calls destroyed. The score is the share of those pixels where the two agree. 1.0 is perfect and 0 means no agreement. This is the project's hardest and most important number.
+- **Overall map score (mIoU):** the same calculation for all four labels, averaged.
+- **Building-finding score (building IoU):** the same calculation for "building or not", ignoring damage.
+- **Two photo sets:**
+  - the 605 validation pairs, used to choose between options;
+  - the 2,007 test pairs, which no method had seen, used once at the end to confirm the choice.
+
+  Every method scores higher on the test set, because it holds a different mix of disasters. Only the comparison within a set counts.
+
+**The options.**
+- **Option A: Method 1 on every photo.**
+  - **Gives:**
+    - the simplest system, with one model;
+    - the best overall map, and the best at finding buildings at all;
+    - the building table is already built from it;
+    - a compressed copy (33 MB) runs inside a website visitor's browser.
+  - **Costs:**
+    - it almost completely fails on Turkey;
+    - on validation its destroyed-building score is 0.27, below the 0.30 the project promised;
+    - touching buildings merge into one patch, so counts and building-by-building report lines are rough.
+- **Option B: Method 2 on every photo.**
+  - **Gives:**
+    - every building separately, with its own outline, which is what a building table and a building-by-building report need;
+    - far better on Turkey;
+    - it just passes the promised 0.30 on validation (0.31).
+  - **Costs:**
+    - clearly worse than Method 1 on all the other disasters;
+    - SAM 3 misses some buildings entirely;
+    - SAM 3 is a big model that needs a graphics card and can't run in a browser. Its smaller version, EfficientSAM3, doesn't work as a replacement (L4).
+- **Options C1, C2 and C3: both methods on the same photo,** tested on validation. In all three, SAM 3 draws the outlines first; what changes is who decides each building's damage:
+  - **C1:** Method 1 decides, by its most common label inside the outline. Score 0.21.
+  - **C2:** the grader decides only "building or not", and Method 1 decides the damage level. Score 0.21.
+  - **C3:** the two opinions are averaged, at three weightings. The best scored 0.31, no better than Method 2 alone.
+
+  All three were worse than, or no better than, one method alone.
+- **Option C4: the method chosen by the type of photo** (chosen). Method 1 maps the coarser xBD photos, and Method 2 maps the sharper ones. A real system would switch by the photo's sharpness, which satellite photos normally come labelled with; here the switch comes from the file name.
+  - **Gives:**
+    - the best destroyed-building score on both photo sets: 0.35 on validation and 0.43 on the unseen test photos;
+    - each method used only where it's strong;
+    - the promised 0.30 passed with room to spare.
+  - **Is the lead real?** The test comparison was redone 10,000 times, each on a random re-draw of the test pairs. C4 came out ahead of Option A in 99.4% of them and ahead of Option B in all of them.
+  - **Costs:**
+    - the system needs both methods installed, including the big SAM 3;
+    - the building table mixes two kinds of entries, Method 1's patches on xBD photos and separate outlines on the others;
+    - its overall map and building-finding scores are a little lower than Option A's.
+- **Options not tested:**
+  - **Show both maps:** the website could, but the table, heatmap and reports need one map.
+  - **Look for a better combination:** a new experiment, and trying many combinations on the same 605 photos risks fitting them by luck.
+  - **Wait:** the next two steps would stay blocked.
+
+**Side by side.**
+
+| | Option A (pixel model) | Option B (outline, then grade) | Option C4 (by photo type) |
+|---|---|---|---|
+| Destroyed-building score, validation | 0.27 | 0.31 | **0.35** |
+| Destroyed-building score, unseen test photos | 0.40 | 0.39 | **0.43** |
+| Overall map score, test | **0.57** | 0.51 | 0.56 |
+| Finds buildings at all, test | **0.69** | 0.54 | 0.62 |
+| Destroyed-building score on Turkey, test | 0.09 | **0.32** | **0.32** |
+| Destroyed-building score everywhere except Turkey, test | **0.47** | 0.41 | 0.46 |
+| Models needed | 1 small | 2, one of them big | all of them |
+
+Exact values: [E7-results/step2c/README.md](Champion_Task/E7-results/step2c/README.md).
+
+**What it means for the project's four goals.**
+1. **The damage map itself (O1):** the project promised an overall score above 0.52 and a destroyed-building score above 0.30 on validation. Option A misses, Option B just passes, and C4 passes clearly. C4 was picked as the best of 8 candidates on those same validation pairs, so its validation figure runs slightly high; the single test run is what makes its lead believable.
+2. **Counting buildings for the language model (O2):** separate outlines give one count per building, while Option A's patches merge neighbours.
+3. **One system that works without internet (O3):** Option A is the lightest. Options B and C4 need SAM 3 on a graphics card.
+4. **The small language model (O4):** not affected.
+
+The website's "Try it" page keeps running Method 1 in the visitor's browser, because SAM 3 is too big for a browser.
+
+**What the choice starts:**
+- E7 step 3: the "where to search first" heatmaps drawn on C4's maps (done 19 Nov, next entry);
+- Ridita's T2 step 5: her report writer reads C4's building table and heatmaps.
+
+### E7 step 3 · C4's maps, building table and hot spots on the test photos (run 19 Nov, PC, no GPU)
+- **What:** [e7-step3-c4-table-and-hot-spots.ipynb](Champion_Task/e7-step3-c4-table-and-hot-spots.ipynb); [results](Champion_Task/E7-results/step3/README.md). Built and run at Abrar's go ("go build E7 step 3"), from saved files only, on all 2,065 readable test photos (2,007 of them clean pairs with trusted true masks, E6):
+  - **C4's damage map.** On the 1,326 xBD photos (1.25–2.8 m of ground per pixel), R11's map: our U-Net that reads the before- and after-photo, with 8-view test-time augmentation, saved by E7 step 2. On the 739 sharper photos (about 0.3 m per pixel, such as Turkey's), find-then-grade: SAM 3's building outlines from E7 step 2, each painted with the class our grader gave it (grader seed 42, with the class-bias correction fixed on validation in R16c).
+  - **The building table the reports read** (`buildings_c4.sqlite`), in H2's columns plus one more, `kind`. On the sharper photos, one row per building SAM 3 outlined (`outline`). On xBD photos, one row per connected patch of R11's pixels of one class (`patch`), as H2 builds rows; a patch can hold several touching buildings.
+  - **The "where to search first" hot spots and safe areas** (`hotspots.json`): T1 v3's method and settings, unchanged, run on C4's maps.
+  - **Counting, beside:** C4's answers to the benchmark's counting questions, taken from E7 step 2's saved counts (R11's on xBD photos, seed 42's on the others).
+- **Why:** the one-chain rule (4 Nov) needs the table and the hot spots from one method on the same photos before the reports read them (T2 step 5). Until now R11's table (H2) and T1's hot spots shared only 7 photos. C4 was chosen on 19 Nov.
+- **What it improves:** O3's chain. The map, the table and the hot spots now come from one method on the same photos. On the sharper photos touching buildings are separate rows, so a report can describe each building.
+- **How, fixed before the run:** six checks.
+  1. The file-name rule gives E6's source for every test pair.
+  2. Seed 42's map, rebuilt from the outlines and grades, equals the saved one.
+  3. The scores reproduce the published ones within 0.0005.
+  4. H2's row code rebuilds E7 step 2's table exactly.
+  5. T1 v3's and the table's self-checks pass (two touching outlines stay two rows).
+  6. Ridita's report bridge, `disasteller_inputs.py`, unchanged, reads the table and the hot-spot file for one xBD photo and one other photo.
+- **Expectation, fixed before the run:**
+  - all six checks pass;
+  - on the sharper photos, 5–20% more rows than E7 step 2's table on the same photos, because touching buildings no longer merge (a guess);
+  - on the clean pairs, the hot spots' marked points within 20 px of true damage 0.70–0.85 of the time, about T1 v3's 0.736 on validation with R9's maps or more, since C4 finds more destroyed buildings on Turkey;
+  - counting within 1.5 points of R11 (32.53%) and of find-then-grade (32.7%) on E5's clean questions.
+- **Result** (54.7 min on the PC):
+  - **Checks:** all six passed. The rebuilt map matches on 99.9996% of pixels. Every score reproduced, C4 included: 0.4295 destroyed-building IoU against the published 0.4296, mIoU 0.5555, building IoU 0.6221. H2's code rebuilt E7 step 2's table on all 2,065 photos.
+  - **The table:** 125,439 rows: 57,849 outlines on the 739 sharper photos (53,953 intact, 1,310 damaged, 2,586 destroyed) and 67,590 patches on the 1,326 xBD photos.
+  - **Hot spots,** against the true masks:
+
+    | Photos | Photos (n) | Hot spots | Marked point within 20 px of true damage | Zone touches truly destroyed pixels (the same method on the true mask) |
+    |---|---|---|---|---|
+    | All clean pairs | 2,007 | 2,775 | **0.569** | 0.316 (0.486) |
+    | With destroyed buildings | 687 | 1,448 | **0.827** | 0.606 (0.721) |
+    | Without destroyed buildings | 1,320 | 1,327 | 0.287 | |
+    | T1 v3 on validation, R9's maps: all | 645 | 694 | 0.736 | 0.349 (0.466) |
+    | T1 v3 on validation: with destroyed buildings | 216 | 397 | 0.851 | 0.610 (0.732) |
+    | T1 v3 on validation: without | 429 | 297 | 0.582 | |
+
+  - **Counting** (exact McNemar on the same questions):
+
+    | | E5's clean questions | All 3,580 askable | Mean count error (buildings) | Within 20% of the true count |
+    |---|---|---|---|---|
+    | C4 | **34.89%** | **35.34%** | 12.61 | 34.3% |
+    | R11 | 32.53% | 33.02% | 13.34 | 32.3% |
+    | Find-then-grade, seed 42 | 32.70% | 32.88% | 13.58 | 30.7% |
+
+    C4 is right where R11 is wrong on 203 questions, the reverse on 120 (p < 0.0001); against seed 42, 376 to 299 (p = 0.0034). The median count error is 4 buildings for all three.
+- **Against the expectation:**
+  - **Checks:** met.
+  - **Rows: missed, +24.5%, above the 5–20% guessed.** Checked afterwards on the PC (read-only, from the two tables): the building area is the same in both (104.96 and 104.95 million px); rows under 100 px rise only from 359 to 404; 614 of the 698 photos with buildings gain rows and 2 lose; the gain is largest in dense cities (Beirut +39%, Turkey +30%, Libya +27%, Noto +26%) and smallest for Hurricane Ian (+6%). So the extra rows are touching buildings counted separately, and the guess underrated how often buildings touch in dense cities. Not settled: whether SAM 3 splits some large buildings in two, which needs true building outlines to check.
+  - **Hot spots: missed, 0.569 against 0.70–0.85.** On photos with destroyed buildings, C4's hot spots are about as good as R9's were on validation (0.827 against 0.851). The shortfall is on photos without destroyed buildings: there C4's maps make more hot spots (1.0 per photo against 0.69) and fewer land near real damage (0.287 against 0.582), mostly on xBD photos (0.307 against 0.611; 1.23 hot spots per photo against 0.77), where C4's map is R11's. Both sets have the same share of such photos (66%). So either C4's maps mark more false damage there, or those test photos hold fewer damaged buildings to land on; the saved files can't tell which, because no per-photo count of truly damaged pixels was saved.
+  - **Counting: missed in C4's favour,** by 2.36 and 2.19 points, beyond chance.
+- **What it means:**
+  - **For the reports (T2 step 5, Ridita):** the table and the hot-spot file are ready, from one method on the same photos: `E7-results/step3/buildings_c4.sqlite` and `E7-results/step3/hotspots.json`. Where `kind` is `patch` (xBD photos), a row may hold several touching buildings, so a report must say "patches" or "areas", never "buildings", for those counts.
+  - **On a photo with destroyed buildings, about 5 of 6 marked points are near real damage. On a photo without, most hot spots are false alarms.** The report text already calls them a model's estimates; it shouldn't present a hot spot on such a photo as found damage.
+  - **O2 (counting above the base 7B's 34.2%):** on the measure the review promised, C4's counts now clear the bar: 35.34% on all 3,580 askable optical counting questions, 34.89% on E5's clean ones. Three limits go with it. The answer options give the answer away (a rule that never sees the photo scores 66.98%), so accuracy can't show counting ability, and count error is reported beside it. These counts are E7 step 2's joined blobs, not the new outline rows. And C4 was chosen on destroyed-building IoU; counting played no part in the choice.
+- **Why these measures, and what else could be used:**
+  - **Marked point within 20 px of true damage** is T1's measure since 19 Oct: a team goes to the marked point, so the point matters more than the zone. The zone measure (touches truly destroyed pixels) is reported beside it, against its ceiling, the same method run on the true mask.
+  - **Rows against joined blobs** only shows that touching buildings separate. A true per-building check needs true outlines: xBD's label files have polygons, but the sharper photos' sources don't.
+  - **Counting** uses accuracy because the review promised it, with count error and the share within 20% because accuracy can't show counting ability (§7, the benchmark option check).
+  - **Not done, options:** count from the new outline rows on the sharper photos (CPU, minutes); split the hot-spot shortfall into its two causes with per-photo damaged-pixel counts from E6's masks (CPU, minutes); a stricter rule for when a photo gets hot spots at all, tuned on the validation pairs (a T1 v4, only if wanted). *(All three done 19–20 Nov, at Abrar's request: E7 step 3b, next entry.)*
+
+### E7 step 3b · Three follow-up checks on C4's outputs (run 20 Nov, PC, no GPU, 6.0 min)
+- **What:** [e7-step3b-three-checks.ipynb](Champion_Task/e7-step3b-three-checks.ipynb); [results](Champion_Task/E7-results/step3b/README.md). Built and run at Abrar's request ("do all three asap"), from saved files only. A smoke test on 40 validation and 100 test photos ran first and passed every check.
+  - **A, counting from the table's rows:** each question's count is the number of the table's rows of the asked class on that photo, then the nearest answer option, as E7 step 2 picks it.
+  - **B, why the hot spots fall short on photos without destroyed buildings:** C4's maps rebuilt for the 605 clean validation pairs, from R11's saved validation maps and SAM 3's validation outlines painted with grader seed 42. T1 v3 then runs on them, so three sets can be compared group by group: R9's maps on validation, C4's on the same validation photos, and C4's on the test photos.
+  - **C, a stricter rule for when a photo gets hot spots at all (T1 v4):** a photo gets hot spots only if its map marks at least G pixels' worth of damage (destroyed 1, damaged 0.5). G is chosen on the validation pairs as the largest grid value keeping 95% of the hits, then confirmed once on the test pairs. It passes only with at least 90% of the test hits kept and the hit share up by at least 0.05.
+- **Why:** E7 step 3's write-up left these three open (previous entry).
+- **Checks, all passed:**
+  1. The seed-42 table gives its saved counts on all 3,580 questions, and C4's xBD rows give R11's.
+  2. The rebuilt validation maps give E7 step 2c's scores exactly (R11 with TTA 0.2692 and 0.5805; C4 seed 42, 0.3574).
+  3. T1 v3's code on R9's validation maps gives T1 v3's saved results on 60 photos.
+  4. The gate's self-checks pass.
+- **Expectation, fixed before the run:**
+  - **A:** rows closer to the truth on the sharper photos (median count / truth 0.8–0.9, from 0.70), accuracy there up 1–4 points, and C4 up 0.5–1.5 points on E5's clean questions.
+  - **B:** mostly the maps (C4 below 0.45 on the same validation photos).
+  - **C:** G between 400 and 3,200 px; test hit share 0.60–0.68 with at least 90% of the hits kept.
+- **Result, against it:**
+  - **A: missed. Counting from the rows is worse:** 33.18% on E5's clean questions against 34.89% from the joined blobs (exact McNemar 84 against 144, p < 0.0001). On the sharper photos it's 26.63% against 31.27%. The median count did move to 0.84 of the truth, as guessed. By class, on the sharper photos:
+    - **intact:** 24.1% against 32.6%; the count is above the truth on 53.7% of questions, against 34.8%;
+    - **damaged:** the same (the grader rarely says damaged);
+    - **destroyed:** 38.1% against 37.7%, within chance.
+
+    **Why:** the benchmark's true count is the number of joined blobs of a class in its own masks, so touching buildings count as one (recorded in H1 V1, 19 Oct: the true masks answer 100% of the questions). Rows that separate touching buildings therefore overshoot the benchmark's count. The guess missed this known fact. So the rows count buildings one by one, as a reader expects, while the benchmark counts joined blobs. The benchmark score stays with the blobs (34.89% and 35.34%).
+  - **B: missed. It's the photos, not the maps.** On validation photos without destroyed buildings, C4's maps land hits about as often as R9's (0.565 against 0.584). On the test photos it's 0.287 with the same method. The difference is false damage on new photos:
+    - on photos with no true damage at all, C4 marks 0.75 hot spots per photo on test, against 0.35 on validation (xBD photos 0.94 against 0.36);
+    - on photos with only damaged buildings, it's 0.59 against 0.78.
+
+    The validation photos were used to choose and tune the models, so on unseen photos the same maps make about twice as many false hot spots.
+  - **C: G = 400 px, as guessed, but missed on the test:** the hit share moves from 0.569 to 0.573 (99.2% of the hits kept), far short of +0.05. **v4 doesn't pass, so T1 v3 stays.** On validation, gates large enough to matter cost hits fast (1,600 px: share 0.750 but only 86.7% of the hits kept). The amount of predicted damage doesn't separate a false alarm from real damage.
+- **What it means:**
+  - **O2's figure stays C4's joined-blob count** (35.34%, 34.89% on E5's clean questions), the same counting rule as the benchmark's own.
+  - **For the reports:** the table's rows are the right unit for describing buildings. On the sharper photos, the intact counts run above the benchmark's, because the benchmark joins touching buildings.
+  - **The hot spots' weak point is false alarms on new photos.** Every hot spot stays worded as an estimate. No simple gate fixes it; a better map on unseen photos would.
+- **Why these measures:** A uses the benchmark's own scoring (accuracy, plus count error) on the same 3,580 questions. B splits the change into two stages, so each stage changes one thing: the maps, or the photos. C was chosen on validation only and judged once on test, by a bar fixed before.
+- **What else could be used:** for A, true per-building outlines on the sharper photos would show whether the rows count real buildings better than the benchmark's blobs do; the sharper photos' sources have no such outlines. For B and C, map changes tested on validation and confirmed on test (none planned).
 
 ### R11 · Before + after images (6 channels)
 - **What:** the U-Net sees the before-image as well as the after-image.
@@ -967,6 +1176,27 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
   - **Against the expectation:** a pattern exists, so the check doesn't stop the idea, but counting can't judge an edit: an edit that nudged the model towards middle values could raise the score without improving its vision.
   - **What it leads to:** steps 2 and 3 are on hold. They need your go on a paid OpenAI key. The cleaner target is the grading habit in Tamanna's Part B (Intact for 298 of 300 buildings), scored on those 300 true buildings against the grader's 212 correct. Why not the alternatives: road damage's skew has the same option problem; a rule that shifts answer letters after the model runs is cheaper than an edit but adds no vision; and L0b (training the vision encoder) stays the planned test of whether the 7B can learn to see damage.
 
+### L0b · Can the 7B learn to see damage? Training its vision encoder on building crops (run 19 Nov, account 2)
+- **What:** [l0b-vision-encoder-crop-test.ipynb](Champion_Task/l0b-vision-encoder-crop-test.ipynb) (the run notebook, saved over the built one); [results](Champion_Task/L0b-results/L0b/README.md). Our kept 7B (`AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP`) in 4-bit, with a new LoRA adapter (rank 64, alpha 16) on its language layers (196 modules) and its vision blocks (160 modules), 206 million trainable parameters. It's trained on 1,800 building crops from training photos, 600 per class, drawn as in Tamanna's Part B (a 256 px window enlarged 2×, a red box, the same prompt). The run took 57 steps in 47.9 min on two T4s, with a peak of 9.6 GB.
+- **Why:** the 7B's vision part was kept frozen only because the DisasterM3 paper's recipe freezes it, and its weakness looks like seeing (it called 298 of Part B's 300 buildings intact). A full six-task run with the vision part trained would cost about 34 GPU hours, so this small test settles it first.
+- **Expectation, fixed before the run (roadmap L0b):** above the frozen 7B's 100 of 300, but clearly below the grader's 212, because the grader also sees the before-photo and the building's exact outline.
+- **Result:** **176 of 300** on Part B's 300 true validation buildings (100 per class, from the 605 clean pairs).
+
+  | | Intact | Damaged | Destroyed | All |
+  |---|---|---|---|---|
+  | Our grader | 92 | 54 | 66 | 212 |
+  | L0b (vision trained) | 40 | 50 | **86** | 176 |
+  | Our 7B (vision frozen) | 100 | 0 | 0 | 100 |
+  | Base 7B | 49 | 50 | 0 | 99 |
+
+  - **Against the frozen 7B:** clearly better (136 buildings only L0b gets right, 60 only the 7B; exact McNemar p < 0.0001).
+  - **Against the grader:** clearly below (47 against 83, p = 0.002). On destroyed buildings alone, L0b beats the grader (86 against 66, p = 0.0003). But it calls many intact buildings damaged (44) or destroyed (16).
+  - **Training:** the loss fell from 1.44 to about 0.2. Two of 57 steps were skipped in half precision (a NaN gradient norm), as the scaler allows, and the learning rate rose as planned.
+- **Against the expectation:** met (above 100, clearly below 212).
+- **By the rule:** the vision part learns, but the grader keeps the grading. Record that and stop: the 34-GPU-hour full run isn't needed.
+- **What could still be used:** its errors are the grader's opposite. The grader under-calls damage (35 damaged buildings called intact) and L0b over-calls it, and on destroyed buildings it's the better of the two. A second opinion on the grader's "intact" calls is a possible later test, not planned.
+- **Files:** the 805 MB adapter is only on this PC and in the Kaggle run's output; it's git-ignored, since the verdict says stop.
+
 ### L2 step 1 · Teacher answers for the 3B
 - **What:** the 7B answers 4,000 training questions, and only answers checked correct against their labels are kept.
 - **Why it was planned:** O4's distilled 3B learns from the 7B's answers.
@@ -1026,7 +1256,19 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
     - relational reasoning: 70 / 171 kept (40.9%, vs benchmark 34.62% and step 1 plain-prompt 15.6%).
   - **Against the expectation (about 700–900 kept):** met (806).
   - **What it leads to:** L2 run 3 (`MODE = "c"`, training the 3B for option c) is unlocked and ready to run.
-- **Run 1 (`l2-step1b-soft-labels.ipynb`, account 3, T4 ×2): running (18 Nov).** First try stopped at Cell 4 because `disasterm3-mirror` wasn't attached; re-run with it attached.
+- **Run 1 (`l2-step1b-soft-labels.ipynb`, account 3, T4 ×2): done 19 Nov,** all 38,271 questions in three sessions (11 h, 11 h, 2.85 h), 0 label mismatches. The first try stopped at Cell 4 because `disasterm3-mirror` wasn't attached; it was re-run with it attached.
+- **Run 3 (c), the 3B's training (account 1, 18 Nov): stopped after 16 steps with nothing learned.** Every update was skipped: `grad_norm` was NaN at every step, and `label_loss` was NaN in 13 of 16.
+- **Step 2b, the half-precision diagnostic** ([notebook](Champion_Task/l2-step2b-fp16-overflow-diagnostic.ipynb), [results](Champion_Task/L2-step2-results/fp16-diagnostic/L2S2b/README.md); account 1, 19 Nov).
+  - **What:** the run's own data, batches and loss, with 440 examples scanned layer by layer in half precision. Three fixes were then tested on the 127 overflowing and sample examples, and 8 training steps were run with the chosen one.
+  - **Why:** find the layer that overflows and the cheapest fix that doesn't change the loss, before spending about 53 GPU hours per mode.
+  - **Result:**
+    - 7 of 440 examples overflow (1.23% weighted by task; the log implied about 1.3%). All 7 start at one layer, the MLP output of the vision part's last block (`model.visual.blocks.31.mlp.down_proj`), whose outputs reach 64,352 against half precision's 65,504 limit.
+    - **(a) That one layer in full precision:** no NaN, the loss within 0.0017 of full precision, 1.74 s per example.
+    - **(b) Clamping:** no NaN, 1.75 s.
+    - **(c) Full precision everywhere:** 5.58 s, 3.2× slower.
+  - **By the rule fixed before the run:** (a). With it, 8 of 8 training steps were real updates, the learning rate moved, and `grad_norm` was 0.34–0.90.
+  - **Against the expectation:** the NaN share as expected (1–2%). The overflow is in the vision part, which was the expectation's alternative; the language model was the main guess. (a) and (b) both removed every NaN, as expected, and (c) was 3.2× slower against the expected 2–4×. The data step took 13 s instead of 33 min.
+  - **What it leads to:** the training notebook itself changed on 19 Nov, with fix (a) and the faster image lookup, for both modes. The failed checkpoint gets deleted on Hugging Face, so training starts at step 0. One epoch still takes about 53 h per mode (7.1 s per example per T4, backward pass included).
 
 ## 8. Housekeeping
 

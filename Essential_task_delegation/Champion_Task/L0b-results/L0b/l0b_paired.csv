@@ -1,0 +1,13 @@
+comparison,class,buildings,l0b_right,other_right,both_right,only_l0b_right,only_other_right,both_wrong,mcnemar_p,verdict
+l0b_vision_lora vs grader,Intact,100,40,92,37,3,55,5,0.0,l0b lower than grader
+l0b_vision_lora vs grader,Damaged,100,50,54,31,19,23,27,0.643969,not distinguishable
+l0b_vision_lora vs grader,Destroyed,100,86,66,61,25,5,9,0.000325,l0b higher
+l0b_vision_lora vs grader,all three,300,176,212,129,47,83,41,0.002024,l0b lower than grader
+l0b_vision_lora vs finetuned,Intact,100,40,100,40,0,60,0,0.0,l0b lower than finetuned
+l0b_vision_lora vs finetuned,Damaged,100,50,0,0,50,0,50,0.0,l0b higher
+l0b_vision_lora vs finetuned,Destroyed,100,86,0,0,86,0,14,0.0,l0b higher
+l0b_vision_lora vs finetuned,all three,300,176,100,40,136,60,64,0.0,l0b higher
+l0b_vision_lora vs base,Intact,100,40,49,33,7,16,44,0.09314,not distinguishable
+l0b_vision_lora vs base,Damaged,100,50,50,29,21,21,29,1.0,not distinguishable
+l0b_vision_lora vs base,Destroyed,100,86,0,0,86,0,14,0.0,l0b higher
+l0b_vision_lora vs base,all three,300,176,99,62,114,37,87,0.0,l0b higher

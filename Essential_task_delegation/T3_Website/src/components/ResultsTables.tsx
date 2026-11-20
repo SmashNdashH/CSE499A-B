@@ -62,7 +62,7 @@ export function DamageMapTable({ bare }: { bare?: boolean }) {
             <td><Num id="pair_unet_miou_clean" /></td>
           </tr>
           <tr>
-            <th scope="row">Field model, at full precision<small>a lighter U-Net that reads only the after image</small></th>
+            <th scope="row">After-photo model, at full precision<small>a lighter U-Net that reads only the after image</small></th>
             <td><Num id="field_unet_destroyed_iou_clean" /></td>
             <td><Num id="field_unet_miou_clean" /></td>
           </tr>
@@ -146,7 +146,7 @@ function FactBar({ id, max }: { id: string; max: number }) {
 const METHODS: [string, string, string, string][] = [
   ['Find-then-grade', 'SAM 3 outlines each building on the before image; our grader compares its before and after crops', 'ftg_destroyed_iou_clean', 'ftg_miou_clean'],
   ['Before-and-after model', 'a U-Net that reads both images together and labels every pixel', 'pair_unet_destroyed_iou_clean', 'pair_unet_miou_clean'],
-  ['Field model, at full precision', 'a lighter U-Net that reads only the after image', 'field_unet_destroyed_iou_clean', 'field_unet_miou_clean'],
+  ['After-photo model, at full precision', 'a lighter U-Net that reads only the after image', 'field_unet_destroyed_iou_clean', 'field_unet_miou_clean'],
 ];
 
 function IouPanel({ title, rows }: { title: string; rows: [string, string, string][] }) {
@@ -249,8 +249,8 @@ export function OtherParts() {
       )}
       {fact('field_model_size') && (
         <li>
-          <h3>The field model</h3>
-          <p><Num id="field_model_size" />, <Num id="field_model_cpu_time" /> per image on a CPU: <Num id="field_model_speedup" /> as fast as the full-precision model, for a destroyed-building IoU drop of <Num id="field_model_iou_drop" />. It reads only the after image, so it is the lighter path, not our best map.</p>
+          <h3>The after-photo model in 8 bits</h3>
+          <p><Num id="field_model_size" />, <Num id="field_model_cpu_time" /> per image on a CPU: <Num id="field_model_speedup" /> as fast as the full-precision model, for a destroyed-building IoU drop of <Num id="field_model_iou_drop" />. It reads only the after image. Try it now runs the before-and-after model in 8 bits instead (<Num id="pair_model_int8_size" />).</p>
           <Provenance id="field_model_cpu_time" />
         </li>
       )}

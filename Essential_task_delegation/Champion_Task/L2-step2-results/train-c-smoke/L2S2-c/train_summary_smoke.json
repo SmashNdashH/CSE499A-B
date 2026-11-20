@@ -1,0 +1,70 @@
+{
+ "mode": "c",
+ "smoke_test": true,
+ "examples": 16,
+ "full_examples": 53838,
+ "by_kind": {
+  "train": 53032,
+  "options": 806
+ },
+ "by_task": {
+  "Disaster Bearing Bodies Recognition": 7381,
+  "Building Damage Counting": 14332,
+  "Road Damage Counting": 7227,
+  "disaster caption": 7381,
+  "Disaster Type Recognition": 1543,
+  "disaster restoration advice": 7380,
+  "Disaster Scene Recognition": 6742,
+  "relational reasoning": 1852
+ },
+ "soft_labels": 0,
+ "teacher_answers": 1079,
+ "teacher_answers_worded_unlike_label": 772,
+ "soft_tokens_this_session": 0,
+ "misaligned_tokens_this_session": 0,
+ "global_step": 2,
+ "max_steps": 2,
+ "complete": true,
+ "resumed_from": null,
+ "longest_tokens": 1852,
+ "peak_gpu_memory_gb_process0": 5.71,
+ "step_seconds": [
+  39.3,
+  22.1
+ ],
+ "seconds_per_example": 2.76,
+ "projected_full_hours": 41.3,
+ "log_history": [
+  {
+   "loss": 1.2801342010498047,
+   "grad_norm": 0.37358376383781433,
+   "learning_rate": 0.0,
+   "label_loss": 1.2545,
+   "epoch": 0.5,
+   "step": 1
+  },
+  {
+   "loss": 1.471348762512207,
+   "grad_norm": NaN,
+   "learning_rate": 0.0002,
+   "label_loss": 1.6051,
+   "epoch": 1.0,
+   "step": 2
+  },
+  {
+   "train_runtime": 63.1984,
+   "train_samples_per_second": 0.253,
+   "train_steps_per_second": 0.032,
+   "total_flos": 530459566014464.0,
+   "train_loss": 1.3757414817810059,
+   "epoch": 1.0,
+   "step": 2
+  }
+ ],
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2",
+  "peft": "0.22.0",
+  "accelerate": "1.15.0"
+ }
+}

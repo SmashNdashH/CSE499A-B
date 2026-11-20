@@ -1,0 +1,59 @@
+{
+ "task": "E7 step 3",
+ "smoke_test": false,
+ "photos": 2065,
+ "clean_pairs_scored": 2007,
+ "table_seed": 42,
+ "bias_fixed": {
+  "42": [
+   0.0,
+   -1.75,
+   -4.0,
+   -1.25
+  ],
+  "43": [
+   0.0,
+   -1.0,
+   -4.0,
+   -2.0
+  ],
+  "44": [
+   0.0,
+   -2.0,
+   -4.0,
+   -3.5
+  ]
+ },
+ "min_area": 20,
+ "rebuild_agreement": 0.999996,
+ "t1_v3_settings": {
+  "sigma_px": 25,
+  "damaged_weight": 0.5,
+  "safe_scale_px": 200,
+  "hot_threshold": 0.05,
+  "min_spot_px": 500,
+  "point_edge_margin_px": 32,
+  "safe_min_gap_px": 150,
+  "safe_edge_margin_px": 100,
+  "point_radius_px": 20
+ },
+ "table_rows": 125439,
+ "rows_by_kind": {
+  "outline": 57849,
+  "patch": 67590
+ },
+ "more_rows_than_e7_step2_on_sharper_photos": 0.2452,
+ "expectation": {
+  "all six checks pass": true,
+  "outline rows 5-20% above E7 step 2's joined blobs on the sharper photos": "False",
+  "hot spots' points on true damage 0.70-0.85 on the clean pairs": "False",
+  "counting within 1.5 points of R11 and of seed 42 on E5's clean questions": false
+ },
+ "versions": {
+  "opencv": "5.1.0",
+  "numpy": "2.5.0",
+  "pandas": "3.0.3",
+  "python": "3.13.5"
+ },
+ "run_time_min": 54.7
+}

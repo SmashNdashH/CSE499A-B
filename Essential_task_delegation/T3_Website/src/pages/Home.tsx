@@ -6,7 +6,7 @@ import { DECISION_LINE, HeroPair, Legend, SENTENCE } from '../site/shared.tsx';
 const NEXT = [
   ['/how', 'See how it works', 'Scroll through the seven steps on one real pair of photos.'],
   ['/explore', 'Click a building', 'Every outline on the map is one row of a table, with its class, size and distances.'],
-  ['/try', 'Run it on your own image', 'The lighter field model runs inside your browser. Your image never leaves your device.'],
+  ['/try', 'Run it on your own photos', 'The before-and-after model, in 8 bits, runs inside your browser. Your photos never leave your device.'],
   ['/results', 'Check the numbers', 'Each number links to the results file it comes from.'],
 ] as const;
 

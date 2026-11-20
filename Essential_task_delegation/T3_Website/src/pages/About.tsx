@@ -8,7 +8,7 @@ const CREDITS: [string, string][] = [
   ['Qwen2.5-VL', 'the language model we fine-tuned to read disaster images and write the reports'],
   ['SAM 3', 'the model that outlines each building on the before photo in the find-then-grade method'],
   ['DisasTeller', 'the published report system we rewired to run on our own model, offline'],
-  ['ONNX Runtime Web', 'the engine that runs the field model inside the visitor\'s browser'],
+  ['ONNX Runtime Web', 'the engine that runs the 8-bit before-and-after model inside the visitor\'s browser'],
 ];
 
 export default function About() {

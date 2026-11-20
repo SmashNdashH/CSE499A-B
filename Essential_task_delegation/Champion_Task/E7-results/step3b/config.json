@@ -1,0 +1,61 @@
+{
+ "task": "E7 step 3b",
+ "smoke_test": false,
+ "questions": 3580,
+ "validation_photos": 605,
+ "test_photos": 2007,
+ "table_seed": 42,
+ "gate_grid_px": [
+  0,
+  100,
+  200,
+  400,
+  800,
+  1600,
+  3200,
+  6400,
+  12800
+ ],
+ "gate_px": 400,
+ "v4_hits_kept": 0.992,
+ "v4_gain": 0.004,
+ "v4_passes": false,
+ "paired_tests": {
+  "C4 table vs C4 blobs": {
+   "only_first_right": 84,
+   "only_second_right": 144,
+   "p": 8.556420101302991e-05
+  },
+  "C4 table vs R11": {
+   "only_first_right": 156,
+   "only_second_right": 133,
+   "p": 0.19553820736589353
+  },
+  "C4 table vs chain_s42": {
+   "only_first_right": 460,
+   "only_second_right": 443,
+   "p": 0.5944411089871864
+  },
+  "C4 table vs C4 blobs, sharper photos only": {
+   "only_first_right": 84,
+   "only_second_right": 144,
+   "p": 8.556420101302991e-05
+  }
+ },
+ "expectation": {
+  "all four checks pass": true,
+  "A: median count / truth on the sharper photos 0.8-0.9": true,
+  "A: accuracy on the sharper photos up 1-4 points": false,
+  "A: C4's accuracy on E5's clean questions up 0.5-1.5 points": false,
+  "B: mostly the maps (C4 below 0.45 on the same validation photos)": false,
+  "C: G between 400 and 3,200 px": true,
+  "C: test hit share 0.60-0.68 with at least 90% of hits kept": false
+ },
+ "run_time_min": 6.0,
+ "versions": {
+  "opencv": "5.1.0",
+  "numpy": "2.5.0",
+  "pandas": "3.0.3",
+  "python": "3.13.5"
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "mode": "b",
+ "smoke_test": false,
+ "examples": 53032,
+ "full_examples": 53032,
+ "by_kind": {
+  "train": 53032
+ },
+ "by_task": {
+  "Disaster Bearing Bodies Recognition": 7381,
+  "Building Damage Counting": 13849,
+  "Road Damage Counting": 6974,
+  "disaster caption": 7381,
+  "Disaster Type Recognition": 1543,
+  "disaster restoration advice": 7380,
+  "Disaster Scene Recognition": 6742,
+  "relational reasoning": 1782
+ },
+ "soft_labels": 38271,
+ "teacher_answers": null,
+ "teacher_answers_worded_unlike_label": null,
+ "soft_tokens_this_session": 6764,
+ "misaligned_tokens_this_session": 0,
+ "global_step": 4,
+ "max_steps": 208,
+ "complete": false,
+ "resumed_from": null,
+ "longest_tokens": 1852,
+ "peak_gpu_memory_gb_process0": 5.87,
+ "step_seconds": [
+  905.6,
+  910.0,
+  910.4,
+  895.2
+ ],
+ "seconds_per_example": 3.5,
+ "projected_full_hours": 51.5,
+ "log_history": [
+  {
+   "loss": 1.8871369361877441,
+   "grad_norm": 0.3074719309806824,
+   "learning_rate": 0.0,
+   "label_loss": 1.8537,
+   "soft_loss": 1.7059,
+   "epoch": 0.004827274098657414,
+   "step": 1
+  },
+  {
+   "loss": 1.787987232208252,
+   "grad_norm": 0.29688456654548645,
+   "learning_rate": 2.857142857142857e-05,
+   "label_loss": 1.7783,
+   "soft_loss": 1.6194,
+   "epoch": 0.009654548197314828,
+   "step": 2
+  },
+  {
+   "loss": 1.8429237604141235,
+   "grad_norm": 0.3403513729572296,
+   "learning_rate": 5.714285714285714e-05,
+   "label_loss": 1.7916,
+   "soft_loss": 1.6354,
+   "epoch": 0.014481822295972243,
+   "step": 3
+  },
+  {
+   "loss": 1.7424402236938477,
+   "grad_norm": 0.28260666131973267,
+   "learning_rate": 8.571428571428571e-05,
+   "label_loss": 1.7363,
+   "soft_loss": 1.5124,
+   "epoch": 0.019309096394629657,
+   "step": 4
+  },
+  {
+   "train_runtime": 3630.3255,
+   "train_samples_per_second": 0.281,
+   "train_steps_per_second": 0.001,
+   "total_flos": 3.356287751631667e+16,
+   "train_loss": 1.8151220381259918,
+   "epoch": 0.019309096394629657,
+   "step": 4
+  }
+ ],
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2",
+  "peft": "0.22.0",
+  "accelerate": "1.15.0"
+ }
+}

@@ -371,7 +371,7 @@ Real collapse trajectories (how each building fell) need structural data and sim
   - The final showcase is about 15 Dec (tentative, given 24 Oct), about 7 weeks away. T2, T3 (which Abrar builds), L0, L2 and H2c take most of that.
   - Layer 3 fits only as a side track: notebooks built for teammates to run on their GPU accounts, with exact steps. Decide in mid-November, from where L2 and the website stand.
   - **17 Nov: still open, and parked.** Abrar finishes the system work first: the damage-map method, the chain to the reports, the 3B. L2 hasn't started training yet, so the mid-November check found no room for it. It is decided later, or left as future work.
-  - **17 Nov, later: delegated as a side track.** One member, full-time, reporting every run through Abrar, under [Layer3_Task/Layer3_Task_Brief.md](Layer3_Task/Layer3_Task_Brief.md). *(18 Nov: Ridita started Layer 3; Step 0's smoke test passed all 7 checks, and `disasterm3-r11-r9-checkpoints` is shared with the Kaggle group for Step 1.)*
+  - **17 Nov, later: delegated as a side track.** One member, full-time, reporting every run through Abrar, under [Layer3_Task/Layer3_Task_Brief.md](Layer3_Task/Layer3_Task_Brief.md). *(18 Nov: Ridita started Layer 3; Step 0's smoke test passed all 7 checks, and `disasterm3-r11-r9-checkpoints` is shared with the Kaggle group for Step 1. 18 Nov, later: Step 0's full run passed all 7 checks ([results](Layer3_Task/results/step0/README.md)). Checked on 19 Nov, it agrees with E5's files on the validation pairs, every photo's pixel hash and the 40 leaks. Step 1's smoke test is next.)*
     - **The question:** can a before-photo generated from the after-photo let R11 beat R9 when the real one is missing?
     - **The rule, fixed before any training:** on the 605 clean pairs, R11 with the generated before-photo must reach R9's mIoU plus half the gap to R11 with the real one (0.5604), above noise, and beat the after-photo copied in its place.
     - **The steps:** pix2pix first, a diffusion model only on Abrar's go, and one confirmation on the test pairs.
@@ -379,9 +379,30 @@ Real collapse trajectories (how each building fell) need structural data and sim
 
 ## 6. The one chain, and who writes the report
 
-**Status:** the chain was agreed on 4 Nov ([roadmap §1b](Next_Steps_Roadmap.md)). The writer is still open and is tested by T2b.
+**Status:** the chain was agreed on 4 Nov ([roadmap §1b](Next_Steps_Roadmap.md)). **Its damage map was settled on 19 Nov: option C4,** Abrar's choice ([every option in plain words](Task_Ledger.md#every-option-in-plain-words-written-19-nov-for-the-decision)). The writer is still open and is tested by T2b.
 
-**The chain:** before + after photos → SAM 3 finds each building → the grader grades each one → one per-building table → fixed queries + hot spots + guideline search → the report.
+**The chain:** before + after photos → the damage map, made by the method that suits the photo:
+- on the coarser xBD-type photos (1.25–2.8 m per pixel), R11 labels every pixel;
+- on the sharper photos (about 0.3 m per pixel, such as Turkey's), SAM 3 finds each building and the grader grades it.
+
+→ one building table → fixed queries + hot spots + guideline search → the report.
+
+- **Why C4.** It's the only option ahead on destroyed buildings on both the validation pairs (0.3501) and the unseen test pairs (0.4296), by more than chance. Each method is used where it's strong: R11 outside Turkey, find-then-grade on Turkey.
+- **What C4 asks of the system:**
+  - It must know which kind of photo it has. A real system reads the ground resolution (metres per pixel) that satellite photos come labelled with. E7 step 2c used the file name.
+  - It must carry all three models: R11, SAM 3 and the grader. SAM 3 needs a graphics card. The website's "Try it" page keeps running R11 alone in the browser.
+  - The building table mixes two kinds of rows: R11's patches, where touching buildings can merge into one, and SAM 3's outlines, one building each. The table must say which kind each row is, and a report must never call a patch "one building".
+- **Built on the test photos (E7 step 3, 19 Nov):** [`E7-results/step3/`](Champion_Task/E7-results/step3/README.md).
+  - The table is `buildings_c4.sqlite`, in H2's columns plus `kind` (`outline` or `patch`), with an `images` table giving each photo's source and method. It has 125,439 rows on 2,065 photos.
+  - The hot spots are `hotspots.json`, T1 v3's method unchanged.
+  - **What it showed about the design:**
+    - Outlines separate touching buildings: 24.5% more rows than joined blobs on the sharper photos, up to 39% in dense cities.
+    - On photos with destroyed buildings, 83% of the hot spots' marked points are near real damage. On photos without, most hot spots are false alarms, so a report must call hot spots estimates and never found damage.
+    - Counting from C4's map beats either method alone (34.89% against 32.53% and 32.70%, E5's clean questions).
+  - **Two ways of counting, and which serves what (E7 step 3b, 20 Nov):**
+    - The benchmark's true count is the number of joined blobs in its masks, so touching buildings count as one. So benchmark questions are answered by counting joined blobs (34.89%). Counting the table's rows scores 33.18%, because separate rows overshoot that definition.
+    - A report describes buildings, so it uses the rows.
+  - **The hot spots' weakness is false alarms on new photos:** the same maps that do well on validation photos mark false damage on undamaged test photos about twice as often. A stricter rule for when a photo gets hot spots doesn't fix it, so T1 v3 stays and every hot spot is reported as an estimate.
 
 - **Why one chain.** Each part was tested alone. The destroyed-building target came from SAM 3 + grader, counting from R11's table, and the field model from R9, and R11's table and T1's hot spots share only 7 images. E7 scores one chain on the same images. Where §2.2 says "H2's table" and "T1", that now means this chain's table and hot spots.
 - **The guideline search (RAG) stays in the chain.** It's the part that lets a report cite official guidance with no internet. Tamanna's "Visual RAG" is a different thing: it picks image crops for the VLM, not documents, and Tamanna's Part B showed it doesn't make the 7B a grader (grader 212 of 300 right, new 7B 100).

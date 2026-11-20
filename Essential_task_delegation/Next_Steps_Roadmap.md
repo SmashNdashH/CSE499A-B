@@ -61,9 +61,9 @@ Checked on 4 Nov: R11's table and T1's hot spots share only 7 images (2,437 imag
 |---|---|---|---|
 | Find | SAM 3 with the prompt "building", on the before-photo cut into four quarters | Building IoU 0.630 with no training (E3) | It misses some buildings outright; the field needs a smaller finder (L4) |
 | Grade | R16c step 5's grader: a Siamese ResNet-18 on 128 px before and after crops, labelling each outline intact, damaged, destroyed or none | Right on 212 of 300 true buildings, against 100 and 99 for the 7Bs (Tamanna's Part B) | Most of the gap to the 0.556 ceiling is still the grader |
-| Table | One row per building, in H2's columns | H2's table works, built from R11 | Not built from this chain yet (E7) |
-| Counts | Fixed queries (H2b's decision) | 37.0% from the table against 27.0% through the VLM (Aryan's questions) | This chain's own score (E7) |
-| Hot spots | T1 v3's code on this chain's map | 73.6% of circled points near true damage, on R9's map | Re-measured on this chain's map (E7) |
+| Table | One row per building, in H2's columns | H2's table works, built from R11 | *19 Nov: built from C4 (E7 step 3): one row per SAM 3 outline on the sharper photos, one per patch of R11's pixels on xBD photos, with a `kind` column* |
+| Counts | Fixed queries (H2b's decision) | 37.0% from the table against 27.0% through the VLM (Aryan's questions) | *19 Nov: C4's counts 34.89% on E5's clean benchmark questions, ahead of R11 and find-then-grade (E7 step 3). 20 Nov: from the outline rows 33.18%, because the benchmark counts joined blobs (E7 step 3b)* |
+| Hot spots | T1 v3's code on this chain's map | 73.6% of circled points near true damage, on R9's map | *19 Nov, on C4's test maps: 0.569 overall, 0.827 on photos with destroyed buildings (E7 step 3). 20 Nov: the shortfall is false alarms on unseen photos, and a stricter rule doesn't fix it (E7 step 3b)* |
 | Guideline search (RAG) | Ridita's hybrid search, returning cited sections | 27 of 30 on its retrieval test | Not yet used in a full report by the real 7B (T2) |
 | Writer | The new 7B, as O3 promises | Answers questions in one sentence (L2's smoke test) | T2b tests a small text model against it |
 | Flow | CrewAI's four agents as built, or a fixed flow where code calls the tools and the model only writes | CrewAI's agents failed with our 7B in runs 2–4 (a loop past the token limit; one-sentence reports; a repeated tool call saved as the report). The fixed flow passed run 5 and the internet-off proof run (11 Nov) | **Decided 10 Nov (Ridita, by her rule written before run 4): the fixed flow.** Next: the comparison with July's Gemini reports ([System_Design_Notes §1](System_Design_Notes.md)). *(17 Nov: done by Ridita on 16 Nov; next, her quality-fix run.)* |
@@ -339,7 +339,17 @@ These apply to every task, so an agent doesn't have to rediscover them.
   - Without Turkey, R11 leads by 0.057, and that holds by event. On Turkey, the chain leads by 0.236.
 - **Step 2c (17 Nov, on the PC, on Abrar's go): option (c), six mixes scored on validation and confirmed once on test.** [Results](Champion_Task/E7-results/step2c/README.md), [notebook](Champion_Task/e7-step2c-mix-choice.ipynb).
   - C4 (R11 on xBD images, find-then-grade on the other sources) leads on the 605 clean validation pairs (**0.3501** Destroyed IoU, 0.5881 mIoU) and confirms once on the 2,007 clean test pairs (**0.4296** Destroyed IoU, +0.031 over R11 and +0.040 over find-then-grade, both beyond noise in 10,000 redraws).
-- **Next: Abrar chooses the chain** (tracker, "Needs you now"): (a) R11, (b) find-then-grade, or (c) C4 (recommended). Step 3 follows on the chosen maps.
+- **19 Nov: Abrar chose C4.** R11 maps the coarser xBD photos, and find-then-grade maps the sharper ones (Turkey and the rest). Every option is explained in plain words in [the ledger](Task_Ledger.md#every-option-in-plain-words-written-19-nov-for-the-decision).
+- **Step 3 done (19 Nov, on the PC, 54.7 min): C4's maps, building table and hot spots on all 2,065 test photos.** [Results](Champion_Task/E7-results/step3/README.md), [notebook](Champion_Task/e7-step3-c4-table-and-hot-spots.ipynb); expectation against result in [the ledger](Task_Ledger.md).
+  - All six checks passed; C4's test scores reproduce (0.4295 destroyed-building IoU against 0.4296).
+  - **Table:** 125,439 rows. On the sharper photos, 57,849 outlines, 24.5% more rows than E7 step 2's joined blobs (touching buildings separated; expected 5–20%). On xBD photos, 67,590 patches of R11's pixels.
+  - **Hot spots:** marked points within 20 px of real damage 0.569 on the 2,007 clean pairs (expected 0.70–0.85: missed), but 0.827 on the 687 photos with destroyed buildings (T1 v3 on validation: 0.851). The shortfall is on photos without destroyed buildings.
+  - **Counting, beside:** C4 34.89% on E5's clean questions, against R11's 32.53% and find-then-grade's 32.70%, beyond chance (p < 0.0001 and 0.0034); 35.34% on all 3,580, above O2's 34.2% bar, with the option flaw stated beside it.
+- **Next: Ridita's T2 step 5** reads `E7-results/step3/buildings_c4.sqlite` and `hotspots.json`. Optional checks on the PC (Abrar's call): counting from the outline rows; the hot-spot shortfall's cause; a stricter hot-spot rule tuned on validation.
+- **Step 3b done (20 Nov, PC, 6.0 min, at Abrar's request): the three optional checks; every guess missed.** [Results](Champion_Task/E7-results/step3b/README.md).
+  - **Counting from the rows:** 33.18% against the joined blobs' 34.89% (p < 0.0001). The benchmark's true count joins touching buildings, so separate rows overshoot it. O2's figure stays the blobs'.
+  - **The hot-spot shortfall:** from the unseen test photos, not the maps (C4 0.565 against R9's 0.584 on the same validation photos).
+  - **A stricter hot-spot rule (T1 v4):** test hit share 0.569 → 0.573, short of +0.05, so T1 v3 stays.
 
 ### H1 · KR2 evaluation harness: U-Net counting and counts-as-text
 - **Source:**
@@ -695,7 +705,7 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
      - **Done 27 Oct (Ridita), checked 28 Oct: passed, 27 of 30** (meaning alone 20, keywords alone 25, so the hybrid stays). The Kaggle path gives the same top 3 on all 30, and a Kaggle run with the internet off found everything it needed.
   5. Feed the agents per-building facts (H2) and hot spots (T1) as text.
      - *(4 Nov: Ridita's `disasteller_inputs.py` loads both, but the main script doesn't call it yet. Two things to change when it's connected:*
-       - *Read the chain's table and hot spots (§1b, E7). Today's two files share only 7 images.*
+       - *Read the chain's table and hot spots (§1b, E7). Today's two files share only 7 images. (19 Nov: ready, E7 step 3's `buildings_c4.sqlite` and `hotspots.json`, both from C4 on the 2,065 test photos. On xBD photos a row is a patch that can hold several buildings.)*
        - *An image missing from the table returns all zeros with status "ok", so a report could state "0 buildings". Missing data must stop the run or be stated as missing.)*
   6. Offline by default: no web tools and no "search the internet" wording unless an online switch is turned on, and new offline wording for tasks 3–6. Details and the test rule: [System_Design_Notes.md §2](System_Design_Notes.md) (recommended 24 Oct). **Done 27 Oct (Ridita) in the copy, checked 28 Oct:** offline, the web tools aren't imported or given to any agent, and CrewAI's telemetry is off. *(4 Nov: steps 1–3 are built too, on the new 7B through local vLLM. A laptop run against a stand-in server passed; Kaggle practice run 2 is next. Steps 5 and 7 are left.)*
   7. Consistency check (added 26 Oct, after TimeSpot's consistency-violation rates; [Paper_Audit §4.15](Paper_Audit_and_Integration_Plan.md)): every number in each report is compared with the fixed queries on H2's table, and the run passes only with zero contradictions.
@@ -840,6 +850,9 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
   - Training only the last vision blocks: fewer settings, and worth trying if memory runs out.
   - A different vision encoder: a much bigger change, so it waits for this result.
 - **Done when:** the 300-building result is reported against the rule, whichever way it goes.
+- **Done 19 Nov (account 2): 176 of 300, against 100 for the frozen 7B and 212 for the grader** ([results](Champion_Task/L0b-results/L0b/README.md)).
+  - By the rule, the vision part learns but the grader keeps the grading. So it stops, and the full run isn't needed.
+  - Expectation met. On destroyed buildings alone it beats the grader (86 against 66).
 
 ### L2 · 7B → 3B distillation
 - **Source:** [Plan] CSE499A future work and KR4; [Paper] QLoRA (we already use it via Unsloth).
@@ -862,6 +875,16 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
   - **Reported, not deciding:** accuracy on every question; on questions whose largest option is above 20; how often each 3B picks the middle option there; count error; and the rule that never sees the image, on the same questions. (c) has also seen the benchmark's letter format on three tasks; the rule can't remove that advantage, so it's reported.
   - **Then:** only the winner is scored once on the benchmark's 10,675 optical questions, with count error and the no-image rule beside it.
   - **Estimated GPU, to be measured in each smoke test:** the 7B's soft labels about 5 h; the options rerun about 1.5 h; each training about 20 h; the held-out scoring of both 3Bs and the base 3B about 1–1.5 h; the winner's benchmark scoring about 2–3 h (revised 8 Nov, on one T4 at the 3B's image size).
+    - **Measured (19 Nov):**
+      - the soft labels took 24.9 h for the 38,271, in three sessions (done 19 Nov);
+      - the options rerun took 3.0 h;
+      - (c)'s training ran at 912 s per step of 256, so about 53 h per epoch, and its updates were all skipped (NaN in half precision). Step 2b (`l2-step2b-fp16-overflow-diagnostic.ipynb`) picks the fix and re-measures the time per example.
+      - **Step 2b (19 Nov):**
+        - the overflow is in one vision layer (`model.visual.blocks.31.mlp.down_proj`), on 1.23% of examples;
+        - keeping it in full precision fixes it at no cost;
+        - the forward pass is 1.74 s per example, so the epoch stays about 53 h per mode with the backward pass.
+      - **19 Nov: option A (Abrar's decision).** Both 3Bs get one full epoch from `l2-step2-train-3b.ipynb`, which carries step 2b's fix since 19 Nov: (c) on account 1, which has about 55 GPU h a week with its Colab boost, and (b) on accounts 2 and 3, taking turns. Both should be done by about 29 Nov; then the held-out choice and the benchmark take about 4.5 h.
+      - **19 Nov (later): the sessions are started by a script on Abrar's PC** ([kaggle-runner/runner.ps1](Champion_Task/kaggle-runner/runner.ps1), Windows Task Scheduler every 15 minutes, Abrar's option (b)). It checks each ended session before it starts the next: finite losses, real updates, steps up from the right checkpoint, that checkpoint on Hugging Face. It stops a mode on anything unexpected. The 3B's Hugging Face repository is already gone, so both modes start fresh. It starts with one real test session: (c)'s smoke test on account 1. *(19 Nov, 22:53: the test stopped in Cell 2, because a run started from the command line can't read Kaggle's `HF_TOKEN` secret. How such runs get a write token is Abrar's choice; the options are in the tracker, "Needs you now", item 0.)* *(20 Nov: a fine-grained token limited to that one repository, kept as a private dataset on each account. The test passed. Since 05:35 the timer runs both, every 3 minutes from 07:05. Both 1-hour trial sessions passed with every step a real update; at full-size steps it's 3.4–3.5 s per example, so about 51 h per 3B. Both should finish around 22 Nov.)*
   - **Built 8 Nov, dry-run checked on the PC:** [l2-step1b-soft-labels](Champion_Task/l2-step1b-soft-labels.ipynb) (account 3; **running 18 Nov**), [l2-step1c-options-rerun](Champion_Task/l2-step1c-options-rerun.ipynb) (account 2; **done 18 Nov: 806 kept of 2,249 answered, [results](Champion_Task/L2-step1-results/options-rerun/L2S1c/README.md)**), [l2-step2-train-3b](Champion_Task/l2-step2-train-3b.ipynb) (`MODE` b on account 3, c ready now), [l2-step3-heldout-select](Champion_Task/l2-step3-heldout-select.ipynb) and [l2-step4-winner-benchmark](Champion_Task/l2-step4-winner-benchmark.ipynb) (account 2). Run steps in the tracker; details in the [ledger](Task_Ledger.md), L2 step 2.
 
 ### L2b · Explanations as a second skill ("why?" on request)
@@ -891,7 +914,7 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
 - **Source:** [Paper] EfficientSAM3 (its paper reports no results yet, so we measure) and [Plan] the edge step of the SAM 3 test plan (Research_Directions §7.4).
 - **Goal:** O4 — a field-sized building finder.
 - **Build:** repeat E3's part 2 (building finding) with the smallest and medium EfficientSAM3 students. Report building IoU, milliseconds per image on a T4 and on a CPU, and memory.
-- *(18 Nov: done with the three released models instead, EV-M, RV-M and TV-M, since the repo releases no small full model. None passes. Building IoU is 0.010–0.054 on the 605 clean pairs against SAM 3's 0.6302, and a CPU takes 5–25 s per photo. Full SAM 3 stays the finder and the 8-bit U-Net the field model. Open: a 10-minute check that the setup finds objects in an ordinary photo. [Results](Champion_Task/L4-results/L4/README.md); details in the ledger.)*
+- *(18 Nov: done with the three released models instead, EV-M, RV-M and TV-M, since the repo releases no small full model. None passes. Building IoU is 0.010–0.054 on the 605 clean pairs against SAM 3's 0.6302, and a CPU takes 5–25 s per photo. Full SAM 3 stays the finder and the 8-bit U-Net the field model. Open: a 10-minute check that the setup finds objects in an ordinary photo, built as L4b ([l4b-efficientsam3-sanity-check.ipynb](Champion_Task/l4b-efficientsam3-sanity-check.ipynb)). [Results](Champion_Task/L4-results/L4/README.md); details in the ledger.)*
 
 ## 8. Brief for an AI coding agent (copy, then paste one task under it)
 
@@ -929,7 +952,7 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
 | G3 | E3 | SAM 3 at least as good as R9 at finding buildings on pre-images: it does R16's finding |
 | G4 | H1 | V1 above 34.2% on BDC means the counting half of KR2 is met; V2 is kept only if no other task drops by more than 1 point |
 | G5 | R15 + R15s7 | Gate claim only with two seeds above 0.30, or a two-seed mean above 0.30, with TTA stated if used |
-| G6 | E7 | SAM 3 + grader stays the chain if its destroyed-building IoU beats R11's on the clean test pairs and its counting isn't clearly below R11's. If only counting is clearly below, Abrar decides. If the destroyed score isn't above, the choice of chain reopens. **11 Nov: not above (0.3898 against 0.3984; noise by step 2b), so the choice reopens** |
+| G6 | E7 | SAM 3 + grader stays the chain if its destroyed-building IoU beats R11's on the clean test pairs and its counting isn't clearly below R11's. If only counting is clearly below, Abrar decides. If the destroyed score isn't above, the choice of chain reopens. **11 Nov: not above (0.3898 against 0.3984; noise by step 2b), so the choice reopens.** **19 Nov: Abrar chose C4** (step 2c's mix: R11 on xBD photos, find-then-grade on the others; 0.4296 on test, ahead of both beyond noise) |
 | G7 | T2b | A small text model replaces the 7B as the writer only with no more contradictions, no more fake citations and at least as many finished reports, and with the supervisor's agreement |
 
 ## 10. GPU budget (approximate)

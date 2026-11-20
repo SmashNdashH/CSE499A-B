@@ -7,6 +7,8 @@
 > **Status, 26 Oct:**
 > - Since this was written, lever 1 (before + after input, R11) and find-then-grade with SAM 3 (§7, R16c) passed the gate on all 645 validation images.
 > - E5 then found leaked validation pairs, Without the 40 leaked pairs, R16c steps 2 and 3 score 0.2838–0.2980, so their claim doesn't hold on clean data. Only R16c step 5's SAM 3-only map passes there (0.3161 and 0.3051), narrowly (26 Oct); with a third grader seed (0.2982), on the three-seed mean only (0.3065, 28 Oct).
+> - **19 Nov:** the damage map is C4, a mix of both levers: R11 (lever 1) on xBD photos, SAM 3 + grader (§7) on the sharper photos. It scores 0.3501 on the clean validation pairs and 0.4296 once on the unseen test pairs. On the test photos, its table and hot spots exist (E7 step 3), and counting from its map reaches 35.34%, above S4's 34.2% bar on accuracy, with the option flaw stated beside it.
+> - **19 Nov, L0b:** training the 7B's vision encoder (LoRA on its vision blocks) on 1,800 building crops lifts it from 100 to 176 of Part B's 300 buildings. That's still clearly below the 45 MB grader's 212, so the grader keeps the grading.
 > - The current status is in [Progress_Tracker.md](Progress_Tracker.md).
 
 **Related docs:** [Segmentation_Model_Explained.md](Segmentation_Model_Explained.md) (how our U-Net and dataset work) · [segmentation_improvement_guide.md](Archive/segmentation_improvement_guide.md) (Tiers 1–6; archived) · [team_task_assignments.md](Archive/team_task_assignments.md) (Phase Gate, Task D5; archived) · [Ablation_Study_Reference_and_QA_Prep.md](Ablation_Study_Reference_and_QA_Prep.md) (verified sprint numbers and errata).

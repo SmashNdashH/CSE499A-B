@@ -29,7 +29,8 @@ export interface OwnImage {
   pair: PairEntry;
   buildings: Building[];
   hotspots: HotSpots;
-  urls: { after: string; heat: string };
+  /** `before` is set when the model read a before-photo too: the map then has the before/after slider. */
+  urls: { after: string; before?: string; heat: string };
 }
 
 export function Workspace({ palette, ticks, sweep, own }: WorkspaceProps) {

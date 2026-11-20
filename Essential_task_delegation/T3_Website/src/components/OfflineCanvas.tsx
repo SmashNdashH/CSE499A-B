@@ -53,7 +53,7 @@ interface OfflineCanvasProps {
    * For a picture that isn't in the gallery (the visitor's own): where to read the after photo and
    * the heatmap (one channel, value x 255) instead of the gallery's files.
    */
-  urls?: { after: string; heat: string };
+  urls?: { after: string; before?: string; heat: string };
   label: string;
 }
 
@@ -303,7 +303,7 @@ export function OfflineCanvas({ pair, methodId, buildings, hotspots, palette, la
           </defs>
           <rect className="oc-ground" width={w} height={h} />
           <g className="oc-photos">
-            {pair.has_before && <image href={pairUrl(pair.id, 'before.webp')} width={w} height={h} preserveAspectRatio="none" />}
+            {pair.has_before && <image href={urls?.before ?? pairUrl(pair.id, 'before.webp')} width={w} height={h} preserveAspectRatio="none" />}
             {pair.has_after && <image href={urls?.after ?? pairUrl(pair.id, 'after.webp')} width={w} height={h} preserveAspectRatio="none" clipPath={hasPair ? `url(#${uid}-after)` : undefined} />}
           </g>
           {layers.truth && truthUrl && <image href={truthUrl} width={w} height={h} preserveAspectRatio="none" className="oc-truth" />}

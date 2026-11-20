@@ -8,7 +8,7 @@ export function Limitations() {
   return (
     <ul className="limits">
       <li>
-        <b>The parts don't run as one chain yet.</b> Each was tested on its own, with its own model and images: the best destroyed-building score is find-then-grade's, the counts come from the before-and-after model's table, and the field model reads only the after image. On the gallery pairs alone, the map, table, counts and heatmap come from one model.
+        <b>The parts don't run as one chain yet.</b> Each was tested on its own, with its own model and images: the best destroyed-building score is find-then-grade's, the counts come from the before-and-after model's table, and Try it runs that model in 8 bits, without the 8 flipped and rotated views. On the gallery pairs alone, the map, table, counts and heatmap come from one model.
       </li>
       <li><b>Distances and areas are in pixels.</b> The dataset's masks carry no ground scale, so no number on this site is in metres.</li>
       {fact('table_counting_accuracy') && (

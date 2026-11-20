@@ -38,6 +38,12 @@ The CSE499A final presentation ended with a Future Work list (slide 22 of [CSE49
 > - **O2:** counting with R11's per-building table (H2) is 32.96%, 1.2 points under 34.2%. *7 Nov: a rule that reads only the answer options scores 66.98% on the same 3,583 questions, so this measure doesn't show counting ability. Report it beside the rule, with count error against the true masks (Task_Ledger §7).*
 > - **O1, 11 Nov:** on 2,007 unseen test pairs (E6, E7 step 2), find-then-grade scores 0.3898 and R11 0.3984. The gap is noise (E7 step 2b): R11 leads outside Turkey, find-then-grade on Turkey. O1 stays judged on validation.
 > - **O2, 11 Nov:** on the test pairs, counting is level: 32.7% from find-then-grade's table and 32.53% from R11's (p = 0.87).
+> - **O1, 19 Nov: the chosen method is C4** (R11 on xBD photos, find-then-grade on the others; E7 step 2c).
+>   - It scores 0.3501 Destroyed IoU and 0.5881 mIoU on the clean validation pairs, with each grader seed above 0.30.
+>   - It scores 0.4296 and 0.5555 once on the unseen test pairs, ahead of both single methods beyond noise.
+>   - It was picked as the best of 8 candidates on validation, so its validation figure runs slightly high; the test run is the confirmation.
+> - **O2, 19 Nov (E7 step 3): counting from C4's map clears 34.2% on the measure the review promised,** 35.34% on the 3,580 askable optical counting questions (34.89% on E5's clean ones; R11 32.53%, find-then-grade 32.70%, both behind beyond chance). The option flaw still applies (the no-image rule scores 66.98%), so count error is reported beside it: mean 12.61 buildings against R11's 13.34. These counts are E7 step 2's joined blobs; C4 was chosen on destroyed buildings, not on counting. *(20 Nov, E7 step 3b: counting from the table's per-building rows scores 33.18%, because the benchmark's true count also joins touching buildings. The joined-blob count is the like-for-like one and stays O2's figure.)*
+> - **O3, 19 Nov (E7 step 3):** C4's map, building table and hot spots exist on the same 2,065 test photos. The reports read them from T2 step 5.
 > - **O3:** the heatmap is done (T1 v3), and an offline guideline search is built (Ridita, 25 Oct). **11 Nov:** DisasTeller on our 7B passed its proof run with the internet off, with a fixed flow instead of CrewAI's agents (Ridita). The reports' quality is still open.
 > - **O4:** the INT8 edge segmenter is done (L1b). L2 step 1 ran twice (1,146 teacher answers from the new 7B, 4 Nov); L2 step 2's five notebooks are built (8 Nov), not run yet.
 
@@ -270,7 +276,7 @@ Across these papers, specialist models are good at finding and counting, VLMs ar
   - The base Qwen2.5-VL-7B averages 31.2% (counting 34.2%).
   - The authors' fine-tune of it on the Instruct set averages 40.4% (counting 34.3%).
   - Fine-tuning didn't help counting for them either. They report overfitting and density bias in VLM counting (§4.2).
-- **Fine-tuning recipe (Appendix B.3):** LoRA on the language model with the vision encoder frozen; rank 64, alpha 16, dropout 0.05; AdamW, lr 2e-4, β 0.9 / 0.95, cosine schedule; global batch 256; 1 epoch; 4× H100. Precision and image size aren't stated. The fine-tuned weights aren't released. *(4 Nov: we've kept the encoder frozen to match this recipe, and never tested training it. Roadmap L0b tests that.)*
+- **Fine-tuning recipe (Appendix B.3):** LoRA on the language model with the vision encoder frozen; rank 64, alpha 16, dropout 0.05; AdamW, lr 2e-4, β 0.9 / 0.95, cosine schedule; global batch 256; 1 epoch; 4× H100. Precision and image size aren't stated. The fine-tuned weights aren't released. *(4 Nov: we've kept the encoder frozen to match this recipe, and never tested training it. Roadmap L0b tests that.)* *(19 Nov, L0b: trained on 1,800 building crops, the 7B goes from 100 to 176 of 300 buildings, still below the grader's 212; the encoder stays frozen in the 7B's recipe.)*
 - **How we use it:** like-for-like comparisons (roadmap H1) and the recipe check behind roadmap task L0, a better 7B teacher before distilling.
 
 ### 4.14 Soup (trysoup.dev), a fine-tuning tool: set aside, barely usable for us (22 October 2026)

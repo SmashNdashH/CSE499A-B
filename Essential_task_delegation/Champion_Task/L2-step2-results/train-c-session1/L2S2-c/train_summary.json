@@ -1,0 +1,97 @@
+{
+ "mode": "c",
+ "smoke_test": false,
+ "examples": 53838,
+ "full_examples": 53838,
+ "by_kind": {
+  "train": 53032,
+  "options": 806
+ },
+ "by_task": {
+  "Disaster Bearing Bodies Recognition": 7381,
+  "Building Damage Counting": 14332,
+  "Road Damage Counting": 7227,
+  "disaster caption": 7381,
+  "Disaster Type Recognition": 1543,
+  "disaster restoration advice": 7380,
+  "Disaster Scene Recognition": 6742,
+  "relational reasoning": 1852
+ },
+ "soft_labels": 0,
+ "teacher_answers": 1079,
+ "teacher_answers_worded_unlike_label": 772,
+ "soft_tokens_this_session": 0,
+ "misaligned_tokens_this_session": 0,
+ "global_step": 5,
+ "max_steps": 211,
+ "complete": false,
+ "resumed_from": null,
+ "longest_tokens": 1852,
+ "peak_gpu_memory_gb_process0": 5.9,
+ "step_seconds": [
+  869.5,
+  873.9,
+  877.4,
+  884.0,
+  865.9
+ ],
+ "seconds_per_example": 3.38,
+ "projected_full_hours": 50.6,
+ "log_history": [
+  {
+   "loss": 1.7838788032531738,
+   "grad_norm": 0.2675785422325134,
+   "learning_rate": 0.0,
+   "label_loss": 1.7899,
+   "epoch": 0.004755005758014785,
+   "step": 1
+  },
+  {
+   "loss": 1.8119513988494873,
+   "grad_norm": 0.285163938999176,
+   "learning_rate": 2.857142857142857e-05,
+   "label_loss": 1.8099,
+   "epoch": 0.00951001151602957,
+   "step": 2
+  },
+  {
+   "loss": 1.7815661430358887,
+   "grad_norm": 0.2975231111049652,
+   "learning_rate": 5.714285714285714e-05,
+   "label_loss": 1.7739,
+   "epoch": 0.014265017274044355,
+   "step": 3
+  },
+  {
+   "loss": 1.6758441925048828,
+   "grad_norm": 0.2742973566055298,
+   "learning_rate": 8.571428571428571e-05,
+   "label_loss": 1.6021,
+   "epoch": 0.01902002303205914,
+   "step": 4
+  },
+  {
+   "loss": 1.6614149808883667,
+   "grad_norm": 0.2536966800689697,
+   "learning_rate": 0.00011428571428571428,
+   "label_loss": 1.6848,
+   "epoch": 0.023775028790073927,
+   "step": 5
+  },
+  {
+   "train_runtime": 4378.8614,
+   "train_samples_per_second": 0.291,
+   "train_steps_per_second": 0.001,
+   "total_flos": 4.21492789608448e+16,
+   "train_loss": 1.74293110370636,
+   "epoch": 0.023775028790073927,
+   "step": 5
+  }
+ ],
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2",
+  "peft": "0.22.0",
+  "accelerate": "1.15.0"
+ }
+}

@@ -1,0 +1,7 @@
+model,prompt,found_at_0.5,top_score
+EV-M,dog,1,0.607
+EV-M,person,2,0.872
+RV-M,dog,0,0.325
+RV-M,person,2,0.822
+TV-M,dog,1,0.73
+TV-M,person,2,0.851

@@ -1,0 +1,37 @@
+maps_and_photos,source,group,photos,share_of_photos_without_destroyed,hot_spots,hot_spots_per_photo,hit_share
+"R9's maps, validation",all,damaged only,145,0.344,221,1.52,0.783
+"R9's maps, validation",all,no true damage,277,0.656,75,0.27,0.0
+"R9's maps, validation",all,with destroyed,183,,332,1.81,0.852
+"R9's maps, validation",all,without destroyed,422,1.0,296,0.7,0.584
+"R9's maps, validation",other,damaged only,16,0.254,7,0.44,0.286
+"R9's maps, validation",other,no true damage,47,0.746,10,0.21,0.0
+"R9's maps, validation",other,with destroyed,22,,31,1.41,0.742
+"R9's maps, validation",other,without destroyed,63,1.0,17,0.27,0.118
+"R9's maps, validation",xBD,damaged only,129,0.359,214,1.66,0.799
+"R9's maps, validation",xBD,no true damage,230,0.641,65,0.28,0.0
+"R9's maps, validation",xBD,with destroyed,161,,301,1.87,0.864
+"R9's maps, validation",xBD,without destroyed,359,1.0,279,0.78,0.613
+"C4's maps, validation",all,damaged only,145,0.344,249,1.72,0.783
+"C4's maps, validation",all,no true damage,277,0.656,96,0.35,0.0
+"C4's maps, validation",all,with destroyed,183,,381,2.08,0.829
+"C4's maps, validation",all,without destroyed,422,1.0,345,0.82,0.565
+"C4's maps, validation",other,damaged only,16,0.254,17,1.06,0.588
+"C4's maps, validation",other,no true damage,47,0.746,14,0.3,0.0
+"C4's maps, validation",other,with destroyed,22,,36,1.64,0.611
+"C4's maps, validation",other,without destroyed,63,1.0,31,0.49,0.323
+"C4's maps, validation",xBD,damaged only,129,0.359,232,1.8,0.797
+"C4's maps, validation",xBD,no true damage,230,0.641,82,0.36,0.0
+"C4's maps, validation",xBD,with destroyed,161,,345,2.14,0.852
+"C4's maps, validation",xBD,without destroyed,359,1.0,314,0.87,0.589
+"C4's maps, test",all,damaged only,412,0.312,644,1.56,0.592
+"C4's maps, test",all,no true damage,908,0.688,683,0.75,0.0
+"C4's maps, test",all,with destroyed,687,,1448,2.11,0.827
+"C4's maps, test",all,without destroyed,1320,1.0,1327,1.01,0.287
+"C4's maps, test",other,damaged only,143,0.284,152,1.06,0.474
+"C4's maps, test",other,no true damage,360,0.716,167,0.46,0.0
+"C4's maps, test",other,with destroyed,236,,451,1.91,0.69
+"C4's maps, test",other,without destroyed,503,1.0,319,0.63,0.226
+"C4's maps, test",xBD,damaged only,269,0.329,492,1.83,0.628
+"C4's maps, test",xBD,no true damage,548,0.671,516,0.94,0.0
+"C4's maps, test",xBD,with destroyed,451,,997,2.21,0.889
+"C4's maps, test",xBD,without destroyed,817,1.0,1008,1.23,0.307

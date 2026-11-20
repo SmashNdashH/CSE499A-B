@@ -1,0 +1,54 @@
+{
+ "task": "L2 step 2b: fp16 overflow diagnostic for step 2, option (c)",
+ "mode": "c",
+ "smoke_test": false,
+ "base_model": "Qwen/Qwen2.5-VL-3B-Instruct",
+ "data_root": "/kaggle/input/datasets/abrarmohammedtanzim/disasterm3-mirror/DisasterM3_Instruct",
+ "l2s1_manifest": "/kaggle/input/notebooks/abrarmohammedtanzim/l2-step1-new-teacher/L2S1-new-teacher/disasterm3_distillation_cot_train.json",
+ "options_kept": "/kaggle/input/notebooks/abrar2222864642/l2-step1c-options-rerun/L2S1c/options_kept.jsonl",
+ "seed": 42,
+ "lora": {
+  "r": 64,
+  "alpha": 16,
+  "dropout": 0.05
+ },
+ "lr": 0.0002,
+ "betas": [
+  0.9,
+  0.95
+ ],
+ "weight_decay": 0.01,
+ "kd_alpha": 0.5,
+ "kd_topk": 20,
+ "smoke_examples": 16,
+ "quantize": true,
+ "fp16": true,
+ "per_task": 50,
+ "longest": 40,
+ "test_per_task": 15,
+ "learn_steps": 8,
+ "learn_accum": 4,
+ "init_scale": 65536.0,
+ "max_grad_norm": 1.0,
+ "clamp_margin": 1000.0,
+ "max_loss_gap": 0.02,
+ "chosen_fix": "(a) fp32 islands",
+ "learns": true,
+ "scanned": 440,
+ "nan_as_trained": 7,
+ "overflowing": 7,
+ "weighted_nan_share": 0.0123,
+ "islands": [
+  "model.visual.blocks.31.mlp.down_proj"
+ ],
+ "test_examples": 127,
+ "data_step_seconds": 13,
+ "forward_only_epoch_hours": 13.0,
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2",
+  "peft": "0.21.3",
+  "bitsandbytes": "0.50.2",
+  "accelerate": "1.15.0"
+ }
+}

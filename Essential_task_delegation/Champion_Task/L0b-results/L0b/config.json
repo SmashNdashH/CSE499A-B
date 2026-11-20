@@ -1,0 +1,25 @@
+{
+ "task": "L0b: vision-encoder + language LoRA on building crops",
+ "smoke_test": false,
+ "start_model": "AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP",
+ "train_csv": "/kaggle/working/L0b/train_crops.csv",
+ "adapter_dir": "/kaggle/working/L0b/adapter",
+ "class_prompt": "This satellite image was taken after a disaster. A red box marks one building.\nHow damaged is the building in the red box?\n- Intact: undisturbed; no sign of water, structural or roof damage, or burn marks.\n- Damaged: partly burnt, water or volcanic flow around it, roof elements missing, visible cracks, or partial wall or roof collapse.\n- Destroyed: scorched, completely collapsed, partly or completely covered with water or mud, or no longer present.\nAnswer with one word: Intact, Damaged or Destroyed.",
+ "include_vision_attn": true,
+ "seed": 42,
+ "lora": {
+  "r": 64,
+  "alpha": 16,
+  "dropout": 0.05
+ },
+ "lr": 0.0001,
+ "betas": [
+  0.9,
+  0.95
+ ],
+ "weight_decay": 0.01,
+ "warmup_ratio": 0.05,
+ "per_device_batch": 1,
+ "grad_accum": 16,
+ "optim": "adamw_bnb_8bit"
+}

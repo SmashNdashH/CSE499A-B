@@ -1,0 +1,4 @@
+method,questions,all_%,e5_clean_%,mean_abs_error,median_abs_error,within_20%_%
+C4,3580,35.34,34.89,12.61,4.0,34.3
+R11,3580,33.02,32.53,13.34,4.0,32.3
+chain_s42,3580,32.88,32.7,13.58,4.0,30.7

@@ -1,28 +1,30 @@
 // The one place that says what the in-browser model reads. The page, the worker and the parity
 // check all take it from here.
 //
-// A before-and-after export would read both photos as 6 channels. For R11's (L1c), change `images` to
-// ['after', 'before'], R11's channel order (the after-photo first, as it was trained), and point `file`
-// (and `bytes`) at the new model: the page then asks for two photos and the worker stacks them in that order.
+// Since 18 Nov this is the before-and-after model in 8 bits (L1c: R11, `r11_int8_static_keep1_3.onnx`).
+// It reads both photos as 6 channels in R11's order, the after-photo first, as it was trained; the page
+// asks for two photos and the worker stacks them in that order. Checked with onnx: input `image`
+// [1, 6, 1024, 1024], output `logits` [1, 4, 1024, 1024]. The after-photo model it replaced (L1b: R9,
+// `r9_int8_static_keep1_3.onnx`, 33,125,992 bytes, `images: ['after']`) works the same way with one photo.
 export const FIELD_MODEL = {
   /** Shown wherever the result is labelled. */
-  label: 'Field model',
-  file: '/model/r9_int8_static_keep1_3.onnx',
+  label: 'Before-and-after model, 8-bit',
+  file: '/model/r11_int8_static_keep1_3.onnx',
   /** Exact size of the file; a download of any other size is refused. */
-  bytes: 33_125_992,
+  bytes: 33_163_619,
   inputName: 'image',
   outputName: 'logits',
   /** The model reads a square of this many pixels a side. */
   size: 1024,
   /** Which photos the model reads, in channel order: 3 channels (red, green, blue) each. */
-  images: ['after'] as ('before' | 'after')[],
+  images: ['after', 'before'] as ('before' | 'after')[],
   /** Each channel: (value - mean x 255) / (std x 255), on 0 to 255 values. The ImageNet constants. */
   mean: [0.485, 0.456, 0.406],
   std: [0.229, 0.224, 0.225],
   /** Output channels: background, intact, damaged, destroyed. */
   classes: 4,
   /** Where the export and its measurements are recorded. */
-  notebook: 'Essential_task_delegation/Champion_Task/L1B-results/L1b/README.md',
+  notebook: 'Essential_task_delegation/Champion_Task/L1C-results/L1c/README.md',
 };
 
 /** Where the runtime's own WebAssembly files are served from (our origin, never a CDN). */

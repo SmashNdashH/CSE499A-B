@@ -1,6 +1,6 @@
-// Try it: the field model on the visitor's own image, inside their browser. The page prepares the
-// picture (says what it did to it), a worker runs the model and measures the result, and the same
-// building map as Explore shows it.
+// Try it: the 8-bit before-and-after model on the visitor's own photos, inside their browser. The page
+// prepares each picture (says what it did to it), a worker runs the model and measures the result, and
+// the same building map as Explore shows it, with the before/after slider.
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { PairEntry } from '../types/disaster.ts';
@@ -15,6 +15,9 @@ type Role = (typeof FIELD_MODEL.images)[number];
 const SIZE = FIELD_MODEL.size;
 const MB = (bytes: number) => (bytes / 1e6).toFixed(1);
 const ROLE_LABEL: Record<Role, string> = { before: 'The photo from before the disaster', after: 'The photo from after the disaster' };
+/** The boxes are shown before-photo first, as people think of the pair; the model's channel order stays FIELD_MODEL.images. */
+const SHOWN: Role[] = (['before', 'after'] as Role[]).filter((r) => FIELD_MODEL.images.includes(r));
+const READS_BEFORE = FIELD_MODEL.images.includes('before');
 
 interface Prepared {
   name: string;
@@ -106,6 +109,7 @@ export function TryItRunner() {
 
   const start = () => {
     const after = pictures.after;
+    const before = READS_BEFORE ? pictures.before : undefined;
     if (!ready || !after) return;
     worker.current ??= new Worker(new URL('../core/segment.worker.ts', import.meta.url), { type: 'module' });
     worker.current.onerror = (e) => setRun({ status: 'error', reason: 'failed', detail: e.message });
@@ -118,16 +122,18 @@ export function TryItRunner() {
         // visitor brought is called theirs.
         const from = after.gallery?.info;
         const pair: PairEntry = {
-          id: 'your-image', has_before: false, has_after: true,
+          id: 'your-image', has_before: Boolean(before), has_after: true,
           info: {
             event: from ? `${from.event} (gallery photo)` : 'your image', source: from?.source ?? 'other',
             split: from ? `a gallery photo from DisasterM3, ${from.split}; this map was made on this device just now` : 'your own image, read on this device, not from our dataset',
             image: after.name, width: SIZE, height: SIZE,
           },
           methods: [{
-            id: 'field-model', has_report_inputs: false,
+            id: READS_BEFORE ? 'pair-model-int8' : 'field-model', has_report_inputs: false,
             source: {
-              model: 'A U-Net that reads only the after photo, stored as 8-bit numbers, run in this browser',
+              model: READS_BEFORE
+                ? 'A U-Net that reads the before and after photos together, stored as 8-bit numbers, run in this browser'
+                : 'A U-Net that reads only the after photo, stored as 8-bit numbers, run in this browser',
               tta: false, checkpoint: FIELD_MODEL.file.split('/').pop()!, notebook: FIELD_MODEL.notebook,
               date: new Intl.DateTimeFormat('en-CA').format(new Date()),
             },
@@ -138,7 +144,7 @@ export function TryItRunner() {
           if (old.status === 'done') { URL.revokeObjectURL(old.maskUrl); URL.revokeObjectURL(old.result.urls.heat); }
           return {
             status: 'done', maskUrl, modelSeconds: m.modelSeconds, afterSeconds: m.afterSeconds, loadSeconds: m.loadSeconds, threads: m.threads,
-            result: { pair, buildings: m.buildings, hotspots: m.hotspots, urls: { after: after.url, heat } },
+            result: { pair, buildings: m.buildings, hotspots: m.hotspots, urls: { after: after.url, before: before?.url, heat } },
           };
         });
       }
@@ -155,25 +161,27 @@ export function TryItRunner() {
       <div className="a-panel try-about">
         <h2>What runs here</h2>
         <p>
-          The field model: a lighter U-Net (a network that labels every pixel) that reads only the photo taken after the disaster. Its numbers are stored in 8 bits each,
-          which makes it a <Num id="field_model_size" /> file that a laptop or a phone can run without a graphics card.
+          The before-and-after model: a U-Net (a network that labels every pixel) that reads the photo taken before the disaster and the photo taken after it together,
+          so it can see where a building stood before it became rubble. Its numbers are stored in 8 bits each, which makes it a <Num id="pair_model_int8_size" /> file
+          that a laptop or a phone can run without a graphics card.
         </p>
         <p>
-          It is not our best map. Averaged over all classes, the model that compares a before photo with an after photo scores <Num id="pair_unet_miou_clean" /> where
-          this one at full precision scores <Num id="field_unet_miou_clean" />, on the same 605 validation pairs; <Link to="/results">Results</Link> has the whole table.
-          The exact file that runs here scores <Num id="field_model_int8_destroyed_iou" /> on destroyed buildings and <Num id="field_model_int8_miou" /> averaged over all classes.
-          These are IoU: the overlap between the pixels the model marks and the true ones, from 0 (none) to 1 (exact).{' '}
-          <Provenance id="field_model_int8_miou" />
+          The exact file that runs here scores <Num id="pair_model_int8_destroyed_iou_clean" /> on destroyed buildings and <Num id="pair_model_int8_miou_clean" /> averaged
+          over all classes, on the 605 clean validation pairs, with one prediction per pair. At full precision, averaged over 8 flipped and rotated views, the same model
+          scores <Num id="pair_unet_miou_clean" /> averaged over all classes. <Link to="/results">Results</Link> has the whole table, with find-then-grade, which does better
+          on destroyed buildings. These are IoU: the overlap between the pixels the model marks and the true ones, from 0 (none) to 1 (exact).{' '}
+          <Provenance id="pair_model_int8_miou_clean" />
         </p>
         <p>
-          It learned from satellite photos taken from straight above. On a phone photo, a picture taken at an angle or a very different zoom, expect a poor map.
+          It learned from satellite photos taken from straight above. The two photos must show the same place, at the same size and from the same angle, because it
+          compares them pixel by pixel. On a phone photo, a picture taken at an angle or a very different zoom, expect a poor map.
         </p>
-        <p className="decision">Your image never leaves your device. The model is downloaded once, then it runs inside this browser tab; nothing is uploaded.</p>
+        <p className="decision">Your photos never leave your device. The model is downloaded once, then it runs inside this browser tab; nothing is uploaded.</p>
       </div>
 
       <div className="a-panel try-pick">
         <h2>Choose {FIELD_MODEL.images.length > 1 ? 'the photos' : 'a photo'}</h2>
-        {FIELD_MODEL.images.map((role) => (
+        {SHOWN.map((role) => (
           <div key={role} className="try-file">
             <label>
               <span>{ROLE_LABEL[role]}</span>

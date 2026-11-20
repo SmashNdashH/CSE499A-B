@@ -231,6 +231,18 @@ Essential_task_delegation/Champion_Task/E3-results/E3/masks/post_grid1/
 Essential_task_delegation/Champion_Task/T3-gallery-export-results/gallery/
 # L2 step 1b's soft-label shards (about 40 MB so far): later sessions and the 3B's training read them from Kaggle's saved output
 Essential_task_delegation/Champion_Task/L2-step1-results/soft-labels/L2S1b/shards/
+# L4b's 15 overlay pictures (about 30 MB): kept on this PC and in the Kaggle version's output
+Essential_task_delegation/Champion_Task/L4b-results/L4b/overlays/
+# E7 step 3's 6,195 small danger, safety and priority maps (256 px): kept on this PC; hotspots.json holds what the reports read
+Essential_task_delegation/Champion_Task/E7-results/step3/maps/
+# L0b's trained adapter (805 MB, only on this PC and in the Kaggle run's output; its verdict says stop)
+Essential_task_delegation/Champion_Task/L0b-results/L0b/adapter/
+# The Kaggle runner's state, log, lock and pause switch (its tokens live outside the project, encrypted)
+Essential_task_delegation/Champion_Task/kaggle-runner/state.json
+Essential_task_delegation/Champion_Task/kaggle-runner/state.json.tmp
+Essential_task_delegation/Champion_Task/kaggle-runner/runner.log
+Essential_task_delegation/Champion_Task/kaggle-runner/runner.lock
+Essential_task_delegation/Champion_Task/kaggle-runner/PAUSE
 
 # The editor's local settings and scheduler lock
 .claude/

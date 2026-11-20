@@ -50,10 +50,11 @@ npm run dev           # http://127.0.0.1:3000, serving the fixtures while public
 
 ## The model in the browser (Try it)
 
-The Try it page runs the field model on the visitor's own image, on their device. Nothing is uploaded.
+The Try it page runs the before-and-after model, in 8 bits, on the visitor's own photos, on their device. Nothing is uploaded.
 
-- **What runs:** the 8-bit after-image-only U-Net (`r9_int8_static_keep1_3.onnx`, 33.1 MB) in ONNX Runtime Web 1.20.1 on WebAssembly, pinned to that exact version in `package.json`. The model and the runtime's two files are served from this site (`/model/`, `/ort/`), never from a CDN. The model is downloaded only when the visitor presses Run, with its size and progress shown.
-- **One config:** [src/core/modelConfig.ts](src/core/modelConfig.ts) holds the file, its size, the input size, the normalisation and which photos the model reads. A before-and-after export (R11's, from `Champion_Task/l1c-r11-int8.ipynb`) needs `images: ['after', 'before']`, R11's channel order with the after-photo first, and the new file there. The page then asks for two photos.
+- **What runs (since 18 Nov):** the 8-bit before-and-after U-Net (`r11_int8_static_keep1_3.onnx`, 33.2 MB, from [L1c](../Champion_Task/L1C-results/L1c/README.md)) in ONNX Runtime Web 1.20.1 on WebAssembly, pinned to that exact version in `package.json`. It reads two photos as 6 channels, the after-photo first, as it was trained; checked with `onnx`: input `image` [1, 6, 1024, 1024], output `logits` [1, 4, 1024, 1024]. The page asks for the before-photo, then the after-photo; a gallery button fills both, and the result has the before/after slider. The model and the runtime's two files are served from this site (`/model/`, `/ort/`), never from a CDN. The model is downloaded only when the visitor presses Run, with its size and progress shown.
+- **Until 17 Nov** it ran the 8-bit after-image-only U-Net (`r9_int8_static_keep1_3.onnx`, 33.1 MB, from L1b). The checks below dated 16 and 17 Nov are of that model.
+- **One config:** [src/core/modelConfig.ts](src/core/modelConfig.ts) holds the file, its size, the input size, the normalisation and which photos the model reads (`images`, in channel order). Going back to the after-photo model needs only its file there and `images: ['after']`.
 - **Where the work happens:** [src/core/segment.worker.ts](src/core/segment.worker.ts) (a worker, so the page stays usable): model, then the mask, then the building table with the same code as the gallery ([buildings.ts](src/core/buildings.ts)), then the heatmap ([heatmap.ts](src/core/heatmap.ts)). The page ([src/components/TryItRunner.tsx](src/components/TryItRunner.tsx)) shows the result in the same building map as Explore.
 - **A picture that isn't 1024 x 1024:** the middle square is cut out and resized to 1024 x 1024, and the page says exactly that, with the sizes.
 - **The moving background is hidden while the model runs.** With it drawing, a run took 6.1 to 6.6 s in our test instead of 4.1 to 5.2 s.
@@ -71,12 +72,25 @@ Also run once by hand on 16 Nov: the same check against the dev server (`npm run
 
 Run again on 17 Nov, after the building map's changes (the result view is the same map): `npm run check:model` gave 100% of pixels again, at 3.1 to 3.3 s per image after the first run (4.4 s); the JPEG and the gallery photo behaved as on 16 Nov; and on a result, zooming worked and hiding one outline left the counts as they were.
 
+**Run on 18 Nov with the before-and-after model** (both photos through the page's two file inputs, against a native run of the same file with the same channel order):
+
+| Pair | Pixels with the same class as the native run | Seconds per pair after the first run |
+|---|---|---|
+| Santa Rosa wildfire 58 (WebP, and again as lossless PNG) | 99.8448% both times (1,627 of 1,048,576 differ): **under the 99.9% rule** | about 5–6 s (first run 5.4–5.5 s) |
+| Moore tornado 120 (WebP) | 99.9882% (124 differ): passes | 8.9 s (first run 8.4 s) |
+
+- The PNG run gave the same 1,627 pixels as the WebP one, so the photo's decoding isn't the cause.
+- A swapped before/after order would disagree on far more than 0.16% of pixels.
+- What's left is the 8-bit arithmetic, which differs slightly between ONNX Runtime's WebAssembly and native CPU code. It flips pixels that sit right on a class boundary, and Santa Rosa's dense rows of houses have many of those.
+- The model's accuracy was measured natively in L1c.
+- `npm run check:model` now reads both photos and uses the Santa Rosa pair by default; `IMAGE` and `BEFORE` choose other photos.
+
 The full result of the last run is in `checks/browser-model.json` (git-ignored).
 
 **To repeat the test on the booth laptop:**
 
 1. Install Node 22.18 or later and Chrome. Copy the repository (or `git pull`).
-2. Copy `Essential_task_delegation/Champion_Task/L1B-results/L1b/r9_int8_static_keep1_3.onnx` into `T3_Website/public/model/`.
+2. Copy `Essential_task_delegation/Champion_Task/L1C-results/L1c/r11_int8_static_keep1_3.onnx` into `T3_Website/public/model/`.
 3. Copy one 1024 x 1024 xBD after-image to the laptop (the October test used `hurricane-harvey_00000099_post_disaster.png` from xBD's `train/images`).
 4. In `T3_Website/`: `npm ci`, then `npm run build`, then `npm run preview` (leave it running).
 5. In a second terminal, in PowerShell: `$env:IMAGE = "C:\path\to\hurricane-harvey_00000099_post_disaster.png"; npm run check:model`
@@ -158,7 +172,7 @@ Nothing goes public from a push to GitHub. The project is not connected to the r
    - Create a new project when asked. Don't connect a Git repository.
    - It writes `.vercel/`, which is git-ignored.
 3. **Put the gallery in place.** Copy the export into `public/data/` (see the data contract).
-4. **Put the field model in place.** Copy `../Champion_Task/L1B-results/L1b/r9_int8_static_keep1_3.onnx` to `public/model/`. It is never in git: `*.onnx` is ignored for the whole repository. `deploy:check` fails without it; a site deployed without it still works, and its Try it page says the model isn't part of that copy.
+4. **Put the model in place.** Copy `../Champion_Task/L1C-results/L1c/r11_int8_static_keep1_3.onnx` to `public/model/`. It is never in git: `*.onnx` is ignored for the whole repository. `deploy:check` fails without it; a site deployed without it still works, and its Try it page says the model isn't part of that copy.
 5. **Run the checks.**
    ```text
    npm run deploy:check

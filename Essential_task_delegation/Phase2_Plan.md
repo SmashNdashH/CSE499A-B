@@ -3,7 +3,7 @@
 Drafted 2026-10-05, while R4, R5 and R8 are still running. Nothing here needs those runs to finish except the final champion.
 
 > **4 Nov 2026:** the order from here is the one-chain plan in [Next_Steps_Roadmap.md §1b](Next_Steps_Roadmap.md). R13–R15 wait until that chain has been scored as one (E7).
-> **11 Nov 2026:** E7 step 2 scored it on 2,007 unseen test pairs: find-then-grade and R11 are level on destroyed buildings (0.3898 against 0.3984, a gap within noise), with R11 ahead outside Turkey and find-then-grade far ahead on Turkey. By the rule fixed before the run, the choice of chain is open again ([tracker](Progress_Tracker.md)).
+> **11 Nov 2026:** E7 step 2 scored it on 2,007 unseen test pairs: find-then-grade and R11 are level on destroyed buildings (0.3898 against 0.3984, a gap within noise), with R11 ahead outside Turkey and find-then-grade far ahead on Turkey. By the rule fixed before the run, the choice of chain is open again ([tracker](Progress_Tracker.md)). **19 Nov:** Abrar chose C4: R11 maps the xBD photos, and find-then-grade maps the others. It scores 0.3501 on the clean validation pairs and 0.4296 on test, ahead of both single methods beyond noise ([ledger](Task_Ledger.md#every-option-in-plain-words-written-19-nov-for-the-decision)). **19 Nov (later), E7 step 3:** C4's building table and hot spots exist on the 2,065 test photos, and counting from C4's map (34.89% on E5's clean questions) beats either method alone ([results](Champion_Task/E7-results/step3/README.md)). R13–R15 still wait.
 
 > **Names updated 2026-10-18** to the task IDs used in [Next_Steps_Roadmap.md](Next_Steps_Roadmap.md):
 > - E1 was P2-0;

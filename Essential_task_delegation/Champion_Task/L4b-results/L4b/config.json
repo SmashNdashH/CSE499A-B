@@ -1,0 +1,52 @@
+{
+ "task": "L4b",
+ "efficientsam3_commit": "bd0936c788fed8d51fa799437f05abd97b401b06",
+ "hf_weights": "Simon7108528/EfficientSAM3@85b05896928f974e308f889d7ccb2eefc069de98",
+ "text_encoder": "MobileCLIP-S0",
+ "text_context": 16,
+ "floor": 0.01,
+ "thresholds": [
+  0.5,
+  0.3,
+  0.1,
+  0.05
+ ],
+ "prompts": [
+  "building",
+  "house",
+  "roof"
+ ],
+ "photos": [
+  "turkey_earthquake3_post_692.png",
+  "hurricane_florence_00000315_post_disaster.png",
+  "nepal_flooding_00000278_post_disaster.png",
+  "santa_rosa_wildfire_00000201_post_disaster.png",
+  "hurricane_michael_00000224_post_disaster.png",
+  "hurricane_matthew_00000217_post_disaster.png",
+  "turkey_earthquake5_post_884.png",
+  "hurricane_michael_00000530_post_disaster.png",
+  "nepal_flooding_00000559_post_disaster.png",
+  "pinery_bushfire_00001611_post_disaster.png",
+  "midwest_flooding_00000336_post_disaster.png",
+  "socal_fire_00001000_post_disaster.png",
+  "turkey_earthquake3_post_654.png",
+  "kalehe_flooding_post_1010.png",
+  "midwest_flooding_00000031_post_disaster.png",
+  "nepal_flooding_00000008_post_disaster.png",
+  "turkey_earthquake5_post_920.png",
+  "portugal_wildfire_00000898_post_disaster.png",
+  "hurricane_florence_00000039_post_disaster.png",
+  "moore_tornado_00000106_post_disaster.png",
+  "turkey_earthquake0_post_456.png"
+ ],
+ "sam3_reference_iou": 0.2812,
+ "coverage": {
+  "EV-M": 1.0,
+  "RV-M": 1.0,
+  "TV-M": 1.0
+ },
+ "check_a_passes": false,
+ "reading": "setup",
+ "verdict": "Check A fails: a model finds no dog or no person in the repo's own example at 0.5, so our setup is broken and L4's result says nothing about EfficientSAM3 until it is fixed.",
+ "torch": "2.11.0+cu130"
+}

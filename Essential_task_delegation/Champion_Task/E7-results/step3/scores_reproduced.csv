@@ -1,0 +1,18 @@
+what,rebuilt,published,from,difference,pass
+R11: destroyed_iou,0.3984,0.3984,"E7 step 2, map_scores.csv",0.0,True
+R11: miou,0.5721,0.5721,"E7 step 2, map_scores.csv",0.0,True
+R11: building_iou,0.6944,0.6944,"E7 step 2, map_scores.csv",0.0,True
+chain_s42: destroyed_iou,0.4055,0.4055,"E7 step 2, map_scores.csv",0.0,True
+chain_s42: miou,0.518,0.5179,"E7 step 2, map_scores.csv",0.0001,True
+chain_s42: building_iou,0.5395,0.5395,"E7 step 2, map_scores.csv",0.0,True
+chain_s43: destroyed_iou,0.3982,0.3983,"E7 step 2, map_scores.csv",-0.0001,True
+chain_s43: miou,0.5121,0.5121,"E7 step 2, map_scores.csv",0.0,True
+chain_s43: building_iou,0.5406,0.5405,"E7 step 2, map_scores.csv",0.0001,True
+chain_s44: destroyed_iou,0.3657,0.3657,"E7 step 2, map_scores.csv",0.0,True
+chain_s44: miou,0.5086,0.5087,"E7 step 2, map_scores.csv",-0.0001,True
+chain_s44: building_iou,0.5447,0.5447,"E7 step 2, map_scores.csv",0.0,True
+"C4, mean of three seeds: destroyed_iou (all)",0.4295,0.4296,"E7 step 2c, test_confirmation.csv",-0.0001,True
+"C4, mean of three seeds: miou",0.5555,0.5555,"E7 step 2c, test_confirmation.csv",0.0,True
+"C4, mean of three seeds: building_iou",0.6221,0.6221,"E7 step 2c, test_confirmation.csv",0.0,True
+"C4, mean of three seeds: destroyed_iou (Turkey)",0.3231,0.3231,"E7 step 2c, test_confirmation.csv",0.0,True
+"C4, mean of three seeds: destroyed_iou (without Turkey)",0.461,0.461,"E7 step 2c, test_confirmation.csv",0.0,True

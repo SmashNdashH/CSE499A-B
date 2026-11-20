@@ -1,3 +1,7 @@
 task,questions,answer_tokens,top1_is_label_%,mean_label_prob
-Building Damage Counting,9019,147701,86.7,0.835
+Building Damage Counting,13849,220583,87.5,0.84
 Disaster Bearing Bodies Recognition,7381,162383,90.8,0.872
+Disaster Scene Recognition,6742,147367,89.5,0.854
+Disaster Type Recognition,1543,15347,92.6,0.896
+Road Damage Counting,6974,143810,80.8,0.78
+relational reasoning,1782,36245,79.0,0.728

@@ -1,0 +1,5 @@
+fix,nan_losses,of,sec_per_example,mean_gap_to_c,note
+as trained,7,127,2.145,0.0017,time includes the scan's checks
+(a) fp32 islands,0,127,1.741,0.0017,
+(b) clamping,0,127,1.745,0.0017,
+(c) fp32 compute,0,127,5.579,0.0,

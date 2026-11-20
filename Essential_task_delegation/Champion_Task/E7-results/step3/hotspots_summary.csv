@@ -1,0 +1,7 @@
+images_from,source,images,hot_spots,on_gt_destroyed,ceiling_from_gt_mask,on_gt_damaged_or_destroyed,point_on_gt_destroyed,point_on_gt_damage,points_within_5px_of_edge,safe_on_gt_building
+clean pairs,all,2007,2775,0.316,0.486,0.603,0.264,0.569,0.012,0.071
+clean pairs,other,739,770,0.347,0.507,0.544,0.288,0.497,0.006,0.159
+clean pairs,xBD,1268,2005,0.304,0.474,0.626,0.255,0.596,0.014,0.039
+with destroyed,all,687,1448,0.606,0.721,0.865,0.506,0.827,0.006,0.054
+with destroyed,other,236,451,0.592,0.765,0.743,0.492,0.69,0.0,0.153
+with destroyed,xBD,451,997,0.612,0.698,0.92,0.513,0.889,0.008,0.009

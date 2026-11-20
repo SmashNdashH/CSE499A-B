@@ -1,0 +1,11 @@
+scope,version,gate_px,hot_spots,hits,hit_share,photos_with_hot_spots,hits_kept
+all,v3,0,2775,1578,0.569,1226,1.0
+all,v4,400,2731,1565,0.573,1183,0.992
+with destroyed,v3,0,1448,1197,0.827,587,1.0
+with destroyed,v4,400,1441,1194,0.829,580,0.997
+without destroyed,v3,0,1327,381,0.287,639,1.0
+without destroyed,v4,400,1290,371,0.288,603,0.974
+other,v3,0,770,383,0.497,354,1.0
+other,v4,400,765,382,0.499,349,0.997
+xBD,v3,0,2005,1195,0.596,872,1.0
+xBD,v4,400,1966,1183,0.602,834,0.99

@@ -1,0 +1,21 @@
+scope,method,questions,accuracy_%,largest_option_up_to_20_%,mean_abs_error,median_abs_error,within_20%_%,median_count_over_truth
+all askable,C4 table,3580,33.66,42.1,13.78,4.0,31.6,0.85
+all askable,C4 blobs,3580,35.34,42.2,12.61,4.0,34.3,0.81
+all askable,R11,3580,33.02,41.55,13.34,4.0,32.3,0.77
+all askable,chain_s42,3580,32.88,40.25,13.58,4.0,30.7,0.71
+E5's clean,C4 table,3514,33.18,41.49,14.0,4.0,31.5,0.85
+E5's clean,C4 blobs,3514,34.89,41.59,12.8,4.0,34.2,0.81
+E5's clean,R11,3514,32.53,40.93,13.55,4.0,32.2,0.76
+E5's clean,chain_s42,3514,32.7,40.05,13.77,4.0,30.8,0.71
+sharper photos,C4 table,1292,26.63,36.55,18.14,8.0,22.0,0.84
+sharper photos,C4 blobs,1292,31.27,36.88,14.9,6.0,29.3,0.7
+sharper photos,R11,1292,24.85,34.78,16.93,9.0,23.8,0.61
+sharper photos,chain_s42,1292,31.27,36.88,14.9,6.0,29.3,0.7
+"sharper photos, E5's clean",C4 table,1292,26.63,36.55,18.14,8.0,22.0,0.84
+"sharper photos, E5's clean",C4 blobs,1292,31.27,36.88,14.9,6.0,29.3,0.7
+"sharper photos, E5's clean",R11,1292,24.85,34.78,16.93,9.0,23.8,0.61
+"sharper photos, E5's clean",chain_s42,1292,31.27,36.88,14.9,6.0,29.3,0.7
+xBD photos,C4 table,2288,37.63,44.6,11.32,3.0,37.1,0.85
+xBD photos,C4 blobs,2288,37.63,44.6,11.32,3.0,37.1,0.85
+xBD photos,R11,2288,37.63,44.6,11.32,3.0,37.1,0.85
+xBD photos,chain_s42,2288,33.78,41.77,12.84,3.0,31.4,0.71

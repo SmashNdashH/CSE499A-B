@@ -52,27 +52,27 @@ Since 4 Nov the plan is **one chain**, measured as one:
 before + after photos → find each building → grade it → building table → counts, hot spots, guideline passages → the six reports → the website
 ```
 
-Every part below has been tested, but each with its own model and images. The parts don't run as one chain yet.
+Every part below has been tested, but until 19 Nov each with its own model and images. **Since 19 Nov (E7 step 3), the damage map, the building table and the hot spots come from one method, C4, on the same 2,065 test photos.** The reports don't read them yet (T2 step 5, Ridita).
 
 | Part | What does it | Best result so far | Source |
 |---|---|---|---|
-| Damage map | Find-then-grade, or the before-and-after U-Net: not chosen yet (section 4) | On the 605 clean validation pairs, destroyed-building IoU **0.3065** for find-then-grade (the mean of its three graders: 0.3161, 0.3051 and 0.2982) and **0.2692** for the before-and-after U-Net with TTA; mean IoU 0.547 and 0.581. The after-photo U-Net: 0.2874 and 0.540 | [find-then-grade](Champion_Task/R16c-results/step5b/README.md); [the U-Nets on clean pairs](Champion_Task/E5-results/E5/README.md) |
-| Building table and counts | Fixed queries on the table, written and checked by hand. No language model counts | 32.96% of the benchmark's 3,583 counting questions (32.47% without the questions on copied photos), from the before-and-after U-Net's table. The target is the base 7B's 34.2% | [H2](Champion_Task/H2-results/H2/README.md) |
-| Danger heatmap | Code on a damage map (no model) | 73.6% of hot spots have their marked point within 20 px of a building that is truly damaged or destroyed (645 validation images, 694 hot spots, on the after-photo U-Net's maps) | [T1 v3](Champion_Task/T1-results/T1-v3/README.md) |
+| Damage map | **C4, chosen by Abrar on 19 Nov:** the before-and-after U-Net on xBD's coarser photos, find-then-grade on the sharper ones (section 3, item 2) | C4: destroyed-building IoU **0.3501** and mean IoU 0.5881 on the 605 clean validation pairs; **0.4296** and 0.5555 once on the 2,007 unseen test pairs. Alone: find-then-grade 0.3065 (the mean of its three graders) and the before-and-after U-Net with TTA 0.2692 on the clean validation pairs | [C4](Champion_Task/E7-results/step2c/README.md); [find-then-grade](Champion_Task/R16c-results/step5b/README.md); [the U-Nets on clean pairs](Champion_Task/E5-results/E5/README.md) |
+| Building table and counts | Fixed queries on the table, written and checked by hand. No language model counts | **C4's table (19 Nov):** 125,439 rows on the 2,065 test photos, one per building SAM 3 outlined on the sharper photos, one per connected patch of pixels on xBD photos. Counting from C4's map: **35.34%** of the benchmark's 3,580 askable counting questions (34.89% without the questions on copied photos), above the base 7B's 34.2% target. Earlier, from the before-and-after U-Net's table alone: 32.96% (H2). Section 3, item 1 says why accuracy here can't show counting ability | [E7 step 3](Champion_Task/E7-results/step3/README.md); [H2](Champion_Task/H2-results/H2/README.md) |
+| Danger heatmap | Code on a damage map (no model) | On C4's maps, on the 2,007 clean test pairs (19 Nov): 56.9% of hot spots have their marked point within 20 px of a truly damaged or destroyed building, and **82.7% on the 687 photos with destroyed buildings**. On photos without destroyed buildings most hot spots are false alarms. Earlier, on the after-photo U-Net's maps of 645 validation images: 73.6% | [E7 step 3](Champion_Task/E7-results/step3/README.md); [T1 v3](Champion_Task/T1-results/T1-v3/README.md) |
 | Guideline search | Ridita's hybrid search | 27 of 30 test questions answered from the right section (24 were needed) | [Offline_RAG_KR2 README](Offline_RAG_KR2/README.md) |
 | Reports | DisasTeller on our 7B in a fixed flow: code calls the tools in a fixed order, and the 7B writes each section | Passed its internet-off proof run on 11 Nov: six reports, 18 guideline searches, 4 network connections, all to the model's own server on the same machine. Against July's reports written by Gemini (16 Nov): ours cite real guideline sections and invent fewer numbers, but read the photos worse, and none was judged fully useful (section 3, item 5) | [Ridita's README](Offline_RAG_KR2/README.md), "Proof run" and "Comparison with the July Gemini reports" |
 | The benchmark's six tasks | Our fine-tuned 7B, at full image size | Kind of disaster 76.77%; kinds of objects damaged 19.99%; building counting 30.31%; share of damaged road 33.03%; land-use types 40.46%; how two objects relate 34.62%. Mean 39.20% | [part A](Champion_Task/L0-step2-results/new-partA/L0S2/README.md), [part B](Champion_Task/L0-step2-results/new-partB/L0S2/README.md) |
 | Field model | The after-photo U-Net and the before-and-after U-Net, stored as 8-bit numbers | After-photo U-Net (R9): 33 MB, 1.6 s a photo on a 4-thread server CPU, destroyed IoU down only 0.0003; in a web browser it gives the same map as a native run on 100% of pixels, in about 3 to 5 s. Before-and-after U-Net (R11, 18 Nov): 33.2 MB (`33,163,619` bytes), 1.75 s a pair (`1.35×` ONNX FP32), destroyed IoU down 0.0014 (0.0011 on the 605 clean pairs) | [L1b](Champion_Task/L1B-results/L1b/README.md); [L1c](Champion_Task/L1C-results/L1c/README.md); [website README](T3_Website/README.md) |
-| 3B | The 3B learns from the 7B | Step 1 done: 1,146 checked answers from the 7B. Step 1c (the options rerun for Mode c, 18 Nov) done: 806 kept of 2,249. Step 1b (soft labels for Mode b) is running on account 3, and Mode c's training is ready to start | [L2 step 1](Champion_Task/L2-step1-results/new-teacher/L2S1-new-teacher/README.md); [L2 step 1c](Champion_Task/L2-step1-results/options-rerun/L2S1c/README.md) |
+| 3B | The 3B learns from the 7B | Step 1 done: 1,146 checked answers from the 7B. Step 1c (the options rerun for Mode c, 18 Nov) done: 806 kept of 2,249. Step 1b (soft labels for Mode b): done 19 Nov, all 38,271, in three sessions on account 3. Mode c's training stopped on 18 Nov with every update skipped: some examples give NaN in half precision. Step 2b (19 Nov) found the cause and the fix: one layer at the end of the 3B's vision part overflows on about 1.2% of examples, and keeping that layer in full precision fixes it at no cost. Training restarts with that fix in the training notebook (19 Nov) | [L2 step 1](Champion_Task/L2-step1-results/new-teacher/L2S1-new-teacher/README.md); [L2 step 1c](Champion_Task/L2-step1-results/options-rerun/L2S1c/README.md); [L2 step 1b](Champion_Task/L2-step1-results/soft-labels/L2S1b/README.md); [step 2b](Champion_Task/l2-step2b-fp16-overflow-diagnostic.ipynb) |
 
 **Our four goals** (from our review report):
 
 | Goal | Status |
 |---|---|
-| O1: a damage map with mean IoU above 0.52 and destroyed IoU above 0.30 | **Met on the clean validation pairs, narrowly,** by find-then-grade: only as the mean of its three graders (0.3065); one grader alone is at 0.2982 |
-| O2: counting above the base 7B's 34.2%, and all six tasks re-scored | Six tasks re-scored. Counting not met: 32.96% at best. And this score can't show counting ability (section 3, item 1) |
-| O3: one offline system, DisasTeller on our 7B with the damage map, counts and heatmap | The offline report run is done (11 Nov). Not one chain yet: the reports don't read our maps |
-| O4: a 3B in about 6 GB, measured against the 7B | Both field segmenters are done in 8-bit (33 MB and 33.2 MB). The 3B: options rerun done (806 kept), soft labels running, training ready |
+| O1: a damage map with mean IoU above 0.52 and destroyed IoU above 0.30 | **Met by the chosen method, C4 (chosen 19 Nov):** 0.3501 destroyed IoU and 0.5881 mean IoU on the clean validation pairs, with each grader seed above 0.30. It scores 0.4296 once on the unseen test pairs, ahead of both single methods beyond noise. (Find-then-grade alone meets it only narrowly: 0.3065, the mean of its three graders.) |
+| O2: counting above the base 7B's 34.2%, and all six tasks re-scored | Six tasks re-scored. **Counting: 35.34% from C4's map (19 Nov), above 34.2% on the measure the review promised.** But this score can't show counting ability (section 3, item 1), so count error is reported beside it |
+| O3: one offline system, DisasTeller on our 7B with the damage map, counts and heatmap | The offline report run is done (11 Nov), and its quality-fix run (17 Nov). The map, the table and the hot spots now come from one method on the same photos (19 Nov). Not one chain yet: the reports don't read them (T2 step 5) |
+| O4: a 3B in about 6 GB, measured against the 7B | Both field segmenters are done in 8-bit (33 MB and 33.2 MB). The 3B: options rerun done (806 kept), soft labels done (all 38,271); the half-precision fix is found (step 2b, 19 Nov: one vision layer kept in full precision). Both 3Bs now train with that fix in place, about 53 h each, until about 29 Nov. *(20 Nov: their automatic start waits on one question, how runs started by a script get a Hugging Face write token.)* |
 
 ## 3. Results since update 4 (they go into update 5)
 
@@ -97,11 +97,20 @@ Every part below has been tested, but each with its own model and images. The pa
    - **But the split by event is real.** Without Turkey the U-Net leads by 0.057; on Turkey, find-then-grade leads by 0.236. The U-Net almost never finds Turkey's destroyed buildings.
    - **The grader is the weak part:** with perfect grades on SAM 3's outlines, find-then-grade would reach 0.590. "Damaged" is its weakest class.
    - **Option (c), a mix chosen on validation and confirmed once on test (17 Nov):** C4 (the before-and-after U-Net on xBD images, find-then-grade on the other sources) leads on validation (**0.3501** destroyed IoU, 0.5881 mean IoU) and confirms once on the 2,007 test pairs (**0.4296** destroyed IoU, +0.031 over the U-Net and +0.040 over find-then-grade, both beyond noise). [The mix comparison](Champion_Task/E7-results/step2c/README.md).
+   - **Chosen by Abrar on 19 Nov: C4 makes the system's damage map.** Every option is explained in plain words in [the ledger](Task_Ledger.md#every-option-in-plain-words-written-19-nov-for-the-decision): what it means, what it gives, what it costs.
    - **Aligning each pair's crops at grading time does not help (18 Nov):** moving the after-photo back by phase correlation (47% of clean pairs shifted > 2 px, 17% > 5 px, max 48.8 px) gives 0.3048 destroyed IoU against 0.3066 unaligned (95% interval −0.0072 to +0.0029). [Results](Champion_Task/R16c-results/step6/README.md).
    - [The comparison](Champion_Task/E7-results/step2/README.md), [the resampling](Champion_Task/E7-results/step2b/README.md). Find-then-grade's building table on all the test pairs: [buildings_chain_s42.sqlite](Champion_Task/E7-results/step2/buildings_chain_s42.sqlite) (grader seed 42), in the same columns as H2's.
+   - **C4's table and hot spots on the test photos (E7 step 3, 19 Nov, Abrar's PC).** All six checks passed, and C4's scores reproduce (0.4295 against 0.4296). [Results](Champion_Task/E7-results/step3/README.md).
+     - **The table** (`buildings_c4.sqlite`): 125,439 rows. On the sharper photos, one per building SAM 3 outlined (57,849). That's 24.5% more than joining touching pixels gave, because touching buildings no longer merge, most of all in dense cities (Beirut +39%, Turkey +30%). On xBD photos, one per connected patch of the U-Net's pixels (67,590). A column, `kind`, says which.
+     - **The hot spots** (`hotspots.json`, the heatmap method unchanged): on photos with destroyed buildings, 82.7% of marked points are within 20 px of real damage. Over all 2,007 clean pairs it's 56.9%, below the 70–85% expected, because on photos without destroyed buildings most hot spots are false alarms.
+     - **Counting from C4's map:** 34.89% on the questions without copied photos, ahead of either method alone (32.53% and 32.70%) beyond chance; 35.34% on all 3,580.
+   - **Three follow-up checks (E7 step 3b, 20 Nov, Abrar's PC).** [Results](Champion_Task/E7-results/step3b/README.md).
+     - **Counting from the table's per-building rows scores lower on the benchmark:** 33.18% against 34.89%. The benchmark's own true count is the number of joined blobs in its masks, so touching buildings count as one, and separate rows overshoot it (for intact buildings on the sharper photos, the rows are above the true count on 54% of questions). The benchmark figure stays the joined blobs'.
+     - **The hot spots' weakness is false alarms on new photos, not the maps:** on the same validation photos, C4's maps do as well as the after-photo U-Net's (0.565 against 0.584 on photos without destroyed buildings). On the unseen test photos they mark false damage on undamaged photos about twice as often.
+     - **A stricter rule for when a photo gets hot spots doesn't help** (the test hit share moves from 0.569 to 0.573), so the heatmap method stays as it was (T1 v3).
 3. **On validation, counting from either method's table is level:** find-then-grade 37.73% against the U-Net's 39.24% on 1,055 questions (no clear difference, p = 0.39); median count error 40% against 33%. [Results](Champion_Task/E7-results/step1/README.md).
 4. **The 3B's training is designed and built** (8 Nov), and **the teacher passes are running / done** (18 Nov). The 3B learns from the 7B in one of two ways:
-   - (b) from the 7B's probabilities for each word of the answer, not only its final answer ("soft labels"; running on account 3);
+   - (b) from the 7B's probabilities for each word of the answer, not only its final answer ("soft labels"; done 19 Nov, all 38,271);
    - (c) from the 7B's answers with the benchmark's options shown (done 18 Nov: **806 kept of 2,249** answered across building counting, road counting and relational reasoning, meeting the 700–900 expectation; [results](Champion_Task/L2-step1-results/options-rerun/L2S1c/README.md)).
 
    A rule fixed before training picks the better one on 1,962 held-out questions. Five Kaggle notebooks, [l2-step1b-soft-labels.ipynb](Champion_Task/l2-step1b-soft-labels.ipynb) to [l2-step4-winner-benchmark.ipynb](Champion_Task/l2-step4-winner-benchmark.ipynb); Mode (c)'s 3B training is ready to start now.
@@ -120,6 +129,10 @@ Every part below has been tested, but each with its own model and images. The pa
    - **Then the quality-fix run (Ridita, 17 Nov, Kaggle, internet off; commit `aaabf5bd4`).** The map reading is now written by code from the grades; one more question reads each photo's sign; and every section is checked for invented contact details and for its citations. It passed the offline proof again. "No danger" sentences 4 → 0, made-up contact details 1 → 0, citations 11 in 1 report → 24 in 4, all real, and 19 of the 24 support their sentence fully or partly; contradictions 6 → 3; useful yes / partly / no 2 / 4 / 0 (one "yes" borderline). New problems the checks can't see: the Hospitals section copies the Shelters section, the bridge's G5 cites `[EMS98-rc-grade-1]`, the labelled map wasn't made, and the Public report says "visit our website". The photo descriptions are unchanged and now the largest known source of error.
    - [Ridita's README](Offline_RAG_KR2/README.md), "Comparison with the July Gemini reports" and "Quality-fix run"; the counts in [report_comparison/](Offline_RAG_KR2/report_comparison/results.csv).
 6. **The showcase website is built** (15–17 Nov), not deployed: section 5.
+7. **Can the 7B learn to see damage? (L0b, 19 Nov, account 2.)** Its vision part was trained, for the first time, on 1,800 building crops drawn as in Tamanna's Part B. Then it was scored on Part B's 300 buildings.
+   - It got **176 of 300** right, against 100 for our 7B with its vision part frozen and 212 for the grader. Both differences are clear.
+   - On destroyed buildings it beats the grader (86 against 66), but it calls many intact buildings damaged.
+   - By the rule fixed before the run, the grader keeps the grading, and the 34-GPU-hour full training isn't needed. [Results](Champion_Task/L0b-results/L0b/README.md).
 
 ## 4. What's decided, and what's still open
 
@@ -131,14 +144,11 @@ Every part below has been tested, but each with its own model and images. The pa
 - **Our 7B is the one retrained in late October**, kept on 28 Oct: it gained on relations, and no task fell by more than a point.
 - **The website** is built from Aryan's prototype, in the look Abrar chose ("Aftermap" is a placeholder name). Abrar deploys it by hand; nothing goes public from a push.
 
-**Still open:**
-- **Which method feeds the building table, the hot spots and the reports.** Abrar decides next, from section 3's results:
-  - (a) the before-and-after U-Net: better outside Turkey, and at finding buildings at all;
-  - (b) find-then-grade: the only method with one outline per building, and far better on Turkey;
-  - (c) a mix, for example SAM 3's outlines graded by the U-Net's pixels: chosen on the validation pairs and confirmed once on the test pairs. Recommended, since each method wins where the other fails.
+- **The damage map comes from C4** (19 Nov, Abrar's choice): the before-and-after U-Net on xBD's coarser photos, find-then-grade on the sharper ones. It was the only option ahead on destroyed buildings on both the validation and the unseen test pairs. Its table and hot spots exist for all 2,065 test photos (E7 step 3). Still, nothing downstream should hard-code one method's file paths.
+- **The 3B's two trainings run one full epoch each** (19 Nov, option A), started session by session by a script on Abrar's PC.
 
-  Until it's chosen, nothing downstream (the bridge, the reports' facts, the website's gallery) should hard-code one method.
-- **How we report the counting goal,** given the flaw: count error beside accuracy.
+**Still open:**
+- **How we report the counting goal,** given the flaw: count error beside accuracy. C4's counts clear the 34.2% bar (35.34%); whether update 5 claims O2 on that number, with the flaw stated beside it, is Abrar's call.
 - **Who writes the reports:** our 7B, or a small text-only model (`Qwen/Qwen2.5-3B-Instruct`) given the same facts (T2b). Our goals name our 7B, so a swap needs the supervisor's agreement.
 - **For the website:** its name, and whether xBD pairs could show metres (xBD's own label files give 1.25 to 2.82 m per pixel; the Turkey pairs have no scale).
 
@@ -171,9 +181,9 @@ Every part below has been tested, but each with its own model and images. The pa
 ## 6. What comes next, and your part
 
 **Order of work:**
-1. Abrar chooses the method (section 4).
-2. Hot spots on that method's maps.
-3. The reports read that method's table and hot spots (T2 step 5). Then every number in a report is checked against the table (step 7).
+1. Abrar chooses the method (section 4). *Done 19 Nov: C4.*
+2. Hot spots on that method's maps. *Done 19 Nov: E7 step 3.*
+3. The reports read that method's table and hot spots (T2 step 5, Ridita, next). Then every number in a report is checked against the table (step 7).
 4. Who writes the reports (T2b).
 5. A final internet-off run of the whole chain.
 6. The website's live demo runs that chain.
@@ -210,19 +220,32 @@ Every part below has been tested, but each with its own model and images. The pa
 
 ### Ridita
 - **Started 18 Nov: Layer 3, generated before-photos** ([Layer3_Task/Layer3_Task_Brief.md](Layer3_Task/Layer3_Task_Brief.md)). Step 0's smoke test passed all 7 checks (6,443 pairs, 5,798 training and 645 validation with 560 xBD, 1,808,111 destroyed pixels, E5's 40 leaked pairs found again, 0 new leaks, 605 clean pairs); go given for Step 0's full run and Step 1's smoke test. `abrarmohammedtanzim/disasterm3-r11-r9-checkpoints` is shared with the Kaggle group for Step 1.
+  - **Step 0 done 18 Nov: the full run passed all 7 checks** ([results](Layer3_Task/results/step0/README.md), commit `36894c0e2`).
+  - **Checked by Abrar on 19 Nov against E5's own files:**
+    - the same 645 validation pairs, with the same true pixels per class in each;
+    - the same pixel hashes for all 12,886 photos;
+    - exactly E5's 40 leaks, and none new in any of the four combinations.
+  - **Next: Step 1's smoke test** (go given), with gray = (86, 91, 69).
 - **Done on 16 Nov:** the comparison with July's Gemini reports (section 3, item 5).
 - **Done on 17 Nov: the quality-fix run,** our second offline proof (section 3, item 5). Checked on 18 Nov against your files: "PASSED", internet off, all five rules, commit `aaabf5bd4`; 24 citations, 13 supporting their sentence, 6 partly, 5 not. It is in update 5.
 - **Your questions of 18 Nov:**
-  - **Is T2 step 5 yours, and which method?** Yes, it's yours. The method: the mix (the before-and-after U-Net on xBD's images, find-then-grade on the others) leads on both the validation and the test pairs, and Abrar confirms it this week (update 5, "Next Week"). Both methods' tables have H2's columns, so write step 5 with the table file and the hot-spot file as inputs, never fixed paths. The hot spots get drawn on the chosen method's maps first; until then, test the wiring on the 7 images H2's table and T1's hot spots share.
+  - **Is T2 step 5 yours, and which method?** Yes, it's yours. The method: the mix (the before-and-after U-Net on xBD's images, find-then-grade on the others) leads on both the validation and the test pairs, and **Abrar confirmed it on 19 Nov: C4.** Both methods' tables have H2's columns, so write step 5 with the table file and the hot-spot file as inputs, never fixed paths. *The hot spots on C4's maps are done (E7 step 3, 19 Nov): use its two files, below, not the 7 shared images.*
   - **Should you add your laptop tests to the repository?** Yes: the pretend server's five modes and the 45 small checks, in `Offline_RAG_KR2/`, with a line in your README on how to run them. Today nobody else can re-run them.
-- **T2 step 5, connecting the bridge:** `disasteller_inputs.py` isn't called by the main script yet. When you connect it:
+- **T2 step 5, connecting the bridge: your inputs are ready (19 Nov).** `disasteller_inputs.py` isn't called by the main script yet. Connect it to these two files, both from C4 on the same 2,065 test photos:
+  - [`Champion_Task/E7-results/step3/buildings_c4.sqlite`](Champion_Task/E7-results/step3/README.md): tables `buildings` (H2's columns plus `kind`) and `images` (each photo's source and method);
+  - `Champion_Task/E7-results/step3/hotspots.json`: the heatmap method's format, as T1 v3 wrote it.
+
+  Abrar's check 6 already ran your bridge, unchanged, on both files for one xBD photo and one other photo; its printout is in the [step 3 README](Champion_Task/E7-results/step3/README.md), "What Ridita's report writer reads". Pass both paths in as inputs, never fixed in the code. When you connect it:
+  - **Patches aren't buildings.** On xBD photos (`kind` = `patch`) each row is a connected patch of pixels of one class, which can hold several touching buildings. There the reports must say "damaged areas" or "patches", never "N buildings". On the sharper photos (`kind` = `outline`) each row is one building. *(E7 step 3b, 20 Nov: there the rows count more intact buildings than the benchmark's answers do, because the benchmark joins touching buildings into one; the rows are the right unit for a report.)*
+  - **Every hot spot is a guess to be checked, never a finding.** On photos that really have destroyed buildings, 83% of hot spots sit near real damage. On photos without, only 29% do, so most are false alarms (E7 step 3). The report writer can't tell which kind of photo it has, so every hot spot must be written as the model's estimate ("the model estimates damage here, to be checked on the ground"), as the bridge's title already says, never as "destroyed buildings found here".
   - **Missing must not read as zero.** Done on 17 Nov. An image that isn't in the table returns `image_not_in_table` (Aryan). Safe areas are read with the right keys, and a missing field prints "missing" (Abrar).
-  - **One method for both inputs.** The table and the hot spots must come from the same method: today H2's table and T1's hot spots share only 7 images.
+  - **One method for both inputs:** met by these two files. The old pair, H2's table and T1's hot spots, shared only 7 images.
 - **Then T2b:** the same facts and guideline search with two writers, our 7B and a small text-only model, counted by number contradictions and invented citations.
 - **The website's Reports page** shows your proof run's reports word for word, with the problems from your README's "Quality problems" list marked: 14 phrases, plus 8 notes for problems with no single phrase to mark ([reportNotes.ts](T3_Website/src/core/reportNotes.ts)). Your comparison's further findings (the two photo descriptions that contradict their photos, the hall "in the center of the region", "existing medical facilities remain unaffected", the Emergency report's "G4 and G5, respectively") aren't marked yet. You checked all 14 marks and 8 notes against the proof run on 17 Nov: all correct.
 
 ### Tamanna
 - **Your Part B result is part of the design** (section 4): grading stays with the trained grader.
+- **Your Part B set was the test for L0b (19 Nov):** the 7B with its vision part trained got 176 of your 300 buildings right, against 212 for the grader and 100 for the frozen 7B (section 3, item 7). The grader stays.
 - **L4, once suggested for you, is done (Abrar, 18 Nov):** EfficientSAM3's three released models find almost no buildings in our satellite photos. Building IoU is 0.010–0.054 against full SAM 3's 0.6302, so SAM 3 stays the finder ([results](Champion_Task/L4-results/L4/README.md)).
 
 ## 7. Where to look

@@ -7,12 +7,12 @@
  "max_pixels": 602112,
  "answer": "the dataset's label (training_answer)",
  "positions": "every answer token and the end-of-answer token",
- "questions_done": 16400,
- "complete": false,
+ "questions_done": 38271,
+ "complete": true,
  "held_out_every": 20,
  "label_mismatches": 0,
- "seconds_per_question": 1.035,
- "projected_hours_all": 11.0,
+ "seconds_per_question": 1.998,
+ "projected_hours_all": 21.2,
  "versions": {
   "torch": "2.11.0+cu130",
   "transformers": "5.20.2"

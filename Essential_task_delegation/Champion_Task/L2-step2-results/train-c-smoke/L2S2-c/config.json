@@ -1,0 +1,37 @@
+{
+ "task": "L2 step 2: train the 3B, option (c)",
+ "mode": "c",
+ "smoke_test": true,
+ "base_model": "Qwen/Qwen2.5-VL-3B-Instruct",
+ "adapter_repo": "AbrarAlam/disasterm3-qwen25vl3b-l2",
+ "hub_dir": "c/checkpoints",
+ "final_dir": "c/final",
+ "data_root": "/kaggle/input/datasets/abrarmohammedtanzim/disasterm3-mirror/DisasterM3_Instruct",
+ "output_dir": "/kaggle/working/L2S2-c/smoke",
+ "l2s1_manifest": "/kaggle/input/notebooks/abrarmohammedtanzim/l2-step1-new-teacher/L2S1-new-teacher/disasterm3_distillation_cot_train.json",
+ "options_kept": "/kaggle/input/notebooks/abrar2222864642/l2-step1c-options-rerun/L2S1c/options_kept.jsonl",
+ "seed": 42,
+ "lora": {
+  "r": 64,
+  "alpha": 16,
+  "dropout": 0.05
+ },
+ "lr": 0.0002,
+ "betas": [
+  0.9,
+  0.95
+ ],
+ "weight_decay": 0.01,
+ "warmup_ratio": 0.03,
+ "per_device_batch": 1,
+ "grad_accum": 4,
+ "save_steps": 10,
+ "time_limit_h": 10.5,
+ "optim": "adamw_bnb_8bit",
+ "kd_alpha": 0.5,
+ "kd_topk": 20,
+ "quantize": true,
+ "fp16": true,
+ "workers": 2,
+ "smoke_examples": 16
+}

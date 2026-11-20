@@ -1,0 +1,4 @@
+source,R9_val,C4_val,C4_test,maps_change,photos_change,main_cause_by_the_rule
+all,0.584,0.565,0.287,-0.019,-0.278,the photos
+xBD,0.613,0.589,0.307,-0.024,-0.282,the photos
+other,0.118,0.323,0.226,0.205,-0.097,both

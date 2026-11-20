@@ -34,6 +34,8 @@ export const METHOD_LABELS: Record<string, string> = {
   'find-then-grade': 'Find-then-grade',
   'after-only-unet': 'After-image-only model',
   'field-model': 'Field model',
+  /** Try it's model since 18 Nov: the before-and-after model in 8 bits (L1c). */
+  'pair-model-int8': 'Before-and-after model, 8-bit',
 };
 
 // An event's name as a reader expects it: place names capitalised, the kind of disaster not

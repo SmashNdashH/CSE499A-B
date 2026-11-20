@@ -186,6 +186,24 @@
     "source": "Essential_task_delegation/Champion_Task/L1B-results/L1b/README.md", "find": ["INT8 static, keep 1+3 FP32", "0.5363"], "public_from": "2026-11-11"
   },
   {
+    "id": "pair_model_int8_size", "value": 33.2, "display": "33 MB",
+    "measures": "File size of the 8-bit before-and-after model that runs in Try it",
+    "image_set": "not applicable", "model": "Before-and-after U-Net, INT8 ONNX, four convolutions kept in full precision",
+    "source": "Essential_task_delegation/Champion_Task/L1C-results/L1c/README.md", "find": ["INT8 static, keep 1+3 FP32", "33163619"], "public_from": "2026-11-18"
+  },
+  {
+    "id": "pair_model_int8_miou_clean", "value": 0.5733, "display": "0.573",
+    "measures": "Mean overlap over background, intact, damaged and destroyed (mean IoU), for the exact file that runs in the browser, one prediction per pair",
+    "image_set": "605 clean validation pairs", "model": "Before-and-after U-Net, INT8 ONNX, four convolutions kept in full precision, no test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/L1C-results/L1c/README.md", "find": ["INT8 static, keep 1+3 FP32", "0.5733"], "public_from": "2026-11-18"
+  },
+  {
+    "id": "pair_model_int8_destroyed_iou_clean", "value": 0.263, "display": "0.263",
+    "measures": "Overlap between predicted and true destroyed-building pixels (IoU, 0 to 1), for the exact file that runs in the browser, one prediction per pair",
+    "image_set": "605 clean validation pairs", "model": "Before-and-after U-Net, INT8 ONNX, four convolutions kept in full precision, no test-time augmentation",
+    "source": "Essential_task_delegation/Champion_Task/L1C-results/L1c/README.md", "find": ["INT8 static, keep 1+3 FP32", "0.263"], "public_from": "2026-11-18"
+  },
+  {
     "id": "browser_time", "value": "2.1-5.5", "display": "2.1 to 5.5 s",
     "measures": "Time per 1024 x 1024 image in Chrome and Edge after the first run, on a 20-thread PC",
     "image_set": "1 xBD after-image (hurricane-harvey_00000099)", "model": "The 8-bit field model in ONNX Runtime Web 1.20.1 (WebAssembly, several threads)",

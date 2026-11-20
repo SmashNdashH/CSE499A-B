@@ -1,0 +1,441 @@
+k,eidx,kind,task,longest,images,tokens,image_tokens,loss_fp16,nan_fp16,sec_fp16,overflow_starts,peak_abs,peak_module,loss_a,sec_a,loss_b,sec_b,loss_c,sec_c
+0,18750,train,Building Damage Counting,False,2,1511,1458,1.0974777936935425,False,8.471,,42112.0,model.visual.blocks.31,,,,,,
+1,9680,train,Building Damage Counting,False,2,1511,1458,0.9892004132270813,False,2.0,,50784.0,model.visual.blocks.31,0.9877903461456299,1.824,0.9892004132270813,1.824,0.9871124625205994,4.792
+2,8191,train,Building Damage Counting,False,2,1508,1458,1.330618143081665,False,1.998,,38432.0,model.visual.blocks.31,1.3288075923919678,1.822,1.330618143081665,1.82,1.3320379257202148,4.548
+3,20512,train,Building Damage Counting,False,2,1506,1458,1.3169759511947632,False,2.007,,33440.0,model.visual.blocks.31,,,,,,
+4,12485,train,Building Damage Counting,False,2,1513,1458,1.1959375143051147,False,2.014,,38944.0,model.visual.blocks.31,,,,,,
+5,11963,train,Building Damage Counting,False,2,1514,1458,1.3007341623306274,False,2.025,,39328.0,model.visual.blocks.31,,,,,,
+6,11584,train,Building Damage Counting,False,2,1510,1458,1.0505801439285278,False,2.021,,39072.0,model.visual.blocks.31,1.0502445697784424,1.826,1.0505801439285278,1.83,1.0504467487335205,4.576
+7,10166,train,Building Damage Counting,False,2,1510,1458,1.0080199241638184,False,2.033,,38816.0,model.visual.blocks.31,,,,,,
+8,20426,train,Building Damage Counting,False,2,1507,1458,1.3222017288208008,False,2.031,,37696.0,model.visual.blocks.31,,,,,,
+9,9529,train,Building Damage Counting,False,2,1512,1458,1.0391545295715332,False,2.034,,45472.0,model.visual.blocks.31,1.0408802032470703,1.804,1.0391545295715332,1.814,1.0397279262542725,4.604
+10,19395,train,Building Damage Counting,False,2,1508,1458,0.4961214065551758,False,2.043,,41920.0,model.visual.blocks.31,,,,,,
+11,20498,train,Building Damage Counting,False,2,1502,1458,1.2418040037155151,False,2.038,,34432.0,model.visual.blocks.31,,,,,,
+12,17134,train,Building Damage Counting,False,2,1509,1458,1.3895591497421265,False,2.052,,34304.0,model.visual.blocks.31,,,,,,
+13,9263,train,Building Damage Counting,False,2,1512,1458,1.8767266273498535,False,2.046,,42208.0,model.visual.blocks.31,,,,,,
+14,17907,train,Building Damage Counting,False,2,1507,1458,1.346154808998108,False,2.064,,41856.0,model.visual.blocks.31,,,,,,
+15,15004,train,Building Damage Counting,False,2,1514,1458,0.9648323059082031,False,2.069,,39424.0,model.visual.blocks.31,,,,,,
+16,8312,train,Building Damage Counting,False,2,1506,1458,0.9690444469451904,False,2.078,,50048.0,model.visual.blocks.31,,,,,,
+17,8276,train,Building Damage Counting,False,2,1512,1458,0.9046455025672913,False,2.074,,33216.0,model.visual.blocks.31,,,,,,
+18,9381,train,Building Damage Counting,False,2,1510,1458,0.45163097977638245,False,2.097,,38176.0,model.visual.blocks.31,0.45189499855041504,1.829,0.45163097977638245,1.822,0.45175182819366455,4.653
+19,11506,train,Building Damage Counting,False,2,1512,1458,0.9522188305854797,False,2.098,,38944.0,model.visual.blocks.31,,,,,,
+20,11749,train,Building Damage Counting,False,2,1512,1458,0.8028714060783386,False,2.11,,42112.0,model.visual.blocks.31,,,,,,
+21,16448,train,Building Damage Counting,False,2,1512,1458,1.0710517168045044,False,2.125,,35168.0,model.visual.blocks.31,,,,,,
+22,18107,train,Building Damage Counting,False,2,1504,1458,1.5735267400741577,False,2.126,,37312.0,model.visual.blocks.31,,,,,,
+23,8217,train,Building Damage Counting,False,2,1507,1458,1.1290255784988403,False,2.133,,45024.0,model.visual.blocks.31,1.1294348239898682,1.828,1.1290255784988403,1.82,1.12691068649292,4.708
+24,17409,train,Building Damage Counting,False,2,1508,1458,2.0263242721557617,False,2.131,,39520.0,model.visual.blocks.31,,,,,,
+25,11170,train,Building Damage Counting,False,2,1511,1458,0.6994583010673523,False,2.157,,39008.0,model.visual.blocks.31,,,,,,
+26,20077,train,Building Damage Counting,False,2,1504,1458,0.5956506133079529,False,2.126,,33056.0,model.visual.blocks.31,,,,,,
+27,18930,train,Building Damage Counting,False,2,1511,1458,0.9984480142593384,False,2.149,,37312.0,model.visual.blocks.31,0.9974932670593262,1.832,0.9984480142593384,1.822,0.9967615008354187,4.758
+28,19821,train,Building Damage Counting,False,2,1505,1458,1.4685771465301514,False,2.143,,41280.0,model.visual.blocks.31,,,,,,
+29,17127,train,Building Damage Counting,False,2,1506,1458,1.598091721534729,False,2.18,,36288.0,model.visual.blocks.31,1.6020430326461792,1.821,1.598091721534729,1.825,1.5996915102005005,4.787
+30,14962,train,Building Damage Counting,False,2,1511,1458,1.5870715379714966,False,2.19,,37376.0,model.visual.blocks.31,,,,,,
+31,11536,train,Building Damage Counting,False,2,1509,1458,1.0057696104049683,False,2.202,,40640.0,model.visual.blocks.31,1.0061008930206299,1.83,1.0057696104049683,1.822,1.0045479536056519,4.842
+32,15475,train,Building Damage Counting,False,2,1510,1458,0.5951375961303711,False,2.217,,41760.0,model.visual.blocks.31,0.5969405174255371,1.822,0.5951375961303711,1.816,0.5958056449890137,4.906
+33,17887,train,Building Damage Counting,False,2,1504,1458,1.6386998891830444,False,2.208,,33760.0,model.visual.blocks.31,,,,,,
+34,12538,train,Building Damage Counting,False,2,1509,1458,1.0218849182128906,False,2.244,,57504.0,model.visual.blocks.31,,,,,,
+35,21677,train,Building Damage Counting,False,2,1505,1458,1.515587568283081,False,2.26,,40480.0,model.visual.blocks.31,,,,,,
+36,19361,options,Building Damage Counting,False,2,1592,1458,0.3910980224609375,False,2.332,,41792.0,model.visual.blocks.31,,,,,,
+37,7875,train,Building Damage Counting,False,2,1508,1458,0.9783669114112854,False,2.271,,41056.0,model.visual.blocks.31,,,,,,
+38,20809,train,Building Damage Counting,False,2,1504,1458,1.3586256504058838,False,2.262,,44896.0,model.visual.blocks.31,1.359262228012085,1.801,1.3586256504058838,1.8,1.3568824529647827,4.947
+39,21616,train,Building Damage Counting,False,2,1507,1458,1.4710075855255127,False,2.292,,40288.0,model.visual.blocks.31,,,,,,
+40,10508,train,Building Damage Counting,False,2,1511,1458,0.8664765357971191,False,2.324,,47616.0,model.visual.blocks.31,0.868020236492157,1.834,0.8664765357971191,1.822,0.8714228868484497,5.06
+41,19767,train,Building Damage Counting,False,2,1504,1458,0.7188211679458618,False,2.301,,42016.0,model.visual.blocks.31,,,,,,
+42,15018,train,Building Damage Counting,False,2,1513,1458,1.3498010635375977,False,2.332,,39456.0,model.visual.blocks.31,1.3511160612106323,1.833,1.3498010635375977,1.834,1.3482178449630737,5.099
+43,13592,train,Building Damage Counting,False,2,1514,1458,1.2780901193618774,False,2.336,,52224.0,model.visual.blocks.31,,,,,,
+44,12533,train,Building Damage Counting,False,2,1513,1458,1.2390621900558472,False,2.347,,40640.0,model.visual.blocks.31,1.2384740114212036,1.832,1.2390621900558472,1.831,1.237697958946228,5.128
+45,10438,train,Building Damage Counting,False,2,1508,1458,1.4713367223739624,False,2.321,,37344.0,model.visual.blocks.31,1.4697920083999634,1.819,1.4713367223739624,1.815,1.4714138507843018,5.203
+46,11449,train,Building Damage Counting,False,2,1514,1458,1.3551480770111084,False,2.327,,40928.0,model.visual.blocks.31,,,,,,
+47,20892,train,Building Damage Counting,False,2,1509,1458,1.326606035232544,False,2.3,,33472.0,model.visual.blocks.31,,,,,,
+48,13528,train,Building Damage Counting,False,2,1513,1458,1.4227854013442993,False,2.291,,44384.0,model.visual.blocks.31,,,,,,
+49,9523,train,Building Damage Counting,False,2,1509,1458,0.7500813603401184,False,2.276,,42720.0,model.visual.blocks.31,,,,,,
+50,806,train,Disaster Bearing Bodies Recognition,False,2,1517,1458,2.4235517978668213,False,2.269,,33600.0,model.visual.blocks.31,,,,,,
+51,3280,train,Disaster Bearing Bodies Recognition,False,2,1513,1458,1.4831042289733887,False,2.254,,44800.0,model.visual.blocks.31,,,,,,
+52,840,train,Disaster Bearing Bodies Recognition,False,2,1522,1458,1.71708345413208,False,2.254,,38560.0,model.visual.blocks.31,,,,,,
+53,3098,train,Disaster Bearing Bodies Recognition,False,2,1516,1458,1.5397679805755615,False,2.242,,39936.0,model.visual.blocks.31,1.5399885177612305,1.826,1.5397679805755615,1.822,1.5437936782836914,5.265
+54,7301,train,Disaster Bearing Bodies Recognition,False,2,1516,1458,2.0627341270446777,False,2.243,,44768.0,model.visual.blocks.31,,,,,,
+55,2971,train,Disaster Bearing Bodies Recognition,False,2,1521,1458,1.6160427331924438,False,2.238,,37536.0,model.visual.blocks.31,,,,,,
+56,5196,train,Disaster Bearing Bodies Recognition,False,2,1516,1458,1.0372577905654907,False,2.23,,41536.0,model.visual.blocks.31,1.0371499061584473,1.821,1.0372577905654907,1.817,1.0385761260986328,5.285
+57,2287,train,Disaster Bearing Bodies Recognition,False,2,1515,1458,2.5953049659729004,False,2.24,,34752.0,model.visual.blocks.31,2.595672369003296,1.832,2.5953049659729004,1.831,2.593402147293091,5.406
+58,6953,train,Disaster Bearing Bodies Recognition,False,2,1522,1458,1.5998040437698364,False,2.237,,33984.0,model.visual.blocks.31,,,,,,
+59,374,train,Disaster Bearing Bodies Recognition,False,2,1518,1458,1.1259149312973022,False,2.234,,51392.0,model.visual.blocks.31,1.1258403062820435,1.828,1.1259149312973022,1.823,1.127381443977356,5.508
+60,6284,train,Disaster Bearing Bodies Recognition,False,2,1517,1458,0.8047441244125366,False,2.239,,49120.0,model.visual.blocks.31,0.8049656748771667,1.832,0.8047441244125366,1.835,0.8054698705673218,5.633
+61,3950,train,Disaster Bearing Bodies Recognition,False,2,1510,1458,2.0862011909484863,False,2.242,,40672.0,model.visual.blocks.31,2.0871365070343018,1.822,2.0862011909484863,1.817,2.0862438678741455,5.715
+62,4615,train,Disaster Bearing Bodies Recognition,False,2,1519,1458,2.1164143085479736,False,2.243,,36992.0,model.visual.blocks.31,,,,,,
+63,1085,train,Disaster Bearing Bodies Recognition,False,2,1521,1458,1.6503548622131348,False,2.258,,42368.0,model.visual.blocks.31,,,,,,
+64,3268,train,Disaster Bearing Bodies Recognition,False,2,1516,1458,0.9868992567062378,False,2.251,,45120.0,model.visual.blocks.31,,,,,,
+65,684,train,Disaster Bearing Bodies Recognition,False,2,1506,1458,2.4729926586151123,False,2.251,,37248.0,model.visual.blocks.31,,,,,,
+66,4753,train,Disaster Bearing Bodies Recognition,False,2,1521,1458,1.561041235923767,False,2.27,,58976.0,model.visual.blocks.31,,,,,,
+67,2530,train,Disaster Bearing Bodies Recognition,False,2,1522,1458,1.772678017616272,False,2.273,,35552.0,model.visual.blocks.31,,,,,,
+68,7145,train,Disaster Bearing Bodies Recognition,False,2,1511,1458,1.781800627708435,False,2.276,,38368.0,model.visual.blocks.31,,,,,,
+69,5411,train,Disaster Bearing Bodies Recognition,False,2,1512,1458,1.284841537475586,False,2.261,,50240.0,model.visual.blocks.31,,,,,,
+70,5324,train,Disaster Bearing Bodies Recognition,False,2,1516,1458,1.018294334411621,False,2.277,,33504.0,model.visual.blocks.31,,,,,,
+71,7628,train,Disaster Bearing Bodies Recognition,False,2,1518,1458,2.1321659088134766,False,2.281,,44800.0,model.visual.blocks.31,,,,,,
+72,7423,train,Disaster Bearing Bodies Recognition,False,2,1514,1458,1.4795935153961182,False,2.285,,33376.0,model.visual.blocks.31,,,,,,
+73,3125,train,Disaster Bearing Bodies Recognition,False,2,1522,1458,1.749933123588562,False,2.293,,41248.0,model.visual.blocks.31,1.7502001523971558,1.827,1.749933123588562,1.833,1.74857497215271,5.837
+74,4971,train,Disaster Bearing Bodies Recognition,False,2,1515,1458,2.0904593467712402,False,2.282,,42624.0,model.visual.blocks.31,2.0889153480529785,1.826,2.0904593467712402,1.829,2.0921308994293213,5.977
+75,1667,train,Disaster Bearing Bodies Recognition,False,2,1517,1458,2.085763692855835,False,2.283,,34208.0,model.visual.blocks.31,2.0859522819519043,1.831,2.085763692855835,1.823,2.082190752029419,6.066
+76,6062,train,Disaster Bearing Bodies Recognition,False,2,1508,1458,1.348669171333313,False,2.271,,64416.0,model.visual.blocks.31,,,,,,
+77,600,train,Disaster Bearing Bodies Recognition,False,2,1513,1458,2.508228302001953,False,2.281,,50400.0,model.visual.blocks.31,2.507654905319214,1.826,2.508228302001953,1.827,2.5099143981933594,6.104
+78,394,train,Disaster Bearing Bodies Recognition,False,2,1515,1458,1.2752939462661743,False,2.272,,51872.0,model.visual.blocks.31,,,,,,
+79,5694,train,Disaster Bearing Bodies Recognition,False,2,1513,1458,1.8170998096466064,False,2.268,,32720.0,model.visual.blocks.31,,,,,,
+80,1965,train,Disaster Bearing Bodies Recognition,False,2,1514,1458,1.8042163848876953,False,2.273,,44576.0,model.visual.blocks.31,,,,,,
+81,6661,train,Disaster Bearing Bodies Recognition,False,2,1518,1458,2.436021089553833,False,2.27,,36672.0,model.visual.blocks.31,,,,,,
+82,2498,train,Disaster Bearing Bodies Recognition,False,2,1516,1458,2.0493407249450684,False,2.26,,36800.0,model.visual.blocks.31,2.050586462020874,1.822,2.0493407249450684,1.821,2.04968523979187,5.995
+83,693,train,Disaster Bearing Bodies Recognition,False,2,1515,1458,2.472275733947754,False,2.276,,35104.0,model.visual.blocks.31,,,,,,
+84,7368,train,Disaster Bearing Bodies Recognition,False,2,1505,1458,2.0502452850341797,False,2.268,,39648.0,model.visual.blocks.31,,,,,,
+85,2010,train,Disaster Bearing Bodies Recognition,False,2,1509,1458,1.8380593061447144,False,2.256,,45408.0,model.visual.blocks.31,1.8374172449111938,1.819,1.8380593061447144,1.831,1.8350028991699219,5.908
+86,7465,train,Disaster Bearing Bodies Recognition,False,2,1506,1458,1.207517385482788,False,2.258,,38048.0,model.visual.blocks.31,1.207684874534607,1.813,1.207517385482788,1.82,1.2042977809906006,5.807
+87,876,train,Disaster Bearing Bodies Recognition,False,2,1519,1458,1.7667418718338013,False,2.265,,39904.0,model.visual.blocks.31,,,,,,
+88,3281,train,Disaster Bearing Bodies Recognition,False,2,1518,1458,1.9781503677368164,False,2.251,,32896.0,model.visual.blocks.31,,,,,,
+89,2404,train,Disaster Bearing Bodies Recognition,False,2,1510,1458,2.2247653007507324,False,2.256,,34912.0,model.visual.blocks.31,2.2243895530700684,1.816,2.2247653007507324,1.826,2.221864700317383,5.726
+90,3898,train,Disaster Bearing Bodies Recognition,False,2,1509,1458,1.8543096780776978,False,2.257,,44576.0,model.visual.blocks.31,,,,,,
+91,5470,train,Disaster Bearing Bodies Recognition,False,2,1513,1458,2.344050407409668,False,2.255,,41568.0,model.visual.blocks.31,2.3424222469329834,1.818,2.344050407409668,1.824,2.344254970550537,5.729
+92,7184,train,Disaster Bearing Bodies Recognition,False,2,1519,1458,1.5347846746444702,False,2.268,,33248.0,model.visual.blocks.31,,,,,,
+93,3152,train,Disaster Bearing Bodies Recognition,False,2,1525,1458,1.369365930557251,False,2.267,,45056.0,model.visual.blocks.31,,,,,,
+94,1413,train,Disaster Bearing Bodies Recognition,False,2,1514,1458,1.4249790906906128,False,2.252,,36000.0,model.visual.blocks.31,,,,,,
+95,3197,train,Disaster Bearing Bodies Recognition,False,2,1509,1458,1.3974860906600952,False,2.259,,30672.0,model.visual.blocks.31,,,,,,
+96,3067,train,Disaster Bearing Bodies Recognition,False,2,1509,1458,1.3552874326705933,False,2.251,,41472.0,model.visual.blocks.31,,,,,,
+97,1813,train,Disaster Bearing Bodies Recognition,False,2,1516,1458,2.260715961456299,False,2.269,,39680.0,model.visual.blocks.31,,,,,,
+98,5770,train,Disaster Bearing Bodies Recognition,False,2,1511,1458,1.8726823329925537,False,2.256,,38688.0,model.visual.blocks.31,,,,,,
+99,2310,train,Disaster Bearing Bodies Recognition,False,2,1524,1458,1.9275726079940796,False,2.272,,53152.0,model.visual.blocks.31,,,,,,
+100,52839,train,Disaster Scene Recognition,False,2,1513,1458,2.562209367752075,False,2.265,,62816.0,model.visual.blocks.31,,,,,,
+101,52674,train,Disaster Scene Recognition,False,2,1513,1458,1.2993900775909424,False,2.265,,36864.0,model.visual.blocks.31,,,,,,
+102,52370,train,Disaster Scene Recognition,False,2,1515,1458,1.968361258506775,False,2.265,,49216.0,model.visual.blocks.31,,,,,,
+103,47411,train,Disaster Scene Recognition,False,2,1519,1458,1.7901220321655273,False,2.274,,37120.0,model.visual.blocks.31,1.789949655532837,1.819,1.7901220321655273,1.827,1.7842782735824585,5.686
+104,52036,train,Disaster Scene Recognition,False,2,1515,1458,1.9326305389404297,False,2.271,,36160.0,model.visual.blocks.31,1.9336494207382202,1.821,1.9326305389404297,1.821,1.9353681802749634,5.679
+105,52256,train,Disaster Scene Recognition,False,2,1526,1458,1.8223189115524292,False,2.278,,42688.0,model.visual.blocks.31,,,,,,
+106,48277,train,Disaster Scene Recognition,False,2,1521,1458,2.5068633556365967,False,2.28,,32000.0,model.visual.blocks.31,,,,,,
+107,51388,train,Disaster Scene Recognition,False,2,1526,1458,2.237642765045166,False,2.274,,39136.0,model.visual.blocks.31,,,,,,
+108,53069,train,Disaster Scene Recognition,False,2,1518,1458,2.0915374755859375,False,2.269,,34688.0,model.visual.blocks.31,2.089348316192627,1.821,2.0915374755859375,1.83,2.088235378265381,5.701
+109,48910,train,Disaster Scene Recognition,False,2,1515,1458,2.3122544288635254,False,2.275,,40768.0,model.visual.blocks.31,,,,,,
+110,48210,train,Disaster Scene Recognition,False,2,1529,1458,2.0068490505218506,False,2.279,,36064.0,model.visual.blocks.31,2.0067806243896484,1.827,2.0068490505218506,1.832,2.005678653717041,5.779
+111,50766,train,Disaster Scene Recognition,False,2,1526,1458,1.8161461353302002,False,2.28,,39680.0,model.visual.blocks.31,1.8158724308013916,1.826,1.8161461353302002,1.827,1.815901279449463,5.799
+112,50066,train,Disaster Scene Recognition,False,2,1526,1458,2.0425028800964355,False,2.28,,45344.0,model.visual.blocks.31,,,,,,
+113,49127,train,Disaster Scene Recognition,False,2,1517,1458,1.6270314455032349,False,2.274,,39072.0,model.visual.blocks.31,,,,,,
+114,52299,train,Disaster Scene Recognition,False,2,1514,1458,1.8559483289718628,False,2.28,,41184.0,model.visual.blocks.31,,,,,,
+115,52716,train,Disaster Scene Recognition,False,2,1519,1458,,True,2.09,model.visual.blocks.31.mlp.down_proj,10400.0,model.visual.blocks.30,1.853954553604126,1.823,1.85499107837677,1.836,1.8535919189453125,5.833
+116,51588,train,Disaster Scene Recognition,False,2,1517,1458,1.3874012231826782,False,2.279,,44224.0,model.visual.blocks.31,,,,,,
+117,48689,train,Disaster Scene Recognition,False,2,1517,1458,2.15351939201355,False,2.288,,36704.0,model.visual.blocks.31,,,,,,
+118,52684,train,Disaster Scene Recognition,False,2,1532,1458,1.8616886138916016,False,2.277,,56640.0,model.visual.blocks.31,1.8638546466827393,1.816,1.8616886138916016,1.837,1.8627818822860718,5.89
+119,49598,train,Disaster Scene Recognition,False,2,1521,1458,2.1109118461608887,False,2.278,,30960.0,model.visual.blocks.31,,,,,,
+120,53407,train,Disaster Scene Recognition,False,2,1520,1458,2.592855930328369,False,2.254,,38368.0,model.visual.blocks.31,,,,,,
+121,53473,train,Disaster Scene Recognition,False,2,1514,1458,2.504800796508789,False,2.262,,37344.0,model.visual.blocks.31,,,,,,
+122,47275,train,Disaster Scene Recognition,False,2,1512,1458,1.3932316303253174,False,2.253,,48800.0,model.visual.blocks.31,,,,,,
+123,48770,train,Disaster Scene Recognition,False,2,1516,1458,2.323122978210449,False,2.262,,39360.0,model.visual.blocks.31,,,,,,
+124,53872,train,Disaster Scene Recognition,False,2,1527,1458,2.1286914348602295,False,2.265,,49152.0,model.visual.blocks.31,,,,,,
+125,47066,train,Disaster Scene Recognition,False,2,1518,1458,2.7495360374450684,False,2.265,,34816.0,model.visual.blocks.31,2.750624895095825,1.824,2.7495360374450684,1.832,2.753490447998047,5.905
+126,53724,train,Disaster Scene Recognition,False,2,1516,1458,1.7502202987670898,False,2.255,,34656.0,model.visual.blocks.31,,,,,,
+127,49521,train,Disaster Scene Recognition,False,2,1514,1458,2.5222740173339844,False,2.26,,41760.0,model.visual.blocks.31,,,,,,
+128,50252,train,Disaster Scene Recognition,False,2,1511,1458,2.604814052581787,False,2.256,,41824.0,model.visual.blocks.31,,,,,,
+129,49109,train,Disaster Scene Recognition,False,2,1515,1458,2.3209407329559326,False,2.265,,49216.0,model.visual.blocks.31,,,,,,
+130,47364,train,Disaster Scene Recognition,False,2,1517,1458,1.4085471630096436,False,2.256,,45120.0,model.visual.blocks.31,,,,,,
+131,48614,train,Disaster Scene Recognition,False,2,1529,1458,2.2707581520080566,False,2.264,,37152.0,model.visual.blocks.31,,,,,,
+132,51676,train,Disaster Scene Recognition,False,2,1517,1458,2.1168386936187744,False,2.252,,38560.0,model.visual.blocks.31,2.114560127258301,1.821,2.1168386936187744,1.833,2.1168594360351562,5.913
+133,52975,train,Disaster Scene Recognition,False,2,1519,1458,2.39275860786438,False,2.254,,36288.0,model.visual.blocks.31,2.3903326988220215,1.828,2.39275860786438,1.831,2.3849828243255615,5.897
+134,49514,train,Disaster Scene Recognition,False,2,1528,1458,2.185037612915039,False,2.24,,33568.0,model.visual.blocks.31,,,,,,
+135,48627,train,Disaster Scene Recognition,False,2,1517,1458,1.6024266481399536,False,2.263,,32480.0,model.visual.blocks.31,,,,,,
+136,52435,train,Disaster Scene Recognition,False,2,1525,1458,2.1097378730773926,False,2.26,,42176.0,model.visual.blocks.31,,,,,,
+137,51087,train,Disaster Scene Recognition,False,2,1520,1458,2.2485344409942627,False,2.245,,38016.0,model.visual.blocks.31,2.247729539871216,1.808,2.2485344409942627,1.815,2.2497005462646484,5.832
+138,50205,train,Disaster Scene Recognition,False,2,1512,1458,2.6739063262939453,False,2.244,,39904.0,model.visual.blocks.31,2.6718151569366455,1.793,2.6739063262939453,1.811,2.6760311126708984,5.78
+139,52326,train,Disaster Scene Recognition,False,2,1526,1458,1.788285255432129,False,2.262,,36832.0,model.visual.blocks.31,1.7873328924179077,1.826,1.788285255432129,1.833,1.7871253490447998,5.814
+140,50738,train,Disaster Scene Recognition,False,2,1514,1458,2.1950666904449463,False,2.262,,41664.0,model.visual.blocks.31,,,,,,
+141,48034,train,Disaster Scene Recognition,False,2,1517,1458,2.197085380554199,False,2.262,,42880.0,model.visual.blocks.31,2.1976730823516846,1.824,2.197085380554199,1.835,2.2010536193847656,5.793
+142,49084,train,Disaster Scene Recognition,False,2,1518,1458,1.9148720502853394,False,2.26,,36352.0,model.visual.blocks.31,1.9154222011566162,1.817,1.9148720502853394,1.826,1.9114753007888794,5.782
+143,48006,train,Disaster Scene Recognition,False,2,1515,1458,2.3980817794799805,False,2.275,,35168.0,model.visual.blocks.31,,,,,,
+144,48926,train,Disaster Scene Recognition,False,2,1513,1458,2.2371139526367188,False,2.258,,40928.0,model.visual.blocks.31,,,,,,
+145,53206,train,Disaster Scene Recognition,False,2,1516,1458,,True,2.076,model.visual.blocks.31.mlp.down_proj,10304.0,model.visual.blocks.30,1.5180796384811401,1.821,1.5180011987686157,1.824,1.5183298587799072,5.773
+146,51626,train,Disaster Scene Recognition,False,2,1519,1458,2.231903076171875,False,2.276,,35456.0,model.visual.blocks.31,,,,,,
+147,51434,train,Disaster Scene Recognition,False,2,1526,1458,1.7777847051620483,False,2.27,,33248.0,model.visual.blocks.31,1.7776254415512085,1.823,1.7777847051620483,1.842,1.780046820640564,5.782
+148,49066,train,Disaster Scene Recognition,False,2,1514,1458,1.6651519536972046,False,2.265,,38976.0,model.visual.blocks.31,,,,,,
+149,53224,train,Disaster Scene Recognition,False,2,1514,1458,2.1337337493896484,False,2.273,,48800.0,model.visual.blocks.31,,,,,,
+150,38666,train,Disaster Type Recognition,False,2,1503,1458,2.3330259323120117,False,2.268,,35456.0,model.visual.blocks.31,,,,,,
+151,38328,train,Disaster Type Recognition,False,2,1501,1458,1.977550745010376,False,2.265,,36000.0,model.visual.blocks.31,,,,,,
+152,38664,train,Disaster Type Recognition,False,2,1503,1458,2.345797538757324,False,2.274,,46208.0,model.visual.blocks.31,,,,,,
+153,38265,train,Disaster Type Recognition,False,2,1502,1458,1.9928185939788818,False,2.268,,46912.0,model.visual.blocks.31,1.990360140800476,1.811,1.9928185939788818,1.815,1.9876009225845337,5.721
+154,38182,train,Disaster Type Recognition,False,2,1502,1458,2.3799688816070557,False,2.269,,37408.0,model.visual.blocks.31,2.3772032260894775,1.812,2.3799688816070557,1.818,2.3793671131134033,5.781
+155,37875,train,Disaster Type Recognition,False,2,1502,1458,2.26274037361145,False,2.269,,38816.0,model.visual.blocks.31,,,,,,
+156,37699,train,Disaster Type Recognition,False,2,1502,1458,2.185354232788086,False,2.271,,42880.0,model.visual.blocks.31,2.187938690185547,1.811,2.185354232788086,1.821,2.184821128845215,5.797
+157,38503,train,Disaster Type Recognition,False,2,1502,1458,2.345409870147705,False,2.265,,42432.0,model.visual.blocks.31,,,,,,
+158,38468,train,Disaster Type Recognition,False,2,1504,1458,2.091275691986084,False,2.241,,35648.0,model.visual.blocks.31,,,,,,
+159,37599,train,Disaster Type Recognition,False,2,1501,1458,1.9053376913070679,False,2.267,,37248.0,model.visual.blocks.31,,,,,,
+160,37503,train,Disaster Type Recognition,False,2,1499,1458,2.0702011585235596,False,2.262,,34912.0,model.visual.blocks.31,2.0686697959899902,1.811,2.0702011585235596,1.826,2.077444314956665,5.838
+161,37637,train,Disaster Type Recognition,False,2,1502,1458,2.204810380935669,False,2.267,,45024.0,model.visual.blocks.31,,,,,,
+162,37732,train,Disaster Type Recognition,False,2,1501,1458,2.3786582946777344,False,2.259,,43136.0,model.visual.blocks.31,,,,,,
+163,38759,train,Disaster Type Recognition,False,2,1502,1458,2.1080574989318848,False,2.263,,37792.0,model.visual.blocks.31,,,,,,
+164,37747,train,Disaster Type Recognition,False,2,1502,1458,2.543544054031372,False,2.252,,40288.0,model.visual.blocks.31,,,,,,
+165,38869,train,Disaster Type Recognition,False,2,1499,1458,,True,2.079,model.visual.blocks.31.mlp.down_proj,11072.0,model.visual.blocks.30,1.3318861722946167,1.819,1.3299717903137207,1.824,1.3326936960220337,5.858
+166,38314,train,Disaster Type Recognition,False,2,1501,1458,1.7080202102661133,False,2.252,,53280.0,model.visual.blocks.31,,,,,,
+167,38691,train,Disaster Type Recognition,False,2,1503,1458,2.943706512451172,False,2.267,,46624.0,model.visual.blocks.31,,,,,,
+168,37538,train,Disaster Type Recognition,False,2,1502,1458,2.492541551589966,False,2.258,,32000.0,model.visual.blocks.31,2.4930593967437744,1.813,2.492541551589966,1.824,2.487886428833008,5.849
+169,38235,train,Disaster Type Recognition,False,2,1500,1458,1.979027271270752,False,2.259,,46112.0,model.visual.blocks.31,1.9797016382217407,1.81,1.979027271270752,1.819,1.9743067026138306,5.87
+170,38227,train,Disaster Type Recognition,False,2,1501,1458,1.7253974676132202,False,2.262,,38624.0,model.visual.blocks.31,,,,,,
+171,38690,train,Disaster Type Recognition,False,2,1501,1458,2.7540855407714844,False,2.274,,44096.0,model.visual.blocks.31,,,,,,
+172,38412,train,Disaster Type Recognition,False,2,1500,1458,2.258704900741577,False,2.254,,48800.0,model.visual.blocks.31,2.2561633586883545,1.805,2.258704900741577,1.809,2.259526014328003,5.863
+173,38543,train,Disaster Type Recognition,False,2,1504,1458,1.401955246925354,False,2.246,,40448.0,model.visual.blocks.31,,,,,,
+174,37944,train,Disaster Type Recognition,False,2,1502,1458,2.2133708000183105,False,2.265,,33088.0,model.visual.blocks.31,,,,,,
+175,38597,train,Disaster Type Recognition,False,2,1506,1458,1.3891857862472534,False,2.276,,39264.0,model.visual.blocks.31,,,,,,
+176,37425,train,Disaster Type Recognition,False,2,1501,1458,2.599128246307373,False,2.269,,36736.0,model.visual.blocks.31,,,,,,
+177,38955,train,Disaster Type Recognition,False,2,1504,1458,2.286095380783081,False,2.243,,37920.0,model.visual.blocks.31,,,,,,
+178,37647,train,Disaster Type Recognition,False,2,1501,1458,1.9795500040054321,False,2.27,,43680.0,model.visual.blocks.31,,,,,,
+179,38872,train,Disaster Type Recognition,False,2,1501,1458,,True,2.086,model.visual.blocks.31.mlp.down_proj,8192.0,model.visual.blocks.30,1.3323205709457397,1.815,1.3313173055648804,1.827,1.3286559581756592,5.9
+180,38561,train,Disaster Type Recognition,False,2,1503,1458,2.4004695415496826,False,2.267,,58976.0,model.visual.blocks.31,2.398582696914673,1.814,2.4004695415496826,1.818,2.405743360519409,5.862
+181,39021,train,Disaster Type Recognition,False,2,1503,1458,2.6561830043792725,False,2.271,,45376.0,model.visual.blocks.31,2.65549373626709,1.825,2.6561830043792725,1.826,2.655733585357666,5.88
+182,37978,train,Disaster Type Recognition,False,2,1501,1458,1.9229307174682617,False,2.27,,42080.0,model.visual.blocks.31,,,,,,
+183,38787,train,Disaster Type Recognition,False,2,1503,1458,2.2221553325653076,False,2.27,,42432.0,model.visual.blocks.31,,,,,,
+184,38135,train,Disaster Type Recognition,False,2,1501,1458,2.596452474594116,False,2.256,,46048.0,model.visual.blocks.31,,,,,,
+185,37641,train,Disaster Type Recognition,False,2,1502,1458,2.3449909687042236,False,2.261,,34112.0,model.visual.blocks.31,2.3425984382629395,1.81,2.3449909687042236,1.82,2.3448469638824463,5.835
+186,38037,train,Disaster Type Recognition,False,2,1501,1458,2.1805038452148438,False,2.259,,38560.0,model.visual.blocks.31,,,,,,
+187,38342,train,Disaster Type Recognition,False,2,1501,1458,2.251413106918335,False,2.264,,36608.0,model.visual.blocks.31,,,,,,
+188,37742,train,Disaster Type Recognition,False,2,1502,1458,2.570361852645874,False,2.261,,33120.0,model.visual.blocks.31,,,,,,
+189,38382,train,Disaster Type Recognition,False,2,1501,1458,2.3257622718811035,False,2.254,,41344.0,model.visual.blocks.31,2.329191207885742,1.819,2.3257622718811035,1.818,2.329566240310669,5.858
+190,37408,train,Disaster Type Recognition,False,2,1501,1458,1.9205284118652344,False,2.26,,36128.0,model.visual.blocks.31,,,,,,
+191,38957,train,Disaster Type Recognition,False,2,1503,1458,1.8658653497695923,False,2.264,,51296.0,model.visual.blocks.31,1.8675421476364136,1.819,1.8658653497695923,1.826,1.869834542274475,5.845
+192,38952,train,Disaster Type Recognition,False,2,1503,1458,2.396958827972412,False,2.259,,41664.0,model.visual.blocks.31,,,,,,
+193,37971,train,Disaster Type Recognition,False,2,1502,1458,2.3902382850646973,False,2.259,,36064.0,model.visual.blocks.31,2.3887557983398438,1.813,2.3902382850646973,1.818,2.392465829849243,5.81
+194,38483,train,Disaster Type Recognition,False,2,1502,1458,2.2260918617248535,False,2.256,,40800.0,model.visual.blocks.31,2.2266933917999268,1.818,2.2260918617248535,1.812,2.221848726272583,5.804
+195,37788,train,Disaster Type Recognition,False,2,1502,1458,2.199976921081543,False,2.25,,40320.0,model.visual.blocks.31,,,,,,
+196,38497,train,Disaster Type Recognition,False,2,1502,1458,2.4985761642456055,False,2.26,,35936.0,model.visual.blocks.31,2.495516300201416,1.818,2.4985761642456055,1.826,2.494715929031372,5.816
+197,37630,train,Disaster Type Recognition,False,2,1502,1458,2.548105239868164,False,2.262,,33920.0,model.visual.blocks.31,,,,,,
+198,38754,train,Disaster Type Recognition,False,2,1502,1458,2.2066280841827393,False,2.264,,39680.0,model.visual.blocks.31,,,,,,
+199,38047,train,Disaster Type Recognition,False,2,1502,1458,1.9578126668930054,False,2.256,,35104.0,model.visual.blocks.31,,,,,,
+200,29552,train,Road Damage Counting,False,2,1515,1458,1.6084650754928589,False,2.279,,38080.0,model.visual.blocks.31,,,,,,
+201,27794,train,Road Damage Counting,False,2,1517,1458,1.4781684875488281,False,2.278,,38080.0,model.visual.blocks.31,,,,,,
+202,26659,train,Road Damage Counting,False,2,1518,1458,1.654727816581726,False,2.263,,44320.0,model.visual.blocks.31,,,,,,
+203,27535,train,Road Damage Counting,False,2,1516,1458,1.4953994750976562,False,2.257,,39904.0,model.visual.blocks.31,1.4940234422683716,1.825,1.4953994750976562,1.83,1.493536353111267,5.832
+204,24010,train,Road Damage Counting,False,2,1516,1458,0.8568505644798279,False,2.259,,38688.0,model.visual.blocks.31,0.8581869006156921,1.816,0.8568505644798279,1.833,0.8567378520965576,5.831
+205,23617,train,Road Damage Counting,False,2,1516,1458,1.6394708156585693,False,2.266,,32144.0,model.visual.blocks.31,1.6410789489746094,1.819,1.6394708156585693,1.829,1.6402674913406372,5.835
+206,25502,train,Road Damage Counting,False,2,1516,1458,0.8727824687957764,False,2.264,,46560.0,model.visual.blocks.31,,,,,,
+207,28864,train,Road Damage Counting,False,2,1514,1458,1.5878466367721558,False,2.275,,35616.0,model.visual.blocks.31,1.5885772705078125,1.82,1.5878466367721558,1.834,1.5888739824295044,5.824
+208,23689,train,Road Damage Counting,False,2,1514,1458,1.3291577100753784,False,2.269,,48352.0,model.visual.blocks.31,1.3286784887313843,1.838,1.3291577100753784,1.82,1.3310660123825073,5.812
+209,26929,train,Road Damage Counting,False,2,1516,1458,1.5107882022857666,False,2.262,,38272.0,model.visual.blocks.31,,,,,,
+210,29008,train,Road Damage Counting,False,2,1517,1458,1.2961320877075195,False,2.276,,45184.0,model.visual.blocks.31,,,,,,
+211,26851,train,Road Damage Counting,False,2,1520,1458,1.250217080116272,False,2.26,,34112.0,model.visual.blocks.31,1.251009464263916,1.817,1.250217080116272,1.822,1.25041663646698,5.802
+212,22301,train,Road Damage Counting,False,2,1518,1458,1.2970396280288696,False,2.284,,48672.0,model.visual.blocks.31,,,,,,
+213,27447,train,Road Damage Counting,False,2,1516,1458,1.6308706998825073,False,2.271,,42688.0,model.visual.blocks.31,,,,,,
+214,25083,train,Road Damage Counting,False,2,1515,1458,1.5526694059371948,False,2.285,,36800.0,model.visual.blocks.31,,,,,,
+215,26495,train,Road Damage Counting,False,2,1516,1458,1.5384145975112915,False,2.268,,44832.0,model.visual.blocks.31,,,,,,
+216,22460,train,Road Damage Counting,False,2,1518,1458,1.4036498069763184,False,2.282,,39264.0,model.visual.blocks.31,,,,,,
+217,23262,train,Road Damage Counting,False,2,1519,1458,1.6681232452392578,False,2.271,,47168.0,model.visual.blocks.31,1.6711530685424805,1.825,1.6681232452392578,1.834,1.6698088645935059,5.831
+218,25406,train,Road Damage Counting,False,2,1519,1458,1.2864079475402832,False,2.279,,49632.0,model.visual.blocks.31,,,,,,
+219,29041,options,Road Damage Counting,False,2,1609,1458,0.4851111173629761,False,2.371,,43744.0,model.visual.blocks.31,0.4842820167541504,1.906,0.4851111173629761,1.91,0.4841170012950897,6.133
+220,29466,train,Road Damage Counting,False,2,1517,1458,1.2278693914413452,False,2.284,,36800.0,model.visual.blocks.31,1.227008581161499,1.835,1.2278693914413452,1.841,1.2264071702957153,5.855
+221,29251,train,Road Damage Counting,False,2,1516,1458,1.4723447561264038,False,2.277,,40832.0,model.visual.blocks.31,,,,,,
+222,24941,train,Road Damage Counting,False,2,1517,1458,1.0083295106887817,False,2.274,,42304.0,model.visual.blocks.31,,,,,,
+223,24356,train,Road Damage Counting,False,2,1516,1458,1.2143914699554443,False,2.267,,45216.0,model.visual.blocks.31,1.2137707471847534,1.831,1.2143914699554443,1.818,1.2136104106903076,5.836
+224,22792,train,Road Damage Counting,False,2,1517,1458,1.4269980192184448,False,2.284,,36896.0,model.visual.blocks.31,,,,,,
+225,24370,train,Road Damage Counting,False,2,1515,1458,1.69546639919281,False,2.279,,40192.0,model.visual.blocks.31,,,,,,
+226,28874,options,Road Damage Counting,False,2,1610,1458,0.5537990927696228,False,2.364,,35552.0,model.visual.blocks.31,,,,,,
+227,27172,train,Road Damage Counting,False,2,1513,1458,1.1156460046768188,False,2.277,,41152.0,model.visual.blocks.31,,,,,,
+228,22977,train,Road Damage Counting,False,2,1515,1458,1.350974678993225,False,2.265,,41536.0,model.visual.blocks.31,,,,,,
+229,23037,train,Road Damage Counting,False,2,1518,1458,1.0063694715499878,False,2.266,,40544.0,model.visual.blocks.31,,,,,,
+230,28594,train,Road Damage Counting,False,2,1516,1458,1.079483151435852,False,2.257,,38272.0,model.visual.blocks.31,,,,,,
+231,26473,train,Road Damage Counting,False,2,1517,1458,1.4869753122329712,False,2.273,,36064.0,model.visual.blocks.31,1.487170696258545,1.836,1.4869753122329712,1.832,1.4864050149917603,5.837
+232,29330,train,Road Damage Counting,False,2,1517,1458,1.4455260038375854,False,2.261,,46656.0,model.visual.blocks.31,,,,,,
+233,22893,train,Road Damage Counting,False,2,1518,1458,1.0888619422912598,False,2.256,,50720.0,model.visual.blocks.31,,,,,,
+234,28847,train,Road Damage Counting,False,2,1518,1458,1.2331002950668335,False,2.26,,38496.0,model.visual.blocks.31,,,,,,
+235,26872,train,Road Damage Counting,False,2,1517,1458,1.3434443473815918,False,2.256,,49376.0,model.visual.blocks.31,1.3446166515350342,1.838,1.3434443473815918,1.827,1.3432917594909668,5.857
+236,28894,train,Road Damage Counting,False,2,1513,1458,1.5991624593734741,False,2.252,,43104.0,model.visual.blocks.31,,,,,,
+237,23384,train,Road Damage Counting,False,2,1518,1458,1.2797616720199585,False,2.257,,53920.0,model.visual.blocks.31,1.280059576034546,1.83,1.2797616720199585,1.836,1.2807540893554688,5.845
+238,23406,train,Road Damage Counting,False,2,1518,1458,1.152787208557129,False,2.264,,45280.0,model.visual.blocks.31,1.1528990268707275,1.829,1.152787208557129,1.826,1.1518285274505615,5.851
+239,27974,train,Road Damage Counting,False,2,1517,1458,1.34227454662323,False,2.25,,45760.0,model.visual.blocks.31,,,,,,
+240,26381,train,Road Damage Counting,False,2,1516,1458,1.2962586879730225,False,2.249,,54240.0,model.visual.blocks.31,,,,,,
+241,27022,train,Road Damage Counting,False,2,1514,1458,1.561353087425232,False,2.259,,39616.0,model.visual.blocks.31,,,,,,
+242,23718,train,Road Damage Counting,False,2,1517,1458,1.0315190553665161,False,2.264,,45632.0,model.visual.blocks.31,,,,,,
+243,24581,train,Road Damage Counting,False,2,1514,1458,1.4933384656906128,False,2.253,,31376.0,model.visual.blocks.31,1.494533896446228,1.828,1.4933384656906128,1.83,1.4929628372192383,5.843
+244,26829,train,Road Damage Counting,False,2,1518,1458,0.9566764831542969,False,2.273,,43424.0,model.visual.blocks.31,,,,,,
+245,27188,options,Road Damage Counting,False,2,1609,1458,0.6361188292503357,False,2.351,,42304.0,model.visual.blocks.31,,,,,,
+246,27513,train,Road Damage Counting,False,2,1518,1458,1.1629958152770996,False,2.26,,59104.0,model.visual.blocks.31,,,,,,
+247,25928,train,Road Damage Counting,False,2,1519,1458,1.303983211517334,False,2.259,,42432.0,model.visual.blocks.31,,,,,,
+248,24124,train,Road Damage Counting,False,2,1515,1458,1.3558322191238403,False,2.264,,36544.0,model.visual.blocks.31,,,,,,
+249,26928,train,Road Damage Counting,False,2,1516,1458,1.3283575773239136,False,2.251,,52032.0,model.visual.blocks.31,,,,,,
+250,36142,train,disaster caption,False,2,1691,1458,2.145214319229126,False,2.519,,38624.0,model.visual.blocks.31,,,,,,
+251,35920,train,disaster caption,False,2,1682,1458,2.087374687194824,False,2.493,,38176.0,model.visual.blocks.31,,,,,,
+252,35570,train,disaster caption,False,2,1700,1458,1.8627113103866577,False,2.507,,40448.0,model.visual.blocks.31,1.8622949123382568,2.016,1.8627113103866577,2.019,1.862284779548645,6.875
+253,31378,train,disaster caption,False,2,1704,1458,2.437058210372925,False,2.494,,34208.0,model.visual.blocks.31,,,,,,
+254,35772,train,disaster caption,False,2,1673,1458,2.1522200107574463,False,2.514,,49856.0,model.visual.blocks.31,,,,,,
+255,32326,train,disaster caption,False,2,1671,1458,1.993804693222046,False,2.509,,42944.0,model.visual.blocks.31,1.993735671043396,1.995,1.993804693222046,2.003,1.993626356124878,6.861
+256,33074,train,disaster caption,False,2,1692,1458,2.230135679244995,False,2.522,,40640.0,model.visual.blocks.31,2.2299458980560303,2.013,2.230135679244995,2.005,2.2298734188079834,6.852
+257,35417,train,disaster caption,False,2,1684,1458,2.591132164001465,False,2.525,,39136.0,model.visual.blocks.31,,,,,,
+258,35224,train,disaster caption,False,2,1679,1458,1.9723773002624512,False,2.514,,47648.0,model.visual.blocks.31,1.9718081951141357,2.009,1.9723773002624512,2.007,1.9720160961151123,6.851
+259,32858,train,disaster caption,False,2,1701,1458,2.367168664932251,False,2.528,,31216.0,model.visual.blocks.31,2.367269515991211,2.012,2.367168664932251,2.013,2.3671364784240723,6.945
+260,33404,train,disaster caption,False,2,1714,1458,2.0371901988983154,False,2.528,,35136.0,model.visual.blocks.31,,,,,,
+261,37388,train,disaster caption,False,2,1639,1458,2.500623941421509,False,2.407,,37056.0,model.visual.blocks.31,,,,,,
+262,34084,train,disaster caption,False,2,1644,1458,2.4973480701446533,False,2.41,,50016.0,model.visual.blocks.31,,,,,,
+263,33515,train,disaster caption,False,2,1697,1458,2.247591495513916,False,2.535,,39456.0,model.visual.blocks.31,,,,,,
+264,30688,train,disaster caption,False,2,1747,1458,2.4034066200256348,False,2.544,,34112.0,model.visual.blocks.31,,,,,,
+265,31774,train,disaster caption,False,2,1674,1458,1.871644139289856,False,2.51,,42912.0,model.visual.blocks.31,,,,,,
+266,31572,train,disaster caption,False,2,1701,1458,2.342005729675293,False,2.519,,32800.0,model.visual.blocks.31,,,,,,
+267,30186,train,disaster caption,False,2,1684,1458,2.3835952281951904,False,2.52,,46560.0,model.visual.blocks.31,,,,,,
+268,32557,train,disaster caption,False,2,1797,1458,2.0578832626342773,False,2.617,,37312.0,model.visual.blocks.31,,,,,,
+269,29811,train,disaster caption,False,2,1679,1458,2.364684820175171,False,2.513,,36320.0,model.visual.blocks.31,2.3653976917266846,2.004,2.364684820175171,2.002,2.3659582138061523,6.879
+270,34699,train,disaster caption,False,2,1707,1458,2.2559146881103516,False,2.524,,39104.0,model.visual.blocks.31,,,,,,
+271,34403,train,disaster caption,False,2,1738,1458,2.016244649887085,False,2.523,,38464.0,model.visual.blocks.31,,,,,,
+272,31620,train,disaster caption,False,2,1681,1458,2.0404629707336426,False,2.495,,42848.0,model.visual.blocks.31,2.0404937267303467,2.015,2.0404629707336426,2.011,2.040799379348755,6.914
+273,34700,train,disaster caption,False,2,1663,1458,2.0689189434051514,False,2.411,,40896.0,model.visual.blocks.31,,,,,,
+274,31536,train,disaster caption,False,2,1700,1458,2.153791904449463,False,2.523,,40096.0,model.visual.blocks.31,,,,,,
+275,29694,train,disaster caption,False,2,1691,1458,2.466191291809082,False,2.52,,37120.0,model.visual.blocks.31,,,,,,
+276,30248,train,disaster caption,False,2,1769,1458,2.1630964279174805,False,2.541,,32800.0,model.visual.blocks.31,2.1632304191589355,2.083,2.1630964279174805,2.085,2.163220167160034,6.624
+277,35727,train,disaster caption,False,2,1731,1458,2.213097333908081,False,2.541,,52704.0,model.visual.blocks.31,2.212902069091797,2.063,2.213097333908081,2.061,2.213919162750244,6.513
+278,35066,train,disaster caption,False,2,1679,1458,2.236100196838379,False,2.49,,45216.0,model.visual.blocks.31,,,,,,
+279,30142,train,disaster caption,False,2,1752,1458,2.0433096885681152,False,2.519,,42112.0,model.visual.blocks.31,,,,,,
+280,31609,train,disaster caption,False,2,1748,1458,2.272533416748047,False,2.544,,34080.0,model.visual.blocks.31,2.2721896171569824,2.048,2.272533416748047,2.058,2.273616075515747,6.526
+281,30215,train,disaster caption,False,2,1781,1458,2.3047897815704346,False,2.559,,53024.0,model.visual.blocks.31,,,,,,
+282,29902,train,disaster caption,False,2,1722,1458,2.3197436332702637,False,2.527,,41312.0,model.visual.blocks.31,,,,,,
+283,37039,train,disaster caption,False,2,1681,1458,2.0683391094207764,False,2.529,,30928.0,model.visual.blocks.31,,,,,,
+284,32491,train,disaster caption,False,2,1726,1458,2.4234209060668945,False,2.532,,44736.0,model.visual.blocks.31,2.423906087875366,2.043,2.4234209060668945,2.051,2.423462390899658,6.867
+285,30247,train,disaster caption,False,2,1804,1458,2.1524808406829834,False,2.616,,43392.0,model.visual.blocks.31,,,,,,
+286,34055,train,disaster caption,False,2,1700,1458,2.1158008575439453,False,2.518,,41536.0,model.visual.blocks.31,2.115841865539551,2.009,2.1158008575439453,2.016,2.1156556606292725,6.868
+287,31687,train,disaster caption,False,2,1646,1458,2.382628917694092,False,2.396,,37600.0,model.visual.blocks.31,,,,,,
+288,32042,train,disaster caption,False,2,1668,1458,2.59348464012146,False,2.471,,34880.0,model.visual.blocks.31,2.5938313007354736,1.992,2.59348464012146,1.997,2.5943825244903564,6.866
+289,35394,train,disaster caption,False,2,1712,1458,2.0856974124908447,False,2.505,,53952.0,model.visual.blocks.31,,,,,,
+290,33806,train,disaster caption,False,2,1739,1458,2.225736141204834,False,2.533,,42144.0,model.visual.blocks.31,,,,,,
+291,31487,train,disaster caption,False,2,1640,1458,2.1951379776000977,False,2.373,,44352.0,model.visual.blocks.31,,,,,,
+292,34274,train,disaster caption,False,2,1704,1458,2.278648853302002,False,2.512,,40512.0,model.visual.blocks.31,,,,,,
+293,30785,train,disaster caption,False,2,1694,1458,1.9931540489196777,False,2.531,,36480.0,model.visual.blocks.31,1.9937108755111694,2.017,1.9931540489196777,2.026,1.9925591945648193,6.898
+294,35862,train,disaster caption,False,2,1711,1458,2.070046901702881,False,2.524,,54176.0,model.visual.blocks.31,,,,,,
+295,37237,train,disaster caption,False,2,1689,1458,2.1141419410705566,False,2.519,,39680.0,model.visual.blocks.31,2.114698886871338,2.015,2.1141419410705566,2.024,2.1143112182617188,6.956
+296,34551,train,disaster caption,False,2,1721,1458,2.4535446166992188,False,2.534,,44512.0,model.visual.blocks.31,,,,,,
+297,34596,train,disaster caption,False,2,1731,1458,2.255617141723633,False,2.536,,40512.0,model.visual.blocks.31,,,,,,
+298,33698,train,disaster caption,False,2,1750,1458,2.1219043731689453,False,2.544,,47360.0,model.visual.blocks.31,,,,,,
+299,31731,train,disaster caption,False,2,1683,1458,2.31491756439209,False,2.504,,37504.0,model.visual.blocks.31,,,,,,
+300,45786,train,disaster restoration advice,False,2,1634,1458,2.857059955596924,False,2.384,,60736.0,model.visual.blocks.31,2.857079267501831,1.924,2.857059955596924,1.931,2.8570005893707275,6.302
+301,43093,train,disaster restoration advice,False,2,1633,1458,2.385834217071533,False,2.394,,37248.0,model.visual.blocks.31,2.386286973953247,1.925,2.385834217071533,1.93,2.3866405487060547,6.313
+302,45984,train,disaster restoration advice,False,2,1627,1458,,True,2.182,model.visual.blocks.31.mlp.down_proj,12368.0,model.visual.blocks.30,1.9068870544433594,1.913,1.9076168537139893,1.931,1.9076831340789795,6.26
+303,42537,train,disaster restoration advice,False,2,1625,1458,2.480837821960449,False,2.391,,35168.0,model.visual.blocks.31,2.4805479049682617,1.917,2.480837821960449,1.921,2.481992244720459,6.28
+304,40678,train,disaster restoration advice,False,2,1637,1458,2.493572473526001,False,2.4,,40928.0,model.visual.blocks.31,,,,,,
+305,39846,train,disaster restoration advice,False,2,1627,1458,2.490478277206421,False,2.391,,38912.0,model.visual.blocks.31,,,,,,
+306,39869,train,disaster restoration advice,False,2,1638,1458,2.544832944869995,False,2.399,,39520.0,model.visual.blocks.31,,,,,,
+307,44699,train,disaster restoration advice,False,2,1638,1458,2.4342429637908936,False,2.392,,37248.0,model.visual.blocks.31,2.433619976043701,1.929,2.4342429637908936,1.938,2.433699607849121,6.291
+308,42738,train,disaster restoration advice,False,2,1618,1458,2.3835339546203613,False,2.379,,38944.0,model.visual.blocks.31,2.382549285888672,1.906,2.3835339546203613,1.916,2.3832285404205322,6.245
+309,42085,train,disaster restoration advice,False,2,1635,1458,2.7541863918304443,False,2.393,,31488.0,model.visual.blocks.31,2.753706693649292,1.923,2.7541863918304443,1.938,2.7546467781066895,6.268
+310,42675,train,disaster restoration advice,False,2,1642,1458,2.6877872943878174,False,2.398,,43712.0,model.visual.blocks.31,2.6873631477355957,1.937,2.6877872943878174,1.94,2.687208414077759,6.297
+311,42572,train,disaster restoration advice,False,2,1632,1458,2.4366934299468994,False,2.373,,43008.0,model.visual.blocks.31,,,,,,
+312,43042,train,disaster restoration advice,False,2,1639,1458,2.310917377471924,False,2.397,,47168.0,model.visual.blocks.31,,,,,,
+313,46468,train,disaster restoration advice,False,2,1645,1458,2.2463812828063965,False,2.409,,50176.0,model.visual.blocks.31,,,,,,
+314,45306,train,disaster restoration advice,False,2,1555,1458,2.5581116676330566,False,2.32,,45792.0,model.visual.blocks.31,,,,,,
+315,39493,train,disaster restoration advice,False,2,1628,1458,2.7275819778442383,False,2.396,,40448.0,model.visual.blocks.31,,,,,,
+316,44825,train,disaster restoration advice,False,2,1638,1458,2.4188246726989746,False,2.4,,37984.0,model.visual.blocks.31,,,,,,
+317,44651,train,disaster restoration advice,False,2,1626,1458,2.3811001777648926,False,2.384,,43616.0,model.visual.blocks.31,2.3810293674468994,1.918,2.3811001777648926,1.921,2.3808987140655518,6.271
+318,44587,train,disaster restoration advice,False,2,1639,1458,2.5187344551086426,False,2.394,,42880.0,model.visual.blocks.31,,,,,,
+319,39881,train,disaster restoration advice,False,2,1641,1458,2.9213922023773193,False,2.396,,50976.0,model.visual.blocks.31,,,,,,
+320,39550,train,disaster restoration advice,False,2,1637,1458,2.547578811645508,False,2.398,,31456.0,model.visual.blocks.31,,,,,,
+321,42498,train,disaster restoration advice,False,2,1629,1458,2.654705286026001,False,2.382,,35936.0,model.visual.blocks.31,,,,,,
+322,45299,train,disaster restoration advice,False,2,1632,1458,2.819702625274658,False,2.365,,42976.0,model.visual.blocks.31,2.818880081176758,1.902,2.819702625274658,1.91,2.819270610809326,6.263
+323,41960,train,disaster restoration advice,False,2,1649,1458,2.465075731277466,False,2.409,,34144.0,model.visual.blocks.31,,,,,,
+324,45924,train,disaster restoration advice,False,2,1545,1458,,True,2.136,model.visual.blocks.31.mlp.down_proj,11256.0,model.visual.blocks.30,2.7741715908050537,1.861,2.7733571529388428,1.869,2.77401065826416,6.571
+325,46449,train,disaster restoration advice,False,2,1628,1458,2.6713404655456543,False,2.389,,33376.0,model.visual.blocks.31,,,,,,
+326,39977,train,disaster restoration advice,False,2,1638,1458,2.7109813690185547,False,2.391,,47904.0,model.visual.blocks.31,,,,,,
+327,41173,train,disaster restoration advice,False,2,1637,1458,2.245201349258423,False,2.39,,33216.0,model.visual.blocks.31,,,,,,
+328,40688,train,disaster restoration advice,False,2,1637,1458,2.326511859893799,False,2.388,,31008.0,model.visual.blocks.31,,,,,,
+329,40677,train,disaster restoration advice,False,2,1644,1458,2.624964952468872,False,2.389,,43072.0,model.visual.blocks.31,2.6241517066955566,1.923,2.624964952468872,1.934,2.6243999004364014,6.287
+330,43643,train,disaster restoration advice,False,2,1640,1458,2.608055830001831,False,2.375,,39360.0,model.visual.blocks.31,2.6079189777374268,1.906,2.608055830001831,1.909,2.6085658073425293,6.257
+331,42885,train,disaster restoration advice,False,2,1630,1458,2.7984421253204346,False,2.381,,34496.0,model.visual.blocks.31,,,,,,
+332,40247,train,disaster restoration advice,False,2,1626,1458,2.4663712978363037,False,2.366,,39968.0,model.visual.blocks.31,,,,,,
+333,42662,train,disaster restoration advice,False,2,1644,1458,2.6072895526885986,False,2.39,,38496.0,model.visual.blocks.31,2.606684923171997,1.924,2.6072895526885986,1.939,2.606137990951538,6.287
+334,40619,train,disaster restoration advice,False,2,1633,1458,2.2102391719818115,False,2.382,,51168.0,model.visual.blocks.31,,,,,,
+335,41435,train,disaster restoration advice,False,2,1619,1458,2.399040460586548,False,2.367,,35488.0,model.visual.blocks.31,,,,,,
+336,43005,train,disaster restoration advice,False,2,1634,1458,2.527529001235962,False,2.384,,40928.0,model.visual.blocks.31,2.5278232097625732,1.921,2.527529001235962,1.929,2.527452230453491,6.278
+337,41184,train,disaster restoration advice,False,2,1622,1458,2.6877028942108154,False,2.373,,40064.0,model.visual.blocks.31,,,,,,
+338,46560,train,disaster restoration advice,False,2,1638,1458,2.8418631553649902,False,2.385,,42016.0,model.visual.blocks.31,,,,,,
+339,39677,train,disaster restoration advice,False,2,1593,1458,2.3216240406036377,False,2.337,,58912.0,model.visual.blocks.31,2.3213095664978027,1.875,2.3216240406036377,1.892,2.3214101791381836,6.577
+340,42840,train,disaster restoration advice,False,2,1642,1458,2.4683103561401367,False,2.392,,34560.0,model.visual.blocks.31,,,,,,
+341,45988,train,disaster restoration advice,False,2,1623,1458,2.4761250019073486,False,2.367,,32112.0,model.visual.blocks.31,,,,,,
+342,46447,train,disaster restoration advice,False,2,1613,1458,2.3968665599823,False,2.354,,41056.0,model.visual.blocks.31,2.3976316452026367,1.914,2.3968665599823,1.913,2.3977792263031006,6.253
+343,46402,train,disaster restoration advice,False,2,1622,1458,2.0451340675354004,False,2.372,,41024.0,model.visual.blocks.31,,,,,,
+344,43766,train,disaster restoration advice,False,2,1628,1458,2.418447971343994,False,2.366,,43136.0,model.visual.blocks.31,,,,,,
+345,39877,train,disaster restoration advice,False,2,1623,1458,2.4201133251190186,False,2.377,,46272.0,model.visual.blocks.31,,,,,,
+346,39463,train,disaster restoration advice,False,2,1608,1458,2.432610511779785,False,2.343,,46208.0,model.visual.blocks.31,,,,,,
+347,44638,train,disaster restoration advice,False,2,1646,1458,2.126061201095581,False,2.392,,47296.0,model.visual.blocks.31,,,,,,
+348,43678,train,disaster restoration advice,False,2,1640,1458,2.7050492763519287,False,2.376,,44128.0,model.visual.blocks.31,,,,,,
+349,46228,train,disaster restoration advice,False,2,1625,1458,2.5269622802734375,False,2.374,,38144.0,model.visual.blocks.31,,,,,,
+350,53915,train,relational reasoning,False,1,791,729,2.462297201156616,False,1.112,,29968.0,model.visual.blocks.31,,,,,,
+351,54083,train,relational reasoning,False,1,793,729,2.243516206741333,False,1.119,,35072.0,model.visual.blocks.31,,,,,,
+352,55508,train,relational reasoning,False,1,782,729,2.1268558502197266,False,1.104,,63872.0,model.visual.blocks.31,2.124439001083374,0.889,2.1268558502197266,0.877,2.1178994178771973,3.395
+353,55717,train,relational reasoning,False,1,794,729,1.7223104238510132,False,1.117,,53792.0,model.visual.blocks.31,,,,,,
+354,54388,train,relational reasoning,False,1,789,729,2.3797898292541504,False,1.118,,40672.0,model.visual.blocks.31,,,,,,
+355,54241,train,relational reasoning,False,1,786,729,1.6648786067962646,False,1.109,,39232.0,model.visual.blocks.31,1.6648602485656738,0.882,1.6648786067962646,0.888,1.6642524003982544,3.398
+356,54758,train,relational reasoning,False,1,786,729,1.478069543838501,False,1.11,,49952.0,model.visual.blocks.31,,,,,,
+357,54931,train,relational reasoning,False,1,790,729,2.3659133911132812,False,1.116,,40480.0,model.visual.blocks.31,,,,,,
+358,54922,train,relational reasoning,False,1,794,729,2.6413536071777344,False,1.118,,47264.0,model.visual.blocks.31,,,,,,
+359,54338,train,relational reasoning,False,1,783,729,2.510667324066162,False,1.108,,42016.0,model.visual.blocks.31,,,,,,
+360,55752,train,relational reasoning,False,1,790,729,3.144383668899536,False,1.114,,53344.0,model.visual.blocks.31,,,,,,
+361,54745,train,relational reasoning,False,1,787,729,2.697354555130005,False,1.113,,34528.0,model.visual.blocks.31,,,,,,
+362,55681,options,relational reasoning,False,1,961,729,0.7454173564910889,False,1.239,,32032.0,model.visual.blocks.31,0.7489773035049438,0.997,0.7454173564910889,0.991,0.7508971095085144,3.686
+363,54009,train,relational reasoning,False,1,788,729,1.81507408618927,False,1.113,,34912.0,model.visual.blocks.31,1.8151413202285767,0.883,1.81507408618927,0.885,1.8172050714492798,3.422
+364,54238,train,relational reasoning,False,1,790,729,2.3305442333221436,False,1.115,,34432.0,model.visual.blocks.31,,,,,,
+365,54697,train,relational reasoning,False,1,788,729,2.665428876876831,False,1.11,,33024.0,model.visual.blocks.31,,,,,,
+366,53887,train,relational reasoning,False,1,788,729,2.44187593460083,False,1.109,,40288.0,model.visual.blocks.31,2.443286895751953,0.885,2.44187593460083,0.892,2.4455618858337402,3.425
+367,54722,train,relational reasoning,False,1,787,729,1.6992744207382202,False,1.116,,38944.0,model.visual.blocks.31,,,,,,
+368,54450,train,relational reasoning,False,1,789,729,2.299159288406372,False,1.116,,48800.0,model.visual.blocks.31,,,,,,
+369,55578,train,relational reasoning,False,1,784,729,1.9623494148254395,False,1.115,,43552.0,model.visual.blocks.31,,,,,,
+370,55580,train,relational reasoning,False,1,783,729,1.8072185516357422,False,1.112,,60608.0,model.visual.blocks.31,,,,,,
+371,54865,train,relational reasoning,False,1,785,729,1.8986878395080566,False,1.114,,42208.0,model.visual.blocks.31,1.899423360824585,0.885,1.8986878395080566,0.888,1.901286244392395,3.381
+372,54491,train,relational reasoning,False,1,789,729,2.0808310508728027,False,1.113,,35232.0,model.visual.blocks.31,,,,,,
+373,54796,train,relational reasoning,False,1,788,729,1.1122158765792847,False,1.118,,42144.0,model.visual.blocks.31,,,,,,
+374,55381,train,relational reasoning,False,1,785,729,2.151984453201294,False,1.118,,33344.0,model.visual.blocks.31,2.152257204055786,0.886,2.151984453201294,0.885,2.153442144393921,3.379
+375,55457,train,relational reasoning,False,1,788,729,1.9513517618179321,False,1.114,,49408.0,model.visual.blocks.31,1.9497201442718506,0.892,1.9513517618179321,0.893,1.950661301612854,3.432
+376,55577,train,relational reasoning,False,1,783,729,2.1428234577178955,False,1.117,,43552.0,model.visual.blocks.31,2.143406391143799,0.879,2.1428234577178955,0.881,2.143418550491333,3.399
+377,55081,train,relational reasoning,False,1,791,729,2.415498733520508,False,1.124,,44000.0,model.visual.blocks.31,,,,,,
+378,55310,train,relational reasoning,False,1,792,729,1.9613590240478516,False,1.109,,39904.0,model.visual.blocks.31,,,,,,
+379,55428,train,relational reasoning,False,1,787,729,,True,1.037,model.visual.blocks.31.mlp.down_proj,9888.0,model.visual.blocks.30,1.5024738311767578,0.883,1.5020501613616943,0.89,1.5058215856552124,3.405
+380,54933,train,relational reasoning,False,1,790,729,2.648650884628296,False,1.115,,37472.0,model.visual.blocks.31,2.6491899490356445,0.89,2.648650884628296,0.891,2.6508913040161133,3.407
+381,54218,train,relational reasoning,False,1,793,729,2.298354387283325,False,1.125,,30704.0,model.visual.blocks.31,,,,,,
+382,54289,train,relational reasoning,False,1,788,729,2.292088747024536,False,1.114,,29968.0,model.visual.blocks.31,,,,,,
+383,54514,train,relational reasoning,False,1,790,729,2.4588725566864014,False,1.114,,42336.0,model.visual.blocks.31,,,,,,
+384,54346,train,relational reasoning,False,1,791,729,2.1332099437713623,False,1.12,,34528.0,model.visual.blocks.31,,,,,,
+385,54008,train,relational reasoning,False,1,786,729,2.8672280311584473,False,1.117,,34912.0,model.visual.blocks.31,,,,,,
+386,55129,train,relational reasoning,False,1,786,729,2.4093053340911865,False,1.119,,36512.0,model.visual.blocks.31,,,,,,
+387,55468,train,relational reasoning,False,1,787,729,0.5900625586509705,False,1.114,,60320.0,model.visual.blocks.31,0.5905396938323975,0.88,0.5900625586509705,0.888,0.58872389793396,3.399
+388,55050,train,relational reasoning,False,1,795,729,2.5050947666168213,False,1.114,,30288.0,model.visual.blocks.31,,,,,,
+389,54013,train,relational reasoning,False,1,791,729,2.525416135787964,False,1.113,,34112.0,model.visual.blocks.31,,,,,,
+390,55494,train,relational reasoning,False,1,785,729,1.642071008682251,False,1.109,,35136.0,model.visual.blocks.31,1.642425537109375,0.884,1.642071008682251,0.888,1.6431159973144531,3.391
+391,54552,train,relational reasoning,False,1,789,729,1.8249895572662354,False,1.113,,50176.0,model.visual.blocks.31,,,,,,
+392,54006,train,relational reasoning,False,1,791,729,2.7798335552215576,False,1.118,,48160.0,model.visual.blocks.31,,,,,,
+393,53988,train,relational reasoning,False,1,789,729,2.3192832469940186,False,1.115,,43392.0,model.visual.blocks.31,,,,,,
+394,55139,train,relational reasoning,False,1,790,729,1.4593709707260132,False,1.116,,42560.0,model.visual.blocks.31,1.45919930934906,0.887,1.4593709707260132,0.888,1.4598617553710938,3.393
+395,54913,train,relational reasoning,False,1,792,729,1.5804964303970337,False,1.115,,31168.0,model.visual.blocks.31,1.580456018447876,0.888,1.5804964303970337,0.883,1.577854037284851,3.427
+396,54966,train,relational reasoning,False,1,789,729,2.0606579780578613,False,1.115,,35648.0,model.visual.blocks.31,,,,,,
+397,55725,train,relational reasoning,False,1,790,729,1.4016025066375732,False,1.111,,42016.0,model.visual.blocks.31,,,,,,
+398,55024,train,relational reasoning,False,1,793,729,2.1897830963134766,False,1.123,,53664.0,model.visual.blocks.31,,,,,,
+399,54223,train,relational reasoning,False,1,787,729,2.0912251472473145,False,1.117,,35456.0,model.visual.blocks.31,2.091287612915039,0.892,2.0912251472473145,0.89,2.0933730602264404,3.405
+400,32946,train,disaster caption,True,2,1852,1458,2.1685681343078613,False,2.608,,35168.0,model.visual.blocks.31,,,,,,
+401,32699,train,disaster caption,True,2,1857,1458,2.1451361179351807,False,2.638,,53280.0,model.visual.blocks.31,,,,,,
+402,29832,train,disaster caption,True,2,1852,1458,2.132622241973877,False,2.615,,40672.0,model.visual.blocks.31,,,,,,
+403,32800,train,disaster caption,True,2,1832,1458,2.4271090030670166,False,2.622,,51872.0,model.visual.blocks.31,,,,,,
+404,34565,train,disaster caption,True,2,1841,1458,2.256474733352661,False,2.624,,38752.0,model.visual.blocks.31,,,,,,
+405,30185,train,disaster caption,True,2,1833,1458,2.1955416202545166,False,2.614,,51872.0,model.visual.blocks.31,,,,,,
+406,32786,train,disaster caption,True,2,1850,1458,1.8243767023086548,False,2.63,,34976.0,model.visual.blocks.31,,,,,,
+407,32906,train,disaster caption,True,2,1829,1458,2.4454195499420166,False,2.651,,38176.0,model.visual.blocks.31,,,,,,
+408,32682,train,disaster caption,True,2,1834,1458,2.1014621257781982,False,2.622,,42144.0,model.visual.blocks.31,,,,,,
+409,32571,train,disaster caption,True,2,1844,1458,2.0304834842681885,False,2.616,,47392.0,model.visual.blocks.31,,,,,,
+410,31090,train,disaster caption,True,2,1819,1458,2.330566883087158,False,2.648,,38080.0,model.visual.blocks.31,,,,,,
+411,30137,train,disaster caption,True,2,1833,1458,2.207768678665161,False,2.612,,43136.0,model.visual.blocks.31,,,,,,
+412,32471,train,disaster caption,True,2,1812,1458,2.387568235397339,False,2.618,,37504.0,model.visual.blocks.31,,,,,,
+413,31183,train,disaster caption,True,2,1823,1458,2.1195247173309326,False,2.643,,42848.0,model.visual.blocks.31,,,,,,
+414,32896,train,disaster caption,True,2,1816,1458,2.1256935596466064,False,2.594,,34656.0,model.visual.blocks.31,,,,,,
+415,30520,train,disaster caption,True,2,1816,1458,2.399702548980713,False,2.61,,41440.0,model.visual.blocks.31,,,,,,
+416,30130,train,disaster caption,True,2,1824,1458,2.118947744369507,False,2.613,,42496.0,model.visual.blocks.31,,,,,,
+417,32508,train,disaster caption,True,2,1827,1458,2.1521248817443848,False,2.628,,48512.0,model.visual.blocks.31,,,,,,
+418,32081,train,disaster caption,True,2,1817,1458,2.2202579975128174,False,2.627,,38944.0,model.visual.blocks.31,,,,,,
+419,34799,train,disaster caption,True,2,1831,1458,2.1567952632904053,False,2.637,,48608.0,model.visual.blocks.31,,,,,,
+420,30558,train,disaster caption,True,2,1813,1458,2.230955123901367,False,2.632,,42944.0,model.visual.blocks.31,,,,,,
+421,32702,train,disaster caption,True,2,1809,1458,1.8905385732650757,False,2.623,,32320.0,model.visual.blocks.31,,,,,,
+422,34452,train,disaster caption,True,2,1832,1458,1.9929723739624023,False,2.614,,39168.0,model.visual.blocks.31,,,,,,
+423,34580,train,disaster caption,True,2,1822,1458,2.114809989929199,False,2.626,,48064.0,model.visual.blocks.31,,,,,,
+424,31424,train,disaster caption,True,2,1817,1458,2.11197829246521,False,2.631,,45376.0,model.visual.blocks.31,,,,,,
+425,33371,train,disaster caption,True,2,1819,1458,2.1732943058013916,False,2.636,,34112.0,model.visual.blocks.31,,,,,,
+426,32454,train,disaster caption,True,2,1819,1458,2.0819826126098633,False,2.628,,35648.0,model.visual.blocks.31,,,,,,
+427,32762,train,disaster caption,True,2,1826,1458,2.1887471675872803,False,2.633,,37952.0,model.visual.blocks.31,,,,,,
+428,30505,train,disaster caption,True,2,1819,1458,2.4622366428375244,False,2.636,,36832.0,model.visual.blocks.31,,,,,,
+429,34944,train,disaster caption,True,2,1826,1458,2.2427892684936523,False,2.642,,39904.0,model.visual.blocks.31,,,,,,
+430,30579,train,disaster caption,True,2,1789,1458,2.713777780532837,False,2.558,,42400.0,model.visual.blocks.31,,,,,,
+431,30633,train,disaster caption,True,2,1810,1458,2.335542678833008,False,2.627,,33760.0,model.visual.blocks.31,,,,,,
+432,30644,train,disaster caption,True,2,1800,1458,2.281381368637085,False,2.582,,53152.0,model.visual.blocks.31,,,,,,
+433,32526,train,disaster caption,True,2,1808,1458,2.0636706352233887,False,2.591,,41856.0,model.visual.blocks.31,,,,,,
+434,32572,train,disaster caption,True,2,1806,1458,2.17594838142395,False,2.617,,40064.0,model.visual.blocks.31,,,,,,
+435,32719,train,disaster caption,True,2,1807,1458,2.1802356243133545,False,2.614,,36192.0,model.visual.blocks.31,,,,,,
+436,30806,train,disaster caption,True,2,1813,1458,2.1479907035827637,False,2.629,,35968.0,model.visual.blocks.31,,,,,,
+437,29682,train,disaster caption,True,2,1811,1458,2.287142276763916,False,2.623,,49280.0,model.visual.blocks.31,,,,,,
+438,29683,train,disaster caption,True,2,1811,1458,2.2987868785858154,False,2.628,,49280.0,model.visual.blocks.31,,,,,,
+439,34943,train,disaster caption,True,2,1811,1458,2.333625555038452,False,2.632,,44576.0,model.visual.blocks.31,,,,,,
