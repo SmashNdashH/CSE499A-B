@@ -1,0 +1,146 @@
+{
+ "task": "Layer 3 step 1",
+ "smoke_test": true,
+ "minutes": 23.6,
+ "model_minutes": {
+  "R11": 0.3,
+  "R9": 0.1
+ },
+ "device": "Tesla T4",
+ "versions": {
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "segmentation-models-pytorch": "0.3.4",
+  "numpy": "2.1.3",
+  "opencv": "4.14.0",
+  "pandas": "2.3.3",
+  "scikit-learn": "1.6.1"
+ },
+ "before_source": [
+  "real",
+  "copy",
+  "gray"
+ ],
+ "checkpoints": {
+  "R11": {
+   "file": "/kaggle/input/datasets/abrarmohammedtanzim/disasterm3-r11-r9-checkpoints/R11/final_model.pth",
+   "sha256": "2ae816576ad25e6bd61ca9322d205524ec24cb3d63f5f15b464665d2172673c0"
+  },
+  "R9": {
+   "file": "/kaggle/input/datasets/abrarmohammedtanzim/disasterm3-r11-r9-checkpoints/R9/final_model.pth",
+   "sha256": "e1f16b716cc3c50e2d99d7d656962e1a606642ff17339ffb36a7e44d11735836"
+  }
+ },
+ "gray": {
+  "rgb_uint8": [
+   86,
+   91,
+   69
+  ],
+  "mean": [
+   85.5376,
+   90.7482,
+   69.2667
+  ],
+  "sums": [
+   520038244565,
+   551716716020,
+   421116766778
+  ],
+  "pixels": 6079643648,
+  "photos": 5798
+ },
+ "step0_pairs_csv": "/kaggle/input/notebooks/riditaafrin/layer3-step0-pairs-and-checks/layer3-step0/pairs.csv",
+ "validation_pairs": 8,
+ "clean_pairs": 8,
+ "reproduction": [
+  {
+   "run": "R11 real",
+   "pairs": "8",
+   "miou": 0.619,
+   "destroyed_iou": 0.0906,
+   "e5_miou": 0.619,
+   "e5_destroyed_iou": 0.0906,
+   "tolerance": 0.005,
+   "reproduces_e5": true
+  },
+  {
+   "run": "R9",
+   "pairs": "8",
+   "miou": 0.5546,
+   "destroyed_iou": 0.1227,
+   "e5_miou": 0.5546,
+   "e5_destroyed_iou": 0.1227,
+   "tolerance": 0.005,
+   "reproduces_e5": true
+  }
+ ],
+ "own_bar": 0.586792,
+ "bar": null,
+ "resampling": {
+  "resamples": 10000,
+  "seed": 42,
+  "pairs": 8,
+  "method": "E7 step 2b's: multinomial weights over the pairs, percentiles 2.5 and 97.5"
+ },
+ "rule_tests": [
+  {
+   "run": "R11 real",
+   "role": "reference: the real before-photo",
+   "pairs": 8,
+   "miou": 0.619,
+   "bar": null,
+   "test1_reaches_bar": null,
+   "minus_r9": 0.0644,
+   "minus_r9_ci95_low": 0.0077,
+   "minus_r9_ci95_high": 0.1453,
+   "test2_above_r9": true,
+   "minus_copy": 0.2591,
+   "minus_copy_ci95_low": 0.1416,
+   "minus_copy_ci95_high": 0.3665,
+   "test3_above_copy": true,
+   "passes_rule": false
+  },
+  {
+   "run": "R11 copy",
+   "role": "baseline: test 3 compares with it",
+   "pairs": 8,
+   "miou": 0.3599,
+   "bar": null,
+   "test1_reaches_bar": null,
+   "minus_r9": -0.1947,
+   "minus_r9_ci95_low": -0.2738,
+   "minus_r9_ci95_high": -0.0608,
+   "test2_above_r9": false,
+   "minus_copy": NaN,
+   "minus_copy_ci95_low": NaN,
+   "minus_copy_ci95_high": NaN,
+   "test3_above_copy": null,
+   "passes_rule": false
+  },
+  {
+   "run": "R11 gray",
+   "role": "baseline: a flat picture",
+   "pairs": 8,
+   "miou": 0.251,
+   "bar": null,
+   "test1_reaches_bar": null,
+   "minus_r9": -0.3036,
+   "minus_r9_ci95_low": -0.3767,
+   "minus_r9_ci95_high": -0.1695,
+   "test2_above_r9": false,
+   "minus_copy": -0.1088,
+   "minus_copy_ci95_low": -0.1268,
+   "minus_copy_ci95_high": -0.0319,
+   "test3_above_copy": false,
+   "passes_rule": false
+  }
+ ],
+ "checks": {
+  "1. Step 0's pairs.csv: its full run, the same split, 605 clean": "passed",
+  "2. The gray colour is the training before-photos' mean, (86, 91, 69)": "passed",
+  "3. R11 real reproduces E5 step 2 (smoke test: its 8 pairs, within 0.005)": "passed",
+  "4. R9 reproduces E5 step 2 (smoke test: its 8 pairs, within 0.005)": "passed",
+  "5. Every run scored every validation pair": "passed"
+ }
+}

@@ -1,0 +1,65 @@
+run,model,before_source,mode,image,before_image,event,source,clean,t0_p0,t0_p1,t0_p2,t0_p3,t1_p0,t1_p1,t1_p2,t1_p3,t2_p0,t2_p1,t2_p2,t2_p3,t3_p0,t3_p1,t3_p2,t3_p3
+R11 real,R11,real,std,turkey_earthquake3_post_692.png,turkey_earthquake3_pre_692.png,turkey_earthquake,other,True,340751,123993,0,0,30524,553308,0,0,0,0,0,0,0,0,0,0
+R11 real,R11,real,tta,turkey_earthquake3_post_692.png,turkey_earthquake3_pre_692.png,turkey_earthquake,other,True,350078,114666,0,0,31409,552423,0,0,0,0,0,0,0,0,0,0
+R11 copy,R11,copy,std,turkey_earthquake3_post_692.png,turkey_earthquake3_pre_692.png,turkey_earthquake,other,True,319023,145721,0,0,304881,278951,0,0,0,0,0,0,0,0,0,0
+R11 copy,R11,copy,tta,turkey_earthquake3_post_692.png,turkey_earthquake3_pre_692.png,turkey_earthquake,other,True,334553,130191,0,0,317291,266541,0,0,0,0,0,0,0,0,0,0
+R11 gray,R11,gray,std,turkey_earthquake3_post_692.png,turkey_earthquake3_pre_692.png,turkey_earthquake,other,True,464744,0,0,0,583832,0,0,0,0,0,0,0,0,0,0,0
+R11 gray,R11,gray,tta,turkey_earthquake3_post_692.png,turkey_earthquake3_pre_692.png,turkey_earthquake,other,True,464744,0,0,0,583832,0,0,0,0,0,0,0,0,0,0,0
+R11 real,R11,real,std,hurricane_florence_00000315_post_disaster.png,hurricane_florence_00000315_pre_disaster.png,hurricane_florence,xBD,True,1046819,350,0,0,159,1248,0,0,0,0,0,0,0,0,0,0
+R11 real,R11,real,tta,hurricane_florence_00000315_post_disaster.png,hurricane_florence_00000315_pre_disaster.png,hurricane_florence,xBD,True,1046805,364,0,0,154,1253,0,0,0,0,0,0,0,0,0,0
+R11 copy,R11,copy,std,hurricane_florence_00000315_post_disaster.png,hurricane_florence_00000315_pre_disaster.png,hurricane_florence,xBD,True,1047152,17,0,0,1270,137,0,0,0,0,0,0,0,0,0,0
+R11 copy,R11,copy,tta,hurricane_florence_00000315_post_disaster.png,hurricane_florence_00000315_pre_disaster.png,hurricane_florence,xBD,True,1047163,6,0,0,1283,124,0,0,0,0,0,0,0,0,0,0
+R11 gray,R11,gray,std,hurricane_florence_00000315_post_disaster.png,hurricane_florence_00000315_pre_disaster.png,hurricane_florence,xBD,True,1047169,0,0,0,1407,0,0,0,0,0,0,0,0,0,0,0
+R11 gray,R11,gray,tta,hurricane_florence_00000315_post_disaster.png,hurricane_florence_00000315_pre_disaster.png,hurricane_florence,xBD,True,1047169,0,0,0,1407,0,0,0,0,0,0,0,0,0,0,0
+R11 real,R11,real,std,nepal_flooding_00000278_post_disaster.png,nepal_flooding_00000278_pre_disaster.png,nepal_flooding,xBD,True,1047367,0,194,0,0,0,0,0,160,0,125,0,661,0,69,0
+R11 real,R11,real,tta,nepal_flooding_00000278_post_disaster.png,nepal_flooding_00000278_pre_disaster.png,nepal_flooding,xBD,True,1047393,0,168,0,0,0,0,0,157,0,128,0,679,0,51,0
+R11 copy,R11,copy,std,nepal_flooding_00000278_post_disaster.png,nepal_flooding_00000278_pre_disaster.png,nepal_flooding,xBD,True,1046640,921,0,0,0,0,0,0,255,30,0,0,702,28,0,0
+R11 copy,R11,copy,tta,nepal_flooding_00000278_post_disaster.png,nepal_flooding_00000278_pre_disaster.png,nepal_flooding,xBD,True,1046855,706,0,0,0,0,0,0,266,19,0,0,701,29,0,0
+R11 gray,R11,gray,std,nepal_flooding_00000278_post_disaster.png,nepal_flooding_00000278_pre_disaster.png,nepal_flooding,xBD,True,1047561,0,0,0,0,0,0,0,285,0,0,0,730,0,0,0
+R11 gray,R11,gray,tta,nepal_flooding_00000278_post_disaster.png,nepal_flooding_00000278_pre_disaster.png,nepal_flooding,xBD,True,1047561,0,0,0,0,0,0,0,285,0,0,0,730,0,0,0
+R11 real,R11,real,std,santa_rosa_wildfire_00000201_post_disaster.png,santa_rosa_wildfire_00000201_pre_disaster.png,santa_rosa_wildfire,xBD,True,1043360,0,0,1300,0,0,0,0,1426,0,0,143,1732,0,0,615
+R11 real,R11,real,tta,santa_rosa_wildfire_00000201_post_disaster.png,santa_rosa_wildfire_00000201_pre_disaster.png,santa_rosa_wildfire,xBD,True,1043733,0,0,927,0,0,0,0,300,0,0,1269,1784,0,0,563
+R11 copy,R11,copy,std,santa_rosa_wildfire_00000201_post_disaster.png,santa_rosa_wildfire_00000201_pre_disaster.png,santa_rosa_wildfire,xBD,True,1044595,65,0,0,0,0,0,0,1569,0,0,0,2347,0,0,0
+R11 copy,R11,copy,tta,santa_rosa_wildfire_00000201_post_disaster.png,santa_rosa_wildfire_00000201_pre_disaster.png,santa_rosa_wildfire,xBD,True,1044555,105,0,0,0,0,0,0,1569,0,0,0,2347,0,0,0
+R11 gray,R11,gray,std,santa_rosa_wildfire_00000201_post_disaster.png,santa_rosa_wildfire_00000201_pre_disaster.png,santa_rosa_wildfire,xBD,True,1044660,0,0,0,0,0,0,0,1569,0,0,0,2347,0,0,0
+R11 gray,R11,gray,tta,santa_rosa_wildfire_00000201_post_disaster.png,santa_rosa_wildfire_00000201_pre_disaster.png,santa_rosa_wildfire,xBD,True,1044660,0,0,0,0,0,0,0,1569,0,0,0,2347,0,0,0
+R11 real,R11,real,std,hurricane_michael_00000224_post_disaster.png,hurricane_michael_00000224_pre_disaster.png,hurricane_michael,xBD,True,1007875,3548,3121,0,2822,7597,855,0,3008,2141,13998,0,3505,106,0,0
+R11 real,R11,real,tta,hurricane_michael_00000224_post_disaster.png,hurricane_michael_00000224_pre_disaster.png,hurricane_michael,xBD,True,1008824,2692,3028,0,2947,7108,1219,0,3252,1876,14019,0,3515,0,96,0
+R11 copy,R11,copy,std,hurricane_michael_00000224_post_disaster.png,hurricane_michael_00000224_pre_disaster.png,hurricane_michael,xBD,True,1004703,8090,1679,72,2784,7954,536,0,3138,10346,5663,0,3245,93,128,145
+R11 copy,R11,copy,tta,hurricane_michael_00000224_post_disaster.png,hurricane_michael_00000224_pre_disaster.png,hurricane_michael,xBD,True,1004602,8637,1287,18,3027,7666,581,0,2692,11886,4569,0,3317,87,79,128
+R11 gray,R11,gray,std,hurricane_michael_00000224_post_disaster.png,hurricane_michael_00000224_pre_disaster.png,hurricane_michael,xBD,True,1014216,0,328,0,11274,0,0,0,10884,0,8263,0,3611,0,0,0
+R11 gray,R11,gray,tta,hurricane_michael_00000224_post_disaster.png,hurricane_michael_00000224_pre_disaster.png,hurricane_michael,xBD,True,1014432,0,112,0,11274,0,0,0,14218,0,4929,0,3611,0,0,0
+R11 real,R11,real,std,hurricane_matthew_00000217_post_disaster.png,hurricane_matthew_00000217_pre_disaster.png,hurricane_matthew,xBD,True,1043891,0,318,1162,0,0,0,0,481,0,902,930,329,0,0,563
+R11 real,R11,real,tta,hurricane_matthew_00000217_post_disaster.png,hurricane_matthew_00000217_pre_disaster.png,hurricane_matthew,xBD,True,1043866,0,61,1444,0,0,0,0,485,0,199,1629,291,0,0,601
+R11 copy,R11,copy,std,hurricane_matthew_00000217_post_disaster.png,hurricane_matthew_00000217_pre_disaster.png,hurricane_matthew,xBD,True,1043779,0,197,1395,0,0,0,0,1988,18,0,307,839,0,0,53
+R11 copy,R11,copy,tta,hurricane_matthew_00000217_post_disaster.png,hurricane_matthew_00000217_pre_disaster.png,hurricane_matthew,xBD,True,1043853,0,6,1512,0,0,0,0,1985,0,0,328,858,0,0,34
+R11 gray,R11,gray,std,hurricane_matthew_00000217_post_disaster.png,hurricane_matthew_00000217_pre_disaster.png,hurricane_matthew,xBD,True,1045371,0,0,0,0,0,0,0,2313,0,0,0,892,0,0,0
+R11 gray,R11,gray,tta,hurricane_matthew_00000217_post_disaster.png,hurricane_matthew_00000217_pre_disaster.png,hurricane_matthew,xBD,True,1045371,0,0,0,0,0,0,0,2313,0,0,0,892,0,0,0
+R11 real,R11,real,std,turkey_earthquake5_post_884.png,turkey_earthquake5_pre_884.png,turkey_earthquake,other,True,722202,39802,0,0,25094,258288,0,0,852,2338,0,0,0,0,0,0
+R11 real,R11,real,tta,turkey_earthquake5_post_884.png,turkey_earthquake5_pre_884.png,turkey_earthquake,other,True,726545,35459,0,0,26475,256907,0,0,440,2750,0,0,0,0,0,0
+R11 copy,R11,copy,std,turkey_earthquake5_post_884.png,turkey_earthquake5_pre_884.png,turkey_earthquake,other,True,595059,166945,0,0,56339,227043,0,0,740,2450,0,0,0,0,0,0
+R11 copy,R11,copy,tta,turkey_earthquake5_post_884.png,turkey_earthquake5_pre_884.png,turkey_earthquake,other,True,589095,172909,0,0,56301,227081,0,0,1086,2104,0,0,0,0,0,0
+R11 gray,R11,gray,std,turkey_earthquake5_post_884.png,turkey_earthquake5_pre_884.png,turkey_earthquake,other,True,762004,0,0,0,283382,0,0,0,3190,0,0,0,0,0,0,0
+R11 gray,R11,gray,tta,turkey_earthquake5_post_884.png,turkey_earthquake5_pre_884.png,turkey_earthquake,other,True,762004,0,0,0,283382,0,0,0,3190,0,0,0,0,0,0,0
+R11 real,R11,real,std,hurricane_michael_00000530_post_disaster.png,hurricane_michael_00000530_pre_disaster.png,hurricane_michael,xBD,True,1031574,0,579,0,0,0,0,0,655,0,15768,0,0,0,0,0
+R11 real,R11,real,tta,hurricane_michael_00000530_post_disaster.png,hurricane_michael_00000530_pre_disaster.png,hurricane_michael,xBD,True,1031885,0,268,0,0,0,0,0,732,0,15691,0,0,0,0,0
+R11 copy,R11,copy,std,hurricane_michael_00000530_post_disaster.png,hurricane_michael_00000530_pre_disaster.png,hurricane_michael,xBD,True,1029948,2205,0,0,0,0,0,0,9217,7206,0,0,0,0,0,0
+R11 copy,R11,copy,tta,hurricane_michael_00000530_post_disaster.png,hurricane_michael_00000530_pre_disaster.png,hurricane_michael,xBD,True,1030362,1791,0,0,0,0,0,0,6777,9646,0,0,0,0,0,0
+R11 gray,R11,gray,std,hurricane_michael_00000530_post_disaster.png,hurricane_michael_00000530_pre_disaster.png,hurricane_michael,xBD,True,1032153,0,0,0,0,0,0,0,16423,0,0,0,0,0,0,0
+R11 gray,R11,gray,tta,hurricane_michael_00000530_post_disaster.png,hurricane_michael_00000530_pre_disaster.png,hurricane_michael,xBD,True,1032153,0,0,0,0,0,0,0,16423,0,0,0,0,0,0,0
+R9,R9,none,std,turkey_earthquake3_post_692.png,turkey_earthquake3_pre_692.png,turkey_earthquake,other,True,149020,315724,0,0,38714,545118,0,0,0,0,0,0,0,0,0,0
+R9,R9,none,tta,turkey_earthquake3_post_692.png,turkey_earthquake3_pre_692.png,turkey_earthquake,other,True,143594,321150,0,0,34261,549571,0,0,0,0,0,0,0,0,0,0
+R9,R9,none,std,hurricane_florence_00000315_post_disaster.png,hurricane_florence_00000315_pre_disaster.png,hurricane_florence,xBD,True,1047169,0,0,0,1371,36,0,0,0,0,0,0,0,0,0,0
+R9,R9,none,tta,hurricane_florence_00000315_post_disaster.png,hurricane_florence_00000315_pre_disaster.png,hurricane_florence,xBD,True,1047155,14,0,0,1294,113,0,0,0,0,0,0,0,0,0,0
+R9,R9,none,std,nepal_flooding_00000278_post_disaster.png,nepal_flooding_00000278_pre_disaster.png,nepal_flooding,xBD,True,1046731,0,830,0,0,0,0,0,257,0,28,0,730,0,0,0
+R9,R9,none,tta,nepal_flooding_00000278_post_disaster.png,nepal_flooding_00000278_pre_disaster.png,nepal_flooding,xBD,True,1047079,0,482,0,0,0,0,0,262,0,23,0,730,0,0,0
+R9,R9,none,std,santa_rosa_wildfire_00000201_post_disaster.png,santa_rosa_wildfire_00000201_pre_disaster.png,santa_rosa_wildfire,xBD,True,1043362,0,0,1298,0,0,0,0,1174,0,0,395,1412,0,0,935
+R9,R9,none,tta,santa_rosa_wildfire_00000201_post_disaster.png,santa_rosa_wildfire_00000201_pre_disaster.png,santa_rosa_wildfire,xBD,True,1042923,0,0,1737,0,0,0,0,1433,0,0,136,1175,0,0,1172
+R9,R9,none,std,hurricane_michael_00000224_post_disaster.png,hurricane_michael_00000224_pre_disaster.png,hurricane_michael,xBD,True,1007731,3112,3701,0,3862,6358,1054,0,2538,1374,15235,0,3611,0,0,0
+R9,R9,none,tta,hurricane_michael_00000224_post_disaster.png,hurricane_michael_00000224_pre_disaster.png,hurricane_michael,xBD,True,1007869,3074,3601,0,3881,6519,874,0,2456,1115,15576,0,3611,0,0,0
+R9,R9,none,std,hurricane_matthew_00000217_post_disaster.png,hurricane_matthew_00000217_pre_disaster.png,hurricane_matthew,xBD,True,1044682,0,204,485,0,0,0,0,2104,0,0,209,892,0,0,0
+R9,R9,none,tta,hurricane_matthew_00000217_post_disaster.png,hurricane_matthew_00000217_pre_disaster.png,hurricane_matthew,xBD,True,1044969,0,353,49,0,0,0,0,2116,0,148,49,892,0,0,0
+R9,R9,none,std,turkey_earthquake5_post_884.png,turkey_earthquake5_pre_884.png,turkey_earthquake,other,True,594122,167882,0,0,36167,247215,0,0,191,2999,0,0,0,0,0,0
+R9,R9,none,tta,turkey_earthquake5_post_884.png,turkey_earthquake5_pre_884.png,turkey_earthquake,other,True,599736,162268,0,0,37966,245416,0,0,247,2943,0,0,0,0,0,0
+R9,R9,none,std,hurricane_michael_00000530_post_disaster.png,hurricane_michael_00000530_pre_disaster.png,hurricane_michael,xBD,True,1031494,5,654,0,0,0,0,0,3942,0,12481,0,0,0,0,0
+R9,R9,none,tta,hurricane_michael_00000530_post_disaster.png,hurricane_michael_00000530_pre_disaster.png,hurricane_michael,xBD,True,1031024,249,880,0,0,0,0,0,3258,0,13165,0,0,0,0,0

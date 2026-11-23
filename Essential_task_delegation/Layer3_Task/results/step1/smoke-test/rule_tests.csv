@@ -1,0 +1,4 @@
+run,role,pairs,miou,bar,test1_reaches_bar,minus_r9,minus_r9_ci95_low,minus_r9_ci95_high,test2_above_r9,minus_copy,minus_copy_ci95_low,minus_copy_ci95_high,test3_above_copy,passes_rule
+R11 real,reference: the real before-photo,8,0.619,,,0.0644,0.0077,0.1453,True,0.2591,0.1416,0.3665,True,False
+R11 copy,baseline: test 3 compares with it,8,0.3599,,,-0.1947,-0.2738,-0.0608,False,,,,,False
+R11 gray,baseline: a flat picture,8,0.251,,,-0.3036,-0.3767,-0.1695,False,-0.1088,-0.1268,-0.0319,False,False

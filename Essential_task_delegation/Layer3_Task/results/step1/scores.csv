@@ -1,0 +1,433 @@
+run,mode,pairs,group,n_pairs,miou,destroyed_iou,building_iou,building_precision
+R11 real,std,all,all,645,0.58107,0.291146,0.735623,0.824596
+R11 real,std,all,Turkey,64,0.404952,0.0,0.783594,0.853225
+R11 real,std,all,not Turkey,581,0.610456,0.400988,0.703533,0.804484
+R11 real,std,all,event: bata_explosion,3,0.301555,0.0,0.283334,0.684192
+R11 real,std,all,event: beriut_explosion,4,0.286242,0.0,0.47997,0.677707
+R11 real,std,all,event: hawaii_wildfire,1,0.238397,0.229209,0.223045,0.28711
+R11 real,std,all,event: hurricane_florence,57,0.564853,0.0,0.762878,0.859107
+R11 real,std,all,event: hurricane_harvey,44,0.519159,0.001931,0.76896,0.847223
+R11 real,std,all,event: hurricane_matthew,25,0.43374,0.219316,0.552859,0.654324
+R11 real,std,all,event: hurricane_michael,42,0.564005,0.323408,0.699316,0.809198
+R11 real,std,all,event: kalehe_flooding,5,0.252135,0.0,0.011851,0.042129
+R11 real,std,all,event: libya_flood,4,0.332785,0.0,0.80977,0.877076
+R11 real,std,all,event: lower_puna_volcano,8,0.586694,0.632304,0.686667,0.819133
+R11 real,std,all,event: midwest_flooding,35,0.433533,0.0,0.716779,0.872475
+R11 real,std,all,event: moore_tornado,16,0.734809,0.650719,0.822919,0.874813
+R11 real,std,all,event: morroco_earthquake,3,0.392081,0.0,0.597689,0.761742
+R11 real,std,all,event: nepal_flooding,48,0.493266,0.027833,0.667419,0.762858
+R11 real,std,all,event: palu_tsunami,7,0.542051,0.510424,0.750785,0.809072
+R11 real,std,all,event: pinery_bushfire,40,0.57844,0.137332,0.749554,0.8427
+R11 real,std,all,event: portugal_wildfire,105,0.522947,0.350545,0.694399,0.77491
+R11 real,std,all,event: santa_rosa_wildfire,20,0.592992,0.675542,0.728631,0.794553
+R11 real,std,all,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 real,std,all,event: socal_fire,54,0.539233,0.513303,0.644373,0.748168
+R11 real,std,all,event: sunda_tsunami,4,0.397288,0.0,0.657535,0.755898
+R11 real,std,all,event: turkey_earthquake,64,0.404952,0.0,0.783594,0.853225
+R11 real,std,all,event: tuscaloosa_tornado,23,0.653932,0.413138,0.733582,0.85395
+R11 real,std,all,event: woolsey_fire,32,0.586834,0.574997,0.668228,0.787661
+R11 real,std,clean,all,605,0.574225,0.264111,0.736635,0.825335
+R11 real,std,clean,Turkey,64,0.404952,0.0,0.783594,0.853225
+R11 real,std,clean,not Turkey,541,0.6046,0.378126,0.704477,0.805284
+R11 real,std,clean,event: bata_explosion,3,0.301555,0.0,0.283334,0.684192
+R11 real,std,clean,event: beriut_explosion,4,0.286242,0.0,0.47997,0.677707
+R11 real,std,clean,event: hawaii_wildfire,1,0.238397,0.229209,0.223045,0.28711
+R11 real,std,clean,event: hurricane_florence,57,0.564853,0.0,0.762878,0.859107
+R11 real,std,clean,event: hurricane_harvey,44,0.519159,0.001931,0.76896,0.847223
+R11 real,std,clean,event: hurricane_matthew,25,0.43374,0.219316,0.552859,0.654324
+R11 real,std,clean,event: hurricane_michael,42,0.564005,0.323408,0.699316,0.809198
+R11 real,std,clean,event: kalehe_flooding,5,0.252135,0.0,0.011851,0.042129
+R11 real,std,clean,event: libya_flood,4,0.332785,0.0,0.80977,0.877076
+R11 real,std,clean,event: lower_puna_volcano,8,0.586694,0.632304,0.686667,0.819133
+R11 real,std,clean,event: midwest_flooding,35,0.433533,0.0,0.716779,0.872475
+R11 real,std,clean,event: moore_tornado,16,0.734809,0.650719,0.822919,0.874813
+R11 real,std,clean,event: morroco_earthquake,3,0.392081,0.0,0.597689,0.761742
+R11 real,std,clean,event: nepal_flooding,48,0.493266,0.027833,0.667419,0.762858
+R11 real,std,clean,event: palu_tsunami,7,0.542051,0.510424,0.750785,0.809072
+R11 real,std,clean,event: pinery_bushfire,40,0.57844,0.137332,0.749554,0.8427
+R11 real,std,clean,event: portugal_wildfire,105,0.522947,0.350545,0.694399,0.77491
+R11 real,std,clean,event: santa_rosa_wildfire,20,0.592992,0.675542,0.728631,0.794553
+R11 real,std,clean,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 real,std,clean,event: socal_fire,38,0.527219,0.470471,0.639815,0.745698
+R11 real,std,clean,event: sunda_tsunami,4,0.397288,0.0,0.657535,0.755898
+R11 real,std,clean,event: turkey_earthquake,64,0.404952,0.0,0.783594,0.853225
+R11 real,std,clean,event: tuscaloosa_tornado,23,0.653932,0.413138,0.733582,0.85395
+R11 real,std,clean,event: woolsey_fire,8,0.596951,0.650944,0.716176,0.836164
+R11 real,tta,all,all,645,0.587534,0.29653,0.741989,0.834036
+R11 real,tta,all,Turkey,64,0.407302,0.0,0.789436,0.858438
+R11 real,tta,all,not Turkey,581,0.617935,0.410295,0.709977,0.816622
+R11 real,tta,all,event: bata_explosion,3,0.300138,0.0,0.28116,0.696637
+R11 real,tta,all,event: beriut_explosion,4,0.279523,0.0,0.432576,0.697122
+R11 real,tta,all,event: hawaii_wildfire,1,0.240012,0.229194,0.225735,0.292786
+R11 real,tta,all,event: hurricane_florence,57,0.57379,0.000153,0.773831,0.871277
+R11 real,tta,all,event: hurricane_harvey,44,0.526717,0.002878,0.778,0.8602
+R11 real,tta,all,event: hurricane_matthew,25,0.441337,0.228364,0.562923,0.669067
+R11 real,tta,all,event: hurricane_michael,42,0.569262,0.320969,0.708782,0.824312
+R11 real,tta,all,event: kalehe_flooding,5,0.251801,0.0,0.010296,0.036695
+R11 real,tta,all,event: libya_flood,4,0.338591,0.0,0.813012,0.869821
+R11 real,tta,all,event: lower_puna_volcano,8,0.622614,0.705183,0.698755,0.835912
+R11 real,tta,all,event: midwest_flooding,35,0.436378,0.0,0.728712,0.88344
+R11 real,tta,all,event: moore_tornado,16,0.740478,0.656897,0.829124,0.881413
+R11 real,tta,all,event: morroco_earthquake,3,0.389849,0.0,0.599166,0.791634
+R11 real,tta,all,event: nepal_flooding,48,0.496481,0.030261,0.673835,0.770329
+R11 real,tta,all,event: palu_tsunami,7,0.537571,0.528452,0.756384,0.811731
+R11 real,tta,all,event: pinery_bushfire,40,0.581285,0.147244,0.764936,0.855
+R11 real,tta,all,event: portugal_wildfire,105,0.537513,0.382822,0.704489,0.785196
+R11 real,tta,all,event: santa_rosa_wildfire,20,0.599386,0.690799,0.738584,0.806282
+R11 real,tta,all,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 real,tta,all,event: socal_fire,54,0.542863,0.516257,0.655571,0.763056
+R11 real,tta,all,event: sunda_tsunami,4,0.402978,0.0,0.673871,0.766423
+R11 real,tta,all,event: turkey_earthquake,64,0.407302,0.0,0.789436,0.858438
+R11 real,tta,all,event: tuscaloosa_tornado,23,0.671904,0.460058,0.74753,0.872129
+R11 real,tta,all,event: woolsey_fire,32,0.600296,0.591225,0.681195,0.800311
+R11 real,tta,clean,all,605,0.580544,0.269183,0.742903,0.834747
+R11 real,tta,clean,Turkey,64,0.407302,0.0,0.789436,0.858438
+R11 real,tta,clean,not Turkey,541,0.611977,0.387483,0.710762,0.81744
+R11 real,tta,clean,event: bata_explosion,3,0.300138,0.0,0.28116,0.696637
+R11 real,tta,clean,event: beriut_explosion,4,0.279523,0.0,0.432576,0.697122
+R11 real,tta,clean,event: hawaii_wildfire,1,0.240012,0.229194,0.225735,0.292786
+R11 real,tta,clean,event: hurricane_florence,57,0.57379,0.000153,0.773831,0.871277
+R11 real,tta,clean,event: hurricane_harvey,44,0.526717,0.002878,0.778,0.8602
+R11 real,tta,clean,event: hurricane_matthew,25,0.441337,0.228364,0.562923,0.669067
+R11 real,tta,clean,event: hurricane_michael,42,0.569262,0.320969,0.708782,0.824312
+R11 real,tta,clean,event: kalehe_flooding,5,0.251801,0.0,0.010296,0.036695
+R11 real,tta,clean,event: libya_flood,4,0.338591,0.0,0.813012,0.869821
+R11 real,tta,clean,event: lower_puna_volcano,8,0.622614,0.705183,0.698755,0.835912
+R11 real,tta,clean,event: midwest_flooding,35,0.436378,0.0,0.728712,0.88344
+R11 real,tta,clean,event: moore_tornado,16,0.740478,0.656897,0.829124,0.881413
+R11 real,tta,clean,event: morroco_earthquake,3,0.389849,0.0,0.599166,0.791634
+R11 real,tta,clean,event: nepal_flooding,48,0.496481,0.030261,0.673835,0.770329
+R11 real,tta,clean,event: palu_tsunami,7,0.537571,0.528452,0.756384,0.811731
+R11 real,tta,clean,event: pinery_bushfire,40,0.581285,0.147244,0.764936,0.855
+R11 real,tta,clean,event: portugal_wildfire,105,0.537513,0.382822,0.704489,0.785196
+R11 real,tta,clean,event: santa_rosa_wildfire,20,0.599386,0.690799,0.738584,0.806282
+R11 real,tta,clean,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 real,tta,clean,event: socal_fire,38,0.532756,0.482821,0.65064,0.761342
+R11 real,tta,clean,event: sunda_tsunami,4,0.402978,0.0,0.673871,0.766423
+R11 real,tta,clean,event: turkey_earthquake,64,0.407302,0.0,0.789436,0.858438
+R11 real,tta,clean,event: tuscaloosa_tornado,23,0.671904,0.460058,0.74753,0.872129
+R11 real,tta,clean,event: woolsey_fire,8,0.602003,0.654876,0.72277,0.854407
+R11 copy,std,all,all,645,0.404713,0.049732,0.497636,0.670501
+R11 copy,std,all,Turkey,64,0.270086,0.0,0.405521,0.586332
+R11 copy,std,all,not Turkey,581,0.438125,0.075419,0.568571,0.72789
+R11 copy,std,all,event: bata_explosion,3,0.28805,0.0,0.236186,0.418542
+R11 copy,std,all,event: beriut_explosion,4,0.214196,0.0,0.26171,0.627807
+R11 copy,std,all,event: hawaii_wildfire,1,0.21237,0.086532,0.148505,0.223845
+R11 copy,std,all,event: hurricane_florence,57,0.411275,0.0,0.636511,0.790482
+R11 copy,std,all,event: hurricane_harvey,44,0.376099,0.0,0.550409,0.737466
+R11 copy,std,all,event: hurricane_matthew,25,0.287841,0.035004,0.302766,0.458021
+R11 copy,std,all,event: hurricane_michael,42,0.432789,0.026077,0.590947,0.700986
+R11 copy,std,all,event: kalehe_flooding,5,0.249786,0.0,0.022748,0.035481
+R11 copy,std,all,event: libya_flood,4,0.387699,0.0,0.724461,0.815484
+R11 copy,std,all,event: lower_puna_volcano,8,0.372121,0.0,0.343719,0.639541
+R11 copy,std,all,event: midwest_flooding,35,0.397227,0.0,0.629876,0.807638
+R11 copy,std,all,event: moore_tornado,16,0.544228,0.217855,0.723747,0.822018
+R11 copy,std,all,event: morroco_earthquake,3,0.343924,0.0,0.416,0.5435
+R11 copy,std,all,event: nepal_flooding,48,0.370712,0.0,0.481802,0.651181
+R11 copy,std,all,event: palu_tsunami,7,0.350728,0.0,0.661574,0.755831
+R11 copy,std,all,event: pinery_bushfire,40,0.419806,0.0,0.697811,0.793364
+R11 copy,std,all,event: portugal_wildfire,105,0.418543,0.012582,0.645792,0.782894
+R11 copy,std,all,event: santa_rosa_wildfire,20,0.422635,0.095976,0.597363,0.757998
+R11 copy,std,all,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 copy,std,all,event: socal_fire,54,0.409402,0.095161,0.5515,0.683397
+R11 copy,std,all,event: sunda_tsunami,4,0.374208,0.0,0.561079,0.705503
+R11 copy,std,all,event: turkey_earthquake,64,0.270086,0.0,0.405521,0.586332
+R11 copy,std,all,event: tuscaloosa_tornado,23,0.485225,0.161898,0.613762,0.720352
+R11 copy,std,all,event: woolsey_fire,32,0.439958,0.184956,0.532389,0.752892
+R11 copy,std,clean,all,605,0.40157,0.040863,0.497352,0.670044
+R11 copy,std,clean,Turkey,64,0.270086,0.0,0.405521,0.586332
+R11 copy,std,clean,not Turkey,541,0.435131,0.065244,0.569698,0.728359
+R11 copy,std,clean,event: bata_explosion,3,0.28805,0.0,0.236186,0.418542
+R11 copy,std,clean,event: beriut_explosion,4,0.214196,0.0,0.26171,0.627807
+R11 copy,std,clean,event: hawaii_wildfire,1,0.21237,0.086532,0.148505,0.223845
+R11 copy,std,clean,event: hurricane_florence,57,0.411275,0.0,0.636511,0.790482
+R11 copy,std,clean,event: hurricane_harvey,44,0.376099,0.0,0.550409,0.737466
+R11 copy,std,clean,event: hurricane_matthew,25,0.287841,0.035004,0.302766,0.458021
+R11 copy,std,clean,event: hurricane_michael,42,0.432789,0.026077,0.590947,0.700986
+R11 copy,std,clean,event: kalehe_flooding,5,0.249786,0.0,0.022748,0.035481
+R11 copy,std,clean,event: libya_flood,4,0.387699,0.0,0.724461,0.815484
+R11 copy,std,clean,event: lower_puna_volcano,8,0.372121,0.0,0.343719,0.639541
+R11 copy,std,clean,event: midwest_flooding,35,0.397227,0.0,0.629876,0.807638
+R11 copy,std,clean,event: moore_tornado,16,0.544228,0.217855,0.723747,0.822018
+R11 copy,std,clean,event: morroco_earthquake,3,0.343924,0.0,0.416,0.5435
+R11 copy,std,clean,event: nepal_flooding,48,0.370712,0.0,0.481802,0.651181
+R11 copy,std,clean,event: palu_tsunami,7,0.350728,0.0,0.661574,0.755831
+R11 copy,std,clean,event: pinery_bushfire,40,0.419806,0.0,0.697811,0.793364
+R11 copy,std,clean,event: portugal_wildfire,105,0.418543,0.012582,0.645792,0.782894
+R11 copy,std,clean,event: santa_rosa_wildfire,20,0.422635,0.095976,0.597363,0.757998
+R11 copy,std,clean,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 copy,std,clean,event: socal_fire,38,0.399504,0.058476,0.559149,0.685486
+R11 copy,std,clean,event: sunda_tsunami,4,0.374208,0.0,0.561079,0.705503
+R11 copy,std,clean,event: turkey_earthquake,64,0.270086,0.0,0.405521,0.586332
+R11 copy,std,clean,event: tuscaloosa_tornado,23,0.485225,0.161898,0.613762,0.720352
+R11 copy,std,clean,event: woolsey_fire,8,0.503326,0.368537,0.623475,0.816875
+R11 copy,tta,all,all,645,0.408055,0.053238,0.504331,0.678771
+R11 copy,tta,all,Turkey,64,0.272929,0.0,0.414102,0.592808
+R11 copy,tta,all,not Turkey,581,0.44181,0.08036,0.574485,0.738815
+R11 copy,tta,all,event: bata_explosion,3,0.286839,0.0,0.233359,0.42419
+R11 copy,tta,all,event: beriut_explosion,4,0.215078,0.0,0.2581,0.646242
+R11 copy,tta,all,event: hawaii_wildfire,1,0.226434,0.13239,0.15917,0.233662
+R11 copy,tta,all,event: hurricane_florence,57,0.415111,0.0,0.643088,0.809106
+R11 copy,tta,all,event: hurricane_harvey,44,0.37679,0.0,0.554906,0.748099
+R11 copy,tta,all,event: hurricane_matthew,25,0.285636,0.033731,0.303952,0.464814
+R11 copy,tta,all,event: hurricane_michael,42,0.43571,0.022282,0.597865,0.712984
+R11 copy,tta,all,event: kalehe_flooding,5,0.249813,0.0,0.025793,0.042848
+R11 copy,tta,all,event: libya_flood,4,0.389919,0.0,0.733236,0.816136
+R11 copy,tta,all,event: lower_puna_volcano,8,0.360463,0.0,0.349358,0.64303
+R11 copy,tta,all,event: midwest_flooding,35,0.399942,0.0,0.646307,0.830135
+R11 copy,tta,all,event: moore_tornado,16,0.54768,0.192941,0.73436,0.835368
+R11 copy,tta,all,event: morroco_earthquake,3,0.347229,0.0,0.427297,0.564192
+R11 copy,tta,all,event: nepal_flooding,48,0.379346,0.0,0.480745,0.656938
+R11 copy,tta,all,event: palu_tsunami,7,0.351874,0.0,0.66531,0.755339
+R11 copy,tta,all,event: pinery_bushfire,40,0.418531,0.0,0.695413,0.788412
+R11 copy,tta,all,event: portugal_wildfire,105,0.4182,0.012311,0.652118,0.791241
+R11 copy,tta,all,event: santa_rosa_wildfire,20,0.422137,0.082982,0.603329,0.773301
+R11 copy,tta,all,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 copy,tta,all,event: socal_fire,54,0.410041,0.084821,0.5578,0.697882
+R11 copy,tta,all,event: sunda_tsunami,4,0.376652,0.0,0.569025,0.715877
+R11 copy,tta,all,event: turkey_earthquake,64,0.272929,0.0,0.414102,0.592808
+R11 copy,tta,all,event: tuscaloosa_tornado,23,0.488186,0.170327,0.623799,0.729884
+R11 copy,tta,all,event: woolsey_fire,32,0.451603,0.20971,0.542624,0.781989
+R11 copy,tta,clean,all,605,0.404571,0.043128,0.503962,0.678065
+R11 copy,tta,clean,Turkey,64,0.272929,0.0,0.414102,0.592808
+R11 copy,tta,clean,not Turkey,541,0.438298,0.068425,0.575406,0.738868
+R11 copy,tta,clean,event: bata_explosion,3,0.286839,0.0,0.233359,0.42419
+R11 copy,tta,clean,event: beriut_explosion,4,0.215078,0.0,0.2581,0.646242
+R11 copy,tta,clean,event: hawaii_wildfire,1,0.226434,0.13239,0.15917,0.233662
+R11 copy,tta,clean,event: hurricane_florence,57,0.415111,0.0,0.643088,0.809106
+R11 copy,tta,clean,event: hurricane_harvey,44,0.37679,0.0,0.554906,0.748099
+R11 copy,tta,clean,event: hurricane_matthew,25,0.285636,0.033731,0.303952,0.464814
+R11 copy,tta,clean,event: hurricane_michael,42,0.43571,0.022282,0.597865,0.712984
+R11 copy,tta,clean,event: kalehe_flooding,5,0.249813,0.0,0.025793,0.042848
+R11 copy,tta,clean,event: libya_flood,4,0.389919,0.0,0.733236,0.816136
+R11 copy,tta,clean,event: lower_puna_volcano,8,0.360463,0.0,0.349358,0.64303
+R11 copy,tta,clean,event: midwest_flooding,35,0.399942,0.0,0.646307,0.830135
+R11 copy,tta,clean,event: moore_tornado,16,0.54768,0.192941,0.73436,0.835368
+R11 copy,tta,clean,event: morroco_earthquake,3,0.347229,0.0,0.427297,0.564192
+R11 copy,tta,clean,event: nepal_flooding,48,0.379346,0.0,0.480745,0.656938
+R11 copy,tta,clean,event: palu_tsunami,7,0.351874,0.0,0.66531,0.755339
+R11 copy,tta,clean,event: pinery_bushfire,40,0.418531,0.0,0.695413,0.788412
+R11 copy,tta,clean,event: portugal_wildfire,105,0.4182,0.012311,0.652118,0.791241
+R11 copy,tta,clean,event: santa_rosa_wildfire,20,0.422137,0.082982,0.603329,0.773301
+R11 copy,tta,clean,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 copy,tta,clean,event: socal_fire,38,0.402716,0.061141,0.563185,0.696529
+R11 copy,tta,clean,event: sunda_tsunami,4,0.376652,0.0,0.569025,0.715877
+R11 copy,tta,clean,event: turkey_earthquake,64,0.272929,0.0,0.414102,0.592808
+R11 copy,tta,clean,event: tuscaloosa_tornado,23,0.488186,0.170327,0.623799,0.729884
+R11 copy,tta,clean,event: woolsey_fire,8,0.491421,0.300918,0.618638,0.852234
+R11 gray,std,all,all,645,0.251927,0.005315,0.047265,0.862376
+R11 gray,std,all,Turkey,64,0.173028,0.0,0.000664,0.699568
+R11 gray,std,all,not Turkey,581,0.269206,0.008358,0.079401,0.863535
+R11 gray,std,all,event: bata_explosion,3,0.240845,0.0,0.001775,0.295238
+R11 gray,std,all,event: beriut_explosion,4,0.160088,0.0,0.037845,0.951293
+R11 gray,std,all,event: hawaii_wildfire,1,0.213331,0.0,0.0,0.0
+R11 gray,std,all,event: hurricane_florence,57,0.269796,0.0,0.08044,0.915307
+R11 gray,std,all,event: hurricane_harvey,44,0.237825,0.0,0.037908,0.870433
+R11 gray,std,all,event: hurricane_matthew,25,0.246048,0.0,0.00042,0.990148
+R11 gray,std,all,event: hurricane_michael,42,0.261112,0.0,0.090815,0.87651
+R11 gray,std,all,event: kalehe_flooding,5,0.248969,0.0,0.0,0.0
+R11 gray,std,all,event: libya_flood,4,0.274356,0.0,0.232553,0.93045
+R11 gray,std,all,event: lower_puna_volcano,8,0.247817,0.0,0.003922,0.767956
+R11 gray,std,all,event: midwest_flooding,35,0.265136,0.0,0.125833,0.924089
+R11 gray,std,all,event: moore_tornado,16,0.328296,0.013555,0.261817,0.875617
+R11 gray,std,all,event: morroco_earthquake,3,0.239089,0.0,0.0,0.0
+R11 gray,std,all,event: nepal_flooding,48,0.245996,0.0,0.013777,0.821189
+R11 gray,std,all,event: palu_tsunami,7,0.153069,0.0,0.001372,0.877994
+R11 gray,std,all,event: pinery_bushfire,40,0.273159,0.0,0.097769,0.518081
+R11 gray,std,all,event: portugal_wildfire,105,0.253864,0.0,0.031162,0.938607
+R11 gray,std,all,event: santa_rosa_wildfire,20,0.264933,0.017244,0.124673,0.884675
+R11 gray,std,all,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 gray,std,all,event: socal_fire,54,0.27445,0.043298,0.084339,0.836578
+R11 gray,std,all,event: sunda_tsunami,4,0.235071,0.0,0.040489,0.911531
+R11 gray,std,all,event: turkey_earthquake,64,0.173028,0.0,0.000664,0.699568
+R11 gray,std,all,event: tuscaloosa_tornado,23,0.323798,0.0,0.19085,0.743178
+R11 gray,std,all,event: woolsey_fire,32,0.258003,0.00572,0.052172,0.94446
+R11 gray,std,clean,all,605,0.25038,0.002842,0.046973,0.861609
+R11 gray,std,clean,Turkey,64,0.173028,0.0,0.000664,0.699568
+R11 gray,std,clean,not Turkey,541,0.267921,0.004726,0.079636,0.862784
+R11 gray,std,clean,event: bata_explosion,3,0.240845,0.0,0.001775,0.295238
+R11 gray,std,clean,event: beriut_explosion,4,0.160088,0.0,0.037845,0.951293
+R11 gray,std,clean,event: hawaii_wildfire,1,0.213331,0.0,0.0,0.0
+R11 gray,std,clean,event: hurricane_florence,57,0.269796,0.0,0.08044,0.915307
+R11 gray,std,clean,event: hurricane_harvey,44,0.237825,0.0,0.037908,0.870433
+R11 gray,std,clean,event: hurricane_matthew,25,0.246048,0.0,0.00042,0.990148
+R11 gray,std,clean,event: hurricane_michael,42,0.261112,0.0,0.090815,0.87651
+R11 gray,std,clean,event: kalehe_flooding,5,0.248969,0.0,0.0,0.0
+R11 gray,std,clean,event: libya_flood,4,0.274356,0.0,0.232553,0.93045
+R11 gray,std,clean,event: lower_puna_volcano,8,0.247817,0.0,0.003922,0.767956
+R11 gray,std,clean,event: midwest_flooding,35,0.265136,0.0,0.125833,0.924089
+R11 gray,std,clean,event: moore_tornado,16,0.328296,0.013555,0.261817,0.875617
+R11 gray,std,clean,event: morroco_earthquake,3,0.239089,0.0,0.0,0.0
+R11 gray,std,clean,event: nepal_flooding,48,0.245996,0.0,0.013777,0.821189
+R11 gray,std,clean,event: palu_tsunami,7,0.153069,0.0,0.001372,0.877994
+R11 gray,std,clean,event: pinery_bushfire,40,0.273159,0.0,0.097769,0.518081
+R11 gray,std,clean,event: portugal_wildfire,105,0.253864,0.0,0.031162,0.938607
+R11 gray,std,clean,event: santa_rosa_wildfire,20,0.264933,0.017244,0.124673,0.884675
+R11 gray,std,clean,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 gray,std,clean,event: socal_fire,38,0.266514,0.013275,0.084507,0.827821
+R11 gray,std,clean,event: sunda_tsunami,4,0.235071,0.0,0.040489,0.911531
+R11 gray,std,clean,event: turkey_earthquake,64,0.173028,0.0,0.000664,0.699568
+R11 gray,std,clean,event: tuscaloosa_tornado,23,0.323798,0.0,0.19085,0.743178
+R11 gray,std,clean,event: woolsey_fire,8,0.261882,0.0,0.030907,0.952859
+R11 gray,tta,all,all,645,0.247256,0.001872,0.039074,0.88513
+R11 gray,tta,all,Turkey,64,0.173056,0.0,0.00072,0.748057
+R11 gray,tta,all,not Turkey,581,0.262417,0.002948,0.065632,0.886364
+R11 gray,tta,all,event: bata_explosion,3,0.240323,0.0,0.0,0.0
+R11 gray,tta,all,event: beriut_explosion,4,0.159891,0.0,0.033202,0.966418
+R11 gray,tta,all,event: hawaii_wildfire,1,0.213331,0.0,0.0,0.0
+R11 gray,tta,all,event: hurricane_florence,57,0.265543,0.0,0.059732,0.942935
+R11 gray,tta,all,event: hurricane_harvey,44,0.233451,0.0,0.030329,0.870949
+R11 gray,tta,all,event: hurricane_matthew,25,0.246638,0.0,0.000825,0.942721
+R11 gray,tta,all,event: hurricane_michael,42,0.248519,0.0,0.058564,0.914504
+R11 gray,tta,all,event: kalehe_flooding,5,0.248974,0.0,0.0,0.0
+R11 gray,tta,all,event: libya_flood,4,0.268358,0.0,0.216149,0.958094
+R11 gray,tta,all,event: lower_puna_volcano,8,0.246835,0.0,0.000433,0.613333
+R11 gray,tta,all,event: midwest_flooding,35,0.265837,0.0,0.094743,0.936912
+R11 gray,tta,all,event: moore_tornado,16,0.326413,0.0,0.251681,0.902232
+R11 gray,tta,all,event: morroco_earthquake,3,0.239089,0.0,0.0,0.0
+R11 gray,tta,all,event: nepal_flooding,48,0.245019,0.0,0.009035,0.769577
+R11 gray,tta,all,event: palu_tsunami,7,0.15271,0.0,0.000231,0.941512
+R11 gray,tta,all,event: pinery_bushfire,40,0.276156,0.0,0.100489,0.707204
+R11 gray,tta,all,event: portugal_wildfire,105,0.254225,0.0,0.03076,0.935254
+R11 gray,tta,all,event: santa_rosa_wildfire,20,0.255145,0.019843,0.082383,0.916012
+R11 gray,tta,all,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 gray,tta,all,event: socal_fire,54,0.259903,0.00475,0.066015,0.839998
+R11 gray,tta,all,event: sunda_tsunami,4,0.229295,0.0,0.019135,0.927585
+R11 gray,tta,all,event: turkey_earthquake,64,0.173056,0.0,0.00072,0.748057
+R11 gray,tta,all,event: tuscaloosa_tornado,23,0.327245,0.0,0.197279,0.779877
+R11 gray,tta,all,event: woolsey_fire,32,0.24929,0.0,0.033746,0.925124
+R11 gray,tta,clean,all,605,0.246416,0.002048,0.039013,0.884387
+R11 gray,tta,clean,Turkey,64,0.173056,0.0,0.00072,0.748057
+R11 gray,tta,clean,not Turkey,541,0.262217,0.003411,0.066133,0.885632
+R11 gray,tta,clean,event: bata_explosion,3,0.240323,0.0,0.0,0.0
+R11 gray,tta,clean,event: beriut_explosion,4,0.159891,0.0,0.033202,0.966418
+R11 gray,tta,clean,event: hawaii_wildfire,1,0.213331,0.0,0.0,0.0
+R11 gray,tta,clean,event: hurricane_florence,57,0.265543,0.0,0.059732,0.942935
+R11 gray,tta,clean,event: hurricane_harvey,44,0.233451,0.0,0.030329,0.870949
+R11 gray,tta,clean,event: hurricane_matthew,25,0.246638,0.0,0.000825,0.942721
+R11 gray,tta,clean,event: hurricane_michael,42,0.248519,0.0,0.058564,0.914504
+R11 gray,tta,clean,event: kalehe_flooding,5,0.248974,0.0,0.0,0.0
+R11 gray,tta,clean,event: libya_flood,4,0.268358,0.0,0.216149,0.958094
+R11 gray,tta,clean,event: lower_puna_volcano,8,0.246835,0.0,0.000433,0.613333
+R11 gray,tta,clean,event: midwest_flooding,35,0.265837,0.0,0.094743,0.936912
+R11 gray,tta,clean,event: moore_tornado,16,0.326413,0.0,0.251681,0.902232
+R11 gray,tta,clean,event: morroco_earthquake,3,0.239089,0.0,0.0,0.0
+R11 gray,tta,clean,event: nepal_flooding,48,0.245019,0.0,0.009035,0.769577
+R11 gray,tta,clean,event: palu_tsunami,7,0.15271,0.0,0.000231,0.941512
+R11 gray,tta,clean,event: pinery_bushfire,40,0.276156,0.0,0.100489,0.707204
+R11 gray,tta,clean,event: portugal_wildfire,105,0.254225,0.0,0.03076,0.935254
+R11 gray,tta,clean,event: santa_rosa_wildfire,20,0.255145,0.019843,0.082383,0.916012
+R11 gray,tta,clean,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R11 gray,tta,clean,event: socal_fire,38,0.261106,0.01026,0.06885,0.82395
+R11 gray,tta,clean,event: sunda_tsunami,4,0.229295,0.0,0.019135,0.927585
+R11 gray,tta,clean,event: turkey_earthquake,64,0.173056,0.0,0.00072,0.748057
+R11 gray,tta,clean,event: tuscaloosa_tornado,23,0.327245,0.0,0.197279,0.779877
+R11 gray,tta,clean,event: woolsey_fire,8,0.248846,0.0,0.030254,0.927091
+R9,std,all,all,645,0.537313,0.292082,0.583982,0.662703
+R9,std,all,Turkey,64,0.38958,0.248915,0.558878,0.624399
+R9,std,all,not Turkey,581,0.561512,0.315827,0.60333,0.693056
+R9,std,all,event: bata_explosion,3,0.283888,0.0,0.226383,0.444615
+R9,std,all,event: beriut_explosion,4,0.262188,0.0,0.526306,0.580781
+R9,std,all,event: hawaii_wildfire,1,0.212395,0.22848,0.224773,0.245644
+R9,std,all,event: hurricane_florence,57,0.514896,0.0,0.629219,0.811553
+R9,std,all,event: hurricane_harvey,44,0.478641,0.0,0.614725,0.692093
+R9,std,all,event: hurricane_matthew,25,0.371078,0.033197,0.33248,0.506963
+R9,std,all,event: hurricane_michael,42,0.52213,0.214023,0.618565,0.741294
+R9,std,all,event: kalehe_flooding,5,0.250069,0.0,0.00898,0.037093
+R9,std,all,event: libya_flood,4,0.406413,0.0,0.722051,0.777439
+R9,std,all,event: lower_puna_volcano,8,0.401314,0.0,0.34188,0.664853
+R9,std,all,event: midwest_flooding,35,0.410002,0.0,0.654982,0.817958
+R9,std,all,event: moore_tornado,16,0.655717,0.482505,0.756741,0.810709
+R9,std,all,event: morroco_earthquake,3,0.361282,0.0,0.482094,0.567485
+R9,std,all,event: nepal_flooding,48,0.452275,0.0,0.52904,0.600529
+R9,std,all,event: palu_tsunami,7,0.463166,0.385885,0.66422,0.712334
+R9,std,all,event: pinery_bushfire,40,0.57724,0.280644,0.688478,0.779081
+R9,std,all,event: portugal_wildfire,105,0.477943,0.256428,0.648534,0.722151
+R9,std,all,event: santa_rosa_wildfire,20,0.540698,0.551016,0.634075,0.70469
+R9,std,all,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R9,std,all,event: socal_fire,54,0.489097,0.399229,0.565301,0.681427
+R9,std,all,event: sunda_tsunami,4,0.320356,0.0,0.385064,0.434879
+R9,std,all,event: turkey_earthquake,64,0.38958,0.248915,0.558878,0.624399
+R9,std,all,event: tuscaloosa_tornado,23,0.535712,0.211792,0.623678,0.713907
+R9,std,all,event: woolsey_fire,32,0.535208,0.481086,0.607087,0.733364
+R9,std,clean,all,605,0.533755,0.279969,0.583984,0.662307
+R9,std,clean,Turkey,64,0.38958,0.248915,0.558878,0.624399
+R9,std,clean,not Turkey,541,0.557216,0.299355,0.603769,0.693
+R9,std,clean,event: bata_explosion,3,0.283888,0.0,0.226383,0.444615
+R9,std,clean,event: beriut_explosion,4,0.262188,0.0,0.526306,0.580781
+R9,std,clean,event: hawaii_wildfire,1,0.212395,0.22848,0.224773,0.245644
+R9,std,clean,event: hurricane_florence,57,0.514896,0.0,0.629219,0.811553
+R9,std,clean,event: hurricane_harvey,44,0.478641,0.0,0.614725,0.692093
+R9,std,clean,event: hurricane_matthew,25,0.371078,0.033197,0.33248,0.506963
+R9,std,clean,event: hurricane_michael,42,0.52213,0.214023,0.618565,0.741294
+R9,std,clean,event: kalehe_flooding,5,0.250069,0.0,0.00898,0.037093
+R9,std,clean,event: libya_flood,4,0.406413,0.0,0.722051,0.777439
+R9,std,clean,event: lower_puna_volcano,8,0.401314,0.0,0.34188,0.664853
+R9,std,clean,event: midwest_flooding,35,0.410002,0.0,0.654982,0.817958
+R9,std,clean,event: moore_tornado,16,0.655717,0.482505,0.756741,0.810709
+R9,std,clean,event: morroco_earthquake,3,0.361282,0.0,0.482094,0.567485
+R9,std,clean,event: nepal_flooding,48,0.452275,0.0,0.52904,0.600529
+R9,std,clean,event: palu_tsunami,7,0.463166,0.385885,0.66422,0.712334
+R9,std,clean,event: pinery_bushfire,40,0.57724,0.280644,0.688478,0.779081
+R9,std,clean,event: portugal_wildfire,105,0.477943,0.256428,0.648534,0.722151
+R9,std,clean,event: santa_rosa_wildfire,20,0.540698,0.551016,0.634075,0.70469
+R9,std,clean,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R9,std,clean,event: socal_fire,38,0.4852,0.38904,0.564921,0.684977
+R9,std,clean,event: sunda_tsunami,4,0.320356,0.0,0.385064,0.434879
+R9,std,clean,event: turkey_earthquake,64,0.38958,0.248915,0.558878,0.624399
+R9,std,clean,event: tuscaloosa_tornado,23,0.535712,0.211792,0.623678,0.713907
+R9,std,clean,event: woolsey_fire,8,0.574046,0.623967,0.653836,0.787813
+R9,tta,all,all,645,0.543992,0.300066,0.590516,0.669099
+R9,tta,all,Turkey,64,0.386005,0.257736,0.560121,0.623025
+R9,tta,all,not Turkey,581,0.570703,0.324502,0.614425,0.706568
+R9,tta,all,event: bata_explosion,3,0.283692,0.0,0.226595,0.452766
+R9,tta,all,event: beriut_explosion,4,0.271974,0.0,0.54081,0.592425
+R9,tta,all,event: hawaii_wildfire,1,0.210692,0.227618,0.230257,0.251022
+R9,tta,all,event: hurricane_florence,57,0.519763,0.0,0.635657,0.821476
+R9,tta,all,event: hurricane_harvey,44,0.484213,0.0,0.626324,0.709055
+R9,tta,all,event: hurricane_matthew,25,0.367958,0.031586,0.327731,0.524968
+R9,tta,all,event: hurricane_michael,42,0.531895,0.233733,0.625753,0.75041
+R9,tta,all,event: kalehe_flooding,5,0.250204,0.0,0.008581,0.035088
+R9,tta,all,event: libya_flood,4,0.427132,0.0,0.719031,0.770116
+R9,tta,all,event: lower_puna_volcano,8,0.405607,0.0,0.344795,0.676927
+R9,tta,all,event: midwest_flooding,35,0.414093,0.0,0.663657,0.839178
+R9,tta,all,event: moore_tornado,16,0.666398,0.499713,0.763138,0.816433
+R9,tta,all,event: morroco_earthquake,3,0.361562,0.0,0.483419,0.564901
+R9,tta,all,event: nepal_flooding,48,0.457042,0.0,0.535189,0.610309
+R9,tta,all,event: palu_tsunami,7,0.475438,0.397229,0.670198,0.714543
+R9,tta,all,event: pinery_bushfire,40,0.577223,0.268918,0.695609,0.788657
+R9,tta,all,event: portugal_wildfire,105,0.48476,0.275254,0.655911,0.733503
+R9,tta,all,event: santa_rosa_wildfire,20,0.544047,0.558142,0.650394,0.718811
+R9,tta,all,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R9,tta,all,event: socal_fire,54,0.497491,0.426086,0.573431,0.689426
+R9,tta,all,event: sunda_tsunami,4,0.350147,0.0,0.46769,0.537048
+R9,tta,all,event: turkey_earthquake,64,0.386005,0.257736,0.560121,0.623025
+R9,tta,all,event: tuscaloosa_tornado,23,0.544327,0.194528,0.641564,0.730547
+R9,tta,all,event: woolsey_fire,32,0.542183,0.498014,0.616346,0.744874
+R9,tta,clean,all,605,0.540213,0.28738,0.590484,0.66865
+R9,tta,clean,Turkey,64,0.386005,0.257736,0.560121,0.623025
+R9,tta,clean,not Turkey,541,0.566017,0.30678,0.614907,0.706563
+R9,tta,clean,event: bata_explosion,3,0.283692,0.0,0.226595,0.452766
+R9,tta,clean,event: beriut_explosion,4,0.271974,0.0,0.54081,0.592425
+R9,tta,clean,event: hawaii_wildfire,1,0.210692,0.227618,0.230257,0.251022
+R9,tta,clean,event: hurricane_florence,57,0.519763,0.0,0.635657,0.821476
+R9,tta,clean,event: hurricane_harvey,44,0.484213,0.0,0.626324,0.709055
+R9,tta,clean,event: hurricane_matthew,25,0.367958,0.031586,0.327731,0.524968
+R9,tta,clean,event: hurricane_michael,42,0.531895,0.233733,0.625753,0.75041
+R9,tta,clean,event: kalehe_flooding,5,0.250204,0.0,0.008581,0.035088
+R9,tta,clean,event: libya_flood,4,0.427132,0.0,0.719031,0.770116
+R9,tta,clean,event: lower_puna_volcano,8,0.405607,0.0,0.344795,0.676927
+R9,tta,clean,event: midwest_flooding,35,0.414093,0.0,0.663657,0.839178
+R9,tta,clean,event: moore_tornado,16,0.666398,0.499713,0.763138,0.816433
+R9,tta,clean,event: morroco_earthquake,3,0.361562,0.0,0.483419,0.564901
+R9,tta,clean,event: nepal_flooding,48,0.457042,0.0,0.535189,0.610309
+R9,tta,clean,event: palu_tsunami,7,0.475438,0.397229,0.670198,0.714543
+R9,tta,clean,event: pinery_bushfire,40,0.577223,0.268918,0.695609,0.788657
+R9,tta,clean,event: portugal_wildfire,105,0.48476,0.275254,0.655911,0.733503
+R9,tta,clean,event: santa_rosa_wildfire,20,0.544047,0.558142,0.650394,0.718811
+R9,tta,clean,event: shovi_landslide,1,0.249474,0.0,0.0,0.0
+R9,tta,clean,event: socal_fire,38,0.495161,0.424658,0.572986,0.69236
+R9,tta,clean,event: sunda_tsunami,4,0.350147,0.0,0.46769,0.537048
+R9,tta,clean,event: turkey_earthquake,64,0.386005,0.257736,0.560121,0.623025
+R9,tta,clean,event: tuscaloosa_tornado,23,0.544327,0.194528,0.641564,0.730547
+R9,tta,clean,event: woolsey_fire,8,0.574907,0.627796,0.655141,0.796564
