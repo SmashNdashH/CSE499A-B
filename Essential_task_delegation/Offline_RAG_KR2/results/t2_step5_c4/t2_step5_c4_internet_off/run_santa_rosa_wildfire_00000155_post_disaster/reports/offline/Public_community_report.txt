@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Public Community Report
+
+## Introduction
+The wildfire caused extensive destruction, with 96% of the area classified as destroyed, indicating total or near-total collapse of structures. Three additional areas sustained moderate to very heavy damage, showing significant structural and non-structural impacts. The disaster grades align with severe structural and non-structural damage, as per the EMS-98 guidelines. The most dangerous zone, hot spot 1, is located in the south-east of the photo, with an estimated density of 684,835 pixels. This area requires immediate attention to clear debris and prevent further hazards. Safe areas remain distant from the nearest estimated damage, and authorities must conduct on-ground verification to ensure their safety.
+
+## Current Situation
+The wildfire caused extensive destruction, with 96% of the area classified as destroyed, indicating total or near-total collapse of structures. Three additional areas sustained moderate to very heavy damage, showing significant structural and non-structural impacts. The emergency shelters will be established in the intact areas identified in the center of the image, ensuring sufficient space for displaced residents. The number of emergency shelters will be determined based on the number of intact areas, with each shelter accommodating the necessary living space for displaced people. The immediate transportation recovery will prioritize reopening the road network in the intact areas to facilitate the movement of emergency responders, supplies, and displaced residents.
+
+## Resource Allocation
+Based on the current situation, we have allocated our emergency response team to prioritize clearing debris from the hot spot 1 in the south-east of the photo to mitigate further hazards. We will also focus on stabilizing the damaged structures to prevent further collapse and ensure safety for affected residents. Our logistics team will coordinate the immediate transportation recovery by reopening the road network in the intact areas to facilitate the movement of emergency responders, supplies, and displaced residents. We will continue to monitor the situation and adjust our allocation as needed. [INSARAG3-5.2-p1] [INSARAG2B-5.7.1-p5]
+
+## Public Advisory
+The wildfire has caused extensive destruction, with 96% of the area classified as destroyed, indicating total or near-total collapse of structures. The most dangerous zone, hot spot 1, is located in the south-east of the photo, requiring immediate attention to clear debris and prevent further hazards. Safe areas remain distant from the nearest estimated damage, and authorities must conduct on-ground verification to ensure their safety. For displaced residents, emergency shelters will be established in the intact areas identified in the center of the image, ensuring sufficient space for essential living activities. The immediate transportation recovery will prioritize reopening the road network in the intact areas to facilitate the movement of emergency responders, supplies, and displaced residents. Please stay indoors and avoid the affected zones to ensure safety. If you require assistance, contact local emergency services. [INSARAG3-5.2-p1] [INSARAG2B-5.7.1-p5]
+
+## Organizational Operation
+Our organization is actively managing the aftermath of the wildfire, focusing on clearing debris from the hot spot 1 to prevent further hazards and stabilizing damaged structures. We are coordinating the establishment of emergency shelters in intact areas and prioritizing the reopening of road networks to facilitate relief efforts. For additional support, please contact local emergency services.
+
+## Conclusion
+We are committed to ensuring the safety and well-being of our community. Immediate efforts are underway to clear debris from the most dangerous zones and stabilize damaged structures. Emergency shelters are being established in intact areas to accommodate displaced residents, and road networks are being reopened to facilitate relief operations. We appreciate your patience and cooperation as we work to restore normalcy. Please stay safe and reach out if you require assistance.

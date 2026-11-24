@@ -1,0 +1,46 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the satellite photos and the damage model, the following safe areas are identified as potential locations for emergency shelters, adhering to the Sphere guidelines on living space and site area per person:
+
+- **Safe Area 1**: Located around (917, 923) pixels from the top-left corner, approximately 412 pixels from the nearest estimated damage. This area offers ample space for 4.5–5.5 square meters of living space per person, suitable for basic domestic activities such as sleeping, food preparation, and eating. It is recommended to verify the safety and structural integrity of this area on the ground before use.
+
+- **Safe Area 2**: Situated around (821, 807) pixels from the top-left corner, approximately 311 pixels from the nearest estimated damage. This area provides 4.5–5.5 square meters of living space per person, ensuring privacy and dignity for household activities. It is advisable to conduct a thorough inspection to confirm its suitability for shelter purposes.
+
+- **Safe Area 3**: Positioned around (722, 694) pixels from the top-left corner, approximately 254 pixels from the nearest estimated damage. This area also meets the Sphere standard of 4.5–5.5 square meters of living space per person, making it a viable option for emergency shelters. Further verification is necessary to ensure safety and structural integrity.
+
+In areas with less damage, the following locations can be considered for emergency shelters:
+
+- **Hot Spot 1 (North-West Corner)**: Around (320, 32) pixels from the top-left corner, with 403,997 pixels of estimated damage. Although this area is highly dangerous, it is recommended to assess the structural integrity of intact buildings within this zone. If deemed safe, these buildings can be converted into emergency shelters, providing 3.5 square meters of living space per person, as per the Sphere guidelines.
+
+- **Hot Spot 2 (West Side)**: Around (48, 593) pixels from the top-left corner, with 22107 pixels of estimated damage. This area has moderate to very heavy damage, but it is advisable to conduct a detailed assessment to identify safe structures for shelter conversion. If confirmed safe, these buildings can serve as emergency shelters, offering 3.5 square meters of living space per person.
+
+It is crucial to note that the Sphere guidelines emphasize the importance of ensuring that each affected household has adequate living space to perform daily activities, respecting local culture and social norms. Therefore, careful planning and verification are essential to ensure the safety and functionality of proposed emergency shelters. Immediate assessments and interventions are necessary to address the immediate needs of the affected population.
+
+[SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4] [SPHERE-2-p1
+
+## Hospitals
+Based on the satellite photos and damage model, the following areas are identified as potential locations for hospitals or medical points, adhering to the Sphere guidelines on living space and site area per person, as well as INSARAG guidelines for medical operations.
+
+- **Safe Area 1 (South-East Corner)**: Around (917, 923) pixels from the top-left corner, approximately 412 pixels from the nearest estimated damage. This area offers ample space for 4.5–5.5 square meters of living space per person, suitable for medical facilities. It is recommended to verify the safety and structural integrity of this area on the ground before use.
+
+- **Safe Area 2 (South-East Corner)**: Situated around (821, 807) pixels from the top-left corner, approximately 311 pixels from the nearest estimated damage. This area provides 4.5–5.5 square meters of living space per person, ensuring privacy and dignity for medical activities. It is advisable to conduct a thorough inspection to confirm its suitability for medical operations.
+
+- **Safe Area 3 (South-East Corner)**: Positioned around (722, 694) pixels from the top-left corner, approximately 254 pixels from the nearest estimated damage. This area also meets the Sphere standard of 4.5–5.5 square meters of living space per person, making it a viable option for medical facilities. Further verification is necessary to ensure safety and structural integrity.
+
+For immediate transportation recovery, the following areas are identified as potential locations for medical points:
+
+- **Hot Spot 1 (North-West Corner)**: Around (320, 32) pixels from the top-left corner, with 403,997 pixels of estimated damage. Although this area is highly dangerous, it is recommended to assess the structural integrity of intact buildings within this zone. If deemed safe, these buildings can be converted into medical points, providing 3.5 square meters of living space per person, as per the Sphere guidelines.
+
+- **Hot Spot 2 (West Side)**: Around (48, 593) pixels from the top-left corner, with 22107 pixels of estimated damage. This area has moderate to very heavy damage, but it is advisable to conduct a detailed assessment to identify safe structures for medical point conversion. If confirmed safe, these buildings can serve as medical points, offering 3.5 square meters of living space per person.
+
+In terms of medical handover, the following procedures should be followed:
+
+[INSARAG3-6.2-p2] [INSARAG3-5.2-p1] [INSARAG2B-4.3-p3]
+
+- **Medical Evacuation Plan**: Ensure a robust medical evacuation plan is in place to handle possible emergency situations. Conduct a risk assessment and establish
+
+## Immediate transportation recovery
+Immediate transportation recovery is critical to facilitate access to emergency shelters, hospitals, and medical points. The roads and bridges in Hot Spot 1 (North-West Corner) and Hot Spot 2 (West Side) need urgent attention. In Hot Spot 1, around (320, 32) pixels, the highly damaged area poses significant risks to rescuers and aid workers. Reopening roads here will enable the safe movement of personnel and supplies to and from the affected region. Similarly, in Hot Spot 2, around (48, 593) pixels, the moderate to very heavy damage indicates potential hazards, especially along the main roads. Opening these routes will ensure timely delivery of medical supplies, food, and other necessities to the affected areas. Ensuring safe passage through these zones will save lives and aid in the rapid response to the disaster.

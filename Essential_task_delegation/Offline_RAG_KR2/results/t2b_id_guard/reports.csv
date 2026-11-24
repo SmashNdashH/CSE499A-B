@@ -1,0 +1,13 @@
+writer,scene,report,finished,sections,words,numbers_checked,contradictions,unsourced,guard_replaced,first_answer_number_problems,asked_again,fake_citations,real_citations,real_not_shown,not_available_offline,seconds
+7b,palu_tsunami_00000180_post_disaster.png,Expert_team_report.txt,True,4,234,12,0,0,0,0,0,0,0,0,0,40.7
+7b,palu_tsunami_00000180_post_disaster.png,Alerts_team_report_for_social_media.txt,True,2,212,8,0,0,0,0,0,0,0,0,0,20.1
+7b,palu_tsunami_00000180_post_disaster.png,Emergency_team_report.txt,True,3,299,18,0,0,0,0,1,0,1,0,0,48.1
+7b,palu_tsunami_00000180_post_disaster.png,Emergency_service_human_resource_allocation.txt,True,7,721,11,0,0,0,0,2,0,0,0,0,90.9
+7b,palu_tsunami_00000180_post_disaster.png,Public_community_report.txt,True,6,606,21,0,0,0,0,2,0,0,0,1,82.6
+7b,palu_tsunami_00000180_post_disaster.png,Reconstruction_plan.txt,True,6,770,24,2,0,3,2,1,0,3,0,1,89.7
+7b,beriut_explosion_post_16.png,Expert_team_report.txt,True,4,285,11,0,0,0,0,0,0,8,0,0,42.9
+7b,beriut_explosion_post_16.png,Alerts_team_report_for_social_media.txt,True,2,230,10,0,0,0,0,0,0,0,0,0,20.4
+7b,beriut_explosion_post_16.png,Emergency_team_report.txt,True,3,360,4,0,0,0,0,0,0,5,0,0,37.5
+7b,beriut_explosion_post_16.png,Emergency_service_human_resource_allocation.txt,True,7,580,4,0,0,0,0,2,0,4,0,0,78.4
+7b,beriut_explosion_post_16.png,Public_community_report.txt,True,6,511,4,0,0,0,0,1,0,8,0,1,57.8
+7b,beriut_explosion_post_16.png,Reconstruction_plan.txt,True,6,979,17,0,1,1,1,3,0,32,0,0,177.5

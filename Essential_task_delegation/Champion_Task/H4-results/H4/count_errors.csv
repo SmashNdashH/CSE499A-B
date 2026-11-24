@@ -1,0 +1,6 @@
+type,our_mae,vlm_mae,our_exact,vlm_exact,vlm_no_number
+"damaged, any level",151.385,190.231,0.077,0.044,0
+destroyed,5.011,5.352,0.527,0.022,0
+major,15.132,7.615,0.209,0.033,0
+minor,13.264,16.813,0.253,0.0,0
+no damage,152.901,154.198,0.121,0.055,0

@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The earthquake has caused significant damage, with 33% of buildings completely destroyed, 11% moderately damaged, and 56% remaining intact. The most severe impact was observed in the central region, where the highest density of damage occurred, as evidenced by three distinct hotspots: one in the north-west, another in the west, and the third in the north-east of the image. These hotspots collectively cover 403997, 22107, and 28381 pixels, respectively, indicating the most concentrated areas of destruction. Immediate attention is required for these hotspots due to the risk of further collapse and debris. Safe areas identified in the south-eastern portion of the image, such as those near (917, 923), (821, 807), and (722, 694), are recommended for temporary shelter.
+
+## Social media news
+The earthquake has caused significant damage across Turkey, with 33% of buildings completely destroyed and 11% moderately damaged. The most severe impact was observed in the central region, where the highest density of destruction is evident, as seen in the three distinct hotspots: one in the north-west, another in the west, and the third in the north-east of the image. These hotspots collectively cover 403997, 22107, and 28381 pixels, respectively, indicating the most concentrated areas of destruction. Emergency response teams are advised to prioritize these hotspots to assess safety and prevent further collapse. Safe areas identified in the south-eastern portion of the image, such as those near (917, 923), (821, 807), and (722, 694), are recommended for temporary shelter.

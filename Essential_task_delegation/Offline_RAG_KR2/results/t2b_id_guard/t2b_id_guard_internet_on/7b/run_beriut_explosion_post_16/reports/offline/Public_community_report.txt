@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The beriut explosion caused significant damage to the built environment, with 80% of the buildings classified as destroyed and 20% as damaged. The disaster's impact is concentrated in the north-east and south-east regions of the photo, where the most severe damage is evident. The Expert team and the Alerts team report that these areas require urgent assessment and stabilization to mitigate further risks, emphasizing the need for immediate intervention to ensure safety and facilitate recovery operations. Safe areas in the north-west and west of the photo remain unaffected, but they should be monitored for any residual hazards.
+
+## Current Situation
+The current situation shows significant damage to the built environment, with 80% of the buildings classified as destroyed and 20% as damaged. The disaster's impact is concentrated in the north-east and south-east regions of the photo, where the most severe damage is evident. Emergency shelters should be established in the safe areas identified in the north-west and west of the photo, as these zones are farthest from the estimated damage and provide ample space for displaced residents. Temporary medical facilities must be set up in these safe zones to handle rescued individuals, and the immediate transportation recovery should prioritize reopening the road network in the north-west and west of the photo to facilitate swift access for relief teams and supplies.
+
+## Resource Allocation
+Given the significant damage to the built environment, the emergency services must prioritize the safe areas in the north-west and west of the photo for immediate shelter and medical facility establishment. Based on the guidelines for shelter and settlement [SPHERE-3-p1] and [SPHERE-3-p2], displaced residents require temporary housing and essential household items to restore daily activities. For medical facilities [INSARAG3-6.2-p2], temporary points must be set up to manage rescued individuals, ensuring hygiene standards and medical evacuation plans are followed. The immediate transportation recovery [SPHERE-2-p1] and [SPHERE-2-p2] should focus on reopening roads in these safe zones to facilitate rapid access for relief teams and supplies. Not available offline.
+
+## Public Advisory
+The public is advised to stay indoors in safe areas to avoid further risks from debris and unstable structures. Emergency shelters have been established in the north-west and west of the photo, where displaced residents can seek temporary housing. Medical facilities are being set up in these zones to provide immediate care for rescued individuals. Please cooperate with authorities and follow their instructions for safety. Avoid entering the affected areas and assist in clearing debris to facilitate recovery operations. For further updates, please monitor official communications. [SPHERE-3-p1] [SPHERE-3-p2] [INSARAG3-6.2-p2]
+
+## Organizational Operation
+As the post-disaster management team, we are coordinating immediate shelter and medical facility setup in safe areas to address the displaced and injured. We are also prioritizing road network reopening to facilitate relief operations. For further assistance, please contact local authorities or monitor official communications.
+
+## Conclusion
+We are working tirelessly to ensure your safety and facilitate recovery. Immediate shelter and medical facilities are being established in safe zones, and roads are being reopened to support relief efforts. Your cooperation is vital; please stay indoors and assist in debris clearance. Together, we will rebuild and restore normalcy. Stay safe and informed.

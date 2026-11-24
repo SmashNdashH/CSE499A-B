@@ -1,0 +1,59 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The devastating earthquake that struck the Turkish city has caused widespread damage, affecting nearly half of the buildings in the area, with 32 out of 97 buildings classified as Grade 5 destruction (total or near total collapse) according to the EMS-98 guidelines. The disaster has left 11 buildings with moderate to very heavy damage (Grades 2 to 4), while 54 buildings remain intact with negligible to slight damage (Grade 1). The hot spots in the north-west and north-east corners, covering zones of 403,997 and 22,107 pixels respectively, are the most severely impacted areas, with 32 buildings experiencing total or near-total collapse. The western part of the photo also shows signs of moderate damage, with 11 buildings classified as Grades 2 to 4. Safe areas are located in the south-eastern part of the photo, approximately 254 to 412 pixels from the nearest damaged structures. Immediate rescue efforts are underway, and authorities are urging residents to stay indoors and avoid entering these dangerous areas until professional assessments confirm their safety. The Alerts team has issued danger area alerts, advising people to avoid the hot spots and be cautious of secondary hazards. The Emergency Service Team has identified potential locations for emergency shelters, hospitals, and medical points, prioritizing areas with less damage and ensuring that displaced people have adequate living space to perform daily activities. Immediate transportation recovery is critical to facilitate access to these facilities.
+
+## Current Situation
+The emergency situation in the affected area is dire, with significant structural damage evident in the satellite photos. The north-west and north-east corners of the photo depict the most severe damage, with 32 buildings classified as Grade 5 destruction (total or near total collapse), as per the EMS-98 guidelines. This destruction is accompanied by moderate to very heavy damage in the western part of the photo, affecting 11 buildings. Safe areas are located in the south-eastern part of the photo, approximately 254 to 412 pixels from the nearest damaged structures.
+
+The Emergency Service Team has identified several potential locations for emergency shelters, hospitals, and medical points, adhering to the Sphere and INSARAG guidelines. In the south-east, around (917, 923), (821, 807), and (722, 694) pixels from the top-left corner, the areas offer ample space for living space per person, suitable for basic domestic activities and medical facilities. These areas are recommended for immediate assessment and use as emergency shelters and medical points.
+
+For immediate transportation recovery, the north-west corner, around (320, 32) pixels, and the west side, around (48, 593) pixels, require urgent attention. The highly damaged areas pose significant risks to rescuers and aid workers, necessitating the reopening of roads and bridges to ensure safe passage and timely delivery of supplies. The Emergency Service Team is coordinating with logistics and medical teams to ensure that these areas are assessed and prepared for safe entry.
+
+The Emergency Service Team is also working on setting up temporary shelters in areas with less damage, converting intact buildings into emergency shelters where possible. These shelters will provide living space per person, as per the Sphere guidelines. Additionally, medical points are being established in safe areas to provide immediate care and support to those affected.
+
+Immediate assessments are ongoing to ensure that all identified areas meet safety standards before use. The Emergency Service Team is collaborating with local authorities and affected communities to implement a comprehensive plan that addresses the immediate needs of the population and facilitates a gradual transition towards longer-term recovery efforts.
+
+## Resource Allocation
+To address the immediate needs of the affected population, the Emergency Service Team has mobilized a multidisciplinary response team comprising medical professionals, engineers, logisticians, and community liaison officers. The team consists of not available offline medical personnel, not available offline engineers, not available offline logisticians, and not available offline community liaison officers. These resources are strategically deployed to the identified hot spots and safe areas based on current needs.
+
+In the north-west corner, around (320, 32) pixels, the team focuses on assessing and securing the highly damaged area. They will use helicopters and heavy machinery to clear debris and ensure safe passage for rescue operations. In the west side, around (48, 593) pixels, the team will conduct a detailed assessment of the moderate to very heavy damage zone. They will coordinate with local authorities to reopen roads and bridges, facilitating the movement of rescue and relief teams.
+
+For immediate transportation recovery, the team will use a fleet of trucks and ambulances equipped with essential medical supplies and communication devices. The team will distribute these resources to the north-west and west side areas, ensuring that they are ready for immediate action.
+
+In the south-east, around (917, 923), (821, 807), and (722, 694) pixels, the team will establish emergency shelters and medical points. They will convert intact buildings into temporary shelters, providing living space per person as per the Sphere guidelines. Additionally, they will set up medical points in safe areas to provide immediate care and support to those affected.
+
+The Emergency Service Team will continuously monitor the situation and reassess the needs of the affected population. They will collaborate with local authorities and affected communities to ensure that resources are allocated efficiently and effectively, prioritizing the safety and well-being of the population.
+
+## Public Advisory
+The public advisory highlights essential steps for staying safe, accessing emergency services, and cooperating with ongoing operations following the devastating earthquake in the Turkish city. Residents are advised to avoid the hot spots in the north-west and north-east corners, as well as the western part of the photo, due to severe structural damage. People are urged to exercise extreme caution and avoid entering these areas until professional assessments confirm their safety.
+
+**Stay Safe:**
+
+- **Avoid Hot Spots:** Do not enter the north-west corner (around (320, 32)), north-east corner (around (991, 32)), and western part (around (48, 593)) of the photo. These areas are highly dangerous and require immediate professional assessment.
+  
+- **Monitor Alerts:** Follow the Alerts team’s social media updates and local advisories for the latest danger area alerts. Stay tuned for further instructions and updates.
+
+**Access Emergency Services:**
+
+- **Contact Authorities:** Reach out to local emergency services immediately if you or anyone in your vicinity is injured or in need of immediate assistance. Dial the emergency number (not available offline) to report emergencies.
+
+- **Use Social Media:** Share your location and condition on social media platforms like Twitter or Facebook using relevant hashtags such as #TurkeyEarthquake #DisasterResponse #RescueOperations. This can help rescuers locate you quickly.
+
+**Cooperate with Ongoing Operations:**
+
+- **Support Rescue Efforts:** Assist rescue teams by clearing debris from safe areas, ensuring that no one enters restricted zones, and providing information about the safest routes. Follow the instructions of local authorities and emergency responders.
+
+- **Participate in Assessments:** Volunteer to assist with assessments of safe areas and emergency shelters. This can help ensure that structures are safe for use and that displaced persons have adequate living space.
+
+- **Maintain Communication:** Keep your mobile phone charged and accessible. Regularly check social media for updates and official communications from local authorities.
+
+By following these guidelines, residents can play a vital role in ensuring the safety and well-being of themselves and others during this challenging time.
+
+## Organizational Operation
+Our organization plays a critical role in coordinating the post-disaster response, focusing on resource allocation, public safety advisories, and community engagement. We are responsible for assigning human resources to critical tasks such as rescue operations, medical support, and shelter establishment. Our operations are guided by the Sphere and INSARAG guidelines to ensure that displaced individuals have access to safe living spaces, medical care, and essential household items. For further assistance, please refer to the Alerts team's social media updates or contact local emergency services immediately. Contact details are not available offline, but we encourage residents to stay informed and follow the latest advisories for the best course of action.
+
+## Conclusion
+We want to reassure the community that our organization is committed to providing the necessary support and resources to help you through this difficult time. Our dedicated team is working tirelessly to ensure that everyone receives the care and assistance they need. We urge you to stay calm and follow the advice of local authorities and emergency services. Your safety is our top priority, and we will continue to provide updates and guidance as we navigate this challenging situation together. Please reach out to us if you need any assistance or have questions. Together, we will overcome this adversity and begin the journey towards recovery.

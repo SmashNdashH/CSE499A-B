@@ -1,0 +1,133 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The Palu tsunami has inflicted significant damage across the affected area, with approximately 52% of the estimated damage patches categorized as 'destroyed' (EMS-98 Grade 5), indicating substantial structural failures and total or near-total collapses. The hotspots, particularly around the north-east and east of the photo, show the highest concentration of damage. In contrast, safe areas are located in the southern and western parts of the photo, offering a clearer indication of relative safety. Immediate response efforts are focused on prioritizing the hotspots for immediate intervention, including the establishment of emergency shelters and medical facilities in suitable locations. The Emergency Service Team has identified three safe areas for emergency shelters and two for medical facilities, while the Reconstruction Plan aims to address the immediate needs of the affected population, focusing on repairing and rebuilding damaged structures, retrofitting vulnerable buildings, and ensuring the safety and well-being of survivors. The Sphere guidelines and EMS-98 damage grading system are guiding the development of a comprehensive reconstruction plan, emphasizing the importance of technical assistance and community involvement in the rebuilding process.
+
+## Assessment of Damage
+The damage assessment conducted by the Expert team reveals that the Palu tsunami has caused significant structural failures and total or near-total collapses, with approximately 52% of the estimated damage patches categorized as 'destroyed' (EMS-98 Grade 5). The hotspots, particularly around the north-east and east of the photo, show the highest concentration of damage. In contrast, the southern and western parts of the photo offer safe areas, providing a clearer indication of relative safety.
+
+#### Detailed Analysis
+
+**Hot Spot 1 (North-East):**
+- **Location:** Pixel coordinates (991, 234)
+- **Estimated Damage:** 49 patches, EMS-98 Grade 5 (Very Heavy Damage)
+- **Description:** This area shows extensive structural failures and total or near-total collapses. Immediate attention is required for reconstruction. The destruction necessitates urgent intervention to ensure safety and functionality.
+
+**Hot Spot 2 (East):**
+- **Location:** Pixel coordinates (760, 595)
+- **Estimated Damage:** 13 patches, EMS-98 Grades 2 to 4 (Moderate to Very Heavy Damage)
+- **Description:** This region exhibits cracks in walls, detachment of roof tiles, and failure of non-structural elements. Further investigation is needed to assess the full extent of the damage.
+
+**Safe Areas:**
+- **Safe Area 1 (South-West):**
+  - **Location:** Pixel coordinates (100, 923)
+  - **Estimated Damage:** 33 patches, no visible damage (EMS-98 Grade 1)
+  - **Distance from Nearest Estimated Damage:** 459 pixels
+  - **Note:** This area is considered safe but requires ground verification before use.
+
+- **Safe Area 2 (South-West):**
+  - **Location:** Pixel coordinates (250, 923)
+  - **Estimated Damage:** 33 patches, no visible damage (EMS-98 Grade 1)
+  - **Distance from Nearest Estimated Damage:** 400 pixels
+  - **Note:** This area is also considered safe but requires ground verification before use.
+
+- **Safe Area 3 (South-West):**
+  - **Location:** Pixel coordinates (100, 773)
+  - **Estimated Damage:** 33 patches, no visible damage (EMS-98 Grade 1)
+  - **Distance from Nearest Estimated Damage:** 323 pixels
+  - **Note:** This area is considered safe but requires ground verification before use.
+
+#### Sphere Guidelines Application
+
+The Sphere guidelines emphasize the need for specialized professional expertise, adherence to building codes and standards, and increasing technical capacity among the affected population. For the damaged areas, the following steps are recommended:
+
+- **Repair (Rehabilitation):** For buildings that have suffered minor damage, repair them without a more major retrofit. For displaced people, it may be necessary to repair collective centers or upgrade pre-existing buildings such as schools for mass shelter.
+- **Retrofitting:** Retrofitting involves strengthening and/or structural system modifications to make buildings more resistant to future hazards. For displaced people, it may be necessary to retrofit houses of host families, if they are at risk from a hazard.
+
+#### Conclusion
+
+The damage assessment highlights the urgent need for immediate intervention in the hotspots, particularly Hot Spot 1 and Hot Spot 2, to address the significant structural failures and total or near-total collapses. The presence of safe areas in the southern and western parts of the photo underscores the importance of prioritizing these areas for emergency shelter provision and medical facilities. Immediate response efforts should focus
+
+## Reconstruction Needs
+To address the immediate and long-term reconstruction needs, the following steps are recommended based on the Sphere guidelines and the damage assessment:
+
+#### Repair and Rehabilitation
+For buildings that have suffered minor damage, repair them without a more major retrofit. For displaced people, it may be necessary to repair collective centers or upgrade pre-existing buildings such as schools for mass shelter. According to [SPHERE-3-p1], [SPHERE-3-p2], and [SPHERE-3-p4], the following actions are crucial:
+- **Living Space:** Ensure each affected household has adequate living space to perform basic domestic activities. Provide living spaces that accommodate diverse needs, respect local culture and lifestyles, and offer physical security, dignity, privacy, and protection from weather.
+- **Location and Access:** Ensure that the space immediately surrounding the living space supports safe access to fundamental activities such as cooking, toilets, laundry, and healthcare. [SPHERE-3-p1], [SPHERE-3-p2], and [SPHERE-3-p4]
+
+#### Retrofitting
+For buildings that have been damaged by the tsunami, retrofitting is essential to make them more resistant to future hazards. This includes strengthening and modifying the structural systems. According to [EMS98-2.3-p2] and [EMS98-vi-slightly-damaging], the following actions are recommended:
+- **Structural Strengthening:** Identify the structural risks and hazards, and learn from, improve, and innovate local building practices and techniques. Facilitate effective knowledge transfer to promote appropriate building practices. [EMS98-2.3-p2] and [EMS98-vi-slightly-damaging]
+- **Technical Assistance:** Ensure that people have access to adequate technical assistance. [SPHERE-5-p2] and [SPHERE-5-p1]
+
+#### Shelter Provision
+Given the significant damage in the hotspots, immediate shelter provision is vital. Based on the Sphere guidelines and the need for safe areas, the following steps are recommended:
+- **Emergency Shelters:** Establish emergency shelters in the safe areas identified by the Emergency Service Team. According to [SPHERE-3-p1], [SPHERE-3-p2], and [SPHERE-3-p4]:
+  - **Living Space:** Ensure each household has adequate living space.
+  - **Location and Access:** Ensure that the space immediately surrounding the living space supports safe access to fundamental activities such as cooking, toilets, laundry, and healthcare.
+- **Medical Facilities:** Set up medical facilities in the safe areas to provide essential healthcare services. According to [SPHERE-3-p2] and [SPHERE-3-p4]:
+  - **Medical Services:** Ensure that the location is equipped with appropriate medical facilities and staff.
+  - **Casualty Handover Procedures:** Establish clear procedures for the handover of casualties to medical facilities.
+
+#### Community Engagement
+Community engagement is crucial for successful reconstruction. According to [SPHERE-5-p2] and [SPHERE-5-p1]:
+- **Technical Assistance:** People have access to appropriate technical assistance in a timely manner. Involve and support the affected people, local government, and local professionals in the building process.
+- **Capacity Building:** Offer skills enhancement and training to increase the ability to respond and interact with common challenges. Facilitate effective knowledge transfer to promote appropriate building practices.
+
+#### Logistics and Supplies
+Logistical support is essential for the smooth execution of reconstruction efforts. According to [SPHERE-5-p2] and [SPHERE-5-p1]:
+- **Materials and Labour:** Ensure that materials and labour are sourced locally to maintain sustainability and reduce dependency on external resources.
+-
+
+## Plan of Action
+The immediate and long-term reconstruction efforts require a structured approach to ensure the safety and well-being of the affected population. Based on the damage assessment and guidelines provided, the following plan of action is proposed:
+
+1. **Immediate Response and Rescue Operations**
+   - **Resource Allocation:** Allocate rescue teams, medical personnel, and logistical support to Hot Spot 1 and Hot Spot 2. Ensure that the teams are equipped with the necessary tools and materials to safely navigate through the debris and locate potential survivors.
+   - **Coordination with Local Authorities:** Collaborate with local authorities to establish safe zones and coordinate with them for the evacuation and rescue operations. Utilize the Sphere guidelines for ensuring the safety and dignity of the affected individuals during rescue operations [SPHERE-3-p1], [SPHERE-3-p2], and [SPHERE-3-p4].
+
+2. **Establishment of Emergency Shelters**
+   - **Resource Allocation:** Designate Safe Area 1, Safe Area 2, and Safe Area 3 as emergency shelter locations. Allocate tents, blankets, and other essential items to these areas.
+   - **Coordination with Local Authorities:** Engage local authorities to ensure that the shelters are accessible, secure, and equipped with basic amenities such as clean water, sanitation facilities, and medical care. Follow the Sphere guidelines for ensuring the safety and dignity of the affected individuals [SPHERE-3-p1], [SPHERE-3-p2], and [SPHERE-3-p4].
+
+3. **Medical Facilities Establishment**
+   - **Resource Allocation:** Establish medical facilities in Safe Area 1 and Safe Area 2. Allocate medical supplies, equipment, and trained medical personnel.
+   - **Coordination with Local Authorities:** Collaborate with local health authorities to ensure that the medical facilities are operational and capable of handling casualties. Implement the Sphere guidelines for ensuring the safety and dignity of the affected individuals [SPHERE-3-p2] and [SPHERE-3-p4].
+
+4. **Repair and Rehabilitation of Damaged Structures**
+   - **Resource Allocation:** Identify and repair damaged structures in Hot Spot 1 and Hot Spot 2. Allocate construction materials, tools, and labor.
+   - **Coordination with Local Authorities:** Engage local contractors and technicians to ensure that the repairs meet local building codes and standards. Follow the Sphere guidelines for ensuring the safety and dignity of the affected individuals [SPHERE-3-p1], [SPHERE-3-p2], and [SPHERE-3-p4].
+
+5. **Retrofitting of Vulnerable Buildings**
+   - **Resource Allocation:** Retrofit buildings in Hot Spot 1 and Hot Spot 2 to enhance their resilience against future hazards. Allocate construction materials, tools, and labor.
+   - **Coordination with Local Authorities:** Collaborate with local building authorities to ensure that the retrofitting projects comply with local building codes and standards. Follow the Sphere guidelines for ensuring the safety and dignity of the affected individuals [SPHERE-3-p1], [SPHERE-3-p2], and [SPHERE-3-p4].
+
+6. **Long-Term Reconstruction and Housing Solutions**
+   - **Resource Allocation:** Develop long-term housing solutions for displaced individuals. Allocate construction materials, tools, and labor.
+   - **Coordination with Local Authorities:** Engage local authorities to ensure that the housing solutions are sustainable, affordable, and meet the needs of the affected population. Follow the Sphere guidelines for ensuring the safety and dignity of the affected individuals [SPHERE-3-p1], [SPHERE-3-p2], and [SPHERE-3-p4].
+
+7. **Community Engagement and Capacity Building**
+   - **Resource Allocation:** Provide
+
+## Recommendations
+To support effective and efficient reconstruction, it is crucial to allocate sufficient resources and implement robust policies. Policy-wise, governments should prioritize long-term housing solutions, ensuring that displaced individuals have access to safe, affordable, and durable shelters. This includes integrating community-led initiatives and leveraging local expertise to enhance the resilience of rebuilt homes. Funding-wise, a multi-faceted approach is necessary. International aid organizations should collaborate with local NGOs and governments to fund repair, rehabilitation, and retrofitting projects. Specific allocations should be directed towards technical assistance, capacity building, and community engagement to ensure sustainable outcomes. Additionally, integrating disaster risk reduction measures into reconstruction plans can prevent future vulnerabilities. Adequate funding and policy support are essential to ensure that the affected communities can rebuild stronger and more resiliently.
+
+## Appendices
+#### Disaster Grade of Each Place
+The damage assessment categorizes the affected areas based on the EMS-98 damage grading system. Hot Spot 1 (north-east) and Hot Spot 2 (east) are classified as Grade 5 (very heavy damage), while Safe Areas 1, 2, and 3 are classified as Grade 1 (negligible to slight damage). This classification guides the allocation of resources and ensures targeted interventions.
+
+#### Guideline Sections Used
+- [SPHERE-3-p1]: Ensures that affected people have access to appropriate technical assistance in a timely manner.
+- [SPHERE-3-p2]: Focuses on medical services, casualty handover procedures, and transportation.
+- [SPHERE-3-p4]: Emphasizes the importance of living space, location and access, and environmental sustainability.
+- [EMS98-2.3-p2]: Highlights the vulnerability of irregular buildings and the need for regularity in construction.
+- [EMS98-masonry-grade-1]: Defines negligible to slight damage, suitable for immediate repair.
+- [EMS98-masonry-grade-5]: Describes very heavy damage requiring urgent reconstruction.
+- [SPHERE-5-p2]: Stresses the need for technical assistance and capacity building among the affected population.
+- [SPHERE-5-p1]: Encourages involving and supporting affected people, local government, and local professionals in the building process.
+- [SPHERE-5-p1]: Promotes safer building practices to meet current shelter needs and reduce future risks.
+
+These guidelines provide a framework for ensuring that reconstruction efforts are both effective and sustainable, addressing the immediate needs of the affected population while laying the groundwork for long-term resilience.

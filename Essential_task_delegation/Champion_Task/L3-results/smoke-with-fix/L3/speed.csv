@@ -1,0 +1,4 @@
+model,questions,weights_gpu_gb,footprint_gb,peak_gpu_gb,s_per_question_mean,s_per_question_median,tokens_per_s,disk_gb
+"new 7B, 4 bits, full size",12,5.91,5.78,8.63,5.254,6.158,0.54,
+"3B (c), fp16",12,7.53,7.52,8.13,1.912,2.158,1.74,7.51
+"3B (c), 4 bits",12,2.42,2.35,3.03,2.093,2.371,1.67,2.4

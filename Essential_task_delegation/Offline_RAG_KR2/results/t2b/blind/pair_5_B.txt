@@ -1,0 +1,51 @@
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the damage assessment and the guidelines provided, the following areas are suitable for emergency shelters:
+
+- **Safe Areas**: Safe Area 1, located around (100, 165), is approximately 304 pixels from the nearest estimated damage zone. This area is estimated to have minimal damage, with only negligible to slight damage. It is recommended to verify this on the ground before using it as a safe haven. Safe Area 2, around (195, 282), is also estimated to have minimal damage, with 212 pixels from the nearest estimated damage zone. Safe Area 3, around (236, 101), is estimated to have negligible to slight damage, with 165 pixels from the nearest estimated damage zone. These areas should be checked for safety and accessibility.
+
+- **Potential Shelter Locations**: Given the Sphere guidelines on living space and site area per person, the following locations are viable for emergency shelters:
+
+  - **Hot Spot 1**: Around (528, 712) in the southern part of the photo. This area is estimated to have total or near-total collapse, posing significant risks. It is recommended to assess and stabilize the structures in this area to prevent further collapse and ensure public safety. Temporary shelters should be established nearby to provide immediate living space for affected individuals.
+  
+  - **Hot Spot 2**: Located around (265, 861) in the southwestern region. This area is estimated to have very heavy damage, with multiple structures likely collapsed or severely damaged. Clearing debris and ensuring safe access to fundamental activities such as cooking, toilets, and bathing will be crucial. Temporary shelters should be set up in this area to provide living space and support.
+
+  - **Hot Spot 3**: Around (67, 704) in the southwestern part of the photo. Similar to Hot Spot 2, this area is also expected to have very heavy damage, necessitating immediate attention to clear debris and ensure safe access to essential activities.
+
+#### Shelter Planning
+According to the Sphere guidelines, the minimum living space per person is 3.5 square meters. Given the estimated damage and the need for safe access to fundamental activities, the following planning should be considered:
+
+- **Shelter Design**: Ensure that each shelter provides a safe and adequate living space for daily activities such as sleeping, food preparation, and eating. Provide a basic roof and walls for occupants and their household assets, offering physical security, dignity, privacy, and protection from weather.
+- **Access and Privacy**: Include appropriate cooking, toilets, laundry, bathing, livelihoods activities, socialising, and play areas. Ensure that shelters are designed to accommodate the diverse needs of household members, respecting local culture and lifestyles.
+- **Safety Measures**: Promote the use of shelter solutions, construction techniques, and materials that are culturally and socially acceptable and
+
+## Hospitals
+Based on the damage assessment and guidelines provided, the following areas are suitable for establishing hospitals or medical points:
+
+- **Hot Spot 1**: Around (528, 712) in the southern part of the photo. This area is estimated to have total or near-total collapse, posing significant risks. It is recommended to assess and stabilize the structures in this area to prevent further collapse and ensure public safety. Temporary medical facilities should be established nearby to provide immediate medical care for the injured.
+
+- **Hot Spot 2**: Located around (265, 861) in the southwestern region. This area is estimated to have very heavy damage, with multiple structures likely collapsed or severely damaged. Clearing debris and ensuring safe access to medical facilities will be crucial. Temporary medical facilities should be set up in this area to provide medical care and support.
+
+- **Hot Spot 3**: Around (67, 704) in the southwestern part of the photo. Similar to Hot Spot 2, this area is also expected to have very heavy damage, necessitating immediate attention to clear debris and ensure safe access to essential medical activities.
+
+#### Medical Handover Procedures
+
+According to INSARAG Guidelines 2020, Vol. III, the following procedures should be followed for medical handover:
+
+- **Casualty Handover**: Ensure that medical staff are aware of local procedures for the acceptance of patients into the local system. Develop a system for repatriation to the home country for further treatment if necessary.
+
+- **Medical Transport**: Ensure appropriate medical transport procedures are in place, including setting up a triage point in consultation with medical personnel.
+
+- **Medical Documentation**: Maintain confidentiality and secure storage of all documentation pertaining to patient treatments.
+
+- **Continuous Health Monitoring**: Continuously monitor the health of USAR Team members, including canines, and provide ongoing clinical care as required, including psychological assessment and monitoring.
+
+- **Evacuation Point**: Clearly mark the evacuation point and ensure that personnel are familiar with the evacuation signaling system. Three long horn blasts should signal an evacuation.
+
+- **Handover to Other Shifts**: Provide a written and verbal handover to the oncoming team to ensure continuity of care.
+
+By following these guidelines, we can ensure that rescued people are safely and effectively handed over to medical facilities, thereby providing critical care and support to those in need.
+
+## Immediate transportation recovery
+Based on the damage assessment and the guidelines provided, the immediate transportation recovery efforts should focus on reopening roads and bridges in the hot spot areas to restore connectivity and facilitate the movement of emergency services and supplies. Specifically, the roads connecting Hot Spot 1 (around (528, 712)) and Hot Spot 3 (around (67, 704)) need urgent attention. These areas are estimated to have total or near-total collapse and very heavy damage, which likely disrupted road infrastructure. Reopening these routes will enable rapid access to these critical zones, allowing emergency responders to reach and assist those in need more efficiently. Additionally, the road connecting Hot Spot 2 (around (265, 861)) to the surrounding areas should also be prioritized, as it is estimated to have very heavy damage, potentially affecting the flow of emergency services and supplies. Ensuring these critical road connections are restored will significantly enhance the overall response efforts and improve the delivery of aid to affected populations.

@@ -194,6 +194,9 @@ CONTEXT.md
 *.onnx
 *.zip
 *.mp4
+!others/CSE499B_1-min_video_demonstration.mp4
+# Update 6 stays local, never on GitHub (24 Nov 2026)
+others/CSE499B_update_6*
 others/CSE499B_Review_Script_English.html
 others/CSE499B_Review_Script_Banglish.html
 # Local-only or regenerable files

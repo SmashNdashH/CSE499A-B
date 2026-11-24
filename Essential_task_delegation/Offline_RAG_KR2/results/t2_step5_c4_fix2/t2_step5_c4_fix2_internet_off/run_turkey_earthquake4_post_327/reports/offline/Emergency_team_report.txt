@@ -1,0 +1,12 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the damage assessment and the guidelines provided by Sphere, we have identified safe areas in the south-east of the photo, specifically around (917, 923), (821, 807), and (722, 694), where intact buildings remain unaffected. According to Sphere Handbook 2018, Shelter and Settlement, the minimum living space per person should be 3.5 square metres for the affected population. Given the intact buildings in these areas, we will allocate these spaces to provide emergency shelters. The number of emergency shelters needed is 54, each accommodating one person, ensuring adequate living space for displaced residents. These shelters will be distributed across the identified safe zones to maintain privacy and dignity, aligning with Sphere's recommendations on location and settlement planning.
+
+## Hospitals
+The earthquake has caused significant structural damage to 32 buildings, classified as EMS-98 Grade 5, with total or near-total collapse, in the north-west of the photo. To address this, we must establish temporary medical points in the safe areas identified in the south-east of the photo, specifically around (917, 923), (821, 807), and (722, 694). These locations will serve as initial medical stations to provide immediate care to the injured and displaced. According to INSARAG [INSARAG3-6.2-p2], we must ensure that medical staff are aware of local procedures for accepting patients into the local system and develop a system for repatriation to the home country for further treatment. We will also ensure that medical transport procedures are in place to facilitate the transfer of casualties to nearby hospitals.
+
+## Immediate transportation recovery
+The priority for immediate transportation recovery should focus on clearing debris from the roads in the west and north-east of the photo, specifically around (48, 593) and (991, 32), to restore connectivity and enable the movement of emergency responders and supplies. These areas are identified as the most hazardous due to high concentrations of structural damage, and addressing this will facilitate the delivery of aid and ensure the safety of rescue operations.

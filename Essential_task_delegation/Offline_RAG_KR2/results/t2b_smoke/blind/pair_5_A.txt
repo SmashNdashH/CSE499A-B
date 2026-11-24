@@ -1,0 +1,16 @@
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The earthquake caused significant damage, with 33% of buildings destroyed, 11% damaged, and 56% remaining intact. The most severe impact was observed in the central region, where the highest density of damage occurred. The majority of destroyed structures exhibited complete collapse, while damaged buildings showed moderate to heavy structural and non-structural damage, including partial collapses and extensive wall cracks. Safe areas were identified in the south-eastern portion of the image, away from the affected zones.
+
+## Description of the estimated damage
+The earthquake caused significant damage, with 33% of buildings completely destroyed, 11% moderately damaged, and 56% remaining intact. The most severe impact was concentrated in the central region, where the highest density of damage occurred, as evidenced by three distinct hotspots: one in the north-west, another in the west, and the third in the north-east of the image. These hotspots collectively cover 403997, 22107, and 28381 pixels, respectively, indicating the most concentrated areas of destruction. Safe areas were identified in the south-eastern portion of the image, with the closest being 412, 311, and 254 pixels from the nearest estimated damage. The majority of destroyed structures exhibited total collapse, while damaged buildings displayed moderate to heavy structural and non-structural damage, including partial collapses and extensive wall cracks.
+
+## Disaster grade of each location
+The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:
+- Buildings estimated destroyed: 32: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Buildings estimated damaged: 11: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Buildings estimated intact: 54: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The earthquake has caused severe damage, particularly in the central region, where the highest concentration of destruction is evident. Immediate priority should focus on the hotspots in the north-west, west, and north-east, as they represent the most critical areas of structural collapse and debris. Efforts must include clearing debris, assessing safety, and stabilizing damaged buildings to prevent further risks. Additionally, monitoring nearby intact structures for potential hidden vulnerabilities is essential to ensure overall stability and safety.

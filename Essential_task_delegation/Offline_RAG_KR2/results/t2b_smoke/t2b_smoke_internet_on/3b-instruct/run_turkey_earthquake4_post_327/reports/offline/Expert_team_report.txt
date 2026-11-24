@@ -1,0 +1,26 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The satellite photos reveal significant damage across the affected area, with 32 out of 97 buildings classified as Grade 5 destruction (total or near total collapse) based on the EMS-98 guidelines. Another 11 buildings are estimated to have suffered moderate to very heavy damage (Grades 2 to 4), while 54 buildings remain intact with negligible to slight damage (Grade 1). The damage is concentrated in three hotspots, primarily in the north-west and north-east corners of the photo, with the west also showing signs of distress. Safe areas are located in the south-eastern part of the photo, approximately 254 to 412 pixels away from the nearest damaged structures. This distribution suggests a localized impact with a mix of severe and moderate damage, indicating a complex scenario requiring comprehensive assessment and immediate response efforts.
+
+## Description of the estimated damage
+The satellite photos clearly indicate significant damage across the affected area, with a clear breakdown of building conditions. Out of the 97 buildings depicted in the photos, 32 were estimated to be in Grade 5 destruction (total or near total collapse), which is the highest level of damage according to the EMS-98 guidelines. This destruction is concentrated in three distinct hotspots within the photo, primarily in the north-west and north-east corners, with some signs of distress in the western part of the photo.
+
+In terms of the hot spots, the north-west area around coordinates (320, 32) has the highest density of damage, covering a zone of 403,997 pixels. The west area around (48, 593) is the second most affected, with a zone of (number not available offline). The north-east area around (991, 32) is the third hotspot, encompassing (number not available offline). These hot spots suggest a localized impact with a high concentration of severe damage.
+
+On the other hand, there are several safe areas where buildings appear to be largely intact. The first safe area is located around (917, 923), approximately 412 pixels from the nearest damaged structure. The second safe area is around (821, 807), about 311 pixels away from the nearest damage. The third safe area is situated around (722, 694), roughly 254 pixels from the nearest damaged building. These safe areas provide a contrast to the heavily damaged regions, highlighting the complexity of the disaster with localized pockets of severe damage interspersed with relatively intact areas.
+
+Overall, the estimated damage reflects a mix of severe and moderate impacts, with a notable concentration of destruction in specific areas. This distribution necessitates a comprehensive assessment to understand the full extent of the damage and to prioritize relief and reconstruction efforts effectively.
+
+## Disaster grade of each location
+The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:
+- Buildings estimated destroyed: 32: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Buildings estimated damaged: 11: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Buildings estimated intact: 54: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The estimated damage from the satellite photos indicates a complex scenario with localized pockets of severe destruction and broader areas of moderate damage. The hot spots in the north-west and north-east corners, covering zones of 403,997 and (number not available offline) respectively, require immediate attention. These areas are characterized by Grade 5 destruction, with buildings experiencing total or near-total collapse. In contrast, the western part of the photo shows signs of moderate damage, with 11 buildings classified as Grades 2 to 4, indicating substantial to heavy damage.
+
+Given the high concentration of destruction in the north-west and north-east, these areas should be prioritized for rescue operations, including search and rescue missions, debris removal, and temporary shelter provision. The western hot spot, covering a zone of (number not available offline), still requires focused assistance to prevent secondary hazards and ensure safety. The remaining intact buildings in the south-east can be used as temporary shelters or for logistical support, but they should be monitored closely to avoid secondary collapses. Comprehensive assessments are needed to fully understand the extent of damage and to plan effective recovery and reconstruction efforts.

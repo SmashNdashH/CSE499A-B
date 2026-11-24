@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The wildfire has caused severe destruction, with 86% of buildings completely destroyed and 14% remaining intact. The most dangerous zones are concentrated in the south and southwest regions, where hot spots 1 and 2 are located, with the highest fire density. These areas require immediate attention for debris clearance and safety assessments. Additionally, the north region, including hot spot 3, also shows significant fire activity, posing potential risks. It is crucial to ensure the safety of residents and prioritize the inspection of these zones to mitigate further hazards.
+
+## Social media news
+The wildfire has caused catastrophic damage across the area, with 86% of buildings completely destroyed and only 14% remaining intact. The most affected regions include the south and southwest, where hot spots 1 and 2 are located, indicating high fire density and significant structural and non-structural impacts. The north region, including hot spot 3, also shows notable fire activity, posing potential risks. Emergency teams are urged to prioritize debris clearance and safety assessments in these critical zones to mitigate further hazards. Residents are advised to stay vigilant and follow local authorities' instructions for their safety.

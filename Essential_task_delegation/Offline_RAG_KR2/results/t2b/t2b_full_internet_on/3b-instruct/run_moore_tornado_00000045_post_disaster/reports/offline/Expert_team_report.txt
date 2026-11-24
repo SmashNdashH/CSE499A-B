@@ -1,0 +1,22 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The satellite images reveal a severe level of destruction across the area, with 64 out of 89 damage patches classified as Grade 5 (total or near total collapse) under the EMS-98 guidelines. Additionally, 24 patches are categorized as Grades 2 to 4, indicating moderate to very heavy damage. Only one patch remains intact, showing negligible to slight damage. The hotspots, particularly in the southern and southwestern regions, experienced the highest levels of destruction, while safer areas were located in the northern and western parts of the photo. This comprehensive damage assessment suggests a catastrophic impact, with widespread structural failures and significant loss of life and property.
+
+## Description of the estimated damage
+The satellite images clearly depict a devastating aftermath of the Moore tornado, with the damage model estimating that 64 out of 89 damage patches fall into the category of Grade 5 (total or near-total collapse), representing a catastrophic level of destruction. The remaining 24 patches are categorized as Grades 2 to 4, indicating moderate to very heavy damage. Only one patch remains intact, showing negligible to slight damage.
+
+The hotspots, which are the densest areas of estimated damage, are primarily concentrated in the southern and southwestern regions of the photo. Hot spot 1, located around pixel coordinates (528, 712), covers a zone of (number not available offline). Hot spot 2, situated around (265, 861), spans a smaller area of 15,069 pixels. Lastly, hot spot 3, positioned around (67, 704), occupies a zone of (number not available offline). These hotspots indicate the most severely affected areas within the photo.
+
+In contrast, there are three safe areas identified, which are open ground farthest from the estimated damage. Safe area 1 is located around (100, 165), situated in the northwestern part of the photo, and is 304 pixels from the nearest estimated damage. Safe area 2 is around (195, 282), also in the northwestern region, and is 212 pixels away from the nearest damage patch. Safe area 3 is positioned around (236, 101), in the northwestern part of the photo, and is 165 pixels from the nearest estimated damage. These safe areas highlight the relative safety in certain portions of the photo, though even they are not entirely free from the effects of the tornado.
+
+## Disaster grade of each location
+The disaster grades of the estimated damage patches, written from the damage model's table by the code, not by the language model:
+- Damage patches estimated destroyed: 64: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damage patches estimated damaged: 24: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Damage patches estimated intact: 1: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The satellite images reveal a catastrophic level of destruction across the area, with 64 out of 89 damage patches classified as Grade 5 (total or near-total collapse), indicating a severe level of structural failure. Hot spot 1, located around pixel coordinates (528, 712), covers a zone of (number not available offline). Hot spot 2, situated around (265, 861), spans a smaller area of 15,069 pixels. These areas require immediate attention due to the potential for further collapse and the risk of debris hazards. In contrast, the northern and western parts of the photo show safer conditions, but even these areas are not entirely free from the effects of the tornado. Priority should be given to assessing and stabilizing the structures in the hotspots to prevent secondary collapses and ensure public safety. Efforts should focus on clearing debris, providing temporary shelter, and conducting thorough assessments to determine the extent of damage and necessary repairs.

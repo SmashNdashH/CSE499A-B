@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The wildfire has caused severe destruction, with 67% of the area completely destroyed, meeting the criteria for EMS-98 Grade 5. The primary hot spot 1, located around pixel coordinates (991, 779) in the south-east of the photo, encompasses 684835 pixels and requires urgent intervention. This area is critical for clearing debris and stabilizing the soil to prevent further ecological degradation. Nearby safe areas, including those around pixel coordinates (100, 923), (100, 773), and (250, 923) in the south-west of the photo, are 386, 300, and 251 pixels away from the nearest estimated damage, respectively. These locations should be monitored to ensure safety and prevent secondary risks.
+
+## Social media news
+The Santa Rosa wildfire has caused severe destruction, with 67% of the affected area completely destroyed, meeting the criteria for EMS-98 Grade 5. The primary hot spot 1, located around pixel coordinates (991, 779) in the south-east of the photo, encompasses 684835 pixels and requires urgent intervention. This area is critical for clearing debris and stabilizing the soil to prevent further ecological degradation. Nearby safe areas, including those around pixel coordinates (100, 923), (100, 773), and (250, 923) in the south-west of the photo, are 386, 300, and 251 pixels away from the nearest estimated damage, respectively. These locations should be monitored to ensure safety and prevent secondary risks.

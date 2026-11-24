@@ -1,0 +1,18 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The wildfire caused severe destruction, with 67% of the affected area estimated to be completely destroyed, meeting the criteria for EMS-98 Grade 5, indicating total or near-total collapse of structures. Additionally, 2% of the area sustained moderate to very heavy damage, classified under Grades 2 to 4, characterized by substantial structural and non-structural damage. Only 31% of the area remained intact, showing negligible to slight damage. The hotspots and safe areas identified align with the severity of the damage observed across the region.
+
+## Description of the estimated damage
+The wildfire caused severe destruction, with 67% of the affected area estimated to be completely destroyed, meeting the criteria for EMS-98 Grade 5, indicating total or near-total collapse of structures. Additionally, 2% of the area sustained moderate to very heavy damage, classified under Grades 2 to 4, characterized by substantial structural and non-structural damage. Only 31% of the area remained intact, showing negligible to slight damage. The hotspots and safe areas identified align with the severity of the damage observed across the region. Specifically, 96 damage patches were estimated to be destroyed, 3 were estimated to be damaged, and 45 were estimated to remain intact. The hot spot 1 is located around pixel coordinates (991, 779) in the south-east of the photo, covering an area of 684835 pixels. Safe areas include zones around pixel coordinates (100, 923), (100, 773), and (250, 923) in the south-west of the photo, with distances of 386, 300, and 251 pixels, respectively, from the nearest estimated damage.
+
+## Disaster grade of each location
+The disaster grades of the estimated damage patches, written from the damage model's table by the code, not by the language model:
+- Damage patches estimated destroyed: 96: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damage patches estimated damaged: 3: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Damage patches estimated intact: 45: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The conclusion of the report indicates that the wildfire has caused severe destruction, with 67% of the area completely destroyed and requiring urgent intervention. The hot spot 1 in the south-east of the photo, encompassing 684835 pixels, is the primary focus for immediate assistance due to its high concentration of damage. Efforts should prioritize clearing debris, stabilizing the soil, and preventing further ecological degradation in this critical area. Additionally, efforts must address the safety of nearby safe zones to mitigate potential secondary risks.

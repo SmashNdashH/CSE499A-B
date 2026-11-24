@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The Santa Rosa wildfire has caused severe destruction, with 67% of the affected area completely destroyed, meeting the criteria for EMS-98 Grade 5. The primary hot spot 1, located around pixel coordinates (991, 779) in the south-east of the photo, encompasses 684835 pixels and requires urgent intervention. Nearby safe areas, including those around pixel coordinates (100, 923), (100, 773), and (250, 923) in the south-west of the photo, are 386, 300, and 251 pixels away from the nearest estimated damage, respectively. These areas are critical for providing temporary housing and medical facilities.
+
+## Current Situation
+The Santa Rosa wildfire has caused severe destruction, with 67% of the affected area completely destroyed, meeting the criteria for EMS-98 Grade 5. The primary hot spot 1, located around pixel coordinates (991, 779) in the south-east of the photo, encompasses 684835 pixels and requires urgent intervention. Nearby safe areas, including those around pixel coordinates (100, 923), (100, 773), and (250, 923) in the south-west of the photo, are 386, 300, and 251 pixels away from the nearest estimated damage, respectively. These areas are critical for providing temporary housing and medical facilities.
+
+## Resource Allocation
+Based on the guidelines from the Sphere Handbook 2018 and INSARAG, the emergency services should focus on establishing shelters and medical facilities in the safe areas identified, such as around pixel coordinates (100, 923), (100, 773), and (250, 923) in the south-west of the photo. These areas are critical for providing temporary housing and medical care, ensuring the safety and well-being of displaced residents. Priority should be given to clearing debris and stabilizing the soil in the primary hot spot 1 to prevent further ecological degradation. The emergency services should coordinate with local authorities to ensure the accessibility of roads and facilitate the movement of emergency responders and supplies. Notable references include [SPHERE-1-p3], [SPHERE-4-p1], and [INSARAG2B-1-p1].
+
+## Public Advisory
+The Santa Rosa wildfire has caused severe destruction, with 67% of the affected area completely destroyed, meeting the criteria for EMS-98 Grade 5. The primary hot spot 1, located around pixel coordinates (991, 779) in the south-east of the photo, encompasses 684835 pixels and requires urgent intervention. Nearby safe areas, including those around pixel coordinates (100, 923), (100, 773), and (250, 923) in the south-west of the photo, are 386, 300, and 251 pixels away from the nearest estimated damage, respectively. These areas are critical for providing temporary housing and medical facilities. For your safety, please stay indoors and avoid the affected areas. If you are displaced, seek shelter in the safe zones identified. Contact emergency services immediately if you require assistance.
+
+## Organizational Operation
+As the post-disaster management team, we are responsible for coordinating the establishment of shelters and medical facilities in the safe areas identified, such as around pixel coordinates (100, 923), (100, 773), and (250, 923) in the south-west of the photo. We are also focused on clearing debris and stabilizing the soil in the primary hot spot 1 to prevent further ecological degradation. For further assistance, please contact the emergency services.
+
+## Conclusion
+We are committed to supporting our community through this challenging time. Please stay safe and follow the instructions provided. Our efforts are focused on restoring stability and providing essential aid to those in need. Together, we will overcome this adversity.

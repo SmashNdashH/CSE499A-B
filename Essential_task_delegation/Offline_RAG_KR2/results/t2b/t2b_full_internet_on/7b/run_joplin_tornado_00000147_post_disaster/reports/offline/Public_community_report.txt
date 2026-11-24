@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The tornado caused widespread destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. The hot spot 1, located in the south-west of the photo, encompasses 961544 pixels and represents the highest concentration of estimated damage. Safe areas include one in the north-east and another in the south-west, at least 94 and 64 pixels away from the nearest estimated damage, respectively. The tornado has caused significant structural and non-structural impacts, leaving no intact structures.
+
+## Current Situation
+The tornado caused widespread destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. Safe areas in the north-east and south-west are suitable for temporary shelter, with minimal damage at least 94 and 64 pixels away, respectively. Emergency shelters should be established in these zones to provide adequate living spaces with enclosed structures, ensuring privacy and protection from the elements. Immediate transportation recovery is prioritized to reopen roads in these safe zones for delivering emergency supplies and evacuating affected residents.
+
+## Resource Allocation
+The tornado has caused widespread destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. Safe areas in the north-east and south-west are suitable for temporary shelter, with minimal damage at least 94 and 64 pixels away, respectively. Emergency shelters should be established in these zones to provide adequate living spaces with enclosed structures, ensuring privacy and protection from the elements. Immediate transportation recovery is prioritized to reopen roads in these safe zones for delivering emergency supplies and evacuating affected residents.
+
+## Public Advisory
+The tornado has caused widespread destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. Safe areas in the north-east and south-west are suitable for temporary shelter, with minimal damage at least 94 and 64 pixels away, respectively. Emergency shelters should be established in these zones to provide adequate living spaces with enclosed structures, ensuring privacy and protection from the elements. Immediate transportation recovery is prioritized to reopen roads in these safe zones for delivering emergency supplies and evacuating affected residents. Please stay in safe areas and avoid the hot spot 1 in the south-west. Follow instructions from emergency services and local authorities for further updates and assistance. [SPHERE-1-p3], [SPHERE-4-p1], [SPHERE-4-p2], [INSARAG2B-1-p1], [INSARAG2B-5.7.1-p5]
+
+## Organizational Operation
+Our organization is responsible for coordinating the post-disaster management, including establishing emergency shelters, assessing and distributing household items, and facilitating transportation recovery. For further assistance, please contact local emergency services or reach out to our organization for detailed support.
+
+## Conclusion
+We are committed to supporting the community through this challenging time. Our emergency shelters are ready to provide safe and temporary housing, and we are actively working on clearing debris and reopening roads to ensure access for aid. We urge everyone to stay in safe areas and adhere to official instructions. Together, we will overcome this disaster and rebuild stronger.

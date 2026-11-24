@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The tsunami caused significant damage, with 52% of the observed area classified as destroyed, indicating total or near-total collapse of structures. The hotspots of highest impact are located in the north-east and east of the image, while safe areas are situated in the south-west. The disaster has resulted in severe destruction, requiring immediate attention to rebuild and stabilize the affected regions. People should avoid the damaged areas in the north-east and east, as they are classified as destroyed and pose significant safety hazards. Safe areas in the south-west, such as those around (100, 923), (250, 923), and (100, 773), remain unaffected and are recommended for shelter and recovery activities.
+
+## Current Situation
+The tsunami has caused significant damage, with 52% of the observed area classified as destroyed, indicating total or near-total collapse of structures. The hotspots of highest impact are located in the north-east and east of the image, while safe areas are situated in the south-west. Based on the Sphere Handbook 2018 guidelines, emergency shelters have been established in the safe areas identified in the south-west of the photo, specifically around (100, 923), (250, 923), and (100, 773). These locations are at least 323 to 459 pixels away from the nearest estimated damage, ensuring safety for displaced populations. Additionally, temporary medical points have been set up in these same safe areas to handle rescued individuals, and immediate transportation recovery is prioritizing the reopening of the road network in these locations to facilitate aid delivery and emergency responder movements.
+
+## Resource Allocation
+The emergency services are currently focused on establishing safe zones for displaced populations and setting up temporary medical points in the south-west of the photo, where the road network is being prioritized for immediate recovery. Based on the Sphere Handbook 2018 guidelines, the allocation of resources is guided towards ensuring the provision of emergency shelters and household items, while the INSARAG guidelines emphasize the importance of conducting thorough assessments and implementing rescue operations in the affected areas. As the situation evolves, the team will continue to monitor and adapt its strategies to address the evolving needs of the affected community.
+
+## Public Advisory
+The tsunami has caused severe destruction, with 52% of the area completely devastated. To stay safe, avoid the damaged areas in the north-east and east, as they are classified as destroyed and pose significant safety hazards. Safe areas in the south-west, such as those around (100, 923), (250, 923), and (100, 773), remain unaffected and are recommended for shelter and recovery activities. For emergency assistance, contact local authorities or emergency services. Follow safety protocols and listen to official announcements for updates.
+
+## Organizational Operation
+Our organization is actively coordinating efforts to provide emergency shelters, establish temporary medical points, and prioritize road network recovery in the safe areas identified in the south-west of the photo. We are committed to ensuring displaced populations have access to essential household items and are monitoring the situation to adapt our strategies as needed. For further assistance, please contact local authorities or emergency services. Contact details are not available offline.
+
+## Conclusion
+We are working tirelessly to rebuild and stabilize the affected regions, prioritizing the safety and well-being of every individual. Your resilience and cooperation are vital as we navigate this challenging time. Please stay safe and follow official advisories. Together, we will overcome this disaster and restore hope and stability to our community.

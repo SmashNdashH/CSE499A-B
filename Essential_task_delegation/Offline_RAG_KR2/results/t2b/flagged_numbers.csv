@@ -1,0 +1,32 @@
+writer,scene,report,section,token,verdict,where
+7b,beriut_explosion_post_16.png,Reconstruction_plan.txt,Plan of Action,3.5,unsourced,left after asking again
+7b,palu_tsunami_00000180_post_disaster.png,Reconstruction_plan.txt,Assessment of Damage,49%,wrong,left after asking again
+7b,palu_tsunami_00000180_post_disaster.png,Reconstruction_plan.txt,Assessment of Damage,33%,wrong,left after asking again
+7b,tuscaloosa_tornado_00000037_post_disaster.png,Expert_team_report.txt,Overview,54%,wrong,left after asking again
+3b-instruct,libya_flood_post_90.png,Emergency_service_human_resource_allocation.txt,Human Resource Requirements,15,misused,left after asking again
+3b-instruct,libya_flood_post_90.png,Reconstruction_plan.txt,Assessment of Damage,2,wrong,left after asking again
+3b-instruct,libya_flood_post_90.png,Reconstruction_plan.txt,Assessment of Damage,13%,wrong,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Expert_team_report.txt,Description of the estimated damage,"221,070 pixels",wrong,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Expert_team_report.txt,Description of the estimated damage,"283,810 pixels",wrong,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Expert_team_report.txt,Conclusion,"283,810 pixels",wrong,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Public_community_report.txt,Resource Allocation,15,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Public_community_report.txt,Resource Allocation,10,unsourced,left after asking again
+3b-instruct,santa_rosa_wildfire_00000155_post_disaster.png,Reconstruction_plan.txt,Assessment of Damage,96,misused,left after asking again
+3b-instruct,joplin_tornado_00000147_post_disaster.png,Emergency_service_human_resource_allocation.txt,Allocation Plan,63,unsourced,left after asking again
+3b-instruct,joplin_tornado_00000147_post_disaster.png,Public_community_report.txt,Current Situation,3.5,unsourced,left after asking again
+3b-instruct,joplin_tornado_00000147_post_disaster.png,Reconstruction_plan.txt,Executive Summary,2011,unsourced,left after asking again
+3b-instruct,joplin_tornado_00000147_post_disaster.png,Reconstruction_plan.txt,Executive Summary,3.5,unsourced,left after asking again
+3b-instruct,joplin_tornado_00000147_post_disaster.png,Reconstruction_plan.txt,Assessment of Damage,216,misused,left after asking again
+3b-instruct,beriut_explosion_post_16.png,Expert_team_report.txt,Description of the estimated damage,"280,750 pixels",wrong,left after asking again
+3b-instruct,beriut_explosion_post_16.png,Expert_team_report.txt,Conclusion,"280,750 pixels",wrong,left after asking again
+3b-instruct,beriut_explosion_post_16.png,Reconstruction_plan.txt,Assessment of Damage,3.5,unsourced,left after asking again
+3b-instruct,beriut_explosion_post_16.png,Reconstruction_plan.txt,Plan of Action,30,unsourced,left after asking again
+3b-instruct,beriut_explosion_post_16.png,Reconstruction_plan.txt,Plan of Action,60,unsourced,left after asking again
+3b-instruct,palu_tsunami_00000180_post_disaster.png,Public_community_report.txt,Introduction,10,unsourced,left after asking again
+3b-instruct,palu_tsunami_00000180_post_disaster.png,Public_community_report.txt,Resource Allocation,15,unsourced,left after asking again
+3b-instruct,palu_tsunami_00000180_post_disaster.png,Public_community_report.txt,Resource Allocation,10,unsourced,left after asking again
+3b-instruct,moore_tornado_00000045_post_disaster.png,Expert_team_report.txt,Description of the estimated damage,"55,000,400 pixels",wrong,left after asking again
+3b-instruct,moore_tornado_00000045_post_disaster.png,Expert_team_report.txt,Description of the estimated damage,"58,910 pixels",wrong,left after asking again
+3b-instruct,moore_tornado_00000045_post_disaster.png,Expert_team_report.txt,Conclusion,"55,000 pixels",wrong,left after asking again
+3b-instruct,tuscaloosa_tornado_00000037_post_disaster.png,Expert_team_report.txt,Overview,54%,wrong,left after asking again
+3b-instruct,tuscaloosa_tornado_00000037_post_disaster.png,Expert_team_report.txt,Description of the estimated damage,"200,002 pixels",wrong,left after asking again

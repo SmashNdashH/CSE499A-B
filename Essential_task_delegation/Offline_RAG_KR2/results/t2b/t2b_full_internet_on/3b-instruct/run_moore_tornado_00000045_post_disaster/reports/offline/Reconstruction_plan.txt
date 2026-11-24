@@ -1,0 +1,127 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The Moore tornado of unprecedented severity left a profound impact on the community, with 89 damage patches assessed, 64 of which were classified as Grade 5 (total or near-total collapse) based on the EMS-98 guidelines. The hotspots in the southern and southwestern regions experienced the most severe damage, characterized by total or near-total collapse, while the northern and western parts showed safer conditions, albeit with residual damage. Immediate attention is required to address the safety risks in the hotspots, including clearing debris and stabilizing structures to prevent further collapse. The Emergency Service Team has identified suitable areas for emergency shelters, hospitals, and transportation recovery, prioritizing the restoration of critical infrastructure and support services. The Reconstruction Plan Report aims to guide the government and policymakers in developing a comprehensive strategy for rebuilding and rehabilitating the affected area, focusing on safety, accessibility, and adherence to local building codes and standards.
+
+## Assessment of Damage
+The Moore tornado inflicted severe damage across the affected area, with 89 damage patches identified, 64 of which were classified as Grade 5 (total or near-total collapse) according to the EMS-98 guidelines. The hotspots in the southern and southwestern regions were the most severely impacted, with total or near-total collapse observed. The northern and western parts of the photo showed safer conditions, albeit with residual damage.
+
+#### Hot Spot Analysis
+
+**Hot Spot 1 (Grade 5):**
+Located around pixel coordinates (528, 712) in the southern part of the photo, this area is estimated to have experienced total or near-total collapse. The damage includes extensive structural failure, with multiple buildings reduced to rubble. This poses significant risks of structural failure and debris hazards. Immediate attention is required to prevent further collapse and ensure public safety.
+
+**Hot Spot 2 (Grade 4):**
+Situated around pixel coordinates (265, 861) in the southwestern region, this area is estimated to have suffered very heavy damage. Multiple structures are likely collapsed or severely damaged. Clearing debris and ensuring safe access to essential activities such as cooking, toilets, and bathing will be crucial. Temporary shelters should be set up in this area to provide living space and support.
+
+**Hot Spot 3 (Grade 4):**
+Around pixel coordinates (67, 704) in the southwestern part of the photo, this area is also expected to have experienced very heavy damage, necessitating immediate attention to clear debris and ensure safe access to essential activities.
+
+#### Safe Area Analysis
+
+**Safe Area 1 (Grade 1):**
+Located around pixel coordinates (100, 165) in the northwest, this area is estimated to have minimal damage, with only negligible to slight damage. However, it is important to verify this on the ground before using it as a safe haven.
+
+**Safe Area 2 (Grade 1):**
+Around pixel coordinates (195, 282) in the northwest, this area is also estimated to have minimal damage, with negligible to slight damage. Verification on the ground is recommended.
+
+**Safe Area 3 (Grade 1):**
+Located around pixel coordinates (236, 101) in the northwest, this area is estimated to have minimal damage, with negligible to slight damage. Ground verification is advised.
+
+#### Damage Assessment Summary
+
+The damage assessment indicates that the hotspots in the southern and southwestern regions require immediate attention due to the potential for further collapse and the risk of debris hazards. The northern and western parts of the photo show safer conditions, but even these areas are not entirely free from the effects of the tornado. Priority should be given to assessing and stabilizing the structures in the hotspots to prevent secondary collapses and ensure public safety. Efforts should focus on clearing debris, providing temporary shelter, and conducting thorough assessments to determine the extent of damage and necessary repairs.
+
+[EMS98-2.3-p2] [EMS98-vi-slightly-damaging] [SPHERE-appendix-4-p1] [SPHERE-1-p4] [SPHERE-5-p2] [SPHERE-5-p1] [SPHERE-appendix-5-p2] [EMS98-masonry-grade-1] [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4] [EMS98-masonry-grade-5] [EMS98-rc-grade-1]
+
+## Reconstruction Needs
+To address the severe damage caused by the Moore tornado, the reconstruction plan requires a comprehensive approach that considers both immediate and long-term needs. The hotspots identified in the southern and southwestern regions, particularly Hot Spot 1, Hot Spot 2, and Hot Spot 3, require immediate attention to prevent further structural failures and ensure public safety. The northern and western parts of the photo, while showing safer conditions, still need to be assessed for potential secondary hazards.
+
+#### Immediate Reconstruction Actions
+
+**Hot Spot 1 (Grade 5):**
+- **Shelter:** Establish temporary shelters in the vicinity to provide immediate living space for affected individuals. Local teams should be mobilized to assess and stabilize the structures to prevent further collapse.
+- **Transportation:** Prioritize the reopening of critical roads connecting Hot Spot 1 to other areas to facilitate the movement of emergency services and supplies.
+- **Medical Support:** Set up temporary medical facilities to provide immediate medical care for the injured. Ensure that medical transport procedures are in place, including setting up a triage point in consultation with medical personnel.
+
+**Hot Spot 2 (Grade 4):**
+- **Shelter:** Temporary shelters should be established to provide living space for affected individuals. Clear debris and ensure safe access to essential activities such as cooking, toilets, and bathing.
+- **Transportation:** Focus on reopening roads connecting Hot Spot 2 to the surrounding areas to facilitate the movement of emergency services and supplies.
+- **Medical Support:** Temporary medical facilities should be set up to provide medical care and support. Implement INSARAG Guidelines 2020 for medical handover procedures to ensure continuity of care.
+
+**Hot Spot 3 (Grade 4):**
+- **Shelter:** Temporary shelters should be established to provide living space for affected individuals. Clear debris and ensure safe access to essential activities such as cooking, toilets, and bathing.
+- **Transportation:** Prioritize the reopening of roads connecting Hot Spot 3 to other areas to facilitate the movement of emergency services and supplies.
+- **Medical Support:** Temporary medical facilities should be set up to provide medical care and support. Implement INSARAG Guidelines 2020 for medical handover procedures to ensure continuity of care.
+
+#### Long-Term Reconstruction Actions
+
+**Safe Areas (Grade 1):**
+- **Shelter:** Temporary shelters should be established in Safe Area 1, Safe Area 2, and Safe Area 3 to provide living space for affected individuals. Verify on the ground before using them as safe havens.
+- **Transportation:** Ensure that roads connecting these areas to other critical zones are reopened to facilitate the movement of emergency services and supplies.
+- **Medical Support:** Temporary medical facilities should be set up to provide medical care and support. Implement INSARAG Guidelines 2020 for medical handover procedures to ensure continuity of care.
+
+#### Technical Assistance and Capacity Building
+
+- **Technical Assistance:** Engage local building professionals and authorities to agree on building practices and materials. Ensure that affected households or communities are actively involved in the building process.
+- **Capacity Building:** Provide technical assistance in a timely manner to ensure that people have access to appropriate technical support. Encourage the use of locally available, sustainable, and familiar technologies, tools, and materials.
+
+#### Materials and Resources
+
+- **Construction Materials:** Depending on the extent of damage, construction materials such as poles, pegs, and other necessary components may be required. Ensure that these materials are sourced locally to support the local economy.
+- **Tools and Equipment:** Construction tools and hardware needed to create or improve living space and settlement. Ensure that these tools are readily available and accessible to local teams.
+- **Shelter Kits and Toolkits:** Construct shelter
+
+## Plan of Action
+To address the severe damage caused by the Moore tornado, a comprehensive and coordinated plan is essential. The immediate and long-term actions outlined below prioritize the safety of affected individuals, the restoration of critical infrastructure, and the provision of necessary resources.
+
+#### Immediate Reconstruction Actions
+
+**1. Hot Spot 1 (Grade 5)**
+- **Shelter Establishment:** Mobilize local teams to establish temporary shelters in the vicinity of Hot Spot 1. Ensure that structures are stabilized to prevent further collapse. Allocate skilled laborers and construction materials as needed.
+- **Transportation:** Prioritize the reopening of critical roads connecting Hot Spot 1 to other areas. Allocate vehicles and asphalt for road repair. Coordinate with local authorities to expedite permits and logistics.
+- **Medical Support:** Set up temporary medical facilities to provide immediate medical care for the injured. Allocate medical professionals and beds as needed. Implement INSARAG Guidelines 2020 for medical handover procedures to ensure continuity of care.
+
+**2. Hot Spot 2 (Grade 4)**
+- **Shelter Establishment:** Establish temporary shelters in Safe Area 2 to provide living space for affected individuals. Allocate skilled laborers and construction materials as needed.
+- **Transportation:** Focus on reopening roads connecting Hot Spot 2 to the surrounding areas. Allocate vehicles and asphalt for road repair. Coordinate with local authorities to expedite permits and logistics.
+- **Medical Support:** Set up temporary medical facilities to provide medical care and support. Allocate medical professionals and beds as needed. Implement INSARAG Guidelines 2020 for medical handover procedures to ensure continuity of care.
+
+**3. Hot Spot 3 (Grade 4)**
+- **Shelter Establishment:** Establish temporary shelters in Safe Area 3 to provide living space for affected individuals. Allocate skilled laborers and construction materials as needed.
+- **Transportation:** Prioritize the reopening of roads connecting Hot Spot 3 to other areas. Allocate vehicles and asphalt for road repair. Coordinate with local authorities to expedite permits and logistics.
+- **Medical Support:** Set up temporary medical facilities to provide medical care and support. Allocate medical professionals and beds as needed. Implement INSARAG Guidelines 2020 for medical handover procedures to ensure continuity of care.
+
+#### Long-Term Reconstruction Actions
+
+**1. Safe Areas (Grade 1)**
+- **Shelter Establishment:** Establish temporary shelters in Safe Areas 1, 2, and 3 to provide living space for affected individuals. Allocate skilled laborers and construction materials as needed.
+- **Transportation:** Ensure that roads connecting these areas to other critical zones are reopened. Allocate vehicles and asphalt for road repair. Coordinate with local authorities to expedite permits and logistics.
+- **Medical Support:** Set up temporary medical facilities to provide medical care and support. Allocate medical professionals and beds as needed. Implement INSARAG Guidelines 2020 for medical handover procedures to ensure continuity of care.
+
+**2. Technical Assistance and Capacity Building**
+- **Engagement of Local Authorities:** Collaborate with local building professionals and authorities to agree on building practices and materials. Allocate skills and resources as needed.
+- **Promotion of Safer Building Practices:** Identify structural risks and hazards, learn from local building practices, and facilitate effective knowledge transfer. Allocate resources as needed.
+- **Technical Assistance:** Ensure that people have access to appropriate technical assistance in a timely manner. Allocate skills and resources as needed.
+
+**3. Materials and Resources**
+- **Construction Materials:** Depending on the extent of damage, construction materials such as poles, pegs, and other necessary components may be required. Allocate resources as needed.
+- **Tools and Equipment:** Construction tools and hardware needed to create or improve
+
+## Recommendations
+To effectively and efficiently reconstruct the affected area, prioritize immediate shelter establishment and medical support in the hotspots, especially Hot Spot 1, Hot Spot 2, and Hot Spot 3. Allocate resources for temporary shelters, medical facilities, and transportation infrastructure to ensure safe and accessible living spaces. Invest in long-term rehabilitation by engaging local building professionals and authorities to develop and enforce safe construction standards. Provide technical assistance and capacity building to ensure affected communities can rebuild sustainably. Secure funding through international aid, government grants, and private donations to cover construction materials, labor, and ongoing support. Establish a dedicated fund for long-term rehabilitation to address ongoing needs and prevent future vulnerabilities.
+
+## Appendices
+#### Disaster Grade of Each Place
+The damage assessment categorizes the affected areas as follows:
+- **Hot Spot 1 (Grade 5):** Total or near-total collapse.
+- **Hot Spot 2 (Grade 4):** Very heavy damage, multiple structures collapsed or severely damaged.
+- **Hot Spot 3 (Grade 4):** Very heavy damage, numerous buildings collapsed or severely damaged.
+- **Safe Area 1 (Grade 1):** Minimal damage, negligible to slight damage.
+- **Safe Area 2 (Grade 1):** Minimal damage, negligible to slight damage.
+- **Safe Area 3 (Grade 1):** Minimal damage, negligible to slight damage.
+
+#### Guideline Sections Used
+[EMS98-2.3-p2] [EMS98-vi-slightly-damaging] [SPHERE-appendix-4-p1] [SPHERE-1-p4] [SPHERE-5-p2] [SPHERE-5-p1] [SPHERE-appendix-5-p2] [EMS98-masonry-grade-1] [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4] [EMS98-masonry-grade-5] [EMS98-rc-grade-1]

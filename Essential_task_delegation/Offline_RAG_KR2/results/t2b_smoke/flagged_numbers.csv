@@ -1,0 +1,24 @@
+writer,scene,report,section,token,verdict,where
+3b-instruct,turkey_earthquake4_post_327.png,Expert_team_report.txt,Description of the estimated damage,"221,070 pixels",wrong,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Expert_team_report.txt,Description of the estimated damage,"283,810 pixels",wrong,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Expert_team_report.txt,Conclusion,"221,070 pixels",wrong,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Emergency_service_human_resource_allocation.txt,Human Resource Requirements,4.5,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Emergency_service_human_resource_allocation.txt,Human Resource Requirements,5.5,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Assessment of Damage,32,misused,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Assessment of Damage,4.5,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Assessment of Damage,5.5,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Reconstruction Needs,10,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Reconstruction Needs,500,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Reconstruction Needs,200,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Reconstruction Needs,25,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Reconstruction Needs,150,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Plan of Action,10,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Plan of Action,8,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Plan of Action,4.5,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Plan of Action,5.5,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Plan of Action,14,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Plan of Action,15,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Plan of Action,30,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Plan of Action,3.5,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Plan of Action,31,unsourced,left after asking again
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,Plan of Action,60,unsourced,left after asking again

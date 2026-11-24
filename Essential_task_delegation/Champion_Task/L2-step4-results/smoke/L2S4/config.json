@@ -1,0 +1,56 @@
+{
+ "task": "L2 step 4: the winning 3B on the benchmark",
+ "smoke_test": true,
+ "winner": "c",
+ "selection": {
+  "winner": "c",
+  "reason": "primary accuracy 35.95% (b) against 45.12% (c), exact McNemar p = 0.0000",
+  "smoke_test": false,
+  "adapter": "AbrarAlam/disasterm3-qwen25vl3b-l2/c/final",
+  "primary": {
+   "b_%": 35.95,
+   "c_%": 45.12,
+   "only_b_right": 185,
+   "only_c_right": 338,
+   "p": 0.0
+  },
+  "bdc_median_count_error_%": {
+   "b": 38.8,
+   "c": 0.0,
+   "questions": 665
+  },
+  "references": {
+   "no_image_rule_on_counting_%": 56.08,
+   "always_middle_on_counting_%": 42.78,
+   "always_middle_largest_above_20_%": 100.0
+  },
+  "questions": 1962,
+  "minutes": {
+   "base": 46.1,
+   "b": 44.6,
+   "c": 44.5
+  },
+  "versions": {
+   "torch": "2.11.0+cu130",
+   "transformers": "5.20.2",
+   "peft": "0.22.0"
+  }
+ },
+ "base_model": "Qwen/Qwen2.5-VL-3B-Instruct",
+ "adapter": "AbrarAlam/disasterm3-qwen25vl3b-l2/c/final",
+ "max_pixels": 602112,
+ "decoding": "greedy",
+ "complete": true,
+ "hours_this_session": 0.01,
+ "building_counting": {
+  "accuracy_%": 20.0,
+  "median_count_error_%": 17.2,
+  "answered_with_one_option_%": 100.0,
+  "no_image_rule_%": 80.0
+ },
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2",
+  "peft": "0.22.0"
+ }
+}

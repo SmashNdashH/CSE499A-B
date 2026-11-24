@@ -1,0 +1,18 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The tsunami caused significant damage, with 52% of the observed area classified as destroyed, indicating total or near-total collapse of structures. Additionally, 14% of the area sustained moderate to very heavy damage, characterized by substantial structural and non-structural damage. Only 35% of the area remained intact, showing negligible to slight damage. The hotspots of highest impact are located in the north-east and east of the image, while safe areas are situated in the south-west.
+
+## Description of the estimated damage
+The tsunami caused significant damage, with 52% of the observed area classified as destroyed, indicating total or near-total collapse of structures. Additionally, 14% of the area sustained moderate to very heavy damage, characterized by substantial structural and non-structural damage. Only 35% of the area remained intact, showing negligible to slight damage. The hotspots of highest impact are located in the north-east and east of the image, with zones of 387778 and 77265 pixels, respectively. Safe areas are situated in the south-west, with distances of 459, 400, and 323 pixels from the nearest estimated damage.
+
+## Disaster grade of each location
+The disaster grades of the estimated damage patches, written from the damage model's table by the code, not by the language model:
+- Damage patches estimated destroyed: 49: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damage patches estimated damaged: 13: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Damage patches estimated intact: 33: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The tsunami has caused severe destruction, with 52% of the area completely devastated, requiring immediate attention to rebuild and stabilize the affected regions. The hotspots in the north-east and east, marked by zones of high density, indicate critical areas where structural collapse and debris require urgent removal and debris clearance operations. Efforts must focus on securing these zones to prevent further risks and begin reconstruction efforts.

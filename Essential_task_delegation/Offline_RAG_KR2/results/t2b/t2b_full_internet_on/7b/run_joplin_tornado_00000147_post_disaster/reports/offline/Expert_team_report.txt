@@ -1,0 +1,18 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The tornado caused widespread destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. Additionally, 9% of the area sustained moderate to very heavy damage, categorized under Grades 2 to 4, reflecting significant structural and non-structural impacts. Safe areas were identified, but the majority of the region was severely affected, leaving no intact structures.
+
+## Description of the estimated damage
+The tornado caused severe destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. This is reflected in the high number of damage patches classified as destroyed (216 out of 238). Additionally, 9% of the area sustained moderate to very heavy damage, categorized under Grades 2 to 4, showing significant structural and non-structural impacts (22 damage patches). No intact structures were observed, as all 0 damage patches remained unaffected. The hot spot 1, located in the south-west of the photo, encompasses 961544 pixels, indicating the highest concentration of estimated damage. Safe areas were identified, including one in the north-east (safe area 1) at 94 pixels from the nearest estimated damage, another in the south-west (safe area 2) at 64 pixels, and a third in the south (safe area 3) at 51 pixels. These findings highlight the widespread devastation caused by the tornado.
+
+## Disaster grade of each location
+The disaster grades of the estimated damage patches, written from the damage model's table by the code, not by the language model:
+- Damage patches estimated destroyed: 216: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damage patches estimated damaged: 22: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Damage patches estimated intact: 0: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The conclusion of the report indicates that the tornado has caused widespread destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. The hot spot 1, located in the south-west of the photo, encompasses 961544 pixels and represents the highest concentration of estimated damage. Immediate attention should focus on clearing debris and providing aid to affected residents in this critical area to ensure safety and facilitate recovery efforts.

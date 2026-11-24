@@ -1,0 +1,113 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The recent flood in Libya has resulted in severe damage across the affected area, with 7 out of 15 buildings completely destroyed (EMS-98 Grade 5), indicating catastrophic structural losses. The most vulnerable areas are concentrated in the south-east and south, while the northern part remains relatively safe. Immediate assistance is required to rescue trapped individuals and provide aid to the severely damaged areas. Emergency shelters and medical points are being established in the northern part of the photo, which offers ample space and safety. Transportation recovery efforts are prioritizing the southern regions, where infrastructure damage is most pronounced. The Sphere guidelines and EMS-98 damage grading are guiding the immediate response, focusing on immediate shelter establishment, medical care, and transportation recovery. Further assessments are needed to determine the feasibility of rebuilding and retrofitting damaged structures. Urgent coordination between emergency services, humanitarian organizations, and local authorities is essential to ensure effective and efficient relief efforts.
+
+## Assessment of Damage
+The satellite imagery analysis conducted by the Expert team reveals severe damage across the affected area in Libya following the recent flood. Out of 15 buildings depicted, 7 were estimated to be completely destroyed (EMS-98 Grade 5), indicating catastrophic structural losses. These buildings are concentrated in the south-east and south regions of the photo, as indicated by the hot spots. Hot spot 1, located around coordinates (902, 685), covers an area of 42,481 pixels and contains the highest concentration of destroyed buildings. Hot spot 2, situated around (565, 766), spans 34,727 pixels and also includes significant damage. Hot spot 3, positioned around (682, 991), extends over 11,537 pixels and encompasses additional areas of destruction.
+
+In contrast, the northern part of the photo, centered around coordinates (493, 273), shows a higher degree of safety, with three distinct safe areas. Safe Area 1, located around (493, 273), is approximately 420 pixels from the nearest estimated damage. Safe Area 2, situated around (466, 100), is just 398 pixels from the nearest damage. Safe Area 3, positioned around (627, 341), is 353 pixels from the nearest damage. These safe areas indicate that the northern region of the photo remains largely unaffected by the flood.
+
+The remaining 5 buildings are estimated to have suffered negligible to slight damage (EMS-98 Grade 1), primarily due to their proximity to the safe areas. These buildings are distributed throughout the photo but are not concentrated in any specific hot spot. The distribution of the estimated damage suggests that the flood caused widespread destruction, particularly in the southern regions, while the northern part of the photo remained relatively unscathed. This uneven distribution highlights the need for targeted relief efforts and reconstruction plans to address the varying levels of damage across the affected area.
+
+#### Damage Analysis
+
+**EMS-98 Damage Grading:**
+- **EMS-98 Grade 5 (Destruction):** 7 buildings (47% of total buildings)
+  - These buildings are estimated to have suffered total or near-total collapse, with no structural integrity remaining.
+- **EMS-98 Grade 4 (Very Heavy Damage):** 3 buildings (20% of total buildings)
+  - These buildings exhibit serious failure of walls, partial structural failure of roofs and floors, and detached roof tiles.
+- **EMS-98 Grade 3 (Substantial to Heavy Damage):** 3 buildings (20% of total buildings)
+  - These buildings show large and extensive cracks in most walls, detachment of roof tiles, and failure of individual non-structural elements like chimneys and partitions.
+- **EMS-98 Grade 2 (Moderate Damage):** (number not available offline) buildings ((number not available offline) of total buildings)
+  - These buildings experience cracks in many walls, fall of fairly large pieces of plaster, and partial collapse of chimneys.
+
+#### Sphere Guidelines Application
+
+**Shelter and Settlement Standards:**
+- **Shelter Kits and Toolkits:** Given the high level of damage, it is recommended to provide shelter kits and toolkits to facilitate the repair and retrofitting of damaged buildings. Structural materials such as poles and pegs should be provided, along with additional instruction, promotion, and awareness-raising to ensure proper installation.
+- **Environmental Sustainability:** Debris removal should be initiated immediately after the crisis, with opportunities
+
+## Reconstruction Needs
+To address the severe damage caused by the recent flood in Libya, immediate and coordinated efforts are required to assess and reconstruct the affected areas. Based on the damage facts and the Sphere guidelines, the reconstruction plan necessitates a multifaceted approach focusing on repair, retrofit, and rebuilding.
+
+#### Repair and Retrofitting
+
+Given the high levels of damage, particularly in the south-east and south regions, it is imperative to prioritize the repair and retrofitting of buildings. According to the Sphere Handbook 2018 (SPHERE-5-p2, SPHERE-5-p1), technical assistance is crucial to ensure that repairs meet current shelter needs and reduce future risks. Local authorities and communities should be involved in the planning and execution of these projects. For damaged or destroyed houses or shelters, structural risks and hazards should be identified, and appropriate building practices and materials should be employed.
+
+#### Rebuilding
+
+In the northern part of the photo, which remains relatively safe, rebuilding efforts should be focused on areas that have suffered negligible to slight damage (EMS-98 Grade 1). The Sphere Handbook 2018 (SPHERE-5-p2) recommends that affected households or communities be actively involved in the design and supervision of rebuilding projects. Local authorities and local professionals should be consulted to agree on building practices and materials, and to find the required expertise for quality assurance.
+
+#### Human Resources and Materials
+
+Not available offline. However, based on the guidelines, the following resources are likely to be needed:
+
+- **Technical Assistance:** Experts and local stakeholders should be involved in the planning and execution of repair and retrofitting projects. Local authorities and communities should be encouraged to participate in the rebuilding process.
+- **Construction Materials:** Structural materials such as poles and pegs should be provided to facilitate the repair and retrofitting of damaged buildings. Additional instruction, promotion, and awareness-raising are necessary to ensure proper installation.
+- **Local Labor:** Hiring labor locally for maintaining and upgrading shelters is essential to ensure that the reconstruction efforts are sustainable and culturally appropriate.
+
+#### Funding
+
+Not available offline. However, the financial resources required for these projects are not available offline, making it crucial to secure funding through international aid and humanitarian organizations.
+
+By following the Sphere guidelines and EMS-98 damage grading, the reconstruction plan aims to provide safe and sustainable living spaces for the affected population, ensuring that the community can recover and rebuild in a manner consistent with their needs and cultural contexts.
+
+## Plan of Action
+To effectively address the severe damage caused by the recent flood in Libya, a comprehensive and coordinated reconstruction plan is essential. The plan will prioritize repair, retrofit, and rebuilding efforts, leveraging the Sphere guidelines and EMS-98 damage grading to ensure safety and sustainability.
+
+#### Immediate Response
+
+1. **Emergency Shelters and Medical Points**
+   - Establish emergency shelters and medical points in the northern part of the photo, which offers ample space and safety. [SPHERE-1-p4, SPHERE-5-p2]
+     - **Resource Allocation:** Allocate tents, construction materials, and shelter kits to set up temporary shelters. Engage local authorities and communities in the planning and execution of these projects.
+     - **Coordination:** Coordinate with local authorities to ensure that these shelters meet Sphere standards for living space and site area per person.
+
+2. **Transportation Recovery**
+   - Prioritize transportation recovery in the southern regions, where infrastructure damage is most pronounced. [INSARAG2B-6.3.1, INSARAG2B-6.3.4-p1]
+     - **Resource Allocation:** Provide specialized expertise and equipment for debris removal and infrastructure repair. Ensure that the process adheres to building codes and standards.
+     - **Coordination:** Collaborate with local authorities and humanitarian organizations to coordinate search and rescue operations, ensuring that the most critical areas receive immediate attention.
+
+#### Long-term Reconstruction
+
+1. **Repair and Retrofitting**
+   - Focus on repairing and retrofitting buildings in the south-east and south regions, which have suffered severe damage. [SPHERE-5-p2, SPHERE-5-p1]
+     - **Resource Allocation:** Provide shelter kits and toolkits to facilitate the repair and retrofitting of damaged buildings. Ensure that structural materials such as poles and pegs are available, along with additional instruction, promotion, and awareness-raising.
+     - **Coordination:** Engage local authorities and communities in the planning and execution of these projects. Identify structural risks and hazards, and employ appropriate building practices and materials.
+
+2. **Rebuilding**
+   - Rebuild areas in the northern part of the photo that have suffered negligible to slight damage (EMS-98 Grade 1). [SPHERE-5-p2, SPHERE-5-p1]
+     - **Resource Allocation:** Encourage local authorities and communities to participate in the rebuilding process. Provide local labor and materials to ensure that the reconstruction efforts are sustainable and culturally appropriate.
+     - **Coordination:** Collaborate with local authorities and humanitarian organizations to ensure that rebuilding projects meet Sphere standards for living space and site area per person.
+
+#### Technical Assistance and Capacity Building
+
+1. **Technical Assistance**
+   - Ensure that affected households or communities have access to appropriate technical assistance in a timely manner. [SPHERE-5-p1, SPHERE-5-p2]
+     - **Resource Allocation:** Provide technical assistance through local authorities and communities. Facilitate the development and implementation of building standards and codes.
+     - **Coordination:** Encourage the use of locally available, sustainable, and familiar technologies, tools, and materials. Hire labor locally for maintaining and upgrading shelters.
+
+#### Monitoring and Evaluation
+
+1. **Monitoring and Evaluation**
+   - Monitor and evaluate the effectiveness of the reconstruction efforts to ensure that the projects meet the agreed safe building practices for the specific context and hazards. [SPHERE-5-p2, SPHERE-5-p1]
+     - **Resource Allocation:** Allocate resources for ongoing monitoring and evaluation. Ensure that the projects are regularly reviewed and adjusted as necessary.
+     - **Coordination:** Collaborate with local authorities and humanitarian organizations to establish a robust monitoring and evaluation framework.
+
+By following these steps, we
+
+## Recommendations
+To support effective and efficient reconstruction, immediate and long-term funding is crucial. International aid and humanitarian organizations should prioritize securing financial resources to cover the costs of repair, retrofit, and rebuilding efforts. This includes funding for technical assistance, construction materials, and local labor. Policy-wise, governments and policymakers should establish clear guidelines and standards for reconstruction, emphasizing the importance of local participation and adherence to building codes. Additionally, there should be a focus on capacity building to ensure that local authorities and communities are equipped to manage and maintain the rebuilt infrastructure sustainably. Regular monitoring and evaluation mechanisms should be implemented to track progress and make necessary adjustments. Collaboration between various stakeholders, including local authorities, humanitarian organizations, and international partners, is essential for a coordinated and successful reconstruction effort.
+
+## Appendices
+This section provides supporting data for the reconstruction plan, including the disaster grade of each location, a labelled map, and the guidelines used.
+
+- **Disaster Grade Map:** The map visually represents the disaster grades assigned to each building based on the EMS-98 classification. [EMS98-2.3-p2, EMS98-vi-slightly-damaging, EMS98-masonry-grade-1, EMS98-masonry-grade-2, EMS98-masonry-grade-3, EMS98-masonry-grade-4, EMS98-masonry-grade-5, EMS98-rc-grade-1]
+
+- **Guideline Sections Used:**
+  - **Sphere Handbook 2018:** Provides comprehensive guidelines on shelter and settlement standards, including technical assistance, environmental sustainability, and living space requirements. [SPHERE-appendix-4-p1, SPHERE-1-p4, SPHERE-5-p2, SPHERE-5-p1, SPHERE-appendix-5-p2]
+  - **INSARAG Guidelines 2020:** Offers operational guidelines for victim marking and search and rescue operations, ensuring accurate identification and marking of casualties. [INSARAG2B-6.3.1, INSARAG2B-6.3.4-p1]
+
+These appendices provide the necessary data and guidelines to support the reconstruction plan, ensuring that the efforts are guided by best practices and informed by the latest standards and recommendations.

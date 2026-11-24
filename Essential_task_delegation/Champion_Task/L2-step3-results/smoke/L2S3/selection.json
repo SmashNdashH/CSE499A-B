@@ -1,0 +1,34 @@
+{
+ "winner": null,
+ "reason": "primary accuracy not clearly different (10.0% against 50.0%, p = 0.1250); lower median count error on the held-out building-counting questions: 19.6% (b) against 18.2% (c), on 2 questions both answered",
+ "smoke_test": true,
+ "adapter": "AbrarAlam/disasterm3-qwen25vl3b-l2/c/final",
+ "primary": {
+  "b_%": 10.0,
+  "c_%": 50.0,
+  "only_b_right": 0,
+  "only_c_right": 4,
+  "p": 0.125
+ },
+ "bdc_median_count_error_%": {
+  "b": 19.6,
+  "c": 18.2,
+  "questions": 2
+ },
+ "references": {
+  "no_image_rule_on_counting_%": 50.0,
+  "always_middle_on_counting_%": 75.0,
+  "always_middle_largest_above_20_%": 100.0
+ },
+ "questions": 12,
+ "minutes": {
+  "base": 1.0,
+  "b": 0.4,
+  "c": 0.4
+ },
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2",
+  "peft": "0.22.0"
+ }
+}

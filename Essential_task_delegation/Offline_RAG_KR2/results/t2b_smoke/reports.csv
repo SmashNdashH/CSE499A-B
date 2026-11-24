@@ -1,0 +1,13 @@
+writer,scene,report,finished,sections,words,numbers_checked,contradictions,unsourced,guard_replaced,first_answer_number_problems,asked_again,fake_citations,real_citations,real_not_shown,not_available_offline,seconds
+7b,turkey_earthquake4_post_327.png,Expert_team_report.txt,True,4,277,12,0,0,0,1,1,0,0,0,0,65.9
+7b,turkey_earthquake4_post_327.png,Alerts_team_report_for_social_media.txt,True,2,239,11,0,0,0,0,0,0,0,0,0,22.9
+7b,turkey_earthquake4_post_327.png,Emergency_team_report.txt,True,3,360,12,0,0,0,0,1,0,2,0,2,50.1
+7b,turkey_earthquake4_post_327.png,Emergency_service_human_resource_allocation.txt,True,7,719,13,0,0,0,0,0,0,6,0,0,74.0
+7b,turkey_earthquake4_post_327.png,Public_community_report.txt,True,6,546,21,0,0,0,0,2,0,7,0,0,78.0
+7b,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,True,6,910,14,0,0,0,0,1,0,20,0,0,116.7
+3b-instruct,turkey_earthquake4_post_327.png,Expert_team_report.txt,True,4,611,26,3,0,4,3,2,0,0,0,0,118.0
+3b-instruct,turkey_earthquake4_post_327.png,Alerts_team_report_for_social_media.txt,True,2,451,32,0,0,0,0,0,0,0,0,0,55.1
+3b-instruct,turkey_earthquake4_post_327.png,Emergency_team_report.txt,True,3,944,52,0,0,0,0,1,0,6,0,0,149.0
+3b-instruct,turkey_earthquake4_post_327.png,Emergency_service_human_resource_allocation.txt,True,7,1582,47,0,2,2,5,3,0,32,2,1,263.7
+3b-instruct,turkey_earthquake4_post_327.png,Public_community_report.txt,True,6,1403,32,0,0,0,5,3,0,0,0,6,237.2
+3b-instruct,turkey_earthquake4_post_327.png,Reconstruction_plan.txt,True,6,2252,95,1,17,35,19,3,0,22,0,0,402.6

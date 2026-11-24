@@ -1,0 +1,30 @@
+{"id": "disaster_type_0", "model": "c", "answer": "A"}
+{"id": "disaster_type_2", "model": "c", "answer": "C"}
+{"id": "disaster_type_4", "model": "c", "answer": "C"}
+{"id": "disaster_type_6", "model": "c", "answer": "D"}
+{"id": "disaster_type_8", "model": "c", "answer": "E"}
+{"id": "bearing_body_0", "model": "c", "answer": "B, E, G"}
+{"id": "bearing_body_2", "model": "c", "answer": "F, G, H"}
+{"id": "bearing_body_4", "model": "c", "answer": "E, F, G, H"}
+{"id": "bearing_body_6", "model": "c", "answer": "A, G, H"}
+{"id": "bearing_body_8", "model": "c", "answer": "G, H"}
+{"id": "building_damage_counting_0", "model": "c", "answer": "C"}
+{"id": "building_damage_counting_2", "model": "c", "answer": "C"}
+{"id": "building_damage_counting_4", "model": "c", "answer": "C"}
+{"id": "building_damage_counting_6", "model": "c", "answer": "E"}
+{"id": "building_damage_counting_8", "model": "c", "answer": "B"}
+{"id": "road_damage_counting_0", "model": "c", "answer": "D"}
+{"id": "road_damage_counting_2", "model": "c", "answer": "B"}
+{"id": "road_damage_counting_4", "model": "c", "answer": "D"}
+{"id": "road_damage_counting_6", "model": "c", "answer": "B"}
+{"id": "road_damage_counting_7", "model": "c", "answer": "B"}
+{"id": "landuse_0", "model": "c", "answer": "D, H"}
+{"id": "landuse_1", "model": "c", "answer": "A, C, G, H"}
+{"id": "landuse_2", "model": "c", "answer": "A, G"}
+{"id": "landuse_3", "model": "c", "answer": "D, H, G"}
+{"id": "landuse_4", "model": "c", "answer": "H"}
+{"id": "relational_reasoning_qa_0", "model": "c", "answer": "A"}
+{"id": "relational_reasoning_qa_1", "model": "c", "answer": "A"}
+{"id": "relational_reasoning_qa_2", "model": "c", "answer": "C"}
+{"id": "relational_reasoning_qa_6", "model": "c", "answer": "B"}
+{"id": "relational_reasoning_qa_7", "model": "c", "answer": "A"}

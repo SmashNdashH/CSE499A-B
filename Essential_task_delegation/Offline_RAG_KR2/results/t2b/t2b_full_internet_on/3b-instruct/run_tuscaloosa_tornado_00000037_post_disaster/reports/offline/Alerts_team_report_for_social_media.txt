@@ -1,0 +1,55 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+People are strongly advised to avoid the following dangerous areas:
+
+**Hot Spot 1 (East):**
+This area, located around pixel coordinates (774, 531), is the most dangerous zone with approximately 46% of the estimated damage patches classified as EMS-98 Grade 5 destruction, indicating total or near-total collapse. The hot spot covers an area of 223,555 pixels and poses a significant risk of structural failures and potential secondary hazards such as falling debris. Immediate attention is required to assess and mitigate these risks.
+
+**Hot Spot 2 (South-West):**
+Situated around pixel coordinates (41, 750), this area experiences moderate to very heavy damage (Grades 2 to 4) as per EMS-98 guidelines. The hot spot measures an estimated 200,020 pixels and includes numerous buildings with partial collapses. This region is also considered extremely dangerous and requires urgent intervention to prevent further collapse and ensure public safety.
+
+**Hot Spot 3 (South-East):**
+Located around pixel coordinates (717, 888), this area is another hotspot with moderate to very heavy damage (Grades 2 to 4). The hot spot covers an estimated 66,243 pixels and includes extensive structural failures. This region is similarly dangerous and should be prioritized for immediate response efforts.
+
+Additionally, while there are some safe areas, they need to be verified on the ground before use:
+
+**Safe Area 1 (North):**
+Located around pixel coordinates (346, 119), this area is approximately 146 pixels from the nearest estimated damage. It is crucial to confirm the safety of this zone before utilizing it as a refuge.
+
+**Safe Area 2 (Centre):**
+Around pixel coordinates (359, 454), this area is 131 pixels from the nearest estimated damage. Verification is necessary before using this area as a safe haven.
+
+**Safe Area 3 (Centre):**
+Located around pixel coordinates (416, 650), this area is 124 pixels from the nearest estimated damage. Its safety must be confirmed before it can be utilized.
+
+All individuals in these areas are urged to seek shelter immediately and avoid entering these zones until the situation is assessed and deemed safe. Emergency services are advised to prioritize these locations for immediate response efforts.
+
+## Social media news
+**Breaking News:** Severe Damage in Tuscaloosa Tornado Strikes
+
+Residents and visitors in the Tuscaloosa area are facing a devastating reality after the recent tornado. Satellite images reveal extensive damage, with nearly half of the estimated patches classified as EMS-98 Grade 5 destruction, indicating total or near-total collapse. 
+
+**Hot Spot 1 (East):**
+This epicenter, located around (774, 531) pixels, saw the most destruction. Covering 223,555 pixels, it’s a zone of utter devastation with numerous buildings collapsing completely. Immediate rescue operations are underway to clear debris and assess structural integrity.
+
+**Hot Spot 2 (South-West):**
+Situated around (41, 750) pixels, this area experienced moderate to very heavy damage (Grades 2 to 4). With an estimated 200,020 pixels, many buildings suffered partial collapses. This region remains extremely dangerous and requires urgent intervention.
+
+**Hot Spot 3 (South-East):**
+Located around (717, 888) pixels, this area also faced significant damage, with 66,243 pixels covered. Extensive structural failures occurred here, making it another critical zone needing immediate attention.
+
+While some safe areas were identified, they need verification on the ground:
+
+**Safe Area 1 (North):**
+Around (346, 119) pixels, this area is 146 pixels from the nearest estimated damage. It’s crucial to confirm safety before use.
+
+**Safe Area 2 (Centre):**
+Located around (359, 454) pixels, this area is 131 pixels from the nearest estimated damage. Verification is needed before use.
+
+**Safe Area 3 (Centre):**
+Around (416, 650) pixels, this area is 124 pixels from the nearest estimated damage. Safety must be confirmed before use.
+
+All areas are urging residents to seek shelter immediately and avoid entry until assessed as safe. #TuscaloosaTornado #EmergencyResponse #StaySafe

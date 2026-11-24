@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The Noto earthquake caused significant damage to buildings in the affected area, with 12 structures classified as destroyed and 10 buildings sustaining moderate to very heavy damage. The hotspots of severe impact, particularly in the north-west and west, require immediate attention for rescue operations, debris clearance, and structural safety assessments. Safe areas in the south-east remain distant from the estimated damage but should be monitored for potential secondary effects.
+
+## Current Situation
+The current situation reveals significant damage to buildings in the Noto earthquake, with 12 structures classified as destroyed and 10 buildings sustaining moderate to very heavy damage. Emergency shelters should be established in safe areas identified in the post-disaster photos, specifically in the south-east of the photo, to meet Sphere Handbook 2018 standards for living spaces. For hospitals, a risk assessment and medical evacuation plan must be conducted, and medical transport procedures must be ensured. Immediate transportation recovery should focus on reopening roads in the north-west and west to facilitate rescue operations and debris clearance.
+
+## Resource Allocation
+Given the current situation, the Emergency Service Team should focus on mobilizing rescue teams to the hotspots of severe impact in the north-west and west to conduct immediate structural safety assessments and debris clearance. The team must also establish communication channels to coordinate with local authorities and ensure the safety of rescue operations. For the south-east, where safe areas are identified, the team should begin setting up temporary shelters to accommodate displaced residents, adhering to Sphere Handbook 2018 standards for shelter and settlement. The team must also ensure the availability of essential household items and prioritize the provision of personal clothing and bedding to meet the basic needs of affected individuals. Notable references include [SPHERE-1-p3] and [SPHERE-4-p1].
+
+## Public Advisory
+The public is advised to stay indoors in safe areas to avoid further risks, especially in the north-west and west where severe structural damage has occurred. Rescue teams are actively working to assess safety and clear debris. If you are displaced, temporary shelters will be set up in the south-east, meeting Sphere Handbook 2018 standards. Essential household items, including clothing and bedding, will be provided to support your needs. Follow official updates and stay informed to ensure your safety. [SPHERE-1-p3] [SPHERE-4-p1]
+
+## Organizational Operation
+As the Emergency Service Team, we are coordinating immediate relief efforts to address the severe structural damage caused by the Noto earthquake. Our focus includes establishing emergency shelters in safe areas, conducting structural safety assessments, and ensuring access to essential household items. We are also prioritizing the reopening of critical road networks to facilitate rescue operations. For further assistance, please contact the Emergency Service Team directly.
+
+## Conclusion
+We are committed to ensuring the safety and well-being of every affected individual. Our dedicated teams are actively working to clear debris and assess structural safety, while temporary shelters are being set up to accommodate displaced residents. Essential household items will soon reach those in need, and our priority remains to provide immediate support. Please stay informed and follow official updates for further guidance. Together, we will rebuild and recover.

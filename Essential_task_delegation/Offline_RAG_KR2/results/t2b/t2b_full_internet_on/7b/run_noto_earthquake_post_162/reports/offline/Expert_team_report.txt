@@ -1,0 +1,18 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The estimated damage to buildings in the Noto earthquake is significant, with 12 structures classified as destroyed, indicating total or near-total collapse [EMS98-masonry-grade-5]. Additionally, 10 buildings sustained moderate to very heavy damage, including structural and non-structural failures [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]. However, 40 buildings remained intact, showing negligible to slight damage [EMS98-masonry-grade-1]. The hotspots of damage are concentrated in specific zones across the affected area, while safe areas remain distant from the estimated damage.
+
+## Description of the estimated damage
+The estimated damage to buildings in the Noto earthquake is significant, with 12 structures classified as destroyed, indicating total or near-total collapse [EMS98-masonry-grade-5]. Additionally, 10 buildings sustained moderate to very heavy damage, including structural and non-structural failures [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]. However, 40 buildings remained intact, showing negligible to slight damage [EMS98-masonry-grade-1]. The hotspots of damage are concentrated in specific zones across the affected area, with the first hot spot located around pixel coordinates (32, 235) in the north-west of the photo, covering 41162 pixels. The second and third hot spots are situated around pixel coordinates (53, 551) and (284, 462) respectively, in the west of the photo, encompassing 12309 and 16899 pixels. Safe areas remain distant from the estimated damage, with the closest being around pixel coordinates (923, 923) in the south-east of the photo, at a distance of 637 pixels from the nearest estimated damage.
+
+## Disaster grade of each location
+The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:
+- Buildings estimated destroyed: 12: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Buildings estimated damaged: 10: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Buildings estimated intact: 40: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The estimated damage indicates that the hotspots of severe impact, particularly around pixel coordinates (32, 235) in the north-west and (284, 462) in the west of the photo, require immediate attention due to the high concentration of destroyed and heavily damaged buildings. These areas should be prioritized for rescue operations, debris clearance, and structural safety assessments to prevent further risks and ensure the well-being of affected residents.

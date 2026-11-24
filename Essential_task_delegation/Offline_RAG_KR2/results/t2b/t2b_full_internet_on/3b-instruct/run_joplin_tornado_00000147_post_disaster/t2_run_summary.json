@@ -1,0 +1,178 @@
+{
+  "verdict": "PASSED as a practice run (internet on); the proof needs internet off",
+  "internet": "on",
+  "rules": {
+    "1. The run finished": true,
+    "2. All six reports, each starting 'Mode: offline', each 50+ words": true,
+    "3. Nothing went outside this computer": true,
+    "4. No Gemini library was loaded": true,
+    "5. Every model question got an answer": true
+  },
+  "signals": {
+    "flow": "t2b",
+    "minutes": 20.1,
+    "network_events": 2,
+    "external": [],
+    "guideline_searches": 18,
+    "photo_questions": 0,
+    "map_questions": 0,
+    "map_reading": "made by the code",
+    "map_label_questions": 0,
+    "labelled_map_saved": true,
+    "map_labels_drawn": [
+      4
+    ],
+    "sections_written": 28,
+    "grades_found": [
+      3
+    ],
+    "model_messages_shortened": 0,
+    "model_call_retries": 0,
+    "total_words": 7793,
+    "total_citations": 34,
+    "total_citations_real": 34,
+    "llm_calls_log": true,
+    "agent_calls": 0,
+    "image_calls": 0,
+    "section_calls": 37,
+    "section_words_median": 318,
+    "section_words_min": 98,
+    "calls_with_errors": 0,
+    "biggest_prompt_tokens_real": 9514,
+    "biggest_prompt_tokens_estimated": 13896,
+    "lowest_estimate_to_real_ratio": 1.23,
+    "answer_tokens_real": 15770,
+    "minutes_in_model_calls": 19.8,
+    "step_limit_reached": 0,
+    "final_answers_asked_again": 0,
+    "final_answers_kept_short": 0,
+    "photo_descriptions": 0,
+    "photo_descriptions_different": 0,
+    "sticker_questions": 0,
+    "stickers_read": 0,
+    "sticker_words": {},
+    "answers_checked": 27,
+    "answers_asked_again": 10,
+    "answers_second_kept": 8,
+    "answers_kept_with_problems": 8,
+    "problems_left": {
+      "Emergency_team_report.txt / Emergency shelters": [
+        "no_citation"
+      ],
+      "Emergency_team_report.txt / Hospitals": [
+        "no_citation"
+      ],
+      "Emergency_service_human_resource_allocation.txt / Allocation Plan": [
+        "no_citation",
+        "number_unsourced: 63"
+      ],
+      "Public_community_report.txt / Current Situation": [
+        "number_unsourced: 3.5"
+      ],
+      "Public_community_report.txt / Resource Allocation": [
+        "no_citation"
+      ],
+      "Public_community_report.txt / Public Advisory": [
+        "no_citation"
+      ],
+      "Reconstruction_plan.txt / Executive Summary": [
+        "number_unsourced: 2011, 3.5"
+      ],
+      "Reconstruction_plan.txt / Assessment of Damage": [
+        "number_misused: 216"
+      ]
+    },
+    "search_index_load_seconds": 9.2,
+    "search_backend": "numpy + torch",
+    "searches_timed": 18,
+    "search_ms_median": 29.0,
+    "search_ms_p90": 60.3,
+    "search_ms_max": 82.7,
+    "agent_call_seconds_median": null,
+    "agent_call_seconds_p90": null,
+    "agent_call_seconds_max": null,
+    "image_call_seconds_median": null,
+    "image_call_seconds_p90": null,
+    "image_call_seconds_max": null,
+    "section_call_seconds_median": 32.4,
+    "section_call_seconds_p90": 53.2,
+    "section_call_seconds_max": 55.7,
+    "answer_tokens_per_second_median": 13.5,
+    "report_minutes": {
+      "Expert_team_report.txt": 1.1,
+      "Alerts_team_report_for_social_media.txt": 0.7,
+      "Emergency_team_report.txt": 3.0,
+      "Emergency_service_human_resource_allocation.txt": 4.8,
+      "Public_community_report.txt": 4.5,
+      "Reconstruction_plan.txt": 5.9
+    }
+  },
+  "reports": {
+    "Expert_team_report.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 644,
+      "words_outside_headings": 616,
+      "citations": 5,
+      "citations_real": 5,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Alerts_team_report_for_social_media.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 406,
+      "words_outside_headings": 387,
+      "citations": 0,
+      "citations_real": 0,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Emergency_team_report.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 970,
+      "words_outside_headings": 951,
+      "citations": 0,
+      "citations_real": 0,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Emergency_service_human_resource_allocation.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 1867,
+      "words_outside_headings": 1801,
+      "citations": 9,
+      "citations_real": 9,
+      "citations_unknown": [],
+      "not_available_offline": 5,
+      "error_text": false
+    },
+    "Public_community_report.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 1606,
+      "words_outside_headings": 1586,
+      "citations": 0,
+      "citations_real": 0,
+      "citations_unknown": [],
+      "not_available_offline": 4,
+      "error_text": false
+    },
+    "Reconstruction_plan.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 2300,
+      "words_outside_headings": 2242,
+      "citations": 20,
+      "citations_real": 20,
+      "citations_unknown": [],
+      "not_available_offline": 4,
+      "error_text": false
+    }
+  }
+}

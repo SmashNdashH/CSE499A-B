@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The tsunami caused significant damage, with 52% of the observed area classified as destroyed, indicating total or near-total collapse of structures. The hotspots of highest impact are located in the north-east and east of the image, while safe areas are situated in the south-west. The disaster has resulted in severe destruction, requiring immediate attention to rebuild and stabilize the affected regions. People should avoid the damaged areas in the north-east and east, as they are classified as destroyed and pose significant safety hazards. Safe areas in the south-west, such as those around (100, 923), (250, 923), and (100, 773), remain unaffected and are recommended for shelter and recovery activities.
+
+## Current Situation
+The tsunami has caused significant damage, with 52% of the observed area classified as destroyed, indicating total or near-total collapse of structures. The hotspots of highest impact are located in the north-east and east of the image, while safe areas are situated in the south-west. Based on the Sphere Handbook 2018 guidelines, emergency shelters have been established in the safe areas identified in the south-west of the photo, specifically around (100, 923), (250, 923), and (100, 773). These locations are at least 323 to 459 pixels away from the nearest estimated damage, ensuring safety for displaced populations. Additionally, temporary medical points have been set up in these same safe areas to handle rescued individuals, and immediate transportation recovery is prioritizing the reopening of the road network in these locations to facilitate aid delivery and emergency responder movements.
+
+## Resource Allocation
+The emergency services are currently focused on establishing safe zones for displaced populations and setting up temporary medical points in the south-west of the photo, specifically around (100, 923), (250, 923), and (100, 773). Based on the Sphere Handbook 2018 guidelines, these areas are at least 323 to 459 pixels away from the nearest estimated damage, ensuring safety for emergency responders and displaced individuals. While specific staff numbers, team sizes, and shelter counts are not available offline, the priority is to secure these zones and facilitate the delivery of aid and medical support. The immediate transportation recovery is also underway, with the reopening of road networks in these safe areas to support emergency operations and aid distribution.
+
+## Public Advisory
+The tsunami has caused significant destruction, with 52% of the area completely devastated. Please avoid the damaged areas in the north-east and east, as they pose significant safety hazards. Safe areas in the south-west, such as those around (100, 923), (250, 923), and (100, 773), remain unaffected and are recommended for shelter and recovery activities. Emergency shelters and temporary medical points have been established in these safe zones to support displaced populations and provide medical assistance. Authorities urge residents to stay clear of the damaged areas to ensure their safety. For further updates and support, please contact local emergency services or designated relief organizations.
+
+## Organizational Operation
+Our organization is actively managing the post-disaster response, focusing on establishing safe zones for displaced populations, setting up emergency shelters, and initiating immediate transportation recovery in the south-west of the photo. We are committed to providing temporary medical support and facilitating aid delivery. For further assistance, please contact local emergency services or designated relief organizations.
+
+## Conclusion
+We are working tirelessly to rebuild and stabilize our community, and we appreciate your patience as we address the challenges posed by the tsunami. Your safety remains our top priority, and we are committed to ensuring that the emergency shelters and medical points in the south-west are fully operational. Please stay clear of the damaged areas in the north-east and east, and reach out to us if you require assistance. Together, we will overcome this adversity and restore our community to its former strength.

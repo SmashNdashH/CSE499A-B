@@ -1,0 +1,61 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The Santa Rosa wildfire, which occurred in [specific date], caused significant devastation across the region. The post-disaster satellite photos reveal a severe impact, with 67% of the damage patches classified as Grade 5 destruction (total or near total collapse) and 2% as Grades 2 to 4 damage (moderate to very heavy damage). Only 31% of the damage patches are intact, indicating negligible to slight damage. The most intensely damaged area, the hot spot, located in the southeast corner of the photo, covers approximately 684,835 pixels and requires immediate attention. This region is characterized by extensive structural failures, including the collapse of entire buildings and roofs.
+
+The Alerts team has identified three safe areas where the damage is less severe, offering some relief from the widespread destruction. Safe Area 1, located around (100, 923), is approximately 386 pixels from the nearest estimated damage. Safe Area 2, around (100, 773), is about 300 pixels from the nearest estimated damage, and Safe Area 3, around (250, 923), is 251 pixels from the nearest estimated damage. These areas are crucial for assessing and stabilizing the situation, ensuring public safety and facilitating recovery efforts.
+
+The Expert team’s report highlights the severity of the damage, emphasizing the need for comprehensive assessments and immediate support for affected structures. The hot spot poses the highest risk to life and property, requiring immediate attention. The Alerts team’s social media news underscores the devastation, advising residents and visitors to stay well clear of the hot spot and to prioritize the most severely damaged areas. Safe areas, while safer, still require thorough inspection before use. Immediate transportation recovery is essential to restore access to the affected areas, particularly the connection between Safe Area 1 and the rest of the city, and the road leading to Safe Area 3.
+
+## Current Situation
+The Santa Rosa wildfire has left a profound impact on the landscape, with the most severely affected areas concentrated in the southeast corner of the photo, around coordinates (991, 779). This region, covering approximately 684,835 pixels, is classified as EMS-98 Grade 5 destruction (total or near total collapse), posing the highest risk to life and property. Immediate attention is required to address this critical area.
+
+The Emergency Service Team has identified three safe areas where the damage is less severe, offering some relief from the widespread destruction. Safe Area 1, located around (100, 923), is approximately 386 pixels from the nearest estimated damage. Safe Area 2, around (100, 773), is about 300 pixels from the nearest estimated damage, and Safe Area 3, around (250, 923), is 251 pixels from the nearest estimated damage. These areas are crucial for assessing and stabilizing the situation, ensuring public safety and facilitating recovery efforts.
+
+Emergency shelters have been established in Safe Areas 1 and 2, providing a safe haven for displaced individuals. Safe Area 1 is around (100, 923) and Safe Area 2 is around (100, 773). Both areas offer a marginally safer location compared to the hot spot, although they still require thorough inspection. The Emergency Service Team plans to verify the condition of the shelters before use, ensuring that each affected household has adequate living space to perform basic domestic activities, respecting local culture and social norms.
+
+Medical points have been set up in Safe Areas 1 and 2, with Safe Area 1 being around (100, 923). These medical points are equipped with basic amenities such as clean water, sanitation facilities, and a basic medical kit. Safe Area 2, around (100, 773), is also a suitable location for setting up a medical point, providing a marginally safer location compared to the hot spot. The Emergency Service Team will ensure that the medical points are adequately staffed and equipped with necessary medical supplies.
+
+Immediate transportation recovery is essential to restore access to the affected areas. The most critical road or bridge to reopen is the one connecting Safe Area 1 to the rest of the city. This connection is vital for evacuating casualties, transporting medical supplies, and delivering aid to the affected regions. The road leading to Safe Area 3, around (250, 923), is also essential, as it provides a direct route to the hot spot and ensures that medical teams can reach the most severely damaged areas efficiently.
+
+Overall, the response must be swift and comprehensive to address the critical needs of those affected by the wildfire. The Emergency Service Team is working diligently to ensure that each affected household has access to the necessary
+
+## Resource Allocation
+To address the immediate and ongoing needs of the affected communities, the Emergency Service Team has allocated resources based on the current situation and the guidelines provided. The team is responsible for managing emergency shelters, medical points, and transportation recovery efforts.
+
+**Emergency Shelters:** Safe Areas 1 and 2 have been designated as primary shelters. The Emergency Service Team has mobilized a small team of volunteers and staff to establish and monitor these shelters. Each shelter will provide a safe haven for displaced individuals, ensuring privacy and protection from the elements. The team will continue to monitor the conditions of these shelters and plan for additional support if needed.
+
+**Medical Points:** Medical points have been established in Safe Areas 1 and 2. These points are equipped with basic amenities such as clean water, sanitation facilities, and a basic medical kit. The Emergency Service Team will ensure that the medical points are adequately staffed and equipped with necessary medical supplies. They will also coordinate with local medical personnel to establish a triage point, ensuring that casualties are treated promptly and efficiently.
+
+**Transportation Recovery:** The most critical road or bridge to reopen is the one connecting Safe Area 1 to the rest of the city. The Emergency Service Team has coordinated with logistics to ensure that large enough vehicles are available to carry the required equipment. They will check the availability of extra rescue equipment and liaise with medical teams to set up a triage point in consultation with medical personnel. The team will also ensure that the evacuation point is clearly marked and that personnel are familiar with the evacuation signaling system.
+
+The Emergency Service Team will continue to reassess the situation and adjust their strategies as needed. They will collaborate with other teams and stakeholders to ensure a coordinated and effective response. The team will also monitor the availability, quality, and use of household items, adapting the approach as necessary to meet the changing needs of the affected communities.
+
+[SPHERE-1-p3] [SPHERE-4-p1] [SPHERE-4-p4] [INSARAG2B-5.7.1-p5] [INSARAG3-5.2-p1]
+
+## Public Advisory
+It is essential for the public to stay informed and adhere to the guidelines provided by the Emergency Service Team to ensure their safety and cooperation with ongoing operations. Here are the key instructions and advice:
+
+**Stay Safe:**
+- **Avoid the Hot Spot:** Residents and visitors are advised to stay well clear of the hot spot, located in the southeast corner of the photo, around coordinates (991, 779). This area is the most dangerous and requires immediate attention. [INSARAG3-5.2-p1]
+- **Monitor Safe Areas:** The three safe areas identified by the Alerts team offer some relief from the widespread destruction. Safe Area 1, around (100, 923), is approximately 386 pixels from the nearest estimated damage. Safe Area 2, around (100, 773), is about 300 pixels from the nearest estimated damage, and Safe Area 3, around (250, 923), is 251 pixels from the nearest estimated damage. These areas should be thoroughly inspected before use. [INSARAG3-5.2-p1]
+- **Do Not Enter Unverified Areas:** Even in the safe areas, it is crucial to verify the condition of the shelters and ensure that they are safe before use. [SPHERE-1-p3]
+
+**Access Emergency Services:**
+- **Contact Local Authorities:** Residents should immediately contact local emergency services for guidance and assistance. [INSARAG3-5.2-p1]
+- **Report Any Issues:** If you encounter any issues or concerns, report them to the Emergency Service Team. [INSARAG3-5.2-p1]
+
+**Cooperate with Ongoing Operations:**
+- **Support the Emergency Service Team:** Volunteers and staff are working tirelessly to establish and monitor emergency shelters and medical points. Your cooperation is essential for their success. [SPHERE-1-p3]
+- **Follow Instructions:** Follow all instructions provided by the Emergency Service Team and local authorities. [INSARAG3-5.2-p1]
+- **Stay Informed:** Regularly check updates from local authorities and the Emergency Service Team for the latest information and instructions. [INSARAG3-5.2-p1]
+
+By following these guidelines, you can help ensure the safety and well-being of yourself and others in the affected areas. Your cooperation is vital to the successful response to this disaster.
+
+## Organizational Operation
+Our organization plays a critical role in coordinating the response to the Santa Rosa wildfire. We are responsible for managing emergency shelters, establishing medical points, and overseeing transportation recovery efforts. Our team is mobilizing resources to ensure displaced individuals have safe havens, and medical points are equipped with essential supplies. For transportation recovery, we are coordinating logistics to reopen critical roads and bridges. To stay informed and get further help, residents and visitors should contact local emergency services immediately. Updates and guidance can be found through local authorities and our organization's website, where contact details are not available offline.
+
+## Conclusion
+We stand united with the community in this challenging time. Your safety is our utmost priority, and we are committed to providing continuous support and assistance. We urge everyone to stay calm and follow the guidance of local authorities and emergency services. Your cooperation is vital as we work towards recovery and rebuilding. Please stay informed and reach out if you need any help. Together, we will overcome this adversity.

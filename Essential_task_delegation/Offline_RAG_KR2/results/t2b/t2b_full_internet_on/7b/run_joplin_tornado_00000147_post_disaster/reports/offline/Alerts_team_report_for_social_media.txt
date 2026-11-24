@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The tornado has caused widespread destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. The hot spot 1, located in the south-west of the photo, encompasses 961544 pixels and represents the highest concentration of estimated damage. This area is the most dangerous and should be avoided due to severe structural collapse. Safe areas include one in the north-east (safe area 1) at 94 pixels from the nearest estimated damage, another in the south-west (safe area 2) at 64 pixels, and a third in the south (safe area 3) at 51 pixels. These areas are recommended for temporary shelter and recovery operations.
+
+## Social media news
+The tornado has caused widespread destruction across the analyzed area, with 91% of the region estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. The hot spot 1, located in the south-west of the photo, encompasses 961544 pixels and represents the highest concentration of estimated damage. This area is the most dangerous and should be avoided due to severe structural collapse. Safe areas include one in the north-east (safe area 1) at 94 pixels from the nearest estimated damage, another in the south-west (safe area 2) at 64 pixels, and a third in the south (safe area 3) at 51 pixels. These areas are recommended for temporary shelter and recovery operations.

@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The earthquake caused significant damage, with 33% of buildings completely destroyed, 11% moderately damaged, and 56% remaining intact. The most severe impact was observed in the central region, where the highest density of damage occurred, as evidenced by three distinct hotspots: one in the north-west, another in the west, and the third in the north-east of the image. These hotspots collectively cover 403997, 22107, and 28381 pixels, respectively, indicating the most concentrated areas of destruction. Immediate attention is required for these hotspots, as they represent the most critical areas of structural collapse and debris. Efforts must include clearing debris, assessing safety, and stabilizing damaged buildings to prevent further risks.
+
+## Current Situation
+The earthquake has caused significant damage, with 33% of buildings completely destroyed, 11% moderately damaged, and 56% remaining intact. The most severe impact was observed in the central region, where the highest density of damage occurred, as evidenced by three distinct hotspots: one in the north-west, another in the west, and the third in the north-east of the image. These hotspots collectively cover 403997, 22107, and 28381 pixels, respectively, indicating the most concentrated areas of destruction. Immediate attention is required for these hotspots, as they represent the most critical areas of structural collapse and debris. Efforts must include clearing debris, assessing safety, and stabilizing damaged buildings to prevent further risks.
+
+## Resource Allocation
+The emergency services are currently focused on establishing safe areas for displaced residents and providing medical care in the least affected zones. Based on the guidelines from the Sphere Handbook 2018 and INSARAG, we are prioritizing the safe areas in the south-east of the image for shelter and medical facilities. We are coordinating with local authorities to ensure efficient distribution of resources and support for displaced individuals. Efforts will continue to address the critical hotspots in the north-west, west, and north-east to mitigate further risks and facilitate recovery.
+
+## Public Advisory
+The earthquake has caused significant damage, with 33% of buildings completely destroyed and 11% moderately damaged. The most severe impact was observed in the central region, where the highest density of damage occurred, as evidenced by three distinct hotspots. Immediate attention is required for these hotspots, as they represent the most critical areas of structural collapse and debris. Efforts must include clearing debris, assessing safety, and stabilizing damaged buildings to prevent further risks. For displaced residents, we recommend seeking shelter in safe areas near intact structures, such as safe area 1, 2, and 3, which are located 412, 311, and 254 pixels from the nearest estimated damage, respectively. Please stay updated on official communications for further instructions. [SPHERE-1-p3] [SPHERE-4-p1] [SPHERE-4-p2] [SPHERE-4-p4] [INSARAG2B-1-p1] [INSARAG3-5.2-p1] [INSARAG2B-5.7.1-p5]
+
+## Organizational Operation
+Our organization is actively engaged in post-disaster management, focusing on providing shelter, medical care, and household item assistance to displaced residents. We are coordinating with local authorities to establish safe areas and ensure the timely delivery of aid. For further assistance, please refer to official communications or contact the relevant government agencies.
+
+## Conclusion
+We are committed to supporting our community through this challenging time, ensuring that displaced residents find safe shelter and receive the necessary medical care. Our efforts will continue to focus on clearing debris and stabilizing damaged buildings to prevent further risks. We appreciate your patience and cooperation as we work together to rebuild and recover. Stay safe and connected with us for updates.

@@ -1,0 +1,45 @@
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+People must avoid the following dangerous areas due to severe structural damage:
+
+1. **Hot Spot 1 (North-West Corner):**
+   - Location: Around (320, 32) pixels from the top-left corner.
+   - Disaster Grade: EMS-98 Grade 5 (Total or Near Total Collapse).
+   - Description: This area includes 32 buildings estimated to be in total or near-total collapse. Immediate evacuation is advised.
+
+2. **Hot Spot 2 (West Side):**
+   - Location: Around (48, 593) pixels from the top-left corner.
+   - Disaster Grade: EMS-98 Grades 2 to 4 (Moderate to Very Heavy Damage).
+   - Description: This area contains 11 buildings with moderate to very heavy damage. Caution is required as secondary hazards may exist.
+
+3. **Hot Spot 3 (North-East Corner):**
+   - Location: Around (991, 32) pixels from the top-left corner.
+   - Disaster Grade: EMS-98 Grades 2 to 4 (Moderate to Very Heavy Damage).
+   - Description: Similar to Hot Spot 2, this area has 11 buildings with moderate to very heavy damage. Secondary hazards should be assessed.
+
+Additionally, be cautious of the following potentially dangerous areas:
+
+- **Safe Area 1 (South-East Corner):**
+  - Location: Around (917, 923) pixels from the top-left corner.
+  - Distance from nearest damage: 412 pixels.
+  - Description: While this area appears largely intact, it is recommended to check on the ground before use due to potential hidden hazards.
+
+- **Safe Area 2 (South-East Corner):**
+  - Location: Around (821, 807) pixels from the top-left corner.
+  - Distance from nearest damage: 311 pixels.
+  - Description: This area is also considered safe, but thorough inspection is advised before use.
+
+- **Safe Area 3 (South-East Corner):**
+  - Location: Around (722, 694) pixels from the top-left corner.
+  - Distance from nearest damage: 254 pixels.
+  - Description: This area is deemed safe, but further verification is necessary.
+
+Please exercise extreme caution and avoid entering any of these areas until professional assessment confirms their safety.
+
+## Social media news
+Witnesses describe scenes of utter devastation in the Turkish city hit by a powerful earthquake. Satellite images show 32 buildings in total or near-total collapse, marking the highest disaster grade (EMS-98 Grade 5). The epicenter was in the north-west corner, around (320, 32) pixels from the top-left corner. 
+
+In the west, 11 buildings sustained moderate to very heavy damage (EMS-98 Grades 2 to 4). The north-east corner also saw similar levels of destruction. However, there are pockets of relative safety in the south-east, where buildings remain largely intact. Safe areas are located around (917, 923), (821, 807), and (722, 694) pixels from the top-left corner, with distances ranging from 254 to 412 pixels from the nearest damaged structures. 
+
+Immediate rescue efforts are underway, and authorities are urging residents to stay indoors and avoid entering these dangerous areas until professional assessments confirm their safety. #TurkeyEarthquake #DisasterResponse #RescueOperations

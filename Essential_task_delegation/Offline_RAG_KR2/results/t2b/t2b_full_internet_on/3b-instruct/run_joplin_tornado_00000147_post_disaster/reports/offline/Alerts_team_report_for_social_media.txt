@@ -1,0 +1,25 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+People are advised to avoid the following dangerous areas due to severe structural and non-structural damage caused by the Joplin tornado:
+
+- **Hot Spot 1**: Located around (43, 991) in the south-west of the photo, covering a zone of approximately 961,544 pixels. This area is classified as EMS-98 Grade 5 destruction, indicating severe collapse and complete loss of structural integrity. Immediate evacuation is recommended.
+
+Additionally, there are potentially dangerous areas identified based on the damage model's hot spots and safe areas:
+
+- **Safe Area 1**: Around (818, 214), located in the north-east of the photo. While this area offers some protection, it is still within 94 pixels of the nearest estimated damage. It is important to verify this area on the ground before using it as a refuge.
+
+- **Safe Area 2**: Located around (112, 801), situated in the south-west of the photo. This area is 64 pixels from the nearest estimated damage and should also be verified on the ground.
+
+- **Safe Area 3**: Around (632, 816), positioned in the south of the photo. This area is 51 pixels from the nearest estimated damage and requires ground verification.
+
+These areas are highly dangerous and pose significant risks. Residents and emergency responders are urged to exercise extreme caution and avoid entering these regions until confirmed safe.
+
+## Social media news
+Witnesses describe the Joplin tornado as a devastating force of nature, leaving nearly everything in its path in ruins. The satellite images show a landscape scarred by severe Grade 5 destruction, with nearly all structures collapsing or severely damaged. The most dangerous area, Hot Spot 1, is located around (43, 991) in the south-west of the photo, covering a zone of approximately 961,544 pixels. This area is classified as EMS-98 Grade 5 destruction, indicating severe collapse and complete loss of structural integrity.
+
+While there are three safe areas identified, they are still dangerously close to the estimated damage. Safe Area 1, around (818, 214), is just 94 pixels from the nearest estimated damage. Safe Area 2, around (112, 801), is 64 pixels away, and Safe Area 3, around (632, 816), is 51 pixels from the nearest estimated damage. These areas offer temporary refuge but are not suitable for long-term use.
+
+Residents and emergency responders are urged to exercise extreme caution and avoid entering these regions until confirmed safe. #JoplinTornado #DisasterUpdate #EmergencyResponse

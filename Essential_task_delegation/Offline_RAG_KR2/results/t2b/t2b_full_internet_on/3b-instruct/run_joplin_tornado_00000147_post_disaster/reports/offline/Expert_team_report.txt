@@ -1,0 +1,26 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The satellite photos of Joplin, Missouri, following the Joplin tornado show a severe level of damage, with 216 out of 238 estimated damage patches classified as Grade 5 destruction under the EMS-98 guidelines. This indicates that nearly all structures were either severely damaged or completely collapsed. Additionally, 22 patches were categorized as Grades 2 to 4, representing moderate to very heavy damage, including cracks in walls, detachment of roof tiles, and failure of non-structural elements. No structures were found to be intact, suggesting that the tornado caused significant structural and non-structural damage across the entire area. Safe zones were identified, but they were extremely limited, highlighting the catastrophic nature of the disaster.
+
+## Description of the estimated damage
+The satellite photos of Joplin, Missouri, following the Joplin tornado reveal a landscape devastated by the storm. According to the damage model's estimates, 216 out of 238 damage patches were classified as Grade 5 destruction, indicating that nearly all structures were severely damaged or completely collapsed. The remaining 22 patches were categorized as Grades 2 to 4, representing moderate to very heavy damage, including cracks in walls, detachment of roof tiles, and failure of non-structural elements.
+
+The hot spots, where the estimated damage was densest, were located around coordinates (43, 991) in the south-west of the photo. This area encompassed a zone of approximately 961,544 pixels, highlighting the concentrated impact of the tornado. In contrast, there were three safe areas identified, which provided some refuge from the widespread destruction. These safe areas were located around coordinates (818, 214), (112, 801), and (632, 816). The first safe area was approximately 94 pixels from the nearest estimated damage, while the second and third were 64 and 51 pixels away, respectively. Despite these safe zones, their proximity to the estimated damage underscores the severity of the disaster and the limited protection offered by open ground.
+
+In summary, the estimated damage in the Joplin tornado shows a high degree of destruction, with virtually all structures being severely damaged or completely collapsed, leaving no intact buildings. The hot spots indicate the most intense areas of devastation, while the safe areas offer minimal relief from the catastrophic conditions.
+
+## Disaster grade of each location
+The disaster grades of the estimated damage patches, written from the damage model's table by the code, not by the language model:
+- Damage patches estimated destroyed: 216: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damage patches estimated damaged: 22: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Damage patches estimated intact: 0: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The estimated damage in the Joplin tornado, as shown in the satellite photos, indicates a catastrophic event where nearly all structures were severely damaged or completely collapsed. The hot spots, particularly around coordinates (43, 991) in the south-west of the photo, represent the most intense areas of devastation. These hot spots encompass a zone of approximately 961,544 pixels, highlighting the concentrated impact of the tornado.
+
+Given the severity of the damage, immediate assistance is needed in these hot spots. Priority should be given to assessing and repairing the structures in these areas, as they are likely to require substantial rebuilding efforts. The remaining damage patches, classified as moderate to very heavy damage (EMS-98 Grades 2 to 4), also need urgent attention to prevent further deterioration and ensure public safety.
+
+The limited number of safe areas, which are only 94, 64, and 51 pixels away from the nearest estimated damage, underscores the critical need for rapid response and resource allocation. These areas provide temporary refuge but are not sufficient for long-term recovery. Therefore, the focus should be on prioritizing the hot spots to stabilize the situation and begin the process of reconstruction.

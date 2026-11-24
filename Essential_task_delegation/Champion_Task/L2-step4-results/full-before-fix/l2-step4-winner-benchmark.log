@@ -1,0 +1,33 @@
+[{"stream_name":"stderr","time":6.857455674,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.857516599,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.85752356,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.857528403,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.423805718,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.423841552,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.423845486,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.423848081,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":17.927103793,"data":"✓ {'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'peft': '0.22.0'}, python 3.13.16; torchao: not installed\n"}
+,{"stream_name":"stdout","time":17.929120082,"data":"  GPUs: ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":41.707542194,"data":"✓ L2 step 4: the winner is (c): primary accuracy 35.95% (b) against 45.12% (c), exact McNemar p = 0.0000\n"}
+,{"stream_name":"stdout","time":43.123424647,"data":"✓ 10,675 optical questions {'BDC': 3583, 'DSR': 2007, 'BBR': 2006, 'DRE': 1868, 'ORR': 858, 'DTR': 353}; 0 with an image missing (counted wrong)\n"}
+,{"stream_name":"stdout","time":43.784942189,"data":"0 already answered; 10,675 to do\n"}
+,{"stream_name":"stdout","time":15013.344420773,"data":"All answered after 4.14 h\n"}
+,{"stream_name":"stdout","time":15013.546071495,"data":"task  questions  answered  3B_c_%  new_7B_full_%  base_7B_paper_%\n"}
+,{"stream_name":"stdout","time":15013.546100907,"data":" DTR        353       353   58.92          76.77             66.6\n"}
+,{"stream_name":"stdout","time":15013.546106629,"data":" BBR       2006      2006   16.10          19.99              4.7\n"}
+,{"stream_name":"stdout","time":15013.546111005,"data":" BDC       3583      3583   48.20          30.31             34.2\n"}
+,{"stream_name":"stdout","time":15013.546115246,"data":" DRE       1868      1868   44.70          33.03             29.3\n"}
+,{"stream_name":"stdout","time":15013.546119498,"data":" DSR       2007      2007   35.23          40.46             28.3\n"}
+,{"stream_name":"stdout","time":15013.546123778,"data":" ORR        858       858   51.63          34.62             23.9\n"}
+,{"stream_name":"stdout","time":15013.54612796,"data":"\n"}
+,{"stream_name":"stdout","time":15013.546132159,"data":"Building counting: {'accuracy_%': 48.2, 'median_count_error_%': 0.0, 'answered_with_one_option_%': 96.3, 'no_image_rule_%': 66.98}\n"}
+,{"stream_name":"stdout","time":15013.582294025,"data":"✓ Wrote /kaggle/working/L2S4: results.csv, per_question.csv, answers.jsonl, README.md, config.json\n"}
+,{"stream_name":"stderr","time":15019.080821517,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":15019.080851601,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":15019.2272915,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":15019.227316901,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":15019.943379688,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":15020.039551011,"data":"[NbConvertApp] Writing 231231 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":15022.569662285,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":15023.161697227,"data":"[NbConvertApp] Writing 542499 bytes to __results__.html\n"}
+]

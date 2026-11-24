@@ -1,0 +1,12 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+The emergency shelters will be established in the intact area, located around pixel coordinates (100, 923) in the south-west of the photo, approximately 386 pixels from the nearest estimated damage. According to Sphere Handbook 2018, Shelter and Settlement [SPHERE-3-p1], [SPHERE-3-p2], and [SPHERE-3-p4], the minimum living space should be 3.5 square metres per person, excluding cooking space, bathing area and sanitation facility. The space should provide adequate physical security, dignity, privacy and protection from weather. The intact area offers sufficient space to accommodate the displaced residents with proper living arrangements.
+
+## Hospitals
+The number of hospitals or medical points needed for the affected area is 1, based on the guidelines provided by INSARAG [INSARAG3-6.2-p2]. The location of the medical point is in the intact area, situated around pixel coordinates (100, 923) in the south-west of the photo, approximately 386 pixels from the nearest estimated damage. According to the guidelines, medical staff must be aware of local procedures for accepting patients into the local system and ensure appropriate medical transport procedures. The medical point will serve as a central location for treating rescued individuals, ensuring they receive timely and effective medical care.
+
+## Immediate transportation recovery
+The priority for immediate transportation recovery is to reopen the road encircled by destruction in the south-east of the photo, around pixel coordinates (991, 779). This road is critical for clearing debris and assessing the safety of the area to prevent further hazards. Once cleared, it will facilitate access for rescue operations and recovery teams to reach the affected zone efficiently.

@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The Santa Rosa wildfire has caused severe destruction, with 96 out of 144 damage patches completely destroyed, indicating total or near-total collapse of structures. The hot spot in the south-east of the photo, covering 684,835 pixels, is the most dangerous zone, requiring immediate attention due to the highest concentration of damage. Efforts should focus on clearing debris and assessing the safety of the area to prevent further hazards. Safe areas identified include zones located in the south-west of the photo, approximately 386, 300, and 251 pixels away from the nearest estimated damage. These areas should be checked on the ground before use.
+
+## Social media news
+The Santa Rosa wildfire has caused severe destruction across the region, with 96 out of 144 damage patches completely destroyed, indicating total or near-total collapse of structures. The hot spot in the south-east of the photo, covering 684,835 pixels, is the most dangerous zone, requiring immediate attention due to the highest concentration of damage. Efforts should focus on clearing debris and assessing the safety of the area to prevent further hazards. Safe areas identified include zones located in the south-west of the photo, approximately 386, 300, and 251 pixels away from the nearest estimated damage. These areas should be checked on the ground before use.

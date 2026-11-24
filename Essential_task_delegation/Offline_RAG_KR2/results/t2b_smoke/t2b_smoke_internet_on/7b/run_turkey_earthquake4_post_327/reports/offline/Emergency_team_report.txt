@@ -1,0 +1,12 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the Sphere Handbook 2018 guidelines, emergency shelters should be established in safe areas to ensure the well-being of displaced residents. Safe area 1, located in the south-east of the photo, is 412 pixels from the nearest estimated damage and is suitable for setting up shelters due to its proximity to intact structures. Similarly, safe area 2 and safe area 3, situated in the south-east of the photo, are 311 and 254 pixels from the nearest estimated damage, respectively, and can also serve as shelter locations. These areas provide adequate space for living spaces, ensuring essential household activities can be performed with dignity and privacy. While the exact number of shelters is not available offline, it is crucial to prioritize these safe zones to accommodate displaced individuals effectively.
+
+## Hospitals
+Based on the guidelines from INSARAG, it is essential to establish medical points in safe areas to facilitate the handling of rescued individuals. Given the significant structural damage observed in the central region, it is critical to ensure that medical facilities are located in safe zones, such as safe area 1, 2, and 3, to minimize risks to medical staff and patients. According to INSARAG [INSARAG3-6.2-p2], medical staff must be aware of local procedures for accepting patients into the local system and must be prepared to handle casualties efficiently. Additionally, it is imperative to establish a system for repatriating patients to their home countries for further treatment, as outlined in INSARAG [INSARAG3-6.2-p2]. The exact number of medical facilities and staff is not available offline, but efforts should focus on ensuring that medical teams are equipped to handle the influx of casualties effectively.
+
+## Immediate transportation recovery
+The immediate transportation recovery should prioritize the safe area 1 in the south-east of the photo, as it is located within 412 pixels from the nearest estimated damage and is close to intact structures. This area is essential for facilitating the movement of emergency response teams and supplies to the most critical zones, such as the hotspots in the north-west, west, and north-east, where structural collapse and debris pose significant risks. Ensuring the accessibility of this area will enable efficient deployment of resources and aid delivery to affected regions.

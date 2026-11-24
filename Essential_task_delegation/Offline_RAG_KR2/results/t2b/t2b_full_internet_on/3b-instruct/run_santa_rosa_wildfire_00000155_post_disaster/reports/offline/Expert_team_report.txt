@@ -1,0 +1,24 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The estimated damage in the Santa Rosa wildfire post-disaster satellite photos shows a severe impact, with 67% of the damage patches classified as Grade 5 destruction (total or near total collapse) and 2% as Grade 2 to 4 damage (moderate to very heavy damage). Only 31% of the damage patches are intact, indicating negligible to slight damage. The hot spot, located in the southeast of the photo, covers an area of 684,835 pixels, suggesting the most intense damage. Safe areas, located southwest of the photo, are relatively unaffected, with distances ranging from 251 to 386 pixels from the nearest damage. These findings align with the EMS-98 guidelines, emphasizing the need for comprehensive assessments and immediate support for affected structures.
+
+## Description of the estimated damage
+The estimated damage in the Santa Rosa wildfire post-disaster satellite photos is characterized by a significant proportion of severe destruction. According to the damage model’s pixel-based assessment, 67% of the damage patches are classified as Grade 5 destruction (total or near total collapse), while 2% fall into the moderate to very heavy damage categories (Grades 2 to 4). This leaves only 31% of the damage patches as intact, indicating negligible to slight damage.
+
+The most intensely damaged area, referred to as the hot spot, is located in the southeast corner of the photo. This region encompasses approximately 684,835 pixels, highlighting the severity of the fire’s impact in this specific area. The hot spot is surrounded by three safe areas, which provide some relief from the widespread destruction. These safe areas are positioned southwest of the photo and are relatively unaffected by the fire. They are situated at distances of 251, 300, and 386 pixels from the nearest damage, respectively.
+
+In summary, the Santa Rosa wildfire resulted in a substantial loss of life and property, with the majority of buildings experiencing total or near-total collapse. While there are pockets of relative safety, the overall picture is one of severe devastation across the affected area.
+
+## Disaster grade of each location
+The disaster grades of the estimated damage patches, written from the damage model's table by the code, not by the language model:
+- Damage patches estimated destroyed: 96: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damage patches estimated damaged: 3: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Damage patches estimated intact: 45: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The estimated damage in the Santa Rosa wildfire post-disaster satellite photos indicates a severe impact, with 67% of the damage patches classified as Grade 5 destruction (total or near total collapse) and 2% as Grades 2 to 4 damage (moderate to very heavy damage). Only 31% of the damage patches are intact, indicating negligible to slight damage. The most intensely damaged area, the hot spot, located in the southeast corner of the photo, covers approximately 684,835 pixels and requires immediate attention. This region is characterized by extensive structural failures, including the collapse of entire buildings and roofs. 
+
+Given the severity of the damage, the hot spot should be prioritized for rescue operations and emergency response efforts. Teams must focus on this area first to locate and assist survivors, as well as to assess and stabilize any remaining structures to prevent further collapse. Additionally, the surrounding areas with moderate to heavy damage (Grades 2 to 4) also require urgent attention to ensure public safety and facilitate recovery efforts. Safe areas, located southwest of the photo, offer some relief but still need monitoring to prevent secondary collapses. Overall, the response must be swift and comprehensive to address the critical needs of those affected by the wildfire.

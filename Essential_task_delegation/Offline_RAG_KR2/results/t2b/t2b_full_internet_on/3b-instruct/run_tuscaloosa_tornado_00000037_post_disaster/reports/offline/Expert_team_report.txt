@@ -1,0 +1,28 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The satellite imagery analysis of the Tuscaloosa tornado shows severe damage across the affected area, with approximately (number not available offline) of the estimated damage patches classified as Grade 5 destruction (total or near total collapse) based on the EMS-98 guidelines. This destruction is concentrated in hot spot 1, located in the eastern part of the photo, covering a significant area of 223,555 pixels. Additionally, 43% of the patches are categorized as moderate to very heavy damage (Grades 2 to 4), primarily observed in the southern and southeastern regions, including hot spot 2 and hot spot 3. Only 11% of the patches remain intact, showing negligible to slight damage consistent with Grade 1 as per the EMS-98 guidelines. Safe zones exist in the northern and central parts of the photo, with distances ranging from 131 to 146 pixels from the nearest damaged area. Overall, the extent of destruction and the concentration of damage suggest a catastrophic impact on the local infrastructure and residential areas.
+
+## Description of the estimated damage
+The satellite imagery analysis reveals a widespread and severe impact from the Tuscaloosa tornado, with significant damage concentrated in specific areas. According to the damage model's estimates, 54 out of 117 damage patches (approximately 46%) are classified as Grade 5 destruction, indicating total or near-total collapse of structures. These heavily damaged areas are primarily found in Hot Spot 1, located in the eastern part of the photo, covering an area of 223,555 pixels. This hot spot is the largest and most destructive region, encompassing a substantial portion of the photo.
+
+Additionally, 50 out of 117 damage patches (approximately 43%) are categorized as moderate to very heavy damage (Grades 2 to 4), primarily observed in the southern and southeastern regions. Hot Spot 2, situated in the southwest corner of the photo, covers an area of (number not available offline), and Hot Spot 3, located in the southeast corner, measures 66,243 pixels. These hot spots indicate localized areas of intense destruction, with numerous buildings experiencing significant structural failures and partial collapses.
+
+In contrast, only 13 out of 117 damage patches (approximately 11%) are estimated to be intact, showing negligible to slight damage consistent with EMS-98 Grade 1. These relatively undamaged areas are located in the northern and central parts of the photo, with Safe Area 1 being the closest to the eastern hot spot, located approximately 146 pixels away. Safe Area 2 and Safe Area 3, situated in the center of the photo, are slightly closer, at 131 and 124 pixels respectively from the nearest damaged area.
+
+Overall, the distribution of damage suggests a highly concentrated and catastrophic impact, with the eastern region bearing the brunt of the destruction, followed by the southern and southeastern areas. The remaining intact areas provide limited refuge but are still within close proximity to the severely damaged zones.
+
+## Disaster grade of each location
+The disaster grades of the estimated damage patches, written from the damage model's table by the code, not by the language model:
+- Damage patches estimated destroyed: 54: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damage patches estimated damaged: 50: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Damage patches estimated intact: 13: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The satellite imagery analysis indicates that the Tuscaloosa tornado caused severe and concentrated damage, with approximately 46% of the estimated damage patches classified as Grade 5 destruction, representing total or near-total collapse. The eastern region, particularly Hot Spot 1, bears the brunt of this destruction, covering an area of 223,555 pixels. This hot spot is the most critical area requiring immediate attention due to the high likelihood of structural failures and potential secondary hazards such as falling debris.
+
+Additionally, the southern and southeastern regions, including Hot Spots 2 and 3, experienced moderate to very heavy damage (Grades 2 to 4), necessitating urgent intervention to prevent further collapse and ensure public safety. While the northern and central parts of the photo show fewer damages, they are still within close proximity to the severely affected areas and should be prioritized to provide temporary shelter and support.
+
+First responders and emergency teams should focus their efforts on Hot Spot 1, where the highest density of destruction is concentrated. This area requires immediate attention to assess structural integrity, clear hazardous materials, and establish safe zones. Following Hot Spot 1, the next priority should be Hot Spots 2 and 3, where moderate to heavy damage has been observed. These areas also pose significant risks and require swift action to mitigate potential hazards. Lastly, the remaining intact areas should be monitored closely to ensure they do not become secondary hazards and to provide temporary shelter to those displaced by the storm.

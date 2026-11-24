@@ -1,0 +1,38 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the damage assessment and the guidelines provided, the most suitable locations for emergency shelters are the identified safe areas, which offer some protection from the widespread destruction. The Sphere handbook provides crucial guidance on ensuring adequate living space and site area per person, as well as promoting privacy and dignity.
+
+**Safe Area 1:**
+Around (818, 214), located in the north-east of the photo, is approximately 94 pixels from the nearest estimated damage. This area is deemed safe but requires verification on the ground. It meets the Sphere standard for living space, with a minimum of 3.5 square meters per person. The shelter should be designed to accommodate essential domestic activities, including sleeping, food preparation, and eating, while ensuring privacy and dignity. Given the limited space, it is recommended to prioritize essential activities and minimize overcrowding.
+
+**Safe Area 2:**
+Located around (112, 801), situated in the south-west of the photo, is 64 pixels from the nearest estimated damage. This area also needs ground verification. It adheres to the Sphere standard, requiring a minimum of 3.5 square meters per person. The shelter should be equipped with appropriate cooking, toilet, laundry, bathing, and socializing areas, ensuring safe access to these activities. The limited space necessitates careful planning to maximize the use of available areas.
+
+**Safe Area 3:**
+Around (632, 816), positioned in the south of the photo, is 51 pixels from the nearest estimated damage. This area also needs ground verification. It complies with the Sphere standard, necessitating a minimum of 3.5 square meters per person. The shelter should include appropriate cooking, toilet, laundry, bathing, and socializing areas, ensuring safe access to these activities. The proximity to the damage zone suggests that additional precautions will be necessary to ensure the safety of the shelter users.
+
+For the hot spot 1, located around (43, 991) in the south-west of the photo, immediate evacuation is recommended due to the severe damage and destruction. There are no suitable shelter locations within this zone, and residents should be directed to safer areas outside the immediate vicinity of the hot spot.
+
+In conclusion, the safe areas identified offer temporary refuge but are insufficient for long-term shelter provision. Adequate living space must be ensured, and additional support from the Sphere standard and INSARAG guidelines should be implemented to provide safe and dignified living conditions for those displaced. Further assessments and planning are required to address the limitations of the safe areas and to prepare for the establishment of more permanent shelters.
+
+## Hospitals
+Based on the damage assessment and the guidelines provided, the most suitable locations for hospitals or medical points are the identified safe areas, which offer some protection from the widespread destruction. The Sphere handbook provides crucial guidance on ensuring adequate living space and site area per person, as well as promoting privacy and dignity.
+
+**Safe Area 1:**
+Around (818, 214), located in the north-east of the photo, is approximately 94 pixels from the nearest estimated damage. This area is deemed safe but requires verification on the ground. It meets the Sphere standard for living space, with a minimum of 3.5 square meters per person. The shelter should be designed to accommodate essential medical activities, including triage, treatment, and isolation areas, while ensuring privacy and dignity. Given the limited space, it is recommended to prioritize essential medical activities and minimize overcrowding.
+
+**Safe Area 2:**
+Located around (112, 801), situated in the south-west of the photo, is 64 pixels from the nearest estimated damage. This area also needs ground verification. It adheres to the Sphere standard, requiring a minimum of 3.5 square meters per person. The shelter should be equipped with appropriate medical facilities, including triage stations, treatment rooms, isolation wards, and storage areas for medical supplies. The limited space necessitates careful planning to maximize the use of available areas.
+
+**Safe Area 3:**
+Around (632, 816), positioned in the south of the photo, is 51 pixels from the nearest estimated damage. This area also needs ground verification. It complies with the Sphere standard, necessitating a minimum of 3.5 square meters per person. The shelter should include appropriate medical facilities, ensuring safe access to medical activities. The proximity to the damage zone suggests that additional precautions will be necessary to ensure the safety of the medical personnel and patients.
+
+For the hot spot 1, located around (43, 991) in the south-west of the photo, immediate evacuation is recommended due to the severe damage and destruction. There are no suitable hospital locations within this zone, and residents should be directed to safer areas outside the immediate vicinity of the hot spot.
+
+In conclusion, the safe areas identified offer temporary medical facilities but are insufficient for long-term hospital provision. Adequate living space must be ensured, and additional support from the Sphere standard and INSARAG guidelines should be implemented to provide safe and dignified medical care for those displaced. Further assessments and planning are required to address the limitations of the safe areas and to prepare for the establishment of more permanent hospitals.
+
+## Immediate transportation recovery
+Immediate transportation recovery is crucial to restore access to the affected areas. The most critical locations for reopening roads or bridges are those near the hot spot 1, which is around (43, 991) in the south-west of the photo. This area is heavily damaged and poses significant risks to emergency responders and medical personnel. Reopening these routes will enable timely delivery of aid, evacuation of casualties, and the movement of rescue teams and supplies. Additionally, Safe Area 1, around (818, 214), is just 94 pixels from the nearest estimated damage and requires immediate clearance to ensure safe passage for emergency vehicles. Ensuring these routes are open will facilitate faster and more effective response efforts, saving lives and minimizing further damage.

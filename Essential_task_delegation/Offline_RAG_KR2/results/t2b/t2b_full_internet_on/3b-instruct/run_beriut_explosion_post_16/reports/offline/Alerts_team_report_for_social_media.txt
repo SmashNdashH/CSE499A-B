@@ -1,0 +1,23 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+People are advised to avoid the following dangerous areas due to severe damage caused by the explosion:
+
+1. **Hot Spot 1**: Located at coordinates (871, 225) in the northeast corner of the photo. This area is estimated to be in EMS-98 Grade 5 destruction, indicating total or near-total collapse. It covers a zone of approximately 287,383 pixels and is the most dangerous zone.
+
+2. **Hot Spot 2**: Situated at coordinates (991, 840) in the southeast corner of the photo. This area is also assessed as Grade 5 destruction, covering a zone of roughly (number not available offline). It poses significant risks due to collapsed structures and unstable debris.
+
+Additionally, there are potentially dangerous areas that require careful assessment:
+
+1. **Safe Area 1**: Located at coordinates (100, 100) in the northwest of the photo, approximately 519 pixels from the nearest estimated damage. This area is relatively safe but should still be checked on the ground before use.
+
+2. **Safe Area 2**: Positioned at coordinates (100, 250) in the northwest of the photo, about 483 pixels from the nearest estimated damage. Like Safe Area 1, this area is safe but requires ground verification.
+
+3. **Safe Area 3**: Situated at coordinates (100, 400) in the west of the photo, approximately 464 pixels from the nearest estimated damage. This area is also considered safe but should be checked before entering.
+
+All other areas are considered unsafe due to the extensive damage and potential hazards. Teams should prioritize clearing and assessing the hot spots before proceeding to the safer areas.
+
+## Social media news
+Witnesses describe the devastation in Beriut following a massive explosion. Satellite images reveal severe damage, with 8 out of 10 buildings classified as Grade 5 destruction under the EMS-98 guidelines, indicating total or near-total collapse. Hot spots in the northeast and southeast corners of the photo show the most concentrated damage. Safe areas, though limited, offer some relief. Immediate action is needed to clear debris and assess structural integrity. Stay tuned for updates as teams work to stabilize the situation. #BeriutExplosion #DisasterResponse #SatelliteImages

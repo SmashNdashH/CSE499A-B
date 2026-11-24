@@ -1,0 +1,24 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Emergency Service Team Human Resource Allocation Report
+
+## Introduction
+The Santa Rosa wildfire caused extensive destruction, with 96 out of 144 damage patches completely destroyed, indicating total or near-total collapse of structures. The hot spot in the south-east of the photo, covering 684,835 pixels, is the most dangerous zone, requiring immediate attention due to the highest concentration of damage. Safe areas identified include zones located in the south-west of the photo, approximately 386, 300, and 251 pixels away from the nearest estimated damage. The disaster has severely impacted the built environment, with large portions of the area covered by debris and charred remains, and no vegetation is visible due to the fire's impact.
+
+## Current Situation
+The Santa Rosa wildfire has caused extensive destruction, with 96 out of 144 damage patches completely destroyed, indicating total or near-total collapse of structures. The hot spot in the south-east of the photo, covering 684,835 pixels, is the most dangerous zone, requiring immediate attention due to the highest concentration of damage. Safe areas identified include zones located in the south-west of the photo, approximately 386, 300, and 251 pixels away from the nearest estimated damage. The disaster has severely impacted the built environment, with large portions of the area covered by debris and charred remains, and no vegetation is visible due to the fire's impact. Immediate needs include clearing debris, assessing safety, and stabilizing roads to facilitate access for rescue operations and recovery teams.
+
+## Human Resource Requirements
+The human resource requirements for the Santa Rosa wildfire response include 1 medical point in the intact area, located around pixel coordinates (100, 923) in the south-west of the photo, approximately 386 pixels from the nearest estimated damage. This medical point will serve as a central location for treating rescued individuals, ensuring they receive timely and effective medical care. Additionally, 1 international USAR team is required to conduct ASR Level 2 Worksite Triage Assessment in the intact area, focusing on identifying viable sites for live rescues. The team should be equipped with necessary tools and marked with the INSARAG system for clear communication. No additional resources are needed for the safe areas identified in the south-west of the photo, as they are unaffected by the disaster. [INSARAG2B-5.7.1-p1], [INSARAG2B-5.7.1-p3], [INSARAG2B-5.7.1-p9]
+
+## Allocation Plan
+The allocation plan for the Santa Rosa wildfire response includes the following: 1 international USAR team is required to conduct ASR Level 2 Worksite Triage Assessment in the intact area, located around pixel coordinates (100, 923) in the south-west of the photo, approximately 386 pixels from the nearest estimated damage. This team should be equipped with necessary tools and marked with the INSARAG system for clear communication. No additional resources are needed for the safe areas identified in the south-west of the photo, as they are unaffected by the disaster. [INSARAG2B-5.7.1-p1], [INSARAG2B-5.7.1-p3], [INSARAG2B-5.7.1-p9]
+
+## Challenges and Considerations
+The challenges in resource allocation include logistical difficulties in transporting equipment and supplies to the intact area due to the destruction of nearby roads. Additionally, local authorities may impose restrictions on access to certain zones, necessitating careful coordination with emergency responders. As the situation evolves, the allocation plan may require adjustments to ensure timely and effective support for rescue and recovery operations. Regular feedback from the field will be crucial to refine strategies and address emerging needs.
+
+## Recommendations
+Given the extent of destruction and the critical need for immediate access to the intact area, it is recommended to deploy additional resources, including specialized equipment and personnel, to expedite debris clearance and road stabilization. This will facilitate the arrival of the international USAR team and ensure uninterrupted access for rescue and recovery operations. Collaboration with local authorities and road repair teams is essential to mitigate delays and enhance operational efficiency.
+
+## Conclusion
+The Santa Rosa wildfire has caused extensive destruction, with 96 out of 144 damage patches completely destroyed, indicating total or near-total collapse of structures. Immediate efforts include clearing debris and stabilizing roads to facilitate access for rescue and recovery operations. The international USAR team will conduct ASR Level 2 Worksite Triage Assessment in the intact area to identify viable sites for live rescues. Continued collaboration with local authorities and road repair teams is essential to ensure efficient operations and support for ongoing recovery efforts.

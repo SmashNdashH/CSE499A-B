@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Public Community Report
+
+## Introduction
+The earthquake caused significant structural damage to 32 buildings, classified as EMS-98 Grade 5, with total or near-total collapse, in the north-west of the photo. Additionally, 11 buildings sustained moderate to very heavy damage, categorized as Grades 2 to 4, in the west and north-east of the photo. These areas are identified as the most dangerous due to high concentrations of structural damage. Emergency responders are advised to prioritize these regions to ensure safety and provide necessary assistance.
+
+## Current Situation
+The earthquake has caused significant structural damage to 32 buildings, classified as EMS-98 Grade 5, with total or near-total collapse, in the north-west of the photo. Additionally, 11 buildings sustained moderate to very heavy damage, categorized as Grades 2 to 4, in the west and north-east of the photo. These areas are identified as the most dangerous due to high concentrations of structural damage. Emergency responders are advised to prioritize these regions to ensure safety and provide necessary assistance.
+
+## Resource Allocation
+Given the significant structural damage caused by the earthquake, the emergency services are prioritizing the safe areas identified in the south-east of the photo to establish emergency shelters, medical facilities, and transport routes. Based on the Sphere Handbook 2018 [SPHERE-1-p3] and INSARAG guidelines [INSARAG3-5.2-p1], the focus is on ensuring displaced populations have access to safe living spaces and adequate medical care. Emergency responders will coordinate with local authorities to assess and distribute essential household items, such as bedding and cooking supplies, to support daily activities [SPHERE-4-p1]. The priority is to ensure safety and facilitate recovery efforts in the most affected zones while maintaining accessibility in the safe areas.
+
+## Public Advisory
+The earthquake has caused significant structural damage, with 32 buildings completely destroyed and 11 buildings sustaining moderate to heavy damage. To ensure safety, please avoid the north-west, west, and north-east areas of the photo, which are identified as the most dangerous due to high concentrations of structural damage. Emergency responders are working to clear debris and stabilize partially collapsed structures in these zones. In the meantime, stay indoors and avoid using damaged roads. For displaced populations, temporary shelters and medical facilities have been established in safe areas to the south-east. Please follow updates for recovery efforts and remain vigilant. [SPHERE-1-p3] [INSARAG3-5.2-p1]
+
+## Organizational Operation
+As the primary organization responsible for post-disaster management, we are allocating resources to establish emergency shelters, medical facilities, and transport routes in safe areas to support displaced populations and provide essential aid. We are coordinating with local authorities to ensure the distribution of household items and are prioritizing safety measures in the most affected zones. For further assistance, please contact our emergency hotline or visit our website for updates.
+
+## Conclusion
+We are committed to restoring safety and stability in the affected areas. Our teams are actively working to clear debris, stabilize damaged structures, and provide essential aid. Temporary shelters and medical facilities are in place to support displaced populations. Please stay informed and follow updates for recovery efforts. Together, we will rebuild and recover.

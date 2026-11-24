@@ -1,0 +1,69 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The recent wildfire in Hawaii has caused widespread devastation, with nearly 86% of buildings completely destroyed, classified as EMS-98 Grade 5 (total or near total collapse). The satellite imagery analysis reveals that the southern and northern regions of the photo were the most severely impacted, with Hotspot 1 and Hotspot 2 bearing the heaviest damage. Hotspot 1, located around (545, 845) pixels, covers a zone of 377,369 pixels, while Hotspot 2, situated around (140, 741) pixels, spans 176,705 pixels. These hotspots indicate the most severely impacted areas, with 165 buildings completely destroyed and 1 building sustaining moderate to very heavy damage.
+
+The Alerts team has issued a danger area alert, advising people to avoid the hotspots and monitor potentially dangerous areas. Safe areas, such as Safe Area 1 around (844, 100) pixels, are approximately 280 pixels from the nearest estimated damage zone. These areas provide some relief from immediate danger but remain within close proximity to the estimated damage zones.
+
+The Emergency Service Team has identified potential shelter locations in the safe areas and emphasized the need for immediate transportation recovery and medical evacuation. They recommend that immediate attention be given to securing and stabilizing structures in the hotspots and providing appropriate shelter assistance in the safe areas. The Sphere Handbook and INSARAG Guidelines provide essential frameworks for planning and implementing shelter and medical support, ensuring that the affected population receives timely and appropriate assistance.
+
+## Current Situation
+The current situation in the aftermath of the wildfire in Hawaii is dire, with nearly 86% of buildings completely destroyed, classified as EMS-98 Grade 5 (total or near total collapse). The satellite imagery analysis highlights the severe damage concentrated in the southern and northern regions, specifically around coordinates (545, 845) and (140, 741). Hotspot 1, covering 377,369 pixels, and Hotspot 2, spanning 176,705 pixels, bear the brunt of the devastation, with 165 buildings completely destroyed and 1 building sustaining moderate to very heavy damage.
+
+The Emergency Service Team has identified several key areas for immediate action:
+
+1. **Immediate Transportation Recovery**: The most urgent need is to reopen roads or bridges connecting the hotspots to the nearest safe areas. Hotspot 1, located around (545, 845) pixels, is the most severely impacted area with 165 buildings completely destroyed (EMS-98 Grade 5). Reopening roads here will facilitate the evacuation of injured individuals and the delivery of medical supplies. Similarly, Hotspot 2, around (140, 741) pixels, with 1 building sustaining moderate to very heavy damage (EMS-98 Grades 2 to 4), requires immediate access for medical teams and rescue operations.
+
+2. **Emergency Shelters**: Safe Area 1, around (844, 100) pixels, is 280 pixels from the nearest estimated damage zone and is recommended to be checked on the ground before use. Safe Area 2, around (701, 146) pixels, is 218 pixels from the nearest estimated damage zone and also needs to be assessed for safety. Safe Area 3, around (847, 254) pixels, is 147 pixels from the nearest estimated damage zone and should be further evaluated for its suitability as a shelter or medical facility.
+
+3. **Medical Evacuation and Care**: The hotspots, particularly Hotspot 1 and Hotspot 2, are the most dangerous zones where 165 buildings were completely destroyed (EMS-98 Grade 5) and 1 building sustained moderate to very heavy damage (EMS-98 Grades 2 to 4). Immediate medical attention and stabilization are critical. The USAR Team should coordinate with medical teams to provide continuous health monitoring and medical care to USAR Team members, including canines. The USAR Team should participate in daily USAR Team briefings and conduct the daily medical briefing. The USAR Team should be prepared to provide ongoing clinical care as required, including psychological assessment and monitoring, and supervise the monitoring of USAR Team members for stress-related health problems and general state of health.
+
+4. **Sh
+
+## Resource Allocation
+To address the immediate needs arising from the severe damage caused by the wildfire, our team will deploy a robust and flexible resource allocation strategy. The Sphere Handbook and INSARAG Guidelines provide essential frameworks for planning and implementing shelter and medical support.
+
+**Emergency Shelters:**
+
+- **Deployment Strategy:** Teams will be dispatched to the identified safe areas, with Safe Area 1, around (844, 100) pixels, being the first priority. This area is approximately 280 pixels from the nearest estimated damage zone and is recommended to be checked on the ground before use. Safe Area 2, around (701, 146) pixels, and Safe Area 3, around (847, 254) pixels, will also be assessed for safety and suitability as shelters or medical facilities.
+
+**Medical Evacuation and Care:**
+
+- **Deployment Strategy:** The USAR Team will coordinate with medical teams to provide continuous health monitoring and medical care to USAR Team members, including canines. Daily briefings will be conducted to ensure all team members are aware of the risks and preventative actions. A safety and security plan will be developed and briefed to the team, ensuring all team members are aware of the risks and preventive measures.
+
+**Transportation Recovery:**
+
+- **Deployment Strategy:** Teams will focus on reopening roads or bridges connecting the hotspots to the nearest safe areas. This will involve immediate attention to securing and stabilizing structures in the hotspots and providing appropriate shelter assistance in the safe areas. The USAR Team will liaise with logistics to ensure they have the necessary equipment and vehicles to carry out these tasks efficiently.
+
+**Logistics and Supplies:**
+
+- **Deployment Strategy:** Supplies will be sourced locally through cash or voucher-based assistance and through local, regional, or international procurement for in-kind distribution. Environmental considerations will be taken into account when packaging and delivering items. Distribution sites will be carefully chosen to ensure that vulnerable individuals or households are included and can access both the information and the distribution itself. Containers for the storage and transportation of personal and household goods will be included in the distribution process.
+
+By adhering to the principles outlined in the Sphere Handbook and INSARAG Guidelines, we
+
+## Public Advisory
+The recent wildfire in Hawaii has caused severe damage, with nearly 86% of buildings completely destroyed, classified as EMS-98 Grade 5 (total or near total collapse). People must avoid the following dangerous areas:
+
+- **Hot Spot 1 (South):** Located around (545, 845) pixels, this area saw 165 buildings completely destroyed (EMS-98 Grade 5). Immediate attention is needed to secure this region and prevent further collapse.
+- **Hot Spot 2 (South-West):** Around (140, 741) pixels, this area had 1 building sustain moderate to very heavy damage (EMS-98 Grades 2 to 4). Extensive cracks in walls and partial structural failure of roofs and floors make this area a significant risk.
+- **Hot Spot 3 (North):** Located around (456, 240) pixels, this area also experienced moderate to heavy damage (EMS-98 Grades 2 to 4). Similar to Hot Spot 2, this area requires urgent attention.
+
+Additionally, there are potentially dangerous areas that should be monitored closely:
+
+- **Safe Area 1 (Northeast):** Around (844, 100) pixels, approximately 280 pixels from the nearest estimated damage zone. While this area is relatively safe, it remains within close proximity to the estimated damage zones. Close monitoring is necessary to ensure safety.
+- **Safe Area 2 (Northeast):** Around (701, 146) pixels, approximately 218 pixels from the nearest estimated damage zone. This area is also considered safe but is still within the vicinity of the estimated damage zones. Continuous surveillance is advised.
+- **Safe Area 3 (Northeast):** Around (847, 254) pixels, approximately 147 pixels from the nearest estimated damage zone. This area is deemed safe but is still within the estimated damage zones. Further checks are recommended to confirm its safety.
+
+Evacuees and responders should stay well clear of these hot spots and monitor the potentially dangerous areas closely. Immediate action is required to address the severe damage in the hotspots. Safe Area 1, Safe Area 2, and Safe Area 3 are recommended for temporary shelter, but they should be checked on the ground before use to ensure safety.
+
+For emergency services, dial not available offline to report any injuries or requests for assistance. Follow all instructions from emergency personnel and evacuate immediately if instructed to do so. Stay tuned to local news and social media for updates and official guidance.
+
+Cooperation with ongoing operations is crucial. Keep local authorities informed about your location and needs. Follow all instructions and guidelines provided by emergency services and humanitarian organizations. Stay calm and follow the advice of trained professionals to ensure your safety and the safety of others.
+
+## Organizational Operation
+Our organization plays a critical role in coordinating immediate response efforts following the severe wildfire in Hawaii. We are dedicated to assessing the damage, deploying resources, and providing guidance to ensure the safety and well-being of affected communities. Our team focuses on immediate transportation recovery, emergency shelter deployment, and medical evacuation. For further assistance, please contact local emergency services or visit our website for updates and official guidance. Contact details are not available offline. Stay informed and follow local authorities for the latest information.
+
+## Conclusion
+We want to assure the community that our team is working tirelessly to provide immediate assistance and support. Your safety is our top priority, and we are committed to ensuring that you and your loved ones are safe and cared for. We will continue to monitor the situation and provide updates as we implement our plans. Please stay in touch with local authorities for the latest information and follow their instructions. Together, we will overcome this challenging time.

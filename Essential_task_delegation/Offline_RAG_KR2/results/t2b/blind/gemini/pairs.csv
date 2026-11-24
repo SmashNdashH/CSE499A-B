@@ -1,0 +1,6 @@
+pair,more_useful,same_in_both_orders,A_useful,A_clear,A_trustworthy,A_cites,B_useful,B_clear,B_trustworthy,B_cites,A_words,B_words,longer,longer_won
+1,B,True,2.0,2.0,3.0,2.0,4.0,2.0,2.0,3.0,704,1757,B,True
+2,A,True,3.0,3.0,3.5,3.0,2.0,2.0,2.0,2.5,687,1930,B,False
+3,B,True,2.5,2.0,4.0,2.0,3.5,2.5,2.0,3.0,672,2021,B,True
+4,A,True,4.0,2.5,2.0,3.0,2.0,1.5,3.0,2.0,1606,523,A,True
+5,A,True,3.5,4.0,4.0,4.5,2.5,2.0,3.0,3.0,402,999,B,False

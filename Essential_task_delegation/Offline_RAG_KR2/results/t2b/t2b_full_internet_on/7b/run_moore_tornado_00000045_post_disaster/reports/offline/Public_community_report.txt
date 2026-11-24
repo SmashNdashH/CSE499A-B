@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The tornado caused severe destruction in the south and south-west regions of the photo, with 72% of the area completely destroyed and 27% sustaining moderate to very heavy damage. The hot spots of dense damage include zones around (528, 712) and (265, 861), while safe areas in the north-west offer temporary shelter. The disaster has prompted urgent assistance for debris clearance and stabilization efforts in critical zones.
+
+## Current Situation
+The tornado has caused severe destruction in the south and south-west regions of the photo, with 72% of the area completely destroyed and 27% sustaining moderate to very heavy damage. Emergency shelters should be established in the safe areas identified in the north-west of the photo, specifically around coordinates (100, 165), (195, 282), and (236, 101). These zones are at least 304, 212, and 165 pixels, respectively, from the nearest estimated damage, ensuring safety for displaced residents. Temporary medical facilities must be established in the same safe areas to treat injured individuals, prioritizing the provision of medical care in the severely damaged zones. Immediate transportation recovery should focus on reopening the road network in these safe areas to facilitate aid delivery and resource transport.
+
+## Resource Allocation
+The emergency response team will focus on establishing shelters and temporary medical facilities in the safe areas identified in the north-west of the photo, ensuring displaced residents and injured individuals receive immediate assistance. Based on the disaster assessment and the guidelines from Sphere Handbook 2018 and INSARAG, the team will prioritize setting up emergency shelters and medical facilities in these zones to facilitate recovery. The team will coordinate with local authorities to ensure the safe areas are accessible and suitable for displaced residents and medical care.
+
+## Public Advisory
+The tornado has caused severe destruction in the south and south-west regions of the photo, with 72% of the area completely destroyed and 27% sustaining moderate to very heavy damage. The hot spots of dense damage include zones around (528, 712) and (265, 861), while safe areas in the north-west offer temporary shelter. For your safety, please avoid the affected zones and seek refuge in the safe areas identified. If you are displaced, contact local authorities for assistance in securing temporary housing. Injured individuals should seek medical attention immediately, and we recommend staying away from the severely damaged zones to prevent further risks. Authorities will prioritize clearing debris and stabilizing structures in the hotspots, so please cooperate with their efforts. For updates, monitor official channels.
+
+## Organizational Operation
+Our organization is actively engaged in coordinating the post-disaster response, focusing on establishing emergency shelters and medical facilities in safe areas to support displaced residents and injured individuals. We are committed to facilitating debris clearance and stabilizing critical zones to prevent further risks. For further assistance, please contact local authorities or relevant organizations for support.
+
+## Conclusion
+We are working tirelessly to address the severe destruction caused by the tornado, ensuring immediate relief for displaced residents and medical care for injured individuals. Your safety remains our top priority, and we urge you to stay in the safe areas identified to avoid further risks. Together, we will rebuild and recover, restoring normalcy and hope. Thank you for your cooperation and support.

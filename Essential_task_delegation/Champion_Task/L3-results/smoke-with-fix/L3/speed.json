@@ -1,0 +1,73 @@
+{
+ "7b_nf4": {
+  "questions": 12,
+  "weights_gpu_gb": 5.91,
+  "footprint_gb": 5.78,
+  "peak_gpu_gb": 8.63,
+  "s_per_question_mean": 5.254,
+  "s_per_question_median": 6.158,
+  "tokens_per_s": 0.54,
+  "answers": [
+   "A",
+   "B",
+   "B, G",
+   "F, G",
+   "C",
+   "D",
+   "B",
+   "B",
+   "D, H",
+   "C, D, H",
+   "B",
+   "B"
+  ]
+ },
+ "3b_fp16": {
+  "questions": 12,
+  "weights_gpu_gb": 7.53,
+  "footprint_gb": 7.52,
+  "peak_gpu_gb": 8.13,
+  "s_per_question_mean": 1.912,
+  "s_per_question_median": 2.158,
+  "tokens_per_s": 1.74,
+  "answers": [
+   "A",
+   "C",
+   "B, E, G",
+   "F, G, H",
+   "C",
+   "C",
+   "D",
+   "B",
+   "D, H",
+   "A, C, G, H",
+   "A",
+   "A"
+  ],
+  "disk_gb": 7.51
+ },
+ "3b_nf4": {
+  "questions": 12,
+  "weights_gpu_gb": 2.42,
+  "footprint_gb": 2.35,
+  "peak_gpu_gb": 3.03,
+  "s_per_question_mean": 2.093,
+  "s_per_question_median": 2.371,
+  "tokens_per_s": 1.67,
+  "answers": [
+   "A",
+   "C",
+   "B, E, G",
+   "F, E, G, H",
+   "C",
+   "C",
+   "D",
+   "B",
+   "D, H",
+   "A, C, G, H",
+   "A",
+   "E"
+  ],
+  "disk_gb": 2.4
+ }
+}

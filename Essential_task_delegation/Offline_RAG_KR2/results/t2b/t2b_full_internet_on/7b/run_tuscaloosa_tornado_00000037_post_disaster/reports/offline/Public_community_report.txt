@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The Tuscaloosa tornado caused widespread destruction, with 54 of the observed damage patches classified as completely destroyed, indicating total or near-total collapse. The hotspots of highest damage concentration include zones around (774, 531) in the east and (41, 750) in the south-west of the photo, where 223,555 and 200,020 pixels, respectively, are affected by severe destruction. Authorities are advised to prioritize these high-risk areas for swift action to ensure public safety.
+
+## Current Situation
+The current situation shows widespread destruction in the affected area, with 54 of the observed damage patches classified as completely destroyed, indicating total or near-total collapse. Critical emergency shelters have been established in safe areas, such as around pixel coordinates (346, 119) in the north, (359, 454) in the centre, and (416, 650) in the centre of the photo, ensuring minimal disruption to the affected population. Additionally, medical points have been set up in these safe zones to address potential injuries and provide immediate care. Immediate transportation recovery is underway, focusing on reopening the road network in these safe areas to facilitate aid delivery and responder movement.
+
+## Resource Allocation
+The emergency response team is currently focused on establishing critical infrastructure in safe zones to support displaced residents and injured individuals. Based on the guidelines from [SPHERE-1-p3], we are coordinating with local authorities to provide financial support and in-kind material assistance for temporary shelter and household items. We are also ensuring that displaced populations have access to essential services, such as healthcare, while prioritizing the hotspots for urgent safety assessments and rescue operations. Given the current situation, we are not available offline to provide specific staff, team, shelter, or supply numbers.
+
+## Public Advisory
+The public is advised to remain in safe areas identified in the post-disaster assessment, such as around pixel coordinates (346, 119) in the north, (359, 454) in the centre, and (416, 650) in the centre of the photo, to avoid further risks. Emergency shelters and medical points have been established in these zones to provide temporary housing and medical care. For displaced individuals, local authorities are coordinating support, including temporary shelter and household items. Please stay clear of the hotspots of highest damage concentration, particularly around (774, 531) in the east and (41, 750) in the south-west, to ensure safety. Follow official instructions and updates from emergency services for further guidance.
+
+## Organizational Operation
+Our organization is actively managing the post-disaster response, focusing on establishing critical infrastructure in safe zones to support displaced residents and injured individuals. We are coordinating with local authorities to provide financial and material assistance for temporary shelter and household items, ensuring displaced populations have access to essential services. For further assistance, please contact local emergency services or government agencies for detailed support and updates.
+
+## Conclusion
+We are committed to supporting our community through this challenging time. Our priority is to ensure the safety and well-being of everyone affected by the disaster. Emergency shelters and medical points are in place to provide temporary relief, and we are working tirelessly to address the urgent needs of displaced individuals. Please stay in safe areas and follow official instructions. Together, we will overcome this adversity and rebuild stronger.

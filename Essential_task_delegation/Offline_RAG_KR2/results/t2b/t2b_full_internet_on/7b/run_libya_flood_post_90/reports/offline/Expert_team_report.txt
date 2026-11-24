@@ -1,0 +1,18 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The flood caused significant damage to the built environment, with 47% of buildings completely destroyed and 20% moderately damaged. The most affected areas include zones in the south-east and south of the image, where substantial structural and non-structural impacts were observed. The remaining buildings remained intact, showing negligible to slight damage. Overall, the disaster resulted in severe destruction, aligning with EMS-98 Grade 5 for the destroyed structures and Grades 2 to 4 for those with moderate to very heavy damage.
+
+## Description of the estimated damage
+The flood caused significant damage to the built environment, with 47% of buildings completely destroyed and 20% moderately damaged. The most affected areas include zones in the south-east and south of the image, where substantial structural and non-structural impacts were observed. The remaining buildings remained intact, showing negligible to slight damage. The destroyed buildings are concentrated in the south-eastern region, while the moderately damaged ones are scattered across the southern part of the image. Safe areas, such as open ground in the north of the image, are located at least 353 pixels away from the nearest estimated damage. The hot spots, which indicate the densest areas of damage, are situated in the south-east and south of the image, covering zones of 42481 and 34727 pixels, respectively. These findings align with the disaster grades provided by the EMS-98 guidelines, with destroyed buildings classified as Grade 5 and moderately damaged buildings as Grades 2 to 4.
+
+## Disaster grade of each location
+The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:
+- Buildings estimated destroyed: 7: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Buildings estimated damaged: 3: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Buildings estimated intact: 5: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The conclusion of the report indicates that immediate assistance should focus on the hot spots in the south-east and south regions of the image, where the most severe structural and non-structural damage has occurred. Given the high concentration of destroyed buildings in these areas, efforts must prioritize clearing debris, stabilizing partially collapsed structures, and ensuring safety for displaced residents. Additionally, resources should be allocated to assess waterlogged soils and prevent further environmental degradation in these zones.

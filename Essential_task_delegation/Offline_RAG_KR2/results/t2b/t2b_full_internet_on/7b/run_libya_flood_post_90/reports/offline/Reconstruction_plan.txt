@@ -1,0 +1,35 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The flood caused severe damage to the built environment, with 47% of buildings completely destroyed and 20% moderately damaged. The most affected areas include zones in the south-east and south of the image, where substantial structural and non-structural impacts were observed. Immediate attention is required for clearing debris and stabilizing partially collapsed structures in these zones. Safe areas, such as open ground in the north of the image, are located at least 353 pixels away from the nearest estimated damage. Emergency shelters, hospitals, and transportation recovery should prioritize these safe areas to support displaced populations effectively.
+
+## Assessment of Damage
+The flood caused severe damage to the built environment, with 47% of buildings completely destroyed and 20% moderately damaged. The most affected areas include zones in the south-east and south of the image, where substantial structural and non-structural impacts were observed. The destroyed buildings are concentrated in the south-eastern region, while the moderately damaged ones are scattered across the southern part of the image. Safe areas, such as open ground in the north of the image, are located at least 353 pixels away from the nearest estimated damage. The hot spots, which indicate the densest areas of damage, are situated in the south-east and south of the image, covering zones of 42481 and 34727 pixels, respectively. These findings align with the disaster grades provided by the EMS-98 guidelines, with destroyed buildings classified as Grade 5 and moderately damaged buildings as Grades 2 to 4. The assessment of the affected areas is consistent with the recommendations from the Sphere Handbook 2018, Shelter and Settlement, and the guidelines provided by INSARAG [SPHERE-3-p1] [SPHERE-3-p2].
+
+## Reconstruction Needs
+The reconstruction needs for the affected area include clearing debris and stabilizing partially collapsed structures in the hotspots identified in the south-east and south of the image. Given the severe destruction of buildings, repairs and retrofits are essential for ensuring safety and functionality. The affected structures must be assessed for their safety and stability, and necessary interventions must be carried out to prevent further collapse. The Sphere Handbook 2018, Shelter and Settlement, provides guidance on debris removal and housing rehabilitation [SPHERE-3-p1] [SPHERE-3-p2]. Local authorities and experts should be involved in assessing the extent of damage and planning reconstruction projects. Reconstruction efforts must prioritize the safety and resilience of the built environment to mitigate future risks.
+
+## Plan of Action
+The Plan of Action outlines the following steps to address the severe damage caused by the flood:
+
+1. **Debris Removal and Safety Assessment**: Mobilize specialized teams to remove debris from the hotspots in the south-east and south of the image, prioritizing areas within 353 pixels of the nearest estimated damage. Conduct thorough safety assessments to identify hazardous materials and ensure the health and safety of workers. This step aligns with [SPHERE-3-p1] and [SPHERE-3-p2].
+
+2. **Structural Safety Evaluation**: Deploy structural engineers to evaluate the safety of partially collapsed buildings in the identified hotspots. Focus on buildings classified as Grade 5 and 4 based on the EMS-98 guidelines, ensuring compliance with building codes to prevent further collapse. This phase is supported by [SPHERE-5-p1] and [SPHERE-5-p2].
+
+3. **Temporary Housing Solutions**: Establish emergency shelters in safe areas, such as open ground in the north of the image, to accommodate displaced populations. Provide shelter kits and tents to ensure basic living conditions, aligning with [SPHERE-3-p1] and [SPHERE-3-p2]. Coordinate with local authorities to ensure the availability of resources and support.
+
+4. **Medical Support**: Set up temporary medical points in safe areas to address potential injuries and illnesses. Ensure medical staff are equipped to handle the influx of casualties, with plans in place for patient evacuation and treatment. This step is guided by [INSARAG2B-6.3.1].
+
+5. **Road Network Restoration**: Prioritize the reopening of road networks in the safe areas to facilitate emergency response and aid delivery. Clear debris and assess accessibility, ensuring connectivity for displaced populations and relief teams. This action is supported by [SPHERE-1-p4].
+
+6. **Community Engagement and Capacity Building**: Engage affected communities in planning and executing reconstruction efforts. Provide technical assistance to ensure safe and resilient rebuilding, focusing on local materials and sustainable practices. This step aligns with [SPHERE-5-p1] and [SPHERE-5-p2].
+
+7. **Monitoring and Reporting**: Regularly monitor progress and document findings to guide future reconstruction efforts. Collaborate with local authorities to ensure compliance with building codes and standards, fostering community resilience against future disasters. This phase is supported by [SPHERE-5-p1] and [SPHERE-5-p2].
+
+## Recommendations
+To ensure effective and efficient reconstruction, it is recommended to allocate resources for debris removal and safety assessments in the hotspots, mobilizing specialized teams to clear debris and assess the safety of partially collapsed buildings. Additionally, temporary housing solutions must be established in safe areas, providing shelter kits and tents to displaced populations. Funding should also support the deployment of structural engineers for safety evaluations and the setup of temporary medical points to address potential injuries. Road network restoration must be prioritized to facilitate emergency response and aid delivery. Community engagement and capacity building programs should be implemented to ensure safe and resilient rebuilding, focusing on local materials and sustainable practices. Regular monitoring and reporting will help track progress and ensure compliance with building codes and standards.
+
+## Appendices
+The disaster grade of each place is as follows: destroyed buildings are classified as EMS-98 Grade 5, while moderately damaged buildings are categorized under Grades 2 to 4. The labeled map shows the hotspots and safe areas, with the hotspots in the south-east and south of the image, and safe areas in the north. The guideline sections used include [EMS98-masonry-grade-5], [EMS98-masonry-grade-2], [EMS98-masonry-grade-3], [EMS98-masonry-grade-4], and [SPHERE-3-p1].

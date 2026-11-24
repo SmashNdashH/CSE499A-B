@@ -239,6 +239,11 @@ Both can live in one Next.js project, with a story page and a demo page: one des
   - The same front end, built on the laptop, calls a local Python API (for example FastAPI). The API runs the chain: the segmenter, H2's fixed queries, T1's heatmap and T2's report, streamed as it's written.
   - The 7B needs a GPU with about 6 GB of memory in 4-bit (H2b: 5.8 GB to hold the model, 6.2 GB at peak while answering). Without one, the gallery's reports computed in advance are shown, labelled as such.
   - *(16 Nov)* The guidance step is meant to move to the 3B distilled from the 7B (L2): a 3B of the same family peaked at 2.6 GB in 4-bit (H2b), so a laptop graphics card could hold it. L2's training hasn't run, and no language model has been measured on a laptop, a phone or in a browser (L3 step 6). A browser can't run the 7B, and running even a 3B there is untested.
+  - *(23 Nov)* **The 3B is trained and chosen: (c), `AbrarAlam/disasterm3-qwen25vl3b-l2/c/final` on Qwen2.5-VL-3B.**
+    - On one T4, one question at a time: 2.42 GB for its weights in 4 bits, 3.01 GB at peak, 1.8 s per question.
+    - **A requirement for running it anywhere in half precision (fp16, or 4 bits with fp16 compute):** the last block of its vision part, `visual.blocks.31.mlp.down_proj`, must run at full precision. Without that, about 3% of photos make it overflow, and the answer comes out as exclamation marks.
+    - The fix is in `l2-step4-winner-benchmark.ipynb`'s cell 2b. The same overflow stopped the 3B's training until L2 step 2b (19 Nov).
+    - Full precision (fp32) on a laptop CPU doesn't overflow, but it's slower. L3 step 6 (the laptop) is still open.
 - **Stretch: uploads on the public site with no server (decided 24 Oct: try it).**
   - ONNX Runtime Web can run an ONNX model in the visitor's browser, so their images never leave their device.
   - Only the segmenter, counts and heatmap could run this way, not the report.
@@ -379,7 +384,7 @@ Real collapse trajectories (how each building fell) need structural data and sim
 
 ## 6. The one chain, and who writes the report
 
-**Status:** the chain was agreed on 4 Nov ([roadmap §1b](Next_Steps_Roadmap.md)). **Its damage map was settled on 19 Nov: option C4,** Abrar's choice ([every option in plain words](Task_Ledger.md#every-option-in-plain-words-written-19-nov-for-the-decision)). The writer is still open and is tested by T2b.
+**Status:** the chain was agreed on 4 Nov ([roadmap §1b](Next_Steps_Roadmap.md)). **Its damage map was settled on 19 Nov: option C4,** Abrar's choice ([every option in plain words](Task_Ledger.md#every-option-in-plain-words-written-19-nov-for-the-decision)). The writer is still open and is tested by T2b. **20 Nov: the chain ran end to end offline for the first time** (T2 step 5, two test pairs; [results](Offline_RAG_KR2/results/t2_step5_c4/README.md)). Both pairs pass the five pass rules, but the 7B turned one count into a wrong percentage, so step 7's number check comes next. *(Later on 20 Nov: with a number check while the model writes, run 2 has 0 wrong and 0 unsourced numbers. The 7B then reused damage counts as staff numbers. **Run 4 passes the stricter rule too, with 0,** once the staffing and shelter requests stopped asking for numbers the facts don't give. For the design, it's the facts and the checks, not the model, that keep the reports' numbers right.)*
 
 **The chain:** before + after photos → the damage map, made by the method that suits the photo:
 - on the coarser xBD-type photos (1.25–2.8 m per pixel), R11 labels every pixel;
@@ -413,3 +418,28 @@ Real collapse trajectories (how each building fell) need structural data and sim
   - Misaligned pairs: 52% of measured pairs are shifted by more than 2 px (Ridita's audit), so crops can be off.
   - A building SAM 3 misses is never graded or counted.
   - Missing facts must not read as zero: `disasteller_inputs.py` returns zeros with status "ok" for an image that isn't in the table.
+
+## 7. Notes for the final report (drafts; the report waits for Abrar's go)
+
+### 7.1 Transfer learning in our models (added 22 Nov, from the CSE deep learning and pattern recognition lecture)
+
+**The lecture's rule:** copy the lower layers of a network trained on a larger, similar task, and train only what's new. Lower layers hold generic features such as edges and textures; upper layers hold task-specific ones. The more similar the tasks, the more layers can be reused; the more labelled data, the more layers can be unfrozen. The steps:
+1. drop the old output layer and add a new one;
+2. freeze the reused layers while the new head learns;
+3. unfreeze the top blocks with a learning rate about 10 times lower;
+4. check validation after each change;
+5. feed inputs exactly as the pretrained model expects.
+
+**Where our system uses it:**
+
+| Model | What is reused | What is trained | The lecture's case |
+|---|---|---|---|
+| R11, the damage map (U-Net) | a ResNet-50 encoder pretrained on ImageNet (`encoder_weights="imagenet"`); smp adapts its first layer to our 6 channels (after-photo and before-photo) | the whole network, on 5,798 training pairs, with ImageNet's normalisation | a task different from ImageNet with plenty of data → fine-tune everything |
+| Our 7B and the 3B (Qwen2.5-VL) | the whole model, frozen | small LoRA adapters added to the language layers (the 3B learns from the 7B the same way, L2) | a huge model and little data for its size → freeze the reused layers and train only the new parts |
+| L0b (19 Nov) | the kept 7B, frozen | one LoRA adapter on both its language layers and its upper vision blocks, on 1,800 building crops | step 3: unfreeze upper blocks when the task differs from the original |
+
+**Two results the lecture explains:**
+- **L0b.** The 7B's vision part was frozen only because the DisasterM3 paper's recipe freezes it. Frozen, the 7B called 298 of Part B's 300 buildings intact (100 of 300 right). With its upper vision blocks trained, it got 176 right, and on destroyed buildings it beat our grader (86 against 66). Satellite damage is far from the everyday photos the vision part was pretrained on, so this is the case where the lecture says to unfreeze.
+- **Super-resolution (R16c step 7).** The grader learned on ordinary crops. Crops enlarged by Swin2SR or Real-ESRGAN looked different from what it learned on, and it got slightly but surely worse (destroyed IoU 0.3066 → 0.3025 and 0.3006). This is the lecture's warning to feed a pretrained model inputs like the ones it learned from.
+
+**What wasn't tried, and why:** a staged schedule for R11 or the grader (head first, then the top blocks at a 10 times lower rate). The fine-tuning runs R1–R12 had stopped improving beyond noise (about 0.005 mIoU), and the GPU hours went to the system instead.

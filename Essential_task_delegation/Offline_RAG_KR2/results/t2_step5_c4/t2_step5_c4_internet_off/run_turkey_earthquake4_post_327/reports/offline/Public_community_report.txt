@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Public Community Report
+
+## Introduction
+The earthquake caused significant damage, with 32 buildings completely destroyed and 11 others suffering moderate to heavy damage. Debris was scattered across several zones, and the road network was disrupted due to water accumulation. Open-space ground also showed signs of flooding. The disaster grades indicate severe structural and non-structural impacts, consistent with the model's estimates. The most critical affected areas include the north-west and north-east regions, where debris is densely concentrated. These zones require urgent attention to ensure safety and prevent further risks. Authorities are advised to prioritize these areas to mitigate further risks and ensure public safety.
+
+## Current Situation
+The earthquake has caused significant structural damage, with 32 buildings completely destroyed and 11 others suffering moderate to heavy damage. Debris is densely concentrated in the north-west and north-east regions, posing safety risks. The road network in these areas is disrupted due to water accumulation, hindering emergency response and aid delivery. Emergency shelters have been established in the safe area 1, ensuring displaced individuals have adequate living space. Medical points are being prepared to handle rescued people, and a triage point is being set up to facilitate efficient patient transfer. Immediate transportation recovery focuses on clearing debris from critical road networks to restore accessibility.
+
+## Resource Allocation
+The allocation of emergency services is guided by the disaster's impact and urgent needs. The Emergency Service Team has prioritized establishing shelters in the safe area 1, ensuring displaced individuals have adequate living space. For medical response, one hospital is being prepared to handle rescued people, with a triage point set up to facilitate efficient patient transfer. Immediate transportation recovery focuses on clearing debris from critical road networks in the north-west and north-east regions to restore accessibility. These efforts are aligned with the Sphere Handbook 2018, Shelter and Settlement, and the INSARAG Guidelines 2020, ensuring effective and timely support.
+
+## Public Advisory
+The earthquake has caused significant structural damage, with 32 buildings completely destroyed and 11 others suffering moderate to heavy damage. Debris is densely concentrated in the north-west and north-east regions, posing safety risks. The road network in these areas is disrupted due to water accumulation, hindering emergency response and aid delivery. We advise residents to stay indoors and avoid the affected zones to prevent injury. Emergency shelters have been established in the safe area 1, ensuring displaced individuals have adequate living space. Medical points are being prepared to handle rescued people, with a triage point set up to facilitate efficient patient transfer. Immediate transportation recovery focuses on clearing debris from critical road networks in the north-west and north-east regions to restore accessibility. Follow official announcements for updates and assistance. [SPHERE-1-p3] [SPHERE-intro-p1] [SPHERE-intro-p4] [SPHERE-4-p1] [SPHERE-4-p2] [SPHERE-4-p4] [INSARAG2B-1-p1] [INSARAG3-5.2-p1] [INSARAG2B-5.7.1-p5]
+
+## Organizational Operation
+Our organization is actively managing the post-disaster response, focusing on providing emergency shelters, medical support, and clearing debris to restore accessibility. We are committed to ensuring displaced individuals have safe living spaces and that injured people receive timely care. For further assistance, please refer to official announcements and contact local authorities for detailed support.
+
+## Conclusion
+We are committed to restoring safety and normalcy as swiftly as possible. Our teams are actively working to clear debris, establish shelters, and provide medical care. Please stay safe and follow our instructions for updates. Together, we will rebuild and recover.

@@ -1,0 +1,108 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The Santa Rosa wildfire has caused severe damage, with 67% of the damage patches classified as EMS-98 Grade 5 destruction (total or near total collapse), and 2% as Grades 2 to 4 damage (moderate to very heavy damage). The hot spot, located in the southeast corner of the photo, covers approximately 684,835 pixels and poses the highest risk to life and property. Three safe areas, located southwest of the photo, offer some relief but still require thorough inspection. Immediate response efforts include prioritizing the hot spot for rescue operations and emergency response, establishing emergency shelters in relatively safe areas, and setting up medical points and hospitals in the same vicinity. The emergency service team is focusing on immediate transportation recovery, with the most critical road connecting Safe Area 1 to the rest of the city. Efforts are underway to ensure that affected individuals have access to appropriate technical assistance and guidance to facilitate the repair, retrofit, or rebuild of damaged structures.
+
+## Assessment of Damage
+The Santa Rosa wildfire has inflicted severe damage across the affected area, with the most intense impacts concentrated in the southeast corner of the photo, specifically the hot spot located at coordinates (991, 779). This area covers approximately 684,835 pixels and is classified as EMS-98 Grade 5 destruction (total or near total collapse). The damage assessment conducted by the Expert team corroborates these findings, indicating that (number not available offline) of the 144 damage patches are categorized as Grade 5 destruction, representing a staggering 67% of the total damage. The remaining damage patches are distributed as follows: 3 patches are classified as Grades 2 to 4 (moderate to very heavy damage), accounting for 2% of the total damage patches, and 45 patches are deemed intact, representing 31% of the total damage patches. These figures align with the EMS-98 guidelines, emphasizing the need for comprehensive assessments and immediate support for affected structures.
+
+The hot spot, characterized by extensive structural failures including the collapse of entire buildings and roofs, poses the highest risk to life and property. The immediate priority must be to address this area first, focusing on rescue operations and emergency response efforts. The surrounding areas, however, present varying degrees of damage. Safe areas, located southwest of the photo, offer some relief but still require thorough inspection. Safe Area 1, around (100, 923), is approximately 386 pixels from the nearest estimated damage and is relatively safe but should be checked on the ground before use. Safe Area 2, around (100, 773), is about 300 pixels from the nearest estimated damage and provides a marginally safer location compared to the hot spot. Safe Area 3, around (250, 923), is the closest to the hot spot but still offers a safer alternative. Each of these areas should be thoroughly inspected to ensure they are indeed safe before use.
+
+In terms of repair, retrofit, or rebuild, the damage assessment suggests that the majority of the structures have suffered Grade 5 destruction, necessitating a comprehensive approach. According to the Sphere Handbook 2018 (SPHERE-appendix-4-p1), a range of context-specific assistance options can be combined to meet the needs of affected people. For Grade 5 destruction, repair alone may not suffice, and retrofitting might be necessary to strengthen and modify the buildings' structure to make them more resistant to future hazards. The Sphere Handbook (SPHERE-5-p2) emphasizes the importance of considering the need for specialized professional expertise, adhering to building codes and standards, and increasing technical capacity among the affected population. Local authorities should be involved in defining construction standards and monitoring construction activities to ensure quality outcomes.
+
+For Grade 2 to 4 damage, the Sphere Handbook (SPHERE-5-p1) recommends promoting safer building practices to meet current shelter needs and reduce future risks. This includes identifying structural risks and hazards, learning from and improving local building practices, and facilitating effective knowledge transfer. The EMS-98 guidelines (EMS98-2.3-p2) highlight that a building's vulnerability increases with irregularity and asymmetry, which can contribute to damage during earthquakes. Therefore, retrofitting may be necessary to address these vulnerabilities and enhance the resilience of the structures.
+
+In conclusion, the Santa Rosa wildfire has resulted in severe damage requiring immediate attention. The hot spot, Safe Areas 1, 2, and 3, and potentially other areas with Grade 2 to 4 damage necessitate a coordinated response involving rescue operations, reconstruction, and technical assistance
+
+## Reconstruction Needs
+To address the severe damage caused by the Santa Rosa wildfire, a comprehensive reconstruction plan is essential. The Sphere Handbook 2018 (SPHERE-appendix-4-p1) outlines various assistance options, including repair, shelter kits, and retrofitting, depending on the extent of the damage. Given the high percentage of Grade 5 destruction (67%) and Grade 2 to 4 damage (2%), a multi-faceted approach is necessary.
+
+**Repair and Retrofit:**
+For the Grade 5 destruction, repair alone may not be sufficient. Retrofitting is recommended to strengthen and modify the structures to enhance their resilience against future hazards. This includes assessing the structural integrity and addressing any weaknesses identified in the hot spot and other severely damaged areas. Local authorities and technical experts should be involved in the retrofitting process to ensure compliance with building codes and standards. The Sphere Handbook (SPHERE-5-p1) emphasizes the importance of promoting safer building practices and engaging the affected population in the rebuilding process.
+
+**Shelter Kits and Supplies:**
+For the Grade 2 to 4 damage, shelter kits containing construction material, tools, and fixtures are necessary. These kits should be designed to improve living spaces while ensuring safety and durability. The Sphere Handbook (SPHERE-5-p2) highlights the need for technical assistance to ensure that the shelters meet safe building practices. Local materials and labor should be utilized to minimize costs and maximize community involvement.
+
+**Emergency Shelters:**
+Safe Areas 1, 2, and 3, while offering some relief, still require thorough inspection. Emergency shelters should be established in these areas to provide temporary housing for displaced individuals. The Sphere Handbook (SPHERE-3-p1) provides guidance on the minimum living space requirements, which should be adhered to. Local authorities should be involved in the planning and implementation of these shelters to ensure they meet the needs of the affected population.
+
+**Medical Facilities:**
+Medical points and hospitals should be set up in Safe Areas 1 and 2 to provide immediate medical care and triage for casualties. The Sphere Handbook (SPHERE-3-p1) recommends establishing triage points and ensuring that medical supplies are readily available. Local medical personnel should be consulted to develop a comprehensive medical evacuation plan, including the repatriation of rescued individuals to their home countries for further treatment.
+
+**Transportation Recovery:**
+The most critical road connecting Safe Area 1 to the rest of the city must be reopened to facilitate the flow of resources and personnel. The Emergency Service Team should coordinate with local authorities to ensure that this road is cleared and safe for vehicular traffic. Additionally, the road leading to Safe Area 3 should be opened to ensure efficient access to the most severely damaged areas.
+
+In summary, the reconstruction of the Santa Rosa wildfire area requires a coordinated effort involving repair and retrofitting, provision of shelter kits and supplies, establishment of emergency shelters, and the setup of medical facilities. Technical assistance and community involvement are crucial to ensure that the rebuilt structures are safe and resilient. While specific staff, team, shelter, and supply numbers are not available offline, the Sphere Handbook and EMS-98 guidelines provide a framework for a comprehensive and effective reconstruction plan.
+
+## Plan of Action
+To effectively address the severe damage caused by the Santa Rosa wildfire, a comprehensive and coordinated plan of action is imperative. The following steps outline the sequence of actions, resource allocation, and coordination with local authorities:
+
+1. **Immediate Rescue Operations and Medical Care:**
+   - **Priority:** Hot Spot (coordinates (991, 779))
+   - **Action:** Mobilize rescue teams to the hot spot to locate and evacuate survivors. Establish medical points in Safe Area 1 and 2 to treat casualties.
+   - **Resources:** Emergency vehicles, medical supplies, trained medical personnel, and search dogs.
+   - **Coordination:** Local Emergency Services, National Guard, and Red Cross.
+
+2. **Establishment of Emergency Shelters:**
+   - **Priority:** Safe Areas 1, 2, and 3
+   - **Action:** Set up emergency shelters in Safe Areas 1 and 2, ensuring they meet minimum living space requirements of not available offline square meters per person (excluding cooking space, bathing area, and sanitation facilities).
+   - **Resources:** Temporary shelters, blankets, sleeping mats, and basic amenities.
+   - **Coordination:** Local authorities, NGOs, and volunteers.
+
+3. **Medical Facilities and Evacuation Planning:**
+   - **Priority:** Safe Areas 1 and 2
+   - **Action:** Establish medical points and hospitals in Safe Areas 1 and 2, ensuring they are equipped with basic amenities such as clean water, sanitation facilities, and a basic medical kit.
+   - **Resources:** Medical supplies, ambulances, and medical personnel.
+   - **Coordination:** Local medical personnel, Red Cross, and national health authorities.
+
+4. **Reconstruction and Retrofitting:**
+   - **Priority:** Hot Spot and Severely Damaged Areas
+   - **Action:** Conduct a thorough assessment of the hot spot and other severely damaged areas to determine the need for repair, retrofitting, or rebuilding.
+   - **Resources:** Structural engineers, architects, and construction workers.
+   - **Coordination:** Local authorities, technical experts, and international aid organizations.
+
+5. **Shelter Kits and Supplies:**
+   - **Priority:** Safe Areas 1, 2, and 3
+   - **Action:** Provide shelter kits containing construction material, tools, and fixtures to improve living spaces in Safe Areas 1, 2, and 3.
+   - **Resources:** Construction materials, tools, and kits.
+   - **Coordination:** Local contractors, NGOs, and volunteers.
+
+6. **Transportation Recovery:**
+   - **Priority:** Critical Road Connecting Safe Area 1 to the Rest of the City
+   - **Action:** Clear and reopen the critical road connecting Safe Area 1 to the rest of the city to facilitate the flow of resources and personnel.
+   - **Resources:** Heavy machinery, road clearing crews, and local authorities.
+   - **Coordination:** Local authorities, transportation departments, and military.
+
+7. **Community Engagement and Technical Assistance:**
+   - **Priority:** All Affected Areas
+   - **Action:** Engage the affected population in the reconstruction process by providing technical assistance and guidance on safe building practices.
+   - **Resources:** Local architects, engineers, and community leaders.
+   - **Coordination:** Local authorities, NGOs, and international aid organizations.
+
+8. **Environmental Sustainability and Livelihood Opportunities:**
+   - **Priority:** All Affected Areas
+   - **Action:** Implement environmental sustainability measures and promote livelihood opportunities to support the affected population.
+   - **Resources:** Sustainable building materials, agricultural support, and microfinance programs.
+   - **Coordination:** Local authorities, NGOs, and
+
+## Recommendations
+To support an effective and efficient reconstruction, it is crucial to allocate resources strategically and engage the community in the rebuilding process. Policy-wise, establishing clear guidelines and standards for reconstruction, including adherence to building codes and standards, will ensure that structures are safe and resilient. Funding should prioritize immediate needs such as emergency shelters, medical facilities, and transportation recovery. Long-term support should focus on repair, retrofitting, and rebuilding, with a focus on sustainable materials and community engagement. Community-led initiatives should be encouraged to promote local ownership and participation in the rebuilding process. Adequate funding should also be allocated for environmental sustainability measures and livelihood opportunities to support the affected population. International aid organizations and local authorities should collaborate closely to ensure a coordinated and effective response.
+
+## Appendices
+This section provides supplementary data to support the report, including the disaster grade of each place, a labelled map, and the guideline sections used.
+
+- **Disaster Grade Map:** The map visually represents the disaster grades assigned to each area based on the damage assessment. Safe areas are marked with green, while the hot spot and other severely damaged areas are marked with red. [EMS98-vi-slightly-damaging] [EMS98-masonry-grade-1] [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4] [EMS98-masonry-grade-5]
+
+- **Guideline Sections Used:**
+  - [SPHERE-appendix-4-p1] for assistance options and shelter and settlement standards.
+  - [SPHERE-1-p4] for debris removal and livelihood opportunities.
+  - [SPHERE-5-p1] for technical assistance and promoting safer building practices.
+  - [SPHERE-5-p2] for implementation options and capacity building.
+  - [INSARAG2B-6.3.1] and [INSARAG2B-6.3.4-p1] for victim marking and the process for applying RCM.
+  - [EMS98-2.3-p2] for understanding vulnerability and regularity in building structures.
+  - [EMS98-masonry-grade-1] to [EMS98-masonry-grade-5] for classification of damage to masonry buildings.
+  - [EMS98-rc-grade-1] for classification of damage to buildings of reinforced concrete.
+
+These appendices provide the necessary context and references to support the detailed analysis and recommendations presented in the report.

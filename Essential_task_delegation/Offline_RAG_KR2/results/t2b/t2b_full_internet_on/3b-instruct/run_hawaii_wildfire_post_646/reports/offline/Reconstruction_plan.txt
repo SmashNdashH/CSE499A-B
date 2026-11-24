@@ -1,0 +1,140 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The recent Hawaii wildfire has caused catastrophic damage, with nearly 86% of buildings completely destroyed, classified as EMS-98 Grade 5 (total or near total collapse). Hotspots concentrated in the southern and northern regions of the photo, with Hotspot 1 and Hotspot 2 bearing the heaviest impact, saw 165 buildings destroyed and 1 building with moderate to very heavy damage. Safe areas, located in the northeastern part of the photo, remain within close proximity to the estimated damage zones, posing a continued risk. Immediate attention is required to secure these hotspots and stabilize structures in Hotspot 1 and Hotspot 2. Safe Areas 1, 2, and 3, while relatively safe, are still within the estimated damage zones and should be monitored closely. Emergency shelters and medical facilities are being planned in safe areas, with priority given to the hotspots. The USAR Team will coordinate with medical teams to provide ongoing health monitoring and care, ensuring the safety of all affected individuals. Coordination with local authorities and community engagement will be crucial to facilitate the return and rehabilitation of affected communities.
+
+## Assessment of Damage
+The satellite imagery and damage model reveal a severe and widespread impact of the Hawaii wildfire, with nearly 86% of buildings completely destroyed, classified as EMS-98 Grade 5 (total or near total collapse). The hotspots, specifically Hotspot 1 (south) and Hotspot 2 (south-west), exhibit the highest density of damage, with 165 buildings destroyed and 1 building experiencing moderate to very heavy damage (EMS-98 Grades 2 to 4). The remaining 26 buildings are intact, showing negligible to slight damage, categorized as EMS-98 Grade 1 (negligible to slight damage).
+
+#### Detailed Analysis
+
+**Hotspot 1 (South):**
+- **Location:** Around (545, 845) pixels, covering 377,369 pixels.
+- **Damage:** 165 buildings completely destroyed (EMS-98 Grade 5).
+- **Impact:** Total or near-total collapse of walls, roofs, and floors. Immediate attention is required to secure this region and prevent further collapse.
+
+**Hotspot 2 (South-West):**
+- **Location:** Around (140, 741) pixels, covering 176,705 pixels.
+- **Damage:** 1 building sustained moderate to very heavy damage (EMS-98 Grades 2 to 4).
+- **Impact:** Extensive cracks in walls and partial structural failure of roofs and floors. This area poses significant risks to both life and property.
+
+**Hotspot 3 (North):**
+- **Location:** Around (456, 240) pixels, covering 34,542 pixels.
+- **Damage:** 1 building sustained moderate to very heavy damage (EMS-98 Grades 2 to 4).
+- **Impact:** Similar to Hotspot 2, this area features extensive cracks in walls and partial structural failure of roofs and floors. Urgent attention is needed.
+
+**Safe Areas:**
+- **Safe Area 1 (Northeast):** Around (844, 100) pixels, 280 pixels from the nearest damage zone.
+- **Safe Area 2 (Northeast):** Around (701, 146) pixels, 218 pixels from the nearest damage zone.
+- **Safe Area 3 (Northeast):** Around (847, 254) pixels, 147 pixels from the nearest damage zone.
+- **Impact:** While these areas are relatively safe, they remain within close proximity to the estimated damage zones. Continuous surveillance is advised to ensure safety.
+
+#### Assessment of Each Affected Place
+
+**Hotspot 1 (South):**
+- **Damage State:** 165 buildings completely destroyed (EMS-98 Grade 5).
+- **Guideline Reference:** [EMS98-masonry-grade-5] (EMS-98, p. 16).
+- **Analysis:** The high concentration of buildings destroyed suggests that the structural integrity of the buildings was compromised, leading to total or near-total collapse. Immediate attention is required to secure this region and prevent further collapse.
+
+**Hotspot 2 (South-West):**
+- **Damage State:** 1 building sustained moderate to very heavy damage (EMS-98 Grades 2 to 4).
+- **Guideline Reference:** [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4] (EMS-98, p. 16).
+- **Analysis
+
+## Reconstruction Needs
+To address the severe damage caused by the Hawaii wildfire, the reconstruction plan necessitates a comprehensive approach focusing on repair, retrofit, and rebuilding efforts. Given the high proportion of buildings completely destroyed (EMS-98 Grade 5), immediate attention is required to secure and stabilize the hotspots, while prioritizing the safe areas for temporary shelter and medical facilities.
+
+#### Hotspot 1 (South)
+
+- **Repair/Retrofit/Building:** Immediate repair or retrofitting is necessary to secure the structures in Hotspot 1. Given the total or near-total collapse of walls, roofs, and floors, rebuilding is likely required. Structural reinforcement and stabilization measures are essential to prevent further collapse.
+- **Staff Required:** Not available offline.
+- **Teams Needed:** Not available offline.
+- **Shelters/Safety Measures:** Temporary shelters should be set up in nearby safe areas to provide relief for evacuees. Adequate safety measures, including perimeter fencing and lighting, should be implemented to ensure the safety of residents.
+- **Supplies Needed:** Structural materials such as poles, pegs, and reinforcing beams, along with tools and construction equipment, are critical. Additionally, emergency supplies like blankets, water, and food should be readily available.
+
+#### Hotspot 2 (South-West)
+
+- **Repair/Retrofit/Building:** Moderate to very heavy damage (EMS-98 Grades 2 to 4) requires immediate repair or retrofitting. Structural repairs, including reinforcing walls and roofs, are necessary to prevent further damage and ensure the safety of occupants.
+- **Staff Required:** Not available offline.
+- **Teams Needed:** Not available offline.
+- **Shelters/Safety Measures:** Temporary shelters should be established in nearby safe areas. Enhanced security measures, such as perimeter fencing and lighting, are essential to protect residents.
+- **Supplies Needed:** Structural materials, tools, and construction equipment are critical. Emergency supplies like blankets, water, and food should be readily available.
+
+#### Safe Areas
+
+- **Repair/Retrofit/Building:** While these areas are relatively safe, they remain within close proximity to the estimated damage zones. Immediate attention is required to ensure the safety of residents and prepare for potential secondary hazards.
+- **Staff Required:** Not available offline.
+- **Teams Needed:** Not available offline.
+- **Shelters/Safety Measures:** Temporary shelters should be set up in these areas to provide relief for evacuees. Enhanced security measures, including perimeter fencing and lighting, are essential to protect residents.
+- **Supplies Needed:** Structural materials, tools, and construction equipment are critical. Emergency supplies like blankets, water, and food should be readily available.
+
+#### Medical Facilities
+
+- **Repair/Retrofit/Building:** Immediate attention is required to repair or rebuild medical facilities in the hotspots to ensure the provision of medical care. Structural repairs and upgrades are necessary to ensure the safety and functionality of these facilities.
+- **Staff Required:** Not available offline.
+- **Teams Needed:** Not available offline.
+- **Shelters/Safety Measures:** Temporary medical facilities should be established in nearby safe areas. Enhanced security measures, including perimeter fencing and lighting, are essential to protect medical personnel and patients.
+- **Supplies Needed:** Structural materials, tools, and construction equipment are critical. Emergency medical supplies like medications, medical equipment, and hygiene products should be readily available.
+
+#### Coordination and Support
+
+- **Coordination:** The USAR Team should coordinate with medical teams to provide continuous health monitoring and medical care to USAR Team members, including canines. Daily briefings should be conducted to ensure coordination and communication.
+- **Support:** The USAR Team should participate in daily USAR Team briefings and conduct the daily medical briefing. The USAR Team should be
+
+## Plan of Action
+To effectively address the severe damage caused by the Hawaii wildfire, a comprehensive and coordinated plan of action is essential. The immediate focus will be on securing and stabilizing the hotspots, followed by the reconstruction and repair of buildings in the hotspots and safe areas.
+
+#### Immediate Actions
+
+1. **Secure Hotspots**
+   - **Order:** 1
+   - **Resource Allocation:** Immediate deployment of emergency services, including firefighters, structural engineers, and construction teams. Allocate resources based on the severity of damage in Hotspot 1 and Hotspot 2.
+   - **Guideline References:** [SPHERE-1-p4] (Sphere Handbook 2018, Shelter and Settlement, pp. 281-283) and [SPHERE-5-p2] (Sphere Handbook 2018, Shelter and Settlement, pp. 297-300).
+   - **Coordination with Local Authorities:** Engage local authorities and community leaders to ensure smooth coordination and access to necessary resources. Establish a joint command center to oversee the response efforts.
+
+2. **Establish Temporary Shelters**
+   - **Order:** 2
+   - **Resource Allocation:** Set up temporary shelters in nearby safe areas (Safe Areas 1, 2, and 3). Allocate tents, blankets, water, and food supplies. Ensure that these shelters are equipped with basic amenities and security measures.
+   - **Guideline References:** [SPHERE-5-p2] (Sphere Handbook 2018, Shelter and Settlement, pp. 297-300) and [SPHERE-5-p1] (Sphere Handbook 2018, Shelter and Settlement, pp. 297-300).
+   - **Coordination with Local Authorities:** Collaborate with local authorities to secure land and resources for temporary shelters. Ensure that these areas are accessible and safe for evacuees.
+
+3. **Medical Care and Support**
+   - **Order:** 3
+   - **Resource Allocation:** Establish temporary medical facilities in nearby safe areas. Allocate medical supplies, including medications, medical equipment, and hygiene products. Ensure that medical personnel are adequately trained and equipped.
+   - **Guideline References:** [INSARAG2B-6.3.1] (INSARAG Guidelines 2020, Vol. II Manual B Operations, p. 49) and [INSARAG2B-6.3.4-p1] (INSARAG Guidelines 2020, Vol. II Manual B Operations, p. 51).
+   - **Coordination with Local Authorities:** Coordinate with local healthcare providers and authorities to ensure seamless integration of medical services. Implement victim marking procedures to locate casualties accurately.
+
+#### Long-term Reconstruction
+
+1. **Rebuilding and Retrofitting Hotspots**
+   - **Order:** 4
+   - **Resource Allocation:** Allocate resources for rebuilding and retrofitting structures in Hotspot 1 and Hotspot 2. Focus on repairing or rebuilding buildings that have suffered total or near-total collapse, while ensuring that structures in these areas meet current building codes and standards.
+   - **Guideline References:** [SPHERE-5-p2] (Sphere Handbook 2018, Shelter and Settlement, pp. 297-300) and [SPHERE-5-p1] (Sphere Handbook 2018, Shelter and Settlement, pp. 297-300).
+   - **Coordination with Local Authorities:** Collaborate with local authorities to ensure compliance with building codes and standards. Engage local communities
+
+## Recommendations
+To support effective and efficient reconstruction, it is crucial to prioritize policy and funding initiatives that address the unique needs of the affected communities. Policy-wise, establishing clear guidelines and standards for rebuilding structures, ensuring compliance with building codes, and promoting community-led rebuilding efforts are essential. Funding should be allocated to support immediate emergency response, long-term reconstruction, and capacity-building programs. Specific recommendations include:
+
+1. **Immediate Response Funding**: Allocate funds for emergency shelters, medical care, and logistical support to ensure the safety and well-being of affected individuals.
+2. **Long-Term Reconstruction Grants**: Provide grants for rebuilding and retrofitting structures, emphasizing the importance of adherence to safety standards and community participation.
+3. **Capacity-Building Programs**: Invest in training programs for local construction workers and community leaders to enhance their skills and knowledge in sustainable and resilient construction practices.
+4. **Community Engagement**: Foster community-led rebuilding initiatives by involving local residents in the planning and execution of reconstruction projects. This ensures that the rebuilt structures meet the specific needs and preferences of the community.
+5. **Funding for Livelihood Opportunities**: Allocate resources for vocational training and microfinance schemes to help affected individuals restart their livelihoods and rebuild their economic stability.
+
+By implementing these recommendations, we can ensure that the reconstruction process is both effective and efficient, supporting the long-term resilience and recovery of the affected communities.
+
+## Appendices
+#### Disaster Grade of Each Place
+The damage assessment categorizes buildings into various grades based on the extent of damage. Hotspot 1 (South) and Hotspot 2 (South-West) are classified as EMS-98 Grade 5 due to total or near-total collapse of walls, roofs, and floors. Hotspot 3 (North) is also classified as EMS-98 Grade 5 with significant structural damage. Safe Areas 1, 2, and 3 are categorized as EMS-98 Grade 1, indicating negligible to slight damage.
+
+#### Guideline Sections Used
+- [EMS98-2.3-p2] (EMS-98, pp. 41-48)
+- [SPHERE-1-p4] (Sphere Handbook 2018, Shelter and Settlement, pp. 281-283)
+- [SPHERE-5-p2] (Sphere Handbook 2018, Shelter and Settlement, pp. 297-300)
+- [SPHERE-5-p1] (Sphere Handbook 2018, Shelter and Settlement, pp. 297-300)
+- [INSARAG2B-6.3.1] (INSARAG Guidelines 2020, Vol. II Manual B Operations, p. 49)
+- [INSARAG2B-6.3.4-p1] (INSARAG Guidelines 2020, Vol. II Manual B Operations, p. 51)
+
+These guidelines provide essential frameworks for planning and executing the reconstruction efforts, ensuring that the rebuilding process is both effective and sustainable.

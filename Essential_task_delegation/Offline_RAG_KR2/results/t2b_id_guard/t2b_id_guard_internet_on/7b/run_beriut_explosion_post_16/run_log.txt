@@ -1,0 +1,130 @@
+Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)
+DisasTeller mode: offline
+DisasTeller flow: fixed, with C4's damage facts (scene beriut_explosion_post_16.png, explosion, rows: outline)
+C4's damage facts, given to every report:
+Photo pair: beriut_explosion_pre_16.png (before) and beriut_explosion_post_16.png (after), beriut explosion (explosion); each photo is 1024 x 1024 pixels.
+Damage map: find-then-grade, grader seed 42, the system's damage model. Everything below is the model's estimate, to be checked on the ground. Positions are in pixels from the photo's top-left corner.
+Estimated buildings by damage state (each percentage is a share of the buildings in the table, not of the photo's area):
+- intact: 0 of 10 buildings (0%)
+- damaged: 2 of 10 buildings (20%)
+- destroyed: 8 of 10 buildings (80%)
+- all buildings in the table: 10
+Hot spots (where the estimated damage is densest; hot spot 1 is the strongest):
+- hot spot 1: around (871, 225), the north-east of the photo; zone of 287383 pixels
+- hot spot 2: around (991, 840), the south-east of the photo; zone of 28075 pixels
+Safe areas (open ground farthest from the estimated damage):
+- safe area 1: around (100, 100), the north-west of the photo; 519 pixels from the nearest estimated damage
+- safe area 2: around (100, 250), the north-west of the photo; 483 pixels from the nearest estimated damage
+- safe area 3: around (100, 400), the west of the photo; 464 pixels from the nearest estimated damage
+
+Report: Expert_team_report.txt
+Photo tool: off (T2b); the facts have no photo descriptions
+Guideline search: EMS-98 classification of damage to masonry buildings Grade 1 negligible to slight damage
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2842.81it/s]
+Guideline index loaded in 9.1 s (numpy + torch), once per run
+Guideline search took 58 ms
+Guideline search: EMS-98 classification of damage to masonry buildings Grade 2 moderate damage
+Guideline search took 16 ms
+Guideline search: EMS-98 classification of damage to masonry buildings Grade 3 substantial to heavy damage
+Guideline search took 18 ms
+Guideline search: EMS-98 classification of damage to masonry buildings Grade 4 very heavy damage
+Guideline search took 18 ms
+Guideline search: EMS-98 classification of damage to masonry buildings Grade 5 destruction
+Guideline search took 15 ms
+Section written: Expert_team_report.txt / Disaster grade of each location: by the code from the counts
+Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-grade-5'})
+Labelled map saved: reports/offline/4_anotated.png (5 labels)
+Section written: Expert_team_report.txt / Overview: 76 words in 10.4 s
+Section written: Expert_team_report.txt / Description of the estimated damage: 134 words in 15.6 s
+Section written: Expert_team_report.txt / Conclusion: 75 words in 7.2 s
+Report finished: Expert_team_report.txt after 0.7 min
+Map reading made by the code from the hot spots:
+Where the danger is on the after-photo, from the damage model's hot spots and safe areas (estimates; positions in pixels from the top-left corner of the 1024 x 1024 photo):
+- Hot spot 1, the most dangerous zone: around (871, 225), the north-east of the photo.
+- Hot spot 2, a dangerous zone: around (991, 840), the south-east of the photo.
+- Safe area 1: around (100, 100), the north-west of the photo, 519 pixels from the nearest estimated damage; to be checked on the ground before use.
+- Safe area 2: around (100, 250), the north-west of the photo, 483 pixels from the nearest estimated damage; to be checked on the ground before use.
+- Safe area 3: around (100, 400), the west of the photo, 464 pixels from the nearest estimated damage; to be checked on the ground before use.
+
+Report: Alerts_team_report_for_social_media.txt
+Section written: Alerts_team_report_for_social_media.txt / Danger area alert: 122 words in 11.5 s
+Section written: Alerts_team_report_for_social_media.txt / Social media news: 108 words in 8.8 s
+Report finished: Alerts_team_report_for_social_media.txt after 0.3 min
+
+Report: Emergency_team_report.txt
+Guideline search: Sphere covered living space per person
+Guideline search took 21 ms
+Guideline search: Sphere settlement site area per person location and access
+Guideline search took 22 ms
+Guideline search: INSARAG handover of rescued patients to medical teams and hospitals
+Guideline search took 24 ms
+Section written: Emergency_team_report.txt / Emergency shelters: 132 words in 18.7 s
+Section written: Emergency_team_report.txt / Hospitals: 136 words in 11.5 s
+Section written: Emergency_team_report.txt / Immediate transportation recovery: 92 words in 7.1 s
+Report finished: Emergency_team_report.txt after 0.6 min
+
+Report: Emergency_service_human_resource_allocation.txt
+Guideline search: INSARAG light medium and heavy USAR team types
+Guideline search took 23 ms
+Guideline search: INSARAG ASR levels assessment search and rescue
+Guideline search took 21 ms
+Guideline search: INSARAG worksite triage and priorities
+Guideline search took 20 ms
+Guideline search: INSARAG rescue team shifts and rotation
+Guideline search took 20 ms
+Section written: Emergency_service_human_resource_allocation.txt / Introduction: 84 words in 14.2 s
+Section written: Emergency_service_human_resource_allocation.txt / Current Situation: 85 words in 7.3 s
+Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: id_not_shown: INSARAG2B-5.7.1
+Section written: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: 119 words in 22.1 s
+Section asked again: Emergency_service_human_resource_allocation.txt / Allocation Plan: id_not_shown: INSARAG2B-5.7.1
+Section kept with problems: Emergency_service_human_resource_allocation.txt / Allocation Plan: id_not_shown: INSARAG2B-5.7.1
+ID guard: Emergency_service_human_resource_allocation.txt / Allocation Plan: dropped INSARAG2B-5.7.1
+Section written: Emergency_service_human_resource_allocation.txt / Allocation Plan: 90 words in 18.5 s
+Section written: Emergency_service_human_resource_allocation.txt / Challenges and Considerations: 77 words in 6.4 s
+Section written: Emergency_service_human_resource_allocation.txt / Recommendations: 62 words in 4.9 s
+Section written: Emergency_service_human_resource_allocation.txt / Conclusion: 63 words in 4.8 s
+Report finished: Emergency_service_human_resource_allocation.txt after 1.3 min
+
+Report: Public_community_report.txt
+Guideline search: Sphere emergency shelter for displaced households
+Guideline search took 57 ms
+Guideline search: Sphere household items
+Guideline search took 17 ms
+Guideline search: INSARAG rescue operations
+Guideline search took 18 ms
+Section written: Public_community_report.txt / Introduction: 97 words in 14.5 s
+Section written: Public_community_report.txt / Current Situation: 120 words in 9.7 s
+Section written: Public_community_report.txt / Resource Allocation: 106 words in 10.5 s
+Section asked again: Public_community_report.txt / Public Advisory: no_citation
+Section written: Public_community_report.txt / Public Advisory: 89 words in 14.8 s
+Section written: Public_community_report.txt / Organizational Operation: 45 words in 3.9 s
+Section written: Public_community_report.txt / Conclusion: 54 words in 4.3 s
+Report finished: Public_community_report.txt after 1.0 min
+
+Report: Reconstruction_plan.txt
+Guideline search: Sphere repair retrofit or rebuild damaged houses
+Guideline search took 22 ms
+Guideline search: Sphere debris removal
+Guideline search took 18 ms
+Guideline search: Sphere technical assistance building codes and construction practices
+Guideline search took 24 ms
+Section written: Reconstruction_plan.txt / Executive Summary: 81 words in 12.9 s
+Section written: Reconstruction_plan.txt / Assessment of Damage: 191 words in 20.2 s
+Section asked again: Reconstruction_plan.txt / Reconstruction Needs: no_citation
+Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: no_citation
+Section written: Reconstruction_plan.txt / Reconstruction Needs: 152 words in 23.7 s
+Section asked again: Reconstruction_plan.txt / Plan of Action: number_unsourced: 3.5
+Section kept with problems: Reconstruction_plan.txt / Plan of Action: number_unsourced: 3.5
+Number guard: Reconstruction_plan.txt / Plan of Action: replaced 3.5
+Section written: Reconstruction_plan.txt / Plan of Action: 394 words in 88.5 s
+Section written: Reconstruction_plan.txt / Recommendations: 79 words in 7.3 s
+Section asked again: Reconstruction_plan.txt / Appendices: id_not_shown: SPHERE-5-p3
+Section written: Reconstruction_plan.txt / Appendices: 82 words in 24.7 s
+Report finished: Reconstruction_plan.txt after 3.0 min
+
+Fixed flow finished: 6 reports in reports/offline, scene beriut_explosion_post_16.png, grades by the code
+
+Network log: 2 lookups and connections; on this computer: ['127.0.0.1']
+Outside this computer: none
+Gemini libraries loaded: none
+Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_beriut_explosion_post_16

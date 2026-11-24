@@ -1,0 +1,32 @@
+[{"stream_name":"stderr","time":6.653910474,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.653949488,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.653953682,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.653956216,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.20911468,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.209144708,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.209149732,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.20915363,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":18.487017058,"data":"✓ {'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'peft': '0.22.0'}, python 3.13.16; torchao: not installed\n"}
+,{"stream_name":"stdout","time":18.489797503,"data":"  GPUs: ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":43.633684776,"data":"✓ L2 step 3  [SMOKE TEST]: models ('base', 'b', 'c'); images at most 602,112 pixels\n"}
+,{"stream_name":"stdout","time":555.35104555,"data":"✓ 12 held-out questions {'BBR': 2, 'BDC': 2, 'DRE': 2, 'DTR': 2, 'DSR': 2, 'ORR': 2}; in the primary score: 10\n"}
+,{"stream_name":"stdout","time":617.897498115,"data":"✓ base: 12 answers in 1.0 min; first: ['D, C', 'A, B, E, F, G', 'C', 'C']\n"}
+,{"stream_name":"stdout","time":644.083932488,"data":"✓ b: 12 answers in 0.4 min; first: ['A, C, D', 'A, B, C, F, G', 'A', 'C']\n"}
+,{"stream_name":"stdout","time":670.02527642,"data":"✓ c: 12 answers in 0.4 min; first: ['D, C', 'A, B, G, F', 'E', 'B']\n"}
+,{"stream_name":"stdout","time":670.192940038,"data":"model  primary_%  all_%  DTR_%  BBR_%  BDC_%  DRE_%  DSR_%  ORR_%  counting_largest_above_20_%  middle_picked_above_20_%  bdc_median_count_error_%\n"}
+,{"stream_name":"stdout","time":670.192982529,"data":" base       10.0  25.00    0.0    0.0  100.0    0.0   50.0    0.0                        100.0                     100.0                       0.0\n"}
+,{"stream_name":"stdout","time":670.192989559,"data":"    b       10.0  16.67    0.0    0.0   50.0    0.0   50.0    0.0                         50.0                      50.0                      19.6\n"}
+,{"stream_name":"stdout","time":670.192995488,"data":"    c       50.0  41.67    0.0    0.0    0.0  100.0   50.0  100.0                          0.0                       0.0                      18.2\n"}
+,{"stream_name":"stdout","time":670.193000632,"data":"For scale, on the same counting questions: {'no_image_rule_on_counting_%': 50.0, 'always_middle_on_counting_%': 75.0, 'always_middle_largest_above_20_%': 100.0}\n"}
+,{"stream_name":"stdout","time":670.193005757,"data":"\n"}
+,{"stream_name":"stdout","time":670.193010243,"data":"SMOKE TEST, no verdict. Winner: (c): primary accuracy not clearly different (10.0% against 50.0%, p = 0.1250); lower median count error on the held-out building-counting questions: 19.6% (b) against 18.2% (c), on 2 questions both answered\n"}
+,{"stream_name":"stdout","time":670.2377691,"data":"✓ Wrote /kaggle/working/L2S3: selection.json, scores.csv, per_question.csv, README.md\n"}
+,{"stream_name":"stderr","time":676.22620587,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":676.22624875,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":676.353512209,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":676.353538328,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":677.067136079,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":677.173279598,"data":"[NbConvertApp] Writing 314383 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":679.635151399,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":680.229056525,"data":"[NbConvertApp] Writing 611373 bytes to __results__.html\n"}
+]

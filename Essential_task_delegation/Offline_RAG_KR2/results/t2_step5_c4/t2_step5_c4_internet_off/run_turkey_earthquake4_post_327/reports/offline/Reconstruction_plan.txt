@@ -1,0 +1,31 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The earthquake caused significant structural and non-structural damage, with 32 buildings completely destroyed and 11 others suffering moderate to heavy damage. Debris was scattered across several zones, disrupting the road network and causing open-space ground to flood. Emergency shelters were established in the safest area, and immediate transportation recovery focused on clearing debris in critical regions. Reconstruction priorities include clearing debris, stabilizing partially collapsed structures, and repairing or rebuilding damaged buildings to ensure safety and accessibility.
+
+## Assessment of Damage
+The earthquake caused severe structural and non-structural damage, with 32 buildings completely destroyed and 11 others suffering moderate to heavy damage. The hotspots identified in the north-west and north-east regions, where debris is densely concentrated, require urgent attention to ensure safety and prevent further risks. The disaster grades indicate that the destroyed buildings (EMS-98 Grade 5) and the moderately to heavily damaged buildings (EMS-98 Grades 2 to 4) are in critical condition. Efforts should focus on clearing debris, stabilizing partially collapsed structures, and assessing safety in these areas. Open-space ground in these regions shows signs of flooding, adding to the urgency of intervention. The road network in these areas may be obstructed by water accumulation, necessitating swift clearance efforts to restore accessibility. [EMS98-masonry-grade-5] [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+
+## Reconstruction Needs
+The reconstruction needs include clearing debris from the north-west and north-east regions to ensure safety and prevent further risks. Based on the disaster grades, the destroyed buildings (EMS-98 Grade 5) and the moderately to heavily damaged buildings (EMS-98 Grades 2 to 4) require immediate stabilization and repair. The intact buildings (EMS-98 Grade 1) should be assessed for minor structural issues and repaired as necessary. The road network in these regions must be cleared of water accumulation to restore accessibility. Local authorities should be involved in defining construction standards and monitoring reconstruction activities to ensure quality outcomes. Technical assistance should be provided to affected communities to guide the repair and reconstruction process. [SPHERE-5-p1] [SPHERE-5-p2] [SPHERE-appendix-5-p2]
+
+## Plan of Action
+The plan of action for the reconstruction includes the following steps:
+
+1. **Debris Clearance:** Prioritize the removal of debris from the hotspots in the north-west and north-east regions to ensure safety and prevent further risks. This step is crucial for enabling access for rescue and recovery teams while minimizing the environmental impact of hazardous materials. Coordination with local authorities is essential to ensure compliance with safety protocols and environmental regulations. [SPHERE-1-p4]
+
+2. **Structural Stabilization:** Focus on stabilizing partially collapsed buildings in the north-west and north-east regions to prevent further collapse. This involves assessing the structural integrity of damaged buildings and implementing temporary reinforcement measures. Engage local contractors and engineers to ensure the safety of the structures during repairs. [SPHERE-5-p2]
+
+3. **Building Repairs and Rebuilding:** For destroyed buildings (EMS-98 Grade 5), initiate the rebuilding process using durable materials and adherence to updated building codes to ensure resilience against future earthquakes. For moderately to heavily damaged buildings (EMS-98 Grades 2 to 4), carry out repairs to restore functionality. Local authorities should be involved in defining and enforcing building codes to ensure compliance. [SPHERE-5-p2]
+
+4. **Road Network Restoration:** Clear water accumulation from the road network in the affected regions to restore accessibility. This requires mobilizing specialized equipment and teams to remove debris and ensure smooth traffic flow. Engage local transportation authorities to assess and address any long-term infrastructure vulnerabilities. [SPHERE-1-p4]
+
+5. **Community Engagement and Technical Assistance:** Provide technical assistance to affected communities, including training on safe construction practices and access to resources for minor repairs. Encourage community participation in the reconstruction process through consultations and feedback mechanisms. Local authorities should support these efforts to ensure the reconstruction aligns with community needs and preferences. [SPHERE-5-p2]
+
+## Recommendations
+To ensure effective and efficient reconstruction, it is recommended that the government provide financial support for debris clearance, structural stabilization, and rebuilding efforts. Specialized funds should be allocated to cover the costs of removing hazardous materials, employing skilled labor for temporary reinforcement, and sourcing durable materials for reconstruction. Additionally, the government should collaborate with local authorities to establish building codes that prioritize earthquake-resilience, ensuring the safety and longevity of rebuilt structures. Community engagement programs should be funded to facilitate participatory planning and ensure alignment with local needs.
+
+## Appendices
+The disaster grade of each location is as follows: destroyed buildings (EMS-98 Grade 5), moderately to heavily damaged buildings (EMS-98 Grades 2 to 4), and intact buildings (EMS-98 Grade 1). The labeled map is not available offline. The guideline sections used include [EMS98-masonry-grade-5], [EMS98-masonry-grade-2], [EMS98-masonry-grade-3], [EMS98-masonry-grade-4], and [SPHERE-5-p1].

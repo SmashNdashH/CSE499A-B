@@ -1,0 +1,3 @@
+writer,reports,finished,contradictions,unsourced,fake_citations,real_not_shown,real_citations,guard_replaced,first_answer_number_problems,sections_asked_again,not_available_offline,words_per_report,words_per_section_median,minutes_per_scene,memory_lines
+3b-instruct,6,6,4,19,0,2,60,41,32,12,7,1173.5,220.0,20.6,Model loading took 2.94 GiB and 4.676707 seconds; Model loading took 2.94 GiB and 4.701317 seconds
+7b,6,6,0,0,0,0,35,0,1,5,2,453.0,109.0,6.9,Model loading took 7.9 GiB and 66.824539 seconds; Model loading took 7.9 GiB and 66.724943 seconds

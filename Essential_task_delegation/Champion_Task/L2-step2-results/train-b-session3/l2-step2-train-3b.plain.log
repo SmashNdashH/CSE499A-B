@@ -1,0 +1,535 @@
+8.7s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.7s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.7s 3 0.00s - to python to disable frozen modules.
+8.7s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+9.4s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.4s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.4s 7 0.00s - to python to disable frozen modules.
+9.4s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+23.7s 9 ✓ {'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'peft': '0.22.0', 'bitsandbytes': '0.50.2', 'accelerate': '1.15.0'}, python 3.13.16
+23.7s 10 GPUs: ['Tesla T4', 'Tesla T4']
+30.6s 11 No files have been modified since last commit. Skipping to prevent empty commit.
+30.6s 12 
+30.6s 13 No files have been modified since last commit. Skipping to prevent empty commit.
+69.4s 14 ✓ L2 step 2, option (b): config written and pushed; base cached at /root/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3
+69.4s 15 Inputs: {'soft_labels_dir': '/kaggle/input/notebooks/redwannewaz/l2-step1b-soft-labels/L2S1b/shards'}
+74.7s 16 ✓ Continuing from checkpoint-45, restored from Hugging Face
+74.8s 17 Writing /kaggle/working/L2S2-train.py
+103.1s 18 The following values were not passed to `accelerate launch` and had defaults used instead:
+103.1s 19 `--num_machines` was set to a value of `1`
+103.1s 20 `--mixed_precision` was set to a value of `'no'`
+103.1s 21 `--dynamo_backend` was set to a value of `'no'`
+103.1s 22 To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+140.2s 23 ✓ Data, option (b): 53,032 examples {'train': 53032}; by task {'Disaster Bearing Bodies Recognition': 7381, 'Building Damage Counting': 13849, 'Road Damage Counting': 6974, 'disaster caption': 7381, 'Disaster Type Recognition': 1543, 'disaster restoration advice': 7380, 'Disaster Scene Recognition': 6742, 'relational reasoning': 1782}; soft labels for 38,271
+155.8s 24 Loading weights:   0%|                                  | 0/824 [00:00<?, ?it/s]Loading weights:   0%|                                  | 0/824 [00:00<?, ?it/s]Loading weights:   0%|                          | 1/824 [00:00<13:22,  1.03it/s]Loading weights:   0%|                          | 1/824 [00:00<13:26,  1.02it/s]Loading weights:   0%|                          | 3/824 [00:01<04:49,  2.84it/s]Loading weights:   0%|                          | 3/824 [00:01<04:49,  2.83it/s]Loading weights:   1%|▏                         | 5/824 [00:01<02:50,  4.81it/s]Loading weights:   1%|▏                         | 5/824 [00:01<02:50,  4.80it/s]Loading weights:   2%|▍                        | 16/824 [00:01<00:43, 18.74it/s]Loading weights:   2%|▍                        | 16/824 [00:01<00:43, 18.73it/s]Loading weights:   3%|▊                        | 27/824 [00:01<00:25, 30.72it/s]Loading weights:   3%|▊                        | 27/824 [00:01<00:26, 30.65it/s]Loading weights:   4%|▉                        | 32/824 [00:01<00:24, 32.04it/s]Loading weights:   4%|▉                        | 32/824 [00:01<00:24, 31.82it/s]Loading weights:   5%|█▏                       | 40/824 [00:02<00:21, 37.17it/s]Loading weights:   5%|█▏                       | 40/824 [00:02<00:21, 36.82it/s]Loading weights:   6%|█▌                       | 51/824 [00:02<00:16, 45.91it/s]Loading weights:   6%|█▌                       | 51/824 [00:02<00:17, 45.37it/s]Loading weights:   7%|█▋                       | 57/824 [00:02<00:17, 44.03it/s]Loading weights:   7%|█▋                       | 57/824 [00:02<00:17, 43.74it/s]Loading weights:   8%|█▉                       | 64/824 [00:02<00:16, 44.87it/s]Loading weights:   8%|█▉                       | 64/824 [00:02<00:17, 44.64it/s]Loading weights:   9%|██▎                      | 75/824 [00:02<00:14, 51.43it/s]Loading weights:   9%|██▎                      | 75/824 [00:02<00:14, 51.27it/s]Loading weights:  10%|██▍                      | 81/824 [00:02<00:15, 48.11it/s]Loading weights:  10%|██▍                      | 81/824 [00:02<00:15, 48.00it/s]Loading weights:  11%|██▋                      | 88/824 [00:02<00:15, 47.70it/s]Loading weights:  11%|██▋                      | 88/824 [00:02<00:15, 47.50it/s]Loading weights:  12%|███                      | 99/824 [00:03<00:13, 53.41it/s]Loading weights:  12%|███                      | 99/824 [00:03<00:13, 53.13it/s]Loading weights:  13%|███                     | 105/824 [00:03<00:14, 49.25it/s]Loading weights:  13%|███                     | 105/824 [00:03<00:14, 49.03it/s]Loading weights:  14%|███▎                    | 112/824 [00:03<00:14, 48.21it/s]Loading weights:  14%|███▎                    | 112/824 [00:03<00:14, 48.11it/s]Loading weights:  15%|███▌                    | 123/824 [00:03<00:12, 54.11it/s]Loading weights:  15%|███▌                    | 123/824 [00:03<00:12, 53.94it/s]Loading weights:  16%|███▊                    | 129/824 [00:03<00:13, 49.72it/s]Loading weights:  16%|███▊                    | 129/824 [00:03<00:13, 49.68it/s]Loading weights:  17%|███▉                    | 136/824 [00:03<00:14, 48.99it/s]Loading weights:  17%|███▉                    | 136/824 [00:03<00:14, 48.82it/s]Loading weights:  18%|████▎                   | 147/824 [00:04<00:12, 54.99it/s]Loading weights:  18%|████▎                   | 147/824 [00:04<00:12, 54.67it/s]Loading weights:  19%|████▍                   | 153/824 [00:04<00:13, 50.27it/s]Loading weights:  19%|████▍                   | 153/824 [00:04<00:13, 50.14it/s]Loading weights:  19%|████▋                   | 160/824 [00:04<00:13, 49.23it/s]Loading weights:  19%|████▋                   | 160/824 [00:04<00:13, 48.93it/s]Loading weights:  21%|████▉                   | 171/824 [00:04<00:11, 55.37it/s]Loading weights:  21%|████▉                   | 171/824 [00:04<00:11, 55.05it/s]Loading weights:  21%|█████▏                  | 177/824 [00:04<00:12, 49.93it/s]Loading weights:  21%|█████▏                  | 177/824 [00:04<00:13, 49.54it/s]Loading weights:  22%|█████▎                  | 184/824 [00:04<00:13, 47.08it/s]Loading weights:  22%|█████▎                  | 184/824 [00:04<00:13, 48.37it/s]Loading weights:  24%|█████▋                  | 195/824 [00:04<00:11, 53.43it/s]Loading weights:  24%|█████▋                  | 195/824 [00:04<00:11, 54.44it/s]Loading weights:  24%|█████▊                  | 201/824 [00:05<00:12, 49.24it/s]Loading weights:  24%|█████▊                  | 201/824 [00:05<00:12, 49.91it/s]Loading weights:  25%|██████                  | 208/824 [00:05<00:12, 48.19it/s]Loading weights:  25%|██████                  | 208/824 [00:05<00:12, 48.61it/s]Loading weights:  27%|██████▍                 | 219/824 [00:05<00:11, 54.55it/s]Loading weights:  27%|██████▍                 | 219/824 [00:05<00:11, 54.83it/s]Loading weights:  27%|██████▌                 | 225/824 [00:05<00:11, 50.34it/s]Loading weights:  27%|██████▌                 | 225/824 [00:05<00:11, 50.40it/s]Loading weights:  28%|██████▊                 | 232/824 [00:05<00:12, 49.04it/s]Loading weights:  28%|██████▊                 | 232/824 [00:05<00:12, 49.12it/s]Loading weights:  29%|███████                 | 243/824 [00:05<00:10, 55.12it/s]Loading weights:  29%|███████                 | 243/824 [00:05<00:10, 55.23it/s]Loading weights:  30%|███████▎                | 249/824 [00:06<00:11, 50.65it/s]Loading weights:  30%|███████▎                | 249/824 [00:06<00:11, 50.73it/s]Loading weights:  31%|███████▍                | 256/824 [00:06<00:11, 48.69it/s]Loading weights:  31%|███████▍                | 256/824 [00:06<00:11, 48.86it/s]Loading weights:  32%|███████▊                | 267/824 [00:06<00:10, 54.65it/s]Loading weights:  32%|███████▊                | 267/824 [00:06<00:10, 54.63it/s]Loading weights:  33%|███████▉                | 273/824 [00:06<00:11, 47.92it/s]Loading weights:  33%|███████▉                | 273/824 [00:06<00:11, 48.06it/s]Loading weights:  34%|████████▏               | 280/824 [00:06<00:11, 47.15it/s]Loading weights:  34%|████████▏               | 280/824 [00:06<00:11, 47.37it/s]Loading weights:  35%|████████▍               | 291/824 [00:06<00:09, 53.62it/s]Loading weights:  35%|████████▍               | 291/824 [00:06<00:09, 53.39it/s]Loading weights:  36%|████████▋               | 297/824 [00:07<00:10, 49.41it/s]Loading weights:  36%|████████▋               | 297/824 [00:07<00:10, 49.02it/s]Loading weights:  37%|████████▊               | 304/824 [00:07<00:10, 48.31it/s]Loading weights:  37%|████████▊               | 304/824 [00:07<00:10, 47.89it/s]Loading weights:  38%|█████████▏              | 315/824 [00:07<00:09, 54.45it/s]Loading weights:  38%|█████████▏              | 315/824 [00:07<00:09, 53.97it/s]Loading weights:  39%|█████████▎              | 321/824 [00:07<00:09, 50.36it/s]Loading weights:  39%|█████████▎              | 321/824 [00:07<00:10, 49.92it/s]Loading weights:  40%|█████████▌              | 328/824 [00:07<00:10, 48.80it/s]Loading weights:  40%|█████████▌              | 328/824 [00:07<00:10, 48.25it/s]Loading weights:  41%|█████████▊              | 339/824 [00:07<00:08, 54.78it/s]Loading weights:  41%|█████████▊              | 339/824 [00:07<00:08, 54.25it/s]Loading weights:  42%|██████████              | 345/824 [00:07<00:09, 50.65it/s]Loading weights:  42%|██████████              | 345/824 [00:07<00:09, 50.13it/s]Loading weights:  43%|██████████▎             | 352/824 [00:08<00:09, 49.50it/s]Loading weights:  43%|██████████▎             | 352/824 [00:08<00:09, 49.05it/s]Loading weights:  44%|██████████▌             | 363/824 [00:08<00:08, 55.12it/s]Loading weights:  44%|██████████▌             | 363/824 [00:08<00:08, 54.58it/s]Loading weights:  45%|██████████▋             | 369/824 [00:08<00:08, 50.92it/s]Loading weights:  45%|██████████▋             | 369/824 [00:08<00:09, 50.48it/s]Loading weights:  46%|██████████▉             | 376/824 [00:08<00:08, 49.88it/s]Loading weights:  46%|██████████▉             | 376/824 [00:08<00:09, 49.30it/s]Loading weights:  47%|███████████▎            | 387/824 [00:08<00:07, 55.79it/s]Loading weights:  47%|███████████▎            | 387/824 [00:08<00:07, 55.08it/s]Loading weights:  48%|███████████▍            | 393/824 [00:08<00:08, 51.49it/s]Loading weights:  48%|███████████▍            | 393/824 [00:08<00:08, 50.88it/s]Loading weights:  49%|███████████▋            | 400/824 [00:09<00:08, 50.00it/s]Loading weights:  49%|███████████▋            | 400/824 [00:09<00:08, 49.25it/s]Loading weights:  50%|███████████▉            | 411/824 [00:09<00:07, 55.13it/s]Loading weights:  50%|███████████▉            | 411/824 [00:09<00:07, 54.56it/s]Loading weights:  51%|████████████▏           | 417/824 [00:09<00:08, 50.77it/s]Loading weights:  51%|████████████▏           | 417/824 [00:09<00:08, 50.25it/s]Loading weights:  51%|████████████▎           | 424/824 [00:09<00:08, 49.78it/s]Loading weights:  51%|████████████▎           | 424/824 [00:09<00:08, 49.31it/s]Loading weights:  53%|████████████▊           | 438/824 [00:09<00:05, 68.88it/s]Loading weights:  53%|████████████▊           | 438/824 [00:09<00:05, 68.34it/s]Loading weights:  57%|█████████████          | 468/824 [00:09<00:02, 123.43it/s]Loading weights:  57%|█████████████          | 468/824 [00:09<00:02, 122.01it/s]Loading weights:  61%|██████████████         | 502/824 [00:09<00:01, 175.68it/s]Loading weights:  61%|█████████████▉         | 500/824 [00:09<00:01, 171.21it/s]Loading weights:  65%|██████████████▉        | 536/824 [00:09<00:01, 216.51it/s]Loading weights:  65%|██████████████▉        | 534/824 [00:09<00:01, 211.46it/s]Loading weights:  69%|███████████████▉       | 570/824 [00:10<00:01, 244.80it/s]Loading weights:  68%|███████████████▋       | 564/824 [00:10<00:01, 233.32it/s]Loading weights:  73%|████████████████▋      | 600/824 [00:10<00:00, 257.47it/s]Loading weights:  72%|████████████████▋      | 596/824 [00:10<00:00, 257.19it/s]Loading weights:  77%|█████████████████▋     | 634/824 [00:10<00:00, 274.48it/s]Loading weights:  76%|█████████████████▌     | 630/824 [00:10<00:00, 274.44it/s]Loading weights:  81%|██████████████████▌    | 666/824 [00:10<00:00, 286.58it/s]Loading weights:  80%|██████████████████▍    | 660/824 [00:10<00:00, 277.79it/s]Loading weights:  84%|███████████████████▍   | 696/824 [00:10<00:00, 289.16it/s]Loading weights:  84%|███████████████████▎   | 694/824 [00:10<00:00, 291.31it/s]Loading weights:  89%|████████████████████▍  | 730/824 [00:10<00:00, 296.54it/s]Loading weights:  88%|████████████████████▎  | 728/824 [00:10<00:00, 298.39it/s]Loading weights:  92%|█████████████████████▎ | 762/824 [00:10<00:00, 302.93it/s]Loading weights:  92%|█████████████████████▎ | 762/824 [00:10<00:00, 302.89it/s]Loading weights:  96%|██████████████████████▏| 793/824 [00:10<00:00, 304.19it/s]Loading weights:  96%|██████████████████████▏| 793/824 [00:10<00:00, 303.61it/s]Loading weights: 100%|███████████████████████| 824/824 [00:10<00:00, 238.90it/s]Loading weights: 100%|████████████████████████| 824/824 [00:10<00:00, 75.35it/s]
+155.8s 25 Loading weights: 100%|███████████████████████| 824/824 [00:10<00:00, 238.56it/s]Loading weights: 100%|████████████████████████| 824/824 [00:10<00:00, 75.09it/s]
+157.4s 26 ✓ Model: 4-bit on 2 process(es); LoRA on 252 projections (36 layers), 119,734,272 parameters; vision tower untouched
+157.4s 27 ✓ Step 2b's fix: base_model.model.model.visual.blocks.31.mlp.down_proj runs in fp32
+159.0s 28 ✓ Longest example: 1,852 tokens, 1,458 of them image tokens; the loss covers its last 355; loss self-checks passed
+159.1s 29 ⏳ Training 53,032 examples in about 208 optimizer steps of 256, continuing from /kaggle/working/L2S2-b/checkpoints/checkpoint-45
+201.0s 30 0%|                                                   | 0/208 [00:00<?, ?it/s]/usr/local/lib/python3.13/dist-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py:1084: UserWarning: Specified kernel cache directory could not be created! This disables kernel caching. Specified directory is /root/.cache/torch/kernels. This warning will appear only once per process. (Triggered internally at /pytorch/aten/src/ATen/native/cuda/jit_utils.cpp:1505.)
+201.0s 31 split_sizes = (image_grid_thw.prod(-1) // self.visual.spatial_merge_size**2).tolist()
+201.0s 32 [transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+201.0s 33 [transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+1040.5s 34 22%|█████████▎                                | 46/208 [14:36<51:27, 19.06s/it]                                                                                {'loss': '0.7754', 'grad_norm': '0.05669', 'learning_rate': '0.0001829', 'label_loss': '0.7718', 'soft_loss': '0.435', 'epoch': '0.2221'}
+1927.1s 35 22%|█████████▎                                | 46/208 [14:38<51:27, 19.06s/it] 23%|█████████                               | 47/208 [29:24<2:01:23, 45.24s/it]                                                                                {'loss': '0.7179', 'grad_norm': '0.05763', 'learning_rate': '0.000182', 'label_loss': '0.734', 'soft_loss': '0.4155', 'epoch': '0.2269'}
+2814.3s 36 23%|█████████                               | 47/208 [29:24<2:01:23, 45.24s/it] 23%|█████████▏                              | 48/208 [44:10<3:33:03, 79.89s/it]                                                                                {'loss': '0.715', 'grad_norm': '0.05259', 'learning_rate': '0.0001811', 'label_loss': '0.7332', 'soft_loss': '0.4334', 'epoch': '0.2317'}
+3701.7s 37 23%|█████████▏                              | 48/208 [44:12<3:33:03, 79.89s/it] 24%|█████████▏                             | 49/208 [58:59<5:31:05, 124.94s/it]                                                                                {'loss': '0.676', 'grad_norm': '0.05658', 'learning_rate': '0.0001802', 'label_loss': '0.6982', 'soft_loss': '0.4003', 'epoch': '0.2365'}
+4590.6s 38 24%|█████████▏                             | 49/208 [58:59<5:31:05, 124.94s/it] 24%|████████▉                            | 50/208 [1:13:47<7:56:59, 181.14s/it]                                                                                {'loss': '0.7413', 'grad_norm': '0.05561', 'learning_rate': '0.0001792', 'label_loss': '0.7064', 'soft_loss': '0.4037', 'epoch': '0.2414'}
+4593.2s 39 24%|████████▉                            | 50/208 [1:13:48<7:56:59, 181.14s/it]Found 10 files to upload
+4593.7s 40 [K  Preparing   ████████████████████  10 / 10 ✓
+4593.7s 41 [K  Uploading   ░░░░░░░░░░░░░░░░░░░░  0 / 7 files
+4593.7s 42 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4594.2s 43 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4594.2s 44 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files
+4594.2s 45 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4594.7s 46 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4594.7s 47 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files
+4594.7s 48 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4595.2s 49 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4595.2s 50 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  538kB · 1.08MB/s
+4595.2s 51 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4595.7s 52 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4595.7s 53 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  97.6MB · 58.9MB/s
+4595.7s 54 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4596.2s 55 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4596.2s 56 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  134MB · 63.2MB/s
+4596.2s 57 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4596.7s 58 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4596.7s 59 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  232MB · 103MB/s
+4596.7s 60 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4597.2s 61 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4597.2s 62 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  268MB · 93.6MB/s
+4597.2s 63 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4597.7s 64 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4597.7s 65 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  322MB · 97.5MB/s
+4597.7s 66 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4598.2s 67 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4598.2s 68 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  402MB · 117MB/s
+4598.2s 69 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4598.7s 70 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4598.7s 71 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  447MB · 108MB/s
+4598.7s 72 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4599.2s 73 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4599.2s 74 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  470MB · 89.4MB/s
+4599.2s 75 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4599.7s 76 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4599.7s 77 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  537MB · 103MB/s
+4599.7s 78 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4600.2s 79 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4600.2s 80 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  541MB · 74.3MB/s
+4600.2s 81 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4600.7s 82 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4600.7s 83 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  604MB · 89.8MB/s
+4600.7s 84 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4601.2s 85 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4601.2s 86 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  652MB · 91.8MB/s
+4601.2s 87 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4601.7s 88 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4601.7s 89 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 107MB/s
+4601.7s 90 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4602.2s 91 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+4602.2s 92 [K  Uploading   ████████████████████  7 / 7 files  723MB · 74.6MB/s ✓
+4602.2s 93 [K  Validating  ░░░░░░░░░░░░░░░░░░░░  0%
+4602.2s 94 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4602.7s 95 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+4602.7s 96 [K  Uploading   ████████████████████  7 / 7 files  723MB · 52.2MB/s ✓
+4602.7s 97 [K  Validating  ████████████████████  100%
+4602.7s 98 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+4602.9s 99 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+4602.9s 100 [K  Uploading   ████████████████████  7 / 7 files  723MB · 52.2MB/s ✓
+4602.9s 101 [K  Validating  ████████████████████  100%
+4602.9s 102 [K  Committing  ████████████████████  10 / 10 ✓
+4602.9s 103 ✓ Pushed checkpoint-50 to AbrarAlam/disasterm3-qwen25vl3b-l2/b/checkpoints
+5478.9s 104 25%|████████▊                           | 51/208 [1:28:34<10:49:53, 248.37s/it]                                                                                {'loss': '0.6874', 'grad_norm': '0.05501', 'learning_rate': '0.0001783', 'label_loss': '0.7161', 'soft_loss': '0.4458', 'epoch': '0.2462'}
+6344.1s 105 25%|████████▊                           | 51/208 [1:28:36<10:49:53, 248.37s/it] 25%|█████████                           | 52/208 [1:43:01<13:58:20, 322.44s/it]                                                                                {'loss': '0.6637', 'grad_norm': '0.05497', 'learning_rate': '0.0001773', 'label_loss': '0.6996', 'soft_loss': '0.4149', 'epoch': '0.251'}
+7216.5s 106 25%|█████████                           | 52/208 [1:43:01<13:58:20, 322.44s/it] 25%|█████████▏                          | 53/208 [1:57:32<17:19:46, 402.49s/it]                                                                                {'loss': '0.6724', 'grad_norm': '0.06', 'learning_rate': '0.0001763', 'label_loss': '0.6712', 'soft_loss': '0.3917', 'epoch': '0.2558'}
+8096.6s 107 25%|█████████▏                          | 53/208 [1:57:34<17:19:46, 402.49s/it] 26%|█████████▎                          | 54/208 [2:12:14<20:45:30, 485.26s/it]                                                                                {'loss': '0.6952', 'grad_norm': '0.05374', 'learning_rate': '0.0001752', 'label_loss': '0.6555', 'soft_loss': '0.3973', 'epoch': '0.2607'}
+8973.0s 108 26%|█████████▎                          | 54/208 [2:12:14<20:45:30, 485.26s/it] 26%|█████████▌                          | 55/208 [2:26:48<23:53:46, 562.26s/it]                                                                                {'loss': '0.6918', 'grad_norm': '0.0574', 'learning_rate': '0.0001742', 'label_loss': '0.6469', 'soft_loss': '0.405', 'epoch': '0.2655'}
+9851.4s 109 26%|█████████▌                          | 55/208 [2:26:50<23:53:46, 562.26s/it] 27%|█████████▋                          | 56/208 [2:41:27<26:40:51, 631.92s/it]                                                                                {'loss': '0.6855', 'grad_norm': '0.05535', 'learning_rate': '0.0001732', 'label_loss': '0.7104', 'soft_loss': '0.4114', 'epoch': '0.2703'}
+10740.2s 110 27%|█████████▋                          | 56/208 [2:41:29<26:40:51, 631.92s/it] 27%|█████████▊                          | 57/208 [2:56:16<29:05:05, 693.41s/it]                                                                                {'loss': '0.6399', 'grad_norm': '0.05307', 'learning_rate': '0.0001721', 'label_loss': '0.645', 'soft_loss': '0.3862', 'epoch': '0.2752'}
+11622.1s 111 27%|█████████▊                          | 57/208 [2:56:18<29:05:05, 693.41s/it] 28%|██████████                          | 58/208 [3:10:58<30:53:37, 741.45s/it]                                                                                {'loss': '0.7034', 'grad_norm': '0.05457', 'learning_rate': '0.000171', 'label_loss': '0.6559', 'soft_loss': '0.3934', 'epoch': '0.28'}
+12511.8s 112 28%|██████████                          | 58/208 [3:10:59<30:53:37, 741.45s/it] 28%|██████████▏                         | 59/208 [3:25:47<32:19:32, 781.03s/it]                                                                                {'loss': '0.6804', 'grad_norm': '0.05043', 'learning_rate': '0.0001699', 'label_loss': '0.6891', 'soft_loss': '0.405', 'epoch': '0.2848'}
+13392.8s 113 28%|██████████▏                         | 59/208 [3:25:49<32:19:32, 781.03s/it] 29%|██████████▍                         | 60/208 [3:40:28<33:14:33, 808.60s/it]                                                                                {'loss': '0.6391', 'grad_norm': '0.05364', 'learning_rate': '0.0001688', 'label_loss': '0.6839', 'soft_loss': '0.4328', 'epoch': '0.2896'}
+13395.3s 114 29%|██████████▍                         | 60/208 [3:40:30<33:14:33, 808.60s/it]Found 10 files to upload
+13395.8s 115 [K  Preparing   ████████████████████  10 / 10 ✓
+13395.8s 116 [K  Uploading   ██░░░░░░░░░░░░░░░░░░  1 / 7 files
+13395.8s 117 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13396.3s 118 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13396.3s 119 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files
+13396.3s 120 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13396.8s 121 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13396.8s 122 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  539kB · 1.08MB/s
+13396.8s 123 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13397.3s 124 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13397.3s 125 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  105MB · 63.4MB/s
+13397.3s 126 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13397.8s 127 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13397.8s 128 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  142MB · 66.8MB/s
+13397.8s 129 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13398.3s 130 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13398.3s 131 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  223MB · 95.0MB/s
+13398.3s 132 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13398.8s 133 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13398.8s 134 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  268MB · 93.5MB/s
+13398.8s 135 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13399.3s 136 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13399.3s 137 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  335MB · 106MB/s
+13399.3s 138 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13399.8s 139 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13399.8s 140 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  402MB · 114MB/s
+13399.8s 141 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13400.3s 142 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13400.3s 143 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  410MB · 84.4MB/s
+13400.3s 144 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13400.8s 145 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13400.8s 146 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  469MB · 94.6MB/s
+13400.8s 147 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13401.3s 148 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13401.3s 149 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  522MB · 97.7MB/s
+13401.3s 150 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13401.8s 151 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13401.8s 152 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  536MB · 77.1MB/s
+13401.8s 153 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13402.3s 154 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13402.3s 155 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  603MB · 94.1MB/s
+13402.3s 156 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13402.8s 157 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13402.8s 158 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  607MB · 68.2MB/s
+13402.8s 159 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13403.3s 160 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13403.3s 161 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 117MB/s
+13403.3s 162 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13403.8s 163 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13403.8s 164 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 81.9MB/s
+13403.8s 165 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13404.3s 166 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+13404.3s 167 [K  Uploading   ████████████████████  7 / 7 files  723MB · 57.3MB/s ✓
+13404.3s 168 [K  Validating  ████████████████████  100%
+13404.3s 169 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+13404.7s 170 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+13404.7s 171 [K  Uploading   ████████████████████  7 / 7 files  723MB · 57.3MB/s ✓
+13404.7s 172 [K  Validating  ████████████████████  100%
+13404.7s 173 [K  Committing  ████████████████████  10 / 10 ✓
+13404.7s 174 ✓ Pushed checkpoint-60 to AbrarAlam/disasterm3-qwen25vl3b-l2/b/checkpoints
+14284.1s 175 29%|██████████▌                         | 61/208 [3:55:21<33:59:42, 832.53s/it]                                                                                {'loss': '0.6663', 'grad_norm': '0.05536', 'learning_rate': '0.0001676', 'label_loss': '0.6196', 'soft_loss': '0.3607', 'epoch': '0.2945'}
+15151.0s 176 29%|██████████▌                         | 61/208 [3:55:21<33:59:42, 832.53s/it] 30%|██████████▋                         | 62/208 [4:09:48<34:09:53, 842.42s/it]                                                                                {'loss': '0.6596', 'grad_norm': '0.06315', 'learning_rate': '0.0001664', 'label_loss': '0.6528', 'soft_loss': '0.4315', 'epoch': '0.2993'}
+16025.7s 177 30%|██████████▋                         | 62/208 [4:09:48<34:09:53, 842.42s/it] 30%|██████████▉                         | 63/208 [4:24:23<34:18:34, 851.82s/it]                                                                                {'loss': '0.6195', 'grad_norm': '0.05406', 'learning_rate': '0.0001653', 'label_loss': '0.6118', 'soft_loss': '0.3737', 'epoch': '0.3041'}
+16895.3s 178 30%|██████████▉                         | 63/208 [4:24:23<34:18:34, 851.82s/it] 31%|███████████                         | 64/208 [4:38:51<34:15:36, 856.50s/it]                                                                                {'loss': '0.6878', 'grad_norm': '0.05561', 'learning_rate': '0.0001641', 'label_loss': '0.6379', 'soft_loss': '0.3965', 'epoch': '0.3089'}
+17772.4s 179 31%|███████████                         | 64/208 [4:38:53<34:15:36, 856.50s/it] 31%|███████████▎                        | 65/208 [4:53:30<34:17:09, 863.14s/it]                                                                                {'loss': '0.5857', 'grad_norm': '0.05458', 'learning_rate': '0.0001629', 'label_loss': '0.5885', 'soft_loss': '0.3882', 'epoch': '0.3138'}
+18648.8s 180 31%|███████████▎                        | 65/208 [4:53:30<34:17:09, 863.14s/it] 32%|███████████▍                        | 66/208 [5:08:04<34:10:50, 866.55s/it]                                                                                {'loss': '0.6417', 'grad_norm': '0.05782', 'learning_rate': '0.0001616', 'label_loss': '0.6421', 'soft_loss': '0.4177', 'epoch': '0.3186'}
+19522.4s 181 32%|███████████▍                        | 66/208 [5:08:06<34:10:50, 866.55s/it] 32%|███████████▌                        | 67/208 [5:22:38<34:01:15, 868.62s/it]                                                                                {'loss': '0.6188', 'grad_norm': '0.06099', 'learning_rate': '0.0001604', 'label_loss': '0.5834', 'soft_loss': '0.4035', 'epoch': '0.3234'}
+20386.3s 182 32%|███████████▌                        | 67/208 [5:22:40<34:01:15, 868.62s/it] 33%|███████████▊                        | 68/208 [5:37:04<33:44:49, 867.79s/it]                                                                                {'loss': '0.6498', 'grad_norm': '0.05309', 'learning_rate': '0.0001592', 'label_loss': '0.6787', 'soft_loss': '0.4293', 'epoch': '0.3283'}
+21274.5s 183 33%|███████████▊                        | 68/208 [5:37:04<33:44:49, 867.79s/it] 33%|███████████▉                        | 69/208 [5:51:52<33:44:26, 873.86s/it]                                                                                {'loss': '0.6609', 'grad_norm': '0.05452', 'learning_rate': '0.0001579', 'label_loss': '0.625', 'soft_loss': '0.3616', 'epoch': '0.3331'}
+22148.8s 184 33%|███████████▉                        | 69/208 [5:51:52<33:44:26, 873.86s/it] 34%|████████████                        | 70/208 [6:06:26<33:30:12, 874.00s/it]                                                                                {'loss': '0.6319', 'grad_norm': '0.05853', 'learning_rate': '0.0001566', 'label_loss': '0.6608', 'soft_loss': '0.4122', 'epoch': '0.3379'}
+22151.2s 185 34%|████████████                        | 70/208 [6:06:26<33:30:12, 874.00s/it]Found 10 files to upload
+22151.8s 186 [K  Preparing   ████████████████████  10 / 10 ✓
+22151.8s 187 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files
+22151.8s 188 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22152.2s 189 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22152.2s 190 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files
+22152.2s 191 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22152.7s 192 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22152.7s 193 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  539kB · 1.08MB/s
+22152.7s 194 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22153.3s 195 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22153.3s 196 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  79.0MB · 47.8MB/s
+22153.3s 197 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22153.7s 198 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22153.7s 199 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  136MB · 67.2MB/s
+22153.7s 200 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22154.3s 201 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22154.3s 202 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  225MB · 101MB/s
+22154.3s 203 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22154.8s 204 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22154.8s 205 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  268MB · 96.0MB/s
+22154.8s 206 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22155.2s 207 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22155.2s 208 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  293MB · 82.0MB/s
+22155.2s 209 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22155.7s 210 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22155.7s 211 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  402MB · 123MB/s
+22155.7s 212 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22156.3s 213 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22156.3s 214 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  406MB · 88.5MB/s
+22156.3s 215 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22156.7s 216 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22156.7s 217 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  469MB · 99.7MB/s
+22156.7s 218 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22157.2s 219 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22157.2s 220 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  495MB · 85.4MB/s
+22157.2s 221 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22157.8s 222 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22157.8s 223 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  536MB · 84.4MB/s
+22157.8s 224 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22158.3s 225 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22158.3s 226 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  587MB · 89.4MB/s
+22158.3s 227 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22158.7s 228 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22158.7s 229 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  605MB · 73.4MB/s
+22158.7s 230 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22159.2s 231 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22159.2s 232 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  687MB · 100MB/s
+22159.2s 233 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22159.8s 234 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22159.8s 235 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  717MB · 88.2MB/s
+22159.8s 236 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22160.3s 237 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22160.3s 238 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 65.3MB/s
+22160.3s 239 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22160.7s 240 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+22160.7s 241 [K  Uploading   ████████████████████  7 / 7 files  723MB · 45.7MB/s ✓
+22160.7s 242 [K  Validating  ████████████████████  100%
+22160.7s 243 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+22161.2s 244 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+22161.2s 245 [K  Uploading   ████████████████████  7 / 7 files  723MB · 45.7MB/s ✓
+22161.2s 246 [K  Validating  ████████████████████  100%
+22161.2s 247 [K  Committing  ████████████████████  10 / 10 ✓
+22161.2s 248 ✓ Pushed checkpoint-70 to AbrarAlam/disasterm3-qwen25vl3b-l2/b/checkpoints
+23038.0s 249 34%|████████████▎                       | 71/208 [6:21:13<33:24:46, 878.01s/it]                                                                                {'loss': '0.633', 'grad_norm': '0.05749', 'learning_rate': '0.0001553', 'label_loss': '0.6486', 'soft_loss': '0.4032', 'epoch': '0.3427'}
+23916.8s 250 34%|████████████▎                       | 71/208 [6:21:15<33:24:46, 878.01s/it] 35%|████████████▍                       | 72/208 [6:35:54<33:11:56, 878.80s/it]                                                                                {'loss': '0.6109', 'grad_norm': '0.05587', 'learning_rate': '0.000154', 'label_loss': '0.5813', 'soft_loss': '0.3644', 'epoch': '0.3476'}
+24801.5s 251 35%|████████████▍                       | 72/208 [6:35:54<33:11:56, 878.80s/it] 35%|████████████▋                       | 73/208 [6:50:39<33:01:16, 880.57s/it]                                                                                {'loss': '0.6615', 'grad_norm': '0.06226', 'learning_rate': '0.0001527', 'label_loss': '0.6948', 'soft_loss': '0.3708', 'epoch': '0.3524'}
+25677.4s 252 35%|████████████▋                       | 73/208 [6:50:39<33:01:16, 880.57s/it] 36%|████████████▊                       | 74/208 [7:05:15<32:43:28, 879.17s/it]                                                                                {'loss': '0.6106', 'grad_norm': '0.05495', 'learning_rate': '0.0001513', 'label_loss': '0.5762', 'soft_loss': '0.3695', 'epoch': '0.3572'}
+26548.7s 253 36%|████████████▊                       | 74/208 [7:05:15<32:43:28, 879.17s/it] 36%|████████████▉                       | 75/208 [7:19:44<32:22:19, 876.24s/it]                                                                                {'loss': '0.6506', 'grad_norm': '0.06079', 'learning_rate': '0.00015', 'label_loss': '0.6698', 'soft_loss': '0.3936', 'epoch': '0.362'}
+27436.1s 254 36%|████████████▉                       | 75/208 [7:19:46<32:22:19, 876.24s/it] 37%|█████████████▏                      | 76/208 [7:34:32<32:15:05, 879.59s/it]                                                                                {'loss': '0.6459', 'grad_norm': '0.06187', 'learning_rate': '0.0001486', 'label_loss': '0.6433', 'soft_loss': '0.4101', 'epoch': '0.3669'}
+28317.9s 255 37%|█████████████▏                      | 76/208 [7:34:33<32:15:05, 879.59s/it] 37%|█████████████▎                      | 77/208 [7:49:13<32:01:52, 880.25s/it]                                                                                {'loss': '0.7018', 'grad_norm': '0.06335', 'learning_rate': '0.0001473', 'label_loss': '0.7005', 'soft_loss': '0.3991', 'epoch': '0.3717'}
+29201.4s 256 37%|█████████████▎                      | 77/208 [7:49:15<32:01:52, 880.25s/it] 38%|█████████████▌                      | 78/208 [8:03:59<31:50:32, 881.79s/it]                                                                                {'loss': '0.6251', 'grad_norm': '0.05945', 'learning_rate': '0.0001459', 'label_loss': '0.6242', 'soft_loss': '0.3673', 'epoch': '0.3765'}
+30069.3s 257 38%|█████████████▌                      | 78/208 [8:03:59<31:50:32, 881.79s/it] 38%|█████████████▋                      | 79/208 [8:18:25<31:25:41, 877.07s/it]                                                                                {'loss': '0.6051', 'grad_norm': '0.0525', 'learning_rate': '0.0001445', 'label_loss': '0.5661', 'soft_loss': '0.3584', 'epoch': '0.3814'}
+30937.2s 258 38%|█████████████▋                      | 79/208 [8:18:27<31:25:41, 877.07s/it] 38%|█████████████▊                      | 80/208 [8:32:54<31:06:16, 874.81s/it]                                                                                {'loss': '0.6231', 'grad_norm': '0.05881', 'learning_rate': '0.0001431', 'label_loss': '0.6269', 'soft_loss': '0.3929', 'epoch': '0.3862'}
+30939.9s 259 38%|█████████████▊                      | 80/208 [8:32:55<31:06:16, 874.81s/it]Found 10 files to upload
+30940.4s 260 [K  Preparing   ████████████████████  10 / 10 ✓
+30940.4s 261 [K  Uploading   ██░░░░░░░░░░░░░░░░░░  1 / 7 files
+30940.4s 262 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30940.9s 263 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30940.9s 264 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files
+30940.9s 265 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30941.4s 266 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30941.4s 267 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  539kB · 1.07MB/s
+30941.4s 268 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30941.9s 269 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30941.9s 270 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  122MB · 73.9MB/s
+30941.9s 271 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30942.4s 272 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30942.4s 273 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  136MB · 59.9MB/s
+30942.4s 274 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30942.9s 275 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30942.9s 276 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  241MB · 105MB/s
+30942.9s 277 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30943.4s 278 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30943.4s 279 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  295MB · 105MB/s
+30943.4s 280 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30943.9s 281 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30943.9s 282 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  363MB · 115MB/s
+30943.9s 283 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30944.4s 284 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30944.4s 285 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  402MB · 104MB/s
+30944.4s 286 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30944.9s 287 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30944.9s 288 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  455MB · 104MB/s
+30944.9s 289 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30945.3s 290 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30945.3s 291 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  469MB · 81.5MB/s
+30945.3s 292 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30945.9s 293 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30945.9s 294 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  533MB · 95.3MB/s
+30945.9s 295 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30946.4s 296 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30946.4s 297 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  536MB · 68.7MB/s
+30946.4s 298 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30946.9s 299 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30946.9s 300 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  603MB · 88.3MB/s
+30946.9s 301 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30947.4s 302 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30947.4s 303 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  611MB · 66.5MB/s
+30947.4s 304 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30947.9s 305 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30947.9s 306 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 113MB/s
+30947.9s 307 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30948.4s 308 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30948.4s 309 [K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 79.4MB/s
+30948.4s 310 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30948.9s 311 [3A[K  Preparing   ████████████████████  10 / 10 ✓
+30948.9s 312 [K  Uploading   ████████████████████  7 / 7 files  723MB · 55.6MB/s ✓
+30948.9s 313 [K  Validating  ████████████████████  100%
+30948.9s 314 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30949.4s 315 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+30949.4s 316 [K  Uploading   ████████████████████  7 / 7 files  723MB · 38.9MB/s ✓
+30949.4s 317 [K  Validating  ████████████████████  100%
+30949.4s 318 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30949.9s 319 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+30949.9s 320 [K  Uploading   ████████████████████  7 / 7 files  723MB · 27.2MB/s ✓
+30949.9s 321 [K  Validating  ████████████████████  100%
+30949.9s 322 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30950.4s 323 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+30950.4s 324 [K  Uploading   ████████████████████  7 / 7 files  723MB · 19.1MB/s ✓
+30950.4s 325 [K  Validating  ████████████████████  100%
+30950.4s 326 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30950.9s 327 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+30950.9s 328 [K  Uploading   ████████████████████  7 / 7 files  723MB · 13.3MB/s ✓
+30950.9s 329 [K  Validating  ████████████████████  100%
+30950.9s 330 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30951.4s 331 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+30951.4s 332 [K  Uploading   ████████████████████  7 / 7 files  723MB · 9.34MB/s ✓
+30951.4s 333 [K  Validating  ████████████████████  100%
+30951.4s 334 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30951.9s 335 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+30951.9s 336 [K  Uploading   ████████████████████  7 / 7 files  723MB · 6.54MB/s ✓
+30951.9s 337 [K  Validating  ████████████████████  100%
+30951.9s 338 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30952.4s 339 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+30952.4s 340 [K  Uploading   ████████████████████  7 / 7 files  723MB · 4.58MB/s ✓
+30952.4s 341 [K  Validating  ████████████████████  100%
+30952.4s 342 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30952.9s 343 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+30952.9s 344 [K  Uploading   ████████████████████  7 / 7 files  723MB · 3.20MB/s ✓
+30952.9s 345 [K  Validating  ████████████████████  100%
+30952.9s 346 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30953.1s 347 [4A[K  Preparing   ████████████████████  10 / 10 ✓
+30953.1s 348 [K  Uploading   ████████████████████  7 / 7 files  723MB · 3.20MB/s ✓
+30953.1s 349 [K  Validating  ████████████████████  100%
+30953.1s 350 [K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10
+30953.1s 351 [rank0]: Traceback (most recent call last):
+30953.1s 352 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_http.py", line 836, in hf_raise_for_status
+30953.1s 353 [rank0]:     response.raise_for_status()
+30953.1s 354 [rank0]:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+30953.1s 355 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/httpx/_models.py", line 829, in raise_for_status
+30953.1s 356 [rank0]:     raise HTTPStatusError(message, request=request, response=self)
+30953.1s 357 [rank0]: httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://huggingface.co/api/models/AbrarAlam/disasterm3-qwen25vl3b-l2/commit/main'
+30953.1s 358 [rank0]: For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+30953.1s 359 
+30953.1s 360 [rank0]: The above exception was the direct cause of the following exception:
+30953.1s 361 
+30953.1s 362 [rank0]: Traceback (most recent call last):
+30953.1s 363 [rank0]:   File "/kaggle/working/L2S2-b/train.py", line 431, in <module>
+30953.1s 364 [rank0]:     trainer.train(resume_from_checkpoint=resume)
+30953.1s 365 [rank0]:     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+30953.1s 366 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 1559, in train
+30953.1s 367 [rank0]:     return inner_training_loop(
+30953.1s 368 [rank0]:         args=args,
+30953.1s 369 [rank0]:     ...<2 lines>...
+30953.1s 370 [rank0]:         ignore_keys_for_eval=ignore_keys_for_eval,
+30953.1s 371 [rank0]:     )
+30953.1s 372 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 1643, in _inner_training_loop
+30953.1s 373 [rank0]:     self._run_epoch(
+30953.1s 374 [rank0]:     ~~~~~~~~~~~~~~~^
+30953.1s 375 [rank0]:         model=model,
+30953.1s 376 [rank0]:         ^^^^^^^^^^^^
+30953.1s 377 [rank0]:     ...<9 lines>...
+30953.1s 378 [rank0]:         steps_trained_in_current_epoch=steps_trained_in_current_epoch,
+30953.1s 379 [rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+30953.1s 380 [rank0]:     )
+30953.1s 381 [rank0]:     ^
+30953.1s 382 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 1930, in _run_epoch
+30953.1s 383 [rank0]:     self._maybe_log_save_evaluate(
+30953.1s 384 [rank0]:     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+30953.1s 385 [rank0]:         self._tr_loss,
+30953.1s 386 [rank0]:         ^^^^^^^^^^^^^^
+30953.1s 387 [rank0]:     ...<6 lines>...
+30953.1s 388 [rank0]:         learning_rate=learning_rate,
+30953.1s 389 [rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+30953.1s 390 [rank0]:     )
+30953.1s 391 [rank0]:     ^
+30953.1s 392 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 2258, in _maybe_log_save_evaluate
+30953.1s 393 [rank0]:     self.control = self.callback_handler.on_save(self.args, self.state, self.control)
+30953.1s 394 [rank0]:                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+30953.1s 395 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/transformers/trainer_callback.py", line 531, in on_save
+30953.1s 396 [rank0]:     return self.call_event("on_save", args, state, control, **kwargs)
+30953.1s 397 [rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+30953.1s 398 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/transformers/trainer_callback.py", line 545, in call_event
+30953.1s 399 [rank0]:     result = getattr(callback, event)(
+30953.1s 400 [rank0]:         args,
+30953.1s 401 [rank0]:     ...<8 lines>...
+30953.1s 402 [rank0]:         **kwargs,
+30953.1s 403 [rank0]:     )
+30953.1s 404 [rank0]:   File "/kaggle/working/L2S2-b/train.py", line 376, in on_save
+30953.1s 405 [rank0]:     api.upload_folder(folder_path=str(Path(args.output_dir) / name), repo_id=CFG["adapter_repo"],
+30953.1s 406 [rank0]:     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+30953.1s 407 [rank0]:                       path_in_repo=f"{CFG['hub_dir']}/{name}", commit_message=f"L2 step 2 ({MODE}): {name}")
+30953.1s 408 [rank0]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+30953.1s 409 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+30953.1s 410 [rank0]:     return fn(*args, **kwargs)
+30953.1s 411 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/hf_api.py", line 2140, in _inner
+30953.1s 412 [rank0]:     return fn(self, *args, **kwargs)
+30953.1s 413 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/hf_api.py", line 6080, in upload_folder
+30953.1s 414 [rank0]:     return pipelined_upload(
+30953.1s 415 [rank0]:         self,
+30953.1s 416 [rank0]:     ...<9 lines>...
+30953.1s 417 [rank0]:         parent_commit=parent_commit,
+30953.1s 418 [rank0]:     )
+30953.1s 419 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py", line 745, in pipelined_upload
+30953.1s 420 [rank0]:     ).run()
+30953.1s 421 [rank0]:       ~~~^^
+30953.1s 422 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py", line 475, in run
+30953.1s 423 [rank0]:     raise self.errors[0]
+30953.1s 424 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py", line 573, in _committer_loop
+30953.1s 425 [rank0]:     self._process_batch(batch)
+30953.1s 426 [rank0]:     ~~~~~~~~~~~~~~~~~~~^^^^^^^
+30953.1s 427 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py", line 610, in _process_batch
+30953.1s 428 [rank0]:     self._commit_with_split(ops_to_commit)
+30953.1s 429 [rank0]:     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+30953.1s 430 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py", line 614, in _commit_with_split
+30953.1s 431 [rank0]:     self._do_commit(ops)
+30953.1s 432 [rank0]:     ~~~~~~~~~~~~~~~^^^^^
+30953.1s 433 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py", line 655, in _do_commit
+30953.1s 434 [rank0]:     self.last_commit_info = _send_commit(
+30953.1s 435 [rank0]:                             ~~~~~~~~~~~~^
+30953.1s 436 [rank0]:         operations=operations,
+30953.1s 437 [rank0]:         ^^^^^^^^^^^^^^^^^^^^^^
+30953.1s 438 [rank0]:     ...<9 lines>...
+30953.1s 439 [rank0]:         retry_on_error=True,
+30953.1s 440 [rank0]:         ^^^^^^^^^^^^^^^^^^^^
+30953.1s 441 [rank0]:     )
+30953.1s 442 [rank0]:     ^
+30953.1s 443 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/_commit_api.py", line 1068, in _send_commit
+30953.1s 444 [rank0]:     hf_raise_for_status(response, endpoint_name="commit")
+30953.1s 445 [rank0]:     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+30953.1s 446 [rank0]:   File "/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_http.py", line 929, in hf_raise_for_status
+30953.1s 447 [rank0]:     raise _format(BadRequestError, message, response) from e
+30953.1s 448 [rank0]: huggingface_hub.errors.BadRequestError: (Request ID: Root=1-6b00ad50-76f9c705400d0cc307fff251;6c672fa5-3e23-49b1-9593-688ef46d6504)
+30953.1s 449 
+30953.1s 450 [rank0]: Bad request for commit endpoint:
+30953.1s 451 [rank0]: Private storage limit reached for user AbrarAlam, please upgrade your plan to increase your private storage limit
+30954.9s 452 [rank0]:[W1120 20:28:02.928481994 ProcessGroupNCCL.cpp:1575] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+30956.6s 453 W1120 20:28:03.782000 157 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 174 closing signal SIGTERM
+30956.6s 454 E1120 20:28:03.788000 157 torch/distributed/elastic/multiprocessing/api.py:986] failed (exitcode: -11) local_rank: 0 (pid: 173) of binary: /usr/bin/python3
+30956.6s 455 Traceback (most recent call last):
+30956.6s 456 File [35m"/usr/local/bin/accelerate"[0m, line [35m10[0m, in [35m<module>[0m
+30956.6s 457 sys.exit([31mmain[0m[1;31m()[0m)
+30956.6s 458 [31m~~~~[0m[1;31m^^[0m
+30956.6s 459 File [35m"/usr/local/lib/python3.13/dist-packages/accelerate/commands/accelerate_cli.py"[0m, line [35m50[0m, in [35mmain[0m
+30956.6s 460 [31margs.func[0m[1;31m(args)[0m
+30956.6s 461 [31m~~~~~~~~~[0m[1;31m^^^^^^[0m
+30956.6s 462 File [35m"/usr/local/lib/python3.13/dist-packages/accelerate/commands/launch.py"[0m, line [35m1404[0m, in [35mlaunch_command[0m
+30956.6s 463 [31mmulti_gpu_launcher[0m[1;31m(args)[0m
+30956.6s 464 [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^[0m
+30956.6s 465 File [35m"/usr/local/lib/python3.13/dist-packages/accelerate/commands/launch.py"[0m, line [35m1029[0m, in [35mmulti_gpu_launcher[0m
+30956.6s 466 [31mdistrib_run.run[0m[1;31m(args)[0m
+30956.6s 467 [31m~~~~~~~~~~~~~~~[0m[1;31m^^^^^^[0m
+30956.6s 468 File [35m"/usr/local/lib/python3.13/dist-packages/torch/distributed/run.py"[0m, line [35m981[0m, in [35mrun[0m
+30956.6s 469 [31melastic_launch([0m
+30956.6s 470 [31m~~~~~~~~~~~~~~~[0m
+30956.6s 471 [31mconfig=config,[0m
+30956.6s 472 [31m~~~~~~~~~~~~~~[0m
+30956.6s 473 [31mentrypoint=cmd,[0m
+30956.6s 474 [31m~~~~~~~~~~~~~~~[0m
+30956.6s 475 [31m)[0m[1;31m(*cmd_args)[0m
+30956.6s 476 [31m~[0m[1;31m^^^^^^^^^^^[0m
+30956.6s 477 File [35m"/usr/local/lib/python3.13/dist-packages/torch/distributed/launcher/api.py"[0m, line [35m170[0m, in [35m__call__[0m
+30956.6s 478 return launch_agent(self._config, self._entrypoint, list(args))
+30956.6s 479 File [35m"/usr/local/lib/python3.13/dist-packages/torch/distributed/launcher/api.py"[0m, line [35m317[0m, in [35mlaunch_agent[0m
+30956.6s 480 raise ChildFailedError(
+30956.6s 481 ...<2 lines>...
+30956.6s 482 )
+30956.6s 483 [1;35mtorch.distributed.elastic.multiprocessing.errors.ChildFailedError[0m: [35m
+30956.6s 484 =====================================================
+30956.6s 485 /kaggle/working/L2S2-b/train.py FAILED
+30956.6s 486 -----------------------------------------------------
+30956.6s 487 Failures:
+30956.6s 488 [1]:
+30956.6s 489 time      : 2026-11-20_20:28:03
+30956.6s 490 host      : b854325b9960
+30956.6s 491 rank      : 1 (local_rank: 1)
+30956.6s 492 exitcode  : -15 (pid: 174)
+30956.6s 493 error_file: <N/A>
+30956.6s 494 traceback : Signal 15 (SIGTERM) received by PID 174
+30956.6s 495 -----------------------------------------------------
+30956.6s 496 Root Cause (first observed failure):
+30956.6s 497 [0]:
+30956.6s 498 time      : 2026-11-20_20:28:03
+30956.6s 499 host      : b854325b9960
+30956.6s 500 rank      : 0 (local_rank: 0)
+30956.6s 501 exitcode  : -11 (pid: 173)
+30956.6s 502 error_file: <N/A>
+30956.6s 503 traceback : Signal 11 (SIGSEGV) received by PID 173
+30956.6s 504 =====================================================[0m
+30963.4s 505 Traceback (most recent call last):
+30963.4s 506 File "<string>", line 1, in <module>
+30963.4s 507 import sys;import papermill as pm;pm.execute_notebook("__notebook__.ipynb","__notebook__.ipynb",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)
+30963.4s 508 ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+30963.4s 509 File "/usr/local/lib/python3.13/dist-packages/papermill/execute.py", line 131, in execute_notebook
+30963.4s 510 raise_for_execution_errors(nb, output_path)
+30963.4s 511 ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+30963.4s 512 File "/usr/local/lib/python3.13/dist-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+30963.4s 513 raise error
+30963.4s 514 papermill.exceptions.PapermillExecutionError:
+30963.4s 515 ---------------------------------------------------------------------------
+30963.4s 516 Exception encountered at "In [5]":
+30963.4s 517 ---------------------------------------------------------------------------
+30963.4s 518 AssertionError                            Traceback (most recent call last)
+30963.4s 519 /tmp/ipykernel_23/3458458287.py in <cell line: 0>()
+30963.4s 520 3
+30963.4s 521 4 S_PATH = WORK / ("train_summary_smoke.json" if SMOKE_TEST else "train_summary.json")
+30963.4s 522 ----> 5 assert S_PATH.exists(), f"No {S_PATH.name}: the training stopped early; read Cell 4's output"
+30963.4s 523 6 S = json.loads(S_PATH.read_text(encoding="utf-8"))
+30963.4s 524 7 steps_ = [e for e in S["log_history"] if "loss" in e]
+30963.4s 525 
+30963.4s 526 AssertionError: No train_summary.json: the training stopped early; read Cell 4's output
+30963.4s 527 
+30966.7s 528 /usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+30966.7s 529 cells[i][c] = re.sub('\\\\\|', '|', cell)
+30967.0s 530 /usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+30967.0s 531 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+30968.8s 532 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+30968.9s 533 [NbConvertApp] Writing 165526 bytes to __notebook__.ipynb
+30971.9s 534 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+30972.9s 535 [NbConvertApp] Writing 567991 bytes to __results__.html

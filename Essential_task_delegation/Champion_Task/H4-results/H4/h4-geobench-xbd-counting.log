@@ -1,0 +1,242 @@
+[{"stream_name":"stderr","time":7.380730567,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":7.380804786,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":8.407286066,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.407343934,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.407353369,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.407358554,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":9.088102508,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.088145647,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.088150767,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.088153757,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":43.336233408,"data":"[  0.5 min] torch 2.11.0+cu130 | smp 0.3.4 | GPUs 2\n"}
+,{"stream_name":"stdout","time":56.010491362,"data":"[  0.8 min] 1470 questions Counter({('Temporal', 'Damaged Building Counting'): 1050, ('Single', 'Disaster Type Classification'): 210, ('Temporal', 'Disaster Type Classification'): 210})\n"}
+,{"stream_name":"stdout","time":56.010530591,"data":"xBD copy: /kaggle/input/datasets/qianlanzz/xbd-dataset/xbd | splits: ['hold', 'test', 'tier1', 'tier3', 'train']\n"}
+,{"stream_name":"stdout","time":190.655884534,"data":"[  3.0 min] copy check: {'folder': '/kaggle/input/datasets/qianlanzz/xbd-dataset/xbd/tier1/images', 'pc_files': 5598, 'in_copy': 5598, 'same_bytes': 28, 'same_pixels': 5598, 'different_pixels': []}\n"}
+,{"stream_name":"stdout","time":240.120973199,"data":"[  3.8 min] copy check: {'folder': '/kaggle/input/datasets/qianlanzz/xbd-dataset/xbd/tier1/masks', 'pc_files': 5598, 'in_copy': 5598, 'same_bytes': 0, 'same_pixels': 0, 'different_pixels': ['guatemala-volcano_00000000_post_disaster.png', 'guatemala-volcano_00000000_pre_disaster.png', 'guatemala-volcano_00000001_post_disaster.png', 'guatemala-volcano_00000001_pre_disaster.png', 'guatemala-volcano_00000002_post_disaster.png', 'guatemala-volcano_00000002_pre_disaster.png', 'guatemala-volcano_00000006_post_disaster.png', 'guatemala-volcano_00000006_pre_disaster.png', 'guatemala-volcano_00000007_post_disaster.png', 'guatemala-volcano_00000007_pre_disaster.png']}\n"}
+,{"stream_name":"stdout","time":240.121028549,"data":"Passed: /kaggle/input/datasets/qianlanzz/xbd-dataset/xbd/tier1/images has all 5598 training photos with the same pixels (28 also with the same bytes)\n"}
+,{"stream_name":"stdout","time":240.532213926,"data":"[  3.8 min] 210 pairs found: Counter({'test': 105, 'hold': 105})\n"}
+,{"stream_name":"stdout","time":731.066532704,"data":"[ 12.0 min] fingerprinted 20988 DisasterM3 Instruct photos\n"}
+,{"stream_name":"stdout","time":769.828888154,"data":"[ 12.7 min] overlap: 119 of 210 pairs have a photo in DisasterM3 Instruct; 91 clean\n"}
+,{"stream_name":"stdout","time":769.8289265,"data":"   {'tile': 'socal-fire_00000823', 'role': 'pre', 'same_pixels': ['socal_fire_00000823_pre_disaster.png'], 'near_copies': ['socal_fire_00000823_pre_disaster.png'], 'same_name': True}\n"}
+,{"stream_name":"stdout","time":769.828958844,"data":"   {'tile': 'socal-fire_00000823', 'role': 'post', 'same_pixels': ['socal_fire_00000823_post_disaster.png'], 'near_copies': ['socal_fire_00000823_post_disaster.png'], 'same_name': True}\n"}
+,{"stream_name":"stdout","time":769.828964761,"data":"   {'tile': 'socal-fire_00000179', 'role': 'pre', 'same_pixels': ['socal_fire_00000179_pre_disaster.png', 'woolsey_fire_00000732_pre_disaster.png'], 'near_copies': ['socal_fire_00000179_pre_disaster.png', 'woolsey_fire_00000732_pre_disaster.png'], 'same_name': True}\n"}
+,{"stream_name":"stdout","time":769.828970064,"data":"   {'tile': 'socal-fire_00000179', 'role': 'post', 'same_pixels': ['socal_fire_00000179_post_disaster.png'], 'near_copies': ['socal_fire_00000179_post_disaster.png'], 'same_name': True}\n"}
+,{"stream_name":"stdout","time":769.828974237,"data":"   {'tile': 'socal-fire_00001037', 'role': 'pre', 'same_pixels': ['socal_fire_00001037_pre_disaster.png'], 'near_copies': ['socal_fire_00001037_pre_disaster.png'], 'same_name': True}\n"}
+,{"stream_name":"stdout","time":769.828978124,"data":"   {'tile': 'socal-fire_00001037', 'role': 'post', 'same_pixels': ['socal_fire_00001037_post_disaster.png'], 'near_copies': ['socal_fire_00001037_post_disaster.png'], 'same_name': True}\n"}
+,{"stream_name":"stdout","time":769.828981986,"data":"   {'tile': 'socal-fire_00000499', 'role': 'pre', 'same_pixels': ['socal_fire_00000499_pre_disaster.png'], 'near_copies': ['socal_fire_00000499_pre_disaster.png'], 'same_name': True}\n"}
+,{"stream_name":"stdout","time":769.828985954,"data":"   {'tile': 'socal-fire_00000499', 'role': 'post', 'same_pixels': ['socal_fire_00000499_post_disaster.png'], 'near_copies': ['socal_fire_00000499_post_disaster.png'], 'same_name': True}\n"}
+,{"stream_name":"stdout","time":769.82898995,"data":"   {'tile': 'socal-fire_00000258', 'role': 'pre', 'same_pixels': ['socal_fire_00000258_pre_disaster.png'], 'near_copies': [], 'same_name': True}\n"}
+,{"stream_name":"stdout","time":769.828993886,"data":"   {'tile': 'socal-fire_00000258', 'role': 'post', 'same_pixels': ['socal_fire_00000258_post_disaster.png'], 'near_copies': [], 'same_name': True}\n"}
+,{"stream_name":"stdout","time":905.177765281,"data":"[ 14.9 min] R11 with TTA on 210 pairs; first: ('socal-fire_00000823', {'intact': 0, 'damaged': 0, 'destroyed': 0, 'damaged_any': 0, 'all_buildings': 0, 'px': [1048576, 0, 0, 0]})\n"}
+,{"stream_name":"stdout","time":905.264893896,"data":"[ 14.9 min] our counting, clean pairs: {'damaged, any level': 0.088, 'destroyed': 0.593, 'major': 0.253, 'minor': 0.308, 'no damage': 0.132}\n"}
+,{"stream_name":"stderr","time":1032.612820682,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":1032.612858009,"data":"\n"}
+,{"stream_name":"stderr","time":1032.612864441,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":1344.219920135,"data":"[ 22.2 min] vLLM is ready\n"}
+,{"stream_name":"stdout","time":4410.116499572,"data":"[ 73.3 min] 7B: 1470 answers and 1050 numbers, 0 errors, 0 counting questions with no number; accuracy by task: {'Damaged Building Counting': 0.52, 'Disaster Type Classification': 0.552}\n"}
+,{"stream_name":"stdout","time":4410.308477287,"data":"{\n"}
+,{"stream_name":"stdout","time":4410.308513838,"data":" \"smoke_test\": false,\n"}
+,{"stream_name":"stdout","time":4410.30851989,"data":" \"copy_check\": {\n"}
+,{"stream_name":"stdout","time":4410.308525174,"data":"  \"folder\": \"/kaggle/input/datasets/qianlanzz/xbd-dataset/xbd/tier1/images\",\n"}
+,{"stream_name":"stdout","time":4410.308547818,"data":"  \"pc_files\": 5598,\n"}
+,{"stream_name":"stdout","time":4410.30855224,"data":"  \"in_copy\": 5598,\n"}
+,{"stream_name":"stdout","time":4410.308556367,"data":"  \"same_bytes\": 28,\n"}
+,{"stream_name":"stdout","time":4410.308560584,"data":"  \"same_pixels\": 5598,\n"}
+,{"stream_name":"stdout","time":4410.308564641,"data":"  \"different_pixels\": []\n"}
+,{"stream_name":"stdout","time":4410.308568957,"data":" },\n"}
+,{"stream_name":"stdout","time":4410.308573196,"data":" \"pairs\": 210,\n"}
+,{"stream_name":"stdout","time":4410.308577272,"data":" \"clean_pairs\": 91,\n"}
+,{"stream_name":"stdout","time":4410.308581541,"data":" \"leaked_pairs\": [\n"}
+,{"stream_name":"stdout","time":4410.308585701,"data":"  \"hurricane-florence_00000033\",\n"}
+,{"stream_name":"stdout","time":4410.308589926,"data":"  \"hurricane-florence_00000113\",\n"}
+,{"stream_name":"stdout","time":4410.308594028,"data":"  \"hurricane-florence_00000205\",\n"}
+,{"stream_name":"stdout","time":4410.308598031,"data":"  \"hurricane-florence_00000254\",\n"}
+,{"stream_name":"stdout","time":4410.308601954,"data":"  \"hurricane-florence_00000305\",\n"}
+,{"stream_name":"stdout","time":4410.308605936,"data":"  \"hurricane-florence_00000322\",\n"}
+,{"stream_name":"stdout","time":4410.308610243,"data":"  \"hurricane-florence_00000511\",\n"}
+,{"stream_name":"stdout","time":4410.308614676,"data":"  \"hurricane-florence_00000539\",\n"}
+,{"stream_name":"stdout","time":4410.308618932,"data":"  \"hurricane-harvey_00000004\",\n"}
+,{"stream_name":"stdout","time":4410.30862305,"data":"  \"hurricane-harvey_00000013\",\n"}
+,{"stream_name":"stdout","time":4410.308627058,"data":"  \"hurricane-harvey_00000050\",\n"}
+,{"stream_name":"stdout","time":4410.308631216,"data":"  \"hurricane-harvey_00000063\",\n"}
+,{"stream_name":"stdout","time":4410.308635325,"data":"  \"hurricane-harvey_00000121\",\n"}
+,{"stream_name":"stdout","time":4410.30863931,"data":"  \"hurricane-harvey_00000122\",\n"}
+,{"stream_name":"stdout","time":4410.308643538,"data":"  \"hurricane-harvey_00000131\",\n"}
+,{"stream_name":"stdout","time":4410.308647604,"data":"  \"hurricane-harvey_00000164\",\n"}
+,{"stream_name":"stdout","time":4410.30865189,"data":"  \"hurricane-harvey_00000181\",\n"}
+,{"stream_name":"stdout","time":4410.308656025,"data":"  \"hurricane-harvey_00000287\",\n"}
+,{"stream_name":"stdout","time":4410.308660331,"data":"  \"hurricane-harvey_00000339\",\n"}
+,{"stream_name":"stdout","time":4410.308664431,"data":"  \"hurricane-harvey_00000353\",\n"}
+,{"stream_name":"stdout","time":4410.30866867,"data":"  \"hurricane-harvey_00000409\",\n"}
+,{"stream_name":"stdout","time":4410.30867302,"data":"  \"hurricane-harvey_00000416\",\n"}
+,{"stream_name":"stdout","time":4410.308677198,"data":"  \"hurricane-harvey_00000445\",\n"}
+,{"stream_name":"stdout","time":4410.308681433,"data":"  \"hurricane-harvey_00000503\",\n"}
+,{"stream_name":"stdout","time":4410.30868576,"data":"  \"hurricane-matthew_00000020\",\n"}
+,{"stream_name":"stdout","time":4410.30869006,"data":"  \"hurricane-matthew_00000038\",\n"}
+,{"stream_name":"stdout","time":4410.308694134,"data":"  \"hurricane-matthew_00000111\",\n"}
+,{"stream_name":"stdout","time":4410.30869836,"data":"  \"hurricane-matthew_00000112\",\n"}
+,{"stream_name":"stdout","time":4410.308702502,"data":"  \"hurricane-matthew_00000113\",\n"}
+,{"stream_name":"stdout","time":4410.308706767,"data":"  \"hurricane-matthew_00000118\",\n"}
+,{"stream_name":"stdout","time":4410.308710967,"data":"  \"hurricane-matthew_00000146\",\n"}
+,{"stream_name":"stdout","time":4410.308715195,"data":"  \"hurricane-matthew_00000150\",\n"}
+,{"stream_name":"stdout","time":4410.308722933,"data":"  \"hurricane-matthew_00000196\",\n"}
+,{"stream_name":"stdout","time":4410.308727329,"data":"  \"hurricane-matthew_00000217\",\n"}
+,{"stream_name":"stdout","time":4410.308731506,"data":"  \"hurricane-matthew_00000262\",\n"}
+,{"stream_name":"stdout","time":4410.30873571,"data":"  \"hurricane-matthew_00000309\",\n"}
+,{"stream_name":"stdout","time":4410.308740031,"data":"  \"hurricane-matthew_00000317\",\n"}
+,{"stream_name":"stdout","time":4410.308744233,"data":"  \"hurricane-matthew_00000320\",\n"}
+,{"stream_name":"stdout","time":4410.308748188,"data":"  \"hurricane-matthew_00000344\",\n"}
+,{"stream_name":"stdout","time":4410.308752289,"data":"  \"hurricane-matthew_00000356\",\n"}
+,{"stream_name":"stdout","time":4410.308763309,"data":"  \"hurricane-matthew_00000361\",\n"}
+,{"stream_name":"stdout","time":4410.308778304,"data":"  \"hurricane-matthew_00000386\",\n"}
+,{"stream_name":"stdout","time":4410.308782211,"data":"  \"hurricane-michael_00000002\",\n"}
+,{"stream_name":"stdout","time":4410.308786062,"data":"  \"hurricane-michael_00000023\",\n"}
+,{"stream_name":"stdout","time":4410.308789907,"data":"  \"hurricane-michael_00000138\",\n"}
+,{"stream_name":"stdout","time":4410.308793824,"data":"  \"hurricane-michael_00000155\",\n"}
+,{"stream_name":"stdout","time":4410.308797679,"data":"  \"hurricane-michael_00000223\",\n"}
+,{"stream_name":"stdout","time":4410.308801542,"data":"  \"hurricane-michael_00000229\",\n"}
+,{"stream_name":"stdout","time":4410.308805384,"data":"  \"hurricane-michael_00000254\",\n"}
+,{"stream_name":"stdout","time":4410.30880918,"data":"  \"hurricane-michael_00000363\",\n"}
+,{"stream_name":"stdout","time":4410.308813037,"data":"  \"hurricane-michael_00000395\",\n"}
+,{"stream_name":"stdout","time":4410.308816965,"data":"  \"hurricane-michael_00000457\",\n"}
+,{"stream_name":"stdout","time":4410.308821131,"data":"  \"hurricane-michael_00000469\",\n"}
+,{"stream_name":"stdout","time":4410.308824989,"data":"  \"hurricane-michael_00000491\",\n"}
+,{"stream_name":"stdout","time":4410.308828966,"data":"  \"hurricane-michael_00000507\",\n"}
+,{"stream_name":"stdout","time":4410.308834059,"data":"  \"hurricane-michael_00000545\",\n"}
+,{"stream_name":"stdout","time":4410.308837943,"data":"  \"midwest-flooding_00000017\",\n"}
+,{"stream_name":"stdout","time":4410.308841739,"data":"  \"midwest-flooding_00000053\",\n"}
+,{"stream_name":"stdout","time":4410.308845343,"data":"  \"midwest-flooding_00000088\",\n"}
+,{"stream_name":"stdout","time":4410.308849187,"data":"  \"midwest-flooding_00000146\",\n"}
+,{"stream_name":"stdout","time":4410.308852812,"data":"  \"midwest-flooding_00000195\",\n"}
+,{"stream_name":"stdout","time":4410.308856602,"data":"  \"midwest-flooding_00000256\",\n"}
+,{"stream_name":"stdout","time":4410.308860322,"data":"  \"midwest-flooding_00000288\",\n"}
+,{"stream_name":"stdout","time":4410.308864096,"data":"  \"midwest-flooding_00000323\",\n"}
+,{"stream_name":"stdout","time":4410.308867838,"data":"  \"midwest-flooding_00000365\",\n"}
+,{"stream_name":"stdout","time":4410.308871661,"data":"  \"midwest-flooding_00000413\",\n"}
+,{"stream_name":"stdout","time":4410.308875632,"data":"  \"palu-tsunami_00000008\",\n"}
+,{"stream_name":"stdout","time":4410.308879422,"data":"  \"palu-tsunami_00000012\",\n"}
+,{"stream_name":"stdout","time":4410.308883304,"data":"  \"palu-tsunami_00000017\",\n"}
+,{"stream_name":"stdout","time":4410.308887164,"data":"  \"palu-tsunami_00000021\",\n"}
+,{"stream_name":"stdout","time":4410.308891033,"data":"  \"palu-tsunami_00000037\",\n"}
+,{"stream_name":"stdout","time":4410.308894845,"data":"  \"palu-tsunami_00000059\",\n"}
+,{"stream_name":"stdout","time":4410.308901464,"data":"  \"palu-tsunami_00000093\",\n"}
+,{"stream_name":"stdout","time":4410.308905416,"data":"  \"palu-tsunami_00000105\",\n"}
+,{"stream_name":"stdout","time":4410.308909272,"data":"  \"palu-tsunami_00000113\",\n"}
+,{"stream_name":"stdout","time":4410.308913119,"data":"  \"palu-tsunami_00000120\",\n"}
+,{"stream_name":"stdout","time":4410.308916997,"data":"  \"palu-tsunami_00000139\",\n"}
+,{"stream_name":"stdout","time":4410.308920899,"data":"  \"palu-tsunami_00000176\",\n"}
+,{"stream_name":"stdout","time":4410.308924791,"data":"  \"palu-tsunami_00000181\",\n"}
+,{"stream_name":"stdout","time":4410.308928534,"data":"  \"palu-tsunami_00000184\",\n"}
+,{"stream_name":"stdout","time":4410.308932372,"data":"  \"palu-tsunami_00000190\",\n"}
+,{"stream_name":"stdout","time":4410.308936237,"data":"  \"santa-rosa-wildfire_00000019\",\n"}
+,{"stream_name":"stdout","time":4410.308940177,"data":"  \"santa-rosa-wildfire_00000195\",\n"}
+,{"stream_name":"stdout","time":4410.308943761,"data":"  \"socal-fire_00000023\",\n"}
+,{"stream_name":"stdout","time":4410.308947595,"data":"  \"socal-fire_00000040\",\n"}
+,{"stream_name":"stdout","time":4410.308951454,"data":"  \"socal-fire_00000052\",\n"}
+,{"stream_name":"stdout","time":4410.308955317,"data":"  \"socal-fire_00000125\",\n"}
+,{"stream_name":"stdout","time":4410.308958969,"data":"  \"socal-fire_00000128\",\n"}
+,{"stream_name":"stdout","time":4410.308962721,"data":"  \"socal-fire_00000179\",\n"}
+,{"stream_name":"stdout","time":4410.308966022,"data":"  \"socal-fire_00000189\",\n"}
+,{"stream_name":"stdout","time":4410.308969837,"data":"  \"socal-fire_00000246\",\n"}
+,{"stream_name":"stdout","time":4410.308973602,"data":"  \"socal-fire_00000258\",\n"}
+,{"stream_name":"stdout","time":4410.308977451,"data":"  \"socal-fire_00000316\",\n"}
+,{"stream_name":"stdout","time":4410.308981092,"data":"  \"socal-fire_00000453\",\n"}
+,{"stream_name":"stdout","time":4410.308984904,"data":"  \"socal-fire_00000476\",\n"}
+,{"stream_name":"stdout","time":4410.308988737,"data":"  \"socal-fire_00000499\",\n"}
+,{"stream_name":"stdout","time":4410.308992557,"data":"  \"socal-fire_00000527\",\n"}
+,{"stream_name":"stdout","time":4410.308996274,"data":"  \"socal-fire_00000532\",\n"}
+,{"stream_name":"stdout","time":4410.309000117,"data":"  \"socal-fire_00000542\",\n"}
+,{"stream_name":"stdout","time":4410.309003964,"data":"  \"socal-fire_00000590\",\n"}
+,{"stream_name":"stdout","time":4410.309007781,"data":"  \"socal-fire_00000670\",\n"}
+,{"stream_name":"stdout","time":4410.309011624,"data":"  \"socal-fire_00000684\",\n"}
+,{"stream_name":"stdout","time":4410.309015441,"data":"  \"socal-fire_00000735\",\n"}
+,{"stream_name":"stdout","time":4410.309019303,"data":"  \"socal-fire_00000823\",\n"}
+,{"stream_name":"stdout","time":4410.309023124,"data":"  \"socal-fire_00000841\",\n"}
+,{"stream_name":"stdout","time":4410.309027066,"data":"  \"socal-fire_00000889\",\n"}
+,{"stream_name":"stdout","time":4410.309030889,"data":"  \"socal-fire_00000956\",\n"}
+,{"stream_name":"stdout","time":4410.309034828,"data":"  \"socal-fire_00000963\",\n"}
+,{"stream_name":"stdout","time":4410.309038654,"data":"  \"socal-fire_00001037\",\n"}
+,{"stream_name":"stdout","time":4410.309042492,"data":"  \"socal-fire_00001041\",\n"}
+,{"stream_name":"stdout","time":4410.309046366,"data":"  \"socal-fire_00001094\",\n"}
+,{"stream_name":"stdout","time":4410.309050243,"data":"  \"socal-fire_00001100\",\n"}
+,{"stream_name":"stdout","time":4410.309054036,"data":"  \"socal-fire_00001137\",\n"}
+,{"stream_name":"stdout","time":4410.309061049,"data":"  \"socal-fire_00001163\",\n"}
+,{"stream_name":"stdout","time":4410.309064931,"data":"  \"socal-fire_00001191\",\n"}
+,{"stream_name":"stdout","time":4410.309068559,"data":"  \"socal-fire_00001231\",\n"}
+,{"stream_name":"stdout","time":4410.309072359,"data":"  \"socal-fire_00001284\",\n"}
+,{"stream_name":"stdout","time":4410.309076213,"data":"  \"socal-fire_00001321\",\n"}
+,{"stream_name":"stdout","time":4410.309080136,"data":"  \"socal-fire_00001384\"\n"}
+,{"stream_name":"stdout","time":4410.309083996,"data":" ],\n"}
+,{"stream_name":"stdout","time":4410.309087766,"data":" \"answerable_clean_questions\": 182,\n"}
+,{"stream_name":"stdout","time":4410.309091684,"data":" \"ours_answerable\": 0.3626,\n"}
+,{"stream_name":"stdout","time":4410.309095619,"data":" \"7b_answerable\": 0.5,\n"}
+,{"stream_name":"stdout","time":4410.309099482,"data":" \"test1_accuracy_mcnemar\": {\n"}
+,{"stream_name":"stdout","time":4410.309103357,"data":"  \"ours_only\": 11,\n"}
+,{"stream_name":"stdout","time":4410.309107254,"data":"  \"7b_only\": 36,\n"}
+,{"stream_name":"stdout","time":4410.30911104,"data":"  \"p\": 0.00034600114031491097,\n"}
+,{"stream_name":"stdout","time":4410.309115081,"data":"  \"passes\": false\n"}
+,{"stream_name":"stdout","time":4410.309118913,"data":" },\n"}
+,{"stream_name":"stdout","time":4410.30912201,"data":" \"test2_closer_count_sign_test\": {\n"}
+,{"stream_name":"stdout","time":4410.309125228,"data":"  \"ours_closer\": 110,\n"}
+,{"stream_name":"stdout","time":4410.309128439,"data":"  \"7b_closer\": 54,\n"}
+,{"stream_name":"stdout","time":4410.30913161,"data":"  \"p\": 1.4609835149368574e-05,\n"}
+,{"stream_name":"stdout","time":4410.309134866,"data":"  \"passes\": true\n"}
+,{"stream_name":"stdout","time":4410.309138127,"data":" },\n"}
+,{"stream_name":"stdout","time":4410.309141629,"data":" \"rule\": \"our counting does not hold\",\n"}
+,{"stream_name":"stdout","time":4410.309145086,"data":" \"type_rule_answerable\": 0.7747,\n"}
+,{"stream_name":"stdout","time":4410.309148665,"data":" \"ours_all_five_clean\": 0.2747,\n"}
+,{"stream_name":"stdout","time":4410.30915239,"data":" \"7b_all_five_clean\": 0.5055,\n"}
+,{"stream_name":"stdout","time":4410.309156231,"data":" \"ours_all_five_all_pairs\": 0.4019,\n"}
+,{"stream_name":"stdout","time":4410.309160036,"data":" \"7b_all_five_all_pairs\": 0.52,\n"}
+,{"stream_name":"stdout","time":4410.309164004,"data":" \"no_photo_rules_all_five_all_pairs\": {\n"}
+,{"stream_name":"stdout","time":4410.309168174,"data":"  \"middle\": 0.3743,\n"}
+,{"stream_name":"stdout","time":4410.309172128,"data":"  \"smallest\": 0.4924,\n"}
+,{"stream_name":"stdout","time":4410.309176103,"data":"  \"type_rule\": 0.6886\n"}
+,{"stream_name":"stdout","time":4410.309180019,"data":" },\n"}
+,{"stream_name":"stdout","time":4410.309183679,"data":" \"minutes\": 73.3\n"}
+,{"stream_name":"stdout","time":4410.309187537,"data":"}\n"}
+,{"stream_name":"stdout","time":4410.46010963,"data":"                    our_correct  vlm_correct  middle_correct  smallest_correct  type_rule_correct\n"}
+,{"stream_name":"stdout","time":4410.460136956,"data":"type                                                                                             \n"}
+,{"stream_name":"stdout","time":4410.460141435,"data":"damaged, any level       0.0879       0.2747          0.9121            0.0330             0.9121\n"}
+,{"stream_name":"stdout","time":4410.460145599,"data":"destroyed                0.5934       0.7143          0.0879            0.7253             0.7253\n"}
+,{"stream_name":"stdout","time":4410.460149581,"data":"major                    0.2527       0.6813          0.1099            0.6923             0.6923\n"}
+,{"stream_name":"stdout","time":4410.460163791,"data":"minor                    0.3077       0.5714          0.1538            0.7473             0.7473\n"}
+,{"stream_name":"stdout","time":4410.460167796,"data":"no damage                0.1319       0.2857          0.8242            0.0879             0.8242 \n"}
+,{"stream_name":"stdout","time":4410.460171645,"data":"\n"}
+,{"stream_name":"stdout","time":4410.460175168,"data":"                     our_mae  vlm_mae  our_exact  vlm_exact  vlm_no_number\n"}
+,{"stream_name":"stdout","time":4410.46017894,"data":"type                                                                     \n"}
+,{"stream_name":"stdout","time":4410.460182708,"data":"damaged, any level  151.385  190.231      0.077      0.044              0\n"}
+,{"stream_name":"stdout","time":4410.46018643,"data":"destroyed             5.011    5.352      0.527      0.022              0\n"}
+,{"stream_name":"stdout","time":4410.460190235,"data":"major                15.132    7.615      0.209      0.033              0\n"}
+,{"stream_name":"stdout","time":4410.460193885,"data":"minor                13.264   16.813      0.253      0.000              0\n"}
+,{"stream_name":"stdout","time":4410.460197657,"data":"no damage           152.901  154.198      0.121      0.055              0 \n"}
+,{"stream_name":"stdout","time":4410.460201437,"data":"\n"}
+,{"stream_name":"stdout","time":4410.460204998,"data":"                      our_correct  vlm_correct\n"}
+,{"stream_name":"stdout","time":4410.460208736,"data":"event                                        \n"}
+,{"stream_name":"stdout","time":4410.460212435,"data":"guatemala-volcano         0.5000       0.5000\n"}
+,{"stream_name":"stdout","time":4410.46021613,"data":"hurricane-florence        0.5000       0.5000\n"}
+,{"stream_name":"stdout","time":4410.460224128,"data":"hurricane-harvey          0.5000       0.5000\n"}
+,{"stream_name":"stdout","time":4410.460227889,"data":"hurricane-matthew         0.5000       0.8333\n"}
+,{"stream_name":"stdout","time":4410.460231443,"data":"hurricane-michael         0.4000       0.4000\n"}
+,{"stream_name":"stdout","time":4410.460235176,"data":"mexico-earthquake         0.3250       0.5875\n"}
+,{"stream_name":"stdout","time":4410.460238885,"data":"midwest-flooding          0.6667       0.5000\n"}
+,{"stream_name":"stdout","time":4410.460242483,"data":"palu-tsunami              0.2600       0.3200\n"}
+,{"stream_name":"stdout","time":4410.460246491,"data":"santa-rosa-wildfire       0.5000       1.0000\n"}
+,{"stream_name":"stdout","time":4410.460250012,"data":"socal-fire                1.0000       0.5000 \n"}
+,{"stream_name":"stdout","time":4410.46025374,"data":"\n"}
+,{"stream_name":"stdout","time":4410.46025722,"data":"                   mean  size\n"}
+,{"stream_name":"stdout","time":4410.460268557,"data":"part     clean              \n"}
+,{"stream_name":"stdout","time":4410.460272527,"data":"Single   False  0.6050   119\n"}
+,{"stream_name":"stdout","time":4410.460276168,"data":"         True   0.3516    91\n"}
+,{"stream_name":"stdout","time":4410.460279778,"data":"Temporal False  0.7227   119\n"}
+,{"stream_name":"stdout","time":4410.460283393,"data":"         True   0.4615    91\n"}
+,{"stream_name":"stdout","time":4410.460288142,"data":"[ 73.3 min] Wrote ['accuracy_by_type.csv', 'count_errors.csv', 'counts.csv', 'overlap.csv', 'per_question.csv', 'summary.json', 'vllm_server.log']\n"}
+,{"stream_name":"stderr","time":4416.360105402,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":4416.360164102,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":4416.584774325,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":4416.58482038,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":4417.48205286,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":4417.569385657,"data":"[NbConvertApp] Writing 92427 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":4420.538203704,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":4421.527911488,"data":"[NbConvertApp] Writing 471556 bytes to __results__.html\n"}
+]

@@ -1,0 +1,35 @@
+[{"stream_name":"stderr","time":8.440093933,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.440146604,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.440152313,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.44015505,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":9.090758242,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.090787741,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.090793225,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.090797334,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":23.170459111,"data":"✓ {'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'peft': '0.22.0'}, python 3.13.16; torchao: not installed\n"}
+,{"stream_name":"stdout","time":23.172752764,"data":"  GPUs: ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":53.457335149,"data":"✓ L2 step 4: the winner is (c): primary accuracy 35.95% (b) against 45.12% (c), exact McNemar p = 0.0000\n"}
+,{"stream_name":"stdout","time":53.484251031,"data":"✓ The fix: visual.blocks.31.mlp.down_proj in fp32, the vision part under fp16 autocast; answering ['c', 'b'], one per GPU\n"}
+,{"stream_name":"stdout","time":55.0674463,"data":"✓ 10,675 optical questions {'BDC': 3583, 'DSR': 2007, 'BBR': 2006, 'DRE': 1868, 'ORR': 858, 'DTR': 353}; 0 with an image missing (counted wrong)\n"}
+,{"stream_name":"stdout","time":55.782182579,"data":"{'c': '0 already answered', 'b': '0 already answered'}\n"}
+,{"stream_name":"stdout","time":15785.497991013,"data":"All answered after 4.35 h; seconds per 3B: {'c': 14969.0, 'b': 15667.4}\n"}
+,{"stream_name":"stdout","time":15785.701331853,"data":"task  questions  3B_c_%  3B_b_%  new_7B_full_%  base_7B_paper_%\n"}
+,{"stream_name":"stdout","time":15785.701381022,"data":" DTR        353   62.04   63.74          76.77             66.6\n"}
+,{"stream_name":"stdout","time":15785.701387958,"data":" BBR       2006   16.65   21.98          19.99              4.7\n"}
+,{"stream_name":"stdout","time":15785.701394057,"data":" BDC       3583   49.79   19.93          30.31             34.2\n"}
+,{"stream_name":"stdout","time":15785.701399651,"data":" DRE       1868   46.63   27.57          33.03             29.3\n"}
+,{"stream_name":"stdout","time":15785.701405531,"data":" DSR       2007   35.38   36.92          40.46             28.3\n"}
+,{"stream_name":"stdout","time":15785.701411204,"data":" ORR        858   51.98   24.71          34.62             23.9\n"}
+,{"stream_name":"stdout","time":15785.701416963,"data":"\n"}
+,{"stream_name":"stdout","time":15785.701423007,"data":"Building counting: {'c': {'accuracy_%': 49.79, 'median_count_error_%': 5.4, 'answered_with_one_option_%': 99.9, 'no_image_rule_%': 66.98}, 'b': {'accuracy_%': 19.93, 'median_count_error_%': 39.0, 'answered_with_one_option_%': 99.9, 'no_image_rule_%': 66.98}}\n"}
+,{"stream_name":"stdout","time":15785.701433541,"data":"Overflowed answers (only exclamation marks): {'c': 0, 'b': 0}\n"}
+,{"stream_name":"stdout","time":15785.832586884,"data":"✓ Wrote /kaggle/working/L2S4: results.csv, per_question.csv, answers.jsonl, README.md, config.json\n"}
+,{"stream_name":"stderr","time":15792.415270756,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":15792.415335254,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":15792.599787412,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":15792.599824003,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":15793.381863393,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":15793.486675291,"data":"[NbConvertApp] Writing 302424 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":15795.941882823,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":15796.607802336,"data":"[NbConvertApp] Writing 632300 bytes to __results__.html\n"}
+]

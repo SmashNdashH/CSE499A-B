@@ -52,7 +52,7 @@ Since 4 Nov the plan is **one chain**, measured as one:
 before + after photos → find each building → grade it → building table → counts, hot spots, guideline passages → the six reports → the website
 ```
 
-Every part below has been tested, but until 19 Nov each with its own model and images. **Since 19 Nov (E7 step 3), the damage map, the building table and the hot spots come from one method, C4, on the same 2,065 test photos.** The reports don't read them yet (T2 step 5, Ridita).
+Every part below has been tested, but until 19 Nov each with its own model and images. **Since 19 Nov (E7 step 3), the damage map, the building table and the hot spots come from one method, C4, on the same 2,065 test photos.** **Since 20 Nov (T2 step 5) the reports read them, in one offline run:** both test pairs pass the five pass rules. The 7B first turned one count into a wrong percentage. With two fixes (the shares stated in the facts, and a number check while it writes), the second run's twelve reports have no wrong or unsourced number, by T2 step 7's check. Read by eye, though, they reuse some damage counts as staff numbers, which the check doesn't catch yet.
 
 | Part | What does it | Best result so far | Source |
 |---|---|---|---|
@@ -71,8 +71,8 @@ Every part below has been tested, but until 19 Nov each with its own model and i
 |---|---|
 | O1: a damage map with mean IoU above 0.52 and destroyed IoU above 0.30 | **Met by the chosen method, C4 (chosen 19 Nov):** 0.3501 destroyed IoU and 0.5881 mean IoU on the clean validation pairs, with each grader seed above 0.30. It scores 0.4296 once on the unseen test pairs, ahead of both single methods beyond noise. (Find-then-grade alone meets it only narrowly: 0.3065, the mean of its three graders.) |
 | O2: counting above the base 7B's 34.2%, and all six tasks re-scored | Six tasks re-scored. **Counting: 35.34% from C4's map (19 Nov), above 34.2% on the measure the review promised.** But this score can't show counting ability (section 3, item 1), so count error is reported beside it |
-| O3: one offline system, DisasTeller on our 7B with the damage map, counts and heatmap | The offline report run is done (11 Nov), and its quality-fix run (17 Nov). The map, the table and the hot spots now come from one method on the same photos (19 Nov). Not one chain yet: the reports don't read them (T2 step 5) |
-| O4: a 3B in about 6 GB, measured against the 7B | Both field segmenters are done in 8-bit (33 MB and 33.2 MB). The 3B: options rerun done (806 kept), soft labels done (all 38,271); the half-precision fix is found (step 2b, 19 Nov: one vision layer kept in full precision). Both 3Bs now train with that fix in place, about 53 h each, until about 29 Nov. *(20 Nov: their automatic start waits on one question, how runs started by a script get a Hugging Face write token.)* |
+| O3: one offline system, DisasTeller on our 7B with the damage map, counts and heatmap | The offline report run is done (11 Nov), and its quality-fix run (17 Nov). The map, the table and the hot spots now come from one method on the same photos (19 Nov). **The first offline run of the whole chain is done (20 Nov, T2 step 5):** both test pairs pass the five pass rules. On one, all six reports turn "96 destroyed areas" into "96% of the area". *(20 Nov, 22:08: after four runs, run 4's twelve reports have no wrong, unsourced or misused number by T2 step 7's check, and both pairs pass the five pass rules. The fixes: the shares stated in the facts; a number check while the 7B writes; and staffing and shelter requests that no longer ask for numbers the facts don't give.)* |
+| O4: a 3B in about 6 GB, measured against the 7B | Both field segmenters are done in 8-bit (33 MB and 33.2 MB). The 3B: options rerun done (806 kept), soft labels done (all 38,271); the half-precision fix is found (step 2b, 19 Nov: one vision layer kept in full precision). Both 3Bs now train with that fix in place, started automatically by a script on Abrar's PC since 20 Nov, 05:35. *(23 Nov: both 3Bs are trained, one full epoch each. (c) finished 22 Nov, 13:56 (211 steps, last loss 0.563); (b) finished 23 Nov, 04:50 (208 steps, last loss 0.633), after a storage crash and a GPU stall it continued from. The held-out choice between them (L2 run 4) runs on account 2 since 07:02; then the winner on the benchmark. L3, the winner in 4 bits with its hand-off to the 7B, is built and its smoke test runs on account 3.)* *(23 Nov, 09:31: the rule keeps (c), the 3B trained on the 7B's checked answers. It scored 45.1% against (b)'s 36.0% on 1,962 held-out questions (p < 0.0001), ahead on counting and relational reasoning. In 4 bits it peaks at 3.0 GB on one GPU, inside "about 6 GB". Its benchmark run and L3's full run go on now.)* |
 
 ## 3. Results since update 4 (they go into update 5)
 
@@ -113,7 +113,7 @@ Every part below has been tested, but until 19 Nov each with its own model and i
    - (b) from the 7B's probabilities for each word of the answer, not only its final answer ("soft labels"; done 19 Nov, all 38,271);
    - (c) from the 7B's answers with the benchmark's options shown (done 18 Nov: **806 kept of 2,249** answered across building counting, road counting and relational reasoning, meeting the 700–900 expectation; [results](Champion_Task/L2-step1-results/options-rerun/L2S1c/README.md)).
 
-   A rule fixed before training picks the better one on 1,962 held-out questions. Five Kaggle notebooks, [l2-step1b-soft-labels.ipynb](Champion_Task/l2-step1b-soft-labels.ipynb) to [l2-step4-winner-benchmark.ipynb](Champion_Task/l2-step4-winner-benchmark.ipynb); Mode (c)'s 3B training is ready to start now.
+   A rule fixed before training picks the better one on 1,962 held-out questions. Five Kaggle notebooks, [l2-step1b-soft-labels.ipynb](Champion_Task/l2-step1b-soft-labels.ipynb) to [l2-step4-winner-benchmark.ipynb](Champion_Task/l2-step4-winner-benchmark.ipynb); Mode (c)'s 3B training is ready to start now. *(23 Nov: both 3Bs are trained, one full epoch each; the held-out choice between them runs now, then the winner on the benchmark.)*
 5. **Our six offline reports against July's six, written by Gemini with the internet on** (Ridita, 16 Nov, pushed 17 Nov). The same six photos and map; the measures and the expectation were written before anything was counted.
 
    | | July (Gemini) | Ours (7B) |
@@ -149,7 +149,7 @@ Every part below has been tested, but until 19 Nov each with its own model and i
 
 **Still open:**
 - **How we report the counting goal,** given the flaw: count error beside accuracy. C4's counts clear the 34.2% bar (35.34%); whether update 5 claims O2 on that number, with the flaw stated beside it, is Abrar's call.
-- **Who writes the reports:** our 7B, or a small text-only model (`Qwen/Qwen2.5-3B-Instruct`) given the same facts (T2b). Our goals name our 7B, so a swap needs the supervisor's agreement.
+- **Who writes the reports:** our 7B, or a small text-only model (`Qwen/Qwen2.5-3B-Instruct`) given the same facts (T2b). Our goals name our 7B, so a swap needs the supervisor's agreement. *(22 Nov: tested on ten scenes, and our 7B stays: 3 contradictions against the 3B's 15, 60 reports each. The 7B left 3 made-up guideline IDs in two staffing reports. [Results](Offline_RAG_KR2/results/t2b/README.md).)* *(23 Nov: Abrar added an ID guard to `fixed_flow_c4.py`. After the number guard, it drops any bracketed guideline ID the section wasn't shown. On Kaggle with the 7B on those two scenes, made-up IDs went from 3 to 0, and all reports finished. [Results](Offline_RAG_KR2/results/t2b_id_guard/README.md). Five blind pairs of reports are being read by Abrar and by Gemini as a second judge.)*
 - **For the website:** its name, and whether xBD pairs could show metres (xBD's own label files give 1.25 to 2.82 m per pixel; the Turkey pairs have no scale).
 
 ## 5. The showcase website
@@ -183,7 +183,7 @@ Every part below has been tested, but until 19 Nov each with its own model and i
 **Order of work:**
 1. Abrar chooses the method (section 4). *Done 19 Nov: C4.*
 2. Hot spots on that method's maps. *Done 19 Nov: E7 step 3.*
-3. The reports read that method's table and hot spots (T2 step 5, Ridita, next). Then every number in a report is checked against the table (step 7).
+3. The reports read that method's table and hot spots (T2 step 5; **done 20 Nov** by Abrar, on two test pairs, internet off: both pass the five pass rules; [results](Offline_RAG_KR2/results/t2_step5_c4/README.md)). Next, every number in a report is checked against the table (step 7), after a fix for the numbers the 7B got wrong. *(Done 20 Nov: run 1 fails with 13 wrong numbers. Runs 2 and 3 fail a stricter rule that also catches building counts reused as staff numbers. Run 4 passes both rules with 0, so the reports' numbers all match the facts on both test pairs; [results](Offline_RAG_KR2/results/t2_step5_c4_fix3/README.md).)*
 4. Who writes the reports (T2b).
 5. A final internet-off run of the whole chain.
 6. The website's live demo runs that chain.
@@ -199,7 +199,7 @@ Every part below has been tested, but until 19 Nov each with its own model and i
 - **Your own site:** the showcase website replaces it, so nothing more is needed there except one thing still missing: add one line to the top of its README saying it's an early prototype whose numbers aren't kept up to date (review, section 7.4).
 - **The roadmap suggests you on the 3B:** L2, then L3, a 4-bit 3B that passes a question to the 7B when it's unsure.
   - L2's five notebooks are built and waiting to run. They push checkpoints to Abrar's Hugging Face account, so ask Abrar before you run any.
-  - L3 starts once L2 has picked its 3B.
+  - L3 starts once L2 has picked its 3B. *(23 Nov: Abrar built L3 and runs it: [the Kaggle notebook](Champion_Task/l3-4bit-3b-handoff.ipynb) and [the PC notebook](Champion_Task/l3-handoff-calibration.ipynb). Its smoke test passed; L2 chose (c) at 09:31, and L3's full run with it runs on account 3. Ask Abrar before running either.)* *(23 Nov, 15:30: the first benchmark runs of the 3B lost about 2–3% of answers to a half-precision overflow in its vision part, the one L2 step 2b fixed for training. Both are rerun with the fix. If you ever run this 3B in fp16 or 4 bits, keep `visual.blocks.31.mlp.down_proj` at full precision: see cell 2b of `l2-step4-winner-benchmark.ipynb`.)*
 
 ### Aryan
 - **Your review's fixes:** you pushed them on 17 Nov, with a change list ([CHANGES.md](Aryan_Task/CHANGES.md)). Abrar checks them against the review's section 8 ([Review_and_Fix_List.md](Aryan_Task/Review_and_Fix_List.md)) next.
@@ -221,6 +221,7 @@ Every part below has been tested, but until 19 Nov each with its own model and i
 ### Ridita
 - **Started 18 Nov: Layer 3, generated before-photos** ([Layer3_Task/Layer3_Task_Brief.md](Layer3_Task/Layer3_Task_Brief.md)). Step 0's smoke test passed all 7 checks (6,443 pairs, 5,798 training and 645 validation with 560 xBD, 1,808,111 destroyed pixels, E5's 40 leaked pairs found again, 0 new leaks, 605 clean pairs); go given for Step 0's full run and Step 1's smoke test. `abrarmohammedtanzim/disasterm3-r11-r9-checkpoints` is shared with the Kaggle group for Step 1.
   - **Step 0 done 18 Nov: the full run passed all 7 checks** ([results](Layer3_Task/results/step0/README.md), commit `36894c0e2`).
+  - **Step 1 done 23 Nov: all five checks passed** ([results](Layer3_Task/results/step1/README.md), commit `a37b21452`). R11 and R9 reproduce E5 step 2 exactly, so the bar stays mIoU 0.5604. A before-photo with no information is worse than none: R11 gets 0.4046 with the after-photo copied in and 0.2464 with a gray picture, against R9's 0.5402. Step 2a (pix2pix) waits for Abrar's go.
   - **Checked by Abrar on 19 Nov against E5's own files:**
     - the same 645 validation pairs, with the same true pixels per class in each;
     - the same pixel hashes for all 12,886 photos;
@@ -231,6 +232,7 @@ Every part below has been tested, but until 19 Nov each with its own model and i
 - **Your questions of 18 Nov:**
   - **Is T2 step 5 yours, and which method?** Yes, it's yours. The method: the mix (the before-and-after U-Net on xBD's images, find-then-grade on the others) leads on both the validation and the test pairs, and **Abrar confirmed it on 19 Nov: C4.** Both methods' tables have H2's columns, so write step 5 with the table file and the hot-spot file as inputs, never fixed paths. *The hot spots on C4's maps are done (E7 step 3, 19 Nov): use its two files, below, not the 7 shared images.*
   - **Should you add your laptop tests to the repository?** Yes: the pretend server's five modes and the 45 small checks, in `Offline_RAG_KR2/`, with a line in your README on how to run them. Today nobody else can re-run them.
+- **T2 step 5 moves to Abrar (20 Nov), so the chain can move while you do Layer 3 step 1.** He works in a copy and leaves your `fixed_flow.py`, `disasteller_inputs.py` and run notebook as they are. Please push any unpushed changes to them first, then leave them until he says step 5 is in. The notes below stay as the record. *(20 Nov, 08:35: step 5 is in, so your files are yours again. It was built in new files and changed none of yours: [results](Offline_RAG_KR2/results/t2_step5_c4/README.md).)*
 - **T2 step 5, connecting the bridge: your inputs are ready (19 Nov).** `disasteller_inputs.py` isn't called by the main script yet. Connect it to these two files, both from C4 on the same 2,065 test photos:
   - [`Champion_Task/E7-results/step3/buildings_c4.sqlite`](Champion_Task/E7-results/step3/README.md): tables `buildings` (H2's columns plus `kind`) and `images` (each photo's source and method);
   - `Champion_Task/E7-results/step3/hotspots.json`: the heatmap method's format, as T1 v3 wrote it.

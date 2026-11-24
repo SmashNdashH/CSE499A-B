@@ -1,0 +1,536 @@
+[{"stream_name":"stderr","time":8.743794523,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.743856955,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.743862287,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.743865291,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":9.384368911,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.384406123,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.384409962,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.384412738,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":23.670033803,"data":"✓ {'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'peft': '0.22.0', 'bitsandbytes': '0.50.2', 'accelerate': '1.15.0'}, python 3.13.16\n"}
+,{"stream_name":"stdout","time":23.673971124,"data":"  GPUs: ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stderr","time":30.559866527,"data":"No files have been modified since last commit. Skipping to prevent empty commit.\n"}
+,{"stream_name":"stderr","time":30.55990391,"data":"\n"}
+,{"stream_name":"stderr","time":30.559908019,"data":"No files have been modified since last commit. Skipping to prevent empty commit.\n"}
+,{"stream_name":"stdout","time":69.419049559,"data":"✓ L2 step 2, option (b): config written and pushed; base cached at /root/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3\n"}
+,{"stream_name":"stdout","time":69.419094803,"data":"  Inputs: {'soft_labels_dir': '/kaggle/input/notebooks/redwannewaz/l2-step1b-soft-labels/L2S1b/shards'}\n"}
+,{"stream_name":"stdout","time":74.737486811,"data":"✓ Continuing from checkpoint-45, restored from Hugging Face\n"}
+,{"stream_name":"stdout","time":74.761872158,"data":"Writing /kaggle/working/L2S2-train.py\n"}
+,{"stream_name":"stdout","time":103.061811837,"data":"The following values were not passed to `accelerate launch` and had defaults used instead:\r\n"}
+,{"stream_name":"stdout","time":103.061846322,"data":"\t`--num_machines` was set to a value of `1`\r\n"}
+,{"stream_name":"stdout","time":103.061853053,"data":"\t`--mixed_precision` was set to a value of `'no'`\r\n"}
+,{"stream_name":"stdout","time":103.061858189,"data":"\t`--dynamo_backend` was set to a value of `'no'`\r\n"}
+,{"stream_name":"stdout","time":103.061864926,"data":"To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.\r\n"}
+,{"stream_name":"stdout","time":140.168768351,"data":"✓ Data, option (b): 53,032 examples {'train': 53032}; by task {'Disaster Bearing Bodies Recognition': 7381, 'Building Damage Counting': 13849, 'Road Damage Counting': 6974, 'disaster caption': 7381, 'Disaster Type Recognition': 1543, 'disaster restoration advice': 7380, 'Disaster Scene Recognition': 6742, 'relational reasoning': 1782}; soft labels for 38,271\r\n"}
+,{"stream_name":"stdout","time":155.75755563,"data":"\rLoading weights:   0%|                                  | 0/824 [00:00\u003c?, ?it/s]\rLoading weights:   0%|                                  | 0/824 [00:00\u003c?, ?it/s]\rLoading weights:   0%|                          | 1/824 [00:00\u003c13:22,  1.03it/s]\rLoading weights:   0%|                          | 1/824 [00:00\u003c13:26,  1.02it/s]\rLoading weights:   0%|                          | 3/824 [00:01\u003c04:49,  2.84it/s]\rLoading weights:   0%|                          | 3/824 [00:01\u003c04:49,  2.83it/s]\rLoading weights:   1%|▏                         | 5/824 [00:01\u003c02:50,  4.81it/s]\rLoading weights:   1%|▏                         | 5/824 [00:01\u003c02:50,  4.80it/s]\rLoading weights:   2%|▍                        | 16/824 [00:01\u003c00:43, 18.74it/s]\rLoading weights:   2%|▍                        | 16/824 [00:01\u003c00:43, 18.73it/s]\rLoading weights:   3%|▊                        | 27/824 [00:01\u003c00:25, 30.72it/s]\rLoading weights:   3%|▊                        | 27/824 [00:01\u003c00:26, 30.65it/s]\rLoading weights:   4%|▉                        | 32/824 [00:01\u003c00:24, 32.04it/s]\rLoading weights:   4%|▉                        | 32/824 [00:01\u003c00:24, 31.82it/s]\rLoading weights:   5%|█▏                       | 40/824 [00:02\u003c00:21, 37.17it/s]\rLoading weights:   5%|█▏                       | 40/824 [00:02\u003c00:21, 36.82it/s]\rLoading weights:   6%|█▌                       | 51/824 [00:02\u003c00:16, 45.91it/s]\rLoading weights:   6%|█▌                       | 51/824 [00:02\u003c00:17, 45.37it/s]\rLoading weights:   7%|█▋                       | 57/824 [00:02\u003c00:17, 44.03it/s]\rLoading weights:   7%|█▋                       | 57/824 [00:02\u003c00:17, 43.74it/s]\rLoading weights:   8%|█▉                       | 64/824 [00:02\u003c00:16, 44.87it/s]\rLoading weights:   8%|█▉                       | 64/824 [00:02\u003c00:17, 44.64it/s]\rLoading weights:   9%|██▎                      | 75/824 [00:02\u003c00:14, 51.43it/s]\rLoading weights:   9%|██▎                      | 75/824 [00:02\u003c00:14, 51.27it/s]\rLoading weights:  10%|██▍                      | 81/824 [00:02\u003c00:15, 48.11it/s]\rLoading weights:  10%|██▍                      | 81/824 [00:02\u003c00:15, 48.00it/s]\rLoading weights:  11%|██▋                      | 88/824 [00:02\u003c00:15, 47.70it/s]\rLoading weights:  11%|██▋                      | 88/824 [00:02\u003c00:15, 47.50it/s]\rLoading weights:  12%|███                      | 99/824 [00:03\u003c00:13, 53.41it/s]\rLoading weights:  12%|███                      | 99/824 [00:03\u003c00:13, 53.13it/s]\rLoading weights:  13%|███                     | 105/824 [00:03\u003c00:14, 49.25it/s]\rLoading weights:  13%|███                     | 105/824 [00:03\u003c00:14, 49.03it/s]\rLoading weights:  14%|███▎                    | 112/824 [00:03\u003c00:14, 48.21it/s]\rLoading weights:  14%|███▎                    | 112/824 [00:03\u003c00:14, 48.11it/s]\rLoading weights:  15%|███▌                    | 123/824 [00:03\u003c00:12, 54.11it/s]\rLoading weights:  15%|███▌                    | 123/824 [00:03\u003c00:12, 53.94it/s]\rLoading weights:  16%|███▊                    | 129/824 [00:03\u003c00:13, 49.72it/s]\rLoading weights:  16%|███▊                    | 129/824 [00:03\u003c00:13, 49.68it/s]\rLoading weights:  17%|███▉                    | 136/824 [00:03\u003c00:14, 48.99it/s]\rLoading weights:  17%|███▉                    | 136/824 [00:03\u003c00:14, 48.82it/s]\rLoading weights:  18%|████▎                   | 147/824 [00:04\u003c00:12, 54.99it/s]\rLoading weights:  18%|████▎                   | 147/824 [00:04\u003c00:12, 54.67it/s]\rLoading weights:  19%|████▍                   | 153/824 [00:04\u003c00:13, 50.27it/s]\rLoading weights:  19%|████▍                   | 153/824 [00:04\u003c00:13, 50.14it/s]\rLoading weights:  19%|████▋                   | 160/824 [00:04\u003c00:13, 49.23it/s]\rLoading weights:  19%|████▋                   | 160/824 [00:04\u003c00:13, 48.93it/s]\rLoading weights:  21%|████▉                   | 171/824 [00:04\u003c00:11, 55.37it/s]\rLoading weights:  21%|████▉                   | 171/824 [00:04\u003c00:11, 55.05it/s]\rLoading weights:  21%|█████▏                  | 177/824 [00:04\u003c00:12, 49.93it/s]\rLoading weights:  21%|█████▏                  | 177/824 [00:04\u003c00:13, 49.54it/s]\rLoading weights:  22%|█████▎                  | 184/824 [00:04\u003c00:13, 47.08it/s]\rLoading weights:  22%|█████▎                  | 184/824 [00:04\u003c00:13, 48.37it/s]\rLoading weights:  24%|█████▋                  | 195/824 [00:04\u003c00:11, 53.43it/s]\rLoading weights:  24%|█████▋                  | 195/824 [00:04\u003c00:11, 54.44it/s]\rLoading weights:  24%|█████▊                  | 201/824 [00:05\u003c00:12, 49.24it/s]\rLoading weights:  24%|█████▊                  | 201/824 [00:05\u003c00:12, 49.91it/s]\rLoading weights:  25%|██████                  | 208/824 [00:05\u003c00:12, 48.19it/s]\rLoading weights:  25%|██████                  | 208/824 [00:05\u003c00:12, 48.61it/s]\rLoading weights:  27%|██████▍                 | 219/824 [00:05\u003c00:11, 54.55it/s]\rLoading weights:  27%|██████▍                 | 219/824 [00:05\u003c00:11, 54.83it/s]\rLoading weights:  27%|██████▌                 | 225/824 [00:05\u003c00:11, 50.34it/s]\rLoading weights:  27%|██████▌                 | 225/824 [00:05\u003c00:11, 50.40it/s]\rLoading weights:  28%|██████▊                 | 232/824 [00:05\u003c00:12, 49.04it/s]\rLoading weights:  28%|██████▊                 | 232/824 [00:05\u003c00:12, 49.12it/s]\rLoading weights:  29%|███████                 | 243/824 [00:05\u003c00:10, 55.12it/s]\rLoading weights:  29%|███████                 | 243/824 [00:05\u003c00:10, 55.23it/s]\rLoading weights:  30%|███████▎                | 249/824 [00:06\u003c00:11, 50.65it/s]\rLoading weights:  30%|███████▎                | 249/824 [00:06\u003c00:11, 50.73it/s]\rLoading weights:  31%|███████▍                | 256/824 [00:06\u003c00:11, 48.69it/s]\rLoading weights:  31%|███████▍                | 256/824 [00:06\u003c00:11, 48.86it/s]\rLoading weights:  32%|███████▊                | 267/824 [00:06\u003c00:10, 54.65it/s]\rLoading weights:  32%|███████▊                | 267/824 [00:06\u003c00:10, 54.63it/s]\rLoading weights:  33%|███████▉                | 273/824 [00:06\u003c00:11, 47.92it/s]\rLoading weights:  33%|███████▉                | 273/824 [00:06\u003c00:11, 48.06it/s]\rLoading weights:  34%|████████▏               | 280/824 [00:06\u003c00:11, 47.15it/s]\rLoading weights:  34%|████████▏               | 280/824 [00:06\u003c00:11, 47.37it/s]\rLoading weights:  35%|████████▍               | 291/824 [00:06\u003c00:09, 53.62it/s]\rLoading weights:  35%|████████▍               | 291/824 [00:06\u003c00:09, 53.39it/s]\rLoading weights:  36%|████████▋               | 297/824 [00:07\u003c00:10, 49.41it/s]\rLoading weights:  36%|████████▋               | 297/824 [00:07\u003c00:10, 49.02it/s]\rLoading weights:  37%|████████▊               | 304/824 [00:07\u003c00:10, 48.31it/s]\rLoading weights:  37%|████████▊               | 304/824 [00:07\u003c00:10, 47.89it/s]\rLoading weights:  38%|█████████▏              | 315/824 [00:07\u003c00:09, 54.45it/s]\rLoading weights:  38%|█████████▏              | 315/824 [00:07\u003c00:09, 53.97it/s]\rLoading weights:  39%|█████████▎              | 321/824 [00:07\u003c00:09, 50.36it/s]\rLoading weights:  39%|█████████▎              | 321/824 [00:07\u003c00:10, 49.92it/s]\rLoading weights:  40%|█████████▌              | 328/824 [00:07\u003c00:10, 48.80it/s]\rLoading weights:  40%|█████████▌              | 328/824 [00:07\u003c00:10, 48.25it/s]\rLoading weights:  41%|█████████▊              | 339/824 [00:07\u003c00:08, 54.78it/s]\rLoading weights:  41%|█████████▊              | 339/824 [00:07\u003c00:08, 54.25it/s]\rLoading weights:  42%|██████████              | 345/824 [00:07\u003c00:09, 50.65it/s]\rLoading weights:  42%|██████████              | 345/824 [00:07\u003c00:09, 50.13it/s]\rLoading weights:  43%|██████████▎             | 352/824 [00:08\u003c00:09, 49.50it/s]\rLoading weights:  43%|██████████▎             | 352/824 [00:08\u003c00:09, 49.05it/s]\rLoading weights:  44%|██████████▌             | 363/824 [00:08\u003c00:08, 55.12it/s]\rLoading weights:  44%|██████████▌             | 363/824 [00:08\u003c00:08, 54.58it/s]\rLoading weights:  45%|██████████▋             | 369/824 [00:08\u003c00:08, 50.92it/s]\rLoading weights:  45%|██████████▋             | 369/824 [00:08\u003c00:09, 50.48it/s]\rLoading weights:  46%|██████████▉             | 376/824 [00:08\u003c00:08, 49.88it/s]\rLoading weights:  46%|██████████▉             | 376/824 [00:08\u003c00:09, 49.30it/s]\rLoading weights:  47%|███████████▎            | 387/824 [00:08\u003c00:07, 55.79it/s]\rLoading weights:  47%|███████████▎            | 387/824 [00:08\u003c00:07, 55.08it/s]\rLoading weights:  48%|███████████▍            | 393/824 [00:08\u003c00:08, 51.49it/s]\rLoading weights:  48%|███████████▍            | 393/824 [00:08\u003c00:08, 50.88it/s]\rLoading weights:  49%|███████████▋            | 400/824 [00:09\u003c00:08, 50.00it/s]\rLoading weights:  49%|███████████▋            | 400/824 [00:09\u003c00:08, 49.25it/s]\rLoading weights:  50%|███████████▉            | 411/824 [00:09\u003c00:07, 55.13it/s]\rLoading weights:  50%|███████████▉            | 411/824 [00:09\u003c00:07, 54.56it/s]\rLoading weights:  51%|████████████▏           | 417/824 [00:09\u003c00:08, 50.77it/s]\rLoading weights:  51%|████████████▏           | 417/824 [00:09\u003c00:08, 50.25it/s]\rLoading weights:  51%|████████████▎           | 424/824 [00:09\u003c00:08, 49.78it/s]\rLoading weights:  51%|████████████▎           | 424/824 [00:09\u003c00:08, 49.31it/s]\rLoading weights:  53%|████████████▊           | 438/824 [00:09\u003c00:05, 68.88it/s]\rLoading weights:  53%|████████████▊           | 438/824 [00:09\u003c00:05, 68.34it/s]\rLoading weights:  57%|█████████████          | 468/824 [00:09\u003c00:02, 123.43it/s]\rLoading weights:  57%|█████████████          | 468/824 [00:09\u003c00:02, 122.01it/s]\rLoading weights:  61%|██████████████         | 502/824 [00:09\u003c00:01, 175.68it/s]\rLoading weights:  61%|█████████████▉         | 500/824 [00:09\u003c00:01, 171.21it/s]\rLoading weights:  65%|██████████████▉        | 536/824 [00:09\u003c00:01, 216.51it/s]\rLoading weights:  65%|██████████████▉        | 534/824 [00:09\u003c00:01, 211.46it/s]\rLoading weights:  69%|███████████████▉       | 570/824 [00:10\u003c00:01, 244.80it/s]\rLoading weights:  68%|███████████████▋       | 564/824 [00:10\u003c00:01, 233.32it/s]\rLoading weights:  73%|████████████████▋      | 600/824 [00:10\u003c00:00, 257.47it/s]\rLoading weights:  72%|████████████████▋      | 596/824 [00:10\u003c00:00, 257.19it/s]\rLoading weights:  77%|█████████████████▋     | 634/824 [00:10\u003c00:00, 274.48it/s]\rLoading weights:  76%|█████████████████▌     | 630/824 [00:10\u003c00:00, 274.44it/s]\rLoading weights:  81%|██████████████████▌    | 666/824 [00:10\u003c00:00, 286.58it/s]\rLoading weights:  80%|██████████████████▍    | 660/824 [00:10\u003c00:00, 277.79it/s]\rLoading weights:  84%|███████████████████▍   | 696/824 [00:10\u003c00:00, 289.16it/s]\rLoading weights:  84%|███████████████████▎   | 694/824 [00:10\u003c00:00, 291.31it/s]\rLoading weights:  89%|████████████████████▍  | 730/824 [00:10\u003c00:00, 296.54it/s]\rLoading weights:  88%|████████████████████▎  | 728/824 [00:10\u003c00:00, 298.39it/s]\rLoading weights:  92%|█████████████████████▎ | 762/824 [00:10\u003c00:00, 302.93it/s]\rLoading weights:  92%|█████████████████████▎ | 762/824 [00:10\u003c00:00, 302.89it/s]\rLoading weights:  96%|██████████████████████▏| 793/824 [00:10\u003c00:00, 304.19it/s]\rLoading weights:  96%|██████████████████████▏| 793/824 [00:10\u003c00:00, 303.61it/s]\rLoading weights: 100%|███████████████████████| 824/824 [00:10\u003c00:00, 238.90it/s]\rLoading weights: 100%|████████████████████████| 824/824 [00:10\u003c00:00, 75.35it/s]\r\n"}
+,{"stream_name":"stdout","time":155.808502913,"data":"\rLoading weights: 100%|███████████████████████| 824/824 [00:10\u003c00:00, 238.56it/s]\rLoading weights: 100%|████████████████████████| 824/824 [00:10\u003c00:00, 75.09it/s]\r\n"}
+,{"stream_name":"stdout","time":157.432731067,"data":"✓ Model: 4-bit on 2 process(es); LoRA on 252 projections (36 layers), 119,734,272 parameters; vision tower untouched\r\n"}
+,{"stream_name":"stdout","time":157.432766237,"data":"✓ Step 2b's fix: base_model.model.model.visual.blocks.31.mlp.down_proj runs in fp32\r\n"}
+,{"stream_name":"stdout","time":159.005263568,"data":"✓ Longest example: 1,852 tokens, 1,458 of them image tokens; the loss covers its last 355; loss self-checks passed\r\n"}
+,{"stream_name":"stdout","time":159.10794588,"data":"⏳ Training 53,032 examples in about 208 optimizer steps of 256, continuing from /kaggle/working/L2S2-b/checkpoints/checkpoint-45\r\n"}
+,{"stream_name":"stdout","time":201.046037605,"data":"\r  0%|                                                   | 0/208 [00:00\u003c?, ?it/s]/usr/local/lib/python3.13/dist-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py:1084: UserWarning: Specified kernel cache directory could not be created! This disables kernel caching. Specified directory is /root/.cache/torch/kernels. This warning will appear only once per process. (Triggered internally at /pytorch/aten/src/ATen/native/cuda/jit_utils.cpp:1505.)\r\n"}
+,{"stream_name":"stdout","time":201.046084827,"data":"  split_sizes = (image_grid_thw.prod(-1) // self.visual.spatial_merge_size**2).tolist()\r\n"}
+,{"stream_name":"stdout","time":201.047905946,"data":"[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.\r\n"}
+,{"stream_name":"stdout","time":201.047963097,"data":"[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.\r\n"}
+,{"stream_name":"stdout","time":1040.492849764,"data":"\r 22%|█████████▎                                | 46/208 [14:36\u003c51:27, 19.06s/it]\r                                                                                \r{'loss': '0.7754', 'grad_norm': '0.05669', 'learning_rate': '0.0001829', 'label_loss': '0.7718', 'soft_loss': '0.435', 'epoch': '0.2221'}\r\n"}
+,{"stream_name":"stdout","time":1927.128239263,"data":"\r 22%|█████████▎                                | 46/208 [14:38\u003c51:27, 19.06s/it]\r 23%|█████████                               | 47/208 [29:24\u003c2:01:23, 45.24s/it]\r                                                                                \r{'loss': '0.7179', 'grad_norm': '0.05763', 'learning_rate': '0.000182', 'label_loss': '0.734', 'soft_loss': '0.4155', 'epoch': '0.2269'}\r\n"}
+,{"stream_name":"stdout","time":2814.250668444,"data":"\r 23%|█████████                               | 47/208 [29:24\u003c2:01:23, 45.24s/it]\r 23%|█████████▏                              | 48/208 [44:10\u003c3:33:03, 79.89s/it]\r                                                                                \r{'loss': '0.715', 'grad_norm': '0.05259', 'learning_rate': '0.0001811', 'label_loss': '0.7332', 'soft_loss': '0.4334', 'epoch': '0.2317'}\r\n"}
+,{"stream_name":"stdout","time":3701.70014466,"data":"\r 23%|█████████▏                              | 48/208 [44:12\u003c3:33:03, 79.89s/it]\r 24%|█████████▏                             | 49/208 [58:59\u003c5:31:05, 124.94s/it]\r                                                                                \r{'loss': '0.676', 'grad_norm': '0.05658', 'learning_rate': '0.0001802', 'label_loss': '0.6982', 'soft_loss': '0.4003', 'epoch': '0.2365'}\r\n"}
+,{"stream_name":"stdout","time":4590.598274159,"data":"\r 24%|█████████▏                             | 49/208 [58:59\u003c5:31:05, 124.94s/it]\r 24%|████████▉                            | 50/208 [1:13:47\u003c7:56:59, 181.14s/it]\r                                                                                \r{'loss': '0.7413', 'grad_norm': '0.05561', 'learning_rate': '0.0001792', 'label_loss': '0.7064', 'soft_loss': '0.4037', 'epoch': '0.2414'}\r\n"}
+,{"stream_name":"stdout","time":4593.197134,"data":"\r 24%|████████▉                            | 50/208 [1:13:48\u003c7:56:59, 181.14s/it]Found 10 files to upload\r\n"}
+,{"stream_name":"stdout","time":4593.71139707,"data":"\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4593.711428627,"data":"\r\u001b[K  Uploading   ░░░░░░░░░░░░░░░░░░░░  0 / 7 files\r\n"}
+,{"stream_name":"stdout","time":4593.711435585,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4594.227217767,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4594.227259672,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files\r\n"}
+,{"stream_name":"stdout","time":4594.227267605,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4594.690624729,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4594.690664244,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files\r\n"}
+,{"stream_name":"stdout","time":4594.690671443,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4595.212500369,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4595.212551125,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  538kB · 1.08MB/s\r\n"}
+,{"stream_name":"stdout","time":4595.212557736,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4595.727870285,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4595.727917111,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  97.6MB · 58.9MB/s\r\n"}
+,{"stream_name":"stdout","time":4595.727924008,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4596.202105962,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4596.20214919,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  134MB · 63.2MB/s\r\n"}
+,{"stream_name":"stdout","time":4596.202156198,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4596.724096006,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4596.72413069,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  232MB · 103MB/s\r\n"}
+,{"stream_name":"stdout","time":4596.724138289,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4597.240173904,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4597.240210357,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  268MB · 93.6MB/s\r\n"}
+,{"stream_name":"stdout","time":4597.240216768,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4597.7081224,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4597.70817316,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  322MB · 97.5MB/s\r\n"}
+,{"stream_name":"stdout","time":4597.708179609,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4598.220184635,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4598.220248413,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  402MB · 117MB/s\r\n"}
+,{"stream_name":"stdout","time":4598.220255721,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4598.743224158,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4598.743262711,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  447MB · 108MB/s\r\n"}
+,{"stream_name":"stdout","time":4598.743268724,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4599.203430234,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4599.203488243,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  470MB · 89.4MB/s\r\n"}
+,{"stream_name":"stdout","time":4599.203494651,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4599.717667932,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4599.7177018,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  537MB · 103MB/s\r\n"}
+,{"stream_name":"stdout","time":4599.717707454,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4600.225597152,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4600.225630228,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  541MB · 74.3MB/s\r\n"}
+,{"stream_name":"stdout","time":4600.225636558,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4600.74913734,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4600.7491779,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  604MB · 89.8MB/s\r\n"}
+,{"stream_name":"stdout","time":4600.749183611,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4601.205516459,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4601.205582846,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  652MB · 91.8MB/s\r\n"}
+,{"stream_name":"stdout","time":4601.205602912,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4601.717127998,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4601.717168883,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 107MB/s\r\n"}
+,{"stream_name":"stdout","time":4601.717173498,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4602.23039993,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4602.230434588,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 74.6MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":4602.230440071,"data":"\r\u001b[K  Validating  ░░░░░░░░░░░░░░░░░░░░  0%\r\n"}
+,{"stream_name":"stdout","time":4602.230444424,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4602.738057119,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4602.738093023,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 52.2MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":4602.738114315,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":4602.738119434,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":4602.893513702,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4602.893549162,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 52.2MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":4602.893555817,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":4602.893560124,"data":"\r\u001b[K  Committing  ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":4602.893564409,"data":"✓ Pushed checkpoint-50 to AbrarAlam/disasterm3-qwen25vl3b-l2/b/checkpoints\r\n"}
+,{"stream_name":"stdout","time":5478.896546172,"data":"\r 25%|████████▊                           | 51/208 [1:28:34\u003c10:49:53, 248.37s/it]\r                                                                                \r{'loss': '0.6874', 'grad_norm': '0.05501', 'learning_rate': '0.0001783', 'label_loss': '0.7161', 'soft_loss': '0.4458', 'epoch': '0.2462'}\r\n"}
+,{"stream_name":"stdout","time":6344.088653504,"data":"\r 25%|████████▊                           | 51/208 [1:28:36\u003c10:49:53, 248.37s/it]\r 25%|█████████                           | 52/208 [1:43:01\u003c13:58:20, 322.44s/it]\r                                                                                \r{'loss': '0.6637', 'grad_norm': '0.05497', 'learning_rate': '0.0001773', 'label_loss': '0.6996', 'soft_loss': '0.4149', 'epoch': '0.251'}\r\n"}
+,{"stream_name":"stdout","time":7216.477117055,"data":"\r 25%|█████████                           | 52/208 [1:43:01\u003c13:58:20, 322.44s/it]\r 25%|█████████▏                          | 53/208 [1:57:32\u003c17:19:46, 402.49s/it]\r                                                                                \r{'loss': '0.6724', 'grad_norm': '0.06', 'learning_rate': '0.0001763', 'label_loss': '0.6712', 'soft_loss': '0.3917', 'epoch': '0.2558'}\r\n"}
+,{"stream_name":"stdout","time":8096.627673738,"data":"\r 25%|█████████▏                          | 53/208 [1:57:34\u003c17:19:46, 402.49s/it]\r 26%|█████████▎                          | 54/208 [2:12:14\u003c20:45:30, 485.26s/it]\r                                                                                \r{'loss': '0.6952', 'grad_norm': '0.05374', 'learning_rate': '0.0001752', 'label_loss': '0.6555', 'soft_loss': '0.3973', 'epoch': '0.2607'}\r\n"}
+,{"stream_name":"stdout","time":8972.982396217,"data":"\r 26%|█████████▎                          | 54/208 [2:12:14\u003c20:45:30, 485.26s/it]\r 26%|█████████▌                          | 55/208 [2:26:48\u003c23:53:46, 562.26s/it]\r                                                                                \r{'loss': '0.6918', 'grad_norm': '0.0574', 'learning_rate': '0.0001742', 'label_loss': '0.6469', 'soft_loss': '0.405', 'epoch': '0.2655'}\r\n"}
+,{"stream_name":"stdout","time":9851.36557192,"data":"\r 26%|█████████▌                          | 55/208 [2:26:50\u003c23:53:46, 562.26s/it]\r 27%|█████████▋                          | 56/208 [2:41:27\u003c26:40:51, 631.92s/it]\r                                                                                \r{'loss': '0.6855', 'grad_norm': '0.05535', 'learning_rate': '0.0001732', 'label_loss': '0.7104', 'soft_loss': '0.4114', 'epoch': '0.2703'}\r\n"}
+,{"stream_name":"stdout","time":10740.204143262,"data":"\r 27%|█████████▋                          | 56/208 [2:41:29\u003c26:40:51, 631.92s/it]\r 27%|█████████▊                          | 57/208 [2:56:16\u003c29:05:05, 693.41s/it]\r                                                                                \r{'loss': '0.6399', 'grad_norm': '0.05307', 'learning_rate': '0.0001721', 'label_loss': '0.645', 'soft_loss': '0.3862', 'epoch': '0.2752'}\r\n"}
+,{"stream_name":"stdout","time":11622.090367797,"data":"\r 27%|█████████▊                          | 57/208 [2:56:18\u003c29:05:05, 693.41s/it]\r 28%|██████████                          | 58/208 [3:10:58\u003c30:53:37, 741.45s/it]\r                                                                                \r{'loss': '0.7034', 'grad_norm': '0.05457', 'learning_rate': '0.000171', 'label_loss': '0.6559', 'soft_loss': '0.3934', 'epoch': '0.28'}\r\n"}
+,{"stream_name":"stdout","time":12511.818952964,"data":"\r 28%|██████████                          | 58/208 [3:10:59\u003c30:53:37, 741.45s/it]\r 28%|██████████▏                         | 59/208 [3:25:47\u003c32:19:32, 781.03s/it]\r                                                                                \r{'loss': '0.6804', 'grad_norm': '0.05043', 'learning_rate': '0.0001699', 'label_loss': '0.6891', 'soft_loss': '0.405', 'epoch': '0.2848'}\r\n"}
+,{"stream_name":"stdout","time":13392.761200248,"data":"\r 28%|██████████▏                         | 59/208 [3:25:49\u003c32:19:32, 781.03s/it]\r 29%|██████████▍                         | 60/208 [3:40:28\u003c33:14:33, 808.60s/it]\r                                                                                \r{'loss': '0.6391', 'grad_norm': '0.05364', 'learning_rate': '0.0001688', 'label_loss': '0.6839', 'soft_loss': '0.4328', 'epoch': '0.2896'}\r\n"}
+,{"stream_name":"stdout","time":13395.270837102,"data":"\r 29%|██████████▍                         | 60/208 [3:40:30\u003c33:14:33, 808.60s/it]Found 10 files to upload\r\n"}
+,{"stream_name":"stdout","time":13395.791533884,"data":"\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13395.791603923,"data":"\r\u001b[K  Uploading   ██░░░░░░░░░░░░░░░░░░  1 / 7 files\r\n"}
+,{"stream_name":"stdout","time":13395.791613035,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13396.255461181,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13396.255535124,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files\r\n"}
+,{"stream_name":"stdout","time":13396.25554335,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13396.769902195,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13396.769943512,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  539kB · 1.08MB/s\r\n"}
+,{"stream_name":"stdout","time":13396.769951307,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13397.287706168,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13397.28777393,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  105MB · 63.4MB/s\r\n"}
+,{"stream_name":"stdout","time":13397.287781592,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13397.75701522,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13397.75705267,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  142MB · 66.8MB/s\r\n"}
+,{"stream_name":"stdout","time":13397.757058515,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13398.275451972,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13398.275537477,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  223MB · 95.0MB/s\r\n"}
+,{"stream_name":"stdout","time":13398.275548071,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13398.790115932,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13398.790155658,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  268MB · 93.5MB/s\r\n"}
+,{"stream_name":"stdout","time":13398.790162637,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13399.267429455,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13399.267477704,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  335MB · 106MB/s\r\n"}
+,{"stream_name":"stdout","time":13399.2674837,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13399.778799347,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13399.778886571,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  402MB · 114MB/s\r\n"}
+,{"stream_name":"stdout","time":13399.778893592,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13400.290318039,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13400.29037718,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  410MB · 84.4MB/s\r\n"}
+,{"stream_name":"stdout","time":13400.290384925,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13400.752036337,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13400.75208927,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  469MB · 94.6MB/s\r\n"}
+,{"stream_name":"stdout","time":13400.75211801,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13401.268559925,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13401.268649183,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  522MB · 97.7MB/s\r\n"}
+,{"stream_name":"stdout","time":13401.26865801,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13401.791723756,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13401.791762492,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  536MB · 77.1MB/s\r\n"}
+,{"stream_name":"stdout","time":13401.791773973,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13402.255669931,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13402.25573457,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  603MB · 94.1MB/s\r\n"}
+,{"stream_name":"stdout","time":13402.255742264,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13402.77953209,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13402.779591873,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  607MB · 68.2MB/s\r\n"}
+,{"stream_name":"stdout","time":13402.779599914,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13403.2872677,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13403.28730637,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 117MB/s\r\n"}
+,{"stream_name":"stdout","time":13403.28731362,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13403.795770098,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13403.795813176,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 81.9MB/s\r\n"}
+,{"stream_name":"stdout","time":13403.795830984,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13404.254006401,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13404.254060207,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 57.3MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":13404.254068069,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":13404.254074313,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":13404.716176097,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13404.716239275,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 57.3MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":13404.716247009,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":13404.716252857,"data":"\r\u001b[K  Committing  ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":13404.716257981,"data":"✓ Pushed checkpoint-60 to AbrarAlam/disasterm3-qwen25vl3b-l2/b/checkpoints\r\n"}
+,{"stream_name":"stdout","time":14284.109294947,"data":"\r 29%|██████████▌                         | 61/208 [3:55:21\u003c33:59:42, 832.53s/it]\r                                                                                \r{'loss': '0.6663', 'grad_norm': '0.05536', 'learning_rate': '0.0001676', 'label_loss': '0.6196', 'soft_loss': '0.3607', 'epoch': '0.2945'}\r\n"}
+,{"stream_name":"stdout","time":15151.028923519,"data":"\r 29%|██████████▌                         | 61/208 [3:55:21\u003c33:59:42, 832.53s/it]\r 30%|██████████▋                         | 62/208 [4:09:48\u003c34:09:53, 842.42s/it]\r                                                                                \r{'loss': '0.6596', 'grad_norm': '0.06315', 'learning_rate': '0.0001664', 'label_loss': '0.6528', 'soft_loss': '0.4315', 'epoch': '0.2993'}\r\n"}
+,{"stream_name":"stdout","time":16025.700596711,"data":"\r 30%|██████████▋                         | 62/208 [4:09:48\u003c34:09:53, 842.42s/it]\r 30%|██████████▉                         | 63/208 [4:24:23\u003c34:18:34, 851.82s/it]\r                                                                                \r{'loss': '0.6195', 'grad_norm': '0.05406', 'learning_rate': '0.0001653', 'label_loss': '0.6118', 'soft_loss': '0.3737', 'epoch': '0.3041'}\r\n"}
+,{"stream_name":"stdout","time":16895.274497068,"data":"\r 30%|██████████▉                         | 63/208 [4:24:23\u003c34:18:34, 851.82s/it]\r 31%|███████████                         | 64/208 [4:38:51\u003c34:15:36, 856.50s/it]\r                                                                                \r{'loss': '0.6878', 'grad_norm': '0.05561', 'learning_rate': '0.0001641', 'label_loss': '0.6379', 'soft_loss': '0.3965', 'epoch': '0.3089'}\r\n"}
+,{"stream_name":"stdout","time":17772.391219629,"data":"\r 31%|███████████                         | 64/208 [4:38:53\u003c34:15:36, 856.50s/it]\r 31%|███████████▎                        | 65/208 [4:53:30\u003c34:17:09, 863.14s/it]\r                                                                                \r{'loss': '0.5857', 'grad_norm': '0.05458', 'learning_rate': '0.0001629', 'label_loss': '0.5885', 'soft_loss': '0.3882', 'epoch': '0.3138'}\r\n"}
+,{"stream_name":"stdout","time":18648.837037125,"data":"\r 31%|███████████▎                        | 65/208 [4:53:30\u003c34:17:09, 863.14s/it]\r 32%|███████████▍                        | 66/208 [5:08:04\u003c34:10:50, 866.55s/it]\r                                                                                \r{'loss': '0.6417', 'grad_norm': '0.05782', 'learning_rate': '0.0001616', 'label_loss': '0.6421', 'soft_loss': '0.4177', 'epoch': '0.3186'}\r\n"}
+,{"stream_name":"stdout","time":19522.380414085,"data":"\r 32%|███████████▍                        | 66/208 [5:08:06\u003c34:10:50, 866.55s/it]\r 32%|███████████▌                        | 67/208 [5:22:38\u003c34:01:15, 868.62s/it]\r                                                                                \r{'loss': '0.6188', 'grad_norm': '0.06099', 'learning_rate': '0.0001604', 'label_loss': '0.5834', 'soft_loss': '0.4035', 'epoch': '0.3234'}\r\n"}
+,{"stream_name":"stdout","time":20386.345818131,"data":"\r 32%|███████████▌                        | 67/208 [5:22:40\u003c34:01:15, 868.62s/it]\r 33%|███████████▊                        | 68/208 [5:37:04\u003c33:44:49, 867.79s/it]\r                                                                                \r{'loss': '0.6498', 'grad_norm': '0.05309', 'learning_rate': '0.0001592', 'label_loss': '0.6787', 'soft_loss': '0.4293', 'epoch': '0.3283'}\r\n"}
+,{"stream_name":"stdout","time":21274.475057265,"data":"\r 33%|███████████▊                        | 68/208 [5:37:04\u003c33:44:49, 867.79s/it]\r 33%|███████████▉                        | 69/208 [5:51:52\u003c33:44:26, 873.86s/it]\r                                                                                \r{'loss': '0.6609', 'grad_norm': '0.05452', 'learning_rate': '0.0001579', 'label_loss': '0.625', 'soft_loss': '0.3616', 'epoch': '0.3331'}\r\n"}
+,{"stream_name":"stdout","time":22148.790846948,"data":"\r 33%|███████████▉                        | 69/208 [5:51:52\u003c33:44:26, 873.86s/it]\r 34%|████████████                        | 70/208 [6:06:26\u003c33:30:12, 874.00s/it]\r                                                                                \r{'loss': '0.6319', 'grad_norm': '0.05853', 'learning_rate': '0.0001566', 'label_loss': '0.6608', 'soft_loss': '0.4122', 'epoch': '0.3379'}\r\n"}
+,{"stream_name":"stdout","time":22151.233238502,"data":"\r 34%|████████████                        | 70/208 [6:06:26\u003c33:30:12, 874.00s/it]Found 10 files to upload\r\n"}
+,{"stream_name":"stdout","time":22151.752269616,"data":"\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22151.75231526,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files\r\n"}
+,{"stream_name":"stdout","time":22151.752322747,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22152.214958465,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22152.215006656,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files\r\n"}
+,{"stream_name":"stdout","time":22152.21501414,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22152.733523176,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22152.733587107,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  539kB · 1.08MB/s\r\n"}
+,{"stream_name":"stdout","time":22152.733595769,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22153.252625341,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22153.252709266,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  79.0MB · 47.8MB/s\r\n"}
+,{"stream_name":"stdout","time":22153.252718735,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22153.718934725,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22153.719023702,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  136MB · 67.2MB/s\r\n"}
+,{"stream_name":"stdout","time":22153.719031468,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22154.257797907,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22154.257840865,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  225MB · 101MB/s\r\n"}
+,{"stream_name":"stdout","time":22154.257847613,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22154.766631144,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22154.766683615,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  268MB · 96.0MB/s\r\n"}
+,{"stream_name":"stdout","time":22154.766691178,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22155.233071385,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22155.233111077,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  293MB · 82.0MB/s\r\n"}
+,{"stream_name":"stdout","time":22155.233119803,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22155.7442599,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22155.744301556,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  402MB · 123MB/s\r\n"}
+,{"stream_name":"stdout","time":22155.744308939,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22156.263158778,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22156.263202333,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  406MB · 88.5MB/s\r\n"}
+,{"stream_name":"stdout","time":22156.263208957,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22156.721488547,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22156.721527312,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  469MB · 99.7MB/s\r\n"}
+,{"stream_name":"stdout","time":22156.721533156,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22157.244411676,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22157.24449309,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  495MB · 85.4MB/s\r\n"}
+,{"stream_name":"stdout","time":22157.244499966,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22157.757233479,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22157.757277387,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  536MB · 84.4MB/s\r\n"}
+,{"stream_name":"stdout","time":22157.757283306,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22158.275277541,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22158.275317609,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  587MB · 89.4MB/s\r\n"}
+,{"stream_name":"stdout","time":22158.275324478,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22158.73690331,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22158.736948269,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  605MB · 73.4MB/s\r\n"}
+,{"stream_name":"stdout","time":22158.7369559,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22159.248510498,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22159.248557809,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  687MB · 100MB/s\r\n"}
+,{"stream_name":"stdout","time":22159.248564062,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22159.758504213,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22159.758541611,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  717MB · 88.2MB/s\r\n"}
+,{"stream_name":"stdout","time":22159.758547816,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22160.270531959,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22160.270632568,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 65.3MB/s\r\n"}
+,{"stream_name":"stdout","time":22160.270900317,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22160.730706087,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22160.730792312,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 45.7MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":22160.730802439,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":22160.730809369,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":22161.245527848,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22161.245580175,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 45.7MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":22161.245602132,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":22161.245607144,"data":"\r\u001b[K  Committing  ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":22161.245611957,"data":"✓ Pushed checkpoint-70 to AbrarAlam/disasterm3-qwen25vl3b-l2/b/checkpoints\r\n"}
+,{"stream_name":"stdout","time":23037.968257803,"data":"\r 34%|████████████▎                       | 71/208 [6:21:13\u003c33:24:46, 878.01s/it]\r                                                                                \r{'loss': '0.633', 'grad_norm': '0.05749', 'learning_rate': '0.0001553', 'label_loss': '0.6486', 'soft_loss': '0.4032', 'epoch': '0.3427'}\r\n"}
+,{"stream_name":"stdout","time":23916.837174608,"data":"\r 34%|████████████▎                       | 71/208 [6:21:15\u003c33:24:46, 878.01s/it]\r 35%|████████████▍                       | 72/208 [6:35:54\u003c33:11:56, 878.80s/it]\r                                                                                \r{'loss': '0.6109', 'grad_norm': '0.05587', 'learning_rate': '0.000154', 'label_loss': '0.5813', 'soft_loss': '0.3644', 'epoch': '0.3476'}\r\n"}
+,{"stream_name":"stdout","time":24801.49250912,"data":"\r 35%|████████████▍                       | 72/208 [6:35:54\u003c33:11:56, 878.80s/it]\r 35%|████████████▋                       | 73/208 [6:50:39\u003c33:01:16, 880.57s/it]\r                                                                                \r{'loss': '0.6615', 'grad_norm': '0.06226', 'learning_rate': '0.0001527', 'label_loss': '0.6948', 'soft_loss': '0.3708', 'epoch': '0.3524'}\r\n"}
+,{"stream_name":"stdout","time":25677.399072413,"data":"\r 35%|████████████▋                       | 73/208 [6:50:39\u003c33:01:16, 880.57s/it]\r 36%|████████████▊                       | 74/208 [7:05:15\u003c32:43:28, 879.17s/it]\r                                                                                \r{'loss': '0.6106', 'grad_norm': '0.05495', 'learning_rate': '0.0001513', 'label_loss': '0.5762', 'soft_loss': '0.3695', 'epoch': '0.3572'}\r\n"}
+,{"stream_name":"stdout","time":26548.665717301,"data":"\r 36%|████████████▊                       | 74/208 [7:05:15\u003c32:43:28, 879.17s/it]\r 36%|████████████▉                       | 75/208 [7:19:44\u003c32:22:19, 876.24s/it]\r                                                                                \r{'loss': '0.6506', 'grad_norm': '0.06079', 'learning_rate': '0.00015', 'label_loss': '0.6698', 'soft_loss': '0.3936', 'epoch': '0.362'}\r\n"}
+,{"stream_name":"stdout","time":27436.089727765,"data":"\r 36%|████████████▉                       | 75/208 [7:19:46\u003c32:22:19, 876.24s/it]\r 37%|█████████████▏                      | 76/208 [7:34:32\u003c32:15:05, 879.59s/it]\r                                                                                \r{'loss': '0.6459', 'grad_norm': '0.06187', 'learning_rate': '0.0001486', 'label_loss': '0.6433', 'soft_loss': '0.4101', 'epoch': '0.3669'}\r\n"}
+,{"stream_name":"stdout","time":28317.860563263,"data":"\r 37%|█████████████▏                      | 76/208 [7:34:33\u003c32:15:05, 879.59s/it]\r 37%|█████████████▎                      | 77/208 [7:49:13\u003c32:01:52, 880.25s/it]\r                                                                                \r{'loss': '0.7018', 'grad_norm': '0.06335', 'learning_rate': '0.0001473', 'label_loss': '0.7005', 'soft_loss': '0.3991', 'epoch': '0.3717'}\r\n"}
+,{"stream_name":"stdout","time":29201.37316419,"data":"\r 37%|█████████████▎                      | 77/208 [7:49:15\u003c32:01:52, 880.25s/it]\r 38%|█████████████▌                      | 78/208 [8:03:59\u003c31:50:32, 881.79s/it]\r                                                                                \r{'loss': '0.6251', 'grad_norm': '0.05945', 'learning_rate': '0.0001459', 'label_loss': '0.6242', 'soft_loss': '0.3673', 'epoch': '0.3765'}\r\n"}
+,{"stream_name":"stdout","time":30069.28244893,"data":"\r 38%|█████████████▌                      | 78/208 [8:03:59\u003c31:50:32, 881.79s/it]\r 38%|█████████████▋                      | 79/208 [8:18:25\u003c31:25:41, 877.07s/it]\r                                                                                \r{'loss': '0.6051', 'grad_norm': '0.0525', 'learning_rate': '0.0001445', 'label_loss': '0.5661', 'soft_loss': '0.3584', 'epoch': '0.3814'}\r\n"}
+,{"stream_name":"stdout","time":30937.211617368,"data":"\r 38%|█████████████▋                      | 79/208 [8:18:27\u003c31:25:41, 877.07s/it]\r 38%|█████████████▊                      | 80/208 [8:32:54\u003c31:06:16, 874.81s/it]\r                                                                                \r{'loss': '0.6231', 'grad_norm': '0.05881', 'learning_rate': '0.0001431', 'label_loss': '0.6269', 'soft_loss': '0.3929', 'epoch': '0.3862'}\r\n"}
+,{"stream_name":"stdout","time":30939.856753865,"data":"\r 38%|█████████████▊                      | 80/208 [8:32:55\u003c31:06:16, 874.81s/it]Found 10 files to upload\r\n"}
+,{"stream_name":"stdout","time":30940.376544785,"data":"\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30940.376586127,"data":"\r\u001b[K  Uploading   ██░░░░░░░░░░░░░░░░░░  1 / 7 files\r\n"}
+,{"stream_name":"stdout","time":30940.376594242,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30940.894384809,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30940.894435991,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files\r\n"}
+,{"stream_name":"stdout","time":30940.894444202,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30941.361018976,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30941.361055086,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  539kB · 1.07MB/s\r\n"}
+,{"stream_name":"stdout","time":30941.361061922,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30941.88413471,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30941.884165711,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  122MB · 73.9MB/s\r\n"}
+,{"stream_name":"stdout","time":30941.884190922,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30942.354663082,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30942.35471115,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  136MB · 59.9MB/s\r\n"}
+,{"stream_name":"stdout","time":30942.354717012,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30942.871379467,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30942.87143793,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  241MB · 105MB/s\r\n"}
+,{"stream_name":"stdout","time":30942.871445921,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30943.386778662,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30943.386825391,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  295MB · 105MB/s\r\n"}
+,{"stream_name":"stdout","time":30943.386831937,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30943.856545393,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30943.856735968,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  363MB · 115MB/s\r\n"}
+,{"stream_name":"stdout","time":30943.856748354,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30944.370569507,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30944.370604266,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  402MB · 104MB/s\r\n"}
+,{"stream_name":"stdout","time":30944.370609721,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30944.885858681,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30944.885931336,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  455MB · 104MB/s\r\n"}
+,{"stream_name":"stdout","time":30944.885937764,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30945.347593852,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30945.347630588,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  469MB · 81.5MB/s\r\n"}
+,{"stream_name":"stdout","time":30945.3476359,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30945.867541375,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30945.867615962,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  533MB · 95.3MB/s\r\n"}
+,{"stream_name":"stdout","time":30945.867624255,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30946.388845104,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30946.388910367,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  536MB · 68.7MB/s\r\n"}
+,{"stream_name":"stdout","time":30946.388917989,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30946.853961096,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30946.854000135,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  603MB · 88.3MB/s\r\n"}
+,{"stream_name":"stdout","time":30946.85400667,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30947.367846566,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30947.3678836,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  611MB · 66.5MB/s\r\n"}
+,{"stream_name":"stdout","time":30947.367891147,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30947.878431502,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30947.878472402,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 113MB/s\r\n"}
+,{"stream_name":"stdout","time":30947.878477981,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30948.387518462,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30948.387552764,"data":"\r\u001b[K  Uploading   █████░░░░░░░░░░░░░░░  2 / 7 files  723MB · 79.4MB/s\r\n"}
+,{"stream_name":"stdout","time":30948.387558342,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30948.898693513,"data":"\u001b[3A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30948.898727655,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 55.6MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":30948.898733088,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":30948.898737723,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30949.358422561,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30949.358458309,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 38.9MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":30949.358463929,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":30949.358468463,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30949.867936404,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30949.867986984,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 27.2MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":30949.867993044,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":30949.867997587,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30950.377163211,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30950.377200952,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 19.1MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":30950.377207112,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":30950.377211643,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30950.886029635,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30950.886072729,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 13.3MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":30950.886079978,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":30950.886086608,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30951.394372384,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30951.394411055,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 9.34MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":30951.394417552,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":30951.394422688,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30951.902581013,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30951.902617523,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 6.54MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":30951.902623748,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":30951.902628195,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30952.362286762,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30952.362357005,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 4.58MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":30952.362368739,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":30952.362375596,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30952.874005161,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30952.874052204,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 3.20MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":30952.874059538,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":30952.874064995,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30953.078175382,"data":"\u001b[4A\r\u001b[K  Preparing   ████████████████████  10 / 10 ✓\r\n"}
+,{"stream_name":"stdout","time":30953.078209483,"data":"\r\u001b[K  Uploading   ████████████████████  7 / 7 files  723MB · 3.20MB/s ✓\r\n"}
+,{"stream_name":"stdout","time":30953.078215151,"data":"\r\u001b[K  Validating  ████████████████████  100%\r\n"}
+,{"stream_name":"stdout","time":30953.078219659,"data":"\r\u001b[K  Committing  ░░░░░░░░░░░░░░░░░░░░  0 / 10\r\n"}
+,{"stream_name":"stdout","time":30953.07822416,"data":"[rank0]: Traceback (most recent call last):\r\n"}
+,{"stream_name":"stdout","time":30953.07822822,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_http.py\", line 836, in hf_raise_for_status\r\n"}
+,{"stream_name":"stdout","time":30953.078233615,"data":"[rank0]:     response.raise_for_status()\r\n"}
+,{"stream_name":"stdout","time":30953.078238067,"data":"[rank0]:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^\r\n"}
+,{"stream_name":"stdout","time":30953.078242265,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/httpx/_models.py\", line 829, in raise_for_status\r\n"}
+,{"stream_name":"stdout","time":30953.078246627,"data":"[rank0]:     raise HTTPStatusError(message, request=request, response=self)\r\n"}
+,{"stream_name":"stdout","time":30953.078250857,"data":"[rank0]: httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://huggingface.co/api/models/AbrarAlam/disasterm3-qwen25vl3b-l2/commit/main'\r\n"}
+,{"stream_name":"stdout","time":30953.07825568,"data":"[rank0]: For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400\r\n"}
+,{"stream_name":"stdout","time":30953.078260083,"data":"\r\n"}
+,{"stream_name":"stdout","time":30953.078264712,"data":"[rank0]: The above exception was the direct cause of the following exception:\r\n"}
+,{"stream_name":"stdout","time":30953.078269654,"data":"\r\n"}
+,{"stream_name":"stdout","time":30953.078273686,"data":"[rank0]: Traceback (most recent call last):\r\n"}
+,{"stream_name":"stdout","time":30953.078277673,"data":"[rank0]:   File \"/kaggle/working/L2S2-b/train.py\", line 431, in \u003cmodule\u003e\r\n"}
+,{"stream_name":"stdout","time":30953.078282032,"data":"[rank0]:     trainer.train(resume_from_checkpoint=resume)\r\n"}
+,{"stream_name":"stdout","time":30953.07828636,"data":"[rank0]:     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078290365,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/transformers/trainer.py\", line 1559, in train\r\n"}
+,{"stream_name":"stdout","time":30953.078295301,"data":"[rank0]:     return inner_training_loop(\r\n"}
+,{"stream_name":"stdout","time":30953.078299413,"data":"[rank0]:         args=args,\r\n"}
+,{"stream_name":"stdout","time":30953.078303301,"data":"[rank0]:     ...\u003c2 lines\u003e...\r\n"}
+,{"stream_name":"stdout","time":30953.078307461,"data":"[rank0]:         ignore_keys_for_eval=ignore_keys_for_eval,\r\n"}
+,{"stream_name":"stdout","time":30953.078323907,"data":"[rank0]:     )\r\n"}
+,{"stream_name":"stdout","time":30953.078327949,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/transformers/trainer.py\", line 1643, in _inner_training_loop\r\n"}
+,{"stream_name":"stdout","time":30953.07833228,"data":"[rank0]:     self._run_epoch(\r\n"}
+,{"stream_name":"stdout","time":30953.078351427,"data":"[rank0]:     ~~~~~~~~~~~~~~~^\r\n"}
+,{"stream_name":"stdout","time":30953.078357998,"data":"[rank0]:         model=model,\r\n"}
+,{"stream_name":"stdout","time":30953.078362964,"data":"[rank0]:         ^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078367133,"data":"[rank0]:     ...\u003c9 lines\u003e...\r\n"}
+,{"stream_name":"stdout","time":30953.078371406,"data":"[rank0]:         steps_trained_in_current_epoch=steps_trained_in_current_epoch,\r\n"}
+,{"stream_name":"stdout","time":30953.078377244,"data":"[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078381467,"data":"[rank0]:     )\r\n"}
+,{"stream_name":"stdout","time":30953.078385347,"data":"[rank0]:     ^\r\n"}
+,{"stream_name":"stdout","time":30953.078389839,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/transformers/trainer.py\", line 1930, in _run_epoch\r\n"}
+,{"stream_name":"stdout","time":30953.078394522,"data":"[rank0]:     self._maybe_log_save_evaluate(\r\n"}
+,{"stream_name":"stdout","time":30953.078398541,"data":"[rank0]:     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\r\n"}
+,{"stream_name":"stdout","time":30953.078402495,"data":"[rank0]:         self._tr_loss,\r\n"}
+,{"stream_name":"stdout","time":30953.078406432,"data":"[rank0]:         ^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078410388,"data":"[rank0]:     ...\u003c6 lines\u003e...\r\n"}
+,{"stream_name":"stdout","time":30953.078414753,"data":"[rank0]:         learning_rate=learning_rate,\r\n"}
+,{"stream_name":"stdout","time":30953.078418773,"data":"[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078422741,"data":"[rank0]:     )\r\n"}
+,{"stream_name":"stdout","time":30953.078427021,"data":"[rank0]:     ^\r\n"}
+,{"stream_name":"stdout","time":30953.078431364,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/transformers/trainer.py\", line 2258, in _maybe_log_save_evaluate\r\n"}
+,{"stream_name":"stdout","time":30953.078435564,"data":"[rank0]:     self.control = self.callback_handler.on_save(self.args, self.state, self.control)\r\n"}
+,{"stream_name":"stdout","time":30953.078439693,"data":"[rank0]:                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078443859,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/transformers/trainer_callback.py\", line 531, in on_save\r\n"}
+,{"stream_name":"stdout","time":30953.07844825,"data":"[rank0]:     return self.call_event(\"on_save\", args, state, control, **kwargs)\r\n"}
+,{"stream_name":"stdout","time":30953.078452493,"data":"[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078457519,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/transformers/trainer_callback.py\", line 545, in call_event\r\n"}
+,{"stream_name":"stdout","time":30953.078462073,"data":"[rank0]:     result = getattr(callback, event)(\r\n"}
+,{"stream_name":"stdout","time":30953.07846613,"data":"[rank0]:         args,\r\n"}
+,{"stream_name":"stdout","time":30953.07846999,"data":"[rank0]:     ...\u003c8 lines\u003e...\r\n"}
+,{"stream_name":"stdout","time":30953.078474077,"data":"[rank0]:         **kwargs,\r\n"}
+,{"stream_name":"stdout","time":30953.078483213,"data":"[rank0]:     )\r\n"}
+,{"stream_name":"stdout","time":30953.078487535,"data":"[rank0]:   File \"/kaggle/working/L2S2-b/train.py\", line 376, in on_save\r\n"}
+,{"stream_name":"stdout","time":30953.078491724,"data":"[rank0]:     api.upload_folder(folder_path=str(Path(args.output_dir) / name), repo_id=CFG[\"adapter_repo\"],\r\n"}
+,{"stream_name":"stdout","time":30953.078496101,"data":"[rank0]:     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078500259,"data":"[rank0]:                       path_in_repo=f\"{CFG['hub_dir']}/{name}\", commit_message=f\"L2 step 2 ({MODE}): {name}\")\r\n"}
+,{"stream_name":"stdout","time":30953.078504744,"data":"[rank0]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078508994,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_validators.py\", line 89, in _inner_fn\r\n"}
+,{"stream_name":"stdout","time":30953.078514217,"data":"[rank0]:     return fn(*args, **kwargs)\r\n"}
+,{"stream_name":"stdout","time":30953.078518279,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/hf_api.py\", line 2140, in _inner\r\n"}
+,{"stream_name":"stdout","time":30953.078522632,"data":"[rank0]:     return fn(self, *args, **kwargs)\r\n"}
+,{"stream_name":"stdout","time":30953.078526555,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/hf_api.py\", line 6080, in upload_folder\r\n"}
+,{"stream_name":"stdout","time":30953.078530888,"data":"[rank0]:     return pipelined_upload(\r\n"}
+,{"stream_name":"stdout","time":30953.078534828,"data":"[rank0]:         self,\r\n"}
+,{"stream_name":"stdout","time":30953.078539779,"data":"[rank0]:     ...\u003c9 lines\u003e...\r\n"}
+,{"stream_name":"stdout","time":30953.07854415,"data":"[rank0]:         parent_commit=parent_commit,\r\n"}
+,{"stream_name":"stdout","time":30953.078548175,"data":"[rank0]:     )\r\n"}
+,{"stream_name":"stdout","time":30953.078552115,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py\", line 745, in pipelined_upload\r\n"}
+,{"stream_name":"stdout","time":30953.078556489,"data":"[rank0]:     ).run()\r\n"}
+,{"stream_name":"stdout","time":30953.07856061,"data":"[rank0]:       ~~~^^\r\n"}
+,{"stream_name":"stdout","time":30953.078564521,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py\", line 475, in run\r\n"}
+,{"stream_name":"stdout","time":30953.078569741,"data":"[rank0]:     raise self.errors[0]\r\n"}
+,{"stream_name":"stdout","time":30953.078573764,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py\", line 573, in _committer_loop\r\n"}
+,{"stream_name":"stdout","time":30953.078578202,"data":"[rank0]:     self._process_batch(batch)\r\n"}
+,{"stream_name":"stdout","time":30953.078582191,"data":"[rank0]:     ~~~~~~~~~~~~~~~~~~~^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078586181,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py\", line 610, in _process_batch\r\n"}
+,{"stream_name":"stdout","time":30953.078590563,"data":"[rank0]:     self._commit_with_split(ops_to_commit)\r\n"}
+,{"stream_name":"stdout","time":30953.078595158,"data":"[rank0]:     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078599155,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py\", line 614, in _commit_with_split\r\n"}
+,{"stream_name":"stdout","time":30953.078606653,"data":"[rank0]:     self._do_commit(ops)\r\n"}
+,{"stream_name":"stdout","time":30953.078610699,"data":"[rank0]:     ~~~~~~~~~~~~~~~^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078614581,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/_upload_pipeline.py\", line 655, in _do_commit\r\n"}
+,{"stream_name":"stdout","time":30953.078618884,"data":"[rank0]:     self.last_commit_info = _send_commit(\r\n"}
+,{"stream_name":"stdout","time":30953.078624098,"data":"[rank0]:                             ~~~~~~~~~~~~^\r\n"}
+,{"stream_name":"stdout","time":30953.078628105,"data":"[rank0]:         operations=operations,\r\n"}
+,{"stream_name":"stdout","time":30953.078632057,"data":"[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078635973,"data":"[rank0]:     ...\u003c9 lines\u003e...\r\n"}
+,{"stream_name":"stdout","time":30953.078639913,"data":"[rank0]:         retry_on_error=True,\r\n"}
+,{"stream_name":"stdout","time":30953.07864375,"data":"[rank0]:         ^^^^^^^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078647674,"data":"[rank0]:     )\r\n"}
+,{"stream_name":"stdout","time":30953.078652473,"data":"[rank0]:     ^\r\n"}
+,{"stream_name":"stdout","time":30953.078659051,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/_commit_api.py\", line 1068, in _send_commit\r\n"}
+,{"stream_name":"stdout","time":30953.078663818,"data":"[rank0]:     hf_raise_for_status(response, endpoint_name=\"commit\")\r\n"}
+,{"stream_name":"stdout","time":30953.078668352,"data":"[rank0]:     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n"}
+,{"stream_name":"stdout","time":30953.078672537,"data":"[rank0]:   File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_http.py\", line 929, in hf_raise_for_status\r\n"}
+,{"stream_name":"stdout","time":30953.078676867,"data":"[rank0]:     raise _format(BadRequestError, message, response) from e\r\n"}
+,{"stream_name":"stdout","time":30953.078681564,"data":"[rank0]: huggingface_hub.errors.BadRequestError: (Request ID: Root=1-6b00ad50-76f9c705400d0cc307fff251;6c672fa5-3e23-49b1-9593-688ef46d6504)\r\n"}
+,{"stream_name":"stdout","time":30953.078685978,"data":"\r\n"}
+,{"stream_name":"stdout","time":30953.078689744,"data":"[rank0]: Bad request for commit endpoint:\r\n"}
+,{"stream_name":"stdout","time":30953.078693715,"data":"[rank0]: Private storage limit reached for user AbrarAlam, please upgrade your plan to increase your private storage limit\r\n"}
+,{"stream_name":"stdout","time":30954.914974382,"data":"[rank0]:[W1120 20:28:02.928481994 ProcessGroupNCCL.cpp:1575] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())\r\n"}
+,{"stream_name":"stdout","time":30956.550556554,"data":"W1120 20:28:03.782000 157 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 174 closing signal SIGTERM\r\n"}
+,{"stream_name":"stdout","time":30956.550621526,"data":"E1120 20:28:03.788000 157 torch/distributed/elastic/multiprocessing/api.py:986] failed (exitcode: -11) local_rank: 0 (pid: 173) of binary: /usr/bin/python3\r\n"}
+,{"stream_name":"stdout","time":30956.601896944,"data":"Traceback (most recent call last):\r\n"}
+,{"stream_name":"stdout","time":30956.601926436,"data":"  File \u001b[35m\"/usr/local/bin/accelerate\"\u001b[0m, line \u001b[35m10\u001b[0m, in \u001b[35m\u003cmodule\u003e\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.601932744,"data":"    sys.exit(\u001b[31mmain\u001b[0m\u001b[1;31m()\u001b[0m)\r\n"}
+,{"stream_name":"stdout","time":30956.601937279,"data":"             \u001b[31m~~~~\u001b[0m\u001b[1;31m^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.60195643,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/accelerate/commands/accelerate_cli.py\"\u001b[0m, line \u001b[35m50\u001b[0m, in \u001b[35mmain\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.60196137,"data":"    \u001b[31margs.func\u001b[0m\u001b[1;31m(args)\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.601965714,"data":"    \u001b[31m~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.601970052,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/accelerate/commands/launch.py\"\u001b[0m, line \u001b[35m1404\u001b[0m, in \u001b[35mlaunch_command\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.601975118,"data":"    \u001b[31mmulti_gpu_launcher\u001b[0m\u001b[1;31m(args)\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.601979654,"data":"    \u001b[31m~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.601983673,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/accelerate/commands/launch.py\"\u001b[0m, line \u001b[35m1029\u001b[0m, in \u001b[35mmulti_gpu_launcher\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.601988321,"data":"    \u001b[31mdistrib_run.run\u001b[0m\u001b[1;31m(args)\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.601993092,"data":"    \u001b[31m~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.601997242,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/torch/distributed/run.py\"\u001b[0m, line \u001b[35m981\u001b[0m, in \u001b[35mrun\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.602002038,"data":"    \u001b[31melastic_launch(\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.602006069,"data":"    \u001b[31m~~~~~~~~~~~~~~~\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.602010202,"data":"        \u001b[31mconfig=config,\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.602014466,"data":"        \u001b[31m~~~~~~~~~~~~~~\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.602019008,"data":"        \u001b[31mentrypoint=cmd,\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.602023216,"data":"        \u001b[31m~~~~~~~~~~~~~~~\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.602027196,"data":"    \u001b[31m)\u001b[0m\u001b[1;31m(*cmd_args)\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.602031452,"data":"    \u001b[31m~\u001b[0m\u001b[1;31m^^^^^^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.602035858,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/torch/distributed/launcher/api.py\"\u001b[0m, line \u001b[35m170\u001b[0m, in \u001b[35m__call__\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.602040535,"data":"    return launch_agent(self._config, self._entrypoint, list(args))\r\n"}
+,{"stream_name":"stdout","time":30956.602044588,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/torch/distributed/launcher/api.py\"\u001b[0m, line \u001b[35m317\u001b[0m, in \u001b[35mlaunch_agent\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":30956.602048984,"data":"    raise ChildFailedError(\r\n"}
+,{"stream_name":"stdout","time":30956.602053163,"data":"    ...\u003c2 lines\u003e...\r\n"}
+,{"stream_name":"stdout","time":30956.602057364,"data":"    )\r\n"}
+,{"stream_name":"stdout","time":30956.602061282,"data":"\u001b[1;35mtorch.distributed.elastic.multiprocessing.errors.ChildFailedError\u001b[0m: \u001b[35m\r\n"}
+,{"stream_name":"stdout","time":30956.602065564,"data":"=====================================================\r\n"}
+,{"stream_name":"stdout","time":30956.602069663,"data":"/kaggle/working/L2S2-b/train.py FAILED\r\n"}
+,{"stream_name":"stdout","time":30956.602073618,"data":"-----------------------------------------------------\r\n"}
+,{"stream_name":"stdout","time":30956.602081432,"data":"Failures:\r\n"}
+,{"stream_name":"stdout","time":30956.602085524,"data":"[1]:\r\n"}
+,{"stream_name":"stdout","time":30956.602089217,"data":"  time      : 2026-11-20_20:28:03\r\n"}
+,{"stream_name":"stdout","time":30956.602093102,"data":"  host      : b854325b9960\r\n"}
+,{"stream_name":"stdout","time":30956.602096854,"data":"  rank      : 1 (local_rank: 1)\r\n"}
+,{"stream_name":"stdout","time":30956.602101844,"data":"  exitcode  : -15 (pid: 174)\r\n"}
+,{"stream_name":"stdout","time":30956.602105941,"data":"  error_file: \u003cN/A\u003e\r\n"}
+,{"stream_name":"stdout","time":30956.602109865,"data":"  traceback : Signal 15 (SIGTERM) received by PID 174\r\n"}
+,{"stream_name":"stdout","time":30956.602114034,"data":"-----------------------------------------------------\r\n"}
+,{"stream_name":"stdout","time":30956.602117773,"data":"Root Cause (first observed failure):\r\n"}
+,{"stream_name":"stdout","time":30956.60212211,"data":"[0]:\r\n"}
+,{"stream_name":"stdout","time":30956.60212579,"data":"  time      : 2026-11-20_20:28:03\r\n"}
+,{"stream_name":"stdout","time":30956.602129942,"data":"  host      : b854325b9960\r\n"}
+,{"stream_name":"stdout","time":30956.602134428,"data":"  rank      : 0 (local_rank: 0)\r\n"}
+,{"stream_name":"stdout","time":30956.602138576,"data":"  exitcode  : -11 (pid: 173)\r\n"}
+,{"stream_name":"stdout","time":30956.602142384,"data":"  error_file: \u003cN/A\u003e\r\n"}
+,{"stream_name":"stdout","time":30956.602146562,"data":"  traceback : Signal 11 (SIGSEGV) received by PID 173\r\n"}
+,{"stream_name":"stdout","time":30956.602150491,"data":"=====================================================\u001b[0m\r\n"}
+,{"stream_name":"stderr","time":30963.404309056,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":30963.405248775,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":30963.405271393,"data":"    import sys;import papermill as pm;pm.execute_notebook(\"__notebook__.ipynb\",\"__notebook__.ipynb\",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)\n"}
+,{"stream_name":"stderr","time":30963.40527704,"data":"                                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":30963.405286021,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":30963.405290478,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":30963.405294538,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":30963.405298228,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":30963.405302426,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":30963.405306103,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":30963.405309614,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":30963.405314052,"data":"Exception encountered at \"In [5]\":\n"}
+,{"stream_name":"stderr","time":30963.405318014,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":30963.405322128,"data":"AssertionError                            Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":30963.405325973,"data":"/tmp/ipykernel_23/3458458287.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":30963.40536876,"data":"      3 \n"}
+,{"stream_name":"stderr","time":30963.405376476,"data":"      4 S_PATH = WORK / (\"train_summary_smoke.json\" if SMOKE_TEST else \"train_summary.json\")\n"}
+,{"stream_name":"stderr","time":30963.405380871,"data":"----\u003e 5 assert S_PATH.exists(), f\"No {S_PATH.name}: the training stopped early; read Cell 4's output\"\n"}
+,{"stream_name":"stderr","time":30963.405385461,"data":"      6 S = json.loads(S_PATH.read_text(encoding=\"utf-8\"))\n"}
+,{"stream_name":"stderr","time":30963.405389541,"data":"      7 steps_ = [e for e in S[\"log_history\"] if \"loss\" in e]\n"}
+,{"stream_name":"stderr","time":30963.405394062,"data":"\n"}
+,{"stream_name":"stderr","time":30963.405398052,"data":"AssertionError: No train_summary.json: the training stopped early; read Cell 4's output\n"}
+,{"stream_name":"stderr","time":30963.405401938,"data":"\n"}
+,{"stream_name":"stderr","time":30966.699944184,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":30966.699978489,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":30967.014209777,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":30967.014238063,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":30968.799867527,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":30968.936943062,"data":"[NbConvertApp] Writing 165526 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":30971.872711568,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":30972.910612763,"data":"[NbConvertApp] Writing 567991 bytes to __results__.html\n"}
+]

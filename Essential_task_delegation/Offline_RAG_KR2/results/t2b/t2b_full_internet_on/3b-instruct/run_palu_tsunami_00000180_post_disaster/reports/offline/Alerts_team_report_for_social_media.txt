@@ -1,0 +1,47 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+People must avoid the following dangerous areas due to the severe damage caused by the Palu tsunami:
+
+1. **Hot Spot 1 (North-East):**
+   - Location: Pixel coordinates (991, 234)
+   - Estimated Damage: 49 patches, EMS-98 Grade 5 (Very Heavy Damage)
+   - Description: This area shows extensive structural failures and total or near-total collapses. Immediate attention is required for reconstruction.
+
+2. **Hot Spot 2 (East):**
+   - Location: Pixel coordinates (760, 595)
+   - Estimated Damage: 13 patches, EMS-98 Grades 2 to 4 (Moderate to Very Heavy Damage)
+   - Description: This region exhibits cracks in walls, detachment of roof tiles, and failure of non-structural elements. Further investigation is needed to assess the full extent of the damage.
+
+Additionally, there are potentially dangerous areas where caution is advised:
+
+- **Safe Area 1 (South-West):**
+  - Location: Pixel coordinates (100, 923)
+  - Estimated Damage: 33 patches, no visible damage (EMS-98 Grade 1)
+  - Distance from Nearest Estimated Damage: 459 pixels
+  - Note: This area is considered safe but requires ground verification before use.
+
+- **Safe Area 2 (South-West):**
+  - Location: Pixel coordinates (250, 923)
+  - Estimated Damage: 33 patches, no visible damage (EMS-98 Grade 1)
+  - Distance from Nearest Estimated Damage: 400 pixels
+  - Note: This area is also considered safe but requires ground verification before use.
+
+- **Safe Area 3 (South-West):**
+  - Location: Pixel coordinates (100, 773)
+  - Estimated Damage: 33 patches, no visible damage (EMS-98 Grade 1)
+  - Distance from Nearest Estimated Damage: 323 pixels
+  - Note: This area is considered safe but requires ground verification before use.
+
+These areas highlight the need for careful planning and prioritization of rescue and relief efforts to ensure the safety of the affected population.
+
+## Social media news
+Witnesses describe the devastating impact of the Palu tsunami, leaving behind a landscape of destruction. In the north-eastern part of the city, near pixel coordinates (991, 234), we saw 49 patches of very heavy damage (EMS-98 Grade 5). Entire structures collapsed, and the area is now marked as extremely dangerous. 
+
+Moving to the east, around pixel (760, 595), 13 patches showed moderate to very heavy damage (EMS-98 Grades 2 to 4). Cracks in walls, detached roof tiles, and non-structural element failures were evident here. 
+
+However, there are still pockets of safety. In the south-west, near pixel (100, 923), 33 patches indicated no visible damage (EMS-98 Grade 1), with a safe distance of 459 pixels from the nearest damage. Safe areas like this are crucial for rescue operations and ensuring the well-being of survivors. 
+
+Stay tuned for more updates and follow our coverage for the latest information on this tragic event. #PaluTsunami #DisasterResponse #SafetyFirst

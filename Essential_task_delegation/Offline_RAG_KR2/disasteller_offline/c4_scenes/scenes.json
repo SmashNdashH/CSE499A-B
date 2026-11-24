@@ -1,0 +1,22 @@
+{
+ "turkey_earthquake4_post_327.png": {
+  "before_image": "turkey_earthquake4_pre_327.png",
+  "event": "turkey_earthquake",
+  "disaster": "earthquake",
+  "source": "other",
+  "kind": "outline",
+  "method": "find-then-grade, grader seed 42",
+  "width": 1024,
+  "height": 1024
+ },
+ "santa_rosa_wildfire_00000155_post_disaster.png": {
+  "before_image": "santa_rosa_wildfire_00000155_pre_disaster.png",
+  "event": "santa_rosa_wildfire",
+  "disaster": "wildfire",
+  "source": "xBD",
+  "kind": "patch",
+  "method": "R11 (pixel model)",
+  "width": 1024,
+  "height": 1024
+ }
+}

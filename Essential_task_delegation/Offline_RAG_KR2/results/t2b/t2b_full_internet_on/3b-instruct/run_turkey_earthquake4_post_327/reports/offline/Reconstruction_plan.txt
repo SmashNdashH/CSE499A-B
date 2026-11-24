@@ -1,0 +1,157 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The satellite photos and damage models indicate a localized but severe earthquake disaster in the region, with significant damage concentrated in three hotspots—primarily in the north-west and north-east corners of the photo, and to a lesser extent in the west. The estimated damage shows 32 buildings completely destroyed (EMS-98 Grade 5), 11 with moderate to very heavy damage (Grades 2 to 4), and 54 buildings remaining intact with negligible to slight damage (Grade 1). The hot spots are characterized by total or near-total collapse, with the north-west corner experiencing the highest concentration of destruction. Safe areas, located in the south-east corner, are approximately 254 to 412 pixels away from the nearest damaged structures, offering a buffer zone for rescue and recovery efforts.
+
+Immediate response efforts are focused on identifying and securing these safe areas for temporary shelter and medical care. The north-west and north-east corners are prioritized for establishing medical facilities and temporary shelters, while the west requires careful assessment for potential shelter locations. Transportation routes in the hot spots are critical for ensuring timely medical evacuations and supply deliveries. The emergency service team is coordinating with local authorities to implement victim marking and ensure proper handover procedures for rescued individuals. Comprehensive assessments are underway to determine the feasibility of rebuilding and retrofitting damaged structures, with a focus on ensuring safety and compliance with building codes and standards.
+
+## Assessment of Damage
+The satellite photos and damage models clearly delineate the extent and severity of the earthquake’s impact. The Expert team’s report provides a detailed breakdown of the damage, categorizing buildings into four states: intact, damaged, destroyed, and partially destroyed. According to the report, 32 buildings are estimated to be in Grade 5 destruction (total or near total collapse), 11 buildings are in Grades 2 to 4 (moderate to very heavy damage), and 54 buildings remain intact with negligible to slight damage (Grade 1). The damage is concentrated in three hotspots, primarily in the north-west and north-east corners of the photo, with some signs of distress in the western part.
+
+**North-West Corner (Hot Spot 1)**
+
+**Location:** Around (320, 32) pixels from the top-left corner.
+
+**Damage:** Total or near total collapse (EMS-98 Grade 5).
+
+**Analysis:** This area is experiencing the highest concentration of destruction, with buildings in this zone likely to be unstable and posing significant risks to life and property. The structural integrity of these buildings is severely compromised, leading to total or near total collapse. Immediate attention is required to clear debris, provide emergency medical care, and coordinate with local authorities to establish temporary shelters.
+
+**North-East Corner (Hot Spot 3)**
+
+**Location:** Around (991, 32) pixels from the top-left corner.
+
+**Damage:** Moderate to very heavy damage (EMS-98 Grades 2 to 4).
+
+**Analysis:** Similar to Hot Spot 1, this area also experiences significant damage and poses risks to nearby structures. The buildings in this zone have sustained moderate to very heavy damage, including cracks in many walls, fall of fairly large pieces of plaster, and partial collapse of chimneys. These areas require careful assessment and planning for immediate response efforts, including medical facilities and temporary shelters.
+
+**West Side (Hot Spot 2)**
+
+**Location:** Around (48, 593) pixels from the top-left corner.
+
+**Damage:** Moderate to very heavy damage (EMS-98 Grades 2 to 4).
+
+**Analysis:** While not as severe as the north-west and north-east corners, this area still contains substantial damage and could be prone to collapsing structures and debris. The buildings here have experienced cracks in many walls, fall of fairly large pieces of plaster, and partial collapse of chimneys. Attention is needed to ensure the safety of the population and to prevent secondary hazards such as falling debris.
+
+**Safe Areas**
+
+**South-East Corner**
+
+**Location:** Around (917, 923), (821, 807), and (722, 694) pixels from the top-left corner.
+
+**Distance from Nearest Damaged Structure:** Approximately 412, 311, and 254 pixels, respectively.
+
+**Damage:** No visible damage (EMS-98 Grade 1).
+
+**Analysis:** These areas offer a buffer zone against immediate hazards and are recommended for immediate use. The buildings in these zones remain intact, with negligible to slight damage, making them suitable for temporary shelters and medical facilities. Further assessments are needed to confirm the suitability of these areas and to allocate the necessary staff, supplies, and resources for effective shelter provision.
+
+**Minimal Damage Zones**
+
+**North-West Corner**
+
+**Location:** Around (320, 32) pixels from the top-left corner.
+
+**Damage:** Slight to moderate damage (EMS-98 Grades 1 to 3).
+
+**Analysis:** These areas present opportunities for temporary shelters, although they
+
+## Reconstruction Needs
+To address the reconstruction needs effectively, the following steps and resources are required based on the damage facts and guidelines:
+
+#### North-West Corner (Hot Spot 1)
+
+- **Shelter and Medical Facilities:** Establish temporary shelters and medical facilities in this area. Given the total or near total collapse, the buildings in this zone are unstable and pose significant risks. Temporary shelters should be constructed using lightweight materials and designed to withstand potential aftershocks. Medical facilities should be set up with basic amenities and equipped with emergency medical supplies. Local medical teams should be mobilized to provide immediate medical care and coordinate with local authorities for further treatment.
+
+#### North-East Corner (Hot Spot 3)
+
+- **Shelter and Medical Facilities:** Similar to Hot Spot 1, this area also requires immediate attention. Temporary shelters should be constructed using lightweight materials and designed to withstand potential aftershocks. Medical facilities should be set up with basic amenities and equipped with emergency medical supplies. Local medical teams should be mobilized to provide immediate medical care and coordinate with local authorities for further treatment.
+
+#### West Side (Hot Spot 2)
+
+- **Shelter and Medical Facilities:** Although not as severe as the north-west and north-east corners, this area still requires immediate attention. Temporary shelters should be constructed using lightweight materials and designed to withstand potential aftershocks. Medical facilities should be set up with basic amenities and equipped with emergency medical supplies. Local medical teams should be mobilized to provide immediate medical care and coordinate with local authorities for further treatment.
+
+#### Safe Areas
+
+- **Temporary Shelters:** The south-east corner offers safe areas with no visible damage (EMS-98 Grade 1). These areas should be secured and prepared for temporary shelter use. Local authorities should be consulted to ensure these areas are safe and suitable for housing displaced individuals. Temporary shelters should be constructed using lightweight materials and designed to withstand potential aftershocks. Local volunteers and community members should be mobilized to assist in setting up and maintaining these shelters.
+
+#### Minimal Damage Zones
+
+- **Shelter and Medical Facilities:** These areas present opportunities for temporary shelters. Temporary shelters should be constructed using lightweight materials and designed to withstand potential aftershocks. Medical facilities should be set up with basic amenities and equipped with emergency medical supplies. Local medical teams should be mobilized to provide immediate medical care and coordinate with local authorities for further treatment.
+
+#### Human Resources and Materials
+
+- **Construction Teams:** Mobilize construction teams to assess and repair damaged buildings. Teams should be composed of skilled laborers, engineers, and architects to ensure the safety and compliance with building codes and standards. Local contractors and volunteers should be prioritized to minimize costs and maximize efficiency.
+  
+- **Supply Chain:** Establish a robust supply chain to ensure the availability of necessary materials such as timber, cement, steel, and other construction essentials. Partner with local suppliers and manufacturers to expedite the delivery of materials.
+
+- **Logistics:** Coordinate logistics to ensure timely transportation of materials and supplies to the affected areas. Utilize local transportation networks and partner with NGOs to enhance logistical support.
+
+- **Community Engagement:** Engage with the local community to gather feedback and ensure that reconstruction efforts align with community needs and preferences. Community leaders and representatives should be involved in decision-making processes to promote ownership and participation.
+
+By focusing on these reconstruction needs, the affected areas can be stabilized, and the population can begin the process of recovery and rebuilding.
+
+## Plan of Action
+To effectively address the reconstruction needs, the following plan of action is proposed, prioritizing immediate response efforts followed by long-term rebuilding and retrofitting.
+
+#### Immediate Response (Days 1-7)
+
+1. **Establish Safe Zones and Temporary Shelters**
+   - **Resource Allocation:** Mobilize construction teams to assess and repair damaged buildings in the safe areas. Temporary shelters should be constructed using lightweight materials and designed to withstand potential aftershocks. Medical facilities should be set up with basic amenities and equipped with emergency medical supplies.
+   - **Coordination:** Local authorities should be consulted to ensure these areas are safe and suitable for housing displaced individuals. Local volunteers and community members should be mobilized to assist in setting up and maintaining these shelters.
+   - **Guideline Sections Used:** [SPHERE-3-p1], [SPHERE-3-p2], [SPHERE-3-p4], [SPHERE-2-p4], [SPHERE-2-p1], [SPHERE-2-p2], [INSARAG3-6.2-p2], [INSARAG3-5.2-p1], [INSARAG2B-4.3-p3]
+
+2. **Set Up Medical Facilities**
+   - **Resource Allocation:** Establish medical facilities in the hot spots (north-west and north-east corners) and in the west side. These facilities should be equipped with basic amenities and emergency medical supplies.
+   - **Coordination:** Local medical teams should be mobilized to provide immediate medical care and coordinate with local authorities for further treatment.
+   - **Guideline Sections Used:** [INSARAG3-6.2-p2], [INSARAG3-5.2-p1], [INSARAG2B-4.3-p3]
+
+3. **Victim Marking and Handover Procedures**
+   - **Resource Allocation:** Implement victim marking procedures to identify potential or known casualty locations. Apply markings as close as physically possible to the actual surface point identified as the location of the casualty.
+   - **Coordination:** Ensure that rescued people are handed over to medical facilities following established INSARAG guidelines.
+   - **Guideline Sections Used:** [INSARAG2B-6.3.1], [INSARAG2B-6.3.4-p1]
+
+#### Long-Term Reconstruction (Weeks 1-4)
+
+1. **Assessment and Planning**
+   - **Resource Allocation:** Conduct comprehensive assessments to determine the feasibility of rebuilding and retrofitting damaged structures. Focus on ensuring safety and compliance with building codes and standards.
+   - **Coordination:** Engage with local authorities and community leaders to gather feedback and ensure that reconstruction efforts align with community needs and preferences.
+   - **Guideline Sections Used:** [SPHERE-1-p4], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-appendix-5-p2], [EMS98-rc-grade-1], [EMS98-masonry-grade-1], [EMS98-masonry-grade-2], [EMS98-masonry-grade-3], [EMS98-masonry-grade-4], [EMS98-masonry-grade-5]
+
+2. **Shelter and Settlement**
+   - **Resource Allocation:** Construct temporary shelters in the safe areas and minimal damage zones. Ensure that these shelters are designed to withstand potential aftershocks and comply with building codes and standards.
+   - **Coordination:** Collaborate with local authorities and community leaders to ensure that shelter provision meets the needs of the affected population.
+   - **Guideline Sections Used:** [SPHERE-3-p1], [SP
+
+## Recommendations
+To support effective and efficient reconstruction, prioritize immediate response efforts in the hot spots and safe areas. Allocate resources for temporary shelters, medical facilities, and victim marking. For long-term rebuilding, invest in comprehensive assessments and plans that ensure safety and compliance with building codes. Secure funding for construction teams, supply chains, and community engagement initiatives. Engage local authorities and community leaders to foster ownership and participation. Allocate funds for debris management, livelihood opportunities, and return and transit support to aid affected populations in their recovery.
+
+## Appendices
+This section provides supplementary data to support the report, including the disaster grade of each location, a labelled map, and the guideline sections used.
+
+**Disaster Grade of Each Place**
+
+- **North-West Corner (Hot Spot 1):** EMS-98 Grade 5 (Total or near total collapse)
+- **North-East Corner (Hot Spot 3):** EMS-98 Grades 2 to 4 (Moderate to very heavy damage)
+- **West Side (Hot Spot 2):** EMS-98 Grades 2 to 4 (Moderate to very heavy damage)
+- **Safe Areas:** EMS-98 Grade 1 (No visible damage)
+- **Minimal Damage Zones:** EMS-98 Grades 1 to 3 (Slight to moderate damage)
+
+**Guideline Sections Used**
+
+- [EMS98-2.3-p2]
+- [SPHERE-1-p4]
+- [SPHERE-5-p1]
+- [SPHERE-5-p2]
+- [SPHERE-appendix-5-p2]
+- [INSARAG2B-6.3.1]
+- [INSARAG2B-6.3.4-p1]
+- [SPHERE-3-p1]
+- [SPHERE-3-p2]
+- [SPHERE-3-p4]
+- [SPHERE-2-p4]
+- [SPHERE-2-p1]
+- [SPHERE-2-p2]
+- [INSARAG3-6.2-p2]
+- [INSARAG3-5.2-p1]
+- [INSARAG2B-4.3-p3]

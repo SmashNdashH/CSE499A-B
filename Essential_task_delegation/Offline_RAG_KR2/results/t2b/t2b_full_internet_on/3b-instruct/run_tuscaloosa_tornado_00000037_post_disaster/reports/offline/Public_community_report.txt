@@ -1,0 +1,53 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The Tuscaloosa tornado, which struck the southeastern United States, has resulted in extensive damage across the affected area. Based on satellite imagery and damage assessments, the disaster has caused severe destruction, with approximately 46% of the estimated damage patches classified as EMS-98 Grade 5 destruction, indicating total or near-total collapse of structures. This destruction is concentrated in Hot Spot 1, located in the eastern part of the photo, covering a significant area of 223,555 pixels. Additionally, 43% of the patches are categorized as moderate to very heavy damage (Grades 2 to 4), primarily observed in the southern and southeastern regions, including Hot Spot 2 and Hot Spot 3. Only 11% of the patches remain intact, showing negligible to slight damage consistent with EMS-98 Grade 1.
+
+The Alerts team has issued a danger area alert, advising people to avoid the most dangerous zones, particularly Hot Spot 1, which is the most severely affected area with 46% of the estimated damage patches classified as EMS-98 Grade 5 destruction. Hot Spot 2 and Hot Spot 3, located in the southwestern and southeastern corners of the photo, respectively, also face significant damage, with 43% of the patches categorized as moderate to very heavy damage (Grades 2 to 4). Safe areas have been identified in the northern and central parts of the photo, with Safe Area 1 being the closest, approximately 146 pixels from the nearest estimated damage. Safe Area 2 and Safe Area 3 are located in the center of the photo, approximately 131 and 124 pixels from the nearest estimated damage, respectively. Immediate attention is required to assess and mitigate the risks posed by the severely damaged areas, ensuring the safety of the affected population.
+
+## Current Situation
+The emergency services team has identified critical areas where immediate attention is required to address the severe damage caused by the Tuscaloosa tornado. Hot Spot 1, located in the eastern part of the photo, is the most severely affected area, with 46% of the estimated damage patches classified as EMS-98 Grade 5 destruction, indicating total or near-total collapse of structures. This hot spot covers an area of 223,555 pixels and poses a significant risk of structural failures and potential secondary hazards such as falling debris. Immediate rescue operations are underway to clear debris and assess structural integrity.
+
+Hot Spot 2, situated in the southwestern corner of the photo, measures approximately 200,020 pixels and includes numerous buildings with partial collapses. This area also faces moderate to very heavy damage (Grades 2 to 4), necessitating urgent intervention to prevent further collapse and ensure public safety. Similarly, Hot Spot 3, located in the southeastern corner, covers an estimated 66,243 pixels and includes extensive structural failures, making it another critical zone needing immediate attention.
+
+In contrast, Safe Areas 1, 2, and 3 offer limited refuge but are still within close proximity to the severely damaged zones. Safe Area 1, located around (346, 119) pixels, is approximately 146 pixels from the nearest estimated damage. Safe Area 2, situated around (359, 454) pixels, is 131 pixels from the nearest estimated damage, and Safe Area 3, positioned around (416, 650) pixels, is 124 pixels from the nearest estimated damage. All individuals in these areas are urged to seek shelter immediately and avoid entering these zones until the situation is assessed and deemed safe.
+
+The emergency services team is focusing on Hot Spot 1, where the highest density of destruction is concentrated. This area requires immediate attention to assess structural integrity, clear hazardous materials, and establish safe zones. Following Hot Spot 1, the next priority is Hot Spots 2 and 3, where moderate to heavy damage has been observed. These areas also pose significant risks and require swift action to mitigate potential hazards. Lastly, the remaining intact areas should be monitored closely to ensure they do not become secondary hazards and to provide temporary shelter to those displaced by the storm. Coordination with logistics teams for transportation and medical supplies is essential to enhance the efficiency and effectiveness of the rescue and recovery operations.
+
+## Resource Allocation
+To address the immediate needs arising from the Tuscaloosa tornado, the emergency services team has allocated resources based on the severity of the damage and the urgency of rescue operations. Given the critical nature of Hot Spot 1, the team has prioritized this area for immediate attention. A specialized rescue team consisting of [SPHERE-4-p2] personnel equipped with advanced search and rescue tools, including heavy machinery and canine units, will be deployed to Hot Spot 1. They will begin clearing debris and assessing structural integrity, ensuring the safety of the affected population.
+
+Following Hot Spot 1, the team will proceed to Hot Spot 2 and Hot Spot 3, where moderate to very heavy damage has been observed. A second rescue team of [not available offline] personnel, including medical personnel and logistical support, will be dispatched to these areas. They will focus on clearing debris, providing medical assistance to injured individuals, and ensuring the safety of the population. Additionally, a third team of [not available offline] personnel will be stationed in Safe Area 1, monitoring the situation and providing temporary shelter to displaced individuals.
+
+Logistical support will be provided by a fleet of vehicles, including large trucks and ambulances, to transport personnel, equipment, and supplies to the affected areas. The team will coordinate with local authorities and humanitarian organizations to ensure seamless communication and resource allocation. Regular updates will be shared with the public through social media and local community leaders to keep everyone informed about the ongoing rescue efforts.
+
+The emergency services team will continuously monitor the situation and reassess the needs as they become apparent. This approach ensures that resources are directed where they are most needed, maximizing the effectiveness of the rescue and recovery operations.
+
+## Public Advisory
+It is imperative for the public to stay informed and adhere to the guidelines provided to ensure their safety and cooperation with ongoing rescue efforts. The Tuscaloosa tornado has caused severe damage, with approximately 46% of the estimated damage patches classified as EMS-98 Grade 5 destruction, indicating total or near-total collapse of structures. Immediate attention is required to assess and mitigate the risks posed by the severely damaged areas.
+
+#### Stay Safe
+- **Avoid Dangerous Zones**: People are strongly advised to avoid the following dangerous areas: Hot Spot 1 (East), Hot Spot 2 (South-West), and Hot Spot 3 (South-East). Immediate rescue operations are underway to clear debris and assess structural integrity. [INSARAG3-5.2-p1]
+- **Seek Shelter**: Individuals in these areas are urged to seek shelter immediately and avoid entry until the situation is assessed and deemed safe. [INSARAG3-5.2-p1]
+- **Safe Areas**: Safe Areas 1, 2, and 3 offer limited refuge but are still within close proximity to the severely damaged zones. [SPHERE-2-p4]
+- **Monitor Updates**: Follow social media and local community leaders for regular updates on the situation and ongoing rescue efforts. [SPHERE-2-p4]
+
+#### Access Emergency Services
+- **Call Local Emergency Number**: In the United States, dial the local emergency number to reach emergency services. Provide clear and concise information about your location and the nature of the emergency. [INSARAG3-5.2-p1]
+- **Evacuation Points**: Clear evacuation points have been marked and signage or flags may assist in identifying them. [INSARAG3-5.2-p1]
+- **Evacuation Signal**: Three long horn blasts should signal an evacuation. [INSARAG3-5.2-p1]
+
+#### Cooperate with Ongoing Operations
+- **Do Not Enter Hazardous Areas**: Avoid entering Hot Spot 1, Hot Spot 2, and Hot Spot 3 until the situation is assessed and deemed safe. [INSARAG3-5.2-p1]
+- **Support Relief Efforts**: Cooperate with emergency services and humanitarian organizations by providing information and assistance where possible. [INSARAG3-5.2-p1]
+- **Stay Informed**: Regularly check social media and local community leaders for updates on the situation and ongoing rescue efforts. [SPHERE-2-p4]
+
+By following these guidelines, the public can play a vital role in ensuring their own safety and contributing to the successful rescue and recovery efforts.
+
+## Organizational Operation
+Our organization plays a critical role in coordinating the response to the Tuscaloosa tornado disaster. We are responsible for assigning human resources to critical areas, such as Hot Spot 1, where immediate rescue operations are underway. Our team includes specialized search and rescue teams equipped with heavy machinery and canine units to clear debris and assess structural integrity. Additionally, we have medical teams ready to provide medical assistance to injured individuals. We are also coordinating logistical support to ensure that resources are efficiently distributed to the affected areas. For further assistance, please refer to the public advisory and social media updates for the latest information and guidance. Contact details are not available offline, but we encourage you to stay informed and cooperate with emergency services and humanitarian organizations.
+
+## Conclusion
+We want to reassure the community that our emergency services team is working tirelessly to ensure the safety and well-being of everyone affected by the Tuscaloosa tornado. Despite the severe damage, we are committed to providing the necessary support and resources to help you through this challenging time. We urge you to stay calm and follow the guidelines provided by our team to ensure your safety. Your cooperation is crucial, and we appreciate your patience and understanding during these difficult moments. Together, we will overcome this disaster and rebuild stronger.

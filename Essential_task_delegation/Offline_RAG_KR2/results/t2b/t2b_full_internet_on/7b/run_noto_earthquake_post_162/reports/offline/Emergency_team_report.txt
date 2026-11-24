@@ -1,0 +1,12 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+The emergency shelters should be established in the safe areas identified in the post-disaster photos, specifically in the south-east of the photo. According to the Sphere Handbook 2018, shelter and settlement standard 3 emphasizes the importance of providing living spaces that are safe and adequate for essential household activities. The minimum living space should be 3.5 square metres per person, excluding cooking space, bathing area, and sanitation facilities. The internal floor-to-ceiling height should be at least 2 metres, with a preference for 2.6 metres in hot climates. These guidelines ensure that the shelters provide adequate space for sleeping, food preparation, and other essential activities, maintaining privacy and security for the displaced residents. The safe areas, located at least 637 pixels away from the nearest estimated damage, will serve as suitable locations for setting up temporary shelters to meet these criteria.
+
+## Hospitals
+Based on the guidelines provided in [INSARAG3-6.2-p2], the medical evacuation plan should be checked for possible emergency situations. A risk assessment must be conducted, and procedures established for all considered scenarios. It is crucial to maintain hygiene standards at both base and worksites, ensuring paramedics are assigned to rescue teams and continuously monitoring the health of team members. Medical staff must be aware of local procedures for accepting patients into the local system, and a system for repatriation to the home country for further treatment should be developed. Additionally, appropriate medical transport procedures must be ensured, and medical documentation managed securely.
+
+## Immediate transportation recovery
+The immediate transportation recovery should prioritize reopening the road network in the north-west and the west of the photo. These areas are critical for accessing the most dangerous zones, where extensive structural damage has occurred, including hotspots of total or near-total building collapse. Ensuring road access is essential for deploying rescue teams, clearing debris, and conducting structural safety assessments. Additionally, establishing temporary pathways in these regions will facilitate the movement of essential supplies and aid to affected residents, minimizing further risks and facilitating recovery efforts.

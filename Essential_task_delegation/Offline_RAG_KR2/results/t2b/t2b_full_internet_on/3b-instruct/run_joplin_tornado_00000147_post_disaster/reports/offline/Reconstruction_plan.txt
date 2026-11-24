@@ -1,0 +1,86 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The Joplin tornado, which struck Missouri in (number not available offline), resulted in severe structural and non-structural damage across nearly all buildings, with 216 out of 238 estimated damage patches classified as Grade 5 destruction under the EMS-98 guidelines. This indicates that nearly all structures were severely damaged or completely collapsed. The hot spots, particularly around coordinates (43, 991) in the south-west of the photo, represent the most intense areas of devastation, covering a zone of approximately 961,544 pixels. Safe areas, while offering some refuge, are extremely limited, with distances ranging from 51 to 94 pixels from the nearest estimated damage.
+
+Immediate response efforts have focused on identifying and evacuating the most dangerous areas, prioritizing the hot spot 1. Safe areas, such as around (818, 214), (112, 801), and (632, 816), are deemed safe but require verification on the ground. The Emergency Service Team has recommended immediate evacuation from the hot spot 1 due to severe damage and destruction. Temporary shelters have been set up in the identified safe areas, meeting the standard for living space, with a minimum of (number not available offline) square meters per person. Essential medical facilities have also been established in these areas, adhering to the standard and ensuring privacy and dignity.
+
+Efforts are underway to reopen transportation routes near the hot spot 1, enabling timely delivery of aid, evacuation of casualties, and the movement of rescue teams and supplies. The Expert Team has provided detailed descriptions of the estimated damage, highlighting the catastrophic nature of the disaster. The Alerts Team has issued danger area alerts and social media updates, emphasizing the need for caution and immediate action in the most dangerous regions. Overall, the immediate response aims to provide temporary shelter, medical care, and transportation support to affected individuals, while plans are developed for longer-term reconstruction efforts.
+
+## Assessment of Damage
+The Joplin tornado, which struck Missouri in (number not available offline), resulted in severe structural and non-structural damage across nearly all buildings. According to the Expert Team’s report, (number not available offline) out of 238 estimated damage patches were classified as Grade 5 destruction under the EMS-98 guidelines, indicating that nearly all structures were severely damaged or completely collapsed. The remaining 22 patches were categorized as Grades 2 to 4, representing moderate to very heavy damage, including cracks in walls, detachment of roof tiles, and failure of non-structural elements.
+
+The hot spots, particularly around coordinates (43, 991) in the south-west of the photo, represent the most intense areas of devastation, covering a zone of approximately 961,544 pixels. In contrast, there are three safe areas identified, which offer some refuge from the widespread destruction. These safe areas are located around coordinates (818, 214), (112, 801), and (632, 816). Safe Area 1 is approximately 94 pixels from the nearest estimated damage, Safe Area 2 is 64 pixels away, and Safe Area 3 is 51 pixels from the nearest estimated damage.
+
+The damage assessment reveals that the hot spot 1, located around (43, 991) in the south-west of the photo, is the most dangerous area. This zone covers a significant portion of the photo and is classified as EMS-98 Grade 5 destruction, indicating severe collapse and complete loss of structural integrity. Immediate evacuation is recommended due to the severe damage and destruction. The remaining damage patches, classified as moderate to very heavy damage (EMS-98 Grades 2 to 4), also need urgent attention to prevent further deterioration and ensure public safety.
+
+The hot spots indicate the most intense areas of devastation, while the limited safe areas highlight the critical need for rapid response and resource allocation. These safe areas offer temporary refuge but are not sufficient for long-term recovery. Therefore, the focus should be on prioritizing the hot spots to stabilize the situation and begin the process of reconstruction. The immediate response aims to provide temporary shelter, medical care, and transportation support to affected individuals, while plans are developed for longer-term reconstruction efforts.
+
+[EMS98-2.3-p2] (EMS-98, p. 41)
+2 Vulnerability > 2.3 Factors affecting the seismic vulnerability of buildings
+A building which has been well-maintained will perform in accordance with its expected strength from other factors. A building which has been allowed to decay may be significantly weaker, sufficiently to reduce it by at least one vulnerability class. This may be observed in cases of abandoned or derelict buildings, and also in cases where there is an evident lack of maintenance. A case particularly to be mentioned is that of buildings already damaged (most commonly by a previous earthquake, where one is dealing with a series of shocks). Such buildings can behave very poorly indeed, so that a relatively weak aftershock can cause disproportionate amounts of damage (including collapse) amongst buildings damaged by the main shock.
+
+[INSARAG2B-6.3.4-p1] (INSARAG Guidelines 2020, Vol. II Manual B Operations, p. 51)
+6.3 Victim Marking > 6.3.4 Method
+The process for applying RCM is as follows:
+ A decision must be made by the LEMA to implement this level of marking.  RCM can only be used when sites can be fully searched quickly or
+
+## Reconstruction Needs
+To address the extensive damage caused by the Joplin tornado, the reconstruction plan must focus on prioritizing the most severely affected areas while considering the broader implications for the community. Based on the damage assessment and the guidelines provided, the following reconstruction needs are outlined:
+
+#### Hot Spot 1: Immediate Focus
+Hot Spot 1, located around (43, 991) in the south-west of the photo, is the most dangerous area, classified as EMS-98 Grade 5 destruction. Immediate reconstruction efforts are required here. Given the severe structural damage, a rebuild approach is necessary. The Sphere Handbook [SPHERE-1-p4] recommends that displaced people may need to rebuild their own homes, but technical assistance is crucial to ensure safety and compliance with building codes. Local labor should be employed for the reconstruction, and locally available, sustainable materials should be used. Technical assistance should be provided to ensure that the rebuilt structures meet safety standards and are resilient to future hazards.
+
+#### Safe Areas: Temporary Shelter and Medical Facilities
+Safe Areas 1, 2, and 3, located around (818, 214), (112, 801), and (632, 816) respectively, offer temporary refuge but are insufficient for long-term shelter provision. According to the Sphere Handbook [SPHERE-5-p1], technical assistance is essential to ensure that the shelters are constructed, repaired, retrofitted, upgraded, or maintained according to safe building practices. Temporary shelters should be designed to accommodate essential domestic activities, including sleeping, food preparation, and eating, while ensuring privacy and dignity. Essential medical facilities should be established in these areas, adhering to the Sphere standard and ensuring privacy and dignity. Local labor should be employed for the construction, and locally available, sustainable materials should be used. Technical assistance should be provided to optimize building practices and local livelihood opportunities.
+
+#### Transportation Routes: Reopening Access
+Reopening transportation routes near Hot Spot 1 is crucial for the timely delivery of aid, evacuation of casualties, and the movement of rescue teams and supplies. The INSARAG Guidelines [INSARAG2B-6.3.1] recommend victim marking to identify potential or known casualty locations. Clear markings should be applied to structures that are able to be searched rapidly or where information confirms there are no live victims or only deceased remain. The process for applying RCM is detailed in the INSARAG Guidelines [INSARAG2B-6.3.4-p1].
+
+#### Long-Term Reconstruction: Building Codes and Standards
+For the long-term reconstruction, the Sphere Handbook [SPHERE-5-p2] emphasizes the importance of establishing appropriate project management of materials, finance, labour, technical assistance, and processes for regulatory approval requirements to ensure quality outcomes. Technical assistance should be provided to ensure that the rebuilt structures meet safety standards and are resilient to future hazards. Local authorities should be involved in defining construction standards and monitoring construction activities to promote safer building practices.
+
+In summary, the immediate focus should be on rebuilding Hot Spot 1, while temporary shelters and medical facilities should be established in Safe Areas 1, 2, and 3. Transportation routes should be reopened to facilitate the delivery of aid and evacuation. Long-term reconstruction efforts should prioritize adherence to building codes and standards, ensuring that the rebuilt structures are safe and resilient to future hazards. Technical assistance and local involvement are critical components of this reconstruction plan.
+
+## Plan of Action
+The immediate focus should be on rebuilding Hot Spot 1, which is the most dangerous area classified as EMS-98 Grade 5 destruction. This area requires a rebuild approach to ensure safety and compliance with building codes. The following steps outline the reconstruction plan, including resource allocation and coordination with local authorities:
+
+1. **Immediate Evacuation and Safety Verification**
+   - **Resource Allocation:** Emergency services, local authorities, and volunteers.
+   - **Coordination:** Local authorities and emergency services must ensure that residents are evacuated from Hot Spot 1 and that the area is thoroughly verified for safety. This step is crucial to prevent further damage and ensure the safety of personnel.
+
+2. **Rebuilding Hot Spot 1**
+   - **Resource Allocation:** Local labor, specialized contractors, and technical assistance.
+   - **Coordination:** Local authorities and technical experts should oversee the rebuilding process. Technical assistance will be provided to ensure that the rebuilt structures meet safety standards and are resilient to future hazards. The Sphere Handbook [SPHERE-1-p4] recommends that displaced people may need to rebuild their own homes, but technical assistance is crucial to ensure safety and compliance with building codes. Local labor should be employed for the reconstruction, and locally available, sustainable materials should be used.
+
+3. **Establishment of Temporary Shelters and Medical Facilities in Safe Areas**
+   - **Resource Allocation:** Local labor, volunteers, and technical assistance.
+   - **Coordination:** Local authorities and health officials should establish temporary shelters and medical facilities in Safe Areas 1, 2, and 3. These facilities should be designed to accommodate essential domestic activities, including sleeping, food preparation, and eating, while ensuring privacy and dignity. Technical assistance will be provided to optimize building practices and local livelihood opportunities. The Sphere Handbook [SPHERE-5-p1] emphasizes the importance of technical assistance in ensuring that the shelters and medical facilities are constructed, repaired, retrofitted, upgraded, or maintained according to safe building practices.
+
+4. **Reopening Transportation Routes Near Hot Spot 1**
+   - **Resource Allocation:** Local authorities, transportation teams, and technical assistance.
+   - **Coordination:** Local authorities and transportation teams should work together to reopen transportation routes near Hot Spot 1. Victim marking should be applied to structures that are able to be searched rapidly or where information confirms there are no live victims or only deceased remain. The process for applying RCM is detailed in the INSARAG Guidelines [INSARAG2B-6.3.4-p1]. Technical assistance will be provided to ensure that the routes are reopened safely and efficiently.
+
+5. **Long-Term Reconstruction Efforts**
+   - **Resource Allocation:** Local authorities, technical assistance, and community involvement.
+   - **Coordination:** Local authorities should involve local authorities in defining construction standards and monitoring construction activities. Technical assistance will be provided to ensure that the rebuilt structures meet safety standards and are resilient to future hazards. Community involvement is crucial to promote safer building practices and ensure that the rebuilt structures are safe and resilient to future hazards. The Sphere Handbook [SPHERE-5-p2] emphasizes the importance of establishing appropriate project management of materials, finance, labour, technical assistance, and processes for regulatory approval requirements to ensure quality outcomes.
+
+By following this plan, the immediate response aims to provide temporary shelter, medical care, and transportation support to affected individuals, while plans are developed for longer-term reconstruction efforts. Coordination with local authorities and technical assistance ensures that the rebuilt structures meet safety standards and are resilient to future hazards.
+
+## Recommendations
+To effectively and efficiently reconstruct the areas impacted by the Joplin tornado, it is imperative to prioritize policy and funding support. Immediate action is needed to address the urgent needs of the affected population, including rebuilding critical infrastructure, providing temporary shelter, and ensuring medical care. Policy-wise, local authorities should be involved in defining construction standards and monitoring construction activities to promote safer building practices. Technical assistance should be provided to ensure that the rebuilt structures meet safety standards and are resilient to future hazards. Funding should be allocated for rebuilding Hot Spot 1, establishing temporary shelters and medical facilities in Safe Areas, and reopening transportation routes. Additionally, community involvement is crucial to ensure that the rebuilt structures are safe and resilient to future hazards. Long-term reconstruction efforts should focus on adherence to building codes and standards, with ongoing support for technical assistance and local involvement. Comprehensive funding mechanisms should be established to cover the costs of rebuilding, including labor, materials, and technical expertise. Public-private partnerships and international aid can also play a vital role in supporting these efforts.
+
+## Appendices
+#### Disaster Grade of Each Place
+The Joplin tornado resulted in severe damage, with 216 out of 238 estimated damage patches classified as EMS-98 Grade 5 destruction, indicating severe collapse and complete loss of structural integrity. The remaining patches were categorized as Grades 2 to 4, representing moderate to very heavy damage. The hot spot 1, located around (43, 991), is classified as EMS-98 Grade 5 destruction, while Safe Areas 1, 2, and 3 are classified as Grades 2 to 4, representing moderate to very heavy damage. [EMS98-masonry-grade-5] [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+
+#### Guideline Sections Used
+- [SPHERE-appendix-4-p1]: Provides context-specific assistance options for affected people, including household items, shelter kits, and shelter toolkits.
+- [EMS98-2.3-p2]: Highlights the importance of regularity in building structures to enhance earthquake resistance.
+- [SPHERE-1-p4]: Recommends repairing and retrofitting buildings to ensure they meet safety standards and reduce future risks.
+- [INSARAG2B-6.3.1]: Details the method for victim marking to identify potential or known casualty locations.
+- [SPHERE-5-p1]: Emphasizes the need for technical assistance in the building process to ensure quality outcomes and promote safer building practices.
+
+These guidelines provide essential frameworks for the immediate response and long-term reconstruction efforts in the aftermath of the Joplin tornado.

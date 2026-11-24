@@ -1,0 +1,84 @@
+{"id": "disaster_type_0", "model": "c", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_2", "model": "c", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_4", "model": "c", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_6", "model": "c", "answer": "D", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_8", "model": "c", "answer": "E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_331", "model": "c", "answer": "E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_335", "model": "c", "answer": "D", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_0", "model": "c", "answer": "B, E, G", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_0", "model": "b", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_2", "model": "b", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_4", "model": "b", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_6", "model": "b", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_8", "model": "b", "answer": "E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_331", "model": "b", "answer": "E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "disaster_type_335", "model": "b", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_0", "model": "b", "answer": "B, E, G", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_2", "model": "c", "answer": "F, G, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_4", "model": "c", "answer": "E, F, G, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_6", "model": "c", "answer": "A, G, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_8", "model": "c", "answer": "G, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_1641", "model": "c", "answer": "G", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_1645", "model": "c", "answer": "B, E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_0", "model": "c", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_2", "model": "c", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_2", "model": "b", "answer": "F, G, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_4", "model": "b", "answer": "B, E, F, G, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_6", "model": "b", "answer": "A, G, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_8", "model": "b", "answer": "G, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_1641", "model": "b", "answer": "A, G", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "bearing_body_1645", "model": "b", "answer": "A, B, E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_0", "model": "b", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_2", "model": "b", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_4", "model": "c", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_6", "model": "c", "answer": "E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_8", "model": "c", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_1904", "model": "c", "answer": "E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_1908", "model": "c", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_0", "model": "c", "answer": "D", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_2", "model": "c", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_4", "model": "c", "answer": "D", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_4", "model": "b", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_6", "model": "b", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_8", "model": "b", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_1904", "model": "b", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_1908", "model": "b", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_0", "model": "b", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_2", "model": "b", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_4", "model": "b", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_6", "model": "c", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_7", "model": "c", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_1578", "model": "c", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_1582", "model": "c", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_0", "model": "c", "answer": "D, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_1", "model": "c", "answer": "A, C, G, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_2", "model": "c", "answer": "A, G", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_3", "model": "c", "answer": "D, H, G", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_6", "model": "b", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_7", "model": "b", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_1578", "model": "b", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "road_damage_counting_1582", "model": "b", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_0", "model": "b", "answer": "D, C, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_1", "model": "b", "answer": "A, C, G, H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_2", "model": "b", "answer": "A, G", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_3", "model": "b", "answer": "D, H, G", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_4", "model": "c", "answer": "H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_1451", "model": "c", "answer": "E, G", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_1454", "model": "c", "answer": "F, D, B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_0", "model": "c", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_1", "model": "c", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_2", "model": "c", "answer": "C", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_6", "model": "c", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_7", "model": "c", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_568", "model": "c", "answer": "E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_569", "model": "c", "answer": "D", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_4", "model": "b", "answer": "H", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_1451", "model": "b", "answer": "E, G", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "landuse_1454", "model": "b", "answer": "F, D, B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_0", "model": "b", "answer": "E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_1", "model": "b", "answer": "E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_2", "model": "b", "answer": "E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_6", "model": "b", "answer": "B", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_7", "model": "b", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_568", "model": "b", "answer": "E", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "relational_reasoning_qa_569", "model": "b", "answer": "A", "fix": "visual.blocks.31.mlp.down_proj"}

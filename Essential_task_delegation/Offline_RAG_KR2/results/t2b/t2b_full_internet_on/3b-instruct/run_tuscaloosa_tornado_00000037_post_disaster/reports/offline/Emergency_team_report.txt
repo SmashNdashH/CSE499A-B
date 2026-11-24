@@ -1,0 +1,49 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+#### Safe Areas
+Based on the satellite imagery and damage model, the following safe areas have been identified, which are farthest from the estimated damage zones and provide open ground for emergency shelters:
+
+- **Safe Area 1**: Located around (346, 119) pixels, approximately 146 pixels from the nearest estimated damage. This area offers ample space for emergency shelters and can be used to house displaced individuals. [SPHERE-2-p4]
+- **Safe Area 2**: Situated around (359, 454) pixels, approximately 131 pixels from the nearest estimated damage. This area provides a suitable location for emergency shelters and can be checked on the ground before use. [SPHERE-2-p4]
+- **Safe Area 3**: Positioned around (416, 650) pixels, approximately 124 pixels from the nearest estimated damage. This area is also a viable option for emergency shelters and should be verified on the ground. [SPHERE-2-p4]
+
+#### Locations with Little or No Damage
+The following areas have been identified as having little or no damage, allowing for the establishment of emergency shelters:
+
+- **Hot Spot 1 (East)**: Around (774, 531) pixels, the easternmost part of the photo. This area has 11% intact damage patches, indicating minimal structural damage. [SPHERE-2-p4]
+- **Hot Spot 2 (South-West)**: Located around (41, 750) pixels, the southwestern corner of the photo. This area has 43% damaged patches, primarily moderate to very heavy damage. [SPHERE-3-p1]
+- **Hot Spot 3 (South-East)**: Situated around (717, 888) pixels, the southeastern corner of the photo. This area also has 43% damaged patches, primarily moderate to very heavy damage. [SPHERE-3-p1]
+
+#### Shelter Planning
+Given the Sphere guidelines on living space and site area per person, the following considerations will guide the planning of emergency shelters:
+
+- **Living Space**: Each affected household should have adequate living space to perform basic domestic activities. The minimum living space per person is 3.5 square meters, excluding cooking space, bathing area, and sanitation facility. [SPHERE-3-p1]
+- **Site Area**: For planned settlements, the minimum usable surface area is 45 square meters per person in camp-type settlements, including household plots. This includes space for roads, footpaths, external cooking areas, education and recreation areas, healthcare facilities, sanitation, firebreaks, administration, water storage, site drainage, religious facilities, food distribution areas, markets, storage, and limited kitchen gardens for individual households. [SPHERE-2-p1]
+
+#### Access and Safety
+Emergency shelters should
+
+## Hospitals
+Based on the satellite imagery and damage model, the following areas have been identified as potential locations for hospitals or medical points:
+
+- **Hot Spot 1 (East)**: Around (774, 531) pixels, the easternmost part of the photo. This area has 11% intact damage patches, indicating minimal structural damage. [SPHERE-2-p4]
+- **Hot Spot 2 (South-West)**: Located around (41, 750) pixels, the southwestern corner of the photo. This area has 43% damaged patches, primarily moderate to very heavy damage. [SPHERE-3-p1]
+- **Hot Spot 3 (South-East)**: Situated around (717, 888) pixels, the southeastern corner of the photo. This area also has 43% damaged patches, primarily moderate to very heavy damage. [SPHERE-3-p1]
+
+According to INSARAG guidelines, the handover of rescued people to hospitals should follow established procedures:
+
+- **Casualty Handover Procedures**: Ensure that medical staff are aware of local procedures for accepting patients into the local system. Develop a system for repatriation to the home country for further treatment. [INSARAG3-5.2-p1]
+- **Medical Transport Procedures**: Establish a triage point in consultation with medical personnel. Ensure appropriate medical transport procedures are in place. [INSARAG3-6.2-p2]
+- **Handover Point**: Clearly mark the evacuation point and ensure that personnel are familiar with the evacuation signaling system. [INSARAG3-6.2-p2]
+
+For the medical staff, continuous health monitoring and medical care should be provided, including psychological assessment and monitoring. Supervision of stress management techniques and general health status should be conducted. [INSARAG3-6.2-p2]
+
+Rescued individuals should be transported to designated medical points, ensuring proper handover to medical teams. Coordination with the logistics team for transportation and medical supplies is essential. [INSARAG3-6.2-p2]
+
+In summary, the identified areas in Hot Spots 2 and 3, along with Hot Spot 1, can serve as potential locations for hospitals or medical points. Proper handover procedures and continuous medical care will ensure the well-being of the rescued individuals. [INSARAG3-6.2-p2]
+
+## Immediate transportation recovery
+Based on the damage model and the hot spots identified, the roads or bridges in Hot Spot 2 (south-west) and Hot Spot 3 (south-east) need immediate attention for reopening. These areas have the highest density of damage, with moderate to very heavy destruction. Reopening roads in these zones will facilitate the movement of emergency services, medical teams, and supplies to and from the affected areas. Additionally, reopening the road in Hot Spot 1 (east) will improve access to this relatively undamaged area, which can serve as a staging ground for relief efforts. Ensuring these critical routes are cleared will enhance the efficiency and effectiveness of the rescue and recovery operations.

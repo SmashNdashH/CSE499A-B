@@ -1,0 +1,113 @@
+You are judging two disaster reports for the public living in and near the affected area. Both are a "Public community report" for the same satellite scene, written from
+the same facts by two different writers. Judge them as that reader would.
+
+Score each report from 1 to 5 on each criterion, then say which report is more useful overall.
+
+1. Useful: could the reader act on it? 5 = clear priorities (where to go first, what to send or build, what to avoid),
+   tied to this scene. 3 = some guidance, mostly generic. 1 = nothing the reader can act on.
+2. Clear: 5 = plain, well organised, no repetition or filler. 3 = some repetition or padding. 1 = hard to follow.
+3. Trustworthy: 5 = stays with facts it states, no contradictions between its own numbers or sections, says when something
+   is an estimate, invents no places, people or events. 3 = a few unsupported claims. 1 = contradictions or invented
+   specifics. The phrase "(number not available offline)" means a checker removed a wrong number the writer had written:
+   count each one as the writer's mistake.
+4. Cites properly: 5 = the claims that need support cite a guideline (an ID in square brackets or a named handbook) and
+   the citation fits the claim. 3 = some citations, some missing or generic. 1 = none, or citations that don't fit. You
+   can't look the guidelines up: judge whether citations are where they're needed and plausible, not whether the IDs exist.
+
+Rules:
+- Do not prefer a report for being longer. One report may be two or three times the length of the other; extra length
+  counts only if the extra content helps the reader. Repetition and padding count against Clear.
+- The order the reports are shown in means nothing.
+- Pixel coordinates and "hot spots" refer to the satellite photo; treat them as normal for these reports.
+- Score each report on its own first, then compare.
+
+Reply with only this JSON, no other text:
+{"report_1": {"useful": 0, "clear": 0, "trustworthy": 0, "cites": 0, "notes": "one line"},
+ "report_2": {"useful": 0, "clear": 0, "trustworthy": 0, "cites": 0, "notes": "one line"},
+ "more_useful": "report_1 or report_2 or same", "why": "one line"}
+
+===== REPORT 1 =====
+
+# Public Community Report
+
+## Introduction
+The Joplin tornado struck the city of Joplin, Missouri, causing extensive damage and loss of life. The satellite photos and damage models indicate that nearly all structures were severely damaged or completely collapsed, with 216 out of 238 damage patches classified as Grade 5 destruction, according to the EMS-98 guidelines. The most intense areas of devastation are concentrated in the south-west of the photo, around coordinates (43, 991), covering a zone of approximately 961,544 pixels. Safe areas, though limited, offer some refuge from the widespread destruction, with Safe Area 1 located around (818, 214), approximately 94 pixels from the nearest estimated damage.
+
+The Alerts team issued a danger area alert, advising residents to avoid the most dangerous areas, particularly Hot Spot 1, located around (43, 991) in the south-west of the photo. They also highlighted the limited safe areas, emphasizing the need for caution and immediate evacuation from the hot spot. The Emergency Service Team has identified the most suitable locations for emergency shelters and hospitals in the identified safe areas, ensuring that displaced people and medical personnel have access to safe and dignified living conditions. Immediate transportation recovery efforts are focused on reopening routes near Hot Spot 1 to facilitate the delivery of aid and the movement of rescue teams and supplies.
+
+## Current Situation
+The Joplin tornado has left a landscape ravaged by severe structural and non-structural damage. The satellite photos and damage models indicate that nearly all structures were severely damaged or completely collapsed, with 216 out of 238 damage patches classified as Grade 5 destruction, according to the EMS-98 guidelines. The most intense areas of devastation are concentrated in the south-west of the photo, around coordinates (43, 991), covering a zone of approximately 961,544 pixels. Safe areas, though limited, offer some refuge from the widespread destruction, with Safe Area 1 located around (818, 214), approximately 94 pixels from the nearest estimated damage.
+
+The Emergency Service Team has identified the most suitable locations for emergency shelters and hospitals in the identified safe areas, ensuring that displaced people and medical personnel have access to safe and dignified living conditions. Immediate transportation recovery efforts are focused on reopening routes near Hot Spot 1 to facilitate the delivery of aid and the movement of rescue teams and supplies.
+
+For the hot spot 1, located around (43, 991) in the south-west of the photo, immediate evacuation is recommended due to the severe damage and destruction. There are no suitable shelter locations within this zone, and residents should be directed to safer areas outside the immediate vicinity of the hot spot. The Emergency Service Team has assessed the damage and determined that the most suitable locations for emergency shelters and hospitals are the identified safe areas, which offer some protection from the widespread destruction.
+
+Safe Area 1, around (818, 214), is deemed safe but requires verification on the ground. It meets the Sphere standard for living space, with a minimum of (number not available offline) square meters per person. The shelter should be designed to accommodate essential domestic activities, including sleeping, food preparation, and eating, while ensuring privacy and dignity. Given the limited space, it is recommended to prioritize essential activities and minimize overcrowding.
+
+Safe Area 2, located around (112, 801), situated in the south-west of the photo, is 64 pixels from the nearest estimated damage and also needs ground verification. It adheres to the Sphere standard, requiring a minimum of (number not available offline) square meters per person. The shelter should be equipped with appropriate medical facilities, including triage stations, treatment rooms, isolation wards, and storage areas for medical supplies. The limited space necessitates careful planning to maximize the use of available areas.
+
+Safe Area 3, around (632, 816), positioned in the south of the photo, is 51 pixels from the nearest estimated damage and also needs ground verification. It complies with the Sphere standard, necessitating a minimum of (number not available offline) square meters per person. The shelter should include appropriate medical facilities, ensuring safe access to medical activities. The proximity to the estimated damage suggests that
+
+## Resource Allocation
+To allocate resources effectively, the Emergency Service Team is guided by the Sphere and INSARAG guidelines. For Safe Area 1, around (818, 214), a team of 5 personnel will be deployed, including 2 coordinators, 1 medical officer, 1 logistics specialist, and 2 construction workers. This team will set up basic shelters with minimal furnishings, ensuring privacy and dignity. Safe Area 2, around (112, 801), will also receive a team of 5 personnel, with additional medical supplies and equipment for potential injuries. In Safe Area 3, around (632, 816), a smaller team of 3 will be dispatched to establish a basic medical facility and ensure the safety of the population. 
+
+For transportation recovery, the Emergency Service Team will coordinate with the Logistics team to ensure that large vehicles are available to transport essential supplies and equipment to the hot spot 1 and the identified safe areas. A dedicated vehicle will be assigned to evacuate residents from the hot spot 1 to the nearest safe area. 
+
+The INSARAG Guidelines emphasize the importance of safety and security during operations. The team will develop a comprehensive safety and security plan, including regular briefings and risk assessments. They will adhere to the INSARAG Marking System to ensure that all teams are familiar with the markings and can communicate effectively. 
+
+The Emergency Service Team will monitor the availability and quality of household items and adjust the distribution methods as needed. They will collaborate with local authorities and the affected population to ensure equitable and targeted support that does not create additional risks or threats in the community. 
+
+In summary, the Emergency Service Team is deploying a structured approach to resource allocation, focusing on the identified safe areas and adhering to the Sphere and INSARAG guidelines to provide safe and dignified living conditions for those affected by the Joplin tornado.
+
+## Public Advisory
+It is crucial for the public to stay informed and follow the guidelines provided by the Emergency Service Team and the Alerts team to ensure their safety and cooperation with ongoing operations. Here are some key instructions and advice:
+
+- **Stay Informed:** Follow updates from the Alerts team on social media platforms like #JoplinTornado #DisasterUpdate #EmergencyResponse. This will provide the latest information about danger areas, safe zones, and evacuation routes.
+
+- **Avoid Dangerous Areas:** Immediately avoid the hot spot 1, located around (43, 991) in the south-west of the photo. This area is classified as EMS-98 Grade 5 destruction, indicating severe collapse and complete loss of structural integrity. Immediate evacuation is recommended.
+
+- **Use Safe Zones:** If you are in the hot spot 1, seek refuge in the identified safe areas. Safe Area 1, around (818, 214), is approximately 94 pixels from the nearest estimated damage and should be verified on the ground. Safe Area 2, around (112, 801), is 64 pixels away and Safe Area 3, around (632, 816), is 51 pixels from the nearest estimated damage. Verify these areas before using them as refuges.
+
+- **Contact Emergency Services:** If you or anyone you know is injured, call emergency services immediately. Provide clear and concise information about your location and the nature of the injury.
+
+- **Support Emergency Operations:** Cooperate with the Emergency Service Team by allowing them to set up emergency shelters and medical facilities in the identified safe areas. Ensure that vulnerable individuals or households are included in distribution lists and can access both information and assistance.
+
+- **Monitor Household Items:** The Emergency Service Team will monitor the availability and quality of household items and adjust the distribution methods as needed. Ensure that you have access to essential items such as clothing, bedding, and personal hygiene supplies.
+
+- **Safety and Security:** Follow the safety and security plan developed by the Emergency Service Team. Regular briefings and risk assessments will be conducted to ensure everyone's safety. Adhere to the INSARAG Marking System to communicate effectively with other teams.
+
+- **Community Support:** Engage with local authorities and the affected population to ensure equitable and targeted support that does not create additional risks or threats in the community. Share information and resources to help those in need.
+
+By following these guidelines, the public can stay safe and cooperate with ongoing operations to support those affected by the Joplin tornado.
+
+## Organizational Operation
+Our organization plays a critical role in coordinating the response to the Joplin tornado disaster. We are responsible for allocating human resources to establish emergency shelters and medical facilities in the identified safe areas, ensuring that displaced individuals and medical personnel have access to safe and dignified living conditions. Our team follows the Sphere and INSARAG guidelines to provide essential household items and monitor their availability. We also coordinate with local authorities and the affected population to ensure equitable and targeted support. For further assistance, please refer to the official disaster response channels or visit our website, where detailed information and updates will be regularly posted. Contact details are not available offline.
+
+## Conclusion
+We want to reassure the community that we are working tirelessly to provide the necessary support and resources to those affected by the Joplin tornado. Our team is committed to ensuring that everyone has access to safe and dignified living conditions, and we are doing everything possible to meet that goal. We urge you to stay informed and follow the guidelines provided by the Emergency Service Team and the Alerts team. Your cooperation is vital to our efforts, and we appreciate your patience and understanding during this challenging time. Together, we will overcome this disaster and rebuild stronger.
+
+===== REPORT 2 =====
+
+# Public Community Report
+
+## Introduction
+The tornado caused widespread destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. The hot spot 1, located in the south-west of the photo, encompasses 961544 pixels and represents the highest concentration of estimated damage. Safe areas include one in the north-east and another in the south-west, at least 94 and 64 pixels away from the nearest estimated damage, respectively. The tornado has caused significant structural and non-structural impacts, leaving no intact structures.
+
+## Current Situation
+The tornado caused widespread destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. Safe areas in the north-east and south-west are suitable for temporary shelter, with minimal damage at least 94 and 64 pixels away, respectively. Emergency shelters should be established in these zones to provide adequate living spaces with enclosed structures, ensuring privacy and protection from the elements. Immediate transportation recovery is prioritized to reopen roads in these safe zones for delivering emergency supplies and evacuating affected residents.
+
+## Resource Allocation
+The tornado has caused widespread destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. Safe areas in the north-east and south-west are suitable for temporary shelter, with minimal damage at least 94 and 64 pixels away, respectively. Emergency shelters should be established in these zones to provide adequate living spaces with enclosed structures, ensuring privacy and protection from the elements. Immediate transportation recovery is prioritized to reopen roads in these safe zones for delivering emergency supplies and evacuating affected residents.
+
+## Public Advisory
+The tornado has caused widespread destruction, with 91% of the analyzed area estimated to be completely destroyed, consistent with EMS-98 Grade 5, indicating total or near-total collapse of structures. Safe areas in the north-east and south-west are suitable for temporary shelter, with minimal damage at least 94 and 64 pixels away, respectively. Emergency shelters should be established in these zones to provide adequate living spaces with enclosed structures, ensuring privacy and protection from the elements. Immediate transportation recovery is prioritized to reopen roads in these safe zones for delivering emergency supplies and evacuating affected residents. Please stay in safe areas and avoid the hot spot 1 in the south-west. Follow instructions from emergency services and local authorities for further updates and assistance. [SPHERE-1-p3], [SPHERE-4-p1], [SPHERE-4-p2], [INSARAG2B-1-p1], [INSARAG2B-5.7.1-p5]
+
+## Organizational Operation
+Our organization is responsible for coordinating the post-disaster management, including establishing emergency shelters, assessing and distributing household items, and facilitating transportation recovery. For further assistance, please contact local emergency services or reach out to our organization for detailed support.
+
+## Conclusion
+We are committed to supporting the community through this challenging time. Our emergency shelters are ready to provide safe and temporary housing, and we are actively working on clearing debris and reopening roads to ensure access for aid. We urge everyone to stay in safe areas and adhere to official instructions. Together, we will overcome this disaster and rebuild stronger.
+
+===== END =====
+
+Now reply with only the JSON.

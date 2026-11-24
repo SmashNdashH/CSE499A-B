@@ -4,3 +4,6 @@ kaggle_upload/
 
 # Database files rewritten on search
 local_chroma_db/
+
+# T2b's 20 scene photos (34 MB), downloaded from the benchmark mirror on Kaggle (make_t2b_scenes.py)
+disasteller_offline/t2b_scenes/photos/

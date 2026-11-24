@@ -1,0 +1,55 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The explosion in Beriut has resulted in severe damage across the city, with nearly all buildings in the affected area reduced to rubble and debris. The satellite imagery analysis conducted by the Expert team reveals that 8 out of 10 buildings are classified as Grade 5 destruction under the EMS-98 guidelines, indicating total or near-total collapse. Two additional buildings were assessed as suffering moderate to very heavy damage (Grades 2 to 4), characterized by cracks in walls, fall of plaster, and partial structural failures. No buildings were found intact, suggesting minimal to negligible damage.
+
+The hot spots, particularly in the northeast and southeast corners of the photo, show the most concentrated damage, while open ground areas in the northwest and west provide some safety buffer zones. The Alerts team has issued a danger area alert, advising people to avoid the hot spots due to severe damage and to stay away from the surrounding areas until further notice. They have also highlighted the presence of safe areas, though limited, which offer some relief. Immediate action is needed to clear debris and assess structural integrity to facilitate rescue and recovery efforts.
+
+## Current Situation
+The explosion in Beriut has resulted in severe damage across the city, with nearly all buildings in the affected area reduced to rubble and debris. The satellite imagery analysis conducted by the Expert team reveals that 8 out of 10 buildings are classified as Grade 5 destruction under the EMS-98 guidelines, indicating total or near-total collapse. Two additional buildings were assessed as suffering moderate to very heavy damage (Grades 2 to 4), characterized by cracks in walls, fall of plaster, and partial structural failures. No buildings were found intact, suggesting minimal to negligible damage.
+
+The hot spots, particularly in the northeast and southeast corners of the photo, show the most concentrated damage, while open ground areas in the northwest and west provide some safety buffer zones. Immediate action is needed to clear debris and assess structural integrity to facilitate rescue and recovery efforts. The Emergency Service Team has identified three safe areas where emergency shelters and medical points can be established:
+
+- **Safe Area 1:** Around (100, 100), the north-west of the photo, approximately 519 pixels from the nearest estimated damage. This area offers the greatest safety buffer, with minimal damage noted. It is recommended to check this area on the ground before proceeding with shelter establishment to ensure it meets the Sphere standard for living space and site area per person.
+- **Safe Area 2:** Around (100, 250), the north-west of the photo, 483 pixels from the nearest estimated damage. Similar to Safe Area 1, this area is relatively safe and should be checked on the ground before use.
+- **Safe Area 3:** Around (100, 400), the west of the photo, 464 pixels from the nearest estimated damage. This area is also safe and should be verified on the ground. 
+
+In the absence of specific staff, team, shelter, and supply numbers, it is crucial to prioritize the establishment of emergency shelters and medical points in these safe areas. Adequate living space must be ensured, with consideration for privacy and dignity, as outlined in Sphere Section [SPHERE-3-p1]. The provision of basic amenities such as a roof, walls, and access to essential services (such as cooking, toilets, and bathing areas) is essential. Additionally, the layout should promote safety and protection, as per Sphere Section [SPHERE-3-p4].
+
+Immediate clearance of debris and stabilization of structures in the hot spots (Hot Spot 1 and Hot Spot 2) are necessary to facilitate the safe establishment of emergency shelters and medical points in the identified safe areas. The Emergency Service Team is working closely with local authorities and community members to ensure that the chosen locations are culturally and socially acceptable, and that they meet the necessary safety and protection standards. Immediate transportation recovery is also crucial to restore access to the affected areas, with roads connecting Safe Areas 1 and 2 to
+
+## Resource Allocation
+To address the urgent needs arising from the explosion in Beriut, immediate mobilization of human resources and logistical support is essential. Based on the Sphere and INSARAG guidelines, we outline the allocation of resources to ensure effective emergency response and recovery efforts.
+
+**Emergency Shelters**
+
+Given the limited safe areas identified, we prioritize the establishment of emergency shelters in Safe Area 1, Safe Area 2, and Safe Area 3. Due to the lack of specific staff, team, shelter, and supply numbers, we recommend a flexible approach to staffing. Local volunteers and community members can be engaged to assist in setting up and managing these shelters. Adequate living space must be ensured, with consideration for privacy and dignity, as outlined in Sphere Section [SPHERE-3-p1]. Basic amenities such as a roof, walls, and access to essential services (such as cooking, toilets, and bathing areas) are essential. The layout should promote safety and protection, as per Sphere Section [SPHERE-3-p4].
+
+**Medical Points and Hospitals**
+
+Similarly, we prioritize the establishment of medical points and hospitals in Safe Area 1, Safe Area 2, and Safe Area 3. Local medical professionals and volunteers can be mobilized to establish and manage these facilities. Adequate living space must be ensured, with consideration for privacy and dignity, as outlined in Sphere Section [SPHERE-3-p1]. Basic amenities such as a roof, walls, and access to essential services (such as cooking, toilets, and bathing areas) are essential. The layout should promote safety and protection, as per Sphere Section [SPHERE-3-p4].
+
+**Transportation Recovery**
+
+Immediate transportation recovery is crucial to restore access to the affected areas. We prioritize the reopening of roads connecting Safe Areas 1 and 2 to the north-western outskirts of the city, and the road leading from Safe Area 3 to the western region. Local logistics support and coordination with the affected country’s authorities are essential to ensure the safe passage of emergency vehicles and supplies.
+
+**Logistical Support**
+
+Logistical support includes the provision of essential supplies such as food, water, and medical supplies. These should be sourced locally where possible, as per Sphere
+
+## Public Advisory
+The explosion in Beriut has resulted in severe damage across the city, with nearly all buildings in the affected area reduced to rubble and debris. People are advised to avoid the dangerous areas marked by the Alerts team, particularly Hot Spot 1 (coordinates (871, 225)) and Hot Spot 2 (coordinates (991, 840)), due to severe damage and potential hazards. Safe areas, though limited, offer some relief. Immediate action is needed to clear debris and assess structural integrity to facilitate rescue and recovery efforts.
+
+For those in the affected areas, it is crucial to stay informed and follow the instructions of emergency services. People are advised to seek shelter in the designated safe areas, which are Safe Area 1 (around (100, 100)), Safe Area 2 (around (100, 250)), and Safe Area 3 (around (100, 400)). These areas have been identified as suitable for emergency shelters and medical points based on the Sphere and INSARAG guidelines.
+
+To access emergency services, dial the local emergency number immediately. For medical assistance, proceed to the designated medical points and hospitals in the safe areas. Ensure that you have essential items such as a blanket, bedding, and personal clothing, as outlined in Sphere Section [SPHERE-4-p1]. Water and food supplies should be stored in safe areas to ensure continuity of basic necessities.
+
+Stay vigilant and cooperative with ongoing operations. Local authorities and community members are working tirelessly to ensure the safety and well-being of everyone affected. Cooperate with search and rescue teams, and follow all instructions provided by emergency services. Stay updated through official channels and social media platforms for the latest information and updates.
+
+## Organizational Operation
+Our organization is dedicated to providing comprehensive support in the aftermath of the explosion in Beriut. We are currently analyzing satellite imagery and expert reports to identify safe areas for emergency shelters and medical points. Our team is prioritizing the establishment of shelters and medical facilities in Safe Areas 1, 2, and 3, based on the Sphere and INSARAG guidelines. Immediate transportation recovery is also underway to ensure access to these areas. For further assistance, please contact our hotline at [Not Available Offline] or visit our website at [Not Available Offline]. Stay informed and follow the instructions of emergency services.
+
+## Conclusion
+We understand the gravity of the situation in Beriut and the challenges ahead. Please know that our team is working tirelessly to provide the necessary support and assistance. We urge you to stay calm and follow the instructions of emergency services. Your safety is our top priority. We will continue to provide updates and ensure that you have the resources you need. Together, we will overcome this difficult time. Stay informed and stay strong.

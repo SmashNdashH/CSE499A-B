@@ -1,0 +1,12 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the Sphere Handbook 2018, Shelter and Settlement guidelines, emergency shelters should be established in safe areas to ensure the well-being of displaced residents. Safe area 1, located in the south-east of the photo, offers a suitable location with 412 pixels of distance from the nearest estimated damage. Safe area 2, situated in the same region, is 311 pixels away, and safe area 3, in the south-east, is 254 pixels distant. These areas provide adequate space for living spaces, ensuring privacy and protection from further structural collapse. The minimum living space requirement of 3.5 square metres per person, excluding cooking and bathing areas, should be met. Given the current data, the exact number of shelters needed is not available offline.
+
+## Hospitals
+For the hospitals, based on the INSARAG guidelines, it is essential to ensure that medical evacuation plans are in place to handle potential emergency situations. A risk assessment should be conducted to establish procedures for all considered scenarios, and hygiene standards must be maintained both at base and worksites. Medical staff should be aware of local procedures for accepting patients into the local system, and a system for repatriation to the home country for further treatment should be developed. Additionally, appropriate medical transport procedures must be ensured, and medical documentation should be managed securely. The exact number of hospitals or medical points is not available offline, and therefore, this report cannot provide specific details.
+
+## Immediate transportation recovery
+The immediate transportation recovery should prioritize the safe areas in the south-east of the photo, specifically safe area 1, located at coordinates (917, 923), as it is the closest to the hotspots of destruction and offers a stable environment for road and bridge reopening. This area is crucial for facilitating the movement of emergency response teams and supplies to the affected regions, ensuring timely aid delivery and preventing further complications in the recovery process.

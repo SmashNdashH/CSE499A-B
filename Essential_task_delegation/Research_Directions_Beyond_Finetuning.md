@@ -406,6 +406,15 @@ A caveat: on these questions, a rule that never looks at the image scores 66.98%
   - find-then-grade's destroyed IoU on the 605 clean pairs.
 
   Noman's VRT super-resolution notebook is a starting point (`support/Noman_Super Resolution/Noman_VRT_SuperResolution_Pipeline.ipynb`; CSE499A's final presentation, slide 16).
+
+  **Answered 20 Nov (R16c step 7, run on account 4; [results](Champion_Task/R16c-results/step7/README.md)): super-resolution makes the grader slightly but surely worse, so it isn't adopted.** On the 605 clean validation pairs:
+  - destroyed IoU falls from 0.3066 to 0.3025 with Swin2SR and 0.3006 with Real-ESRGAN;
+  - macro F1 on the true buildings falls from 0.732 to 0.715 and 0.701, most on the small buildings SR touches;
+  - both drops are beyond noise.
+
+  The graders learned from ordinary crops, and Real-ESRGAN's invented texture hurts most. A grader retrained on SR crops would need about 52 GPU hours of Swin2SR on the training photos first, which the drop doesn't justify.
+
+  **Built 20 Nov as R16c step 7** ([notebook](Champion_Task/r16c-step7-super-resolved-crops.ipynb); [the ledger](Task_Ledger.md)), ready to run on account 4. It tests two single-photo models at 2×: Swin2SR, trained for pixel accuracy, and Real-ESRGAN, GAN-trained, so the invented-texture risk below is measured. VRT, a video model at 4×, didn't fit single crops that need at most 2×. The rule is step 6's: the better version must beat today's crops on destroyed IoU by more than noise.
 - **Risk:** an SR model trained on ordinary photos invents texture. On rubble that can look like damage, or hide it.
 - **A cheaper, related fix:** align the two crops before grading. In 52% of the pairs, the before-photo and after-photo are shifted by more than 2 px; in 10%, by more than 5 px; the worst by 56 px (Ridita's audit). Aligning is already a candidate in the roadmap.
 

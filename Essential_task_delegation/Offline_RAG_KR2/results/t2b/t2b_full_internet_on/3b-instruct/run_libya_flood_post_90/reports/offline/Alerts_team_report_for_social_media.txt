@@ -1,0 +1,19 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+People are advised to avoid the severely damaged areas and the potentially hazardous zones identified in the satellite images. The most dangerous zones, classified as EMS-98 Grade 5, include the south-east (Hot Spot 1) and the south (Hot Spot 2 and Hot Spot 3) of the photo. These areas are estimated to have experienced complete destruction, with no visible structures remaining. Immediate attention is required to ensure the safety of rescue workers and aid teams operating in these regions.
+
+Additionally, individuals should exercise caution in the northern part of the photo, which contains three safe areas (Safe Area 1, Safe Area 2, and Safe Area 3). While these areas are currently deemed safe, they remain under surveillance and should be confirmed on the ground before use. Safe Area 1 is located around (493, 273), approximately 420 pixels from the nearest estimated damage. Safe Area 2 is situated around (466, 100), just 398 pixels from the nearest damage. Safe Area 3 is positioned around (627, 341), 353 pixels from the nearest damage. These areas are considered relatively unaffected by the flood but require thorough inspection to confirm their safety.
+
+It is crucial for all personnel to prioritize safety and adhere to the outlined danger zones to prevent further casualties and ensure effective response operations.
+
+## Social media news
+**Social Media News:** Severe Flooding Hits Libya, Causing Catastrophic Damage
+
+Residents in the southern parts of Libya are facing a devastating situation after a recent flood. Satellite images show that out of 15 buildings depicted, 7 were completely destroyed (EMS-98 Grade 5), indicating a catastrophic loss of structural integrity. The most dangerous zones, classified as EMS-98 Grade 5, include the south-east (Hot Spot 1) and the south (Hot Spot 2 and Hot Spot 3) of the photo. These areas are estimated to have experienced complete destruction, with no visible structures remaining.
+
+Meanwhile, the northern part of the photo, centered around coordinates (493, 273), shows a higher degree of safety, with three distinct safe areas. Safe Area 1, located around (493, 273), is approximately 420 pixels from the nearest estimated damage. Safe Area 2, situated around (466, 100), is just 398 pixels from the nearest damage. Safe Area 3, positioned around (627, 341), is 353 pixels from the nearest damage. These areas are considered relatively unaffected by the flood but require thorough inspection to confirm their safety.
+
+Immediate assistance is needed to rescue those trapped and provide aid to the severely damaged areas. Stay tuned for updates and follow our coverage for the latest information. #LibyaFlood #DisasterResponse #UrgentAid

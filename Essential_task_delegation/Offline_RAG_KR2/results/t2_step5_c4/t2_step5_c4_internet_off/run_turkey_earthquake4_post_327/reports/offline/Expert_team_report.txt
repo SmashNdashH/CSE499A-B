@@ -1,0 +1,18 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The earthquake caused significant damage, with 32 buildings destroyed and 11 moderately to heavily damaged. Debris was scattered across several zones, and the road network was disrupted due to water accumulation. Open-space ground also showed signs of flooding. The disaster grades indicate severe structural and non-structural impacts, consistent with the model's estimates.
+
+## Description of the photos and the estimated damage
+The earthquake caused significant damage, with 32 buildings destroyed and 11 moderately to heavily damaged. Debris was scattered across several zones, and the road network was disrupted due to water accumulation. Open-space ground also showed signs of flooding. The disaster grades indicate severe structural and non-structural impacts, consistent with the model's estimates.
+
+## Disaster grade of each location
+The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:
+- Destroyed buildings: 32: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damaged buildings: 11: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Intact buildings: 54: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The estimated damage indicates severe structural and non-structural impacts, with 32 buildings completely destroyed and 11 more severely damaged. The hotspots identified in the north-west and north-east regions require immediate attention due to high concentrations of structural damage. Efforts should focus on clearing debris, stabilizing partially collapsed structures, and assessing safety in these areas to prevent further risks. Additionally, road networks must be cleared of water accumulation to restore accessibility.

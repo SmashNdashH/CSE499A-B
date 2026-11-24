@@ -1,0 +1,12 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the disaster assessment and guidelines, emergency shelters should be established in safe areas identified in the post-disaster analysis. According to Sphere Handbook 2018, Shelter and Settlement, the minimum living space per person is 3.5 square meters, with adjustments for cold climates or urban settings. Given the extensive destruction of the analyzed area, safe areas in the north-east and south-west are suitable for temporary shelter. These locations are at least 94 and 64 pixels away from the nearest estimated damage, respectively, ensuring safety and access to essential services. The priority is to provide adequate living spaces with enclosed structures, ensuring privacy and protection from the elements, while maintaining access to basic amenities such as cooking, toilets, and bathing facilities.
+
+## Hospitals
+Given the extensive destruction of the analyzed area, no intact structures remain to serve as hospitals. Therefore, no immediate action is required for establishing temporary medical facilities. However, based on the guidelines provided by INSARAG, it is crucial to ensure that the medical evacuation plan is reviewed and updated to handle potential rescues effectively. Medical staff must be prepared to manage casualties and ensure hygiene standards are maintained at temporary shelters or designated safe areas. Additionally, it is essential to establish a system for the safe transfer of rescued individuals to nearby hospitals, considering the lack of intact structures, by coordinating with local authorities and medical teams to develop alternative arrangements.
+
+## Immediate transportation recovery
+The priority for immediate transportation recovery is to reopen the road network in the north-east and south-west regions, as these areas are identified as safe zones with minimal damage. Ensuring connectivity will facilitate the delivery of emergency supplies, the deployment of rescue teams, and the evacuation of affected residents. Additionally, clearing debris from these zones will enable swift access to critical infrastructure and support the overall recovery process.

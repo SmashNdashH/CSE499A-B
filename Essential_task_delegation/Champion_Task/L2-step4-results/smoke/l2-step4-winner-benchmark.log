@@ -1,0 +1,33 @@
+[{"stream_name":"stderr","time":8.336713653,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.336792982,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.33680573,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.33681036,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.986001157,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.986034915,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.986039715,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.986043555,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":22.312869941,"data":"✓ {'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'peft': '0.22.0'}, python 3.13.16; torchao: not installed\n"}
+,{"stream_name":"stdout","time":22.31637318,"data":"  GPUs: ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":50.014913968,"data":"✓ L2 step 4  [SMOKE TEST]: the winner is (c): primary accuracy 35.95% (b) against 45.12% (c), exact McNemar p = 0.0000\n"}
+,{"stream_name":"stdout","time":51.622286075,"data":"✓ 10,675 optical questions {'BDC': 3583, 'DSR': 2007, 'BBR': 2006, 'DRE': 1868, 'ORR': 858, 'DTR': 353}; 0 with an image missing (counted wrong)\n"}
+,{"stream_name":"stdout","time":52.312440401,"data":"0 already answered; 30 to do\n"}
+,{"stream_name":"stdout","time":150.664765883,"data":"All answered after 0.01 h\n"}
+,{"stream_name":"stdout","time":150.735609611,"data":"task  questions  answered  3B_c_%  new_7B_full_%  base_7B_paper_%\n"}
+,{"stream_name":"stdout","time":150.735634055,"data":" DTR          5         5    20.0          76.77             66.6\n"}
+,{"stream_name":"stdout","time":150.735679144,"data":" BBR          5         5    20.0          19.99              4.7\n"}
+,{"stream_name":"stdout","time":150.735687122,"data":" BDC          5         5    20.0          30.31             34.2\n"}
+,{"stream_name":"stdout","time":150.735691919,"data":" DRE          5         5    40.0          33.03             29.3\n"}
+,{"stream_name":"stdout","time":150.735696729,"data":" DSR          5         5    20.0          40.46             28.3\n"}
+,{"stream_name":"stdout","time":150.735706922,"data":" ORR          5         5    60.0          34.62             23.9\n"}
+,{"stream_name":"stdout","time":150.735710979,"data":"\n"}
+,{"stream_name":"stdout","time":150.735714084,"data":"Building counting: {'accuracy_%': 20.0, 'median_count_error_%': 17.2, 'answered_with_one_option_%': 100.0, 'no_image_rule_%': 80.0}\n"}
+,{"stream_name":"stdout","time":150.735717422,"data":"✓ Wrote /kaggle/working/L2S4: results.csv, per_question.csv, answers.jsonl, README.md, config.json\n"}
+,{"stream_name":"stderr","time":157.072924611,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":157.072958969,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":157.22250352,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":157.222549661,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":158.021555254,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":158.123973458,"data":"[NbConvertApp] Writing 231218 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":160.815945102,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":161.483246577,"data":"[NbConvertApp] Writing 542488 bytes to __results__.html\n"}
+]

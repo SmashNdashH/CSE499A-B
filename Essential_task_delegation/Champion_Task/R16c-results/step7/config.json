@@ -1,0 +1,80 @@
+{
+ "task": "R16c step 7",
+ "smoke_test": false,
+ "pairs": 645,
+ "clean_pairs": 605,
+ "seeds": [
+  42,
+  43,
+  44
+ ],
+ "biases": {
+  "42": [
+   0.0,
+   -1.75,
+   -4.0,
+   -1.25
+  ],
+  "43": [
+   0.0,
+   -1.0,
+   -4.0,
+   -2.0
+  ],
+  "44": [
+   0.0,
+   -2.0,
+   -4.0,
+   -3.5
+  ]
+ },
+ "crop": 128,
+ "margin": 32,
+ "min_area": 20,
+ "small": 48,
+ "sr_models": {
+  "S1": "caidas/swin2SR-classical-sr-x2-64",
+  "S2": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.1/RealESRGAN_x2plus.pth"
+ },
+ "swin2sr_revision": null,
+ "realesrgan_sha256": "49fafd45f8fd7aa8d31ab2a22d14d91b536c34494a5cfe31eb5d89c2fa266abb",
+ "tile": 512,
+ "tile_pad": 16,
+ "sr_devices": [
+  "cuda:0",
+  "cuda:1"
+ ],
+ "sr_photo_seconds": {
+  "S1": 17.82,
+  "S2": 1.46
+ },
+ "sr_pair_seconds": {
+  "S1": 23.93,
+  "S2": 1.55
+ },
+ "pairs_super_resolved": 633,
+ "cell6_minutes": 281.2,
+ "published": {
+  "42": 0.3161,
+  "43": 0.3051,
+  "44": 0.2982
+ },
+ "score_tolerance": {
+  "42": 0.0005,
+  "43": 0.0015,
+  "44": 0.0015
+ },
+ "macro_published": {
+  "42": 0.7367,
+  "43": 0.7303,
+  "44": 0.7541
+ },
+ "macro_tolerance": 0.003,
+ "consistency_db": 22,
+ "resamples": 10000,
+ "candidate": "S1",
+ "passes": false,
+ "torch": "2.11.0+cu130",
+ "transformers": "5.20.2",
+ "opencv": "4.14.0"
+}

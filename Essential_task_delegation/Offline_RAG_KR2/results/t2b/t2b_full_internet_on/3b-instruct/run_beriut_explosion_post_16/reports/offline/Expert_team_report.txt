@@ -1,0 +1,26 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The satellite imagery analysis reveals severe damage following the explosion in Beriut, with 8 out of 10 buildings classified as Grade 5 destruction under the EMS-98 guidelines, indicating total or near-total collapse. Additionally, 2 buildings were assessed as suffering moderate to very heavy damage (Grades 2 to 4), characterized by cracks in walls, fall of plaster, and partial structural failures. No buildings were found intact, suggesting minimal to negligible damage. The hot spots, particularly around the northeast and southeast corners of the photo, show the most concentrated damage, while open ground areas in the northwest and west provide some safety buffer zones.
+
+## Description of the estimated damage
+The satellite imagery analysis indicates severe damage following the explosion in Beriut. Out of the ten buildings depicted in the pre-explosion photo, eight were classified as Grade 5 destruction under the EMS-98 guidelines, signifying total or near-total collapse. Two additional buildings were assessed as suffering moderate to very heavy damage (Grades 2 to 4), characterized by cracks in walls, fall of plaster, and partial structural failures. Notably, no buildings were found intact, suggesting minimal to negligible damage.
+
+The hot spots, which represent the most concentrated areas of damage, are located in the northeast and southeast corners of the photo. Specifically, the first hot spot is centered around coordinates (871, 225) and covers a zone of approximately 287,383 pixels. The second hot spot is situated around (991, 840) and spans a zone of roughly (number not available offline). These hot spots indicate the highest density of damage within the affected area.
+
+In contrast, there are three safe areas where open ground provides some buffer against the estimated damage. The first safe area is located around (100, 100) and measures 519 pixels from the nearest estimated damage. The second safe area is positioned around (100, 250) and is 483 pixels away from the nearest damage zone. Lastly, the third safe area is situated around (100, 400) and is 464 pixels from the nearest estimated damage point.
+
+These findings underscore the catastrophic nature of the explosion, with nearly all structures reduced to rubble and debris, leaving little to no structural integrity remaining. The presence of safe areas, albeit limited, suggests that some buildings may have sustained less severe damage compared to others, but overall, the impact appears to be uniformly devastating across the entire area.
+
+## Disaster grade of each location
+The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:
+- Buildings estimated destroyed: 8: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Buildings estimated damaged: 2: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Buildings estimated intact: 0: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The estimated damage from the satellite imagery analysis indicates that nearly all buildings in the affected area have been severely damaged or destroyed, with eight buildings classified as Grade 5 destruction (total or near-total collapse) and two more assessed as Grades 2 to 4 (moderate to very heavy damage). The hot spots, particularly those in the northeast and southeast corners of the photo, are the most critical areas requiring immediate attention. These hot spots cover zones of approximately 287,383 and (number not available offline), respectively, and are likely to contain collapsed structures, unstable debris, and potential hazards such as falling objects or unstable walls.
+
+Given the severity of the damage, priority should be given to clearing the hot spots to ensure safe access and rescue operations. This will involve removing large debris, stabilizing unstable structures, and ensuring that hazardous materials are safely managed. Once these areas are cleared, teams can then focus on assessing and mitigating the damage in the surrounding areas, prioritizing buildings that are structurally compromised but not yet fully collapsed. This approach will allow for a more efficient and effective response, minimizing further risks and facilitating the recovery process.

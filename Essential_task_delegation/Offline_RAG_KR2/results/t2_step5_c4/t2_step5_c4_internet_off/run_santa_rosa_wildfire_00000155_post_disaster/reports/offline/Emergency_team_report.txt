@@ -1,0 +1,12 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+The emergency shelters will be established in the intact areas identified in the post-disaster analysis, specifically in the center of the image. According to the Sphere Handbook 2018, Shelter and Settlement [SPHERE-3-p1], [SPHERE-3-p2], and [SPHERE-3-p4], the minimum living space requirement is 3.5 square meters per person, excluding cooking space, bathing area, and sanitation facilities. Given the intact nature of these areas, they will provide sufficient space for essential domestic activities, ensuring privacy and protection from the elements. The location and settlement planning [SPHERE-2-p1], [SPHERE-2-p2], and [SPHERE-2-p4] indicate that these areas are safe and secure, with adequate space for essential services and access to critical facilities. Therefore, the number of emergency shelters will be determined based on the number of intact areas, with each shelter accommodating the necessary living space for displaced residents.
+
+## Hospitals
+The number of hospitals or medical points will be determined based on the number of intact areas identified in the post-disaster analysis, specifically in the center of the image. According to the INSARAG Guidelines 2020, Vol. III Operational Field Guide, Section 6.2 Operations [INSARAG3-6.2-p2], the medical evacuation plan should check for the availability of local and international medical resources, and ensure proper casualty handover procedures. Medical staff must be aware of local procedures for accepting patients into the local system, and a system for repatriation to the home country for further treatment should be developed. The number of medical points will be proportional to the number of intact areas, ensuring that rescued people can be efficiently transported and treated.
+
+## Immediate transportation recovery
+The immediate transportation recovery should prioritize reopening the road network in the intact areas identified in the center of the image. These areas are safe and secure, with adequate space for essential services and access to critical facilities, as per the Sphere Handbook 2018, Shelter and Settlement [SPHERE-2-p1], [SPHERE-2-p2], and [SPHERE-2-p4]. Reopening these roads will facilitate the movement of emergency responders, supplies, and displaced residents, ensuring timely aid delivery and facilitating the setup of emergency shelters and medical points.

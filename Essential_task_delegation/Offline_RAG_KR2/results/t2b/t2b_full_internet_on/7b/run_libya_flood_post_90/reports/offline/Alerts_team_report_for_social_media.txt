@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The disaster has caused severe damage to the built environment, with 47% of buildings completely destroyed and 20% moderately damaged. The most affected areas include zones in the south-east and south of the image, where substantial structural and non-structural impacts were observed. The hot spots, which indicate the densest areas of damage, are situated in the south-east and south of the image, covering zones of 42481 and 34727 pixels, respectively. These areas are classified as hot spot 1 and hot spot 2. Immediate attention is required for clearing debris and stabilizing partially collapsed structures in these zones. Safe areas, such as open ground in the north of the image, are located at least 353 pixels away from the nearest estimated damage.
+
+## Social media news
+The flood has caused severe destruction in Libya, with 47% of buildings completely destroyed and 20% moderately damaged. The most affected areas include zones in the south-east and south of the image, where substantial structural and non-structural impacts were observed. The destroyed buildings are concentrated in the south-eastern region, while the moderately damaged ones are scattered across the southern part of the image. Safe areas, such as open ground in the north of the image, are located at least 353 pixels away from the nearest estimated damage. Immediate attention is required for clearing debris and stabilizing partially collapsed structures in these zones.

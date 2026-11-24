@@ -87,7 +87,7 @@ Checked on 4 Nov: R11's table and T1's hot spots share only 7 images (2,437 imag
 - **Running in parallel, not blocking it:** T2 and T2b, L2 and L3, and T3.
 - **Owners stay suggestions:** Abrar on the focus track and T3; Ridita on T2 and T2b; Noman on L2 and L3; Tamanna on L4; Aryan on the heatmap on the chain's map.
 
-**Done when:** one internet-off run takes a before-and-after test pair all the way to a report, every number in the report matches the table (zero contradictions, T2 step 7), and the chain's map and counts are scored on the same images. E7's rule can change which model is the chain; see §4.
+**Done when:** one internet-off run takes a before-and-after test pair all the way to a report, every number in the report matches the table (zero contradictions, T2 step 7), and the chain's map and counts are scored on the same images. E7's rule can change which model is the chain; see §4. *(20 Nov: the first and third parts are met. T2 step 5 took two test pairs to reports with the internet off, and E7 scored the map and counts on the same photos. Zero contradictions isn't met yet: on one pair the 7B turned a count into a wrong percentage. Later on 20 Nov, step 5's run 2 with two fixes meets it by T2 step 7's rule: 0 wrong of 191 numbers. Read by eye, though, some damage counts are reused as staff numbers, and a stricter rule is proposed. **22:08: met on both test pairs.** Step 5's run 4 has 0 wrong, unsourced or misused numbers under both versions of step 7's rule, offline, from C4's facts.)*
 
 ## 2. Tasks at a glance
 
@@ -345,7 +345,7 @@ These apply to every task, so an agent doesn't have to rediscover them.
   - **Table:** 125,439 rows. On the sharper photos, 57,849 outlines, 24.5% more rows than E7 step 2's joined blobs (touching buildings separated; expected 5–20%). On xBD photos, 67,590 patches of R11's pixels.
   - **Hot spots:** marked points within 20 px of real damage 0.569 on the 2,007 clean pairs (expected 0.70–0.85: missed), but 0.827 on the 687 photos with destroyed buildings (T1 v3 on validation: 0.851). The shortfall is on photos without destroyed buildings.
   - **Counting, beside:** C4 34.89% on E5's clean questions, against R11's 32.53% and find-then-grade's 32.70%, beyond chance (p < 0.0001 and 0.0034); 35.34% on all 3,580, above O2's 34.2% bar, with the option flaw stated beside it.
-- **Next: Ridita's T2 step 5** reads `E7-results/step3/buildings_c4.sqlite` and `hotspots.json`. Optional checks on the PC (Abrar's call): counting from the outline rows; the hot-spot shortfall's cause; a stricter hot-spot rule tuned on validation.
+- **Next: Ridita's T2 step 5** reads `E7-results/step3/buildings_c4.sqlite` and `hotspots.json`. Optional checks on the PC (Abrar's call): counting from the outline rows; the hot-spot shortfall's cause; a stricter hot-spot rule tuned on validation. *(20 Nov: step 5 done by Abrar; see T2, step 5.)*
 - **Step 3b done (20 Nov, PC, 6.0 min, at Abrar's request): the three optional checks; every guess missed.** [Results](Champion_Task/E7-results/step3b/README.md).
   - **Counting from the rows:** 33.18% against the joined blobs' 34.89% (p < 0.0001). The benchmark's true count joins touching buildings, so separate rows overshoot it. O2's figure stays the blobs'.
   - **The hot-spot shortfall:** from the unseen test photos, not the maps (C4 0.565 against R9's 0.584 on the same validation photos).
@@ -611,6 +611,10 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
       - Its verdict rule, fixed before the run: all three seeds above 0.30 on clean data means met; otherwise met on the mean only; otherwise not met.
       - [r16c-step5b-third-grader-seed.ipynb](Champion_Task/r16c-step5b-third-grader-seed.ipynb).
     - **Step 6, aligned crops for the grader: done 18 Nov (account 1, 18 min).** Shifting the after-photo back by phase correlation at grading time does not help the three step-5/5b graders on the 605 clean pairs: V1 (pair-aligned) scores 0.3048 Destroyed IoU and V2 (pair + local shift) 0.3014, against V0's 0.3066 (10,000 redraws of V1 minus V0: −0.0018, 95% interval −0.0072 to +0.0029, `passes: false`). Results in [R16c-results/step6/](Champion_Task/R16c-results/step6/README.md); [r16c-step6-aligned-crops.ipynb](Champion_Task/r16c-step6-aligned-crops.ipynb).
+    - **Step 7, super-resolved crops for the grader (our supervisor's SR suggestion, Research_Directions §8.8): built 20 Nov; run 20 Nov on account 4 (4.7 h). It doesn't pass, and SR is closed for the grader.** Destroyed IoU 0.3066 → 0.3025 (Swin2SR) and 0.3006 (Real-ESRGAN), and macro F1 0.732 → 0.715 and 0.701, both worse beyond noise ([results](Champion_Task/R16c-results/step7/README.md)). [r16c-step7-super-resolved-crops.ipynb](Champion_Task/r16c-step7-super-resolved-crops.ipynb). Step 6's design with one change: a building whose longest side is under 48 px takes its crops from photos enlarged 2× by Swin2SR (S1) or Real-ESRGAN (S2). Everything else stays as in V0, with the same three graders and no training.
+      - **Scores:** destroyed IoU on the 605 clean pairs, and the graders' macro F1 on the true validation buildings.
+      - **Rule, fixed before the run:** the better of S1 and S2 passes only if its destroyed IoU gain over V0 is above noise (10,000 redraws, as step 6). If it passes, step 7b confirms it once on the test pairs, and a grader retrained on SR crops becomes the next candidate.
+      - About 1–2 GPU hours, estimated. Its smoke test prints a better estimate.
 
 ## 7. System track: in parallel, mostly no segmentation training
 
@@ -684,6 +688,31 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
   2. Take the xBD damaged-building-counting and disaster-type questions.
   3. **First** check that their xBD tiles don't overlap our training tiles. Report the overlap and score only the clean ones.
   4. Run H1 V1 and V2.
+- **Built 21 Nov (Abrar's go: "T2b, then H4"),** as [h4-geobench-xbd-counting.ipynb](Champion_Task/h4-geobench-xbd-counting.ipynb) on account 4. Its inputs are in [H4-inputs/](Champion_Task/H4-inputs/): the questions, the PC's hashes and the package list.
+  - **The questions:** GEOBench-VLM's xBD questions at a pinned revision: 1,050 damaged-building counting questions on 210 before-and-after pairs (five per pair: no damage, minor, major, destroyed, damaged of any level), and 2 × 210 disaster-type questions. The published scores to compare with (its Table 3): GPT-4o 56.67%, Qwen2-VL 50.00%.
+  - **The photos:** GEOBench doesn't ship xBD's photos, and the PC has only xBD's training set. So they come from a public Kaggle copy of full xBD (`qianlanzz/xbd-dataset`, Abrar's choice). That copy's 5,598 training photos must be the same photos as the PC's copy, or the run stops.
+    - *(21 Nov, 07:26: the first smoke test stopped at this check. The copy's `tier1/` folder holds the same files, but only 28 of 5,598 are byte-identical; a PNG saved again with other compression differs in bytes, not in the photo. The check now passes on the same bytes or the same decoded pixels, E5's pixel hash, in whichever of the copy's folders holds them. The second smoke test runs from 07:33.)*
+  - **Overlap:** E5's fingerprints and near-copy rule, against all of DisasterM3 Instruct's photos. Only clean pairs are scored.
+  - **Our counting** is C4 on xBD photos: R11 with 8-view TTA, blobs of at least 20 px, then the nearest option, as in E7. Minor and major have no class of their own, so they get the damaged count; this mismatch is reported apart.
+  - **Our 7B** answers with the DisasterM3 authors' prompts and scorer, as in L2 step 4. Each counting question is also asked without its options, for a number.
+  - **Found while building: accuracy on these options can't show counting well.** GEOBench builds the options around the true count, and the true count is 0 in 49% of the questions. So rules that never see the photo score: the middle option 37.4%; the smallest option 49.2%, about Qwen2-VL's published score; a rule that knows only the question type 68.9%, above GPT-4o.
+  - **Found in the third smoke test, fixed before the full run:**
+    - GEOBench's "damaged, any level" answer counts every building, undamaged ones included: on all 210 pairs it equals no damage + minor + major + destroyed, against its own wording. So those questions are reported apart (our count of all buildings), and the rule uses the no-damage and destroyed questions.
+    - Asked for a number, our 7B begins a sentence, which the 8-token limit cut off. It now gets 64 tokens, and the first number counts.
+    - The smoke test also found 5 of its 10 pairs in DisasterM3 Instruct with the same pixels.
+  - **The rule, fixed before the run:** on the clean pairs' no-damage and destroyed questions (the types our classes can answer and whose answers mean what they say), our counting holds only if both of these pass:
+    1. its accuracy beats our 7B's (McNemar, p < 0.05);
+    2. its count is closer to the true count than the 7B's own number more often than not (sign test, p < 0.05).
+  - **Expectation, fixed before the run:**
+    - the copy check passes;
+    - the overlap isn't predicted;
+    - our counting 35–55% and our 7B 25–45%, so both tests pass;
+    - both below the question-type rule (65.7% on the no-damage and destroyed questions);
+    - our 7B at least 55% on disaster type.
+  - **Done 21 Nov (73 min): the rule fails.** [Results](Champion_Task/H4-results/H4/README.md).
+    - **Overlap:** 119 of 210 pairs are in DisasterM3 Instruct; 91 clean pairs are scored.
+    - **On the 182 clean questions:** accuracy, ours 36.3% against the 7B's 50.0% (the 7B ahead); closer count, ours 110 times against 54 (ours ahead). The question-type rule gets 77.5% on them.
+    - **So GEOBench's xBD counting can't support the claim either way.** O2 stays on DisasterM3's clean benchmark. Our 7B's disaster type falls from 61–72% on leaked pairs to 35–46% on clean ones.
 
 ### T2 · DisasTeller on local models
 - **Source:** [Plan] the CSE499A future work "DisasTeller backend swap" and KR3.
@@ -707,8 +736,12 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
      - *(4 Nov: Ridita's `disasteller_inputs.py` loads both, but the main script doesn't call it yet. Two things to change when it's connected:*
        - *Read the chain's table and hot spots (§1b, E7). Today's two files share only 7 images. (19 Nov: ready, E7 step 3's `buildings_c4.sqlite` and `hotspots.json`, both from C4 on the 2,065 test photos. On xBD photos a row is a patch that can hold several buildings.)*
        - *An image missing from the table returns all zeros with status "ok", so a report could state "0 buildings". Missing data must stop the run or be stated as missing.)*
+     - **Done 20 Nov (Abrar), in new files; run on Kaggle account 3, internet off, 19 min** ([results](Offline_RAG_KR2/results/t2_step5_c4/README.md); [the ledger](Task_Ledger.md)).
+       - [fixed_flow_c4.py](Offline_RAG_KR2/disasteller_offline/fixed_flow_c4.py) gives every report C4's facts for one test pair. The code writes the grades and the map reading, and a pair without facts stops the run.
+       - Two scenes, picked by a rule: Turkey (one row per building) and an xBD wildfire pair (one row per patch). Both pass the five pass rules.
+       - The counts are copied exactly on Turkey. On the xBD pair, all six reports turn "96 destroyed areas" (of 144) into "96% of the area", and the human-resource reports invent staffing numbers. A fix is Abrar's choice before step 7 (tracker, "Needs you now").
   6. Offline by default: no web tools and no "search the internet" wording unless an online switch is turned on, and new offline wording for tasks 3–6. Details and the test rule: [System_Design_Notes.md §2](System_Design_Notes.md) (recommended 24 Oct). **Done 27 Oct (Ridita) in the copy, checked 28 Oct:** offline, the web tools aren't imported or given to any agent, and CrewAI's telemetry is off. *(4 Nov: steps 1–3 are built too, on the new 7B through local vLLM. A laptop run against a stand-in server passed; Kaggle practice run 2 is next. Steps 5 and 7 are left.)*
-  7. Consistency check (added 26 Oct, after TimeSpot's consistency-violation rates; [Paper_Audit §4.15](Paper_Audit_and_Integration_Plan.md)): every number in each report is compared with the fixed queries on H2's table, and the run passes only with zero contradictions.
+  7. Consistency check (added 26 Oct, after TimeSpot's consistency-violation rates; [Paper_Audit §4.15](Paper_Audit_and_Integration_Plan.md)): every number in each report is compared with the fixed queries on H2's table, and the run passes only with zero contradictions. *(20 Nov: next, on C4's table, after a fix. Step 5's first look found a count turned into a wrong percentage, a garbled number and invented staffing numbers.)* **Done 20 Nov** ([notebook](Offline_RAG_KR2/t2_step7_number_check.ipynb), [results](Offline_RAG_KR2/results/t2_step7/README.md)): run 1 fails with 13 wrong and 5 unsourced numbers. Run 2, with fix (a) (the shares in the facts) and fix (b) (the same check while the model writes), passes with 0 and 0 of 191. **Proposed, a version 2 of the rule:** a damage count used as anything else, such as staff, teams or shelters, counts as wrong. Run 2 reuses counts that way 7 times. *(Later on 20 Nov: rule 2 was adopted. It finds 9 in run 2, and run 3, with rule 2 in the check while writing, still has 10, all in Turkey's staffing sections, because those sections ask for staff and shelter numbers the facts don't give. Next is Abrar's choice of fix (tracker, "Needs you now", item 4).)* **Run 4 (both fixes: requests that don't ask for numbers the facts lack, and a last guard) passes both rules with 0** ([results](Offline_RAG_KR2/results/t2_step5_c4_fix3/README.md)); the guard never acted.
 - **Outputs:** the same 6 report files as the Gemini run, a log proving no external API calls (run once with internet off after setup), and `README.md` comparing them with the Gemini reports from 20 July.
 
 ### T2b · Who writes the report: the 7B or a small text model (added 4 Nov)
@@ -739,6 +772,33 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
   - The base 7B, which L2b already uses for explanations: worth adding as a third writer only if the 7B falls short.
   - Fine-tuning a writer on DisasterM3's report task: a new module, so it waits (§1b).
   - An AI judge or human rubric as the main score ([System_Design_Notes §2.4](System_Design_Notes.md)): both grade wording but don't check numbers exactly, so they stay secondary.
+- **Built 21 Nov (Abrar's go: "T2b, then H4", on account 4):**
+  - **Files:** [t2b_writer_test.ipynb](Offline_RAG_KR2/t2b_writer_test.ipynb) runs both writers; [t2b_score.ipynb](Offline_RAG_KR2/t2b_score.ipynb) scores them on the PC; [t2b_flow.py](Offline_RAG_KR2/disasteller_offline/t2b_flow.py) is step 5's flow with the photo tool off; [make_t2b_scenes.py](Offline_RAG_KR2/make_t2b_scenes.py) and [make_t2b_upload.py](Offline_RAG_KR2/make_t2b_upload.py) make the inputs. Step 5's files are unchanged.
+  - **The ten scenes, by a rule fixed before any report:** for each event, its clean test pair with the most truly destroyed pixels, then the ten events with the most.
+    - From the sharper photos: Libya's flood, Turkey's and Noto's earthquakes, Hawaii's wildfire and Beirut's explosion.
+    - From xBD: Santa Rosa's wildfire, Palu's tsunami, and the Joplin, Moore and Tuscaloosa tornadoes.
+    - Step 5's two scenes are among them.
+  - **The photo tool is off for both writers.** A text model can't see photos, so the Expert report asks for the estimated damage from the facts instead of photo descriptions.
+  - **The same decoding for both:** temperature 0.2 and seed 0, and repetition penalty 1.05. Qwen2.5-3B-Instruct's own top-p 0.8 and top-k 20 are switched off on its server.
+  - **How the rule's counts are made (fixed before the run):**
+    - **Contradictions** are the numbers step 7's check flags as wrong or misused in what the writer left after being asked again. Those are the numbers the last guard had to replace, plus any flagged in the finished reports. The guard came after this rule was written, so counting only the finished reports would give both writers 0.
+    - **Fake citations** are IDs in the finished reports that aren't in the index.
+    - **Finished** means all sections were written, none is an error, and the scene passes the five pass rules.
+  - **Expectation, fixed before the run:**
+    - both writers finish all 60 reports;
+    - at most 3 contradictions and at most 2 fake citations per writer;
+    - the text model's sections are at least 1.2 times longer (median), and it takes at most 0.7 times the 7B's minutes per scene;
+    - which writer the rule picks isn't predicted.
+  - **Account 4 doesn't have step 5's inputs, which are private on account 3.** So the run downloads both models at pinned commits, plus step 5's exact package versions, with internet on. This happens before the flow starts.
+    - The flow itself runs with Hugging Face offline, and its network log must show no outside connection (pass rule 3).
+    - The code, the 20 photos and an unchanged copy of the guideline index are private datasets on account 4.
+  - **Dry run on the PC** (stand-ins for the model and the search): passed on all ten scenes. No question to the model carried a picture, and the facts had no photo descriptions. Each scene got its own facts in the right units, and the number check still asked again.
+  - **Done 22 Nov: our 7B stays the writer** ([results](Offline_RAG_KR2/results/t2b/README.md)).
+    - **The run:** both writers finished all 60 reports, and all ten scenes passed the five pass rules.
+    - **The rule:** contradictions, 7B 3 and Qwen2.5-3B-Instruct 15 (the text model fails); fake citations, 3 and 0; reports finished, 60 and 60.
+    - **The guard** replaced every contradiction in the finished reports.
+    - **New gap in the chain:** the 7B left 3 made-up guideline IDs in two human-resource reports (none on step 5's two scenes). An ID guard like the number guard would close it. *(23 Nov: built in `fixed_flow_c4.py`. Its Kaggle check on Palu and Beirut passed: made-up IDs 3 → 0, all reports finished, the pass rules passed. [Results](Offline_RAG_KR2/results/t2b_id_guard/README.md); ledger, T2b.)*
+    - **Expectation:** the 7B's contradictions (≤ 3), finishing and the 3B's longer sections met; the 3B's contradictions, the 7B's fake citations (≤ 2) and the 3B being faster missed (it was 2.9 times slower).
 
 ### T3 · Unified offline demo and public showcase
 - **Source:** [Plan] the CSE499A future work "unified deployment" and O3; Tamanna's [Plan 3](Tamanna_task_2/Plan_3/Plan_3_Offline_Interactive_Demo.md); the showcase plan agreed 24 Oct, with its reasoning and what last season's winner showed in [System_Design_Notes.md §4](System_Design_Notes.md).
@@ -827,6 +887,7 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
 - **Done when:** the 7B's six-task scores are re-measured at the paper's setting, and L2 uses the better of the two models as its teacher.
 
 ### L0b · Can the 7B learn to see damage? (added 4 Nov; a side experiment)
+- *(22 Nov: L0b step 2 combined it with the grader by two rules fixed in advance. Neither helps: at real class shares L0b's "destroyed" is right 23% of the time. R16c step 8 then re-tuned the grader's own "destroyed" setting, with no gain either. Fixing L0b itself is written up as a path not taken in [the ledger](Task_Ledger.md), under L0b: 2a correct it for real class shares, about 1 GPU h; 2b retrain it with the before-photo, the outline and the real mix, about 3 GPU h. Each has its hypothesis, method, rule and the reasons it wasn't run.)*
 - **Source:** [Plan] Abrar's question: why not train the vision encoder for our own benefit?
 - **Goal:** O2 and O3. It decides whether a full run with the vision encoder trained is worth its GPU hours.
 - **Why:**
@@ -883,8 +944,15 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
         - the overflow is in one vision layer (`model.visual.blocks.31.mlp.down_proj`), on 1.23% of examples;
         - keeping it in full precision fixes it at no cost;
         - the forward pass is 1.74 s per example, so the epoch stays about 53 h per mode with the backward pass.
-      - **19 Nov: option A (Abrar's decision).** Both 3Bs get one full epoch from `l2-step2-train-3b.ipynb`, which carries step 2b's fix since 19 Nov: (c) on account 1, which has about 55 GPU h a week with its Colab boost, and (b) on accounts 2 and 3, taking turns. Both should be done by about 29 Nov; then the held-out choice and the benchmark take about 4.5 h.
-      - **19 Nov (later): the sessions are started by a script on Abrar's PC** ([kaggle-runner/runner.ps1](Champion_Task/kaggle-runner/runner.ps1), Windows Task Scheduler every 15 minutes, Abrar's option (b)). It checks each ended session before it starts the next: finite losses, real updates, steps up from the right checkpoint, that checkpoint on Hugging Face. It stops a mode on anything unexpected. The 3B's Hugging Face repository is already gone, so both modes start fresh. It starts with one real test session: (c)'s smoke test on account 1. *(19 Nov, 22:53: the test stopped in Cell 2, because a run started from the command line can't read Kaggle's `HF_TOKEN` secret. How such runs get a write token is Abrar's choice; the options are in the tracker, "Needs you now", item 0.)* *(20 Nov: a fine-grained token limited to that one repository, kept as a private dataset on each account. The test passed. Since 05:35 the timer runs both, every 3 minutes from 07:05. Both 1-hour trial sessions passed with every step a real update; at full-size steps it's 3.4–3.5 s per example, so about 51 h per 3B. Both should finish around 22 Nov.)*
+      - **19 Nov: option A (Abrar's decision).** Both 3Bs get one full epoch from `l2-step2-train-3b.ipynb`, which carries step 2b's fix since 19 Nov: (c) on account 1, which has about 55 GPU h a week with its Colab boost, and (b) on accounts 2 and 3, taking turns. Both should be done by about 29 Nov; then the held-out choice and the benchmark take about 4.5 h. *(20 Nov: the sessions are started by a script on Abrar's PC since 05:35; at 17:50 both were at step 45 of about 210, so both should be done about 22 Nov.)*
+      - **19 Nov (later): the sessions are started by a script on Abrar's PC** ([kaggle-runner/runner.ps1](Champion_Task/kaggle-runner/runner.ps1), Windows Task Scheduler every 15 minutes, Abrar's option (b)). It checks each ended session before it starts the next: finite losses, real updates, steps up from the right checkpoint, that checkpoint on Hugging Face. It stops a mode on anything unexpected. The 3B's Hugging Face repository is already gone, so both modes start fresh. It starts with one real test session: (c)'s smoke test on account 1. *(19 Nov, 22:53: the test stopped in Cell 2, because a run started from the command line can't read Kaggle's `HF_TOKEN` secret. How such runs get a write token is Abrar's choice; the options are in the tracker, "Needs you now", item 0.)* *(20 Nov: a fine-grained token limited to that one repository, kept as a private dataset on each account. The test passed. Since 05:35 the timer runs both, every 3 minutes from 07:05. Both 1-hour trial sessions passed with every step a real update; at full-size steps it's 3.4–3.5 s per example, so about 51 h per 3B. Both should finish around 22 Nov.)* *(21 Nov, 02:28: (b)'s session 3 crashed at step 80 when Hugging Face's private storage (100 GB on the free plan) filled. Abrar freed 43 GB, and (b) continues from its recovered and checked checkpoint-80 since 03:23. (c) wasn't affected. Expected: (c) about 22 Nov, 15:00; (b) about 16:00.)* *(23 Nov: both done. (c) finished 22 Nov at 13:56 (211 steps, last loss 0.563). (b) finished 23 Nov at 04:50, after a GPU stall on 21 Nov cost it a day (208 steps, last loss 0.633). Run 4, the held-out choice, runs on account 2 since 07:02; run 5 follows.)* *(23 Nov, 09:31: run 4 keeps (c) by the rule.*
+- *Its score: 45.12% against (b)'s 35.95%, p < 0.0001.*
+- *Its lead is in counting and relational reasoning; (b) is ahead on the other three tasks.*
+- *On the held-out counting questions whose options don't give the answer away, (c) gets 56.4%, against 39.0% for a rule that never sees the photo.*
+
+*Run 5 (the benchmark) runs on account 2 and L3's full run on account 3, from 09:33. [Results](Champion_Task/L2-step3-results/full/L2S3/README.md); ledger, L2 step 2.)*
+
+*(23 Nov, 15:30: both benchmark runs lost answers to a half-precision overflow: run 5 lost 327 and L3 220, scored wrong. It's L2 step 2b's overflow, whose fix the evaluation notebooks lacked. Both are rerun with the fix, and (b) is scored too, for Abrar's comparison of every model. Run 4's choice stands. Ledger, L2 step 2 and L3.)*
   - **Built 8 Nov, dry-run checked on the PC:** [l2-step1b-soft-labels](Champion_Task/l2-step1b-soft-labels.ipynb) (account 3; **running 18 Nov**), [l2-step1c-options-rerun](Champion_Task/l2-step1c-options-rerun.ipynb) (account 2; **done 18 Nov: 806 kept of 2,249 answered, [results](Champion_Task/L2-step1-results/options-rerun/L2S1c/README.md)**), [l2-step2-train-3b](Champion_Task/l2-step2-train-3b.ipynb) (`MODE` b on account 3, c ready now), [l2-step3-heldout-select](Champion_Task/l2-step3-heldout-select.ipynb) and [l2-step4-winner-benchmark](Champion_Task/l2-step4-winner-benchmark.ipynb) (account 2). Run steps in the tracker; details in the [ledger](Task_Ledger.md), L2 step 2.
 
 ### L2b · Explanations as a second skill ("why?" on request)
@@ -909,6 +977,11 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
   4. **Before choosing the threshold, check the confidence** (added 26 Oct, from TimeSpot, ICML 2026; [Paper_Audit §4.15](Paper_Audit_and_Integration_Plan.md)): the 3B's expected calibration error and its risk–coverage curve with RC-AUC on the six tasks. TimeSpot found open VLMs overconfident, so calibrate on validation data first (for example, temperature scaling), then pick the threshold from the curve.
   5. Report the share answered by the 3B, the accuracy against the 7B alone, and the latency.
   6. **Measure it where it's meant to run** (added 4 Nov). Every VLM number so far is from a T4: 7B 6.2 GB and 3B 2.6 GB at peak in 4-bit, 3B 7.7 GB in full precision (H2b). So the 7B in 4-bit nearly meets "about 6 GB" already, and the 3B only pays off in 4-bit. Report memory and speed on a laptop with no GPU, through a CPU runtime. Make no phone claim unless it's tested on a phone.
+- *(23 Nov: steps 1–5 built as two notebooks.*
+  - *[l3-4bit-3b-handoff.ipynb](Champion_Task/l3-4bit-3b-handoff.ipynb), Kaggle account 3: memory and speed of the 4-bit 7B, the fp16 3B and the 4-bit 3B, then the 4-bit 3B on the benchmark, with each answer's token scores.*
+  - *[l3-handoff-calibration.ipynb](Champion_Task/l3-handoff-calibration.ipynb), on the PC: the calibration and threshold, from that run and the 7B's saved answers.*
+
+  *4 bits come through bitsandbytes NF4, not AutoAWQ, which is no longer maintained. The rule and expectation are fixed in both notebooks' first cells. The smoke test passed (07:33–07:42): the 4-bit 3B peaks at 3.01 GB on one T4. The full run starts once L2 run 4 names the winner. Step 6, the laptop CPU, is still open. Ledger, L3.)*
 
 ### L4 · EfficientSAM3 against SAM 3
 - **Source:** [Paper] EfficientSAM3 (its paper reports no results yet, so we measure) and [Plan] the edge step of the SAM 3 test plan (Research_Directions §7.4).

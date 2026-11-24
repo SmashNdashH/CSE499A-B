@@ -1,0 +1,163 @@
+{
+  "verdict": "PASSED as a practice run (internet on); the proof needs internet off",
+  "internet": "on",
+  "rules": {
+    "1. The run finished": true,
+    "2. All six reports, each starting 'Mode: offline', each 50+ words": true,
+    "3. Nothing went outside this computer": true,
+    "4. No Gemini library was loaded": true,
+    "5. Every model question got an answer": true
+  },
+  "signals": {
+    "flow": "t2b",
+    "minutes": 15.3,
+    "network_events": 2,
+    "external": [],
+    "guideline_searches": 18,
+    "photo_questions": 0,
+    "map_questions": 0,
+    "map_reading": "made by the code",
+    "map_label_questions": 0,
+    "labelled_map_saved": true,
+    "map_labels_drawn": [
+      4
+    ],
+    "sections_written": 28,
+    "grades_found": [
+      3
+    ],
+    "model_messages_shortened": 0,
+    "model_call_retries": 0,
+    "total_words": 6936,
+    "total_citations": 70,
+    "total_citations_real": 70,
+    "llm_calls_log": true,
+    "agent_calls": 0,
+    "image_calls": 0,
+    "section_calls": 30,
+    "section_words_median": 245.0,
+    "section_words_min": 70,
+    "calls_with_errors": 0,
+    "biggest_prompt_tokens_real": 8994,
+    "biggest_prompt_tokens_estimated": 12813,
+    "lowest_estimate_to_real_ratio": 1.23,
+    "answer_tokens_real": 11722,
+    "minutes_in_model_calls": 15.0,
+    "step_limit_reached": 0,
+    "final_answers_asked_again": 0,
+    "final_answers_kept_short": 0,
+    "photo_descriptions": 0,
+    "photo_descriptions_different": 0,
+    "sticker_questions": 0,
+    "stickers_read": 0,
+    "sticker_words": {},
+    "answers_checked": 27,
+    "answers_asked_again": 3,
+    "answers_second_kept": 3,
+    "answers_kept_with_problems": 3,
+    "problems_left": {
+      "Reconstruction_plan.txt / Assessment of Damage": [
+        "id_without_brackets: SPHERE-appendix-4-p1, SPHERE-5-p2, SPHERE-5-p1, EMS98-2.3-p2",
+        "number_misused: 96"
+      ],
+      "Reconstruction_plan.txt / Reconstruction Needs": [
+        "id_without_brackets: SPHERE-appendix-4-p1, SPHERE-5-p1, SPHERE-5-p2, SPHERE-3-p1"
+      ],
+      "Reconstruction_plan.txt / Plan of Action": [
+        "no_citation"
+      ]
+    },
+    "search_index_load_seconds": 9.6,
+    "search_backend": "numpy + torch",
+    "searches_timed": 18,
+    "search_ms_median": 23.0,
+    "search_ms_p90": 28.2,
+    "search_ms_max": 62.4,
+    "agent_call_seconds_median": null,
+    "agent_call_seconds_p90": null,
+    "agent_call_seconds_max": null,
+    "image_call_seconds_median": null,
+    "image_call_seconds_p90": null,
+    "image_call_seconds_max": null,
+    "section_call_seconds_median": 25.9,
+    "section_call_seconds_p90": 55.4,
+    "section_call_seconds_max": 56.5,
+    "answer_tokens_per_second_median": 13.3,
+    "report_minutes": {
+      "Expert_team_report.txt": 1.1,
+      "Alerts_team_report_for_social_media.txt": 0.7,
+      "Emergency_team_report.txt": 1.3,
+      "Emergency_service_human_resource_allocation.txt": 3.0,
+      "Public_community_report.txt": 2.8,
+      "Reconstruction_plan.txt": 6.3
+    }
+  },
+  "reports": {
+    "Expert_team_report.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 625,
+      "words_outside_headings": 597,
+      "citations": 5,
+      "citations_real": 5,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Alerts_team_report_for_social_media.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 423,
+      "words_outside_headings": 404,
+      "citations": 0,
+      "citations_real": 0,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Emergency_team_report.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 680,
+      "words_outside_headings": 661,
+      "citations": 18,
+      "citations_real": 18,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Emergency_service_human_resource_allocation.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 1603,
+      "words_outside_headings": 1566,
+      "citations": 18,
+      "citations_real": 18,
+      "citations_unknown": [],
+      "not_available_offline": 0,
+      "error_text": false
+    },
+    "Public_community_report.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 1584,
+      "words_outside_headings": 1564,
+      "citations": 13,
+      "citations_real": 13,
+      "citations_unknown": [],
+      "not_available_offline": 1,
+      "error_text": false
+    },
+    "Reconstruction_plan.txt": {
+      "exists": true,
+      "starts_with_mode_offline": true,
+      "words": 2021,
+      "words_outside_headings": 1999,
+      "citations": 16,
+      "citations_real": 16,
+      "citations_unknown": [],
+      "not_available_offline": 3,
+      "error_text": false
+    }
+  }
+}

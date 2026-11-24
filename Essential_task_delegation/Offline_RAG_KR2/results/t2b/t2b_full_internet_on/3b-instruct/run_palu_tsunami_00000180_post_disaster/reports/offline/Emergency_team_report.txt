@@ -1,0 +1,48 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the damage assessment and guidelines provided, the following areas are identified as suitable for emergency shelters:
+
+- **Safe Area 1**: Located around (100, 923), the south-west of the photo. This area offers a safe distance of 459 pixels from the nearest estimated damage. It is estimated to have no visible damage (EMS-98 Grade 1). This area is considered safe and can be utilized for emergency shelter provision. [SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4]
+
+- **Safe Area 2**: Located around (250, 923), the south-west of the photo. This area is also estimated to have no visible damage (EMS-98 Grade 1) and offers a safe distance of 400 pixels from the nearest estimated damage. It is a viable location for emergency shelters. [SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4]
+
+- **Safe Area 3**: Located around (100, 773), the south-west of the photo. This area is estimated to have no visible damage (EMS-98 Grade 1) and provides a safe distance of 323 pixels from the nearest estimated damage. It is a suitable location for emergency shelters. [SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4]
+
+- **Hot Spot 1**: Located around (991, 234), the north-east of the photo. This area is estimated to have 49 patches of very heavy damage (EMS-98 Grade 5). While it is highly damaged, it is still a viable location for emergency shelters, though with significant challenges. [SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4]
+
+- **Hot Spot 2**: Located around (760, 595), the east of the photo. This area is estimated to have 13 patches of moderate to very heavy damage (EMS-98 Grades 2 to 4). It is less damaged than Hot Spot 1 but still poses challenges. [SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4]
+
+For these areas, the following considerations are made based on the Sphere guidelines:
+
+- **Living Space**: Ensure each affected household has adequate living space to perform basic domestic activities. Provide living spaces that accommodate diverse needs, respect local culture and lifestyles, and offer physical security, dignity, privacy, and protection from weather. [SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4]
+
+- **Location and Access**: Ensure that the space immediately surrounding the living space supports safe access to fundamental activities such as cooking, toilets, laundry
+
+## Hospitals
+- **Hospitals**
+
+Based on the damage assessment and guidelines provided, the following areas are identified as suitable for establishing hospitals or medical points:
+
+- **Safe Area 1**: Located around (100, 923), the south-west of the photo. This area offers a safe distance of 459 pixels from the nearest estimated damage and is estimated to have no visible damage (EMS-98 Grade 1). It is a suitable location for setting up a medical facility. [SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4]
+
+- **Safe Area 2**: Located around (250, 923), the south-west of the photo. This area is also estimated to have no visible damage (EMS-98 Grade 1) and offers a safe distance of 400 pixels from the nearest estimated damage. It is a viable location for establishing a medical facility. [SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4]
+
+- **Safe Area 3**: Located around (100, 773), the south-west of the photo. This area is estimated to have no visible damage (EMS-98 Grade 1) and provides a safe distance of 323 pixels from the nearest estimated damage. It is a suitable location for setting up a medical facility. [SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4]
+
+For these areas, the following considerations are made based on the Sphere guidelines:
+
+- **Medical Services**: Ensure that the location is equipped with appropriate medical facilities and staff to handle casualties effectively. Maintain hygiene standards and ensure that medical staff are trained and prepared to handle various medical emergencies. [SPHERE-3-p2, SPHERE-3-p4]
+
+- **Casualty Handover Procedures**: Establish clear procedures for the handover of casualties to medical facilities. Coordinate with local health authorities and develop a system for repatriation to the home country for further treatment if necessary. [INSARAG3-6.2-p2]
+
+- **Transportation**: Ensure that there is an efficient system for transporting casualties to medical facilities. Liaise with logistics staff to set up base hygiene procedures and ensure that medical staff are constantly monitoring the health of the team members. [INSARAG3-5.2-p1, INSARAG2B-4.3-p3]
+
+- **Communication**: Maintain regular communication with local health authorities and coordinate with other sectors to establish essential services and facilities. Ensure that there is a system in place for regular communications and that medical staff are aware of local procedures for accepting patients into the local system. [INSARAG3-6.2-p2, INSARAG2B-4.3-p3]
+
+- **Psychosocial Support**: Provide psychosocial support to the affected population
+
+## Immediate transportation recovery
+Based on the damage assessment and guidelines provided, the immediate transportation recovery efforts should focus on reopening roads and bridges in the hot spot areas, specifically Hot Spot 1 and Hot Spot 2, due to the significant damage reported. Hot Spot 1, located around (991, 234), shows 49 patches of very heavy damage (EMS-98 Grade 5), indicating extensive structural failures and total or near-total collapses. Similarly, Hot Spot 2, around (760, 595), has 13 patches of moderate to very heavy damage (EMS-98 Grades 2 to 4), suggesting substantial damage to infrastructure. Reopening these routes will facilitate the movement of emergency supplies, rescue teams, and medical personnel to the affected areas, ensuring timely response and aid delivery. Prioritizing these areas will help minimize further loss of life and suffering, as well as support the establishment of emergency shelters and medical facilities in the most critical zones.

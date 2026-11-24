@@ -1,0 +1,28 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+**Overview:** The satellite imagery analysis reveals severe damage across the affected area in Libya following the recent flood. Out of 15 buildings depicted, 7 were estimated to be completely destroyed (EMS-98 Grade 5), indicating a catastrophic loss of structural integrity. Additionally, 3 buildings sustained moderate to very heavy damage (EMS-98 Grades 2 to 4), characterized by cracks in walls, detachment of roof tiles, and partial structural failures. Only 5 buildings remained intact (EMS-98 Grade 1), showing negligible to slight damage, primarily due to their proximity to the hotspots and safe areas identified. The hotspots concentrated around the south-east and south of the photo, while the north was relatively safer. This comprehensive assessment underscores the need for urgent relief efforts and reconstruction planning.
+
+## Description of the estimated damage
+The satellite imagery analysis of the before-and-after photos of the Libyan flood reveals severe damage across the affected area. Out of the 15 buildings depicted, 7 were estimated to be completely destroyed (EMS-98 Grade 5), indicating a catastrophic loss of structural integrity. These buildings were concentrated in the south-east and south regions of the photo, as indicated by the hot spots. Hot spot 1, located around coordinates (902, 685), covers an area of 42,481 pixels and contains the highest concentration of destroyed buildings. Hot spot 2, situated around (565, 766), spans 34,727 pixels and also includes significant damage. Hot spot 3, positioned around (682, 991), extends over 11,537 pixels and encompasses additional areas of destruction.
+
+In contrast, the northern part of the photo, centered around coordinates (493, 273), shows a higher degree of safety, with three distinct safe areas. Safe area 1, located around (493, 273), is approximately 420 pixels away from the nearest estimated damage. Safe area 2, situated around (466, 100), is just 398 pixels from the nearest damage. Safe area 3, positioned around (627, 341), is 353 pixels from the nearest damage. These safe areas indicate that the northern region of the photo remains largely unaffected by the flood.
+
+The remaining 5 buildings are estimated to have suffered negligible to slight damage (EMS-98 Grade 1), primarily due to their proximity to the safe areas. These buildings are distributed throughout the photo but are not concentrated in any specific hot spot. The distribution of the estimated damage suggests that the flood caused widespread destruction, particularly in the southern regions, while the northern part of the photo remained relatively unscathed. This uneven distribution highlights the need for targeted relief efforts and reconstruction plans to address the varying levels of damage across the affected area.
+
+## Disaster grade of each location
+The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:
+- Buildings estimated destroyed: 7: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Buildings estimated damaged: 3: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Buildings estimated intact: 5: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The satellite imagery analysis reveals severe damage across the affected area in Libya following the recent flood. Out of 15 buildings depicted, 7 were estimated to be completely destroyed (EMS-98 Grade 5), indicating a catastrophic loss of structural integrity. These buildings are concentrated in the south-east and south regions of the photo, as indicated by the hot spots. Hot spot 1, located around coordinates (902, 685), covers an area of 42,481 pixels and contains the highest concentration of destroyed buildings. Hot spot 2, situated around (565, 766), spans 34,727 pixels and also includes significant damage. Hot spot 3, positioned around (682, 991), extends over 11,537 pixels and encompasses additional areas of destruction.
+
+In contrast, the northern part of the photo, centered around coordinates (493, 273), shows a higher degree of safety, with three distinct safe areas. Safe area 1, located around (493, 273), is approximately 420 pixels away from the nearest estimated damage. Safe area 2, situated around (466, 100), is just 398 pixels from the nearest damage. Safe area 3, positioned around (627, 341), is 353 pixels from the nearest damage. These safe areas indicate that the northern region of the photo remains largely unaffected by the flood.
+
+The remaining 5 buildings are estimated to have suffered negligible to slight damage (EMS-98 Grade 1), primarily due to their proximity to the safe areas. These buildings are distributed throughout the photo but are not concentrated in any specific hot spot. The distribution of the estimated damage suggests that the flood caused widespread destruction, particularly in the southern regions, while the northern part of the photo remained relatively unscathed. This uneven distribution highlights the need for targeted relief efforts and reconstruction plans to address the varying levels of damage across the affected area.
+
+Given the severity of the damage in the hot spots, immediate assistance should focus on these areas first

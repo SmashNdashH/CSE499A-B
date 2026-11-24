@@ -1,0 +1,30 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the damage assessment and guidelines provided, the following areas are suitable for emergency shelters:
+
+- **Safe Area 1**: Around (100, 923), the south-west of the photo, approximately 386 pixels from the nearest estimated damage. This area is relatively safe but should be checked on the ground before use. It offers a safe haven for displaced individuals, ensuring privacy and protection from the elements. [SPHERE-3-p1] [SPHERE-3-p2]
+
+- **Safe Area 2**: Around (100, 773), the south-west of the photo, approximately 300 pixels from the nearest estimated damage. This area provides a marginally safer location compared to the hot spot, although it still requires thorough inspection. [SPHERE-3-p1] [SPHERE-3-p2]
+
+- **Safe Area 3**: Around (250, 923), the south-west of the photo, approximately 251 pixels from the nearest estimated damage. This area is the closest to the hot spot but still offers a safer alternative. It is crucial to verify the condition of the shelters before use. [SPHERE-3-p1] [SPHERE-3-p2]
+
+For emergency shelters, the Sphere handbook recommends a minimum of 3.5 square meters of living space per person, excluding cooking space, bathing area, and sanitation facilities. Given the limited damage patches and the presence of safe areas, it is feasible to allocate sufficient living space based on the guidelines. However, due to the lack of specific data on staff, teams, shelters, and supplies, we cannot provide exact numbers. Nonetheless, the priority should be to ensure that each affected household has adequate living space to perform basic domestic activities, respecting local culture and social norms. [SPHERE-3-p1] [SPHERE-3-p2]
+
+## Hospitals
+Based on the damage assessment and guidelines provided, the following areas are suitable for establishing medical points and hospitals:
+
+- **Safe Area 1**: Around (100, 923), the south-west of the photo, approximately 386 pixels from the nearest estimated damage. This area is relatively safe and offers a suitable location for setting up a medical point. It is crucial to ensure that the medical point is equipped with basic amenities such as clean water, sanitation facilities, and a basic medical kit. [SPHERE-3-p1] [SPHERE-3-p2]
+
+- **Safe Area 2**: Around (100, 773), the south-west of the photo, approximately 300 pixels from the nearest estimated damage. This area provides a marginally safer location compared to the hot spot, although it still requires thorough inspection. Establishing a medical point here would be beneficial for treating casualties and providing initial medical care. [SPHERE-3-p1] [SPHERE-3-p2]
+
+- **Safe Area 3**: Around (250, 923), the south-west of the photo, approximately 251 pixels from the nearest estimated damage. This area is the closest to the hot spot but still offers a safer alternative. It is crucial to verify the condition of the shelters before use. Ensuring that the medical point is adequately staffed and equipped with necessary medical supplies is paramount. [SPHERE-3-p1] [SPHERE-3-p2]
+
+According to INSARAG guidelines, the medical evacuation plan should be reviewed to ensure that all possible emergency situations are accounted for. Establishing a triage point in consultation with medical personnel is essential to efficiently manage casualties. Maintaining hygiene standards and ensuring that personnel and canines are continuously monitored for health is crucial. [INSARAG3-6.2-p2] [INSARAG2B-4.3-p3]
+
+Rescued people should be handed over to the established medical points following the local procedures for the acceptance of patients into the local system. A system of repatriation to the home country for further treatment should also be developed. [INSARAG3-6.2-p2] [INSARAG2B-4.3-p3]
+
+## Immediate transportation recovery
+Immediate transportation recovery is crucial to restore access to the affected areas. The most critical road or bridge to reopen is the one connecting Safe Area 1 (around (100, 923)) to the rest of the city. This connection is vital for evacuating casualties, transporting medical supplies, and delivering aid to the affected regions. The road leading to Safe Area 3 (around (250, 923)) is also essential, as it provides a direct route to the hot spot and ensures that medical teams can reach the most severely damaged areas efficiently. Reopening these routes will significantly improve the flow of resources and personnel, facilitating a faster and more effective response to the disaster.

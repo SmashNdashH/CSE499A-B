@@ -1,0 +1,48 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the satellite photos and the damage model, the following areas are identified as suitable for emergency shelters, adhering to the Sphere guidelines for living space and site area per person, location, and access.
+
+##### Safe Areas
+
+The **south-east corner** of the photo, specifically around (917, 923), (821, 807), and (722, 694), are identified as safe areas. These zones are approximately 412, 311, and 254 pixels away from the nearest damaged structures, respectively. They offer a buffer against immediate hazards and are recommended for immediate use.
+
+##### Minimal Damage Zones
+
+Areas with minimal damage, such as the **north-west corner** around (320, 32) and the **north-east corner** around (991, 32), present opportunities for temporary shelters. These zones have 403,997 and (number not available offline) pixels of damage, respectively. Given the lower levels of damage, these areas can be assessed for potential shelter locations, ensuring that the living space meets the Sphere standard of 3.5 square metres per person, excluding cooking space, bathing area, and sanitation facility.
+
+Given the limited data on the extent of damage in these areas, it is crucial to conduct a thorough site assessment to determine the feasibility of establishing shelters. If deemed safe, these areas can be utilized for temporary accommodation, provided that the living space is adequately sized and equipped to meet the needs of the affected population.
+
+#### Conclusion
+
+The identified safe areas and minimal damage zones provide critical locations for emergency shelters. These areas are recommended for immediate use, with a focus on ensuring that the living space meets the Sphere standard of 3.5 square metres per person. Further assessments are needed to confirm the suitability of these areas and to allocate the necessary staff, supplies, and resources for effective shelter provision.
+
+[SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4] [SPHERE-2-p4] [SPHERE-2-p1] [SPHERE-2-p2] [INSARAG3-6.2-p2] [INSARAG3-5.2-p1] [INSARAG2B-4.3-p3]
+
+## Hospitals
+Based on the satellite photos and damage model, the most critical areas for establishing hospitals or medical points are the **hot spots** identified by the Alerts team. These areas are characterized by significant damage, particularly in the north-west and north-east corners of the photo, around coordinates (320, 32) and (991, 32). Given the high hazard levels and the need for immediate medical care, these zones are prioritized for setting up medical facilities.
+
+- **Hot Spot 1 (North-West Corner)**: Around (320, 32), this area is experiencing total or near-total collapse. Establishing a medical point here would require careful assessment of the structural integrity and potential for further collapse. Adequate protective measures must be taken to ensure the safety of medical staff and patients. [INSARAG3-6.2-p2] [INSARAG3-5.2-p1] [INSARAG2B-4.3-p3]
+
+- **Hot Spot 3 (North-East Corner)**: Around (991, 32), this area also faces significant damage. Similar to Hot Spot 1, establishing a medical facility here necessitates a thorough site assessment to ensure that the location is safe for both medical operations and patient care. [INSARAG3-6.2-p2] [INSARAG3-5.2-p1] [INSARAG2B-4.3-p3]
+
+### Handover Procedures
+
+Rescued people from these areas should be handed over to medical facilities following established INSARAG guidelines:
+
+- **Casualty Handover**: Ensure that medical staff are familiar with local procedures for accepting patients into the local healthcare system. Develop a system for repatriation to the home country for further treatment if necessary. [INSARAG3-6.2-p2]
+
+- **Medical Transport**: Coordinate with medical teams to set up a triage point in consultation with medical personnel. Ensure appropriate medical transport procedures are in place to safely transport casualties to designated medical facilities. [INSARAG3-6.2-p2] [INSARAG2B-4.3-p3]
+
+- **Documentation**: Maintain confidentiality and secure all medical documentation. Provide continuous health monitoring and medical care to USAR Team members, including canines. [INSARAG3-6.2-p2]
+
+- **Evacuation**: Clearly mark the evacuation point and ensure that personnel are familiar with the evacuation signaling system. Coordinate with the personnel responsible for hazmat and safety issues to manage potential exposures. [INSARAG3-6.2-p2] [INSARAG3-5.2-p1] [INSARAG2B-4.3-p3]
+
+### Conclusion
+
+Establishing medical facilities in the identified hot spots is critical for providing immediate medical care to those in need. These locations should be assessed for safety and equipped
+
+## Immediate transportation recovery
+Based on the damage model and the hot spots identified by the Alerts team, the primary areas requiring immediate transportation recovery are the north-west and north-east corners of the photo, around coordinates (320, 32) and (991, 32). These areas are experiencing significant damage, with total or near-total collapse in the north-west corner and moderate to very heavy damage in the north-east corner. The roads or bridges in these regions are likely blocked or severely compromised, hindering emergency vehicle access and hampering rescue operations. Reopening these routes is crucial to ensure timely medical evacuations, delivery of supplies, and coordination with local authorities. Priority should be given to restoring connectivity in these hot spots to facilitate efficient response efforts.

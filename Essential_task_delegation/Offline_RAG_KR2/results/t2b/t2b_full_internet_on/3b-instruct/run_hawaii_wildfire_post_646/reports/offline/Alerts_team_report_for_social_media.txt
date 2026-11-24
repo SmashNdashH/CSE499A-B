@@ -1,0 +1,58 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+People must avoid the following dangerous areas:
+
+**Hot Spot 1 (South):**
+- **Location:** Around (545, 845) pixels from the top-left corner of the photo.
+- **Damage:** 165 buildings completely destroyed (EMS-98 Grade 5).
+- **Description:** This area exhibits the highest density of damage, with total or near-total collapse of walls, roofs, and floors. Immediate attention is needed to secure this region and prevent further collapse.
+
+**Hot Spot 2 (South-West):**
+- **Location:** Around (140, 741) pixels from the top-left corner of the photo.
+- **Damage:** 1 building sustained moderate to very heavy damage (EMS-98 Grades 2 to 4).
+- **Description:** This area has extensive cracks in walls and partial structural failure of roofs and floors. It poses significant risks to both life and property.
+
+**Hot Spot 3 (North):**
+- **Location:** Around (456, 240) pixels from the top-left corner of the photo.
+- **Damage:** 1 building sustained moderate to very heavy damage (EMS-98 Grades 2 to 4).
+- **Description:** This area also features extensive cracks in walls and partial structural failure of roofs and floors. It is another critical area requiring immediate attention.
+
+Additionally, there are potentially dangerous areas that should be monitored closely:
+
+**Safe Area 1 (Northeast):**
+- **Location:** Around (844, 100) pixels from the top-left corner of the photo.
+- **Distance from nearest damage:** 280 pixels.
+- **Status:** To be checked on the ground before use.
+- **Description:** While this area is relatively safe, it remains within close proximity to the estimated damage zones. Close monitoring is necessary to ensure safety.
+
+**Safe Area 2 (Northeast):**
+- **Location:** Around (701, 146) pixels from the top-left corner of the photo.
+- **Distance from nearest damage:** 218 pixels.
+- **Status:** To be checked on the ground before use.
+- **Description:** This area is also considered safe but is still within the vicinity of the estimated damage zones. Continuous surveillance is advised.
+
+**Safe Area 3 (Northeast):**
+- **Location:** Around (847, 254) pixels from the top-left corner of the photo.
+- **Distance from nearest damage:** 147 pixels.
+- **Status:** To be checked on the ground before use.
+- **Description:** This area is deemed safe but is still within the estimated damage zones. Further checks are recommended to confirm its safety.
+
+Evacuees and responders should stay well clear of these hot spots and monitor the potentially dangerous areas closely. Immediate action is required to address the severe damage in the hot
+
+## Social media news
+**Social Media News:** Severe Wildfire Strikes Hawaii, Causing Devastating Damage
+
+In a devastating wildfire that swept through Hawaii, nearly 86% of buildings were completely destroyed, leaving a trail of destruction in its wake. The satellite images show that the southern and northern regions took the brunt of the disaster, with Hotspot 1 and Hotspot 2 bearing the heaviest impact. Here’s a closer look at the affected areas:
+
+- **Hotspot 1 (South):** Located around (545, 845) pixels, this area saw 165 buildings completely destroyed (EMS-98 Grade 5). Total or near-total collapse of walls, roofs, and floors made this region extremely dangerous. Immediate attention is needed to secure this region and prevent further collapse.
+
+- **Hotspot 2 (South-West):** Around (140, 741) pixels, this area had 1 building sustain moderate to very heavy damage (EMS-98 Grades 2 to 4). Extensive cracks in walls and partial structural failure of roofs and floors make this area a significant risk.
+
+- **Hotspot 3 (North):** Located around (456, 240) pixels, this area also experienced moderate to heavy damage (EMS-98 Grades 2 to 4). Similar to Hotspot 2, this area requires urgent attention.
+
+While some areas remain relatively safe, they are still within close proximity to the estimated damage zones. Safe Areas 1, 2, and 3, located around (844, 100), (701, 146), and (847, 254) pixels respectively, are 280, 218, and 147 pixels away from the nearest damage zones. These areas should be monitored closely to ensure safety.
+
+Immediate action is crucial to address the severe damage and ensure the safety of all those affected. Stay informed and follow local authorities for updates and guidance. #HawaiiWildfire #DisasterResponse #StaySafe

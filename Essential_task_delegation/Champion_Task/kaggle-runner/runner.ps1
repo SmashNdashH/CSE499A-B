@@ -6,14 +6,18 @@ Mode (c) runs on account 1; mode (b) runs on accounts 2 and 3, taking turns.
 .DESCRIPTION
 Windows Task Scheduler runs this every 3 minutes (see -Install and $EveryMin). Each run looks at each lane, one lane per mode:
 - a session still running is left alone;
-- a session that ended has its log and small outputs saved to ..\L2-step2-results\train-<mode>-<smoke|sessionN>\,
+- a session that ended has its log, its small outputs and its executed notebook (every cell with its output) saved to
+  ..\L2-step2-results\train-<mode>-<smoke|sessionN>\,
   and is checked: it finished cleanly, its losses are finite, the learning rate left 0 (real updates), the step count
   went up, it continued from the right checkpoint, and that checkpoint (or the finished adapter) is on Hugging Face;
 - a lane whose last session passed starts its next session at once, on the lane's account with the most GPU hours
   left, with the notebook's time limit cut to fit those hours (at most 10.5 h).
 Each lane runs the smoke test first (16 examples, 2 steps), then full sessions until the notebook reports the epoch
-complete. Anything unexpected stops that lane, says why in runner.log and shows a Windows notification. Nothing is
-retried on its own.
+complete. Anything unexpected stops that lane: no next session is started (a running session is never touched), and it
+says why in runner.log and in a Windows notification. One exception (22 Nov, Abrar's yes, after a GPU stall left mode
+(b) idle for 17 h): a session that ends as an error, when Hugging Face holds a newer complete checkpoint with finite
+losses, is followed by a next session from that checkpoint, once. A second failure before a session passes, a cancelled
+session, or a log naming full storage or a GPU out of memory still stops the lane.
 
 The training notebook in Champion_Task is never edited. Each session pushes a copy with three settings changed
 (MODE, SMOKE_TEST and time_limit_h), and the copy is checked to differ from the notebook in exactly those lines.
@@ -69,6 +73,8 @@ $Live      = @("queued", "running", "cancel_requested")
 $Ended     = @("complete", "error", "cancel_acknowledged")
 
 $Kaggle    = Join-Path $env:APPDATA "Python\Python313\Scripts\kaggle.exe"
+$KagglePy  = "C:\ProgramData\Anaconda3\python.exe"   # the Python that kaggle.exe runs (the first line of its launcher)
+$NotebookPy = Join-Path $Here "fetch_notebook.py"   # saves a version's executed notebook, which `kernels output` doesn't list
 $TokenDir  = Join-Path $env:LOCALAPPDATA "cse499-kaggle-runner"
 $KaggleCfg = Join-Path $TokenDir "empty-config"   # no kaggle.json here, so a refused token can't fall back to another account
 $HfToken   = Join-Path $env:USERPROFILE ".cache\huggingface\token"   # your PC's login, used only to list the repository
@@ -104,8 +110,8 @@ function Show-Note([string]$Title, [string]$Text) {
 
 function Stop-Lane([string]$Name, $L, [string]$Why) {
     $L.status = "stopped"; $L.why = $Why; $L.said = ""
-    Write-Log "lane ${Name} STOPPED: $Why"
-    Show-Note "L2 lane ($Name) stopped" $Why
+    Write-Log "lane ${Name} STOPPED, no next session started: $Why"
+    Show-Note "L2 lane ($Name): next session not started" $Why
 }
 
 # ---- Kaggle ----
@@ -158,15 +164,16 @@ function Confirm-TokenSet([string]$Acc) {
     throw "the token dataset $id wasn't ready after 5 minutes"
 }
 
-function Invoke-Kaggle([string]$Acc, [string[]]$KArgs) {
-    # One Kaggle command as $Acc. Returns the exit code, stdout and stderr; a Kaggle error never throws here.
+function Invoke-Kaggle([string]$Acc, [string[]]$KArgs, [string]$Exe = $Kaggle) {
+    # One Kaggle command as $Acc: kaggle.exe, or with $Exe = $KagglePy a helper script run by its Python. Returns the
+    # exit code, stdout and stderr; a Kaggle error never throws here.
     $ErrorActionPreference = "Continue"
     New-Item -ItemType Directory -Force $KaggleCfg | Out-Null
     $env:KAGGLE_CONFIG_DIR = $KaggleCfg
     $env:PYTHONIOENCODING = "utf-8"
     $env:KAGGLE_API_TOKEN = Get-Token $Acc
     try {
-        $all = & $Kaggle @KArgs 2>&1
+        $all = & $Exe @KArgs 2>&1
         $code = $LASTEXITCODE
     } finally { Remove-Item Env:KAGGLE_API_TOKEN -ErrorAction SilentlyContinue }
     $out = @($all | Where-Object { $_ -isnot [Management.Automation.ErrorRecord] } | ForEach-Object { "$_" }) -join "`n"
@@ -218,12 +225,20 @@ function Resolve-Input([string]$Acc, [string]$InputSlug) {
     return $null
 }
 
-function Save-Outputs([string]$Acc, [string]$Kernel, [string]$Dest) {
-    # The session's small files and its log; never the checkpoints
+function Save-Outputs([string]$Acc, [string]$Kernel, [string]$Dest, [int]$Version) {
+    # The session's small files, its log and its executed notebook; never the checkpoints
     New-Item -ItemType Directory -Force $Dest | Out-Null
     $pattern = '^L2S2-[bc]/(config\.json|train_summary(_smoke)?\.json|README\.md|loss_curve\.png)$'
     $r = Invoke-Kaggle $Acc @("kernels", "output", $Kernel, "-p", $Dest, "-o", "-q", "--file-pattern", $pattern)
     if ($r.Code -ne 0) { Write-Log "  downloading the outputs of ${Kernel}: exit $($r.Code) $($r.Err)" }
+    Save-Notebook $Acc $Kernel $Version (Join-Path $Dest "$Slug.ipynb")
+}
+
+function Save-Notebook([string]$Acc, [string]$Kernel, [int]$Version, [string]$Path) {
+    # The version's executed notebook, every cell with its output. A record, not a check: a failure is only logged.
+    $kOwner, $kName = $Kernel.Split("/")      # not $slug: names ignore case, and $Slug is the plan's notebook name
+    $r = Invoke-Kaggle $Acc @($NotebookPy, $kOwner, $kName, $Path, "$Version") $KagglePy
+    if ($r.Code -ne 0) { Write-Log "  saving the executed notebook of $Kernel version ${Version}: exit $($r.Code) $($r.Err)" }
 }
 
 # ---- Hugging Face (read only) ----
@@ -232,14 +247,56 @@ function Get-Hf([string]$Mode) {
     $headers = @{ Authorization = "Bearer " + (Get-Content $HfToken -Raw).Trim() }
     $list = {
         param($Path)
-        try { @(Invoke-RestMethod -Uri "https://huggingface.co/api/models/$HfRepo/tree/main/$Path" -Headers $headers) }
+        # Windows PowerShell 5.1 passes a JSON list on as one item; from a variable, its entries go on one by one.
+        # (20 Nov: piped as one item, two or more checkpoints read as none, and both lanes were stopped by mistake.)
+        try { $reply = Invoke-RestMethod -Uri "https://huggingface.co/api/models/$HfRepo/tree/main/$Path" -Headers $headers; $reply }
         catch {
             if ($_.Exception.Response -and [int]$_.Exception.Response.StatusCode -eq 404) { @() } else { throw }
         }
     }
-    $steps = @(& $list "$Mode/checkpoints" | ForEach-Object { if ($_.path -match "checkpoint-(\d+)$") { [int]$Matches[1] } } |
-               Sort-Object)
+    # [regex]::Match, not -match: $Matches can hold an older match from the calling function
+    $steps = @(& $list "$Mode/checkpoints" | ForEach-Object { [regex]::Match([string]$_.path, "checkpoint-(\d+)$") } |
+               Where-Object Success | ForEach-Object { [int]$_.Groups[1].Value } | Sort-Object)
     [pscustomobject]@{ Steps = $steps; Final = (@(& $list "$Mode/final").Count -gt 0) }
+}
+
+function Get-Restart([string]$Mode, $L, [string]$LogText) {
+    # After a session ended as an error: the step a next session may continue from by itself, or why not (Step 0)
+    $no = { param($Why) [pscustomobject]@{ Step = 0; Why = $Why } }
+    if ([int]$L.auto_retries -ge 1) { return & $no "it already restarted itself once since its last passed session" }
+    $cause = [regex]::Match($LogText, "(?i)storage limit|out of memory|OutOfMemoryError")
+    if ($cause.Success) { return & $no "its log names a cause a restart can't fix ('$($cause.Value)')" }
+    $headers = @{ Authorization = "Bearer " + (Get-Content $HfToken -Raw).Trim() }
+    $steps = @((Get-Hf $Mode).Steps)
+    $newer = @($steps | Where-Object { $_ -gt [int]$L.last_step })
+    if (-not $newer.Count) { return & $no "Hugging Face has no checkpoint after step $($L.last_step)" }
+    $step = $newer[-1]
+    $older = @($steps | Where-Object { $_ -lt $step })
+    if (-not $older.Count) { return & $no "checkpoint-$step has no earlier checkpoint to compare with" }
+    $sizes = {
+        param($s)
+        $reply = Invoke-RestMethod -Uri "https://huggingface.co/api/models/$HfRepo/tree/main/$Mode/checkpoints/checkpoint-$s" -Headers $headers
+        $out = @{}
+        foreach ($e in $reply) { $out[[string]$e.path.Split("/")[-1]] = [int64]$e.size }
+        $out
+    }
+    $new, $old = (& $sizes $step), (& $sizes $older[-1])
+    # A complete checkpoint has every file the one before it has, at the same size; only the training record grows
+    $fixed = "adapter_model.safetensors", "optimizer.pt", "scheduler.pt", "scaler.pt", "adapter_config.json",
+             "rng_state_0.pth", "rng_state_1.pth", "training_args.bin"
+    $bad = @($fixed | Where-Object { -not $new.ContainsKey($_) -or $new[$_] -ne $old[$_] })
+    if ($bad.Count -or -not $new.ContainsKey("trainer_state.json")) {
+        return & $no "checkpoint-$step isn't like checkpoint-$($older[-1]) ($(@($bad) + @('trainer_state.json' | Where-Object { -not $new.ContainsKey($_) }) -join ', '))"
+    }
+    $raw = (Invoke-WebRequest -UseBasicParsing -Headers $headers `
+            -Uri "https://huggingface.co/$HfRepo/resolve/main/$Mode/checkpoints/checkpoint-$step/trainer_state.json").Content
+    if ($raw -is [byte[]]) { $raw = [Text.Encoding]::UTF8.GetString($raw) }
+    $S = ($raw -replace '(?<![\w"])-?Infinity\b', '"Infinity"' -replace '(?<![\w"])NaN\b', '"NaN"') | ConvertFrom-Json
+    if ([int]$S.global_step -ne $step) { return & $no "checkpoint-$step's training record says step $($S.global_step)" }
+    $losses = @($S.log_history | Where-Object { $_.PSObject.Properties["loss"] -and [int]$_.step -gt [int]$L.last_step })
+    if (-not $losses.Count) { return & $no "checkpoint-$step logs no step after $($L.last_step)" }
+    if (@($losses | Where-Object { $_.loss -is [string] }).Count) { return & $no "checkpoint-$step logs a NaN or infinite loss" }
+    [pscustomobject]@{ Step = $step; Why = "" }
 }
 
 # ---- The notebook copy each session pushes ----
@@ -381,8 +438,22 @@ function Test-Ended([string]$Name, $L) {
     if ($st.Status -notin $Ended) { Say $L "lane ${Name}: the status of $($L.kernel) couldn't be read ($($st.Raw))"; return $false }
     $label = if ($L.phase -eq "smoke") { "smoke" } else { "session$($L.session)" }
     $dest = Join-Path $Results "train-$Name-$label"
-    Save-Outputs $L.account $L.kernel $dest
-    if ($st.Status -ne "complete") { Stop-Lane $Name $L "$label on $($L.account) ended as '$($st.Status)'. $($st.Message) Log and outputs: $dest"; return $false }
+    Save-Outputs $L.account $L.kernel $dest ([int]$L.version)
+    if ($st.Status -ne "complete") {
+        $why = "$label on $($L.account) ended as '$($st.Status)'. $($st.Message)"
+        if ($st.Status -eq "error" -and $L.phase -ne "smoke") {      # the one automatic restart (description above)
+            $errLog = Join-Path $dest "$Slug.log"
+            $r = Get-Restart $Name $L $(if (Test-Path $errLog) { Get-Content $errLog -Raw -Encoding UTF8 } else { "" })
+            if ($r.Step) {
+                $L.auto_retries = [int]$L.auto_retries + 1; $L.last_step = $r.Step; $L.status = "idle"; $L.said = ""
+                Write-Log "lane ${Name}: $why checkpoint-$($r.Step) on Hugging Face is complete with finite losses, so the lane continues from it by itself (once). Log and outputs: $dest"
+                Show-Note "L2 lane ($Name): restarted by itself" "$label ended as an error; the next session continues from checkpoint-$($r.Step)."
+                return $true
+            }
+            $why += " Not restarted by itself: $($r.Why)."
+        }
+        Stop-Lane $Name $L "$why Log and outputs: $dest"; return $false
+    }
     $summary = Join-Path $dest ("L2S2-$Name\train_summary" + $(if ($L.phase -eq "smoke") { "_smoke" } else { "" }) + ".json")
     if (-not (Test-Path $summary)) { Stop-Lane $Name $L "$label finished but wrote no summary; see $dest"; return $false }
     # Python writes NaN and Infinity as bare words, which aren't JSON: read them as the strings "NaN" and "Infinity"
@@ -424,7 +495,7 @@ function Test-Ended([string]$Name, $L) {
     if ($problems.Count) { Stop-Lane $Name $L "$label on $($L.account): $($problems -join '; '). See $dest"; return $false }
     Write-Log ("lane {0}: {1} passed on {2}: steps {3} to {4} of {5} ({6} skipped in half precision), last loss {7}. {8}" -f
                $Name, $label, $L.account, $L.last_step, $S.global_step, $S.max_steps, $skipped, [math]::Round([double]$steps[-1].loss, 3), $dest)
-    $L.last_step = [int]$S.global_step; $L.said = ""
+    $L.last_step = [int]$S.global_step; $L.said = ""; $L.auto_retries = 0
     if ($S.complete) {
         $L.status = "done"; $L.phase = "done"
         Write-Log "lane ${Name}: DONE, the finished adapter is at $HfRepo/$Name/final"
@@ -438,7 +509,7 @@ function Test-Ended([string]$Name, $L) {
 # ---- State ----
 function New-LaneState {
     [pscustomobject][ordered]@{ phase = "smoke"; status = "idle"; session = 0; account = ""; kernel = ""; version = 0
-                                pushed = ""; limit_h = 0; last_step = 0; why = ""; said = "" }
+                                pushed = ""; limit_h = 0; last_step = 0; why = ""; said = ""; auto_retries = 0 }
 }
 
 function Read-State {
@@ -538,6 +609,7 @@ try {
         $L = $State.$Retry
         if (-not $L) { throw "no lane '$Retry'" }
         if ($L.status -eq "stopped") { $L.status = "idle"; $L.said = ""; Write-Log "lane ${Retry}: retry asked for; was stopped because: $($L.why)"; $L.why = "" }
+        $L.auto_retries = 0                                          # a person decided: the one automatic restart is back
         Save-State
     }
 

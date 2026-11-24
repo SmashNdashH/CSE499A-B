@@ -1,0 +1,357 @@
+[{"stream_name":"stderr","time":6.948026121,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.948069336,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.948073982,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.94809256,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.507135797,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.507173148,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.507178681,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.5071827429999995,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":40.595656503,"data":"Internet is OFF: nothing below can download anything. This is the proof run.\n"}
+,{"stream_name":"stdout","time":46.163368376,"data":"RAG_DIR    /kaggle/input/datasets/redwannewaz/offline-rag-kr2\n"}
+,{"stream_name":"stdout","time":46.163580325,"data":"DT_INPUT   /kaggle/input/datasets/redwannewaz/disasteller-offline-c4\n"}
+,{"stream_name":"stdout","time":46.163589517,"data":"MODEL_DIR  /kaggle/input/notebooks/redwannewaz/t2-prep-model/model\n"}
+,{"stream_name":"stdout","time":46.163622307,"data":"WHEELS_DIR /kaggle/input/notebooks/redwannewaz/t2-prep-packages/wheels\n"}
+,{"stream_name":"stdout","time":46.163629113,"data":"\n"}
+,{"stream_name":"stdout","time":46.163633495,"data":"DisasTeller code: packed 2026-11-20 19:34:55 | git commit 1a5f38094 | uncommitted changes: True\n"}
+,{"stream_name":"stdout","time":46.163638189,"data":"Model: AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP | commit def8f6c81889ffb68904afdc90c3a1389697d73b\n"}
+,{"stream_name":"stdout","time":66.224921268,"data":"DisasterManagement_teamwork_simulation.py     \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/DisasterManagement_teamwork_simulation.py\n"}
+,{"stream_name":"stdout","time":66.224957908,"data":"Disaster_image/Global_image/2.jpg             \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Global_image/2.jpg\n"}
+,{"stream_name":"stdout","time":66.224964609,"data":"Disaster_image/Local_image/Picture1.png       \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture1.png\n"}
+,{"stream_name":"stdout","time":66.224969778,"data":"Disaster_image/Local_image/Picture2.png       \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture2.png\n"}
+,{"stream_name":"stdout","time":66.224974501,"data":"Disaster_image/Local_image/Picture3.png       \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture3.png\n"}
+,{"stream_name":"stdout","time":66.224979066,"data":"Disaster_image/Local_image/Picture4.png       \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture4.png\n"}
+,{"stream_name":"stdout","time":66.224983589,"data":"Disaster_image/Local_image/Picture5.png       \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture5.png\n"}
+,{"stream_name":"stdout","time":66.224987951,"data":"Disaster_image/Local_image/Picture6.png       \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture6.png\n"}
+,{"stream_name":"stdout","time":66.224992386,"data":"c4_scenes/buildings_c4_scenes.sqlite          \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/c4_scenes/buildings_c4_scenes.sqlite\n"}
+,{"stream_name":"stdout","time":66.225007593,"data":"c4_scenes/hotspots_c4_scenes.json             \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/c4_scenes/hotspots_c4_scenes.json\n"}
+,{"stream_name":"stdout","time":66.225011438,"data":"c4_scenes/scenes.json                         \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/c4_scenes/scenes.json\n"}
+,{"stream_name":"stdout","time":66.225015091,"data":"check_run.py                                  \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/check_run.py\n"}
+,{"stream_name":"stdout","time":66.225024822,"data":"disasteller_inputs.py                         \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/disasteller_inputs.py\n"}
+,{"stream_name":"stdout","time":66.225027827,"data":"fixed_flow.py                                 \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/fixed_flow.py\n"}
+,{"stream_name":"stdout","time":66.225031286,"data":"fixed_flow_c4.py                              \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/fixed_flow_c4.py\n"}
+,{"stream_name":"stdout","time":66.225033691,"data":"global_annotation_tool.py                     \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/global_annotation_tool.py\n"}
+,{"stream_name":"stdout","time":66.225036082,"data":"global_img_tool.py                            \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/global_img_tool.py\n"}
+,{"stream_name":"stdout","time":66.225038441,"data":"local_img_tool.py                             \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/local_img_tool.py\n"}
+,{"stream_name":"stdout","time":66.225040849,"data":"local_model.py                                \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/local_model.py\n"}
+,{"stream_name":"stdout","time":66.225043241,"data":"number_check.py                               \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/number_check.py\n"}
+,{"stream_name":"stdout","time":66.225045581,"data":"pdf_search_tool.py                            \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/pdf_search_tool.py\n"}
+,{"stream_name":"stdout","time":66.225047954,"data":"run_with_netlog.py                            \u003c- /kaggle/input/datasets/redwannewaz/disasteller-offline-c4/run_with_netlog.py\n"}
+,{"stream_name":"stdout","time":66.225050406,"data":"\n"}
+,{"stream_name":"stdout","time":66.22505256,"data":"All 22 files are in /kaggle/working/disasteller, each with the sha256 in the manifest.\n"}
+,{"stream_name":"stdout","time":69.547513133,"data":"before /kaggle/input/datasets/redwannewaz/disasterm3-bench-mirror-v2/test_images/turkey_earthquake4_pre_327.png\n"}
+,{"stream_name":"stdout","time":69.547546971,"data":"after  /kaggle/input/datasets/redwannewaz/disasterm3-bench-mirror-v2/test_images/turkey_earthquake4_post_327.png\n"}
+,{"stream_name":"stdout","time":69.547551726,"data":"before /kaggle/input/datasets/redwannewaz/disasterm3-bench-mirror-v2/test_images/santa_rosa_wildfire_00000155_pre_disaster.png\n"}
+,{"stream_name":"stdout","time":69.547555419,"data":"after  /kaggle/input/datasets/redwannewaz/disasterm3-bench-mirror-v2/test_images/santa_rosa_wildfire_00000155_post_disaster.png\n"}
+,{"stream_name":"stdout","time":69.547559088,"data":"run_with_netlog.py (this session's copy) knows the flow 'c4': fixed_flow_c4.py\n"}
+,{"stream_name":"stdout","time":69.596241396,"data":"['Tesla T4, 15360 MiB', 'Tesla T4, 15360 MiB']\n"}
+,{"stream_name":"stdout","time":181.688695598,"data":".3 lance-namespace-0.13.0 lance-namespace-urllib3-client-0.13.0 lancedb-0.30.0 lark-1.2.2 llguidance-1.7.6 llvmlite-0.47.0 lm-format-enforcer-0.11.3 loguru-0.7.3 mcp-1.26.0 mistral_common-1.13.1 model-hosting-container-standards-0.1.16 msgspec-0.22.0 numba-0.65.0 nvidia-cuda-nvcc-13.2.86 nvidia-cuda-tileiras-13.2.86 nvidia-cudnn-frontend-1.28.0 nvidia-cutlass-dsl-4.5.2 nvidia-cutlass-dsl-libs-base-4.5.2 nvidia-cutlass-dsl-libs-cu13-4.5.2 nvidia-nvvm-13.2.86 nvtx-0.2.15 onnxruntime-1.31.1 openai-harmony-0.0.8 opentelemetry-exporter-otlp-1.42.1 opentelemetry-exporter-otlp-proto-common-1.42.1 opentelemetry-exporter-otlp-proto-grpc-1.42.1 opentelemetry-exporter-otlp-proto-http-1.42.1 opentelemetry-proto-1.42.1 opentelemetry-semantic-conventions-ai-0.5.1 outlines_core-0.2.14 partial-json-parser-0.2.1.1.post7 pdfminer.six-20260107 pdfplumber-0.11.10 pendulum-3.3.0 portalocker-2.7.0 posthog-5.4.0 prometheus-fastapi-instrumentator-8.1.0 protobuf-6.33.6 pybase64-1.5.1 pycountry-26.2.16 pydantic-2.12.5 pydantic-core-2.41.5 pydantic-extra-types-2.11.1 pydantic-settings-2.10.1 pyelftools-0.33 pypdfium2-5.15.0 pypika-0.51.1 quack-kernels-0.5.0 regex-2026.1.15 rich-14.3.4 rich-toolkit-0.20.6 rignore-0.8.1 setproctitle-1.3.8 setuptools-80.10.2 sse-starlette-3.6.0 supervisor-4.3.0 textual-8.2.8 tilelang-0.1.9 tokenspeed-mla-0.1.2 tokenspeed-triton-3.9.10.post20261028 tomli-2.0.2 tomli-w-1.1.0 torch-c-dlpack-ext-0.1.5 torchcodec-0.17.0 uv-0.11.33 vllm-0.25.1 xgrammar-0.2.3 z3-solver-4.15.4.0\n"}
+,{"stream_name":"stdout","time":181.688758587,"data":"\n"}
+,{"stream_name":"stdout","time":181.688763721,"data":"Installed in 1.9 min: {'vllm': '0.25.1', 'crewai': '1.15.2', 'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'openai': '2.54.0', 'numpy': '2.1.3', 'pillow': '13.0.0'}\n"}
+,{"stream_name":"stdout","time":181.773198693,"data":"Architecture: ['Qwen2_5_VLForConditionalGeneration'] | dtype: float16\n"}
+,{"stream_name":"stdout","time":181.773241346,"data":"Chat template: the model's own, in ['chat_template.jinja']\n"}
+,{"stream_name":"stdout","time":181.974466595,"data":"/usr/local/bin/vllm serve /kaggle/input/notebooks/redwannewaz/t2-prep-model/model --served-model-name disasterm3-7b --host 127.0.0.1 --port 8000 --tensor-parallel-size 2 --dtype half --enforce-eager --max-model-len 32768 --gpu-memory-utilization 0.92 --max-num-seqs 8 --limit-mm-per-prompt {\"image\": 1} --mm-processor-kwargs {\"max_pixels\": 1806336}\n"}
+,{"stream_name":"stdout","time":451.850039625,"data":"[  7.4 min] vLLM is ready\n"}
+,{"stream_name":"stdout","time":451.850083738,"data":"   (Worker_TP0 pid=140) INFO 11-20 13:55:30 [gpu_worker.py:538] Available KV cache memory: 5.29 GiB\n"}
+,{"stream_name":"stdout","time":451.850090567,"data":"   (EngineCore pid=114) INFO 11-20 13:55:30 [kv_cache_utils.py:2146] GPU KV cache size: 198,176 tokens\n"}
+,{"stream_name":"stdout","time":451.850095971,"data":"   (EngineCore pid=114) INFO 11-20 13:55:30 [kv_cache_utils.py:2147] Maximum concurrency for 32,768 tokens per request: 6.05x\n"}
+,{"stream_name":"stdout","time":456.967225056,"data":"Server has: ['disasterm3-7b']\n"}
+,{"stream_name":"stdout","time":463.704204538,"data":"text (6 s): A building damage grade refers to the level of structural damage sustained by a building as a result of an event, such as an earthquake or hurricane.\n"}
+,{"stream_name":"stdout","time":466.820732011,"data":"picture (3 s): The Wajima Drama Memorial Hall has sustained no visible damage as a result of the disaster.\n"}
+,{"stream_name":"stdout","time":467.029499313,"data":"crewai (0 s): OK\n"}
+,{"stream_name":"stdout","time":467.029564838,"data":"fixed flow (0 s): OK\n"}
+,{"stream_name":"stdout","time":467.618213911,"data":"\n"}
+,{"stream_name":"stdout","time":467.618243843,"data":"[  7.6 min] ===== turkey_earthquake4_post_327.png (earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":473.916864541,"data":"[  7.8 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":473.91693598,"data":"[  7.8 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":473.916942216,"data":"[  7.8 min] DisasTeller flow: fixed, with C4's damage facts (scene turkey_earthquake4_post_327.png, earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":473.916946485,"data":"[  7.8 min] Photo tool asked: describe the photos\n"}
+,{"stream_name":"stdout","time":473.916950105,"data":"[  7.8 min] Local information (1_before_turkey_earthquake4_pre_327.png): describe the disaster in detail in this image, in about 200 words. If the image has a sticker or sign with a place name, start with that place name. Describe o\n"}
+,{"stream_name":"stdout","time":479.532733208,"data":"[  7.8 min] Local information (2_after_turkey_earthquake4_post_327.png): describe the disaster in detail in this image, in about 200 words. If the image has a sticker or sign with a place name, start with that place name. Describe o\n"}
+,{"stream_name":"stdout","time":495.528151477,"data":"[  8.1 min] Guideline index loaded in 10.8 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":503.555688387,"data":"[  8.2 min] Section written: Expert_team_report.txt / Disaster grade of each location: by the code from the counts\n"}
+,{"stream_name":"stdout","time":503.555725094,"data":"[  8.2 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":503.982223762,"data":"[  8.3 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":510.042735672,"data":"[  8.4 min] Section written: Expert_team_report.txt / Overview: 63 words in 6.1 s\n"}
+,{"stream_name":"stdout","time":521.524850927,"data":"[  8.5 min] Section written: Expert_team_report.txt / Description of the photos and the estimated damage: 124 words in 11.5 s\n"}
+,{"stream_name":"stdout","time":528.795525738,"data":"[  8.7 min] Section written: Expert_team_report.txt / Conclusion: 88 words in 7.3 s\n"}
+,{"stream_name":"stdout","time":528.795635656,"data":"[  8.7 min] Report finished: Expert_team_report.txt after 0.9 min\n"}
+,{"stream_name":"stdout","time":538.685658487,"data":"[  8.8 min] Section written: Alerts_team_report_for_social_media.txt / Danger area alert: 104 words in 9.9 s\n"}
+,{"stream_name":"stdout","time":545.712893255,"data":"[  8.9 min] Section written: Alerts_team_report_for_social_media.txt / Social media news: 89 words in 7.0 s\n"}
+,{"stream_name":"stdout","time":545.712933238,"data":"[  8.9 min] Report finished: Alerts_team_report_for_social_media.txt after 0.3 min\n"}
+,{"stream_name":"stdout","time":562.886145938,"data":"[  9.2 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation; number_misused: 54\n"}
+,{"stream_name":"stdout","time":572.975476134,"data":"[  9.4 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation; number_misused: 54\n"}
+,{"stream_name":"stdout","time":572.975536353,"data":"[  9.4 min] Section written: Emergency_team_report.txt / Emergency shelters: 118 words in 26.5 s\n"}
+,{"stream_name":"stdout","time":584.47029786,"data":"[  9.6 min] Section written: Emergency_team_report.txt / Hospitals: 127 words in 11.5 s\n"}
+,{"stream_name":"stdout","time":590.360648208,"data":"[  9.7 min] Section written: Emergency_team_report.txt / Immediate transportation recovery: 72 words in 5.9 s\n"}
+,{"stream_name":"stdout","time":590.360693639,"data":"[  9.7 min] Report finished: Emergency_team_report.txt after 0.7 min\n"}
+,{"stream_name":"stdout","time":604.621882402,"data":"[  9.9 min] Section written: Emergency_service_human_resource_allocation.txt / Introduction: 82 words in 13.5 s\n"}
+,{"stream_name":"stdout","time":612.824925091,"data":"[ 10.1 min] Section written: Emergency_service_human_resource_allocation.txt / Current Situation: 104 words in 8.2 s\n"}
+,{"stream_name":"stdout","time":622.445417283,"data":"[ 10.2 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation; number_misused: 54, 32, 11; number_unsourced: 43\n"}
+,{"stream_name":"stdout","time":632.099416889,"data":"[ 10.4 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation; number_misused: 54, 32, 11; number_unsourced: 43\n"}
+,{"stream_name":"stdout","time":632.099505735,"data":"[ 10.4 min] Section written: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: 133 words in 19.3 s\n"}
+,{"stream_name":"stdout","time":641.049216449,"data":"[ 10.5 min] Section asked again: Emergency_service_human_resource_allocation.txt / Allocation Plan: no_citation; number_misused: 54, 32, 11; number_unsourced: 43\n"}
+,{"stream_name":"stdout","time":647.529748935,"data":"[ 10.6 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Allocation Plan: no_citation; number_misused: 54, 32, 11\n"}
+,{"stream_name":"stdout","time":647.529861894,"data":"[ 10.6 min] Section written: Emergency_service_human_resource_allocation.txt / Allocation Plan: 85 words in 15.4 s\n"}
+,{"stream_name":"stdout","time":653.087547472,"data":"[ 10.7 min] Section written: Emergency_service_human_resource_allocation.txt / Challenges and Considerations: 76 words in 5.6 s\n"}
+,{"stream_name":"stdout","time":658.705542167,"data":"[ 10.8 min] Section written: Emergency_service_human_resource_allocation.txt / Recommendations: 80 words in 5.6 s\n"}
+,{"stream_name":"stdout","time":663.089697645,"data":"[ 10.9 min] Section written: Emergency_service_human_resource_allocation.txt / Conclusion: 61 words in 4.4 s\n"}
+,{"stream_name":"stdout","time":663.089737561,"data":"[ 10.9 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":677.230100162,"data":"[ 11.1 min] Section written: Public_community_report.txt / Introduction: 102 words in 13.9 s\n"}
+,{"stream_name":"stdout","time":685.243587202,"data":"[ 11.3 min] Section written: Public_community_report.txt / Current Situation: 103 words in 8.0 s\n"}
+,{"stream_name":"stdout","time":693.331795821,"data":"[ 11.4 min] Section asked again: Public_community_report.txt / Resource Allocation: number_misused: 54\n"}
+,{"stream_name":"stdout","time":701.3157982,"data":"[ 11.5 min] Section kept with problems: Public_community_report.txt / Resource Allocation: number_misused: 54\n"}
+,{"stream_name":"stdout","time":701.315921079,"data":"[ 11.5 min] Section written: Public_community_report.txt / Resource Allocation: 94 words in 16.1 s\n"}
+,{"stream_name":"stdout","time":708.938583097,"data":"[ 11.7 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":717.233556669,"data":"[ 11.8 min] Section written: Public_community_report.txt / Public Advisory: 109 words in 15.9 s\n"}
+,{"stream_name":"stdout","time":721.847295864,"data":"[ 11.9 min] Section asked again: Public_community_report.txt / Organizational Operation: number_misused: 54\n"}
+,{"stream_name":"stdout","time":726.254211202,"data":"[ 12.0 min] Section kept with problems: Public_community_report.txt / Organizational Operation: number_misused: 54\n"}
+,{"stream_name":"stdout","time":726.254251733,"data":"[ 12.0 min] Section written: Public_community_report.txt / Organizational Operation: 56 words in 9.0 s\n"}
+,{"stream_name":"stdout","time":730.79900285,"data":"[ 12.0 min] Section written: Public_community_report.txt / Conclusion: 62 words in 4.5 s\n"}
+,{"stream_name":"stdout","time":730.799042255,"data":"[ 12.0 min] Report finished: Public_community_report.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":743.082864847,"data":"[ 12.2 min] Section written: Reconstruction_plan.txt / Executive Summary: 79 words in 11.8 s\n"}
+,{"stream_name":"stdout","time":754.043290221,"data":"[ 12.4 min] Section written: Reconstruction_plan.txt / Assessment of Damage: 121 words in 11.0 s\n"}
+,{"stream_name":"stdout","time":764.251156555,"data":"[ 12.6 min] Section written: Reconstruction_plan.txt / Reconstruction Needs: 110 words in 10.2 s\n"}
+,{"stream_name":"stdout","time":776.121794389,"data":"[ 12.8 min] Section asked again: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":787.791292727,"data":"[ 13.0 min] Section kept with problems: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":787.791345383,"data":"[ 13.0 min] Section written: Reconstruction_plan.txt / Plan of Action: 160 words in 23.5 s\n"}
+,{"stream_name":"stdout","time":795.439331558,"data":"[ 13.1 min] Section written: Reconstruction_plan.txt / Recommendations: 101 words in 7.6 s\n"}
+,{"stream_name":"stdout","time":803.124293972,"data":"[ 13.2 min] Section written: Reconstruction_plan.txt / Appendices: 67 words in 7.7 s\n"}
+,{"stream_name":"stdout","time":803.124334924,"data":"[ 13.2 min] Report finished: Reconstruction_plan.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":803.12434075,"data":"[ 13.2 min] Fixed flow finished: 6 reports in reports/offline, scene turkey_earthquake4_post_327.png, grades by the code\n"}
+,{"stream_name":"stdout","time":803.124345788,"data":"[ 13.2 min] Network log: 4 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":803.124350621,"data":"[ 13.2 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":803.124355411,"data":"[ 13.2 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":803.12436031,"data":"[ 13.2 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2_step5_fix2/run_turkey_earthquake4_post_327\n"}
+,{"stream_name":"stdout","time":805.31496826,"data":"[ 13.3 min] turkey_earthquake4_post_327.png: flow exit code 0\n"}
+,{"stream_name":"stdout","time":805.78337536,"data":"\n"}
+,{"stream_name":"stdout","time":805.78340808,"data":"[ 13.3 min] ===== santa_rosa_wildfire_00000155_post_disaster.png (wildfire, rows: patch)\n"}
+,{"stream_name":"stdout","time":811.774062871,"data":"[ 13.4 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":811.774102439,"data":"[ 13.4 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":811.774108981,"data":"[ 13.4 min] DisasTeller flow: fixed, with C4's damage facts (scene santa_rosa_wildfire_00000155_post_disaster.png, wildfire, rows: patch)\n"}
+,{"stream_name":"stdout","time":811.774114199,"data":"[ 13.4 min] Photo tool asked: describe the photos\n"}
+,{"stream_name":"stdout","time":811.774118881,"data":"[ 13.4 min] Local information (1_before_santa_rosa_wildfire_00000155_pre_disaster.png): describe the disaster in detail in this image, in about 200 words. If the image has a sticker or sign with a place name, start with that place n\n"}
+,{"stream_name":"stdout","time":818.0757621,"data":"[ 13.5 min] Local information (2_after_santa_rosa_wildfire_00000155_post_disaster.png): describe the disaster in detail in this image, in about 200 words. If the image has a sticker or sign with a place name, start with that place n\n"}
+,{"stream_name":"stdout","time":832.101935313,"data":"[ 13.7 min] Guideline index loaded in 9.0 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":832.101977446,"data":"[ 13.7 min] Section written: Expert_team_report.txt / Disaster grade of each location: by the code from the counts\n"}
+,{"stream_name":"stdout","time":832.10198315,"data":"[ 13.7 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":832.64748803,"data":"[ 13.7 min] Labelled map saved: reports/offline/4_anotated.png (4 labels)\n"}
+,{"stream_name":"stdout","time":839.707098434,"data":"[ 13.8 min] Section asked again: Expert_team_report.txt / Overview: number_wrong: 96%, 45%\n"}
+,{"stream_name":"stdout","time":846.51761421,"data":"[ 14.0 min] Section written: Expert_team_report.txt / Overview: 73 words in 13.9 s\n"}
+,{"stream_name":"stdout","time":855.841879143,"data":"[ 14.1 min] Section written: Expert_team_report.txt / Description of the photos and the estimated damage: 115 words in 9.3 s\n"}
+,{"stream_name":"stdout","time":863.491111071,"data":"[ 14.2 min] Section written: Expert_team_report.txt / Conclusion: 90 words in 7.6 s\n"}
+,{"stream_name":"stdout","time":863.4911492,"data":"[ 14.2 min] Report finished: Expert_team_report.txt after 0.9 min\n"}
+,{"stream_name":"stdout","time":872.675985088,"data":"[ 14.4 min] Section written: Alerts_team_report_for_social_media.txt / Danger area alert: 102 words in 9.2 s\n"}
+,{"stream_name":"stdout","time":881.488235178,"data":"[ 14.5 min] Section written: Alerts_team_report_for_social_media.txt / Social media news: 105 words in 8.8 s\n"}
+,{"stream_name":"stdout","time":881.488324015,"data":"[ 14.5 min] Report finished: Alerts_team_report_for_social_media.txt after 0.3 min\n"}
+,{"stream_name":"stdout","time":896.220657012,"data":"[ 14.8 min] Section written: Emergency_team_report.txt / Emergency shelters: 89 words in 14.6 s\n"}
+,{"stream_name":"stdout","time":904.749867201,"data":"[ 14.9 min] Section written: Emergency_team_report.txt / Hospitals: 99 words in 8.5 s\n"}
+,{"stream_name":"stdout","time":909.785710996,"data":"[ 15.0 min] Section written: Emergency_team_report.txt / Immediate transportation recovery: 61 words in 5.0 s\n"}
+,{"stream_name":"stdout","time":909.785804111,"data":"[ 15.0 min] Report finished: Emergency_team_report.txt after 0.5 min\n"}
+,{"stream_name":"stdout","time":925.188736093,"data":"[ 15.3 min] Section written: Emergency_service_human_resource_allocation.txt / Introduction: 104 words in 15.3 s\n"}
+,{"stream_name":"stdout","time":935.440043616,"data":"[ 15.4 min] Section written: Emergency_service_human_resource_allocation.txt / Current Situation: 124 words in 10.3 s\n"}
+,{"stream_name":"stdout","time":948.055507915,"data":"[ 15.7 min] Section written: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: 129 words in 12.6 s\n"}
+,{"stream_name":"stdout","time":958.082541184,"data":"[ 15.8 min] Section written: Emergency_service_human_resource_allocation.txt / Allocation Plan: 93 words in 10.0 s\n"}
+,{"stream_name":"stdout","time":963.791265876,"data":"[ 15.9 min] Section written: Emergency_service_human_resource_allocation.txt / Challenges and Considerations: 77 words in 5.7 s\n"}
+,{"stream_name":"stdout","time":969.04870247,"data":"[ 16.0 min] Section written: Emergency_service_human_resource_allocation.txt / Recommendations: 71 words in 5.3 s\n"}
+,{"stream_name":"stdout","time":975.432912292,"data":"[ 16.1 min] Section written: Emergency_service_human_resource_allocation.txt / Conclusion: 84 words in 6.4 s\n"}
+,{"stream_name":"stdout","time":975.432969143,"data":"[ 16.1 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":989.504099237,"data":"[ 16.3 min] Section written: Public_community_report.txt / Introduction: 93 words in 14.0 s\n"}
+,{"stream_name":"stdout","time":1005.678153217,"data":"[ 16.6 min] Section written: Public_community_report.txt / Current Situation: 186 words in 16.2 s\n"}
+,{"stream_name":"stdout","time":1016.674564926,"data":"[ 16.8 min] Section written: Public_community_report.txt / Resource Allocation: 111 words in 11.0 s\n"}
+,{"stream_name":"stdout","time":1028.872345172,"data":"[ 17.0 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":1040.882878372,"data":"[ 17.2 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":1040.883089027,"data":"[ 17.2 min] Section written: Public_community_report.txt / Public Advisory: 138 words in 24.2 s\n"}
+,{"stream_name":"stdout","time":1044.695703637,"data":"[ 17.3 min] Section written: Public_community_report.txt / Organizational Operation: 42 words in 3.8 s\n"}
+,{"stream_name":"stdout","time":1048.255122119,"data":"[ 17.3 min] Section written: Public_community_report.txt / Conclusion: 48 words in 3.6 s\n"}
+,{"stream_name":"stdout","time":1048.257712704,"data":"[ 17.3 min] Report finished: Public_community_report.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":1062.922430255,"data":"[ 17.6 min] Section written: Reconstruction_plan.txt / Executive Summary: 107 words in 14.6 s\n"}
+,{"stream_name":"stdout","time":1074.220068212,"data":"[ 17.8 min] Section written: Reconstruction_plan.txt / Assessment of Damage: 126 words in 11.3 s\n"}
+,{"stream_name":"stdout","time":1084.362397267,"data":"[ 17.9 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":1094.07885121,"data":"[ 18.1 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":1094.078900035,"data":"[ 18.1 min] Section written: Reconstruction_plan.txt / Reconstruction Needs: 131 words in 19.8 s\n"}
+,{"stream_name":"stdout","time":1105.136375611,"data":"[ 18.3 min] Section asked again: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":1115.840361083,"data":"[ 18.5 min] Section kept with problems: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":1115.840409372,"data":"[ 18.5 min] Section written: Reconstruction_plan.txt / Plan of Action: 149 words in 21.8 s\n"}
+,{"stream_name":"stdout","time":1121.58838885,"data":"[ 18.5 min] Section written: Reconstruction_plan.txt / Recommendations: 78 words in 5.7 s\n"}
+,{"stream_name":"stdout","time":1134.449137901,"data":"[ 18.8 min] Section asked again: Reconstruction_plan.txt / Appendices: id_not_shown: SPHERE-5-p3, SPHERE-5-p4\n"}
+,{"stream_name":"stdout","time":1144.876424062,"data":"[ 18.9 min] Section written: Reconstruction_plan.txt / Appendices: 43 words in 23.3 s\n"}
+,{"stream_name":"stdout","time":1144.876653032,"data":"[ 18.9 min] Report finished: Reconstruction_plan.txt after 1.6 min\n"}
+,{"stream_name":"stdout","time":1144.876665334,"data":"[ 18.9 min] Fixed flow finished: 6 reports in reports/offline, scene santa_rosa_wildfire_00000155_post_disaster.png, grades by the code\n"}
+,{"stream_name":"stdout","time":1144.876671531,"data":"[ 18.9 min] Network log: 4 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":1144.876677177,"data":"[ 18.9 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":1144.876682428,"data":"[ 18.9 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":1144.876687805,"data":"[ 18.9 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2_step5_fix2/run_santa_rosa_wildfire_00000155_post_disaster\n"}
+,{"stream_name":"stdout","time":1146.821307541,"data":"[ 19.0 min] santa_rosa_wildfire_00000155_post_disaster.png: flow exit code 0\n"}
+,{"stream_name":"stdout","time":1147.022500364,"data":"\n"}
+,{"stream_name":"stdout","time":1147.022540618,"data":"===== turkey_earthquake4_post_327.png: the pass rules (exit code 0)\n"}
+,{"stream_name":"stdout","time":1147.02254663,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":1147.022550332,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":1147.022553897,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":1147.022557273,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":1147.022561034,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":1147.022564849,"data":"\n"}
+,{"stream_name":"stdout","time":1147.022568142,"data":"PASSED: the offline proof (internet off)\n"}
+,{"stream_name":"stdout","time":1147.022571372,"data":"\n"}
+,{"stream_name":"stdout","time":1147.022578194,"data":"report                                             words (without headings)  cites(real)  'not available offline'\n"}
+,{"stream_name":"stdout","time":1147.022582301,"data":"Expert_team_report.txt                               373 (  342)               5 (  5)    0\n"}
+,{"stream_name":"stdout","time":1147.022585764,"data":"Alerts_team_report_for_social_media.txt              212 (  193)               0 (  0)    0\n"}
+,{"stream_name":"stdout","time":1147.022589272,"data":"Emergency_team_report.txt                            336 (  317)               1 (  1)    0\n"}
+,{"stream_name":"stdout","time":1147.022592813,"data":"Emergency_service_human_resource_allocation.txt      649 (  621)               0 (  0)    1\n"}
+,{"stream_name":"stdout","time":1147.022596304,"data":"Public_community_report.txt                          546 (  526)               4 (  4)    0\n"}
+,{"stream_name":"stdout","time":1147.022599699,"data":"Reconstruction_plan.txt                              660 (  638)              11 ( 11)    1\n"}
+,{"stream_name":"stdout","time":1147.02260317,"data":"\n"}
+,{"stream_name":"stdout","time":1147.022632486,"data":"Other signals: {\"flow\": \"c4\", \"minutes\": 5.6, \"network_events\": 4, \"external\": [], \"guideline_searches\": 18, \"photo_questions\": 2, \"map_questions\": 0, \"map_reading\": \"made by the code\", \"map_label_questions\": 0, \"labelled_map_saved\": true, \"map_labels_drawn\": [6], \"sections_written\": 28, \"grades_found\": [3], \"model_messages_shortened\": 0, \"model_call_retries\": 0, \"total_words\": 2776, \"total_citations\": 21, \"total_citations_real\": 21, \"llm_calls_log\": true, \"agent_calls\": 0, \"image_calls\": 2, \"section_calls\": 34, \"section_words_median\": 102.0, \"section_words_min\": 56, \"calls_with_errors\": 0, \"biggest_prompt_tokens_real\": 6566, \"biggest_prompt_tokens_estimated\": 8945, \"lowest_estimate_to_real_ratio\": 1.24, \"answer_tokens_real\": 4542, \"minutes_in_model_calls\": 5.1, \"step_limit_reached\": 0, \"final_answers_asked_again\": 0, \"final_answers_kept_short\": 0, \"photo_descriptions\": 2, \"photo_descriptions_different\": 2, \"sticker_questions\": 0, \"stickers_read\": 0, \"sticker_words\": {}, \"answers_checked\": 27, \"answers_asked_again\": 7, \"answers_second_kept\": 7, \"answers_kept_with_problems\": 6, \"problems_left\": {\"Emergency_team_report.txt / Emergency shelters\": [\"no_citation\", \"number_misused: 54\"], \"Emergency_service_human_resource_allocation.txt / Human Resource Requirements\": [\"no_citation\", \"number_misused: 54, 32, 11\", \"number_unsourced: 43\"], \"Emergency_service_human_resource_allocation.txt / Allocation Plan\": [\"no_citation\", \"number_misused: 54, 32, 11\"], \"Public_community_report.txt / Resource Allocation\": [\"number_misused: 54\"], \"Public_community_report.txt / Organizational Operation\": [\"number_misused: 54\"], \"Reconstruction_plan.txt / Plan of Action\": [\"no_citation\"]}, \"search_index_load_seconds\": 10.8, \"search_backend\": \"numpy + torch\", \"searches_timed\": 18, \"search_ms_median\": 126.1, \"search_ms_p90\": 500.8, \"search_ms_max\": 7716.1, \"agent_call_seconds_median\": null, \"agent_call_seconds_p90\": null, \"agent_call_seconds_max\": null, \"image_call_seconds_median\": 5.4, \"image_call_seconds_p90\": 5.6, \"image_call_seconds_max\": 5.6, \"section_call_seconds_median\": 8.1, \"section_call_seconds_p90\": 11.8, \"section_call_seconds_max\": 16.4, \"answer_tokens_per_second_median\": 16.0, \"report_minutes\": {\"Expert_team_report.txt\": 0.9, \"Alerts_team_report_for_social_media.txt\": 0.3, \"Emergency_team_report.txt\": 0.7, \"Emergency_service_human_resource_allocation.txt\": 1.2, \"Public_community_report.txt\": 1.1, \"Reconstruction_plan.txt\": 1.2}}\n"}
+,{"stream_name":"stdout","time":1147.022669829,"data":"\n"}
+,{"stream_name":"stdout","time":1147.022673543,"data":"Latency (median / p90 / slowest):\n"}
+,{"stream_name":"stdout","time":1147.022676906,"data":"  guideline search:  126.1 / 500.8 / 7716.1 ms, 18 searches (loading the index once: 10.8 s, numpy + torch)\n"}
+,{"stream_name":"stdout","time":1147.022680339,"data":"  section model call: 8.1 / 11.8 / 16.4 s, 34 calls\n"}
+,{"stream_name":"stdout","time":1147.022683609,"data":"  image model call:  5.4 / 5.6 / 5.6 s, 2 calls\n"}
+,{"stream_name":"stdout","time":1147.022686913,"data":"  answer speed:      16 tokens/s (median)\n"}
+,{"stream_name":"stdout","time":1147.022690188,"data":"  time per report:   \n"}
+,{"stream_name":"stdout","time":1147.022693456,"data":"    Expert_team_report.txt                             0.9 min\n"}
+,{"stream_name":"stdout","time":1147.02269715,"data":"    Alerts_team_report_for_social_media.txt            0.3 min\n"}
+,{"stream_name":"stdout","time":1147.022700369,"data":"    Emergency_team_report.txt                          0.7 min\n"}
+,{"stream_name":"stdout","time":1147.02270364,"data":"    Emergency_service_human_resource_allocation.txt    1.2 min\n"}
+,{"stream_name":"stdout","time":1147.022707133,"data":"    Public_community_report.txt                        1.1 min\n"}
+,{"stream_name":"stdout","time":1147.022711428,"data":"    Reconstruction_plan.txt                            1.2 min\n"}
+,{"stream_name":"stdout","time":1147.022715429,"data":" \n"}
+,{"stream_name":"stdout","time":1147.022719058,"data":"----- Expert_team_report.txt (first 2500 characters) -----\n"}
+,{"stream_name":"stdout","time":1147.022723099,"data":"Mode: offline, fixed flow, with C4's damage facts\n"}
+,{"stream_name":"stdout","time":1147.022726993,"data":"\n"}
+,{"stream_name":"stdout","time":1147.022730748,"data":"# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades\n"}
+,{"stream_name":"stdout","time":1147.022734638,"data":"\n"}
+,{"stream_name":"stdout","time":1147.022738016,"data":"## Overview\n"}
+,{"stream_name":"stdout","time":1147.022741859,"data":"The earthquake caused significant structural damage to 32 buildings, classified as EMS-98 Grade 5, with total or near-total collapse. Additionally, 11 buildings sustained moderate to very heavy damage, categorized as Grades 2 to 4. The remaining 54 buildings remained intact with negligible to slight damage. The disaster primarily affected the built environment, with no visible impacts on the road network or open-space ground.\n"}
+,{"stream_name":"stdout","time":1147.022746444,"data":"\n"}
+,{"stream_name":"stdout","time":1147.022753789,"data":"## Description of the photos and the estimated damage\n"}
+,{"stream_name":"stdout","time":1147.022757729,"data":"The pre-earthquake photo (turkey_earthquake4_pre_327.png) shows no visible damage to buildings, roads, or open-space ground. The post-earthquake photo (turkey_earthquake4_post_327.png) reveals widespread structural damage to buildings, with debris scattered across the affected zones. Roads appear inundated, with visible water accumulation disrupting their surface. Open-space ground shows signs of flooding as well, with water pooling in areas that were previously dry. The estimated damage facts indicate 32 buildings were destroyed, 11 buildings sustained moderate to very heavy damage, and 54 buildings remained intact with negligible to slight damage. Hot spots of dense damage are concentrated in three areas: the north-west, west, and north-east of the photo, while safe areas are located in the south-east, with distances from the nearest estimated damage ranging from 254 to 412 pixels.\n"}
+,{"stream_name":"stdout","time":1147.022764846,"data":"\n"}
+,{"stream_name":"stdout","time":1147.022768152,"data":"## Disaster grade of each location\n"}
+,{"stream_name":"stdout","time":1147.022771695,"data":"The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:\n"}
+,{"stream_name":"stdout","time":1147.022774948,"data":"- Buildings estimated destroyed: 32: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]\n"}
+,{"stream_name":"stdout","time":1147.022778805,"data":"- Buildings estimated damaged: 11: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]\n"}
+,{"stream_name":"stdout","time":1147.022782194,"data":"- Buildings estimated intact: 54: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]\n"}
+,{"stream_name":"stdout","time":1147.022785309,"data":"\n"}
+,{"stream_name":"stdout","time":1147.022788271,"data":"## Conclusion\n"}
+,{"stream_name":"stdout","time":1147.022791464,"data":"The estimated damage indicates that the earthquake caused severe destruction to 32 buildings, classified as EMS-98 Grade 5, with total or near-total collapse. This highlights the critical need for immediate assistance in these hotspots, particularly in the north-west, west, and north-east of the photo, where the highest concentration of structural damage is evident. Efforts should focus on clearing debris,\n"}
+,{"stream_name":"stdout","time":1147.032630682,"data":"\n"}
+,{"stream_name":"stdout","time":1147.032654848,"data":"===== santa_rosa_wildfire_00000155_post_disaster.png: the pass rules (exit code 0)\n"}
+,{"stream_name":"stdout","time":1147.032660151,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":1147.032664366,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":1147.032668045,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":1147.032671587,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":1147.032675075,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":1147.032678872,"data":"\n"}
+,{"stream_name":"stdout","time":1147.032682054,"data":"PASSED: the offline proof (internet off)\n"}
+,{"stream_name":"stdout","time":1147.032685317,"data":"\n"}
+,{"stream_name":"stdout","time":1147.032688501,"data":"report                                             words (without headings)  cites(real)  'not available offline'\n"}
+,{"stream_name":"stdout","time":1147.032692034,"data":"Expert_team_report.txt                               380 (  349)               8 (  8)    0\n"}
+,{"stream_name":"stdout","time":1147.032695738,"data":"Alerts_team_report_for_social_media.txt              226 (  207)               0 (  0)    0\n"}
+,{"stream_name":"stdout","time":1147.032708729,"data":"Emergency_team_report.txt                            268 (  249)               4 (  4)    0\n"}
+,{"stream_name":"stdout","time":1147.032713499,"data":"Emergency_service_human_resource_allocation.txt      710 (  682)               6 (  6)    0\n"}
+,{"stream_name":"stdout","time":1147.032716888,"data":"Public_community_report.txt                          638 (  618)               4 (  4)    1\n"}
+,{"stream_name":"stdout","time":1147.032720686,"data":"Reconstruction_plan.txt                              656 (  634)              15 ( 15)    1\n"}
+,{"stream_name":"stdout","time":1147.032724678,"data":"\n"}
+,{"stream_name":"stdout","time":1147.032729464,"data":"Other signals: {\"flow\": \"c4\", \"minutes\": 5.7, \"network_events\": 4, \"external\": [], \"guideline_searches\": 18, \"photo_questions\": 2, \"map_questions\": 0, \"map_reading\": \"made by the code\", \"map_label_questions\": 0, \"labelled_map_saved\": true, \"map_labels_drawn\": [4], \"sections_written\": 28, \"grades_found\": [3], \"model_messages_shortened\": 0, \"model_call_retries\": 0, \"total_words\": 2878, \"total_citations\": 37, \"total_citations_real\": 37, \"llm_calls_log\": true, \"agent_calls\": 0, \"image_calls\": 2, \"section_calls\": 32, \"section_words_median\": 100.0, \"section_words_min\": 42, \"calls_with_errors\": 0, \"biggest_prompt_tokens_real\": 6573, \"biggest_prompt_tokens_estimated\": 8946, \"lowest_estimate_to_real_ratio\": 1.25, \"answer_tokens_real\": 4820, \"minutes_in_model_calls\": 5.4, \"step_limit_reached\": 0, \"final_answers_asked_again\": 0, \"final_answers_kept_short\": 0, \"photo_descriptions\": 2, \"photo_descriptions_different\": 2, \"sticker_questions\": 0, \"stickers_read\": 0, \"sticker_words\": {}, \"answers_checked\": 27, \"answers_asked_again\": 5, \"answers_second_kept\": 5, \"answers_kept_with_problems\": 3, \"problems_left\": {\"Public_community_report.txt / Public Advisory\": [\"no_citation\"], \"Reconstruction_plan.txt / Reconstruction Needs\": [\"no_citation\"], \"Reconstruction_plan.txt / Plan of Action\": [\"no_citation\"]}, \"search_index_load_seconds\": 9.0, \"search_backend\": \"numpy + torch\", \"searches_timed\": 18, \"search_ms_median\": 20.5, \"search_ms_p90\": 56.6, \"search_ms_max\": 59.3, \"agent_call_seconds_median\": null, \"agent_call_seconds_p90\": null, \"agent_call_seconds_max\": null, \"image_call_seconds_median\": 5.7, \"image_call_seconds_p90\": 6.3, \"image_call_seconds_max\": 6.3, \"section_call_seconds_median\": 10.0, \"section_call_seconds_p90\": 14.5, \"section_call_seconds_max\": 16.1, \"answer_tokens_per_second_median\": 16.2, \"report_minutes\": {\"Expert_team_report.txt\": 0.9, \"Alerts_team_report_for_social_media.txt\": 0.3, \"Emergency_team_report.txt\": 0.5, \"Emergency_service_human_resource_allocation.txt\": 1.1, \"Public_community_report.txt\": 1.2, \"Reconstruction_plan.txt\": 1.6}}\n"}
+,{"stream_name":"stdout","time":1147.03274598,"data":"\n"}
+,{"stream_name":"stdout","time":1147.03274917,"data":"Latency (median / p90 / slowest):\n"}
+,{"stream_name":"stdout","time":1147.032752431,"data":"  guideline search:  20.5 / 56.6 / 59.3 ms, 18 searches (loading the index once: 9 s, numpy + torch)\n"}
+,{"stream_name":"stdout","time":1147.032755824,"data":"  section model call: 10 / 14.5 / 16.1 s, 32 calls\n"}
+,{"stream_name":"stdout","time":1147.032759422,"data":"  image model call:  5.7 / 6.3 / 6.3 s, 2 calls\n"}
+,{"stream_name":"stdout","time":1147.032762677,"data":"  answer speed:      16.2 tokens/s (median)\n"}
+,{"stream_name":"stdout","time":1147.032765997,"data":"  time per report:   \n"}
+,{"stream_name":"stdout","time":1147.032769011,"data":"    Expert_team_report.txt                             0.9 min\n"}
+,{"stream_name":"stdout","time":1147.032784982,"data":"    Alerts_team_report_for_social_media.txt            0.3 min\n"}
+,{"stream_name":"stdout","time":1147.032794464,"data":"    Emergency_team_report.txt                          0.5 min\n"}
+,{"stream_name":"stdout","time":1147.032798172,"data":"    Emergency_service_human_resource_allocation.txt    1.1 min\n"}
+,{"stream_name":"stdout","time":1147.032801579,"data":"    Public_community_report.txt                        1.2 min\n"}
+,{"stream_name":"stdout","time":1147.032804763,"data":"    Reconstruction_plan.txt                            1.6 min\n"}
+,{"stream_name":"stdout","time":1147.032807933,"data":" \n"}
+,{"stream_name":"stdout","time":1147.032811054,"data":"----- Expert_team_report.txt (first 2500 characters) -----\n"}
+,{"stream_name":"stdout","time":1147.032814225,"data":"Mode: offline, fixed flow, with C4's damage facts\n"}
+,{"stream_name":"stdout","time":1147.032818133,"data":"\n"}
+,{"stream_name":"stdout","time":1147.032822319,"data":"# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades\n"}
+,{"stream_name":"stdout","time":1147.032826284,"data":"\n"}
+,{"stream_name":"stdout","time":1147.032829371,"data":"## Overview\n"}
+,{"stream_name":"stdout","time":1147.032833543,"data":"The Santa Rosa wildfire caused extensive destruction, with 96 of 144 damage patches completely destroyed, indicating total or near-total collapse of structures [EMS98-masonry-grade-5]. Only 3 of 144 damage patches sustained moderate to very heavy damage, while 45 of 144 damage patches remained intact with negligible to slight damage [EMS98-masonry-grade-1]. The fire resulted in widespread debris and charred remains, with no visible vegetation or open-space ground remaining. Roads were intact but surrounded by destruction.\n"}
+,{"stream_name":"stdout","time":1147.032838208,"data":"\n"}
+,{"stream_name":"stdout","time":1147.032841424,"data":"## Description of the photos and the estimated damage\n"}
+,{"stream_name":"stdout","time":1147.032844794,"data":"The pre-disaster photo shows significant damage to the built environment, with numerous buildings destroyed and debris scattered throughout the area. Roads exhibit signs of charring and potential blockages from debris, while vegetation, including trees and shrubs, has been heavily impacted, evident from reduced spectral reflectance consistent with burning.\n"}
+,{"stream_name":"stdout","time":1147.032849078,"data":"\n"}
+,{"stream_name":"stdout","time":1147.032852165,"data":"The post-disaster photo reveals extensive damage to the built environment, with large portions of the area covered by debris and charred remains. Roads remain intact but are encircled by destruction, and no vegetation is visible due to the fire's impact. Safe areas identified in the analysis include zones located in the south-west of the photo, approximately 386, 300, and 251 pixels away from the nearest estimated damage.\n"}
+,{"stream_name":"stdout","time":1147.032856281,"data":"\n"}
+,{"stream_name":"stdout","time":1147.032868374,"data":"## Disaster grade of each location\n"}
+,{"stream_name":"stdout","time":1147.032872115,"data":"The disaster grades of the estimated damage patches, written from the damage model's table by the code, not by the language model:\n"}
+,{"stream_name":"stdout","time":1147.032875654,"data":"- Damage patches estimated destroyed: 96: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]\n"}
+,{"stream_name":"stdout","time":1147.032879303,"data":"- Damage patches estimated damaged: 3: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]\n"}
+,{"stream_name":"stdout","time":1147.032886308,"data":"- Damage patches estimated intact: 45: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]\n"}
+,{"stream_name":"stdout","time":1147.032895797,"data":"\n"}
+,{"stream_name":"stdout","time":1147.032899212,"data":"## Conclusion\n"}
+,{"stream_name":"stdout","time":1147.032902966,"data":"The conclusion of the report indicates that the Santa Rosa wildfire has caused severe destruction, with 96 out of 144 damage patches completely destroyed, indicating total or near-total collapse of structures [EMS98-masonry-grade-5]. The hot spot in the south-east of the photo, covering 684,835 pixels, requires immediate attention due to the highest concentration of damage. Efforts should focus on cl\n"}
+,{"stream_name":"stdout","time":1148.322589984,"data":"{\n"}
+,{"stream_name":"stdout","time":1148.322633992,"data":"  \"internet\": \"off\",\n"}
+,{"stream_name":"stdout","time":1148.322641889,"data":"  \"flow\": \"c4\",\n"}
+,{"stream_name":"stdout","time":1148.32264607,"data":"  \"scenes\": {\n"}
+,{"stream_name":"stdout","time":1148.322650132,"data":"    \"turkey_earthquake4_post_327.png\": {\n"}
+,{"stream_name":"stdout","time":1148.32265405,"data":"      \"run_dir\": \"/kaggle/working/t2_step5_fix2/run_turkey_earthquake4_post_327\",\n"}
+,{"stream_name":"stdout","time":1148.322658177,"data":"      \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":1148.322661543,"data":"      \"check_exit_code\": 0\n"}
+,{"stream_name":"stdout","time":1148.322664824,"data":"    },\n"}
+,{"stream_name":"stdout","time":1148.322668024,"data":"    \"santa_rosa_wildfire_00000155_post_disaster.png\": {\n"}
+,{"stream_name":"stdout","time":1148.322671631,"data":"      \"run_dir\": \"/kaggle/working/t2_step5_fix2/run_santa_rosa_wildfire_00000155_post_disaster\",\n"}
+,{"stream_name":"stdout","time":1148.322675221,"data":"      \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":1148.322678488,"data":"      \"check_exit_code\": 0\n"}
+,{"stream_name":"stdout","time":1148.322681849,"data":"    }\n"}
+,{"stream_name":"stdout","time":1148.322689279,"data":"  },\n"}
+,{"stream_name":"stdout","time":1148.322691502,"data":"  \"minutes\": 19.0,\n"}
+,{"stream_name":"stdout","time":1148.322693838,"data":"  \"served_name\": \"disasterm3-7b\",\n"}
+,{"stream_name":"stdout","time":1148.322696862,"data":"  \"max_model_len\": 32768,\n"}
+,{"stream_name":"stdout","time":1148.322699113,"data":"  \"versions\": {\n"}
+,{"stream_name":"stdout","time":1148.322701386,"data":"    \"vllm\": \"0.25.1\",\n"}
+,{"stream_name":"stdout","time":1148.322703805,"data":"    \"crewai\": \"1.15.2\",\n"}
+,{"stream_name":"stdout","time":1148.322706042,"data":"    \"torch\": \"2.11.0+cu130\",\n"}
+,{"stream_name":"stdout","time":1148.322708685,"data":"    \"transformers\": \"5.20.2\",\n"}
+,{"stream_name":"stdout","time":1148.322710942,"data":"    \"openai\": \"2.54.0\",\n"}
+,{"stream_name":"stdout","time":1148.322713239,"data":"    \"numpy\": \"2.1.3\",\n"}
+,{"stream_name":"stdout","time":1148.322715537,"data":"    \"pillow\": \"13.0.0\"\n"}
+,{"stream_name":"stdout","time":1148.322717887,"data":"  },\n"}
+,{"stream_name":"stdout","time":1148.322720893,"data":"  \"model\": \"AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP\",\n"}
+,{"stream_name":"stdout","time":1148.322734704,"data":"  \"model_commit\": \"def8f6c81889ffb68904afdc90c3a1389697d73b\",\n"}
+,{"stream_name":"stdout","time":1148.322738797,"data":"  \"code_packed\": \"2026-11-20 19:34:55\",\n"}
+,{"stream_name":"stdout","time":1148.322742748,"data":"  \"code_git_commit\": \"1a5f38094\",\n"}
+,{"stream_name":"stdout","time":1148.322746945,"data":"  \"code_uncommitted_changes\": true,\n"}
+,{"stream_name":"stdout","time":1148.322750981,"data":"  \"code_files_found_at\": {\n"}
+,{"stream_name":"stdout","time":1148.322754535,"data":"    \"DisasterManagement_teamwork_simulation.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/DisasterManagement_teamwork_simulation.py\",\n"}
+,{"stream_name":"stdout","time":1148.322768095,"data":"    \"Disaster_image/Global_image/2.jpg\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Global_image/2.jpg\",\n"}
+,{"stream_name":"stdout","time":1148.32277186,"data":"    \"Disaster_image/Local_image/Picture1.png\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture1.png\",\n"}
+,{"stream_name":"stdout","time":1148.322775675,"data":"    \"Disaster_image/Local_image/Picture2.png\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture2.png\",\n"}
+,{"stream_name":"stdout","time":1148.322779318,"data":"    \"Disaster_image/Local_image/Picture3.png\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture3.png\",\n"}
+,{"stream_name":"stdout","time":1148.322782975,"data":"    \"Disaster_image/Local_image/Picture4.png\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture4.png\",\n"}
+,{"stream_name":"stdout","time":1148.322793056,"data":"    \"Disaster_image/Local_image/Picture5.png\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture5.png\",\n"}
+,{"stream_name":"stdout","time":1148.322802672,"data":"    \"Disaster_image/Local_image/Picture6.png\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/Disaster_image/Local_image/Picture6.png\",\n"}
+,{"stream_name":"stdout","time":1148.322805571,"data":"    \"c4_scenes/buildings_c4_scenes.sqlite\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/c4_scenes/buildings_c4_scenes.sqlite\",\n"}
+,{"stream_name":"stdout","time":1148.322808036,"data":"    \"c4_scenes/hotspots_c4_scenes.json\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/c4_scenes/hotspots_c4_scenes.json\",\n"}
+,{"stream_name":"stdout","time":1148.322810496,"data":"    \"c4_scenes/scenes.json\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/c4_scenes/scenes.json\",\n"}
+,{"stream_name":"stdout","time":1148.322812983,"data":"    \"check_run.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/check_run.py\",\n"}
+,{"stream_name":"stdout","time":1148.322815795,"data":"    \"disasteller_inputs.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/disasteller_inputs.py\",\n"}
+,{"stream_name":"stdout","time":1148.322819098,"data":"    \"fixed_flow.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/fixed_flow.py\",\n"}
+,{"stream_name":"stdout","time":1148.322840548,"data":"    \"fixed_flow_c4.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/fixed_flow_c4.py\",\n"}
+,{"stream_name":"stdout","time":1148.32284527,"data":"    \"global_annotation_tool.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/global_annotation_tool.py\",\n"}
+,{"stream_name":"stdout","time":1148.322849555,"data":"    \"global_img_tool.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/global_img_tool.py\",\n"}
+,{"stream_name":"stdout","time":1148.322853821,"data":"    \"local_img_tool.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/local_img_tool.py\",\n"}
+,{"stream_name":"stdout","time":1148.322857941,"data":"    \"local_model.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/local_model.py\",\n"}
+,{"stream_name":"stdout","time":1148.322861513,"data":"    \"number_check.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/number_check.py\",\n"}
+,{"stream_name":"stdout","time":1148.322865086,"data":"    \"pdf_search_tool.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/pdf_search_tool.py\",\n"}
+,{"stream_name":"stdout","time":1148.322868652,"data":"    \"run_with_netlog.py\": \"/kaggle/input/datasets/redwannewaz/disasteller-offline-c4/run_with_netlog.py\"\n"}
+,{"stream_name":"stdout","time":1148.322876051,"data":"  }\n"}
+,{"stream_name":"stdout","time":1148.322879382,"data":"}\n"}
+,{"stream_name":"stdout","time":1148.322882489,"data":"Zip: /kaggle/working/t2_step5_c4_fix2_internet_off.zip\n"}
+,{"stream_name":"stderr","time":1151.773279636,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1151.77331936,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1151.924892577,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1151.924931935,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1152.833591613,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1152.940881373,"data":"[NbConvertApp] Writing 75957 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1155.691062529,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1156.330796591,"data":"[NbConvertApp] Writing 400482 bytes to __results__.html\n"}
+]

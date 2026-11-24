@@ -1,0 +1,18 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The estimated damage reveals widespread destruction across the affected area, with (number not available offline) of the observed damage patches classified as completely destroyed, indicating total or near-total collapse consistent with EMS-98 Grade 5 [EMS98-masonry-grade-5]. Additionally, 43% of the patches sustained moderate to very heavy damage, including partial collapses and severe structural failures, corresponding to Grades 2 to 4 [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]. Only 11% of the patches remained intact, showing negligible to slight damage [EMS98-masonry-grade-1].
+
+## Description of the estimated damage
+The estimated damage reveals widespread destruction across the affected area, with 54 of the observed damage patches classified as completely destroyed, indicating total or near-total collapse consistent with EMS-98 Grade 5 [EMS98-masonry-grade-5]. Additionally, 50 patches sustained moderate to very heavy damage, including partial collapses and severe structural failures, corresponding to Grades 2 to 4 [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]. Only 13 patches remained intact, showing negligible to slight damage [EMS98-masonry-grade-1]. The hot spots of highest damage concentration include zones around (774, 531) in the east of the photo, with 223,555 pixels, and around (41, 750) in the south-west, with 200,020 pixels. Safe areas with minimal proximity to the estimated damage are located around (346, 119) in the north, with 146 pixels, and around (359, 454) and (416, 650) in the centre, with 131 and 124 pixels respectively.
+
+## Disaster grade of each location
+The disaster grades of the estimated damage patches, written from the damage model's table by the code, not by the language model:
+- Damage patches estimated destroyed: 54: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damage patches estimated damaged: 50: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Damage patches estimated intact: 13: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The conclusion of the report indicates that immediate assistance should focus on the hot spots of highest damage concentration, particularly the zones around (774, 531) in the east and (41, 750) in the south-west of the photo, where 223,555 and 200,020 pixels, respectively, are affected by severe destruction. These areas require urgent intervention to address the total or near-total collapse of structures, ensuring safety and facilitating rescue operations. Additionally, efforts must be directed towards stabilizing the remaining intact patches to prevent further deterioration and potential secondary hazards.

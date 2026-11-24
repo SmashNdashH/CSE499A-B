@@ -1,0 +1,70 @@
+[{"stream_name":"stderr","time":8.130734973,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.130776451,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.130782754,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.130786874,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.742270673,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.742324261,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.742330552,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.742334679,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":37.148341234,"data":"✓ torch 2.11.0+cu130, torchvision 0.26.0+cu130, transformers 5.20.2, OpenCV 4.14.0, python 3.13.16\n"}
+,{"stream_name":"stdout","time":37.150972397,"data":"  GPUs: ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":43.74342256,"data":"✓ R16c step 7: graders {42: PosixPath('/kaggle/input/notebooks/abrarmohammedtanzim/r16c-step5-grader-on-sam3-outlines/step5/grader_seed42.pth'), 43: PosixPath('/kaggle/input/notebooks/abrarmohammedtanzim/r16c-step5-grader-on-sam3-outlines/step5/grader_seed43.pth'), 44: PosixPath('/kaggle/input/notebooks/abrarmohammedtanzim/r16c-step5b-third-grader-seed/step5b/grader_seed44.pth')}\n"}
+,{"stream_name":"stdout","time":43.743481392,"data":"  SAM 3 maps: /kaggle/input/notebooks/abrarmohammedtanzim/e3-sam3-building-finding/E3/masks/pre_grid2; saved grades: {44: PosixPath('/kaggle/input/notebooks/abrarmohammedtanzim/r16c-step5b-third-grader-seed/step5b/instances_val.csv'), 42: PosixPath('/kaggle/input/notebooks/abrarmohammedtanzim/r16c-step5-grader-on-sam3-outlines/step5/instances_val.csv'), 43: PosixPath('/kaggle/input/notebooks/abrarmohammedtanzim/r16c-step5-grader-on-sam3-outlines/step5/instances_val.csv')}\n"}
+,{"stream_name":"stdout","time":527.456807241,"data":"✓ 6,443 pairs; validation 645, clean 605\n"}
+,{"stream_name":"stdout","time":528.2111795,"data":"✓ Helpers ready (self-checks passed: SR crops for small buildings only, the tiles stitch exactly)\n"}
+,{"stream_name":"stderr","time":530.92925321,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":530.929289084,"data":"\n"}
+,{"stream_name":"stderr","time":530.929295991,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":552.534854349,"data":"                                         image  bicubic_psnr  S1_psnr  S1_consistency_psnr  S2_psnr  S2_consistency_psnr\n"}
+,{"stream_name":"stdout","time":552.534905566,"data":"               turkey_earthquake3_post_692.png         40.91    42.24                55.28    26.46                29.23\n"}
+,{"stream_name":"stdout","time":552.534913654,"data":" hurricane_florence_00000315_post_disaster.png         42.37    42.18                54.74    36.39                35.00\n"}
+,{"stream_name":"stdout","time":552.534926604,"data":"     nepal_flooding_00000278_post_disaster.png         37.16    36.86                52.44    33.13                34.03\n"}
+,{"stream_name":"stdout","time":552.534933484,"data":"santa_rosa_wildfire_00000201_post_disaster.png         27.55    27.09                37.70    25.09                27.52\n"}
+,{"stream_name":"stdout","time":552.534961944,"data":"  hurricane_michael_00000224_post_disaster.png         37.08    37.12                51.51    32.70                36.93\n"}
+,{"stream_name":"stdout","time":571.620882329,"data":"✓ SR models ready on ['cuda:0', 'cuda:1']: Swin2SR (revision None), Real-ESRGAN (sha256 49fafd45f8fd7aa8...). One 1024 x 1024 photo: {'S1': 17.82, 'S2': 1.46} s; the full run's SR, at most about 3.5 h\n"}
+,{"stream_name":"stdout","time":17449.056086207,"data":"✓ 645 pairs (605 clean) in 281.2 min; SR on 633 pairs, {'S1': 23.93, 'S2': 1.55} s per pair (both photos at once)\n"}
+,{"stream_name":"stdout","time":17449.269910584,"data":"                                                                                 check             result  pass\n"}
+,{"stream_name":"stdout","time":17449.269958402,"data":"                                    V0 log-probabilities within 0.05 of the saved ones 1.0000 of outlines  True\n"}
+,{"stream_name":"stdout","time":17449.269963322,"data":"                             V0 destroyed IoU, seed 42, against 0.3161 (within 0.0005)             0.3161  True\n"}
+,{"stream_name":"stdout","time":17449.269966777,"data":"                             V0 destroyed IoU, seed 43, against 0.3051 (within 0.0015)             0.3062  True\n"}
+,{"stream_name":"stdout","time":17449.269970152,"data":"                             V0 destroyed IoU, seed 44, against 0.2982 (within 0.0015)             0.2974  True\n"}
+,{"stream_name":"stdout","time":17449.26997341,"data":"V0 macro F1 on the true buildings of all pairs, seed 42, against 0.7367 (within 0.003)             0.7367  True\n"}
+,{"stream_name":"stdout","time":17449.269976731,"data":"V0 macro F1 on the true buildings of all pairs, seed 43, against 0.7303 (within 0.003)             0.7303  True\n"}
+,{"stream_name":"stdout","time":17449.269980041,"data":"V0 macro F1 on the true buildings of all pairs, seed 44, against 0.7541 (within 0.003)             0.7541  True\n"}
+,{"stream_name":"stdout","time":17449.631818805,"data":"variant         pairs  n_pairs   miou  destroyed_iou  building_iou  destroyed_iou_s42  destroyed_iou_s43  destroyed_iou_s44  grade_agrees_with_main_truth  agrees_on_small_outlines\n"}
+,{"stream_name":"stdout","time":17449.631865035,"data":"     V0           all      605 0.5473         0.3066        0.6307             0.3161             0.3062             0.2974                        0.8182                    0.7931\n"}
+,{"stream_name":"stdout","time":17449.631874478,"data":"     V0           xBD      520 0.5758         0.3542        0.6421             0.3643             0.3561             0.3422                        0.8133                    0.8007\n"}
+,{"stream_name":"stdout","time":17449.631883055,"data":"     V0 other sources       85 0.4439         0.2623        0.6178             0.2687             0.2616             0.2567                        0.8332                    0.7239\n"}
+,{"stream_name":"stdout","time":17449.631891094,"data":"     S1           all      605 0.5454         0.3025        0.6299             0.3145             0.3019             0.2913                        0.8085                    0.7766\n"}
+,{"stream_name":"stdout","time":17449.631899473,"data":"     S1           xBD      520 0.5725         0.3479        0.6409             0.3619             0.3476             0.3342                        0.8016                    0.7840\n"}
+,{"stream_name":"stdout","time":17449.631906658,"data":"     S1 other sources       85 0.4436         0.2603        0.6176             0.2680             0.2607             0.2522                        0.8297                    0.7093\n"}
+,{"stream_name":"stdout","time":17449.631914695,"data":"     S2           all      605 0.5426         0.3006        0.6297             0.3142             0.2961             0.2916                        0.8044                    0.7696\n"}
+,{"stream_name":"stdout","time":17449.631940348,"data":"     S2           xBD      520 0.5683         0.3429        0.6405             0.3577             0.3386             0.3325                        0.7972                    0.7778\n"}
+,{"stream_name":"stdout","time":17449.631944897,"data":"     S2 other sources       85 0.4442         0.2618        0.6176             0.2720             0.2589             0.2546                        0.8265                    0.6956\n"}
+,{"stream_name":"stdout","time":17449.631949299,"data":"variant pairs  buildings  macro_f1  macro_f1_s42  macro_f1_s43  macro_f1_s44  small_buildings  macro_f1_small\n"}
+,{"stream_name":"stdout","time":17449.631953362,"data":"     V0 clean      24886    0.7324        0.7275        0.7245        0.7453            13571          0.7173\n"}
+,{"stream_name":"stdout","time":17449.631958583,"data":"     V0   all      25594    0.7404        0.7367        0.7303        0.7541            14034          0.7247\n"}
+,{"stream_name":"stdout","time":17449.631962691,"data":"     S1 clean      24886    0.7152        0.7157        0.7054        0.7245            13571          0.6881\n"}
+,{"stream_name":"stdout","time":17449.631966727,"data":"     S1   all      25594    0.7219        0.7224        0.7095        0.7339            14034          0.6937\n"}
+,{"stream_name":"stdout","time":17449.631970816,"data":"     S2 clean      24886    0.7010        0.6982        0.6854        0.7192            13571          0.6640\n"}
+,{"stream_name":"stdout","time":17449.631974837,"data":"     S2   all      25594    0.7092        0.7045        0.6947        0.7283            14034          0.6721\n"}
+,{"stream_name":"stdout","time":17450.939450253,"data":" comparison                   metric  observed  low_2.5%  high_97.5%  share_above_0  decides\n"}
+,{"stream_name":"stdout","time":17450.939480973,"data":"S1 minus V0            destroyed IoU   -0.0041   -0.0070     -0.0020         0.0000     True\n"}
+,{"stream_name":"stdout","time":17450.939486678,"data":"S1 minus V0 macro F1, true buildings   -0.0172   -0.0226     -0.0125         0.0000    False\n"}
+,{"stream_name":"stdout","time":17450.939491492,"data":"S2 minus V0            destroyed IoU   -0.0060   -0.0107     -0.0026         0.0001    False\n"}
+,{"stream_name":"stdout","time":17450.939496343,"data":"S2 minus V0 macro F1, true buildings   -0.0314   -0.0392     -0.0251         0.0000    False\n"}
+,{"stream_name":"stdout","time":17450.939500677,"data":"\n"}
+,{"stream_name":"stdout","time":17450.939504835,"data":"✗ S1 (Swin2SR) doesn't pass: its destroyed IoU gain over V0 isn't clearly above noise. Super-resolution at grading time doesn't help these graders.\n"}
+,{"stream_name":"stdout","time":17450.939510793,"data":"       source  pairs  true_buildings  true_small_share  outlines  outlines_small_share\n"}
+,{"stream_name":"stdout","time":17450.939515292,"data":"other sources     85            5272             0.264      6435                 0.238\n"}
+,{"stream_name":"stdout","time":17450.939519804,"data":"          xBD    520           19614             0.621     19740                 0.701\n"}
+,{"stream_name":"stdout","time":17452.242970751,"data":"✓ Wrote README.md, the seven tables, examples.png and config.json to /kaggle/working/step7\n"}
+,{"stream_name":"stderr","time":17458.077451596,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":17458.077505004,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":17458.271057278,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":17458.271104961,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":17459.182007834,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":17459.283525833,"data":"[NbConvertApp] Writing 138702 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":17462.294459411,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":17463.147461202,"data":"[NbConvertApp] Writing 594028 bytes to __results__.html\n"}
+]

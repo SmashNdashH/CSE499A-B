@@ -1,0 +1,26 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The satellite imagery analysis of the Palu tsunami aftermath reveals significant damage across the affected area. Approximately 52% of the estimated damage patches fall into the 'destroyed' category, classified as 'very heavy damage' (EMS-98 Grade 5) based on the model's assessment. This includes substantial structural failures and total or near-total collapses. Around 14% of the damage patches are categorized as 'damaged,' ranging from moderate to very heavy damage (EMS-98 Grades 2 to 4), characterized by cracks in walls, detachment of roof tiles, and failure of non-structural elements. Only 35% of the damage patches are considered 'intact,' indicating negligible to slight damage (EMS-98 Grade 1), with hairline cracks and minor plaster falls observed. The hotspots, particularly around the north-east and east of the photo, show the highest concentration of damage, while safe areas are located in the south-west, not available offline.
+
+## Description of the estimated damage
+The satellite imagery analysis of the Palu tsunami aftermath indicates a severe level of damage across the affected area. Approximately 52% of the estimated damage patches are categorized as 'destroyed,' which corresponds to EMS-98 Grade 5, representing very heavy damage. This includes substantial structural failures and total or near-total collapses. Among the damaged patches, 14% fall under EMS-98 Grades 2 to 4, signifying moderate to very heavy damage. These include cracks in walls, detachment of roof tiles, and failure of non-structural elements. Only 35% of the damage patches are classified as 'intact,' indicating negligible to slight damage, with hairline cracks and minor plaster falls observed.
+
+The hotspots, particularly around the north-east and east of the photo, exhibit the highest concentration of damage. Specifically, hot spot 1, located around pixel coordinates (991, 234), covers a zone of 387,778 pixels. Hot spot 2, situated around (760, 595), spans a zone of 77,265 pixels. These hotspots suggest that the northeast and eastern regions were severely impacted by the tsunami.
+
+In contrast, there are safe areas located in the southern and western parts of the photo. Safe area 1 is centered around pixel coordinates (100, 923), with a safe distance of 459 pixels from the nearest estimated damage. Safe area 2 is centered around (250, 923), also with a safe distance of 400 pixels. Safe area 3 is centered around (100, 773), offering a safe distance of 323 pixels from the nearest estimated damage. These safe areas provide a clear indication of the relative safety in certain parts of the affected region.
+
+## Disaster grade of each location
+The disaster grades of the estimated damage patches, written from the damage model's table by the code, not by the language model:
+- Damage patches estimated destroyed: 49: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damage patches estimated damaged: 13: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Damage patches estimated intact: 33: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The satellite imagery analysis reveals that the Palu tsunami has caused significant damage, with approximately 52% of the estimated damage patches falling into the 'destroyed' category, corresponding to EMS-98 Grade 5, indicating very heavy damage. This includes substantial structural failures and total or near-total collapses. The hotspots, particularly around the north-east and east of the photo, show the highest concentration of damage, suggesting that these areas require immediate attention.
+
+Hot spot 1, located around pixel coordinates (991, 234), covers a zone of 387,778 pixels and hot spot 2, situated around (760, 595), spans a zone of 77,265 pixels. These hotspots indicate that the northeast and eastern regions were severely impacted by the tsunami. In contrast, the southern and western parts of the photo offer safer areas, providing a clear indication of the relative safety in certain parts of the affected region.
+
+Given the severity of the damage, the response teams should prioritize the hotspots for immediate intervention. The destruction in these areas necessitates urgent reconstruction efforts to ensure the safety and well-being of the affected population. Additionally, the presence of safe areas suggests that there may be survivors or temporary shelters in these regions, making them crucial points of focus for rescue and relief operations.

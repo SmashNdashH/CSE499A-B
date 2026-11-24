@@ -1,0 +1,32 @@
+{
+ "pair 1": {
+  "scene": "turkey_earthquake4_post_327.png",
+  "report": "Public_community_report.txt",
+  "A": "3b-instruct",
+  "B": "7b"
+ },
+ "pair 2": {
+  "scene": "turkey_earthquake4_post_327.png",
+  "report": "Alerts_team_report_for_social_media.txt",
+  "A": "7b",
+  "B": "3b-instruct"
+ },
+ "pair 3": {
+  "scene": "turkey_earthquake4_post_327.png",
+  "report": "Emergency_team_report.txt",
+  "A": "7b",
+  "B": "3b-instruct"
+ },
+ "pair 4": {
+  "scene": "turkey_earthquake4_post_327.png",
+  "report": "Reconstruction_plan.txt",
+  "A": "3b-instruct",
+  "B": "7b"
+ },
+ "pair 5": {
+  "scene": "turkey_earthquake4_post_327.png",
+  "report": "Expert_team_report.txt",
+  "A": "7b",
+  "B": "3b-instruct"
+ }
+}

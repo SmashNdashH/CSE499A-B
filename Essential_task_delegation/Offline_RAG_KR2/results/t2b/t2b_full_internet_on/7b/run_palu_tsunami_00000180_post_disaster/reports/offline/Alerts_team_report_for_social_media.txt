@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The tsunami has caused severe destruction, with 52% of the area completely devastated, requiring immediate attention to rebuild and stabilize the affected regions. The hotspots in the north-east and east, marked by zones of high density, indicate critical areas where structural collapse and debris require urgent removal and debris clearance operations. Efforts must focus on securing these zones to prevent further risks and begin reconstruction efforts. People should avoid the damaged areas in the north-east and east, as they are classified as destroyed and pose significant safety hazards. Safe areas in the south-west, such as those around (100, 923), (250, 923), and (100, 773), remain unaffected and are recommended for shelter and recovery activities.
+
+## Social media news
+The tsunami has caused severe destruction across the region, with 52% of the area completely devastated. The hotspots in the north-east and east, including zones of high density, indicate critical areas where structural collapse and debris require urgent removal and clearance. These zones pose significant safety hazards and must be secured immediately. Meanwhile, safe areas in the south-west, such as those around (100, 923), (250, 923), and (100, 773), remain unaffected and are recommended for shelter and recovery activities. Authorities urge residents to stay clear of the damaged zones in the north-east and east to ensure their safety.

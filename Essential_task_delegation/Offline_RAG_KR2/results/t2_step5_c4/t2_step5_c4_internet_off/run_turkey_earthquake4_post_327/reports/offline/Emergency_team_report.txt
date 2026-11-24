@@ -1,0 +1,12 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+The emergency shelters will be established in the safe area 1, located around pixel coordinates (917, 923) in the south-east of the photo, 412 pixels from the nearest estimated damage. According to Sphere Handbook 2018, Shelter and Settlement, this area provides sufficient space for living space and site area per person, ensuring that each affected household has adequate living space to perform basic domestic activities. The minimum living space requirement of 3.5 square metres per person, excluding cooking space, bathing area and sanitation facility, will be met. The area also ensures privacy and separation as required between sexes, different age groups and families within a given household, aligning with Sphere Handbook 2018, Shelter and Settlement, pp. 289-292.
+
+## Hospitals
+The number of hospitals or medical points needed for handling rescued people is 1, based on the severity of the earthquake and the number of destroyed buildings. According to the INSARAG guidelines, medical staff must be aware of local procedures for accepting patients into the local system and establish a system for repatriating patients to their home countries for further treatment. The medical evacuation plan should be checked, and risk assessments conducted to ensure hygiene standards are maintained at base and worksites. Additionally, a triage point should be set up in consultation with medical personnel to facilitate the efficient transfer of rescued individuals to nearby hospitals.
+
+## Immediate transportation recovery
+The priority for immediate transportation recovery should focus on the road network in the north-west and north-east regions, as indicated by the hotspots of high structural damage. These areas are critical for clearing debris and restoring accessibility, which is essential for emergency response and the delivery of aid. Given the disruption caused by water accumulation and the presence of dense debris, prioritizing these zones will facilitate the movement of rescue teams, supplies, and displaced individuals.

@@ -1,0 +1,24 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Human Resource Allocation Report
+
+## Introduction
+The flood caused severe damage to the built environment in Libya, with 47% of buildings completely destroyed and 20% moderately damaged. The most affected areas include zones in the south-east and south of the image, where substantial structural and non-structural impacts were observed. Safe areas, such as open ground in the north of the image, are located at least 353 pixels away from the nearest estimated damage. Immediate attention is required for clearing debris and stabilizing partially collapsed structures in these zones.
+
+## Current Situation
+The flood has caused severe damage to the built environment in Libya, with 47% of buildings completely destroyed and 20% moderately damaged. The most affected areas include zones in the south-east and south of the image, where substantial structural and non-structural impacts were observed. Safe areas, such as open ground in the north of the image, are located at least 353 pixels away from the nearest estimated damage. Immediate attention is required for clearing debris and stabilizing partially collapsed structures in these zones.
+
+## Human Resource Requirements
+The human resource requirements for this disaster response include the deployment of Light, Medium, and Heavy international USAR Teams to manage hazardous materials and provide rescue operations in the affected zones. Additionally, the establishment of temporary medical points in safe areas is essential to address potential injuries. The coordination of logistics support is critical for transporting aid and equipment to the affected regions. These measures align with the guidelines for hazardous materials operations and the deployment of USAR Teams, ensuring effective disaster response and recovery.
+
+## Allocation Plan
+The allocation plan for the disaster response involves deploying Light, Medium, and Heavy international USAR Teams to manage hazardous materials and provide rescue operations in the hot spots and other affected areas. According to the guidelines, these teams should possess the ability to recognize hazardous environments and provide basic protection for team members. The teams will focus on clearing debris and stabilizing partially collapsed structures in the hot spots, such as hot spot 1 and hot spot 2, while ensuring safety protocols are followed. In addition, temporary medical points will be established in safe areas, such as safe area 1 and safe area 2, to address potential injuries. The coordination of logistics support is critical for transporting aid and equipment to the affected regions. These measures align with the guidelines for hazardous materials operations and the deployment of USAR Teams, ensuring effective disaster response and recovery. [INSARAG2B-7.2] [INSARAG2B-5.7.1-p1] [INSARAG2B-5.7.1-p3] [INSARAG2B-5.7.1-p9]
+
+## Challenges and Considerations
+The primary challenge in resource allocation lies in ensuring timely access to the affected zones, particularly in the hot spots, due to potential transportation disruptions caused by flooding. Additionally, local authorities may impose restrictions on accessing certain areas, necessitating flexible strategies to navigate these obstacles. As the situation evolves, continuous feedback from the field will be crucial to adjust the allocation plan, ensuring that critical operations, such as debris clearance and medical support, remain responsive to changing conditions.
+
+## Recommendations
+The recommendations for the disaster response include reinforcing the deployment of Light, Medium, and Heavy international USAR Teams to ensure comprehensive hazardous materials management and rescue operations in the hot spots. Additionally, establishing temporary medical points in safe areas is essential to address potential injuries. The allocation plan should prioritize logistical support for transporting aid and equipment to the affected regions, while continuously monitoring and adjusting the response based on evolving conditions.
+
+## Conclusion
+The flood has caused severe damage to the built environment in Libya, with 47% of buildings completely destroyed and 20% moderately damaged. The hot spots in the south-east and south require immediate attention for debris clearance and structural stabilization. Temporary medical points must be established in safe areas to address potential injuries. The deployment of Light, Medium, and Heavy international USAR Teams is essential for hazardous materials management and rescue operations. Continuous monitoring and adjustments to the allocation plan will ensure effective disaster response and recovery.

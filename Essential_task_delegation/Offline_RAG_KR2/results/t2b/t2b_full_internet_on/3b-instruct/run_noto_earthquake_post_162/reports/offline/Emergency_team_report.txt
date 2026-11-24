@@ -1,0 +1,42 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the damage assessment and guidelines provided, the following areas are suitable for emergency shelters:
+
+- **Safe Area 1:** Located around (923, 923), the south-east of the photo, approximately 637 pixels from the nearest damaged building. This area offers a safe refuge with minimal structural damage, though it should be checked for any hidden hazards before use. [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+- **Safe Area 2:** Around (773, 923), the south-east of the photo, approximately 576 pixels from the nearest damaged building. This area provides another safe haven, ensuring a comfortable living space for survivors. [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+- **Safe Area 3:** Located around (923, 773), the south-east of the photo, approximately 513 pixels from the nearest damaged building. This area is also suitable for temporary shelter, although it should be inspected for any potential structural issues. [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+For the areas with less damage, the following can be considered for emergency shelters:
+
+- **Hot Spot 1 (North-West):** Around (32, 235), the north-west of the photo. Although this area has 12 buildings completely destroyed, the remaining 40 buildings show no visible damage. This area can be utilized for emergency shelters, provided they are constructed with adequate living space and access to essential services. [SPHERE-2-p1] [SPHERE-2-p2] [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+- **Hot Spot 2 (West):** Located around (53, 551), the west of the photo. This area has 10 buildings with moderate to very heavy damage, making it a safer alternative compared to the north-west. [SPHERE-2-p1] [SPHERE-2-p2] [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+- **Hot Spot 3 (West):** Also in the west, around (284, 462), this area has 10 buildings with moderate to very heavy damage. This area can be used for emergency shelters, ensuring that living spaces meet the Sphere standards for living space and site area per person. [SPHERE-2-p1] [SPHERE-2-p2] [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+It is crucial to note that the exact
+
+## Hospitals
+Based on the damage assessment and guidelines provided, the following areas are suitable for hospitals or medical points:
+
+- **Safe Area 1 (South-East):** Located around (923, 923), the south-east of the photo, approximately 637 pixels from the nearest damaged building. This area offers a safe refuge with minimal structural damage, though it should be checked for any hidden hazards before use. [SPHERE-2-p1] [SPHERE-2-p2] [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+- **Safe Area 2 (South-East):** Around (773, 923), the south-east of the photo, approximately 576 pixels from the nearest damaged building. This area provides another safe haven, ensuring a comfortable living space for survivors. [SPHERE-2-p1] [SPHERE-2-p2] [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+- **Safe Area 3 (South-East):** Located around (923, 773), the south-east of the photo, approximately 513 pixels from the nearest damaged building. This area is also suitable for temporary shelter, although it should be inspected for any potential structural issues. [SPHERE-2-p1] [SPHERE-2-p2] [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+For the areas with less damage, the following can be considered for hospitals or medical points:
+
+- **Hot Spot 1 (North-West):** Around (32, 235), the north-west of the photo. Although this area has 12 buildings completely destroyed, the remaining 40 buildings show no visible damage. This area can be utilized for hospitals or medical points, provided they are constructed with adequate living space and access to essential services. [SPHERE-2-p1] [SPHERE-2-p2] [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+- **Hot Spot 2 (West):** Located around (53, 551), the west of the photo. This area has 10 buildings with moderate to very heavy damage, making it a safer alternative compared to the north-west. [SPHERE-2-p1] [SPHERE-2-p2] [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+- **Hot Spot 3 (West):** Also in the west, around (284, 462), this area has 10 buildings with moderate to very heavy damage. This area can be used for hospitals or medical points, ensuring
+
+## Immediate transportation recovery
+Based on the damage assessment and guidelines provided, the immediate transportation recovery efforts should focus on reopening roads and bridges in the hot spot areas to ensure safe and efficient evacuation and delivery of supplies. Specifically, the roads connecting Hot Spot 1 (north-west) and Hot Spot 3 (west) need urgent attention. These areas have 12 and 10 buildings completely destroyed and 10 buildings with moderate to very heavy damage, respectively. Reopening these routes will facilitate the safe evacuation of survivors and the timely delivery of emergency supplies and medical assistance. Additionally, the road linking Hot Spot 2 (west) to the safe areas should also be prioritized to ensure connectivity and ease of access for rescue operations and humanitarian aid.

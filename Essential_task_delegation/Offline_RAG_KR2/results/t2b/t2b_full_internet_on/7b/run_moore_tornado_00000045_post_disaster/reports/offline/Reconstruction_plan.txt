@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The tornado caused severe destruction across the area, with 72% of the built environment completely destroyed and 27% sustaining moderate to very heavy damage. Emergency shelters, medical facilities, and transportation networks were established in safe zones to support displaced residents. Rapid debris clearance and structural assessments are underway to guide recovery efforts.
+
+## Assessment of Damage
+The tornado caused severe destruction across the area, with 72% of the built environment completely destroyed and 27% sustaining moderate to very heavy damage. The hotspots of dense damage, including zones around (528, 712) in the south and (265, 861) in the south-west, indicate total or near-total collapse of structures. These zones are classified as EMS-98 Grade 5 destruction, as per the Expert team's report. The remaining 1% of the area sustained negligible to slight damage, with no visible structural collapse. Safe areas in the north-west, such as zones around (100, 165), (195, 282), and (236, 101), are recommended for temporary shelter. These findings align with the disaster grade assessment provided in the Expert team's report.
+
+## Reconstruction Needs
+The reconstruction needs for the affected area include the repair and demolition of 64 damaged structures classified as EMS-98 Grade 5 destruction, alongside the stabilization of 24 structures with moderate to very heavy damage. Given the extent of destruction, the repair of these structures is not feasible, necessitating their demolition and replacement with new buildings. The repair of 1 intact structure with negligible to slight damage is unnecessary. Reconstruction efforts should focus on establishing temporary housing in safe areas, such as zones around (100, 165), (195, 282), and (236, 101), to accommodate displaced residents. These actions align with Sphere Handbook 2018, Shelter and Settlement, standard 5, emphasizing the need for technical assistance and community involvement in rebuilding efforts.
+
+## Plan of Action
+The reconstruction plan begins with the demolition of 64 structures classified as EMS-98 Grade 5 destruction, followed by the demolition of 24 structures with moderate to very heavy damage. This phase requires the mobilization of specialized demolition teams and heavy machinery to remove debris efficiently. Concurrently, the establishment of temporary housing in safe zones, such as zones around (100, 165), (195, 282), and (236, 101), will involve setting up tents and shelter kits to accommodate displaced residents. Local authorities must be consulted to ensure compliance with safety protocols and zoning regulations. Once the demolition and temporary housing phases are complete, reconstruction efforts will focus on designing and constructing resilient shelters using locally available materials, guided by Sphere Handbook 2018, Shelter and Settlement, standard 5. This includes engaging affected communities in the planning and construction process to ensure long-term sustainability and resilience.
+
+## Recommendations
+Given the severe destruction caused by the tornado, immediate action is required to address the urgent need for demolition and temporary housing. Funding must be allocated for specialized demolition teams and heavy machinery to clear debris swiftly. Simultaneously, resources should be directed toward establishing robust temporary shelters in safe zones, utilizing tents and shelter kits. Long-term reconstruction should prioritize the development of resilient housing solutions, leveraging local materials and expertise, supported by technical assistance programs. Collaboration with local authorities is essential to ensure compliance with safety standards and zoning regulations.
+
+## Appendices
+The disaster grade of each place is as follows: 64 damage patches are classified as EMS-98 Grade 5 destruction, 24 patches as Grades 2 to 4, and 1 patch as Grade 1. The labelled map is not available offline. The guideline sections used include [EMS98-masonry-grade-1], [EMS98-masonry-grade-2], [EMS98-masonry-grade-3], [EMS98-masonry-grade-4], and [EMS98-masonry-grade-5].

@@ -1,0 +1,65 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The Moore tornado, which struck the city on [date], resulted in extensive damage across the affected area. According to the damage model, 89 damage patches were identified, with 64 patches classified as Grade 5 (total or near-total collapse), indicating severe structural failure. The remaining patches are categorized as Grades 2 to 4, representing moderate to very heavy damage. Only one patch remains intact, showing negligible to slight damage. The hotspots, particularly in the southern and southwestern regions, experienced the highest levels of destruction, while safer areas were located in the northern and western parts of the photo.
+
+The Expert Team Report highlights the catastrophic nature of the damage, noting that 64 out of 89 damage patches are classified as Grade 5, suggesting total or near-total collapse. The Alerts Team Report advises people to avoid the hotspots, which are around pixel coordinates (528, 712), (265, 861), and (67, 704), due to the severe damage and potential for further collapse. They also recommend checking the northern and western parts of the photo for safer conditions, though these areas are not entirely free from the effects of the tornado. The Emergency Service Team Report emphasizes the need for immediate attention to the hotspots, particularly Hot Spot 1, located around (528, 712), where total or near-total collapse is evident. Safe areas, such as those around (100, 165), (195, 282), and (236, 101), are also identified but require verification on the ground. The immediate transportation recovery efforts focus on reopening roads and bridges in the hot spot areas to restore connectivity and facilitate the movement of emergency services and supplies.
+
+## Current Situation
+The immediate aftermath of the Moore tornado reveals a severe level of destruction across the affected area. Based on the damage assessment and guidelines provided, the Emergency Service Team has identified critical areas requiring urgent attention. Hot Spot 1, located around pixel coordinates (528, 712) in the southern part of the photo, is estimated to have experienced total or near-total collapse, posing significant risks of structural failure and debris hazards. Immediate attention is required to prevent further collapse and ensure public safety. Clearing debris and stabilizing the structures in this area are essential steps to mitigate potential hazards.
+
+Hot Spot 2, situated around (265, 861) in the southwestern region, is also expected to have suffered very heavy damage, with multiple structures likely collapsed or severely damaged. Clearing debris and ensuring safe access to essential activities such as cooking, toilets, and bathing will be crucial. Hot Spot 3, around (67, 704) in the southwestern part of the photo, is similarly anticipated to have experienced very heavy damage, necessitating immediate attention to clear debris and ensure safe access to essential activities.
+
+In contrast, the northern and western parts of the photo appear relatively safer, though these areas are not entirely free from the effects of the tornado. Safe Area 1, located around (100, 165), is estimated to have minimal damage, with only negligible to slight damage. Safe Area 2, around (195, 282), and Safe Area 3, around (236, 101), are also estimated to have minimal damage, with negligible to slight damage. Verification on the ground is recommended before using these areas as safe havens.
+
+To address the immediate needs, the Emergency Service Team has established temporary shelters in Hot Spot 1 and Hot Spot 2 to provide immediate living space for affected individuals. These shelters offer basic roof and walls to protect occupants and their household assets, ensuring physical security, dignity, privacy, and protection from weather. Access and privacy considerations include provision of cooking, toilets, laundry, bathing, livelihoods activities, socialising, and play areas.
+
+Medical facilities have been set up in Hot Spot 1 and Hot Spot 2 to provide immediate medical care for the injured. Triage points have been established in consultation with medical personnel to ensure appropriate treatment and support. Continuous health monitoring, including psychological assessment and care, is being conducted for USAR Team members, including canines. Evacuation points have been clearly marked, and evacuation signaling systems are in place, with three long horn blasts signaling an evacuation.
+
+Overall, the Emergency Service Team is working diligently to restore safety and stability in the affected areas, focusing on clearing debris, establishing temporary shelters, and providing medical care and support. Further assessments and interventions will be carried out as needed to ensure the recovery and well-being of the affected population.
+
+## Resource Allocation
+To allocate resources effectively, the Emergency Service Team is guided by the Sphere and INSARAG guidelines. According to [SPHERE-4-p1], [SPHERE-4-p2], and [SPHERE-4-p4], household item assistance is crucial for restoring daily domestic activities. The team will prioritize access to essential items such as blankets, bedding, cooking pots, utensils, plates, and drinking vessels. [SPHERE-4-p1] recommends considering different needs according to age, sex, disability, social and cultural practices, and family size. [SPHERE-4-p4] suggests providing artificial lighting as needed, especially in areas without general illumination.
+
+For immediate transportation recovery, the team will follow [INSARAG2B-5.7.1-p5]. The team will check assignment and define strategy, ensuring that large enough vehicles are available to carry required equipment. They will liaise with logistics for fuel and check on-site safety during activities like tunnelling, shoring, and victim extrication. [INSARAG2B-5.7.1-p5] also mentions the importance of ensuring evacuation points are clearly marked and that personnel are familiar with the evacuation signaling system.
+
+The team will deploy specialized search and rescue units equipped with heavy machinery and advanced search techniques to Hot Spot 1, where total or near-total collapse is evident. Medical teams will be stationed in Hot Spot 2 and Hot Spot 3 to provide immediate medical care. Temporary shelters will be established in these areas to provide living space for affected individuals. Safe Area 1 will serve as a base camp for coordinating relief efforts and distributing supplies. Safe Area 2 and Safe Area 3 will be prepared for potential evacuations and will serve as temporary shelters if needed.
+
+Logistics will ensure that all teams have the necessary equipment and supplies. Vehicles will be allocated to transport personnel and supplies to the designated areas. Communication systems will be set up to maintain constant contact between teams and headquarters. Regular updates and feedback from the field will guide further resource allocation and deployment.
+
+## Public Advisory
+The Moore tornado has caused extensive damage across the city, resulting in severe structural failures and loss of life. It is crucial for the public to stay informed and follow the guidelines provided by the Emergency Service Team to ensure their safety and cooperation with ongoing operations.
+
+**Stay Safe:**
+
+- **Avoid Hot Spots:** People are advised to avoid the dangerous areas identified by the Alerts Team, particularly Hot Spot 1 (528, 712), Hot Spot 2 (265, 861), and Hot Spot 3 (67, 704). These areas are estimated to have experienced total or near-total collapse, posing significant risks of structural failure and debris hazards. Immediate attention is required to prevent further collapse and ensure public safety.
+
+- **Verify Safe Areas:** While the northern and western parts of the photo appear relatively safer, these areas are not entirely free from the effects of the tornado. Safe Area 1 (100, 165), Safe Area 2 (195, 282), and Safe Area 3 (236, 101) are estimated to have minimal damage, but verification on the ground is recommended before using them as safe havens.
+
+- **Clear Debris:** Clearing debris is crucial to ensure safe access to essential activities such as cooking, toilets, and bathing. People should exercise caution and avoid entering damaged structures until they are deemed safe.
+
+- **Follow Evacuation Signals:** Evacuation points are clearly marked and signaled with three long horn blasts. Personnel should be familiar with these signals and evacuate immediately upon hearing them.
+
+**Access Emergency Services:**
+
+- **Emergency Shelters:** Temporary shelters have been established in Hot Spot 1 and Hot Spot 2 to provide immediate living space for affected individuals. These shelters offer basic roof and walls to protect occupants and their household assets, ensuring physical security, dignity, privacy, and protection from weather.
+
+- **Medical Facilities:** Medical facilities have been set up in Hot Spot 1 and Hot Spot 2 to provide immediate medical care for the injured. Triage points have been established in consultation with medical personnel to ensure appropriate treatment and support. Continuous health monitoring, including psychological assessment and care, is being conducted for USAR Team members, including canines.
+
+- **Transportation Recovery:** The immediate transportation recovery efforts focus on reopening roads and bridges in the hot spot areas to restore connectivity and facilitate the movement of emergency services and supplies. Large enough vehicles will be allocated to carry required equipment, and evacuation points will be clearly marked.
+
+**Cooperate with Ongoing Operations:**
+
+- **Support Relief Efforts:** Cooperate with emergency responders by providing support and assistance where possible. Follow instructions from local authorities and emergency services.
+
+- **Report Hazards:** If you come across hazards or damaged structures, report them to emergency services immediately. This helps ensure the safety of responders and prevents secondary collapses.
+
+- **Stay Informed:** Stay updated
+
+## Organizational Operation
+Our organization plays a critical role in coordinating immediate response efforts following the Moore tornado. We are responsible for assigning human resources to critical tasks such as setting up emergency shelters, providing medical care, and clearing debris. Our operations are guided by the Sphere and INSARAG guidelines to ensure that essential household items, such as blankets, cooking pots, and personal hygiene supplies, are distributed effectively. We also prioritize the establishment of temporary medical facilities and the restoration of transportation networks to facilitate the movement of emergency services and supplies. For further assistance, please refer to the official emergency hotline number, which is not available offline. Updates and detailed information can be found on our dedicated website, accessible via the provided URL.
+
+## Conclusion
+We extend our heartfelt gratitude to everyone involved in the immediate response efforts following the Moore tornado. Your dedication and hard work have made a significant difference in ensuring the safety and well-being of our community. We are committed to continuing our support and will work tirelessly to rebuild and recover. Please stay safe and continue to follow the guidelines provided by our emergency services. Together, we will overcome this challenging time.

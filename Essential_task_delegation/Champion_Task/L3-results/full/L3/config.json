@@ -1,0 +1,48 @@
+{
+ "task": "L3: the winning 3B in 4 bits, memory, speed and confidence",
+ "smoke_test": false,
+ "winner": "c",
+ "base_model": "Qwen/Qwen2.5-VL-3B-Instruct",
+ "adapter": "AbrarAlam/disasterm3-qwen25vl3b-l2/c/final",
+ "seven_b": "AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP",
+ "quantisation": "bitsandbytes NF4, double quantisation, fp16 compute",
+ "max_pixels": 602112,
+ "decoding": "greedy",
+ "batch": 8,
+ "timed_questions": 60,
+ "temperatures": [
+  0.5,
+  0.75,
+  1.0,
+  1.25,
+  1.5,
+  2.0,
+  3.0,
+  4.0,
+  6.0,
+  8.0
+ ],
+ "complete": true,
+ "fix": "visual.blocks.31.mlp.down_proj in fp32; the vision part under fp16 autocast (23 Nov), on the 3B only",
+ "overflowed_answers": 0,
+ "nonfinite_answers": 0,
+ "greedy_ok_share": 1.0,
+ "agreement": {
+  "3B fp16 vs 4 bits, one at a time": 0.683,
+  "3B 4 bits, one at a time vs in batches of 8": 0.983
+ },
+ "hours_answering": 3.99,
+ "hours_total": 4.2,
+ "building_counting": {
+  "accuracy_%": 48.17,
+  "median_count_error_%": 7.7,
+  "answered_with_one_option_%": 99.9,
+  "no_image_rule_%": 66.98
+ },
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2",
+  "peft": "0.22.0",
+  "bitsandbytes": "0.50.2"
+ }
+}

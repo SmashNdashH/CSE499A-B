@@ -1,0 +1,46 @@
+[{"stream_name":"stderr","time":7.063223898,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":7.063258761,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":8.020217572,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.020249223,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.020254922,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.020258952,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.624795802,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.624821643,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.624826032,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.624833362,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":23.145588638,"data":"✓ {'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'peft': '0.22.0', 'bitsandbytes': '0.50.2'}, python 3.13.16; torchao: not installed\n"}
+,{"stream_name":"stdout","time":23.147790691,"data":"  GPUs: ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":51.861462297,"data":"✓ L3  [SMOKE TEST]: the winner (c) in 4 bits; end tokens [151643, 151645]\n"}
+,{"stream_name":"stdout","time":53.103175974,"data":"✓ 10,675 optical questions {'BDC': 3583, 'DSR': 2007, 'BBR': 2006, 'DRE': 1868, 'ORR': 858, 'DTR': 353}; 0 with an image missing (counted wrong)\n"}
+,{"stream_name":"stdout","time":53.103213645,"data":"✓ 12 questions timed one at a time\n"}
+,{"stream_name":"stdout","time":265.476380569,"data":"✓ 7b_nf4: questions 12, weights_gpu_gb 5.91, footprint_gb 5.78, peak_gpu_gb 8.63, s_per_question_mean 4.774, s_per_question_median 5.736, tokens_per_s 0.59; /tmp has 2683 GB free\n"}
+,{"stream_name":"stdout","time":378.282758759,"data":"✓ 3b_fp16: questions 12, weights_gpu_gb 7.52, footprint_gb 7.51, peak_gpu_gb 8.1, s_per_question_mean 1.636, s_per_question_median 1.859, tokens_per_s 2.04, disk_gb 7.51; /tmp has 2668 GB free\n"}
+,{"stream_name":"stdout","time":421.118737711,"data":"✓ 3b_nf4: questions 12, weights_gpu_gb 2.42, footprint_gb 2.35, peak_gpu_gb 3.01, s_per_question_mean 1.752, s_per_question_median 1.936, tokens_per_s 2.0, disk_gb 2.4; /tmp has 2665 GB free\n"}
+,{"stream_name":"stdout","time":421.127675975,"data":"0 already answered; 30 to do\n"}
+,{"stream_name":"stdout","time":463.230686294,"data":"All answered after 0.01 h\n"}
+,{"stream_name":"stdout","time":463.343271086,"data":"task  questions  answered  3B_c_4bit_%  new_7B_full_%  base_7B_paper_%  mean_confidence\n"}
+,{"stream_name":"stdout","time":463.343297413,"data":" DTR          5         5         20.0          76.77             66.6            0.830\n"}
+,{"stream_name":"stdout","time":463.343318287,"data":" BBR          5         5         40.0          19.99              4.7            0.812\n"}
+,{"stream_name":"stdout","time":463.343326741,"data":" BDC          5         5         20.0          30.31             34.2            0.711\n"}
+,{"stream_name":"stdout","time":463.343345805,"data":" DRE          5         5         40.0          33.03             29.3            0.855\n"}
+,{"stream_name":"stdout","time":463.343350098,"data":" DSR          5         5         20.0          40.46             28.3            0.877\n"}
+,{"stream_name":"stdout","time":463.343353906,"data":" ORR          5         5         40.0          34.62             23.9            0.566\n"}
+,{"stream_name":"stdout","time":463.343357636,"data":"\n"}
+,{"stream_name":"stdout","time":463.343361201,"data":"Building counting: {'accuracy_%': 20.0, 'median_count_error_%': 17.2, 'answered_with_one_option_%': 100.0, 'no_image_rule_%': 80.0}\n"}
+,{"stream_name":"stdout","time":463.343365054,"data":"\n"}
+,{"stream_name":"stdout","time":463.343368505,"data":"                    model  questions  weights_gpu_gb  footprint_gb  peak_gpu_gb  s_per_question_mean  s_per_question_median  tokens_per_s  disk_gb\n"}
+,{"stream_name":"stdout","time":463.343373524,"data":"new 7B, 4 bits, full size         12            5.91          5.78         8.63                4.774                  5.736          0.59      NaN\n"}
+,{"stream_name":"stdout","time":463.343378571,"data":"             3B (c), fp16         12            7.52          7.51         8.10                1.636                  1.859          2.04     7.51\n"}
+,{"stream_name":"stdout","time":463.343383312,"data":"           3B (c), 4 bits         12            2.42          2.35         3.01                1.752                  1.936          2.00     2.40\n"}
+,{"stream_name":"stdout","time":463.343399646,"data":"\n"}
+,{"stream_name":"stdout","time":463.343403508,"data":"Same answers on the timed questions: {'3B fp16 vs 4 bits, one at a time': 0.833, '3B 4 bits, one at a time vs in batches of 8': 1.0}; chosen tokens that were the top score: 1.0000\n"}
+,{"stream_name":"stdout","time":463.343407575,"data":"✓ Wrote /kaggle/working/L3: results.csv, per_question.csv, speed.csv, speed.json, answers.jsonl, README.md, config.json\n"}
+,{"stream_name":"stderr","time":470.183767458,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":470.183796472,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":470.422088695,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":470.422114705,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":471.507406128,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":471.634742095,"data":"[NbConvertApp] Writing 399092 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":474.259172165,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":475.138590366,"data":"[NbConvertApp] Writing 720303 bytes to __results__.html\n"}
+]

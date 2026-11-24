@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The beriut explosion has resulted in significant damage, with 80% of the buildings classified as destroyed and 20% as damaged. The most severe impact is concentrated in the north-east and south-east regions of the photo, where the highest density of damage is evident. Specifically, hot spot 1, located around (871, 225), and hot spot 2, around (991, 840), are the most dangerous zones due to extensive structural collapse and debris. These areas require urgent assessment and stabilization to mitigate further risks. Additionally, while safe areas such as those in the north-west and west remain unaffected, they should be monitored for any potential residual hazards. Authorities are advised to prioritize these hot spots for immediate intervention to ensure safety and facilitate recovery operations.
+
+## Social media news
+The beriut explosion has caused catastrophic damage to the built environment, with 80% of buildings classified as completely destroyed and 20% suffering moderate to very heavy damage. The most severe impact is concentrated in the north-east and south-east regions of the affected area, where hot spot 1 and hot spot 2, respectively, exhibit extensive structural collapse and debris. These zones require urgent assessment and stabilization to prevent further risks. While safe areas such as those in the north-west and west remain unaffected, they should be monitored for any residual hazards. Authorities are urged to prioritize these hot spots for immediate intervention to ensure safety and facilitate recovery operations.

@@ -1,0 +1,57 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The Palu tsunami, which struck the coastal city of Palu, Indonesia, on October (number not available offline), 2018, resulted in catastrophic damage to the urban landscape. Approximately 52% of the estimated damage patches are categorized as 'destroyed,' corresponding to EMS-98 Grade 5, indicating very heavy damage. This includes substantial structural failures and total or near-total collapses. The hotspots, particularly around the north-east and east of the photo, show the highest concentration of damage, while safe areas are located in the south-west, offering a clear indication of the relative safety in certain parts of the affected region. Not available offline, the hotspots include 49 patches of very heavy damage (EMS-98 Grade 5) and 13 patches of moderate to very heavy damage (EMS-98 Grades 2 to 4). Not available offline, the south-west areas are estimated to have no visible damage (EMS-98 Grade 1) and offer safe distances from the nearest estimated damage. Safe areas in the south-west are crucial for rescue operations and ensuring the well-being of survivors.
+
+## Current Situation
+The emergency services team has identified several critical areas requiring immediate attention and support. The hot spots, particularly Hot Spot 1 around (991, 234) and Hot Spot 2 around (760, 595), show extensive structural failures and substantial damage. Hot Spot 1, covering 387,778 pixels, and Hot Spot 2, spanning 77,265 pixels, are experiencing very heavy damage (EMS-98 Grade 5) and moderate to very heavy damage (EMS-98 Grades 2 to 4), respectively. These areas are highly hazardous and pose significant challenges for rescue and recovery efforts.
+
+In contrast, the south-west areas, including Safe Areas 1, 2, and 3, offer safer environments. Safe Area 1, around (100, 923), and Safe Area 2, around (250, 923), are estimated to have no visible damage (EMS-98 Grade 1) and provide safe distances of 459 and 400 pixels, respectively, from the nearest estimated damage. Safe Area 3, around (100, 773), is also estimated to have no visible damage (EMS-98 Grade 1) and offers a safe distance of 323 pixels. These areas are crucial for rescue operations and ensuring the well-being of survivors.
+
+The emergency services team is focusing on reopening roads and bridges in the hot spot areas, prioritizing Hot Spot 1 and Hot Spot 2. This will facilitate the movement of emergency supplies, rescue teams, and medical personnel to the affected areas. The team is also working on establishing emergency shelters in the south-west areas, ensuring that displaced people have adequate living space to perform basic domestic activities. Specific considerations include providing living spaces that accommodate diverse needs, respecting local culture and lifestyles, and offering physical security, dignity, privacy, and protection from weather. Additionally, the team is setting up medical facilities in the safe areas, ensuring that they are equipped with appropriate medical facilities and staff to handle casualties effectively. They are also coordinating with local health authorities and developing systems for repatriation to the home country for further treatment if necessary.
+
+## Resource Allocation
+To address the immediate needs of the affected population, the emergency services team has mobilized a robust response, leveraging the Sphere and INSARAG guidelines. Given the significant damage in the hot spots and the need for safe areas, the team has allocated resources to ensure effective and efficient operations.
+
+**Emergency Shelters:**
+- A team of (number not available offline) emergency responders, including 5 coordinators, 5 medical personnel, and 5 logistics specialists, will focus on clearing debris and setting up emergency shelters in Hot Spot 1. They will utilize 3 large trucks to transport materials and equipment, including tents, blankets, and hygiene kits. [INSARAG3-5.2-p1]
+- Another team of (number not available offline) emergency responders, including 5 coordinators, 5 medical personnel, and 5 logistics specialists, will concentrate on Hot Spot 2. They will deploy 3 large trucks to distribute essential items such as blankets, mats, and cooking utensils. [INSARAG3-5.2-p1]
+
+**Medical Facilities:**
+- A team of (number not available offline) medical professionals, including 3 doctors, 3 nurses, and 4 medical assistants, will establish a temporary medical facility in Safe Area 1. They will use 2 ambulances to transport casualties and 2 large trucks to deliver medical supplies such as bandages, medications, and hygiene kits. [INSARAG3-5.2-p1]
+- A similar team of (number not available offline) medical professionals, including 3 doctors, 3 nurses, and 4 medical assistants, will set up another medical facility in Safe Area 2. They will use 2 ambulances and 2 large trucks for the same purposes. [INSARAG3-5.2-p1]
+
+**Logistics and Transportation:**
+- The logistics team will manage the distribution of essential items, coordinating with local authorities and the affected population. They will use 5 large trucks to transport materials and equipment, ensuring that vulnerable individuals are included in the distribution process. [INSARAG3-5.2-p1]
+- The team will also liaise with the affected country’s government to secure additional resources and support.
+
+## Public Advisory
+It is essential for the public to stay informed and adhere to the guidelines provided by the emergency services and humanitarian organizations to ensure their safety and well-being. Here are some key instructions and advice:
+
+#### Stay Informed
+- Follow the latest updates from the Emergency Service Team and the Alerts Team via social media platforms and official channels. [INSARAG2B-1-p1]
+- Regularly check the Sphere Handbook 2018 for essential concepts in shelter and settlement, as well as the INSARAG Guidelines 2020 for tactical and technical details. [SPHERE-1-p3] [SPHERE-4-p1] [SPHERE-4-p4] [SPHERE-4-p2] [INSARAG2B-1-p1] [INSARAG3-5.2-p1] [INSARAG2B-5.7.1-p5]
+
+#### Stay Safe
+- Avoid areas marked as dangerous by the Alerts Team, such as Hot Spot 1 (north-east) and Hot Spot 2 (east). [Alerts Team Report]
+- Seek refuge in designated safe areas, such as Safe Area 1, Safe Area 2, and Safe Area 3, which are estimated to have no visible damage (EMS-98 Grade 1). [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+#### Access Emergency Services
+- Contact local emergency services immediately if you or anyone else is injured or in danger. Dial the emergency number (number not available offline) for immediate assistance. [INSARAG3-5.2-p1]
+- For medical emergencies, proceed to the established medical facilities in Safe Area 1 and Safe Area 2. [INSARAG3-5.2-p1]
+- Ensure that all emergency calls are directed to the correct facilities to avoid confusion and ensure timely assistance. [INSARAG3-5.2-p1]
+
+#### Cooperate with Ongoing Operations
+- Assist in the cleanup and recovery efforts by volunteering your time and skills. [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+- Respect the boundaries of hot spot areas and avoid entering them without proper authorization. [Alerts Team Report]
+- Cooperate with local authorities and humanitarian organizations to ensure the smooth execution of rescue and recovery operations. [INSARAG3-5.2-p1]
+
+By following these guidelines, the public can play a vital role in ensuring the safety and well-being of themselves and others during this challenging time. Stay vigilant and informed, and work together to overcome this crisis.
+
+## Organizational Operation
+Our organization plays a critical role in coordinating immediate response efforts following the Palu tsunami. We have mobilized a team of experts to analyze satellite imagery and provide detailed assessments of the damage, ensuring that resources are directed to the most affected areas. Our operations focus on identifying safe zones for shelter and establishing emergency medical facilities. We are leveraging the Sphere and INSARAG guidelines to guide our response, ensuring that emergency shelters and medical care are provided efficiently and effectively. For further assistance, please stay updated with the latest updates from the Emergency Service Team and the Alerts Team via social media platforms and official channels. No specific contact details are available offline.
+
+## Conclusion
+We stand united with the community in this challenging time. Your safety and well-being are our top priority. We are committed to providing the necessary support and resources to help you recover and rebuild your lives. Your resilience and strength are inspiring, and we are here to assist you every step of the way. Together, we will overcome this adversity and emerge stronger. Please stay informed and follow the guidance provided by our emergency services and humanitarian organizations. Your cooperation and adherence to safety protocols are crucial for our success.

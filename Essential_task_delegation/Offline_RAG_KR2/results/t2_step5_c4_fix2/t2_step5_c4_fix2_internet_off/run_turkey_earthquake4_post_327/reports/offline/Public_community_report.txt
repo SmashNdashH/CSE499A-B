@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Public Community Report
+
+## Introduction
+The earthquake caused significant structural damage to 32 buildings, classified as EMS-98 Grade 5, with total or near-total collapse, in the north-west of the photo. Additionally, 11 buildings sustained moderate to very heavy damage, categorized as Grades 2 to 4, in the west and north-east of the photo. These areas are identified as the most dangerous due to high concentrations of structural damage. Emergency responders are advised to prioritize these regions to ensure safety and provide necessary assistance. The disaster has caused severe damage to the built environment, with debris scattered across the affected zones and inundation of roads and open-space ground.
+
+## Current Situation
+The earthquake has caused significant structural damage to 32 buildings, classified as EMS-98 Grade 5, with total or near-total collapse, in the north-west of the photo. Additionally, 11 buildings sustained moderate to very heavy damage, categorized as Grades 2 to 4, in the west and north-east of the photo. These areas are identified as the most dangerous due to high concentrations of structural damage. Emergency responders are advised to prioritize these regions to ensure safety and provide necessary assistance. The disaster has caused severe damage to the built environment, with debris scattered across the affected zones and inundation of roads and open-space ground.
+
+## Resource Allocation
+Based on the disaster assessment, we have allocated 54 emergency shelters in the safe areas identified in the south-east of the photo to accommodate displaced residents, ensuring adequate living space as per Sphere Handbook 2018 [SPHERE-1-p3]. For household items, we will prioritize the distribution of essential items such as blankets, bedding, and cooking utensils to support daily activities, aligning with standard 4 of the Sphere Handbook 2018 [SPHERE-4-p1]. Additionally, we will coordinate with local authorities to ensure equitable distribution and monitor the availability of these items to meet the needs of the affected population.
+
+## Public Advisory
+The earthquake has caused significant structural damage to several buildings, particularly in the north-west and west of the photo. We advise residents in these areas to remain vigilant and avoid entering affected zones to prevent injury. Emergency responders are working to clear debris and stabilize partially collapsed structures, and we recommend staying informed via official channels for updates. If you are displaced, please seek temporary shelter in the safe areas identified in the south-east of the photo. For household items, we are distributing essential supplies such as blankets and cooking utensils to support daily activities. If you require further assistance, please contact local authorities or emergency services. [SPHERE-1-p3] [SPHERE-4-p1]
+
+## Organizational Operation
+As the leading organization responsible for post-disaster management, our team has allocated 54 emergency shelters in safe areas to accommodate displaced residents and ensured adequate living space. We are prioritizing the distribution of essential household items, such as blankets and cooking utensils, to support daily activities. For further assistance, please contact local authorities or emergency services.
+
+## Conclusion
+We are committed to restoring safety and stability for our community. Our emergency response team is actively clearing debris and stabilizing partially collapsed structures, while displaced residents are safely housed in prepared shelters. Essential household items are being distributed to support daily activities. Together, we are working towards a resilient recovery, ensuring everyone's safety and well-being. Stay connected with us for updates.

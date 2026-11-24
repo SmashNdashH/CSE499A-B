@@ -2,6 +2,7 @@
 One-time setup for runner.ps1: stores the Kaggle API token of each account (acc1, acc2, acc3), encrypted with Windows
 DPAPI so that only your Windows user on this PC can read it. The tokens never go into the project folder, the log or
 the screen. They live in %LOCALAPPDATA%\cse499-kaggle-runner\acc1.token, acc2.token and acc3.token.
+acc4 (added 20 Nov) is for runs started from the PC outside the runner, such as R16c step 7; the runner doesn't use it.
 
 Run it in your own PowerShell window, because it asks you for the tokens:
   powershell -NoProfile -ExecutionPolicy Bypass -File "D:\CSE499AB_project\Essential_task_delegation\Champion_Task\kaggle-runner\setup-tokens.ps1"
@@ -17,7 +18,7 @@ $Kaggle    = Join-Path $env:APPDATA "Python\Python313\Scripts\kaggle.exe"
 New-Item -ItemType Directory -Force $TokenDir, $KaggleCfg | Out-Null
 
 $Usernames = @{ acc1 = "abrarmohammedtanzim"; acc2 = "abrar2222864642"; acc3 = "redwannewaz" }
-foreach ($acc in "acc1", "acc2", "acc3") {
+foreach ($acc in "acc1", "acc2", "acc3", "acc4") {
     $file = Join-Path $TokenDir "$acc.token"
     $secure = Read-Host "Kaggle API token for $acc (hidden; Enter alone keeps the stored one)" -AsSecureString
     if ($secure.Length -gt 0) { $secure | ConvertFrom-SecureString | Set-Content -Path $file -Encoding ASCII }
@@ -38,7 +39,7 @@ foreach ($acc in "acc1", "acc2", "acc3") {
         Write-Host "  ${acc}: Kaggle did NOT accept this token. Run this script again and paste it again." -ForegroundColor Red
         continue
     }
-    if ($user -ne $Usernames[$acc]) {
+    if ($Usernames[$acc] -and $user -ne $Usernames[$acc]) {      # acc4's username isn't in the plan: shown below to check
         Write-Host "  ${acc}: this token logs in as '$user', but $acc is '$($Usernames[$acc])'. Run this script again and paste $acc's own token." -ForegroundColor Red
         continue
     }

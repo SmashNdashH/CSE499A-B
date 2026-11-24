@@ -1,0 +1,6 @@
+image,bicubic_psnr,S1_psnr,S1_consistency_psnr,S2_psnr,S2_consistency_psnr
+turkey_earthquake3_post_692.png,40.91,42.24,55.28,26.46,29.23
+hurricane_florence_00000315_post_disaster.png,42.37,42.18,54.74,36.39,35.0
+nepal_flooding_00000278_post_disaster.png,37.16,36.86,52.44,33.13,34.03
+santa_rosa_wildfire_00000201_post_disaster.png,27.55,27.09,37.7,25.09,27.52
+hurricane_michael_00000224_post_disaster.png,37.08,37.12,51.51,32.7,36.93

@@ -1,0 +1,26 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+**Overview:** The satellite imagery analysis of the Hawaii wildfire shows severe damage across the affected area. Out of 192 buildings, 165 were completely destroyed, classified as EMS-98 Grade 5 (total or near total collapse). Another 1 building sustained moderate to very heavy damage, falling into EMS-98 Grades 2 to 4 (large and extensive cracks in most walls, partial structural failure of roofs and floors). Only 26 buildings remained intact, showing negligible to slight damage with fine cracks in plaster and partitions. The hotspots concentrated around the south and north of the photo, with the south having the highest density of damage. Safe areas were located in the northeast, but they were still within close proximity to the estimated damage zones.
+
+## Description of the estimated damage
+The satellite imagery analysis reveals a catastrophic scenario where nearly 86% of the 192 buildings in the affected area were completely destroyed, classified as EMS-98 Grade 5 (total or near total collapse). This includes 165 buildings, which are characterized by serious failure of walls, partial structural failure of roofs and floors, and total or near-total collapse. The remaining 1 building sustained moderate to very heavy damage, falling into EMS-98 Grades 2 to 4 (large and extensive cracks in most walls, partial structural failure of roofs and floors). 
+
+The hotspots of estimated damage are concentrated around the southern and northern regions of the photo, with the southern area exhibiting the highest density of damage. Specifically, Hotspot 1, located around coordinates (545, 845), covers a zone of 377,369 pixels, while Hotspot 2, situated around (140, 741), spans 176,705 pixels. These hotspots indicate the most severely impacted areas.
+
+In contrast, there are three safe areas identified, located in the northeastern part of the photo. Safe Area 1 is centered around (844, 100) and is 280 pixels away from the nearest estimated damage zone. Safe Area 2, centered around (701, 146), is 218 pixels from the nearest damage zone, and Safe Area 3, centered around (847, 254), is 147 pixels away. These safe areas provide some relief from the immediate danger posed by the fire, though they remain within close proximity to the estimated damage zones.
+
+## Disaster grade of each location
+The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:
+- Buildings estimated destroyed: 165: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Buildings estimated damaged: 1: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Buildings estimated intact: 26: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The satellite imagery analysis indicates that nearly 86% of the 192 buildings in the affected area were completely destroyed, classified as EMS-98 Grade 5 (total or near total collapse). This catastrophic damage is concentrated in the southern and northern regions of the photo, with Hotspot 1 and Hotspot 2 being the most severely impacted areas. These hotspots cover zones of 377,369 and 176,705 pixels respectively, highlighting the severity of the damage.
+
+Given the high concentration of destroyed buildings, immediate assistance is required in these hotspots. Priority should be given to rebuilding or securing structures in these areas, as they pose the greatest risk to life and property. Additionally, efforts should focus on stabilizing and repairing the remaining buildings categorized as moderately to heavily damaged (EMS-98 Grades 2 to 4). These structures may require urgent repairs to prevent further collapse and ensure safety.
+
+The relatively intact buildings (EMS-98 Grade 1) can be addressed later, once the immediate threats from the hotspots have been mitigated. However, monitoring these areas closely is essential to identify any potential secondary hazards, such as unstable debris or weakened foundations. Overall, the response must prioritize rapid intervention in the hotspots to minimize loss of life and property, while also ensuring the safety of responders and evacuees.

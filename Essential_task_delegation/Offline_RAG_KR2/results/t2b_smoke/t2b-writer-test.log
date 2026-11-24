@@ -1,0 +1,198 @@
+[{"stream_name":"stderr","time":6.78820931,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":6.788295346,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":7.74111846,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.741155831,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.741159697,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.741182921,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.352135199,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.352166699,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.352171918,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.35217599,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":9.615015394,"data":"Internet is on: used only to download the two models and the packages, before the flow runs.\n"}
+,{"stream_name":"stdout","time":11.403738095,"data":"RAG_DIR    /kaggle/input/datasets/tamannamou123/offline-rag-kr2\n"}
+,{"stream_name":"stdout","time":11.403762784,"data":"DT_INPUT   /kaggle/input/datasets/tamannamou123/disasteller-offline-t2b\n"}
+,{"stream_name":"stdout","time":11.403781674,"data":"\n"}
+,{"stream_name":"stdout","time":11.403785559,"data":"DisasTeller code: packed 2026-11-21 06:33:03 | git commit 1a5f38094 | uncommitted changes: True\n"}
+,{"stream_name":"stdout","time":31.312751816,"data":"All 47 files are in /kaggle/working/disasteller, each with the sha256 in the manifest.\n"}
+,{"stream_name":"stdout","time":31.312781771,"data":"1 scene(s): turkey_earthquake4_post_327.png (earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":31.312785899,"data":"run_with_netlog.py (this session's copy) knows the flow 't2b': t2b_flow.py\n"}
+,{"stream_name":"stdout","time":31.370739651,"data":"['Tesla T4, 0 MiB, 15360 MiB', 'Tesla T4, 0 MiB, 15360 MiB']\n"}
+,{"stream_name":"stdout","time":180.191537529,"data":".3 lance-namespace-0.13.0 lance-namespace-urllib3-client-0.13.0 lancedb-0.30.0 lark-1.2.2 llguidance-1.7.6 llvmlite-0.47.0 lm-format-enforcer-0.11.3 loguru-0.7.3 mcp-1.26.0 mistral_common-1.13.1 model-hosting-container-standards-0.1.16 msgspec-0.22.0 numba-0.65.0 nvidia-cuda-nvcc-13.2.86 nvidia-cuda-tileiras-13.2.86 nvidia-cudnn-frontend-1.28.0 nvidia-cutlass-dsl-4.5.2 nvidia-cutlass-dsl-libs-base-4.5.2 nvidia-cutlass-dsl-libs-cu13-4.5.2 nvidia-nvvm-13.2.86 nvtx-0.2.15 onnxruntime-1.31.1 openai-harmony-0.0.8 opentelemetry-exporter-otlp-1.42.1 opentelemetry-exporter-otlp-proto-common-1.42.1 opentelemetry-exporter-otlp-proto-grpc-1.42.1 opentelemetry-exporter-otlp-proto-http-1.42.1 opentelemetry-proto-1.42.1 opentelemetry-semantic-conventions-ai-0.5.1 outlines_core-0.2.14 partial-json-parser-0.2.1.1.post7 pdfminer.six-20260107 pdfplumber-0.11.10 pendulum-3.3.0 portalocker-2.7.0 posthog-5.4.0 prometheus-fastapi-instrumentator-8.1.0 protobuf-6.33.6 pybase64-1.5.1 pycountry-26.2.16 pydantic-2.12.5 pydantic-core-2.41.5 pydantic-extra-types-2.11.1 pydantic-settings-2.10.1 pyelftools-0.33 pypdfium2-5.15.0 pypika-0.51.1 quack-kernels-0.5.0 regex-2026.1.15 rich-14.3.4 rich-toolkit-0.20.6 rignore-0.8.1 setproctitle-1.3.8 setuptools-80.10.2 sse-starlette-3.6.0 supervisor-4.3.0 textual-8.2.8 tilelang-0.1.9 tokenspeed-mla-0.1.2 tokenspeed-triton-3.9.10.post20261028 tomli-2.0.2 tomli-w-1.1.0 torch-c-dlpack-ext-0.1.5 torchcodec-0.17.0 uv-0.11.33 vllm-0.25.1 xgrammar-0.2.3 z3-solver-4.15.4.0\n"}
+,{"stream_name":"stdout","time":180.191590283,"data":"\n"}
+,{"stream_name":"stdout","time":180.191594959,"data":"Installed in 2.5 min: {'vllm': '0.25.1', 'crewai': '1.15.2', 'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'openai': '2.54.0', 'numpy': '2.1.3', 'pillow': '13.0.0', 'huggingface_hub': '1.33.0'}\n"}
+,{"stream_name":"stdout","time":180.19159894,"data":"Different from step 5: none\n"}
+,{"stream_name":"stdout","time":181.298120623,"data":"\n"}
+,{"stream_name":"stdout","time":181.298146446,"data":"[  2.9 min] ########## writer 7b: AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP\n"}
+,{"stream_name":"stderr","time":181.646107298,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":181.646132578,"data":"\n"}
+,{"stream_name":"stderr","time":181.646187979,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":275.144808245,"data":"[  4.4 min] AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP at def8f6c81889: 8 files, 16.6 GB in 1.6 min -\u003e /kaggle/tmp/t2b_models/disasterm3-qwen2.5vl7b-l0s2-mergedFP; generation_config: {'bos_token_id': 151643, 'do_sample': True, 'eos_token_id': [151645, 151643], 'pad_token_id': 151643, 'repetition_penalty': 1.05, 'temperature': 1e-06, 'transformers_version': '5.16.1'}\n"}
+,{"stream_name":"stdout","time":275.144867255,"data":"/usr/local/bin/vllm serve /kaggle/tmp/t2b_models/disasterm3-qwen2.5vl7b-l0s2-mergedFP --served-model-name disasterm3-7b --host 127.0.0.1 --port 8000 --tensor-parallel-size 2 --dtype half --enforce-eager --max-model-len 32768 --gpu-memory-utilization 0.92 --max-num-seqs 8 --limit-mm-per-prompt {\"image\": 1} --mm-processor-kwargs {\"max_pixels\": 1806336}\n"}
+,{"stream_name":"stdout","time":525.208057737,"data":"[  8.6 min] vLLM is ready\n"}
+,{"stream_name":"stdout","time":525.208106537,"data":"   (Worker_TP1 pid=367) INFO 11-21 00:48:34 [model_runner.py:302] Model loading took 7.9 GiB and 66.824539 seconds\n"}
+,{"stream_name":"stdout","time":525.208113438,"data":"   (Worker_TP0 pid=366) INFO 11-21 00:48:34 [model_runner.py:302] Model loading took 7.9 GiB and 66.724943 seconds\n"}
+,{"stream_name":"stdout","time":525.208118256,"data":"   (Worker_TP0 pid=366) INFO 11-21 00:48:41 [gpu_worker.py:538] Available KV cache memory: 5.29 GiB\n"}
+,{"stream_name":"stdout","time":525.20812333,"data":"   (EngineCore pid=340) INFO 11-21 00:48:41 [kv_cache_utils.py:2146] GPU KV cache size: 198,176 tokens\n"}
+,{"stream_name":"stdout","time":525.208128209,"data":"   (EngineCore pid=340) INFO 11-21 00:48:41 [kv_cache_utils.py:2147] Maximum concurrency for 32,768 tokens per request: 6.05x\n"}
+,{"stream_name":"stdout","time":525.208132871,"data":"   e been overridden by the model's `generation_config.json`: `{'repetition_penalty': 1.05, 'temperature': 1e-06}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.\n"}
+,{"stream_name":"stdout","time":539.261607005,"data":"  text: A building damage grade is an assessment of the extent of structural and non-structural damage to a building after an event such as an earthquake or hurricane.\n"}
+,{"stream_name":"stdout","time":539.261660752,"data":"  fixed flow: OK\n"}
+,{"stream_name":"stdout","time":539.261685233,"data":"\n"}
+,{"stream_name":"stdout","time":539.261691115,"data":"[  8.8 min] ===== 7b: turkey_earthquake4_post_327.png (earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":545.809496602,"data":"[  8.9 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":545.809538085,"data":"[  8.9 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":545.80954331,"data":"[  8.9 min] DisasTeller flow: fixed, with C4's damage facts (scene turkey_earthquake4_post_327.png, earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":545.809547067,"data":"[  8.9 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":557.05509757,"data":"[  9.1 min] Guideline index loaded in 11.2 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":574.045868835,"data":"[  9.4 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":574.489717098,"data":"[  9.4 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":593.21878982,"data":"[  9.7 min] Section asked again: Expert_team_report.txt / Description of the estimated damage: number_wrong: 454,485 pixels\n"}
+,{"stream_name":"stdout","time":611.751859402,"data":"[ 10.0 min] Report finished: Expert_team_report.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":634.676007205,"data":"[ 10.4 min] Report finished: Alerts_team_report_for_social_media.txt after 0.4 min\n"}
+,{"stream_name":"stdout","time":653.846827548,"data":"[ 10.7 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":664.712271817,"data":"[ 10.9 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":684.752306123,"data":"[ 11.3 min] Report finished: Emergency_team_report.txt after 0.8 min\n"}
+,{"stream_name":"stdout","time":758.757567721,"data":"[ 12.5 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":794.589179438,"data":"[ 13.1 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":801.627035799,"data":"[ 13.2 min] Section kept with problems: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":812.356986614,"data":"[ 13.4 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":836.781517435,"data":"[ 13.8 min] Report finished: Public_community_report.txt after 1.3 min\n"}
+,{"stream_name":"stdout","time":870.327170842,"data":"[ 14.3 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: id_without_brackets: EMS98-masonry-grade-5, EMS98-masonry-grade-2, EMS98-masonry-grade-3, EMS98-masonry-grade-4, EMS98-masonry-grade-1\n"}
+,{"stream_name":"stdout","time":889.894627027,"data":"[ 14.7 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: id_without_brackets: EMS98-masonry-grade-5, EMS98-masonry-grade-2, EMS98-masonry-grade-3, EMS98-masonry-grade-4, EMS98-masonry-grade-1\n"}
+,{"stream_name":"stdout","time":953.517298498,"data":"[ 15.7 min] Report finished: Reconstruction_plan.txt after 1.9 min\n"}
+,{"stream_name":"stdout","time":953.517344909,"data":"[ 15.7 min] Fixed flow finished: 6 reports in reports/offline, scene turkey_earthquake4_post_327.png, grades by the code\n"}
+,{"stream_name":"stdout","time":953.517351342,"data":"[ 15.7 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":953.517367163,"data":"[ 15.7 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":953.517371417,"data":"[ 15.7 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":953.517375378,"data":"[ 15.7 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_turkey_earthquake4_post_327\n"}
+,{"stream_name":"stdout","time":956.014003299,"data":"[ 15.8 min] turkey_earthquake4_post_327.png: flow exit code 0, pass rules exit code 0, 6.95 min\n"}
+,{"stream_name":"stdout","time":956.014039348,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":956.014043885,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":956.014046739,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":956.014049253,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":956.014051594,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":956.01405408,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":957.502510032,"data":"[ 15.8 min] server stopped; GPU memory now ['Tesla T4, 0 MiB, 15360 MiB', 'Tesla T4, 0 MiB, 15360 MiB']\n"}
+,{"stream_name":"stdout","time":957.502550197,"data":"[ 15.8 min] writer 7b: 1 of 1 scenes passed the five pass rules, 6.9 min for the scenes\n"}
+,{"stream_name":"stdout","time":957.502553731,"data":"\n"}
+,{"stream_name":"stdout","time":957.502556714,"data":"[ 15.8 min] ########## writer 3b-instruct: Qwen/Qwen2.5-3B-Instruct\n"}
+,{"stream_name":"stdout","time":978.107240609,"data":"[ 16.1 min] Qwen/Qwen2.5-3B-Instruct at aa8e72537993: 12 files, 6.2 GB in 0.3 min -\u003e /kaggle/tmp/t2b_models/Qwen2.5-3B-Instruct; generation_config: {'bos_token_id': 151643, 'pad_token_id': 151643, 'do_sample': True, 'eos_token_id': [151645, 151643], 'repetition_penalty': 1.05, 'temperature': 0.7, 'top_p': 0.8, 'top_k': 20, 'transformers_version': '4.37.0'}\n"}
+,{"stream_name":"stdout","time":978.107338475,"data":"/usr/local/bin/vllm serve /kaggle/tmp/t2b_models/Qwen2.5-3B-Instruct --served-model-name qwen2.5-3b-instruct --host 127.0.0.1 --port 8000 --tensor-parallel-size 2 --dtype half --enforce-eager --max-model-len 32768 --gpu-memory-utilization 0.92 --max-num-seqs 8 --override-generation-config {\"top_p\": 1.0, \"top_k\": -1}\n"}
+,{"stream_name":"stdout","time":1098.123736269,"data":"[ 18.1 min] vLLM is ready\n"}
+,{"stream_name":"stdout","time":1098.123801327,"data":"   ', 'max_model_len': 32768, 'enforce_eager': True, 'served_model_name': ['qwen2.5-3b-instruct'], 'override_generation_config': {'top_p': 1.0, 'top_k': -1}, 'tensor_parallel_size': 2, 'max_num_seqs': 8}\n"}
+,{"stream_name":"stdout","time":1098.123811081,"data":"   (Worker_TP0 pid=1158) INFO 11-21 00:58:36 [model_runner.py:302] Model loading took 2.94 GiB and 4.676707 seconds\n"}
+,{"stream_name":"stdout","time":1098.123816338,"data":"   (Worker_TP1 pid=1159) INFO 11-21 00:58:36 [model_runner.py:302] Model loading took 2.94 GiB and 4.701317 seconds\n"}
+,{"stream_name":"stdout","time":1098.123821245,"data":"   (Worker_TP0 pid=1158) INFO 11-21 00:58:42 [gpu_worker.py:538] Available KV cache memory: 10.32 GiB\n"}
+,{"stream_name":"stdout","time":1098.123825923,"data":"   (EngineCore pid=1132) INFO 11-21 00:58:42 [kv_cache_utils.py:2146] GPU KV cache size: 601,264 tokens\n"}
+,{"stream_name":"stdout","time":1098.123832509,"data":"   (EngineCore pid=1132) INFO 11-21 00:58:42 [kv_cache_utils.py:2147] Maximum concurrency for 32,768 tokens per request: 18.35x\n"}
+,{"stream_name":"stdout","time":1098.123848509,"data":"   model's `generation_config.json`: `{'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': -1, 'top_p': 1.0}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.\n"}
+,{"stream_name":"stdout","time":1110.443488619,"data":"  text: A building damage grade is a classification system used to assess the extent of structural and non-structural damage to buildings following an event such as an earthquake or flood.\n"}
+,{"stream_name":"stdout","time":1110.44353772,"data":"  fixed flow: OK\n"}
+,{"stream_name":"stdout","time":1110.443543175,"data":"\n"}
+,{"stream_name":"stdout","time":1110.443547131,"data":"[ 18.3 min] ===== 3b-instruct: turkey_earthquake4_post_327.png (earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":1116.713216477,"data":"[ 18.5 min] Local model: qwen2.5-3b-instruct at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":1116.713263589,"data":"[ 18.5 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":1116.713268609,"data":"[ 18.5 min] DisasTeller flow: fixed, with C4's damage facts (scene turkey_earthquake4_post_327.png, earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":1116.713272611,"data":"[ 18.5 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":1126.132048558,"data":"[ 18.6 min] Guideline index loaded in 9.4 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":1126.132106551,"data":"[ 18.6 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":1126.674890706,"data":"[ 18.6 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":1171.020251284,"data":"[ 19.4 min] Section asked again: Expert_team_report.txt / Description of the estimated damage: number_wrong: 221,070 pixels, 283,810 pixels\n"}
+,{"stream_name":"stdout","time":1200.5387953,"data":"[ 19.8 min] Section kept with problems: Expert_team_report.txt / Description of the estimated damage: number_wrong: 221,070 pixels, 283,810 pixels\n"}
+,{"stream_name":"stdout","time":1200.538930447,"data":"[ 19.8 min] Number guard: Expert_team_report.txt / Description of the estimated damage: replaced 221,070 pixels, 283,810 pixels\n"}
+,{"stream_name":"stdout","time":1217.32651471,"data":"[ 20.1 min] Section asked again: Expert_team_report.txt / Conclusion: number_wrong: 221,070 pixels\n"}
+,{"stream_name":"stdout","time":1234.726180162,"data":"[ 20.4 min] Section kept with problems: Expert_team_report.txt / Conclusion: number_wrong: 221,070 pixels\n"}
+,{"stream_name":"stdout","time":1234.726390936,"data":"[ 20.4 min] Number guard: Expert_team_report.txt / Conclusion: replaced 221,070 pixels, 221,070 pixels\n"}
+,{"stream_name":"stdout","time":1234.726401407,"data":"[ 20.4 min] Report finished: Expert_team_report.txt after 2.0 min\n"}
+,{"stream_name":"stdout","time":1289.797249767,"data":"[ 21.3 min] Report finished: Alerts_team_report_for_social_media.txt after 0.9 min\n"}
+,{"stream_name":"stdout","time":1336.516605045,"data":"[ 22.1 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":1380.698098679,"data":"[ 22.9 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: id_without_brackets: SPHERE-2-p1\n"}
+,{"stream_name":"stdout","time":1438.786072054,"data":"[ 23.8 min] Report finished: Emergency_team_report.txt after 2.5 min\n"}
+,{"stream_name":"stdout","time":1515.611048031,"data":"[ 25.1 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: number_unsourced: 4.5, 5.5\n"}
+,{"stream_name":"stdout","time":1532.47454746,"data":"[ 25.4 min] Section kept as first written: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: the second answer is too short\n"}
+,{"stream_name":"stdout","time":1532.474591881,"data":"[ 25.4 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: number_unsourced: 4.5, 5.5\n"}
+,{"stream_name":"stdout","time":1532.474598777,"data":"[ 25.4 min] Number guard: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: replaced 4.5, 5.5\n"}
+,{"stream_name":"stdout","time":1587.671707213,"data":"[ 26.3 min] Section asked again: Emergency_service_human_resource_allocation.txt / Allocation Plan: number_unsourced: 4.5, 5.5\n"}
+,{"stream_name":"stdout","time":1674.064525001,"data":"[ 27.7 min] Section asked again: Emergency_service_human_resource_allocation.txt / Recommendations: number_unsourced: 20\n"}
+,{"stream_name":"stdout","time":1702.520256828,"data":"[ 28.2 min] Report finished: Emergency_service_human_resource_allocation.txt after 4.4 min\n"}
+,{"stream_name":"stdout","time":1766.015456455,"data":"[ 29.3 min] Section asked again: Public_community_report.txt / Current Situation: number_unsourced: 4.5, 5.5, 3.5\n"}
+,{"stream_name":"stdout","time":1828.468555828,"data":"[ 30.3 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation; number_unsourced: 10\n"}
+,{"stream_name":"stdout","time":1856.452264486,"data":"[ 30.8 min] Section kept with problems: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":1888.497226936,"data":"[ 31.3 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation; number_unsourced: 112\n"}
+,{"stream_name":"stdout","time":1920.483582579,"data":"[ 31.8 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":1939.700425355,"data":"[ 32.2 min] Report finished: Public_community_report.txt after 4.0 min\n"}
+,{"stream_name":"stdout","time":2019.335603492,"data":"[ 33.5 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation; number_misused: 32; number_unsourced: 4.5, 5.5\n"}
+,{"stream_name":"stdout","time":2074.782140002,"data":"[ 34.4 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: no_citation; number_misused: 32; number_unsourced: 4.5, 5.5\n"}
+,{"stream_name":"stdout","time":2074.782185413,"data":"[ 34.4 min] Number guard: Reconstruction_plan.txt / Assessment of Damage: replaced 32, 4.5, 5.5, 4.5, 5.5\n"}
+,{"stream_name":"stdout","time":2126.673009726,"data":"[ 35.3 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: number_unsourced: 10, 500, 200, 25, 150\n"}
+,{"stream_name":"stdout","time":2181.554908595,"data":"[ 36.2 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: number_unsourced: 10, 500, 200, 25, 150\n"}
+,{"stream_name":"stdout","time":2181.554990085,"data":"[ 36.2 min] Number guard: Reconstruction_plan.txt / Reconstruction Needs: replaced 10, 500, 200, 10, 500, 200, 10, 25, 150, 10, 25, 150\n"}
+,{"stream_name":"stdout","time":2237.046848077,"data":"[ 37.1 min] Section asked again: Reconstruction_plan.txt / Plan of Action: no_citation; number_unsourced: 200, 10, 8, 4.5, 5.5, 14, 15, 30, 3.5, 31, 60\n"}
+,{"stream_name":"stdout","time":2292.680472772,"data":"[ 38.0 min] Section kept with problems: Reconstruction_plan.txt / Plan of Action: no_citation; number_unsourced: 10, 8, 4.5, 5.5, 14, 15, 30, 3.5, 31, 60\n"}
+,{"stream_name":"stdout","time":2292.680571248,"data":"[ 38.0 min] Number guard: Reconstruction_plan.txt / Plan of Action: replaced 10, 8, 10, 10, 4.5, 5.5, 14, 10, 4.5, 5.5, 15, 30, 10, 3.5, 31, 60, 10, 5.5\n"}
+,{"stream_name":"stdout","time":2342.280018381,"data":"[ 38.9 min] Report finished: Reconstruction_plan.txt after 6.7 min\n"}
+,{"stream_name":"stdout","time":2342.280286683,"data":"[ 38.9 min] Fixed flow finished: 6 reports in reports/offline, scene turkey_earthquake4_post_327.png, grades by the code\n"}
+,{"stream_name":"stdout","time":2342.28031709,"data":"[ 38.9 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":2342.280324319,"data":"[ 38.9 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":2342.280329699,"data":"[ 38.9 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":2342.280335069,"data":"[ 38.9 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/3b-instruct/run_turkey_earthquake4_post_327\n"}
+,{"stream_name":"stdout","time":2344.641601488,"data":"[ 38.9 min] turkey_earthquake4_post_327.png: flow exit code 0, pass rules exit code 0, 20.57 min\n"}
+,{"stream_name":"stdout","time":2344.641652494,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":2344.641660296,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":2344.6416654,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":2344.64167037,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":2344.641675173,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":2344.641679956,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":2345.471992318,"data":"[ 38.9 min] server stopped; GPU memory now ['Tesla T4, 0 MiB, 15360 MiB', 'Tesla T4, 0 MiB, 15360 MiB']\n"}
+,{"stream_name":"stdout","time":2345.540056892,"data":"[ 38.9 min] writer 3b-instruct: 1 of 1 scenes passed the five pass rules, 20.6 min for the scenes\n"}
+,{"stream_name":"stdout","time":2345.719929365,"data":"{\n"}
+,{"stream_name":"stdout","time":2345.719963084,"data":" \"smoke_test\": true,\n"}
+,{"stream_name":"stdout","time":2345.719969092,"data":" \"internet\": \"on\",\n"}
+,{"stream_name":"stdout","time":2345.719973962,"data":" \"flow\": \"t2b\",\n"}
+,{"stream_name":"stdout","time":2345.719978675,"data":" \"scenes\": [\n"}
+,{"stream_name":"stdout","time":2345.71998289,"data":"  \"turkey_earthquake4_post_327.png\"\n"}
+,{"stream_name":"stdout","time":2345.71998749,"data":" ],\n"}
+,{"stream_name":"stdout","time":2345.719991304,"data":" \"results\": {\n"}
+,{"stream_name":"stdout","time":2345.719995389,"data":"  \"7b\": {\n"}
+,{"stream_name":"stdout","time":2345.719999514,"data":"   \"turkey_earthquake4_post_327.png\": {\n"}
+,{"stream_name":"stdout","time":2345.7200035,"data":"    \"run_dir\": \"/kaggle/working/t2b/7b/run_turkey_earthquake4_post_327\",\n"}
+,{"stream_name":"stdout","time":2345.720007813,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":2345.720012309,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":2345.720016288,"data":"    \"minutes\": 6.95\n"}
+,{"stream_name":"stdout","time":2345.720020594,"data":"   }\n"}
+,{"stream_name":"stdout","time":2345.720024659,"data":"  },\n"}
+,{"stream_name":"stdout","time":2345.72002872,"data":"  \"3b-instruct\": {\n"}
+,{"stream_name":"stdout","time":2345.720032936,"data":"   \"turkey_earthquake4_post_327.png\": {\n"}
+,{"stream_name":"stdout","time":2345.720037205,"data":"    \"run_dir\": \"/kaggle/working/t2b/3b-instruct/run_turkey_earthquake4_post_327\",\n"}
+,{"stream_name":"stdout","time":2345.720041612,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":2345.720055306,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":2345.72005936,"data":"    \"minutes\": 20.57\n"}
+,{"stream_name":"stdout","time":2345.720062551,"data":"   }\n"}
+,{"stream_name":"stdout","time":2345.720065724,"data":"  }\n"}
+,{"stream_name":"stdout","time":2345.720068974,"data":" },\n"}
+,{"stream_name":"stdout","time":2345.720071825,"data":" \"minutes\": 38.9,\n"}
+,{"stream_name":"stdout","time":2345.720075004,"data":" \"max_model_len\": 32768,\n"}
+,{"stream_name":"stdout","time":2345.720078398,"data":" \"versions\": {\n"}
+,{"stream_name":"stdout","time":2345.720082069,"data":"  \"vllm\": \"0.25.1\",\n"}
+,{"stream_name":"stdout","time":2345.720085422,"data":"  \"crewai\": \"1.15.2\",\n"}
+,{"stream_name":"stdout","time":2345.720088805,"data":"  \"torch\": \"2.11.0+cu130\",\n"}
+,{"stream_name":"stdout","time":2345.72009223,"data":"  \"transformers\": \"5.20.2\",\n"}
+,{"stream_name":"stdout","time":2345.720095421,"data":"  \"openai\": \"2.54.0\",\n"}
+,{"stream_name":"stdout","time":2345.720099058,"data":"  \"numpy\": \"2.1.3\",\n"}
+,{"stream_name":"stdout","time":2345.720102572,"data":"  \"pillow\": \"13.0.0\",\n"}
+,{"stream_name":"stdout","time":2345.720106418,"data":"  \"huggingface_hub\": \"1.33.0\"\n"}
+,{"stream_name":"stdout","time":2345.720110134,"data":" },\n"}
+,{"stream_name":"stdout","time":2345.720113091,"data":" \"code_packed\": \"2026-11-21 06:33:03\",\n"}
+,{"stream_name":"stdout","time":2345.720117143,"data":" \"code_git_commit\": \"1a5f38094\",\n"}
+,{"stream_name":"stdout","time":2345.720120339,"data":" \"code_uncommitted_changes\": true\n"}
+,{"stream_name":"stdout","time":2345.720123567,"data":"}\n"}
+,{"stream_name":"stdout","time":2345.720127272,"data":"Zip: /kaggle/working/t2b_smoke_internet_on.zip\n"}
+,{"stream_name":"stderr","time":2348.941449492,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":2348.941480853,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":2349.194879408,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":2349.194931966,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":2350.135463285,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":2350.235871094,"data":"[NbConvertApp] Writing 123003 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":2353.172402174,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":2353.834787414,"data":"[NbConvertApp] Writing 450869 bytes to __results__.html\n"}
+]

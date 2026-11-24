@@ -1,0 +1,20 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The Santa Rosa wildfire caused extensive destruction, with 96 of 144 damage patches completely destroyed, indicating total or near-total collapse of structures [EMS98-masonry-grade-5]. Only 3 of 144 damage patches sustained moderate to very heavy damage, while 45 of 144 damage patches remained intact with negligible to slight damage [EMS98-masonry-grade-1]. The fire resulted in widespread debris and charred remains, with no visible vegetation or open-space ground remaining. Roads were intact but surrounded by destruction.
+
+## Description of the photos and the estimated damage
+The pre-disaster photo shows significant damage to the built environment, with numerous buildings destroyed and debris scattered throughout the area. Roads exhibit signs of charring and potential blockages from debris, while vegetation, including trees and shrubs, has been heavily impacted, evident from reduced spectral reflectance consistent with burning.
+
+The post-disaster photo reveals extensive damage to the built environment, with large portions of the area covered by debris and charred remains. Roads remain intact but are encircled by destruction, and no vegetation is visible due to the fire's impact. Safe areas identified in the analysis include zones located in the south-west of the photo, approximately 386, 300, and 251 pixels away from the nearest estimated damage.
+
+## Disaster grade of each location
+The disaster grades of the estimated damage patches, written from the damage model's table by the code, not by the language model:
+- Damage patches estimated destroyed: 96: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damage patches estimated damaged: 3: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Damage patches estimated intact: 45: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The conclusion of the report indicates that the Santa Rosa wildfire has caused severe destruction, with 96 out of 144 damage patches completely destroyed, indicating total or near-total collapse of structures [EMS98-masonry-grade-5]. The hot spot in the south-east of the photo, covering 684,835 pixels, requires immediate attention due to the highest concentration of damage. Efforts should focus on clearing debris and assessing the safety of the area to prevent further hazards. Additionally, efforts must be made to stabilize the affected roads to ensure accessibility for rescue operations and recovery teams.

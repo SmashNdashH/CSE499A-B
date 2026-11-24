@@ -1,0 +1,4 @@
+model,primary_%,all_%,DTR_%,BBR_%,BDC_%,DRE_%,DSR_%,ORR_%,counting_largest_above_20_%,middle_picked_above_20_%,bdc_median_count_error_%
+base,10.0,25.0,0.0,0.0,100.0,0.0,50.0,0.0,100.0,100.0,0.0
+b,10.0,16.67,0.0,0.0,50.0,0.0,50.0,0.0,50.0,50.0,19.6
+c,50.0,41.67,0.0,0.0,0.0,100.0,50.0,100.0,0.0,0.0,18.2

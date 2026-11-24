@@ -1,0 +1,34 @@
+{
+ "winner": "c",
+ "reason": "primary accuracy 35.95% (b) against 45.12% (c), exact McNemar p = 0.0000",
+ "smoke_test": false,
+ "adapter": "AbrarAlam/disasterm3-qwen25vl3b-l2/c/final",
+ "primary": {
+  "b_%": 35.95,
+  "c_%": 45.12,
+  "only_b_right": 185,
+  "only_c_right": 338,
+  "p": 0.0
+ },
+ "bdc_median_count_error_%": {
+  "b": 38.8,
+  "c": 0.0,
+  "questions": 665
+ },
+ "references": {
+  "no_image_rule_on_counting_%": 56.08,
+  "always_middle_on_counting_%": 42.78,
+  "always_middle_largest_above_20_%": 100.0
+ },
+ "questions": 1962,
+ "minutes": {
+  "base": 46.1,
+  "b": 44.6,
+  "c": 44.5
+ },
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2",
+  "peft": "0.22.0"
+ }
+}

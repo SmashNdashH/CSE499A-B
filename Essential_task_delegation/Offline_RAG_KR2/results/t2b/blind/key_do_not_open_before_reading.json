@@ -1,0 +1,32 @@
+{
+ "pair 1": {
+  "scene": "hawaii_wildfire_post_646.png",
+  "report": "Emergency_service_human_resource_allocation.txt",
+  "A": "7b",
+  "B": "3b-instruct"
+ },
+ "pair 2": {
+  "scene": "turkey_earthquake4_post_327.png",
+  "report": "Reconstruction_plan.txt",
+  "A": "7b",
+  "B": "3b-instruct"
+ },
+ "pair 3": {
+  "scene": "santa_rosa_wildfire_00000155_post_disaster.png",
+  "report": "Reconstruction_plan.txt",
+  "A": "7b",
+  "B": "3b-instruct"
+ },
+ "pair 4": {
+  "scene": "joplin_tornado_00000147_post_disaster.png",
+  "report": "Public_community_report.txt",
+  "A": "3b-instruct",
+  "B": "7b"
+ },
+ "pair 5": {
+  "scene": "moore_tornado_00000045_post_disaster.png",
+  "report": "Emergency_team_report.txt",
+  "A": "7b",
+  "B": "3b-instruct"
+ }
+}

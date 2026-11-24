@@ -1,0 +1,41 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The Noto earthquake has resulted in significant damage, with several areas designated as highly dangerous for rescue and recovery efforts. The satellite imagery analysis identifies three primary hot spots where the damage is most severe:
+
+- **Hot Spot 1**: Located around coordinates (32, 235) in the north-west of the photo. This area is estimated to have 12 buildings completely destroyed (EMS-98 Grade 5), posing a high risk of collapse and debris. Immediate evacuation is advised.
+  
+- **Hot Spot 2**: Situated around (53, 551) in the west of the photo. Here, 10 buildings are classified as having moderate to very heavy damage (EMS-98 Grades 2 to 4), including cracks in walls and detached roof tiles. These areas are considered moderately dangerous and require careful handling during rescue operations.
+
+- **Hot Spot 3**: Around (284, 462) in the west of the photo. Similar to Hot Spot 2, this area contains 10 buildings with moderate to very heavy damage (EMS-98 Grades 2 to 4), making it another area of concern for rescue teams.
+
+Additionally, there are two potentially dangerous areas identified based on the map reading:
+
+- **Safe Area 1**: Located around (923, 923) in the south-east of the photo, approximately 637 pixels from the nearest damaged building. While this area is relatively safe, it is recommended to check for any hidden structural issues before use.
+
+- **Safe Area 2**: Around (773, 923) in the south-east of the photo, approximately 576 pixels from the nearest damaged building. Like Safe Area 1, this area should be inspected for structural integrity before being utilized.
+
+- **Safe Area 3**: Located around (923, 773) in the south-east of the photo, approximately 513 pixels from the nearest damaged building. This area is also suitable for temporary refuge but should be examined for any potential hazards.
+
+These areas highlight the need for cautious movement and thorough inspection to ensure the safety of all personnel involved in rescue and recovery efforts.
+
+## Social media news
+Breaking news from the Noto earthquake! 🚨 In the aftermath of the devastating quake, we're seeing significant damage across the affected area. Let's take a look at some of the hardest-hit spots:
+
+1. **Hot Spot 1 (North-West)**: Around coordinates (32, 235), 12 buildings were completely destroyed (EMS-98 Grade 5). This area is a high-risk zone with collapsed structures and debris. Immediate evacuation is advised. 🏃‍♂️💨
+
+2. **Hot Spot 2 (West)**: Located around (53, 551), 10 buildings sustained moderate to very heavy damage (EMS-98 Grades 2 to 4). Cracks in walls and detached roof tiles make this area moderately dangerous. Careful handling during rescue operations is crucial. 🛡️🔍
+
+3. **Hot Spot 3 (West)**: Also in the west, around (284, 462), 10 buildings experienced similar damage levels. This area requires extra caution and monitoring. Stay tuned for updates. 🌊🚨
+
+In contrast, there are safer areas where people can find temporary refuge:
+
+1. **Safe Area 1 (South-East)**: Around (923, 923), 40 buildings showed no visible damage (EMS-98 Grade 1). This area is approximately 637 pixels from the nearest damaged building. Check for structural integrity before using. 🏠🛡️
+
+2. **Safe Area 2 (South-East)**: Located around (773, 923), 40 buildings had minimal damage (EMS-98 Grade 1). This area is about 576 pixels from the nearest damaged building. Ensure it's safe before entering. 🌞🛡️
+
+3. **Safe Area 3 (South-East)**: Around (923, 773), 40 buildings remained undamaged (EMS-98 Grade 1). This area is 513 pixels from the nearest damaged building. Verify its safety before utilizing. 🌄🛡️
+
+Stay informed and follow local authorities for the latest updates. #NotoEarthquake #DisasterResponse #RescueOperations

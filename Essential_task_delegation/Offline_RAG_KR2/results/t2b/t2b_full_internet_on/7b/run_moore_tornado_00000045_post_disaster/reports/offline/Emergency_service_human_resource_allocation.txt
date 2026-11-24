@@ -1,0 +1,24 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Human Resource Allocation Report
+
+## Introduction
+The tornado caused severe destruction, with 72% of the area completely destroyed and 27% sustaining moderate to very heavy damage. The hotspots of dense damage are concentrated in the south and south-west regions, while safe areas in the north-west provide temporary shelter. Immediate recovery efforts are focused on establishing emergency shelters, hospitals, and transportation networks in these safe zones to address the crisis.
+
+## Current Situation
+The tornado has caused severe destruction, with 72% of the area completely destroyed and 27% sustaining moderate to very heavy damage. The hotspots of dense damage are concentrated in the south and south-west regions, while safe areas in the north-west provide temporary shelter. Immediate recovery efforts are focused on establishing emergency shelters, hospitals, and transportation networks in these safe zones to address the crisis.
+
+## Human Resource Requirements
+Given the severe destruction caused by the tornado, the primary human resource requirements include the deployment of rescue teams of the Light, Medium, and Heavy categories to assess and clear the affected areas. These teams should be equipped to handle hazardous materials and provide basic protection for themselves and the affected population. Additionally, medical personnel must be mobilized to establish temporary hospitals in the safe zones to treat injured individuals, adhering to the INSARAG guidelines on medical evacuations and hygiene standards. Logistics support is essential to ensure the timely delivery of aid and supplies to the affected areas. While specific numbers are not available offline, the focus should be on deploying sufficient resources to address the urgent needs identified in the hotspots and safe areas.
+
+## Allocation Plan
+The allocation plan for the affected areas involves deploying rescue teams of the Light, Medium, and Heavy categories to the hotspots in the south and south-west regions, where the majority of the destruction occurred. These teams should be equipped to recognize hazardous environments and provide basic protection for themselves and the affected population, as outlined in [INSARAG2B-7.2]. Additionally, medical personnel must be mobilized to establish temporary hospitals in the safe zones in the north-west to treat injured individuals, adhering to the INSARAG guidelines on medical evacuations and hygiene standards [INSARAG2B-3.10-p1]. The immediate transportation recovery should prioritize reopening the road network in the safe areas identified in the north-west to facilitate aid delivery and resource mobilization, as per [INSARAG2B-5.7.1-p1].
+
+## Challenges and Considerations
+The primary challenge in resource allocation lies in ensuring timely access to the hotspots in the south and south-west regions, where the majority of destruction occurred. Transportation disruptions and potential road blockages could hinder the deployment of rescue teams and medical personnel. Additionally, local authorities may impose restrictions on access to certain areas, necessitating coordination with emergency services to secure safe routes. As the situation evolves, continuous feedback from the field will be crucial to adjust the allocation plan, ensuring that resources are effectively directed to address the urgent needs of the affected population.
+
+## Recommendations
+Given the severity of the destruction in the south and south-west regions, it is imperative to expedite the deployment of rescue teams to these areas to initiate search and rescue operations. The focus should be on establishing safe access routes and ensuring the availability of specialized equipment for hazardous material handling. Additionally, rapid mobilization of medical teams is critical to provide immediate care to injured individuals in the affected zones, while ensuring compliance with INSARAG guidelines for medical evacuations and hygiene standards. Continuous monitoring of the situation and adaptive adjustments to the allocation plan will be essential to address evolving needs effectively.
+
+## Conclusion
+The tornado has caused severe destruction, with 72% of the area completely destroyed and 27% sustaining moderate to very heavy damage. Immediate recovery efforts focus on establishing emergency shelters, hospitals, and transportation networks in safe zones. Rescue teams of Light, Medium, and Heavy categories are deployed to hotspots in the south and south-west regions, while medical personnel mobilize to treat injured individuals in the north-west. Continuous monitoring and adaptive adjustments to resource allocation will ensure effective response to the crisis.

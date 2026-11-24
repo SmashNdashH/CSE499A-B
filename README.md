@@ -1,4 +1,4 @@
-> **Latest:** [Update 5 (18 Nov 2026)](others/CSE499B_update_5.pdf) | [Visual walkthrough & screenshots](Essential_task_delegation/Wireframes/README.md) | [All weekly updates and presentations](#weekly-updates-and-presentations) | [Progress tracker](Essential_task_delegation/Progress_Tracker.md) | [CSE499A archive](#cse499a-senior-design-i-archived-readme)
+> **Latest:** [1-minute video demonstration (24 Nov 2026)](others/CSE499B_1-min_video_demonstration.mp4) | [Update 5 (18 Nov 2026)](others/CSE499B_update_5.pdf) | [Visual walkthrough & screenshots](Essential_task_delegation/Wireframes/README.md) | [All weekly updates and presentations](#weekly-updates-and-presentations) | [Progress tracker](Essential_task_delegation/Progress_Tracker.md) | [CSE499A archive](#cse499a-senior-design-i-archived-readme)
 
 ---
 
@@ -189,6 +189,69 @@ All Senior Design I deliverables—proposal, updates 1 to 5, [final report (PDF)
 | [`Essential_task_delegation/Champion_Task/`](Essential_task_delegation/Champion_Task/) | All experiment notebooks (`E0`–`E7`, `R1`–`R16c`, `H1`–`H2b`, `T1`, `L0`–`L2`) and their result folders |
 | [`Essential_task_delegation/Offline_RAG_KR2/`](Essential_task_delegation/Offline_RAG_KR2/README.md) | Offline humanitarian guideline search (405 chunks), report bridge (`disasteller_inputs.py`), and offline DisasTeller runs |
 | [`others/`](others/) | Weekly update PDFs, review reports, presentations, and reviewed literature |
+
+### Inside `Essential_task_delegation/`, by category
+
+**1. Start here: the core documents**
+
+| File | What it is |
+|---|---|
+| [`Project_Guide_for_Beginners.md`](Essential_task_delegation/Project_Guide_for_Beginners.md) | The whole project explained from zero: the data, every part of the system, every step and decision, every result in tables, and what remains |
+| [`Team_Status.md`](Essential_task_delegation/Team_Status.md) | Plain-language overview for the team: glossary, each part's best result, each member's tasks |
+| [`Progress_Tracker.md`](Essential_task_delegation/Progress_Tracker.md) | What happened, newest first; the run board; every task's status |
+| [`Task_Ledger.md`](Essential_task_delegation/Task_Ledger.md) | Every finished task: why it ran, the rule fixed before it, its result, what it decided |
+| [`Next_Steps_Roadmap.md`](Essential_task_delegation/Next_Steps_Roadmap.md) | The plan: each task's design, its decision rule, and the gates |
+| [`System_Design_Notes.md`](Essential_task_delegation/System_Design_Notes.md) | How the parts fit together: the chain, the website, the booth setup |
+
+**2. Research and planning**
+
+| File | What it is |
+|---|---|
+| [`Paper_Audit_and_Integration_Plan.md`](Essential_task_delegation/Paper_Audit_and_Integration_Plan.md) | The research papers we read, what each does, and how we use it |
+| [`Research_Directions_Beyond_Finetuning.md`](Essential_task_delegation/Research_Directions_Beyond_Finetuning.md) | October's research directions: SAM 3, edge models, agents |
+| [`Phase2_Plan.md`](Essential_task_delegation/Phase2_Plan.md) | The 5 Oct plan after fine-tuning stalled: diagnosis, before-and-after input, extra data, a two-step model |
+
+**3. Explainers and preparation**
+
+| File | What it is |
+|---|---|
+| [`Segmentation_Model_Explained.md`](Essential_task_delegation/Segmentation_Model_Explained.md) | The segmentation U-Net explained step by step |
+| [`Ablation_Study_Reference_and_QA_Prep.md`](Essential_task_delegation/Ablation_Study_Reference_and_QA_Prep.md) | The October training runs, with likely questions and answers |
+| [`segmentation_improvement_guide.html`](Essential_task_delegation/segmentation_improvement_guide.html), [`Update1_Tutor_Guide.html`](Essential_task_delegation/Update1_Tutor_Guide.html), [`team_task_assignments.html`](Essential_task_delegation/team_task_assignments.html) | The October sprint's improvement guide, its update-1 tutor guide, and its task assignments, as web pages |
+
+**4. Experiments: notebooks, code and results**
+
+| Folder | What it holds |
+|---|---|
+| [`Champion_Task/`](Essential_task_delegation/Champion_Task/) | Every experiment notebook with a results folder each: the U-Net runs (`R1`–`R12`), evaluations (`E1`–`E7`), find-then-grade (`R16`), counting (`H1`–`H4`), the heatmap (`T1`), the website export (`T3`), the language and field models (`L0`–`L4`), and the Kaggle runner |
+| [`Offline_RAG_KR2/`](Essential_task_delegation/Offline_RAG_KR2/README.md) | The offline guideline search and the report writer, with every report run and its checks |
+| [`Layer3_Task/`](Essential_task_delegation/Layer3_Task/Layer3_Task_Brief.md) | Generated before-photos: the brief, the step notebooks and their results |
+| [`BRIGHT_DisasterM3_Integration/`](Essential_task_delegation/BRIGHT_DisasterM3_Integration/) | The audit of the BRIGHT dataset against DisasterM3, and the plan for using it |
+
+**5. The product**
+
+| Folder | What it holds |
+|---|---|
+| [`T3_Website/`](Essential_task_delegation/T3_Website/README.md) | The showcase website's source code (React, TypeScript, ONNX Runtime Web), and the scripts that check it and record the demo video |
+| [`Wireframes/`](Essential_task_delegation/Wireframes/README.md) | Screenshots of the website, with notes |
+
+**6. Team members' task folders**
+
+| Folder | What it holds |
+|---|---|
+| [`Aryan_Task/`](Essential_task_delegation/Aryan_Task/) | Aryan's sampling runs, counting-prompt study, website prototype and handover |
+| [`Noman_task/`](Essential_task_delegation/Noman_task/) | Noman's loss-function runs and website prototype |
+| [`Ridita_Task/`](Essential_task_delegation/Ridita_Task/) | Ridita's resolution and inference runs, and the leak-audit prompt |
+| [`Tamanna_task/`](Essential_task_delegation/Tamanna_task/), [`Tamanna_task_2/`](Essential_task_delegation/Tamanna_task_2/) | Tamanna's architecture runs, and her three plans (edge benchmark, crop inspection, offline demo) |
+
+**7. The October sprint's files and housekeeping**
+
+| File or folder | What it is |
+|---|---|
+| [`all_members_ablation_summary.csv`](Essential_task_delegation/all_members_ablation_summary.csv), [`generate_master_summary.py`](Essential_task_delegation/generate_master_summary.py) | Every member's October sprint result in one table, and the script that writes it |
+| [`segmentation-model (1).ipynb`](<Essential_task_delegation/segmentation-model (1).ipynb>) | The first segmentation notebook: a ResNet-34 U-Net trained on DisasterM3's masks |
+| [`Manual_Notebook_Renames.md`](Essential_task_delegation/Manual_Notebook_Renames.md) | Renames to make by hand inside notebooks that already ran |
+| [`Archive/`](Essential_task_delegation/Archive/) | Older planning notes, kept for reference |
 
 ---
 

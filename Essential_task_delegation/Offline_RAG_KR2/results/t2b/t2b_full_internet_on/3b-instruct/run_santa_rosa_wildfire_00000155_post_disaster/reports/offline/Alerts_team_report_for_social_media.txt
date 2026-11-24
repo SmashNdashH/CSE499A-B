@@ -1,0 +1,25 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The Santa Rosa wildfire has left a devastating impact on the landscape, with the most dangerous zones identified through satellite analysis. The hot spot, located in the southeast corner of the photo, around coordinates (991, 779), covers an area of 684,835 pixels and is classified as EMS-98 Grade 5 destruction (total or near total collapse). This area poses the highest risk to life and property, and residents and visitors are advised to stay well clear of this zone.
+
+Additionally, there are three safe areas where the damage is less severe, though they still require careful assessment:
+
+- **Safe Area 1**: Located around (100, 923), approximately 386 pixels from the nearest estimated damage. This area is relatively safe but should be monitored closely.
+- **Safe Area 2**: Positioned around (100, 773), about 300 pixels from the nearest estimated damage. It offers some relief but must be checked on the ground before use.
+- **Safe Area 3**: Situated around (250, 923), 251 pixels from the nearest estimated damage. Like the others, it is safer than the hot spot but should be verified before entering.
+
+Residents and emergency responders are urged to prioritize the hot spot for immediate attention, followed by the moderate to heavy damage areas. All potential safe areas should be thoroughly assessed to ensure they are indeed safe before use. Stay informed and heed local authorities' guidance to navigate this disaster zone safely.
+
+## Social media news
+Witnessed devastation in Santa Rosa! After the catastrophic wildfire, the landscape is a stark reminder of the destruction. In the post-disaster satellite photos, we see a hot spot in the southeast corner, around (991, 779), covering 684,835 pixels and classified as EMS-98 Grade 5 destruction (total or near total collapse). This area is the most dangerous and requires immediate attention. 
+
+However, there are three safe areas where the damage is less severe:
+
+- **Safe Area 1**: Located around (100, 923), approximately 386 pixels from the nearest estimated damage. This area is relatively safe but should be monitored closely.
+- **Safe Area 2**: Positioned around (100, 773), about 300 pixels from the nearest estimated damage. It offers some relief but must be checked on the ground before use.
+- **Safe Area 3**: Situated around (250, 923), 251 pixels from the nearest estimated damage. Like the others, it is safer than the hot spot but should be verified before entering.
+
+Stay informed and follow local authorities for updates and guidance. #SantaRosaWildfire #DisasterResponse #StaySafe

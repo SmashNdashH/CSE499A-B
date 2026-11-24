@@ -1,0 +1,100 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The Noto earthquake has caused significant structural damage across the affected area, with 12 buildings completely destroyed (EMS-98 Grade 5) and 10 buildings experiencing moderate to very heavy damage (EMS-98 Grades 2 to 4). The remaining 40 buildings showed negligible to slight damage (EMS-98 Grade 1). The hotspots identified in the damage assessment, particularly around the northwest and west of the photo, indicate concentrated areas of destruction and severe damage. Safe zones, located primarily in the southeast quadrant, are approximately 513 pixels away from the nearest damaged building.
+
+Immediate response efforts have focused on evacuating the hot spot areas, prioritizing the north-west and west regions due to the highest concentration of destroyed and severely damaged buildings. Safe areas in the southeast have been identified as potential refuge zones, offering temporary shelter and access to essential services. Emergency shelters have been set up in these areas, with additional consideration given to the north-west and west for rebuilding efforts.
+
+Transportation recovery efforts are underway to reopen key routes connecting the hot spot areas, ensuring safe and efficient evacuation and delivery of supplies. Hospitals and medical points have been established in safe areas to provide essential healthcare services. The overall aim is to stabilize the situation, provide immediate relief, and begin the process of reconstruction and rehabilitation. Further detailed assessments and plans are required to address long-term recovery needs.
+
+## Assessment of Damage
+The Noto earthquake has inflicted significant structural damage across the affected area, as evidenced by the satellite imagery analysis and expert team’s report. Of the 62 buildings evaluated, 12 were classified as completely destroyed (EMS-98 Grade 5), indicating severe structural failures. These buildings are concentrated in the northwest and west regions of the photo, particularly around coordinates (32, 235) and (284, 462), forming the hot spot areas. Another 10 buildings sustained substantial to heavy damage (EMS-98 Grades 2 to 4), characterized by cracks in walls, detachment of roof tiles, and failure of non-structural elements. These buildings are primarily located in the west region, around coordinates (53, 551) and (284, 462).
+
+The remaining 40 buildings showed no visible damage, with minor to negligible structural impacts (EMS-98 Grade 1), indicating negligible to slight damage. These buildings are situated in the southeast quadrant of the photo, around coordinates (923, 923) and (773, 923). Safe areas, located primarily in the southeast, are approximately 513 pixels away from the nearest estimated damage. These areas offer critical refuge zones for survivors and aid workers.
+
+#### Damage Analysis
+
+The hotspots identified in the damage assessment, particularly around the northwest and west of the photo, indicate concentrated areas of destruction and severe damage. The hot spot 1, located around (32, 235), has 12 buildings completely destroyed, posing a high risk of collapse and debris. Immediate evacuation is advised. Hot spot 2, around (53, 551), has 10 buildings with moderate to very heavy damage, including cracks in walls and detached roof tiles. These areas are considered moderately dangerous and require careful handling during rescue operations. Hot spot 3, also in the west, around (284, 462), has 10 buildings with moderate to very heavy damage, making it another area of concern for rescue teams.
+
+#### Guidelines Application
+
+The damage assessment aligns with the Sphere guidelines, particularly [SPHERE-2-p1], [SPHERE-2-p2], [SPHERE-3-p1], [SPHERE-3-p2], [SPHERE-3-p4], and [SPHERE-5-p1]. The Sphere Handbook emphasizes the importance of technical assistance and ensuring that affected people have access to appropriate technical assistance in a timely manner. Given the extent of damage, it is crucial to involve and support the affected people, local government, and local professionals in the building process. This includes complying with applicable planning and building codes, material specifications, and quality standards, as appropriate for the intended lifespan of the shelter, settlement, and household intervention.
+
+#### Recommendations
+
+For the areas with less damage, such as hot spot 1 (north-west) and hot spot 2 (west), emergency shelters can be established with adequate living space and access to essential services. The north-west and west regions should be prioritized for rebuilding efforts, considering the high concentration of destroyed and severely damaged buildings. Safe areas in the southeast should be inspected for structural integrity before being utilized. Hospitals and medical points should be established in these safe areas to provide essential healthcare services, ensuring that they meet the Sphere standards for living space and site area per person.
+
+In conclusion, the Noto earthquake has caused significant structural damage, necessitating immediate evacuation of hot spot areas and establishment of emergency shelters and medical points in safe zones. Long-term recovery efforts should focus on rebuilding and rehabilitation, with
+
+## Reconstruction Needs
+Given the significant structural damage caused by the Noto earthquake, the reconstruction plan must address the needs of the affected areas comprehensively. According to the Sphere guidelines, technical assistance is essential to ensure that affected people have access to appropriate technical assistance in a timely manner. Based on the damage assessment, the following reconstruction needs are identified:
+
+For the buildings classified as completely destroyed (EMS-98 Grade 5), the goal is to repair or rebuild them to meet the required standards and specifications. According to [SPHERE-2-p1], [SPHERE-2-p2], and [SPHERE-3-p1], [SPHERE-3-p2], [SPHERE-3-p4], these buildings should be repaired or rebuilt using locally available, sustainable, and familiar technologies, tools, and materials. Local labor should be hired to maintain and upgrade shelters, adhering to the appropriate planning and building codes and quality standards.
+
+For buildings classified as having moderate to very heavy damage (EMS-98 Grades 2 to 4), the focus should be on retrofitting to strengthen and modify the buildings' structure. This ensures that the buildings are more resistant to future hazards. [EMS98-2.3-p2] highlights the importance of regularity in earthquake resistance, suggesting that buildings with irregularities are more vulnerable. Therefore, retrofitting involves strengthening and modifying the structure to enhance safety features.
+
+Safe areas identified in the southeast quadrant, such as Safe Area 1, Safe Area 2, and Safe Area 3, should be inspected for structural integrity before being utilized. Emergency shelters should be established in these areas, providing temporary refuge and access to essential services. According to [SPHERE-5-p1], [SPHERE-5-p2], and [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE-5-p2], [SPHERE-5-p1], [SPHERE
+
+## Plan of Action
+To effectively address the reconstruction needs identified, the following plan of action outlines the sequence of steps, resource allocation, and coordination with local authorities, following the guidelines:
+
+1. **Initial Assessment and Mapping**
+   - **Resource Allocation:** Conduct detailed mapping of the affected areas to identify specific buildings and structures requiring repair, retrofit, or complete reconstruction. Utilize satellite imagery and ground surveys to ensure accuracy.
+   - **Coordination:** Collaborate with local authorities and community leaders to establish a joint task force for initial assessments. This will help in prioritizing areas and mobilizing resources efficiently. [SPHERE-5-p1]
+
+2. **Emergency Shelter Establishment**
+   - **Resource Allocation:** Set up emergency shelters in safe areas identified in the southeast quadrant, such as Safe Area 1, Safe Area 2, and Safe Area 3. These shelters should be equipped with basic amenities and accessible to the affected population.
+   - **Coordination:** Coordinate with local authorities to secure necessary permits and permissions for setting up shelters. Engage local volunteers and community members to assist in the setup and management of these shelters. [SPHERE-5-p1]
+
+3. **Medical Facilities and Healthcare Services**
+   - **Resource Allocation:** Establish medical facilities in safe areas, such as Safe Area 1 and Safe Area 2. Ensure these facilities are equipped with essential medical supplies and trained personnel.
+   - **Coordination:** Collaborate with local health authorities to ensure seamless integration of medical services into the overall reconstruction plan. Provide ongoing support to ensure the sustainability of these facilities. [SPHERE-5-p1]
+
+4. **Repair and Retrofit of Damaged Buildings**
+   - **Resource Allocation:** Allocate resources for repairing and retrofitting buildings classified as having moderate to very heavy damage (EMS-98 Grades 2 to 4). This includes providing construction materials, tools, and hiring local labor.
+   - **Coordination:** Work closely with local authorities and contractors to ensure compliance with building codes and standards. Monitor progress regularly to ensure quality and safety standards are met. [SPHERE-2-p1], [SPHERE-2-p2], [SPHERE-3-p1], [SPHERE-3-p2], [SPHERE-3-p4]
+
+5. **Complete Reconstruction of Completely Destroyed Buildings**
+   - **Resource Allocation:** Focus on reconstructing buildings classified as completely destroyed (EMS-98 Grade 5). This involves sourcing locally available, sustainable, and familiar technologies, tools, and materials.
+   - **Coordination:** Engage local architects, engineers, and construction professionals to oversee the reconstruction process. Ensure adherence to building codes and quality standards to prevent future damage. [SPHERE-2-p1], [SPHERE-2-p2], [SPHERE-3-p1], [SPHERE-3-p2], [SPHERE-3-p4]
+
+6. **Infrastructure Rehabilitation**
+   - **Resource Allocation:** Rehabilitate critical infrastructure such as roads, bridges, and utilities. Prioritize connections between hot spot areas to facilitate safe evacuation and delivery of supplies.
+   - **Coordination:** Coordinate with local transportation authorities to expedite the rehabilitation of critical infrastructure. Ensure that all necessary permits and approvals are obtained promptly. [INSARAG2B-6.3.1], [INSARAG2B-6.3.4-p1]
+
+7. **Long-Term Rehabilitation and Community Development**
+   - **Resource Allocation:** Implement programs aimed at long-term rehabilitation and community development. This includes supporting livelihoods, improving access to education, and promoting economic recovery.
+   - **Coordination:** Engage local government and community leaders to ensure that rehabilitation efforts are inclusive and sustainable. Monitor progress
+
+## Recommendations
+To support effective and efficient reconstruction, it is crucial to prioritize policy and funding initiatives that align with the Sphere guidelines and address the unique needs of the affected communities. Policy-wise, establishing clear guidelines for rebuilding and rehabilitation, including adherence to local building codes and standards, is essential. This should involve collaboration with local authorities and community leaders to ensure that reconstruction efforts are culturally sensitive and sustainable.
+
+Funding should be allocated strategically to cover the costs of emergency shelters, medical facilities, repair and retrofit of damaged buildings, and complete reconstruction of completely destroyed structures. International aid organizations and governments should provide financial support, with a focus on leveraging local resources and expertise. This could include grants for materials, labor, and technical assistance, as well as funding for infrastructure rehabilitation and long-term community development projects.
+
+Community engagement is vital throughout the reconstruction process. Local residents should be involved in decision-making processes, from the initial assessment to the final stages of rehabilitation. This participatory approach will foster trust and ensure that reconstruction efforts meet the specific needs of the affected communities. By integrating these recommendations into the broader reconstruction plan, we can ensure that the Noto earthquake's aftermath leads to a resilient and thriving community.
+
+## Appendices
+This section includes the disaster grade of each location, a labelled map, and the guideline sections used to inform the reconstruction plan.
+
+**Disaster Grade Map**
+
+The map illustrates the disaster grades assigned to each building based on the satellite imagery analysis. Buildings are color-coded as follows: 
+- Red: EMS-98 Grade 5 (completely destroyed)
+- Orange: EMS-98 Grades 2 to 4 (substantial to heavy damage)
+- Green: EMS-98 Grade 1 (negligible to slight damage)
+
+**Guideline Sections Used**
+
+- [SPHERE-appendix-4-p1]: Provides a range of context-specific assistance options for affected people.
+- [EMS98-2.3-p2]: Highlights the importance of regularity in earthquake resistance.
+- [SPHERE-1-p4]: Emphasizes the need for debris removal and livelihood opportunities.
+- [SPHERE-5-p1]: Stresses the importance of technical assistance in shelter and settlement responses.
+- [SPHERE-5-p2]: Recommends capacity building skills enhancement and training.
+- [EMS98-masonry-grade-1]: Defines the classification of damage to masonry buildings as Grade 1 (negligible to slight damage).
+- [EMS98-masonry-grade-2]: Defines the classification of damage to masonry buildings as Grade 2 (moderate damage).
+- [EMS98-masonry-grade-3]: Defines the classification of damage to masonry buildings as Grade 3 (substantial to heavy damage).
+- [EMS98-masonry-grade-4]: Defines the classification of damage to masonry buildings as Grade 4 (very heavy damage).
+- [EMS98-masonry-grade-5]: Defines the classification of damage to masonry buildings as Grade 5 (destruction).
+- [EMS98-rc-grade-1]: Defines the classification of damage to buildings of reinforced concrete as Grade 1 (neg

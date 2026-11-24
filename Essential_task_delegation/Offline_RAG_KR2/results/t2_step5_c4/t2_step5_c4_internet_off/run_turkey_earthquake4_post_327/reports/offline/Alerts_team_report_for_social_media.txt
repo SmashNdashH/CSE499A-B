@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The disaster has resulted in significant structural damage, with 32 buildings completely destroyed and 11 others suffering moderate to heavy damage. The most critical affected areas include the north-west region (hot spot 1) and the north-east region (hot spot 3), where debris is densely concentrated. These zones require urgent attention to ensure safety and prevent further risks. Additionally, the road network in these regions may be obstructed by water accumulation, necessitating swift clearance efforts. It is imperative to avoid these areas to minimize exposure to potential hazards.
+
+## Social media news
+The earthquake has caused severe structural damage in key areas of Turkey. In the north-west region, around pixel coordinates (320, 32), a hot spot of 403,997 pixels, 32 buildings were completely destroyed, leaving behind debris that poses significant safety risks. Nearby, in the north-east region, around pixel coordinates (991, 32), another hot spot of 283,81 pixels, 11 buildings sustained moderate to heavy damage, with debris scattered throughout. Both regions require urgent intervention to clear debris and stabilize partially collapsed structures. Authorities are advised to prioritize these zones to mitigate further risks and ensure public safety.

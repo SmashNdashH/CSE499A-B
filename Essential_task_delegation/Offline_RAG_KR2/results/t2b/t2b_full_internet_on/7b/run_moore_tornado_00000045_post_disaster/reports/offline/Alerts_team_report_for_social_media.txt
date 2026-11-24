@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The most critical danger areas are the hot spots identified in the south and south-west regions of the photo, where 550004 and 15069 pixels of the area were classified as Grade 5 destruction, indicating total or near-total collapse. These zones require immediate attention to prevent further hazards and facilitate debris clearance. Additionally, the remaining 24 patches exhibiting moderate to very heavy damage in the south-west region pose potential risks that necessitate careful assessment and stabilization efforts. Safe areas, located in the north-west of the photo, are recommended for temporary shelter but should be verified on-site to ensure safety.
+
+## Social media news
+The tornado has caused severe destruction in the south and south-west regions of the photo, where 550004 and 15069 pixels of the area were classified as Grade 5 destruction, indicating total or near-total collapse. Efforts must focus on clearing debris and preventing further hazards in these critical zones. Meanwhile, 24 patches in the south-west region exhibit moderate to very heavy damage, requiring careful assessment to stabilize structures and mitigate risks. Safe areas in the north-west of the photo, such as zones around (100, 165), (195, 282), and (236, 101), are recommended for temporary shelter but should be verified on-site for safety. Please stay informed and assist in recovery efforts.

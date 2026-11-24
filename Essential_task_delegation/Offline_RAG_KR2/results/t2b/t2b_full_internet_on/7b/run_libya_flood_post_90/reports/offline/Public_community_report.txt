@@ -1,0 +1,21 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The flood caused significant damage to the built environment in Libya, with 47% of buildings completely destroyed and 20% moderately damaged. The most affected areas include zones in the south-east and south of the image, where substantial structural and non-structural impacts were observed. The hot spots, which indicate the densest areas of damage, are situated in the south-east and south of the image, covering zones of 42481 and 34727 pixels, respectively. Safe areas, such as open ground in the north of the image, are located at least 353 pixels away from the nearest estimated damage. Immediate attention is required for clearing debris and stabilizing partially collapsed structures in these zones.
+
+## Current Situation
+The flood has caused severe destruction to the built environment in Libya, with 47% of buildings completely destroyed and 20% moderately damaged. The most affected areas include zones in the south-east and south of the image, where substantial structural and non-structural impacts were observed. The hot spots, which indicate the densest areas of damage, are situated in the south-east and south of the image, covering zones of 42481 and 34727 pixels, respectively. Safe areas, such as open ground in the north of the image, are located at least 353 pixels away from the nearest estimated damage. Immediate attention is required for clearing debris and stabilizing partially collapsed structures in these zones.
+
+## Resource Allocation
+Based on the disaster report and guidelines, immediate attention is required for clearing debris and stabilizing partially collapsed structures in the hot spots in the south-east and south of the image. To address these needs, the Emergency Service Team should prioritize the safe areas identified in the north of the image, specifically near coordinates (493, 273) and (466, 100). These locations are at least 353 pixels away from the nearest estimated damage, ensuring that emergency responders and supplies can reach the affected zones efficiently. The team should focus on establishing emergency shelters, setting up temporary medical facilities, and reopening the road network to facilitate aid delivery and recovery operations. [SPHERE-3-p1] [SPHERE-3-p2] [INSARAG3-6.2-p2]
+
+## Public Advisory
+To stay safe, please avoid the hot spots in the south-east and south of the image, as they are the most severely affected areas. Follow instructions from local authorities and emergency services to clear debris and stabilize partially collapsed structures. If you are displaced, seek refuge in the safe areas identified in the north of the image, such as those near coordinates (493, 273) and (466, 100). For medical assistance, contact emergency services immediately. We appreciate your cooperation in ensuring the safety of everyone involved. [INSARAG3-6.2-p2]
+
+## Organizational Operation
+As the post-disaster management team, we are responsible for coordinating the relief efforts to address the severe damage caused by the flood in Libya. Our primary focus is on establishing emergency shelters, setting up temporary medical facilities, and reopening the road network to facilitate aid delivery and recovery operations. For further assistance, please contact local authorities or emergency services. Contact details are not available offline.
+
+## Conclusion
+We are committed to supporting our community through this challenging time. Please know that our efforts are focused on ensuring the safety and well-being of all affected individuals. We will continue to prioritize the establishment of emergency shelters, the setup of temporary medical facilities, and the reopening of road networks to facilitate aid delivery and recovery operations. Your cooperation and patience are greatly appreciated as we work together to rebuild and restore normalcy.

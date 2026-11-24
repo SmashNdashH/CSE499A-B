@@ -1,0 +1,54 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Public Community Report
+
+## Introduction
+The Noto earthquake, which struck the region on [date], has caused significant damage across the affected area, with satellite imagery analysis revealing extensive destruction. The earthquake has resulted in the complete destruction of 12 buildings (EMS-98 Grade 5), moderate to very heavy damage affecting 10 buildings (EMS-98 Grades 2 to 4), and negligible to slight damage affecting 40 buildings (EMS-98 Grade 1). The hotspots identified in the damage assessment, particularly around coordinates (32, 235), (53, 551), and (284, 462), are crucial areas requiring immediate attention. Safe zones, located primarily in the southeast quadrant, offer temporary refuge but should also be assessed for potential structural issues.
+
+The Expert team report highlights the severity of the damage, noting that 12 buildings were completely destroyed and 10 buildings sustained substantial to heavy damage. The Alerts team report emphasizes the danger areas, advising immediate evacuation from Hot Spot 1 (north-west) and Hot Spot 3 (west), and providing detailed information on the safe areas for temporary shelter. The Emergency Service Team report outlines the suitability of certain areas for emergency shelters and hospitals, prioritizing the reopening of roads and bridges in the hot spot areas to facilitate safe evacuations and deliveries of supplies.
+
+## Current Situation
+The Emergency Service Team report underscores the critical damage caused by the Noto earthquake and the immediate actions required to address the situation. The satellite imagery analysis indicates that 12 buildings were completely destroyed (EMS-98 Grade 5) and 10 buildings sustained moderate to very heavy damage (EMS-98 Grades 2 to 4), with the remaining 40 buildings showing negligible to slight damage (EMS-98 Grade 1). The hotspots identified in the damage assessment, particularly around coordinates (32, 235), (53, 551), and (284, 462), are focal points of intense destruction. 
+
+Emergency shelters have been identified in the southeast quadrant, including Safe Area 1 around (923, 923), Safe Area 2 around (773, 923), and Safe Area 3 around (923, 773). These areas are safe havens with minimal structural damage, though they should be inspected for any hidden hazards before use. For the areas with less damage, such as Hot Spot 1 (north-west) and Hot Spot 3 (west), emergency shelters can be established with adequate living space and access to essential services.
+
+Hospitals or medical points have been designated in Safe Area 1 (south-east) and Safe Area 2 (south-east), ensuring a safe and secure environment for medical care. The Emergency Service Team report also highlights the need to reopen roads and bridges in the hot spot areas to facilitate safe evacuations and the timely delivery of emergency supplies and medical assistance. Specific attention is directed towards the roads connecting Hot Spot 1 and Hot Spot 3, as well as the road linking Hot Spot 2 to the safe areas. These efforts are crucial for ensuring the safety and efficiency of rescue operations and humanitarian aid.
+
+## Resource Allocation
+To allocate resources effectively, we will follow the guidelines provided in the Sphere Handbook and INSARAG Guidelines. For emergency shelters, we will prioritize Safe Area 1 around (923, 923), Safe Area 2 around (773, 923), and Safe Area 3 around (923, 773). These areas are safe havens with minimal structural damage, though they should be inspected for any hidden hazards before use. For the areas with less damage, such as Hot Spot 1 (north-west) and Hot Spot 3 (west), emergency shelters can be established with adequate living space and access to essential services. [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+For hospitals or medical points, we will designate them in Safe Area 1 (south-east) and Safe Area 2 (south-east), ensuring a safe and secure environment for medical care. [SPHERE-2-p1] [SPHERE-2-p2] [SPHERE-3-p1] [SPHERE-3-p2] [SPHERE-3-p4]
+
+Transportation recovery efforts will focus on reopening roads and bridges in the hot spot areas. Specifically, the roads connecting Hot Spot 1 (north-west) and Hot Spot 3 (west), and the road linking Hot Spot 2 (west) to the safe areas, will be reopened. [INSARAG2B-5.7.1-p5] [INSARAG3-5.2-p1] [INSARAG2B-1-p1]
+
+Logistical support will be coordinated with local authorities and international partners to ensure the timely delivery of essential supplies, including food, water, medical equipment, and shelter materials. [SPHERE-1-p3] [SPHERE-4-p1] [SPHERE-4-p4] [INSARAG2B-1-p1]
+
+## Public Advisory
+The Noto earthquake has caused significant damage, and it is crucial for the public to stay informed and follow safety guidelines to protect themselves and their families. Here are the instructions and advice for the public:
+
+#### Staying Safe
+- **Avoid Hazardous Areas**: Stay away from buildings, roads, and structures that appear unstable or have collapsed. Follow the alerts issued by local authorities and avoid entering damaged areas without proper guidance.
+- **Use Safe Zones**: Utilize the designated safe areas for temporary shelter. These areas are marked and provide a safe refuge. Ensure to inspect these areas for any hidden hazards before using them.
+- **Monitor Updates**: Keep updated with the latest information from local authorities and emergency services. Follow social media platforms and radio stations for the latest updates and instructions.
+
+#### Accessing Emergency Services
+- **Contact Authorities**: Dial the emergency number (not available offline) immediately if you or anyone around you is injured or in distress. Provide clear information about your location and the nature of the emergency.
+- **Evacuation Routes**: Familiarize yourself with the evacuation routes and assembly points. Follow the instructions given by local authorities and evacuate quickly and orderly.
+- **Medical Assistance**: Seek medical attention at the designated hospitals or medical points. Ensure to bring any necessary medications and identification documents.
+
+#### Cooperating with Ongoing Operations
+- **Support Rescue Efforts**: Assist rescue teams by providing information about the location of trapped individuals and offering support to those in need. Do not enter restricted areas without authorization.
+- **Volunteer**: Volunteer to help distribute supplies, provide meals, and assist with clean-up efforts. Ensure to follow all safety protocols and guidelines provided by local authorities.
+- **Community Support**: Offer emotional support to those affected by the disaster. Share resources and information with neighbors and community members to build a supportive network.
+
+#### Additional Resources
+- **Local Authorities**: Contact local government offices and disaster management centers for further information and support. They can provide guidance on shelter locations, evacuation plans, and essential services.
+- **International Aid**: Reach out to international organizations and NGOs for additional support and resources. They can provide vital assistance and coordinate with local authorities to ensure comprehensive relief efforts.
+
+By following these guidelines and working together, we can ensure the safety and well-being of everyone affected by the Noto earthquake. Stay vigilant and proactive in protecting yourselves and your community.
+
+## Organizational Operation
+Our organization plays a critical role in coordinating the response to the Noto earthquake. We analyze satellite imagery to assess damage and prioritize areas for immediate intervention. Our team works closely with local authorities, international partners, and humanitarian organizations to allocate resources efficiently. We provide guidance on emergency shelters, medical facilities, and transportation routes to ensure safe and effective rescue operations. For further assistance, please contact local disaster management centers or reach out to international aid organizations for comprehensive support. Contact details are not available offline, but local authorities and NGOs can provide valuable resources and information.
+
+## Conclusion
+We stand united in the face of this challenging situation. Your safety is our utmost priority, and we are committed to providing continuous support and assistance. We urge you to stay calm and follow the instructions of local authorities and emergency services. Your cooperation and adherence to safety guidelines are crucial for a swift and successful recovery. We will continue to monitor the situation and provide updates as we work tirelessly to rebuild and restore your homes and communities. Together, we can overcome this adversity and emerge stronger. Please seek help and support from local authorities and international aid organizations for additional assistance. Your resilience and determination inspire us.

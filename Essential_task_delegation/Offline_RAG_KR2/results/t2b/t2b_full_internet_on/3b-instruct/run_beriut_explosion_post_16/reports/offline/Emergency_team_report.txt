@@ -1,0 +1,34 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the damage assessment and the guidelines provided, the following areas are identified as suitable for emergency shelters:
+
+- **Safe Area 1:** Around (100, 100), the north-west of the photo, approximately 519 pixels from the nearest estimated damage. This area offers the greatest safety buffer, with minimal damage noted. It is recommended to check this area on the ground before proceeding with shelter establishment to ensure it meets the Sphere standard for living space and site area per person. According to Sphere Section [SPHERE-3-p1], the minimum living space per person is 3.5 square meters. Given the open ground and proximity to the nearest damage, this area can be considered safe for establishing emergency shelters.
+
+- **Safe Area 2:** Around (100, 250), the north-west of the photo, 483 pixels from the nearest estimated damage. Similar to Safe Area 1, this area is relatively safe and should be checked on the ground before use. It also aligns with the Sphere standard for living space, with ample room for shelter construction and access to essential services.
+
+- **Safe Area 3:** Around (100, 400), the west of the photo, 464 pixels from the nearest estimated damage. This area is also safe and should be verified on the ground. It provides a suitable location for emergency shelters, adhering to the Sphere standard for living space and site area per person.
+
+In the absence of specific staff, team, shelter, and supply numbers, it is crucial to prioritize the establishment of emergency shelters in these safe areas. Adequate living space must be ensured, with consideration for privacy and dignity, as outlined in Sphere Section [SPHERE-3-p1]. The provision of basic amenities such as a roof, walls, and access to essential services (such as cooking, toilets, and bathing areas) is essential. Additionally, the layout should promote safety and protection, as per Sphere Section [SPHERE-3-p4].
+
+It is imperative to coordinate with local authorities and community members to ensure that the chosen locations are culturally and socially acceptable, and that they meet the necessary safety and protection standards. Immediate clearance of debris and stabilization of structures in the hot spots (Hot Spot 1 and Hot Spot 2) are necessary to facilitate the safe establishment of emergency shelters in the identified safe areas.
+
+## Hospitals
+Based on the damage assessment and the guidelines provided, the following areas are identified as suitable for establishing medical points and hospitals:
+
+- **Safe Area 1:** Around (100, 100), the north-west of the photo, approximately 519 pixels from the nearest estimated damage. This area offers the greatest safety buffer, with minimal damage noted. It is recommended to check this area on the ground before proceeding with medical point establishment to ensure it meets the Sphere standard for living space and site area per person. According to Sphere Section [SPHERE-3-p1], the minimum living space per person is 3.5 square meters. Given the open ground and proximity to the nearest damage, this area can be considered safe for establishing medical points and hospitals.
+
+- **Safe Area 2:** Around (100, 250), the north-west of the photo, 483 pixels from the nearest estimated damage. Similar to Safe Area 1, this area is relatively safe and should be checked on the ground before use. It also aligns with the Sphere standard for living space, with ample room for medical point establishment and access to essential services.
+
+- **Safe Area 3:** Around (100, 400), the west of the photo, 464 pixels from the nearest estimated damage. This area is also safe and should be verified on the ground. It provides a suitable location for medical points and hospitals, adhering to the Sphere standard for living space and site area per person.
+
+In the absence of specific staff, team, shelter, and supply numbers, it is crucial to prioritize the establishment of medical points and hospitals in these safe areas. Adequate living space must be ensured, with consideration for privacy and dignity, as outlined in Sphere Section [SPHERE-3-p1]. The provision of basic amenities such as a roof, walls, and access to essential services (such as cooking, toilets, and bathing areas) is essential. Additionally, the layout should promote safety and protection, as per Sphere Section [SPHERE-3-p4].
+
+It is imperative to coordinate with local authorities and community members to ensure that the chosen locations are culturally and socially acceptable, and that they meet the necessary safety and protection standards. Immediate clearance of debris and stabilization of structures in the hot spots (Hot Spot 1 and Hot Spot 2) are necessary to facilitate the safe establishment of medical points and hospitals in the identified safe areas.
+
+Rescued people are to be handed over to medical points and hospitals as per INSARAG Guidelines. According to INSARAG Section [INSARAG3-6.2-p2], medical evacuation plans should be checked for possible emergency situations. Ensure hygiene standards are maintained both at base and worksites. Work with logistics staff to set up base hygiene procedures. Maintain health checks and monitor personnel and canines continually. Paramedics should be assigned to the rescue teams and constantly monitoring
+
+## Immediate transportation recovery
+Immediate transportation recovery is crucial to restore access to the affected areas. The roads connecting Safe Areas 1 and 2 to the north-western outskirts of the city, and the road leading from Safe Area 3 to the western region, need to be prioritized. These routes are vital for evacuating casualties, delivering supplies, and coordinating rescue efforts. The roads in Hot Spot 1 (coordinates (871, 225)) and Hot Spot 2 (coordinates (991, 840)) are heavily damaged and pose significant risks to vehicle traffic. Reopening these roads will enable emergency services to reach the most critical areas efficiently, thereby reducing response times and enhancing overall rescue operations. Additionally, the bridge spanning the river near Hot Spot 2 is also in need of repair to ensure safe passage for both vehicles and pedestrians.

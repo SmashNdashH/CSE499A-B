@@ -1,0 +1,38 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the satellite imagery and the damage model, the following safe areas are identified, which can serve as potential locations for emergency shelters:
+
+- **Safe Area 1**: Located around (844, 100) pixels, approximately 280 pixels from the nearest estimated damage zone. This area provides some relief from the immediate danger but remains within close proximity to the estimated damage zones. It is recommended to check on the ground before use to ensure safety.
+- **Safe Area 2**: Positioned around (701, 146) pixels, approximately 218 pixels from the nearest estimated damage zone. This area is also considered safe but is still within the vicinity of the estimated damage zones. Continuous surveillance is advised.
+- **Safe Area 3**: Situated around (847, 254) pixels, approximately 147 pixels from the nearest estimated damage zone. This area is deemed safe but is still within the estimated damage zones. Further checks are recommended to confirm its safety.
+
+#### Shelter Planning
+According to the Sphere Handbook 2018, the living space standard for emergency shelters is 3.5 square meters per person, excluding cooking space, bathing area, and sanitation facility. Given the relatively intact buildings, we can assume that these areas can accommodate a certain number of people safely. For the hotspots, immediate attention is needed to secure and stabilize the structures. For the safe areas, the living space should be designed to ensure privacy and dignity, with appropriate access to basic services and livelihoods opportunities.
+
+#### Site Selection
+For the safe areas, the site selection should adhere to the guidelines provided by [SPHERE-2-p4] (Sphere Handbook 2018, Shelter and Settlement, pp. 284-288). The minimum usable surface area for each person in camp-type settlements is 45 square meters, including household plots, roads, footpaths, external cooking areas, communal cooking areas, education and recreation areas, healthcare facilities, sanitation, firebreaks, administration, water storage, site drainage, religious facilities, food distribution areas, markets, storage, and limited kitchen gardens for individual households (excluding significant agricultural activities or livestock). The minimum usable surface area for each person in urban settings is 30 square meters, including household plots, roads, footpaths, and essential services.
+
+The shelter construction should be lightweight with a low thermal capacity, such as timber, and use raised floors to prevent water entering the covered living area. The internal floor-to-ceiling height should be at least 2 meters (2.6 meters in hot climates) at the highest point. The shelter should have appropriate drainage facilities to keep dwelling areas free of standing water and stormwater drains clear. The shelter should also provide appropriate ventilation and minimize entry of direct sunlight, especially in warm, humid climates. An attached covered outdoor space helps reduce direct sunlight and protect from
+
+## Hospitals
+Based on the satellite imagery and damage model, the immediate transportation recovery and medical evacuation are critical. The hotspots, particularly Hotspot 1 and Hotspot 2, are the most dangerous zones where 165 buildings were completely destroyed (EMS-98 Grade 5) and 1 building sustained moderate to very heavy damage (EMS-98 Grades 2 to 4). These areas require urgent medical attention and stabilization.
+
+#### Hospital Locations
+Not available offline. However, based on the guidelines, hospitals should be located in areas that are safe and accessible, adhering to the principles outlined in [SPHERE-2-p4] and [SPHERE-2-p1]. The minimum usable surface area for each person in camp-type settlements is 45 square meters, including household plots, roads, footpaths, external cooking areas, communal cooking areas, education and recreation areas, healthcare facilities, sanitation, firebreaks, administration, water storage, site drainage, religious facilities, food distribution areas, markets, storage, and limited kitchen gardens for individual households (excluding significant agricultural activities or livestock). The minimum usable surface area for each person in urban settings is 30 square meters, including household plots, roads, footpaths, and essential services.
+
+#### Medical Evacuation
+The INSARAG Guidelines emphasize the importance of medical evacuation plans and procedures. Not available offline, but according to [INSARAG3-6.2-p2], the medical evacuation plan should be checked for possible emergency situations, and a risk assessment should be conducted to establish procedures for all considered situations. The medical staff should be aware of local procedures for accepting patients into the local system and develop a system for repatriation to the home country for further treatment.
+
+#### Handover Procedures
+The INSARAG Guidelines also detail the handover procedures for rescued people. According to [INSARAG3-5.2-p1], the medical staff needs to be aware of local procedures for the acceptance of patients into the local system. The handover procedures should be coordinated with the personnel responsible for hazmat and safety issues to ensure appropriate management of medical documentation and to maintain health checks and monitor personnel continually.
+
+#### Coordination and Support
+The USAR Team should coordinate with the medical teams to provide continuous health monitoring and medical care to USAR Team members, including canines. The USAR Team should participate in daily USAR Team briefings and conduct the daily medical briefing. The USAR Team should be prepared to provide ongoing clinical care as required, including psychological assessment and monitoring, and supervise the monitoring of USAR Team members for stress-related health problems and general state of health.
+
+In summary, the medical facilities should be located in safe and accessible areas, and the medical evacuation and handover procedures should be carefully planned and coordinated to ensure the safety and proper care of the injured and sick individuals.
+
+## Immediate transportation recovery
+Immediate transportation recovery is critical to ensure the safe movement of emergency responders and medical personnel to and from the affected areas. Based on the satellite imagery and damage model, the most urgent need is to reopen roads or bridges connecting the hotspots to the nearest safe areas. Hotspot 1, located around (545, 845) pixels, is the most severely impacted area with 165 buildings completely destroyed (EMS-98 Grade 5). Reopening roads here will facilitate the evacuation of injured individuals and the delivery of medical supplies. Similarly, Hotspot 2, around (140, 741) pixels, with 1 building sustaining moderate to very heavy damage (EMS-98 Grades 2 to 4), requires immediate access for medical teams and rescue operations. Ensuring these connections are restored will significantly improve the response efforts and save lives. Safe Area 1, around (844, 100) pixels, is 280 pixels from the nearest estimated damage zone and is recommended to be checked on the ground before use. Safe Area 2, around (701, 146) pixels, is 218 pixels from the nearest estimated damage zone and also needs to be assessed for safety. Safe Area 3, around (847, 254) pixels, is 147 pixels from the nearest estimated damage zone and should be further evaluated for its suitability as a shelter or medical facility.

@@ -44,6 +44,7 @@ The CSE499A final presentation ended with a Future Work list (slide 22 of [CSE49
 >   - It was picked as the best of 8 candidates on validation, so its validation figure runs slightly high; the test run is the confirmation.
 > - **O2, 19 Nov (E7 step 3): counting from C4's map clears 34.2% on the measure the review promised,** 35.34% on the 3,580 askable optical counting questions (34.89% on E5's clean ones; R11 32.53%, find-then-grade 32.70%, both behind beyond chance). The option flaw still applies (the no-image rule scores 66.98%), so count error is reported beside it: mean 12.61 buildings against R11's 13.34. These counts are E7 step 2's joined blobs; C4 was chosen on destroyed buildings, not on counting. *(20 Nov, E7 step 3b: counting from the table's per-building rows scores 33.18%, because the benchmark's true count also joins touching buildings. The joined-blob count is the like-for-like one and stays O2's figure.)*
 > - **O3, 19 Nov (E7 step 3):** C4's map, building table and hot spots exist on the same 2,065 test photos. The reports read them from T2 step 5.
+> - **O3, 20 Nov (T2 step 5): the whole chain ran offline on two test pairs.** C4's facts went to our 7B's six reports, with the grades and the labelled map written by code, and both pairs pass the five pass rules. The 7B turned one count into a wrong percentage, so step 7's zero-contradiction check doesn't pass yet. *(Run 2, the same evening, with a number check while the model writes, passes it: 0 wrong of 191 numbers. The 7B then reused damage counts as staff numbers. **Run 4 passes the stricter rule too: 0 wrong, unsourced or misused numbers in the 12 reports,** so O3's one chain holds on two test pairs, offline.)*
 > - **O3:** the heatmap is done (T1 v3), and an offline guideline search is built (Ridita, 25 Oct). **11 Nov:** DisasTeller on our 7B passed its proof run with the internet off, with a fixed flow instead of CrewAI's agents (Ridita). The reports' quality is still open.
 > - **O4:** the INT8 edge segmenter is done (L1b). L2 step 1 ran twice (1,146 teacher answers from the new 7B, 4 Nov); L2 step 2's five notebooks are built (8 Nov), not run yet.
 
@@ -176,6 +177,12 @@ Across these papers, specialist models are good at finding and counting, VLMs ar
 - **How we use it (O2):**
   - It's an outside test for our hybrid counting, to compare with GPT-4o.
   - Check first that its xBD tiles don't overlap our training data.
+- **Tested 21 Nov (H4, [results](Champion_Task/H4-results/H4/README.md)):**
+  - 119 of its 210 xBD counting pairs are in DisasterM3 Instruct with the same pixels;
+  - its options let rules that never see the photo reach 68.9% (above GPT-4o's 56.7%);
+  - its "damaged, any level" answer counts every building.
+
+  On the clean pairs our counting's count is nearer the truth than our 7B's twice as often, but its accuracy is lower (36% against 50%). So it can't serve as O2's outside test; O2 stays on DisasterM3's clean benchmark.
 
 ### 4.7 BRIGHT, a dataset
 - **Source:** ESSD 2025 and the 2025 IEEE GRSS Data Fusion Contest; arXiv 2501.06019.
@@ -227,6 +234,7 @@ Across these papers, specialist models are good at finding and counting, VLMs ar
 - **How we use it (KR4):**
   - QLoRA is for training and AWQ is for running the model. Compress the distilled 3B with AWQ.
   - Report memory (target 6 GB or less), tokens per second and per-task accuracy loss against the 7B.
+  - *(23 Nov: L3 uses bitsandbytes NF4 instead. AutoAWQ's authors stopped maintaining it in 2025, and NF4 is the 4-bit setting H2b measured. NF4 saves the memory but not AWQ's speed: on a T4 it is expected to be slower than fp16. Qwen's own AWQ build is of the base 3B, without our training. AWQ of our merged 3B through a maintained tool (llm-compressor) stays open, worth it only if GPU speed matters. Ledger, L3.)*
 
 ### 4.10 Grace, a two-tier VLM system
 - **Source:** 2025 preprint, arXiv 2510.24242.
@@ -398,7 +406,13 @@ Across these papers, specialist models are good at finding and counting, VLMs ar
    - when the user asks "why?", it explains.
 3. **The 3B is not trained to reason before every answer.** That is slower in the field, clashes with the benchmark's letters-only answers, and risks teaching invented evidence.
 
-**Update, 19 October 2026: improve the teacher first.** Like for like with the DisasterM3 paper (§4.13), our fine-tuned 7B beats the base model (36.1% against 31.2% on optical questions) but trails the authors' fine-tune of the same model (40.4%). A student learns from its teacher, so roadmap task L0 improves the 7B before L2 runs. How the 3B learns from it (answers only, or soft labels) is still to choose. *(28 Oct: L0's new 7B is kept by its rule, with ORR +3.5 and DTR +1.1 points at full size. It is L2's teacher.)*
+**Update, 19 October 2026: improve the teacher first.** Like for like with the DisasterM3 paper (§4.13), our fine-tuned 7B beats the base model (36.1% against 31.2% on optical questions) but trails the authors' fine-tune of the same model (40.4%). A student learns from its teacher, so roadmap task L0 improves the 7B before L2 runs. How the 3B learns from it (answers only, or soft labels) is still to choose. *(28 Oct: L0's new 7B is kept by its rule, with ORR +3.5 and DTR +1.1 points at full size. It is L2's teacher.)* *(23 Nov: answers only. Both were trained one full epoch, and by the rule fixed 8 Nov the held-out choice keeps (c), the 7B's checked answers with the options rerun.*
+- *(c) scored 45.12% against 35.95% for (b), soft labels (half the loss from matching the 7B's 20 most likely tokens), with p < 0.0001.*
+- *(c)'s lead comes from counting and relational reasoning, the tasks its extra teacher pass covered. (b) is ahead on disaster type, bearing bodies and scene recognition.*
+- *(b)'s building counting fell below the untrained 3B's (22.0% against 30.9%).*
+- *On the held-out counting questions whose options don't give the answer away, (c) gets 56.4%, against 39.0% for a rule that never sees the photo.*
+
+*[Results](Champion_Task/L2-step3-results/full/L2S3/README.md); ledger, L2 step 2.)*
 
 **Update, 4 November 2026: what the 3B is for.** It's there for size and speed, not for running offline: the 7B already runs offline on two T4s. H2b's memory table shows the "about 6 GB" bar is nearly met by the 7B in 4-bit (6.2 GB at peak); a 3B needs 7.7 GB in full precision and pays off only in 4-bit (2.6 GB). So the 3B stays a promised deliverable (O4), but as a side experiment the main report doesn't depend on ([roadmap §1b](Next_Steps_Roadmap.md)). Roadmap T2b tests whether a plain text model writes reports as well as the 7B, and L3 step 6 measures the 3B on a laptop with no GPU.
 

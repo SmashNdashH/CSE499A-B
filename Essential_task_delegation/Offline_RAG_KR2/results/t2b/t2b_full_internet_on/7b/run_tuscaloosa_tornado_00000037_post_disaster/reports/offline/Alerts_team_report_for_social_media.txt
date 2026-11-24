@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The most dangerous zones identified in the post-disaster assessment are the hot spots in the east and the south-west of the photo. These areas have been classified as having severe destruction, indicating total or near-total collapse, and require urgent attention due to the need for safety assessments and rescue operations.
+
+## Social media news
+The area around pixel coordinates (774, 531) in the east of the photo has been classified as a hot spot with severe destruction, indicating total or near-total collapse. This zone requires urgent safety assessments and rescue operations. In the south-west of the photo, around pixel coordinates (41, 750), another hot spot has been identified with significant damage, necessitating immediate intervention. The remaining intact patches, such as those around (346, 119), (359, 454), and (416, 650), show negligible to slight damage. Authorities are advised to prioritize these high-risk areas for swift action to ensure public safety.

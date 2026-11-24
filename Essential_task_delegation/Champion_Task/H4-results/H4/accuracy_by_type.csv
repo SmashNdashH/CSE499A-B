@@ -1,0 +1,6 @@
+type,our_correct,vlm_correct,middle_correct,smallest_correct,type_rule_correct
+"damaged, any level",0.0879,0.2747,0.9121,0.033,0.9121
+destroyed,0.5934,0.7143,0.0879,0.7253,0.7253
+major,0.2527,0.6813,0.1099,0.6923,0.6923
+minor,0.3077,0.5714,0.1538,0.7473,0.7473
+no damage,0.1319,0.2857,0.8242,0.0879,0.8242

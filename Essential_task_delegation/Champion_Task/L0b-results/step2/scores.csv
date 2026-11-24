@@ -1,0 +1,5 @@
+method,right,intact_right,damaged_right,destroyed_right,accuracy_real_shares,destroyed_recall,destroyed_precision_real_shares,destroyed_f1_real_shares,only_rule_right,only_grader_right,mcnemar_p
+grader,212,92,54,66,0.8389,0.66,0.567,0.61,,,
+l0b,176,40,50,86,0.4458,0.86,0.231,0.364,,,
+rule_A,207,76,40,91,0.7079,0.91,0.217,0.35,25.0,30.0,0.5901
+rule_B,211,92,40,79,0.8231,0.79,0.471,0.59,13.0,14.0,1.0

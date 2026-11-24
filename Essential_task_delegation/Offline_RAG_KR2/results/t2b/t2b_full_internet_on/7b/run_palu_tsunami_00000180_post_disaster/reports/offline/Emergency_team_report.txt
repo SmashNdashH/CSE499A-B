@@ -1,0 +1,12 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the Sphere Handbook 2018 guidelines, the safe areas identified in the south-west of the photo, specifically around (100, 923), (250, 923), and (100, 773), are suitable for establishing emergency shelters. These locations are at least 323 to 459 pixels away from the nearest estimated damage, ensuring safety for displaced populations. According to Sphere standard 3, living spaces should provide at least 3.5 square metres of space per person, excluding cooking and bathing areas. Given the safe areas' proximity to intact zones, it is feasible to allocate sufficient space for sheltering affected individuals while maintaining privacy and access to essential activities. No specific shelter numbers or staff are available offline.
+
+## Hospitals
+Based on the INSARAG guidelines, the safe areas in the south-west of the photo, specifically around (100, 923), (250, 923), and (100, 773), are suitable for establishing temporary medical points to handle rescued individuals. These locations are at least 323 to 459 pixels away from the nearest estimated damage, ensuring safety for medical operations. According to INSARAG [INSARAG3-6.2-p2], medical staff must be aware of local procedures for accepting patients into the local system and must check casualty handover procedures to ensure efficient transfer of rescued people to nearby hospitals. Additionally, medical transport procedures must be established to facilitate prompt evacuation of patients to definitive care facilities.
+
+## Immediate transportation recovery
+The immediate transportation recovery should prioritize reopening the road network in the safe areas identified in the south-west of the photo, specifically around (100, 923), (250, 923), and (100, 773). These locations are at least 323 to 459 pixels away from the nearest estimated damage, ensuring safety for emergency responders and displaced populations. Reopening these roads will facilitate the delivery of aid, the movement of displaced individuals to emergency shelters, and the transport of medical supplies and personnel to temporary medical points.

@@ -1,0 +1,9 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Alerts Team Report: Danger Area Alert and Social Media News
+
+## Danger area alert
+The earthquake has caused significant structural damage to 32 buildings, classified as EMS-98 Grade 5, with total or near-total collapse, in the north-west of the photo. Additionally, 11 buildings sustained moderate to very heavy damage, categorized as Grades 2 to 4, in the west and north-east of the photo. These areas are identified as the most dangerous due to high concentrations of structural damage. Furthermore, the map reading indicates that the zones around (320, 32), (48, 593), and (991, 32) remain highly hazardous, with debris and potential risks to nearby infrastructure. Residents and emergency responders are advised to avoid these areas to ensure safety.
+
+## Social media news
+The earthquake has caused severe damage to 32 buildings, classified as EMS-98 Grade 5, with total or near-total collapse, in the north-west of the photo. Additionally, 11 buildings sustained moderate to very heavy damage, categorized as Grades 2 to 4, in the west and north-east of the photo. These areas are identified as the most dangerous due to high concentrations of structural damage. Emergency responders are advised to prioritize these regions to ensure safety and provide necessary assistance. Please stay informed and follow updates for recovery efforts. #EarthquakeImpact #SafetyFirst

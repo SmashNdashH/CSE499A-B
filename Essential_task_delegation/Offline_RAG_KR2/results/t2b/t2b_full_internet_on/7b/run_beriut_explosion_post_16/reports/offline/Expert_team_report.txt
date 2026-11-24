@@ -1,0 +1,18 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The beriut explosion caused significant damage to the built environment, with 80% of the buildings classified as destroyed, exhibiting total or near-total collapse consistent with EMS-98 Grade 5 [EMS98-masonry-grade-5]. Additionally, 20% of the structures were categorized as damaged, showing moderate to very heavy damage, including substantial structural and non-structural impacts [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]. No intact buildings were identified. The disaster's impact is concentrated in the affected area, with no safe zones observed within the analyzed extent.
+
+## Description of the estimated damage
+The estimated damage from the beriut explosion reveals that 80% of the buildings were completely destroyed, with total or near-total collapse consistent with EMS-98 Grade 5 [EMS98-masonry-grade-5], while 20% of the structures sustained moderate to very heavy damage, including substantial structural and non-structural impacts [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]. No intact buildings were identified. The disaster's impact is concentrated in the affected area, with two distinct hot spots: one in the north-east (hot spot 1) covering 287,383 pixels and another in the south-east (hot spot 2) covering 28,075 pixels. Safe areas, defined as open ground farthest from the estimated damage, include three zones: one in the north-west (safe area 1) at 519 pixels, another in the same region (safe area 2) at 483 pixels, and a third in the west (safe area 3) at 464 pixels.
+
+## Disaster grade of each location
+The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:
+- Buildings estimated destroyed: 8: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Buildings estimated damaged: 2: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Buildings estimated intact: 0: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The conclusion highlights the critical need for immediate intervention in the hot spots identified in the north-east and south-east regions of the photo, where the most severe damage has occurred. These areas require urgent assessment and stabilization efforts to prevent further risks, such as debris collapse and potential secondary hazards. Additionally, the focus should shift to clearing debris and providing temporary shelter for displaced residents, ensuring safety and facilitating recovery operations in the devastated zones.

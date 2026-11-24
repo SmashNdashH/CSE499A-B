@@ -1,0 +1,955 @@
+[{"stream_name":"stderr","time":5.964101777,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":5.96414018,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":6.764928703,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.764968415,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.764974137,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.76497846,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.328893606,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.328930007,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.328934471,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.328938131,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":8.478272572,"data":"Internet is on: used only to download the two models and the packages, before the flow runs.\n"}
+,{"stream_name":"stdout","time":9.406390478,"data":"RAG_DIR    /kaggle/input/datasets/tamannamou123/offline-rag-kr2\n"}
+,{"stream_name":"stdout","time":9.406423276,"data":"DT_INPUT   /kaggle/input/datasets/tamannamou123/disasteller-offline-t2b\n"}
+,{"stream_name":"stdout","time":9.406428771,"data":"\n"}
+,{"stream_name":"stdout","time":9.406432896,"data":"DisasTeller code: packed 2026-11-21 06:33:03 | git commit 1a5f38094 | uncommitted changes: True\n"}
+,{"stream_name":"stdout","time":18.575761665,"data":"All 47 files are in /kaggle/working/disasteller, each with the sha256 in the manifest.\n"}
+,{"stream_name":"stdout","time":18.575791595,"data":"10 scene(s): libya_flood_post_90.png (flood, rows: outline), turkey_earthquake4_post_327.png (earthquake, rows: outline), santa_rosa_wildfire_00000155_post_disaster.png (wildfire, rows: patch), joplin_tornado_00000147_post_disaster.png (tornado, rows: patch), noto_earthquake_post_162.png (earthquake, rows: outline), hawaii_wildfire_post_646.png (wildfire, rows: outline), beriut_explosion_post_16.png (explosion, rows: outline), palu_tsunami_00000180_post_disaster.png (tsunami, rows: patch), moore_tornado_00000045_post_disaster.png (tornado, rows: patch), tuscaloosa_tornado_00000037_post_disaster.png (tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":18.575800296,"data":"run_with_netlog.py (this session's copy) knows the flow 't2b': t2b_flow.py\n"}
+,{"stream_name":"stdout","time":18.624613941,"data":"['Tesla T4, 0 MiB, 15360 MiB', 'Tesla T4, 0 MiB, 15360 MiB']\n"}
+,{"stream_name":"stdout","time":160.930327533,"data":".3 lance-namespace-0.13.0 lance-namespace-urllib3-client-0.13.0 lancedb-0.30.0 lark-1.2.2 llguidance-1.7.6 llvmlite-0.47.0 lm-format-enforcer-0.11.3 loguru-0.7.3 mcp-1.26.0 mistral_common-1.13.1 model-hosting-container-standards-0.1.16 msgspec-0.22.0 numba-0.65.0 nvidia-cuda-nvcc-13.2.86 nvidia-cuda-tileiras-13.2.86 nvidia-cudnn-frontend-1.28.0 nvidia-cutlass-dsl-4.5.2 nvidia-cutlass-dsl-libs-base-4.5.2 nvidia-cutlass-dsl-libs-cu13-4.5.2 nvidia-nvvm-13.2.86 nvtx-0.2.15 onnxruntime-1.31.1 openai-harmony-0.0.8 opentelemetry-exporter-otlp-1.42.1 opentelemetry-exporter-otlp-proto-common-1.42.1 opentelemetry-exporter-otlp-proto-grpc-1.42.1 opentelemetry-exporter-otlp-proto-http-1.42.1 opentelemetry-proto-1.42.1 opentelemetry-semantic-conventions-ai-0.5.1 outlines_core-0.2.14 partial-json-parser-0.2.1.1.post7 pdfminer.six-20260107 pdfplumber-0.11.10 pendulum-3.3.0 portalocker-2.7.0 posthog-5.4.0 prometheus-fastapi-instrumentator-8.1.0 protobuf-6.33.6 pybase64-1.5.1 pycountry-26.2.16 pydantic-2.12.5 pydantic-core-2.41.5 pydantic-extra-types-2.11.1 pydantic-settings-2.10.1 pyelftools-0.33 pypdfium2-5.15.0 pypika-0.51.1 quack-kernels-0.5.0 regex-2026.1.15 rich-14.3.4 rich-toolkit-0.20.6 rignore-0.8.1 setproctitle-1.3.8 setuptools-80.10.2 sse-starlette-3.6.0 supervisor-4.3.0 textual-8.2.8 tilelang-0.1.9 tokenspeed-mla-0.1.2 tokenspeed-triton-3.9.10.post20261028 tomli-2.0.2 tomli-w-1.1.0 torch-c-dlpack-ext-0.1.5 torchcodec-0.17.0 uv-0.11.33 vllm-0.25.1 xgrammar-0.2.3 z3-solver-4.15.4.0\n"}
+,{"stream_name":"stdout","time":160.930373887,"data":"\n"}
+,{"stream_name":"stdout","time":160.930384387,"data":"Installed in 2.4 min: {'vllm': '0.25.1', 'crewai': '1.15.2', 'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'openai': '2.54.0', 'numpy': '2.1.3', 'pillow': '13.0.0', 'huggingface_hub': '1.33.0'}\n"}
+,{"stream_name":"stdout","time":160.93038756,"data":"Different from step 5: none\n"}
+,{"stream_name":"stdout","time":161.983385004,"data":"\n"}
+,{"stream_name":"stdout","time":161.983411188,"data":"[  2.6 min] ########## writer 7b: AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP\n"}
+,{"stream_name":"stderr","time":163.215995909,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":163.216021447,"data":"\n"}
+,{"stream_name":"stderr","time":163.216025993,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":241.221284027,"data":"[  3.9 min] AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP at def8f6c81889: 8 files, 16.6 GB in 1.3 min -\u003e /kaggle/tmp/t2b_models/disasterm3-qwen2.5vl7b-l0s2-mergedFP; generation_config: {'bos_token_id': 151643, 'do_sample': True, 'eos_token_id': [151645, 151643], 'pad_token_id': 151643, 'repetition_penalty': 1.05, 'temperature': 1e-06, 'transformers_version': '5.16.1'}\n"}
+,{"stream_name":"stdout","time":241.22135085,"data":"/usr/local/bin/vllm serve /kaggle/tmp/t2b_models/disasterm3-qwen2.5vl7b-l0s2-mergedFP --served-model-name disasterm3-7b --host 127.0.0.1 --port 8000 --tensor-parallel-size 2 --dtype half --enforce-eager --max-model-len 32768 --gpu-memory-utilization 0.92 --max-num-seqs 8 --limit-mm-per-prompt {\"image\": 1} --mm-processor-kwargs {\"max_pixels\": 1806336}\n"}
+,{"stream_name":"stdout","time":481.275985291,"data":"[  7.9 min] vLLM is ready\n"}
+,{"stream_name":"stdout","time":481.276037735,"data":"   (Worker_TP0 pid=293) INFO 11-21 01:34:01 [model_runner.py:302] Model loading took 7.9 GiB and 66.550624 seconds\n"}
+,{"stream_name":"stdout","time":481.276043315,"data":"   (Worker_TP1 pid=294) INFO 11-21 01:34:01 [model_runner.py:302] Model loading took 7.9 GiB and 66.561575 seconds\n"}
+,{"stream_name":"stdout","time":481.276047769,"data":"   (Worker_TP0 pid=293) INFO 11-21 01:34:09 [gpu_worker.py:538] Available KV cache memory: 5.29 GiB\n"}
+,{"stream_name":"stdout","time":481.276052159,"data":"   (EngineCore pid=267) INFO 11-21 01:34:09 [kv_cache_utils.py:2146] GPU KV cache size: 198,176 tokens\n"}
+,{"stream_name":"stdout","time":481.276056497,"data":"   (EngineCore pid=267) INFO 11-21 01:34:09 [kv_cache_utils.py:2147] Maximum concurrency for 32,768 tokens per request: 6.05x\n"}
+,{"stream_name":"stdout","time":481.27606106,"data":"   e been overridden by the model's `generation_config.json`: `{'repetition_penalty': 1.05, 'temperature': 1e-06}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.\n"}
+,{"stream_name":"stdout","time":495.102623724,"data":"  text: A building damage grade is an assessment of the extent of structural and non-structural damage to a building after an event such as an earthquake or hurricane.\n"}
+,{"stream_name":"stdout","time":495.102653496,"data":"  fixed flow: OK\n"}
+,{"stream_name":"stdout","time":495.102657788,"data":"\n"}
+,{"stream_name":"stdout","time":495.102677528,"data":"[  8.1 min] ===== 7b: libya_flood_post_90.png (flood, rows: outline)\n"}
+,{"stream_name":"stdout","time":501.610716767,"data":"[  8.2 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":501.610759728,"data":"[  8.2 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":501.610764795,"data":"[  8.2 min] DisasTeller flow: fixed, with C4's damage facts (scene libya_flood_post_90.png, flood, rows: outline)\n"}
+,{"stream_name":"stdout","time":501.610769688,"data":"[  8.2 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":511.991189385,"data":"[  8.4 min] Guideline index loaded in 10.4 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":517.556185291,"data":"[  8.5 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":517.931931508,"data":"[  8.5 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":545.742826734,"data":"[  9.0 min] Report finished: Expert_team_report.txt after 0.7 min\n"}
+,{"stream_name":"stdout","time":565.945769277,"data":"[  9.3 min] Report finished: Alerts_team_report_for_social_media.txt after 0.3 min\n"}
+,{"stream_name":"stdout","time":609.556661308,"data":"[ 10.0 min] Report finished: Emergency_team_report.txt after 0.7 min\n"}
+,{"stream_name":"stdout","time":638.095209117,"data":"[ 10.5 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":644.714359583,"data":"[ 10.6 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":679.537080743,"data":"[ 11.2 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":738.194931567,"data":"[ 12.2 min] Report finished: Public_community_report.txt after 1.0 min\n"}
+,{"stream_name":"stdout","time":768.025107427,"data":"[ 12.7 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":827.935663167,"data":"[ 13.7 min] Section asked again: Reconstruction_plan.txt / Plan of Action: id_not_shown: INSARAG2B-6.3.4, SPHERE-1-p5\n"}
+,{"stream_name":"stdout","time":878.730855466,"data":"[ 14.5 min] Report finished: Reconstruction_plan.txt after 2.3 min\n"}
+,{"stream_name":"stdout","time":878.730905466,"data":"[ 14.5 min] Fixed flow finished: 6 reports in reports/offline, scene libya_flood_post_90.png, grades by the code\n"}
+,{"stream_name":"stdout","time":878.730912688,"data":"[ 14.5 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":878.730918406,"data":"[ 14.5 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":878.73092368,"data":"[ 14.5 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":878.730939392,"data":"[ 14.5 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_libya_flood_post_90\n"}
+,{"stream_name":"stdout","time":881.139902956,"data":"[ 14.5 min] libya_flood_post_90.png: flow exit code 0, pass rules exit code 0, 6.43 min\n"}
+,{"stream_name":"stdout","time":881.139933901,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":881.139938774,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":881.139942512,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":881.139946558,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":881.139950671,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":881.139954061,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":881.139957489,"data":"\n"}
+,{"stream_name":"stdout","time":881.139960666,"data":"[ 14.5 min] ===== 7b: turkey_earthquake4_post_327.png (earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":887.582739148,"data":"[ 14.6 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":887.582773299,"data":"[ 14.6 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":887.582778122,"data":"[ 14.6 min] DisasTeller flow: fixed, with C4's damage facts (scene turkey_earthquake4_post_327.png, earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":887.58278213,"data":"[ 14.6 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":896.984693496,"data":"[ 14.8 min] Guideline index loaded in 9.4 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":896.984723519,"data":"[ 14.8 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":897.538394652,"data":"[ 14.8 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":916.146933376,"data":"[ 15.1 min] Section asked again: Expert_team_report.txt / Description of the estimated damage: number_wrong: 454,485 pixels\n"}
+,{"stream_name":"stdout","time":934.645786125,"data":"[ 15.4 min] Report finished: Expert_team_report.txt after 0.8 min\n"}
+,{"stream_name":"stdout","time":960.158004597,"data":"[ 15.9 min] Report finished: Alerts_team_report_for_social_media.txt after 0.4 min\n"}
+,{"stream_name":"stdout","time":977.255986898,"data":"[ 16.1 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":987.688956017,"data":"[ 16.3 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":996.652076982,"data":"[ 16.5 min] Section asked again: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":1005.25508152,"data":"[ 16.6 min] Section kept with problems: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":1011.448115547,"data":"[ 16.7 min] Report finished: Emergency_team_report.txt after 0.9 min\n"}
+,{"stream_name":"stdout","time":1043.775462649,"data":"[ 17.3 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":1053.542612975,"data":"[ 17.4 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":1065.726376582,"data":"[ 17.6 min] Section asked again: Emergency_service_human_resource_allocation.txt / Allocation Plan: no_citation\n"}
+,{"stream_name":"stdout","time":1077.384495164,"data":"[ 17.8 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Allocation Plan: no_citation\n"}
+,{"stream_name":"stdout","time":1105.709200593,"data":"[ 18.3 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.6 min\n"}
+,{"stream_name":"stdout","time":1138.569208731,"data":"[ 18.8 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":1146.064428543,"data":"[ 19.0 min] Section kept with problems: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":1156.376269085,"data":"[ 19.1 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":1165.988055313,"data":"[ 19.3 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":1175.73950749,"data":"[ 19.5 min] Report finished: Public_community_report.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":1204.836113686,"data":"[ 19.9 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":1220.523373896,"data":"[ 20.2 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":1259.880702825,"data":"[ 20.9 min] Report finished: Reconstruction_plan.txt after 1.4 min\n"}
+,{"stream_name":"stdout","time":1259.88077068,"data":"[ 20.9 min] Fixed flow finished: 6 reports in reports/offline, scene turkey_earthquake4_post_327.png, grades by the code\n"}
+,{"stream_name":"stdout","time":1259.880778019,"data":"[ 20.9 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":1259.880783823,"data":"[ 20.9 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":1259.880788942,"data":"[ 20.9 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":1259.880793891,"data":"[ 20.9 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_turkey_earthquake4_post_327\n"}
+,{"stream_name":"stdout","time":1262.307980099,"data":"[ 20.9 min] turkey_earthquake4_post_327.png: flow exit code 0, pass rules exit code 0, 6.35 min\n"}
+,{"stream_name":"stdout","time":1262.308012367,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":1262.308018154,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":1262.308022784,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":1262.308027183,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":1262.308031635,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":1262.308035872,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":1262.308040272,"data":"\n"}
+,{"stream_name":"stdout","time":1262.308044385,"data":"[ 20.9 min] ===== 7b: santa_rosa_wildfire_00000155_post_disaster.png (wildfire, rows: patch)\n"}
+,{"stream_name":"stdout","time":1268.749832161,"data":"[ 21.0 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":1268.749868535,"data":"[ 21.0 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":1268.749874285,"data":"[ 21.0 min] DisasTeller flow: fixed, with C4's damage facts (scene santa_rosa_wildfire_00000155_post_disaster.png, wildfire, rows: patch)\n"}
+,{"stream_name":"stdout","time":1268.74989372,"data":"[ 21.0 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":1278.088281417,"data":"[ 21.2 min] Guideline index loaded in 9.3 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":1278.088316855,"data":"[ 21.2 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":1278.672596857,"data":"[ 21.2 min] Labelled map saved: reports/offline/4_anotated.png (4 labels)\n"}
+,{"stream_name":"stdout","time":1311.574614051,"data":"[ 21.7 min] Report finished: Expert_team_report.txt after 0.7 min\n"}
+,{"stream_name":"stdout","time":1335.919798832,"data":"[ 22.1 min] Report finished: Alerts_team_report_for_social_media.txt after 0.4 min\n"}
+,{"stream_name":"stdout","time":1354.851945698,"data":"[ 22.4 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":1367.294087129,"data":"[ 22.6 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":1379.549777734,"data":"[ 22.8 min] Section asked again: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":1391.236331228,"data":"[ 23.0 min] Section kept with problems: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":1399.895594799,"data":"[ 23.2 min] Report finished: Emergency_team_report.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":1473.471146083,"data":"[ 24.4 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":1527.819385676,"data":"[ 25.3 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":1540.785310502,"data":"[ 25.5 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":1552.010338193,"data":"[ 25.7 min] Report finished: Public_community_report.txt after 1.3 min\n"}
+,{"stream_name":"stdout","time":1582.402885002,"data":"[ 26.2 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":1610.652245031,"data":"[ 26.7 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":1623.391710605,"data":"[ 26.9 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":1635.810659495,"data":"[ 27.1 min] Section asked again: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":1647.832275707,"data":"[ 27.3 min] Section kept with problems: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":1664.217132611,"data":"[ 27.6 min] Report finished: Reconstruction_plan.txt after 1.9 min\n"}
+,{"stream_name":"stdout","time":1664.217167652,"data":"[ 27.6 min] Fixed flow finished: 6 reports in reports/offline, scene santa_rosa_wildfire_00000155_post_disaster.png, grades by the code\n"}
+,{"stream_name":"stdout","time":1664.217175196,"data":"[ 27.6 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":1664.217181517,"data":"[ 27.6 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":1664.217187054,"data":"[ 27.6 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":1664.217212554,"data":"[ 27.6 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_santa_rosa_wildfire_00000155_post_disaster\n"}
+,{"stream_name":"stdout","time":1666.634673176,"data":"[ 27.6 min] santa_rosa_wildfire_00000155_post_disaster.png: flow exit code 0, pass rules exit code 0, 6.74 min\n"}
+,{"stream_name":"stdout","time":1666.634703157,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":1666.634708723,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":1666.634712888,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":1666.634716424,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":1666.634720053,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":1666.634723703,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":1666.634727349,"data":"\n"}
+,{"stream_name":"stdout","time":1666.634730774,"data":"[ 27.6 min] ===== 7b: joplin_tornado_00000147_post_disaster.png (tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":1673.201705932,"data":"[ 27.7 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":1673.201749565,"data":"[ 27.7 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":1673.201755354,"data":"[ 27.7 min] DisasTeller flow: fixed, with C4's damage facts (scene joplin_tornado_00000147_post_disaster.png, tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":1673.201758651,"data":"[ 27.7 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":1682.527012879,"data":"[ 27.9 min] Guideline index loaded in 9.3 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":1682.527047803,"data":"[ 27.9 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":1683.129946751,"data":"[ 27.9 min] Labelled map saved: reports/offline/4_anotated.png (4 labels)\n"}
+,{"stream_name":"stdout","time":1712.536048905,"data":"[ 28.4 min] Report finished: Expert_team_report.txt after 0.7 min\n"}
+,{"stream_name":"stdout","time":1734.70801146,"data":"[ 28.8 min] Report finished: Alerts_team_report_for_social_media.txt after 0.4 min\n"}
+,{"stream_name":"stdout","time":1753.105653598,"data":"[ 29.1 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation; number_unsourced: 818, 214, 112, 801\n"}
+,{"stream_name":"stdout","time":1763.248047867,"data":"[ 29.2 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":1772.170799537,"data":"[ 29.4 min] Section asked again: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":1780.785476182,"data":"[ 29.5 min] Section kept with problems: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":1786.295649612,"data":"[ 29.6 min] Report finished: Emergency_team_report.txt after 0.9 min\n"}
+,{"stream_name":"stdout","time":1868.704369151,"data":"[ 31.0 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.4 min\n"}
+,{"stream_name":"stdout","time":1900.112317852,"data":"[ 31.5 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":1908.12021018,"data":"[ 31.7 min] Section kept with problems: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":1918.548000152,"data":"[ 31.8 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":1940.312200635,"data":"[ 32.2 min] Report finished: Public_community_report.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":1966.650301571,"data":"[ 32.6 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":1980.449697788,"data":"[ 32.9 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":2019.772805734,"data":"[ 33.5 min] Report finished: Reconstruction_plan.txt after 1.3 min\n"}
+,{"stream_name":"stdout","time":2019.772842109,"data":"[ 33.5 min] Fixed flow finished: 6 reports in reports/offline, scene joplin_tornado_00000147_post_disaster.png, grades by the code\n"}
+,{"stream_name":"stdout","time":2019.772848795,"data":"[ 33.5 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":2019.772854316,"data":"[ 33.5 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":2019.772859655,"data":"[ 33.5 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":2019.772864929,"data":"[ 33.5 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_joplin_tornado_00000147_post_disaster\n"}
+,{"stream_name":"stdout","time":2022.199752012,"data":"[ 33.6 min] joplin_tornado_00000147_post_disaster.png: flow exit code 0, pass rules exit code 0, 5.93 min\n"}
+,{"stream_name":"stdout","time":2022.199783681,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":2022.199796333,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":2022.199816112,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":2022.199822101,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":2022.199827598,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":2022.199833627,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":2022.199838738,"data":"\n"}
+,{"stream_name":"stdout","time":2022.199843353,"data":"[ 33.6 min] ===== 7b: noto_earthquake_post_162.png (earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":2028.662139854,"data":"[ 33.7 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":2028.662179615,"data":"[ 33.7 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":2028.662187741,"data":"[ 33.7 min] DisasTeller flow: fixed, with C4's damage facts (scene noto_earthquake_post_162.png, earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":2028.662194403,"data":"[ 33.7 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":2038.00396713,"data":"[ 33.8 min] Guideline index loaded in 9.3 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":2038.004010554,"data":"[ 33.8 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":2038.610382546,"data":"[ 33.8 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":2072.841069076,"data":"[ 34.4 min] Report finished: Expert_team_report.txt after 0.7 min\n"}
+,{"stream_name":"stdout","time":2084.077254559,"data":"[ 34.6 min] Section asked again: Alerts_team_report_for_social_media.txt / Danger area alert: number_unsourced: 32, 235, 53, 551, 284, 462\n"}
+,{"stream_name":"stdout","time":2099.228397607,"data":"[ 34.8 min] Report finished: Alerts_team_report_for_social_media.txt after 0.4 min\n"}
+,{"stream_name":"stdout","time":2117.76342349,"data":"[ 35.2 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":2129.664368483,"data":"[ 35.4 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":2145.71636662,"data":"[ 35.6 min] Report finished: Emergency_team_report.txt after 0.8 min\n"}
+,{"stream_name":"stdout","time":2209.064032105,"data":"[ 36.7 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":2246.61488792,"data":"[ 37.3 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":2264.923924896,"data":"[ 37.6 min] Report finished: Public_community_report.txt after 0.9 min\n"}
+,{"stream_name":"stdout","time":2346.26397033,"data":"[ 39.0 min] Report finished: Reconstruction_plan.txt after 1.4 min\n"}
+,{"stream_name":"stdout","time":2346.264030297,"data":"[ 39.0 min] Fixed flow finished: 6 reports in reports/offline, scene noto_earthquake_post_162.png, grades by the code\n"}
+,{"stream_name":"stdout","time":2346.264038336,"data":"[ 39.0 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":2346.264044475,"data":"[ 39.0 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":2346.264050488,"data":"[ 39.0 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":2346.264056245,"data":"[ 39.0 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_noto_earthquake_post_162\n"}
+,{"stream_name":"stdout","time":2348.628755805,"data":"[ 39.0 min] noto_earthquake_post_162.png: flow exit code 0, pass rules exit code 0, 5.44 min\n"}
+,{"stream_name":"stdout","time":2348.628813408,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":2348.628820497,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":2348.62882535,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":2348.628829892,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":2348.628834243,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":2348.628838664,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":2348.628843154,"data":"\n"}
+,{"stream_name":"stdout","time":2348.628847473,"data":"[ 39.0 min] ===== 7b: hawaii_wildfire_post_646.png (wildfire, rows: outline)\n"}
+,{"stream_name":"stdout","time":2355.124100295,"data":"[ 39.1 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":2355.124138961,"data":"[ 39.1 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":2355.124143303,"data":"[ 39.1 min] DisasTeller flow: fixed, with C4's damage facts (scene hawaii_wildfire_post_646.png, wildfire, rows: outline)\n"}
+,{"stream_name":"stdout","time":2355.124157096,"data":"[ 39.1 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":2364.653408449,"data":"[ 39.3 min] Guideline index loaded in 9.5 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":2364.653439609,"data":"[ 39.3 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":2365.257974882,"data":"[ 39.3 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":2385.62520291,"data":"[ 39.6 min] Report finished: Expert_team_report.txt after 0.5 min\n"}
+,{"stream_name":"stdout","time":2400.819142857,"data":"[ 39.9 min] Report finished: Alerts_team_report_for_social_media.txt after 0.3 min\n"}
+,{"stream_name":"stdout","time":2420.41004787,"data":"[ 40.2 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":2433.778152855,"data":"[ 40.4 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":2453.15286237,"data":"[ 40.7 min] Report finished: Emergency_team_report.txt after 0.9 min\n"}
+,{"stream_name":"stdout","time":2522.859587568,"data":"[ 41.9 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":2549.749521123,"data":"[ 42.4 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":2556.460849616,"data":"[ 42.5 min] Section kept with problems: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":2564.578006309,"data":"[ 42.6 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":2584.227604088,"data":"[ 42.9 min] Report finished: Public_community_report.txt after 1.0 min\n"}
+,{"stream_name":"stdout","time":2632.364800699,"data":"[ 43.7 min] Section asked again: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":2643.005635061,"data":"[ 43.9 min] Section kept with problems: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":2655.466157448,"data":"[ 44.1 min] Report finished: Reconstruction_plan.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":2655.466244109,"data":"[ 44.1 min] Fixed flow finished: 6 reports in reports/offline, scene hawaii_wildfire_post_646.png, grades by the code\n"}
+,{"stream_name":"stdout","time":2655.46625443,"data":"[ 44.1 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":2655.466260763,"data":"[ 44.1 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":2655.466266537,"data":"[ 44.1 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":2655.46627218,"data":"[ 44.1 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_hawaii_wildfire_post_646\n"}
+,{"stream_name":"stdout","time":2657.90118824,"data":"[ 44.2 min] hawaii_wildfire_post_646.png: flow exit code 0, pass rules exit code 0, 5.15 min\n"}
+,{"stream_name":"stdout","time":2657.901238744,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":2657.90124552,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":2657.901251974,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":2657.901257205,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":2657.901262535,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":2657.901267393,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":2657.90127214,"data":"\n"}
+,{"stream_name":"stdout","time":2657.901277571,"data":"[ 44.2 min] ===== 7b: beriut_explosion_post_16.png (explosion, rows: outline)\n"}
+,{"stream_name":"stdout","time":2664.311288074,"data":"[ 44.3 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":2664.311320834,"data":"[ 44.3 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":2664.311327819,"data":"[ 44.3 min] DisasTeller flow: fixed, with C4's damage facts (scene beriut_explosion_post_16.png, explosion, rows: outline)\n"}
+,{"stream_name":"stdout","time":2664.311332978,"data":"[ 44.3 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":2673.665785023,"data":"[ 44.4 min] Guideline index loaded in 9.4 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":2673.665816349,"data":"[ 44.4 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":2674.19040843,"data":"[ 44.4 min] Labelled map saved: reports/offline/4_anotated.png (5 labels)\n"}
+,{"stream_name":"stdout","time":2705.625900815,"data":"[ 44.9 min] Report finished: Expert_team_report.txt after 0.7 min\n"}
+,{"stream_name":"stdout","time":2725.851083205,"data":"[ 45.3 min] Report finished: Alerts_team_report_for_social_media.txt after 0.3 min\n"}
+,{"stream_name":"stdout","time":2763.890960163,"data":"[ 45.9 min] Report finished: Emergency_team_report.txt after 0.6 min\n"}
+,{"stream_name":"stdout","time":2797.613904313,"data":"[ 46.5 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: id_not_shown: INSARAG2B-5.7.1\n"}
+,{"stream_name":"stdout","time":2817.780376257,"data":"[ 46.8 min] Section asked again: Emergency_service_human_resource_allocation.txt / Allocation Plan: id_not_shown: INSARAG2B-5.7.1\n"}
+,{"stream_name":"stdout","time":2826.738922209,"data":"[ 47.0 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Allocation Plan: id_not_shown: INSARAG2B-5.7.1\n"}
+,{"stream_name":"stdout","time":2851.100603485,"data":"[ 47.4 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.5 min\n"}
+,{"stream_name":"stdout","time":2892.594931618,"data":"[ 48.1 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":2909.418870981,"data":"[ 48.3 min] Report finished: Public_community_report.txt after 1.0 min\n"}
+,{"stream_name":"stdout","time":2954.969868999,"data":"[ 49.1 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":2966.400883707,"data":"[ 49.3 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":3010.159258325,"data":"[ 50.0 min] Section asked again: Reconstruction_plan.txt / Plan of Action: number_unsourced: 3.5\n"}
+,{"stream_name":"stdout","time":3054.907897721,"data":"[ 50.8 min] Section kept with problems: Reconstruction_plan.txt / Plan of Action: number_unsourced: 3.5\n"}
+,{"stream_name":"stdout","time":3054.907932706,"data":"[ 50.8 min] Number guard: Reconstruction_plan.txt / Plan of Action: replaced 3.5\n"}
+,{"stream_name":"stdout","time":3075.00725701,"data":"[ 51.1 min] Section asked again: Reconstruction_plan.txt / Appendices: id_not_shown: SPHERE-5-p3\n"}
+,{"stream_name":"stdout","time":3087.01027318,"data":"[ 51.3 min] Report finished: Reconstruction_plan.txt after 3.0 min\n"}
+,{"stream_name":"stdout","time":3087.010314301,"data":"[ 51.3 min] Fixed flow finished: 6 reports in reports/offline, scene beriut_explosion_post_16.png, grades by the code\n"}
+,{"stream_name":"stdout","time":3087.010336177,"data":"[ 51.3 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":3087.010341204,"data":"[ 51.3 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":3087.010345568,"data":"[ 51.3 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":3087.010349976,"data":"[ 51.3 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_beriut_explosion_post_16\n"}
+,{"stream_name":"stdout","time":3089.44164043,"data":"[ 51.3 min] beriut_explosion_post_16.png: flow exit code 0, pass rules exit code 0, 7.19 min\n"}
+,{"stream_name":"stdout","time":3089.441672355,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":3089.441677342,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":3089.441681258,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":3089.441684912,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":3089.441688614,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":3089.441692213,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":3089.441695991,"data":"\n"}
+,{"stream_name":"stdout","time":3089.441716769,"data":"[ 51.3 min] ===== 7b: palu_tsunami_00000180_post_disaster.png (tsunami, rows: patch)\n"}
+,{"stream_name":"stdout","time":3095.988383492,"data":"[ 51.5 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":3095.98842717,"data":"[ 51.5 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":3095.988431756,"data":"[ 51.5 min] DisasTeller flow: fixed, with C4's damage facts (scene palu_tsunami_00000180_post_disaster.png, tsunami, rows: patch)\n"}
+,{"stream_name":"stdout","time":3095.988434518,"data":"[ 51.5 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":3105.546808873,"data":"[ 51.6 min] Guideline index loaded in 9.6 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":3105.546846044,"data":"[ 51.6 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":3106.229129242,"data":"[ 51.6 min] Labelled map saved: reports/offline/4_anotated.png (5 labels)\n"}
+,{"stream_name":"stdout","time":3128.945240098,"data":"[ 52.0 min] Report finished: Expert_team_report.txt after 0.5 min\n"}
+,{"stream_name":"stdout","time":3149.261684117,"data":"[ 52.3 min] Report finished: Alerts_team_report_for_social_media.txt after 0.3 min\n"}
+,{"stream_name":"stdout","time":3166.729506473,"data":"[ 52.6 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":3177.609370754,"data":"[ 52.8 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":3196.748924227,"data":"[ 53.1 min] Report finished: Emergency_team_report.txt after 0.8 min\n"}
+,{"stream_name":"stdout","time":3229.72856969,"data":"[ 53.7 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":3240.266810279,"data":"[ 53.9 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":3251.491354618,"data":"[ 54.0 min] Section asked again: Emergency_service_human_resource_allocation.txt / Allocation Plan: id_not_shown: INSARAG2B-2, INSARAG2B-3.10; no_citation\n"}
+,{"stream_name":"stdout","time":3262.186279891,"data":"[ 54.2 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Allocation Plan: id_not_shown: INSARAG2B-2, INSARAG2B-3.10; no_citation\n"}
+,{"stream_name":"stdout","time":3284.391372751,"data":"[ 54.6 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.5 min\n"}
+,{"stream_name":"stdout","time":3322.249573304,"data":"[ 55.2 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":3330.009394578,"data":"[ 55.4 min] Section kept with problems: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":3338.084781805,"data":"[ 55.5 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":3345.906040992,"data":"[ 55.6 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":3355.845879839,"data":"[ 55.8 min] Report finished: Public_community_report.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":3383.356524447,"data":"[ 56.2 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation; number_wrong: 49%, 33%\n"}
+,{"stream_name":"stdout","time":3396.174745625,"data":"[ 56.5 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: no_citation; number_wrong: 49%, 33%\n"}
+,{"stream_name":"stdout","time":3396.17478077,"data":"[ 56.5 min] Number guard: Reconstruction_plan.txt / Assessment of Damage: replaced 49%, 49%, 33%\n"}
+,{"stream_name":"stdout","time":3445.342611367,"data":"[ 57.3 min] Report finished: Reconstruction_plan.txt after 1.5 min\n"}
+,{"stream_name":"stdout","time":3445.342667534,"data":"[ 57.3 min] Fixed flow finished: 6 reports in reports/offline, scene palu_tsunami_00000180_post_disaster.png, grades by the code\n"}
+,{"stream_name":"stdout","time":3445.342674705,"data":"[ 57.3 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":3445.342679529,"data":"[ 57.3 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":3445.342684009,"data":"[ 57.3 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":3445.342688573,"data":"[ 57.3 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_palu_tsunami_00000180_post_disaster\n"}
+,{"stream_name":"stdout","time":3447.517264006,"data":"[ 57.3 min] palu_tsunami_00000180_post_disaster.png: flow exit code 0, pass rules exit code 0, 5.97 min\n"}
+,{"stream_name":"stdout","time":3447.51729935,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":3447.517305963,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":3447.517311369,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":3447.517316689,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":3447.51732192,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":3447.517327466,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":3447.517332723,"data":"\n"}
+,{"stream_name":"stdout","time":3447.517337807,"data":"[ 57.3 min] ===== 7b: moore_tornado_00000045_post_disaster.png (tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":3454.178366275,"data":"[ 57.4 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":3454.17842848,"data":"[ 57.4 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":3454.178434668,"data":"[ 57.4 min] DisasTeller flow: fixed, with C4's damage facts (scene moore_tornado_00000045_post_disaster.png, tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":3454.17843932,"data":"[ 57.4 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":3463.739252063,"data":"[ 57.6 min] Guideline index loaded in 9.6 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":3463.739286593,"data":"[ 57.6 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":3464.373600534,"data":"[ 57.6 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":3496.968015994,"data":"[ 58.1 min] Report finished: Expert_team_report.txt after 0.7 min\n"}
+,{"stream_name":"stdout","time":3516.720466118,"data":"[ 58.5 min] Report finished: Alerts_team_report_for_social_media.txt after 0.3 min\n"}
+,{"stream_name":"stdout","time":3536.168381854,"data":"[ 58.8 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":3548.169361877,"data":"[ 59.0 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":3573.437964029,"data":"[ 59.4 min] Report finished: Emergency_team_report.txt after 0.9 min\n"}
+,{"stream_name":"stdout","time":3601.895921894,"data":"[ 59.9 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":3611.431154018,"data":"[ 60.0 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":3645.78291363,"data":"[ 60.6 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":3678.497621675,"data":"[ 61.2 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":3685.129391662,"data":"[ 61.3 min] Section kept with problems: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":3696.205189046,"data":"[ 61.5 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":3707.093634399,"data":"[ 61.6 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":3717.042757109,"data":"[ 61.8 min] Report finished: Public_community_report.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":3740.717407877,"data":"[ 62.2 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":3753.115004497,"data":"[ 62.4 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":3764.855398983,"data":"[ 62.6 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":3776.155124451,"data":"[ 62.8 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":3789.351538793,"data":"[ 63.0 min] Section asked again: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":3802.341781621,"data":"[ 63.2 min] Section kept with problems: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":3817.505427449,"data":"[ 63.5 min] Report finished: Reconstruction_plan.txt after 1.7 min\n"}
+,{"stream_name":"stdout","time":3817.505513469,"data":"[ 63.5 min] Fixed flow finished: 6 reports in reports/offline, scene moore_tornado_00000045_post_disaster.png, grades by the code\n"}
+,{"stream_name":"stdout","time":3817.505521345,"data":"[ 63.5 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":3817.505526161,"data":"[ 63.5 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":3817.505530388,"data":"[ 63.5 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":3817.505534778,"data":"[ 63.5 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_moore_tornado_00000045_post_disaster\n"}
+,{"stream_name":"stdout","time":3819.745239693,"data":"[ 63.5 min] moore_tornado_00000045_post_disaster.png: flow exit code 0, pass rules exit code 0, 6.2 min\n"}
+,{"stream_name":"stdout","time":3819.745271786,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":3819.745276178,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":3819.745279018,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":3819.74528259,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":3819.745297282,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":3819.745301893,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":3819.745306445,"data":"\n"}
+,{"stream_name":"stdout","time":3819.745310368,"data":"[ 63.5 min] ===== 7b: tuscaloosa_tornado_00000037_post_disaster.png (tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":3826.381601676,"data":"[ 63.6 min] Local model: disasterm3-7b at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":3826.381642112,"data":"[ 63.6 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":3826.381648443,"data":"[ 63.6 min] DisasTeller flow: fixed, with C4's damage facts (scene tuscaloosa_tornado_00000037_post_disaster.png, tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":3826.381654931,"data":"[ 63.6 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":3836.035169266,"data":"[ 63.8 min] Guideline index loaded in 9.6 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":3836.035201567,"data":"[ 63.8 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":3836.664316586,"data":"[ 63.8 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":3847.163931259,"data":"[ 64.0 min] Section asked again: Expert_team_report.txt / Overview: number_wrong: 54%\n"}
+,{"stream_name":"stdout","time":3856.293014397,"data":"[ 64.1 min] Section kept with problems: Expert_team_report.txt / Overview: number_wrong: 54%\n"}
+,{"stream_name":"stdout","time":3856.293048226,"data":"[ 64.1 min] Number guard: Expert_team_report.txt / Overview: replaced 54%\n"}
+,{"stream_name":"stdout","time":3882.581876505,"data":"[ 64.6 min] Report finished: Expert_team_report.txt after 0.9 min\n"}
+,{"stream_name":"stdout","time":3892.559930973,"data":"[ 64.7 min] Section asked again: Alerts_team_report_for_social_media.txt / Danger area alert: number_unsourced: 774, 531, 41, 750, 717, 888\n"}
+,{"stream_name":"stdout","time":3906.330433166,"data":"[ 65.0 min] Report finished: Alerts_team_report_for_social_media.txt after 0.4 min\n"}
+,{"stream_name":"stdout","time":3927.414961904,"data":"[ 65.3 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":3941.61575398,"data":"[ 65.5 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":3957.241734357,"data":"[ 65.8 min] Section asked again: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":3972.553979873,"data":"[ 66.1 min] Section kept with problems: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":3982.518274843,"data":"[ 66.2 min] Report finished: Emergency_team_report.txt after 1.3 min\n"}
+,{"stream_name":"stdout","time":4023.067430745,"data":"[ 66.9 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":4032.353542292,"data":"[ 67.1 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":4067.453283432,"data":"[ 67.6 min] Report finished: Emergency_service_human_resource_allocation.txt after 1.4 min\n"}
+,{"stream_name":"stdout","time":4111.576980766,"data":"[ 68.4 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":4122.571499204,"data":"[ 68.6 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":4133.30879544,"data":"[ 68.7 min] Report finished: Public_community_report.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":4148.831877031,"data":"[ 69.0 min] Section asked again: Reconstruction_plan.txt / Executive Summary: number_wrong: 54%\n"}
+,{"stream_name":"stdout","time":4189.258649256,"data":"[ 69.7 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":4198.649523999,"data":"[ 69.8 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":4228.607722614,"data":"[ 70.3 min] Report finished: Reconstruction_plan.txt after 1.6 min\n"}
+,{"stream_name":"stdout","time":4228.607781947,"data":"[ 70.3 min] Fixed flow finished: 6 reports in reports/offline, scene tuscaloosa_tornado_00000037_post_disaster.png, grades by the code\n"}
+,{"stream_name":"stdout","time":4228.60779161,"data":"[ 70.3 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":4228.607815371,"data":"[ 70.3 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":4228.607821387,"data":"[ 70.3 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":4228.607827266,"data":"[ 70.3 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/7b/run_tuscaloosa_tornado_00000037_post_disaster\n"}
+,{"stream_name":"stdout","time":4230.995569126,"data":"[ 70.4 min] tuscaloosa_tornado_00000037_post_disaster.png: flow exit code 0, pass rules exit code 0, 6.85 min\n"}
+,{"stream_name":"stdout","time":4230.995606903,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":4230.995614292,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":4230.995620543,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":4230.995627066,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":4230.9956347,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":4230.995654699,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":4232.433277727,"data":"[ 70.4 min] server stopped; GPU memory now ['Tesla T4, 0 MiB, 15360 MiB', 'Tesla T4, 0 MiB, 15360 MiB']\n"}
+,{"stream_name":"stdout","time":4232.433309954,"data":"[ 70.4 min] writer 7b: 10 of 10 scenes passed the five pass rules, 62.3 min for the scenes\n"}
+,{"stream_name":"stdout","time":4232.433321507,"data":"\n"}
+,{"stream_name":"stdout","time":4232.433325415,"data":"[ 70.4 min] ########## writer 3b-instruct: Qwen/Qwen2.5-3B-Instruct\n"}
+,{"stream_name":"stdout","time":4259.191064565,"data":"[ 70.8 min] Qwen/Qwen2.5-3B-Instruct at aa8e72537993: 12 files, 6.2 GB in 0.4 min -\u003e /kaggle/tmp/t2b_models/Qwen2.5-3B-Instruct; generation_config: {'bos_token_id': 151643, 'pad_token_id': 151643, 'do_sample': True, 'eos_token_id': [151645, 151643], 'repetition_penalty': 1.05, 'temperature': 0.7, 'top_p': 0.8, 'top_k': 20, 'transformers_version': '4.37.0'}\n"}
+,{"stream_name":"stdout","time":4259.19110756,"data":"/usr/local/bin/vllm serve /kaggle/tmp/t2b_models/Qwen2.5-3B-Instruct --served-model-name qwen2.5-3b-instruct --host 127.0.0.1 --port 8000 --tensor-parallel-size 2 --dtype half --enforce-eager --max-model-len 32768 --gpu-memory-utilization 0.92 --max-num-seqs 8 --override-generation-config {\"top_p\": 1.0, \"top_k\": -1}\n"}
+,{"stream_name":"stdout","time":4369.218974081,"data":"[ 72.7 min] vLLM is ready\n"}
+,{"stream_name":"stdout","time":4369.21904905,"data":"   ', 'max_model_len': 32768, 'enforce_eager': True, 'served_model_name': ['qwen2.5-3b-instruct'], 'override_generation_config': {'top_p': 1.0, 'top_k': -1}, 'tensor_parallel_size': 2, 'max_num_seqs': 8}\n"}
+,{"stream_name":"stdout","time":4369.219057186,"data":"   (Worker_TP0 pid=1245) INFO 11-21 02:39:26 [model_runner.py:302] Model loading took 2.94 GiB and 4.571611 seconds\n"}
+,{"stream_name":"stdout","time":4369.219062132,"data":"   (Worker_TP1 pid=1246) INFO 11-21 02:39:26 [model_runner.py:302] Model loading took 2.94 GiB and 4.633666 seconds\n"}
+,{"stream_name":"stdout","time":4369.21906686,"data":"   (Worker_TP0 pid=1245) INFO 11-21 02:39:32 [gpu_worker.py:538] Available KV cache memory: 10.32 GiB\n"}
+,{"stream_name":"stdout","time":4369.219082978,"data":"   (EngineCore pid=1219) INFO 11-21 02:39:32 [kv_cache_utils.py:2146] GPU KV cache size: 601,264 tokens\n"}
+,{"stream_name":"stdout","time":4369.219087342,"data":"   (EngineCore pid=1219) INFO 11-21 02:39:32 [kv_cache_utils.py:2147] Maximum concurrency for 32,768 tokens per request: 18.35x\n"}
+,{"stream_name":"stdout","time":4369.219091442,"data":"   model's `generation_config.json`: `{'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': -1, 'top_p': 1.0}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.\n"}
+,{"stream_name":"stdout","time":4381.266644496,"data":"  text: A building damage grade is a classification system used to assess the extent of structural and non-structural damage to buildings following an event such as an earthquake or flood.\n"}
+,{"stream_name":"stdout","time":4381.266685028,"data":"  fixed flow: OK\n"}
+,{"stream_name":"stdout","time":4381.26669123,"data":"\n"}
+,{"stream_name":"stdout","time":4381.266696005,"data":"[ 72.9 min] ===== 3b-instruct: libya_flood_post_90.png (flood, rows: outline)\n"}
+,{"stream_name":"stdout","time":4387.674237094,"data":"[ 73.0 min] Local model: qwen2.5-3b-instruct at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":4387.67427691,"data":"[ 73.0 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":4387.674282881,"data":"[ 73.0 min] DisasTeller flow: fixed, with C4's damage facts (scene libya_flood_post_90.png, flood, rows: outline)\n"}
+,{"stream_name":"stdout","time":4387.674307989,"data":"[ 73.0 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":4396.951259598,"data":"[ 73.1 min] Guideline index loaded in 9.3 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":4396.951295984,"data":"[ 73.1 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":4397.43937838,"data":"[ 73.1 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":4474.781809459,"data":"[ 74.4 min] Report finished: Expert_team_report.txt after 1.5 min\n"}
+,{"stream_name":"stdout","time":4519.979171932,"data":"[ 75.2 min] Report finished: Alerts_team_report_for_social_media.txt after 0.8 min\n"}
+,{"stream_name":"stdout","time":4568.007676173,"data":"[ 76.0 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":4612.727123104,"data":"[ 76.7 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":4657.603950869,"data":"[ 77.5 min] Section asked again: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":4702.239317203,"data":"[ 78.2 min] Section kept with problems: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":4717.699363469,"data":"[ 78.5 min] Report finished: Emergency_team_report.txt after 3.3 min\n"}
+,{"stream_name":"stdout","time":4783.930430293,"data":"[ 79.6 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: id_without_brackets: INSARAG2B-5.7.1-p3; number_misused: 15\n"}
+,{"stream_name":"stdout","time":4805.199383222,"data":"[ 79.9 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: id_without_brackets: INSARAG2B-5.7.1-p3; number_misused: 15\n"}
+,{"stream_name":"stdout","time":4805.199476359,"data":"[ 79.9 min] Number guard: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: replaced 15, 15, 15, 15\n"}
+,{"stream_name":"stdout","time":4853.446749961,"data":"[ 80.7 min] Section asked again: Emergency_service_human_resource_allocation.txt / Allocation Plan: no_citation\n"}
+,{"stream_name":"stdout","time":4900.906208973,"data":"[ 81.5 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Allocation Plan: no_citation\n"}
+,{"stream_name":"stdout","time":4945.193669005,"data":"[ 82.3 min] Report finished: Emergency_service_human_resource_allocation.txt after 3.8 min\n"}
+,{"stream_name":"stdout","time":5050.008275062,"data":"[ 84.0 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":5123.900783021,"data":"[ 85.3 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation; number_unsourced: 112\n"}
+,{"stream_name":"stdout","time":5168.731621187,"data":"[ 86.0 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":5182.303337168,"data":"[ 86.2 min] Report finished: Public_community_report.txt after 4.0 min\n"}
+,{"stream_name":"stdout","time":5256.44419657,"data":"[ 87.5 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation; number_wrong: 2, 13%\n"}
+,{"stream_name":"stdout","time":5312.034437107,"data":"[ 88.4 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: no_citation; number_wrong: 2, 13%\n"}
+,{"stream_name":"stdout","time":5312.034495596,"data":"[ 88.4 min] Number guard: Reconstruction_plan.txt / Assessment of Damage: replaced 2, 13%\n"}
+,{"stream_name":"stdout","time":5349.901158233,"data":"[ 89.0 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: id_without_brackets: SPHERE-5-p2, SPHERE-5-p1\n"}
+,{"stream_name":"stdout","time":5366.650813485,"data":"[ 89.3 min] Section kept as first written: Reconstruction_plan.txt / Reconstruction Needs: the second answer is too short\n"}
+,{"stream_name":"stdout","time":5366.650874043,"data":"[ 89.3 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: id_without_brackets: SPHERE-5-p2, SPHERE-5-p1\n"}
+,{"stream_name":"stdout","time":5422.342204811,"data":"[ 90.2 min] Section asked again: Reconstruction_plan.txt / Plan of Action: id_without_brackets: SPHERE-1-p4, SPHERE-5-p2, INSARAG2B-6.3.1, INSARAG2B-6.3.4-p1, SPHERE-5-p1\n"}
+,{"stream_name":"stdout","time":5478.524470815,"data":"[ 91.2 min] Section kept with problems: Reconstruction_plan.txt / Plan of Action: id_without_brackets: SPHERE-1-p4, SPHERE-5-p2, INSARAG2B-6.3.1, INSARAG2B-6.3.4-p1, SPHERE-5-p1\n"}
+,{"stream_name":"stdout","time":5513.91491086,"data":"[ 91.8 min] Section asked again: Reconstruction_plan.txt / Appendices: id_without_brackets: EMS98-2.3-p2, EMS98-vi-slightly-damaging, EMS98-masonry-grade-1, EMS98-masonry-grade-2, EMS98-masonry-grade-3, EMS98-masonry-grade-4, EMS98-\n"}
+,{"stream_name":"stdout","time":5536.641786927,"data":"[ 92.1 min] Section kept with problems: Reconstruction_plan.txt / Appendices: id_without_brackets: EMS98-2.3-p2, EMS98-vi-slightly-damaging, EMS98-masonry-grade-1, EMS98-masonry-grade-2, EMS98-masonry-grade-3, EMS98-masonry-grade-4,\n"}
+,{"stream_name":"stdout","time":5536.64183422,"data":"[ 92.1 min] Report finished: Reconstruction_plan.txt after 5.9 min\n"}
+,{"stream_name":"stdout","time":5536.64184103,"data":"[ 92.1 min] Fixed flow finished: 6 reports in reports/offline, scene libya_flood_post_90.png, grades by the code\n"}
+,{"stream_name":"stdout","time":5536.64184674,"data":"[ 92.1 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":5536.641852382,"data":"[ 92.1 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":5536.641858,"data":"[ 92.1 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":5536.641863634,"data":"[ 92.1 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/3b-instruct/run_libya_flood_post_90\n"}
+,{"stream_name":"stdout","time":5539.029681689,"data":"[ 92.2 min] libya_flood_post_90.png: flow exit code 0, pass rules exit code 0, 19.3 min\n"}
+,{"stream_name":"stdout","time":5539.02973316,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":5539.029739521,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":5539.029744284,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":5539.029748738,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":5539.029753046,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":5539.029757491,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":5539.029762188,"data":"\n"}
+,{"stream_name":"stdout","time":5539.029766744,"data":"[ 92.2 min] ===== 3b-instruct: turkey_earthquake4_post_327.png (earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":5545.324171643,"data":"[ 92.3 min] Local model: qwen2.5-3b-instruct at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":5545.324241113,"data":"[ 92.3 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":5545.324261742,"data":"[ 92.3 min] DisasTeller flow: fixed, with C4's damage facts (scene turkey_earthquake4_post_327.png, earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":5545.324265975,"data":"[ 92.3 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":5554.567317976,"data":"[ 92.4 min] Guideline index loaded in 9.2 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":5554.567364308,"data":"[ 92.4 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":5555.115461641,"data":"[ 92.4 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":5600.931310461,"data":"[ 93.2 min] Section asked again: Expert_team_report.txt / Description of the estimated damage: number_wrong: 221,070 pixels, 283,810 pixels\n"}
+,{"stream_name":"stdout","time":5632.681891047,"data":"[ 93.7 min] Section kept with problems: Expert_team_report.txt / Description of the estimated damage: number_wrong: 221,070 pixels, 283,810 pixels\n"}
+,{"stream_name":"stdout","time":5632.681926895,"data":"[ 93.7 min] Number guard: Expert_team_report.txt / Description of the estimated damage: replaced 221,070 pixels, 283,810 pixels\n"}
+,{"stream_name":"stdout","time":5654.644601707,"data":"[ 94.1 min] Section asked again: Expert_team_report.txt / Conclusion: number_wrong: 283,810 pixels\n"}
+,{"stream_name":"stdout","time":5676.454081772,"data":"[ 94.5 min] Section kept as first written: Expert_team_report.txt / Conclusion: the second answer adds: number_wrong: 221,070 pixels\n"}
+,{"stream_name":"stdout","time":5676.454175654,"data":"[ 94.5 min] Section kept with problems: Expert_team_report.txt / Conclusion: number_wrong: 283,810 pixels\n"}
+,{"stream_name":"stdout","time":5676.454186356,"data":"[ 94.5 min] Number guard: Expert_team_report.txt / Conclusion: replaced 283,810 pixels\n"}
+,{"stream_name":"stdout","time":5676.454193751,"data":"[ 94.5 min] Report finished: Expert_team_report.txt after 2.2 min\n"}
+,{"stream_name":"stdout","time":5739.82134096,"data":"[ 95.5 min] Report finished: Alerts_team_report_for_social_media.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":5774.762742788,"data":"[ 96.1 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":5847.165196802,"data":"[ 97.3 min] Section asked again: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":5904.596014618,"data":"[ 98.3 min] Report finished: Emergency_team_report.txt after 2.7 min\n"}
+,{"stream_name":"stdout","time":6085.382926369,"data":"[101.3 min] Section asked again: Emergency_service_human_resource_allocation.txt / Recommendations: number_unsourced: 20\n"}
+,{"stream_name":"stdout","time":6114.260399553,"data":"[101.8 min] Report finished: Emergency_service_human_resource_allocation.txt after 3.5 min\n"}
+,{"stream_name":"stdout","time":6209.868602922,"data":"[103.4 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation; number_unsourced: 15, 10\n"}
+,{"stream_name":"stdout","time":6241.567334884,"data":"[103.9 min] Section kept with problems: Public_community_report.txt / Resource Allocation: no_citation; number_unsourced: 15, 10\n"}
+,{"stream_name":"stdout","time":6241.567441969,"data":"[103.9 min] Number guard: Public_community_report.txt / Resource Allocation: replaced 15, 10, 10\n"}
+,{"stream_name":"stdout","time":6307.18397118,"data":"[105.0 min] Report finished: Public_community_report.txt after 3.2 min\n"}
+,{"stream_name":"stdout","time":6389.868517212,"data":"[106.4 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":6446.461590507,"data":"[107.3 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":6498.076966852,"data":"[108.2 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":6549.719411825,"data":"[109.0 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":6645.701487376,"data":"[110.6 min] Section asked again: Reconstruction_plan.txt / Appendices: id_not_shown: EMS98-masonry-grade\n"}
+,{"stream_name":"stdout","time":6671.75652754,"data":"[111.1 min] Report finished: Reconstruction_plan.txt after 6.1 min\n"}
+,{"stream_name":"stdout","time":6671.756593231,"data":"[111.1 min] Fixed flow finished: 6 reports in reports/offline, scene turkey_earthquake4_post_327.png, grades by the code\n"}
+,{"stream_name":"stdout","time":6671.756600417,"data":"[111.1 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":6671.756606069,"data":"[111.1 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":6671.756611372,"data":"[111.1 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":6671.756616587,"data":"[111.1 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/3b-instruct/run_turkey_earthquake4_post_327\n"}
+,{"stream_name":"stdout","time":6674.165192022,"data":"[111.1 min] turkey_earthquake4_post_327.png: flow exit code 0, pass rules exit code 0, 18.92 min\n"}
+,{"stream_name":"stdout","time":6674.16525243,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":6674.165260875,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":6674.165266051,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":6674.165270861,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":6674.1652756,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":6674.165280254,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":6674.165285121,"data":"\n"}
+,{"stream_name":"stdout","time":6674.165289767,"data":"[111.1 min] ===== 3b-instruct: santa_rosa_wildfire_00000155_post_disaster.png (wildfire, rows: patch)\n"}
+,{"stream_name":"stdout","time":6680.687105845,"data":"[111.2 min] Local model: qwen2.5-3b-instruct at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":6680.687141015,"data":"[111.2 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":6680.6871474,"data":"[111.2 min] DisasTeller flow: fixed, with C4's damage facts (scene santa_rosa_wildfire_00000155_post_disaster.png, wildfire, rows: patch)\n"}
+,{"stream_name":"stdout","time":6680.687153109,"data":"[111.2 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":6690.25226992,"data":"[111.4 min] Guideline index loaded in 9.6 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":6690.252311572,"data":"[111.4 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":6690.834713902,"data":"[111.4 min] Labelled map saved: reports/offline/4_anotated.png (4 labels)\n"}
+,{"stream_name":"stdout","time":6744.507998341,"data":"[112.3 min] Report finished: Expert_team_report.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":6789.271388959,"data":"[113.0 min] Report finished: Alerts_team_report_for_social_media.txt after 0.7 min\n"}
+,{"stream_name":"stdout","time":6868.833204779,"data":"[114.3 min] Report finished: Emergency_team_report.txt after 1.3 min\n"}
+,{"stream_name":"stdout","time":7045.989420895,"data":"[117.3 min] Report finished: Emergency_service_human_resource_allocation.txt after 3.0 min\n"}
+,{"stream_name":"stdout","time":7212.730399834,"data":"[120.1 min] Report finished: Public_community_report.txt after 2.8 min\n"}
+,{"stream_name":"stdout","time":7288.613701152,"data":"[121.3 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: id_without_brackets: SPHERE-appendix-4-p1, SPHERE-5-p2, SPHERE-5-p1, EMS98-2.3-p2; number_misused: 96\n"}
+,{"stream_name":"stdout","time":7345.207185708,"data":"[122.3 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: id_without_brackets: SPHERE-appendix-4-p1, SPHERE-5-p2, SPHERE-5-p1, EMS98-2.3-p2; number_misused: 96\n"}
+,{"stream_name":"stdout","time":7345.207247713,"data":"[122.3 min] Number guard: Reconstruction_plan.txt / Assessment of Damage: replaced 96\n"}
+,{"stream_name":"stdout","time":7393.75501277,"data":"[123.1 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: id_without_brackets: SPHERE-appendix-4-p1, SPHERE-5-p1, SPHERE-5-p2, SPHERE-3-p1\n"}
+,{"stream_name":"stdout","time":7442.497666198,"data":"[123.9 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: id_without_brackets: SPHERE-appendix-4-p1, SPHERE-5-p1, SPHERE-5-p2, SPHERE-3-p1\n"}
+,{"stream_name":"stdout","time":7497.962446987,"data":"[124.8 min] Section asked again: Reconstruction_plan.txt / Plan of Action: no_citation; number_unsourced: 3.5\n"}
+,{"stream_name":"stdout","time":7553.608820514,"data":"[125.7 min] Section kept with problems: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":7592.560869299,"data":"[126.4 min] Report finished: Reconstruction_plan.txt after 6.3 min\n"}
+,{"stream_name":"stdout","time":7592.560920229,"data":"[126.4 min] Fixed flow finished: 6 reports in reports/offline, scene santa_rosa_wildfire_00000155_post_disaster.png, grades by the code\n"}
+,{"stream_name":"stdout","time":7592.56092692,"data":"[126.4 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":7592.560932166,"data":"[126.4 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":7592.560937615,"data":"[126.4 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":7592.560941953,"data":"[126.4 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/3b-instruct/run_santa_rosa_wildfire_00000155_post_disaster\n"}
+,{"stream_name":"stdout","time":7594.594292108,"data":"[126.4 min] santa_rosa_wildfire_00000155_post_disaster.png: flow exit code 0, pass rules exit code 0, 15.34 min\n"}
+,{"stream_name":"stdout","time":7594.594335508,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":7594.594342245,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":7594.59434719,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":7594.594351436,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":7594.594355619,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":7594.59435973,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":7594.594364155,"data":"\n"}
+,{"stream_name":"stdout","time":7594.594383199,"data":"[126.4 min] ===== 3b-instruct: joplin_tornado_00000147_post_disaster.png (tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":7600.840285821,"data":"[126.5 min] Local model: qwen2.5-3b-instruct at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":7600.840331311,"data":"[126.5 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":7600.840337507,"data":"[126.5 min] DisasTeller flow: fixed, with C4's damage facts (scene joplin_tornado_00000147_post_disaster.png, tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":7600.840341989,"data":"[126.5 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":7610.018198175,"data":"[126.7 min] Guideline index loaded in 9.2 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":7610.01826401,"data":"[126.7 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":7610.586293736,"data":"[126.7 min] Labelled map saved: reports/offline/4_anotated.png (4 labels)\n"}
+,{"stream_name":"stdout","time":7666.132475774,"data":"[127.6 min] Report finished: Expert_team_report.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":7708.332344734,"data":"[128.3 min] Report finished: Alerts_team_report_for_social_media.txt after 0.7 min\n"}
+,{"stream_name":"stdout","time":7751.967489908,"data":"[129.1 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":7796.480332151,"data":"[129.8 min] Section kept as first written: Emergency_team_report.txt / Emergency shelters: the second answer adds: id_not_shown: INSARAG3-5.2\n"}
+,{"stream_name":"stdout","time":7796.480370668,"data":"[129.8 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":7836.211649406,"data":"[130.5 min] Section asked again: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":7876.234530277,"data":"[131.1 min] Section kept with problems: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":7888.730513187,"data":"[131.3 min] Report finished: Emergency_team_report.txt after 3.0 min\n"}
+,{"stream_name":"stdout","time":7965.606811862,"data":"[132.6 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":8065.240699957,"data":"[134.3 min] Section asked again: Emergency_service_human_resource_allocation.txt / Allocation Plan: no_citation; number_unsourced: 63\n"}
+,{"stream_name":"stdout","time":8120.99510348,"data":"[135.2 min] Section kept as first written: Emergency_service_human_resource_allocation.txt / Allocation Plan: the second answer adds: no_citation; number_unsourced: 632, 8\n"}
+,{"stream_name":"stdout","time":8120.995151604,"data":"[135.2 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Allocation Plan: no_citation; number_unsourced: 63\n"}
+,{"stream_name":"stdout","time":8120.995159095,"data":"[135.2 min] Number guard: Emergency_service_human_resource_allocation.txt / Allocation Plan: replaced 63\n"}
+,{"stream_name":"stdout","time":8177.603568913,"data":"[136.1 min] Report finished: Emergency_service_human_resource_allocation.txt after 4.8 min\n"}
+,{"stream_name":"stdout","time":8248.032867949,"data":"[137.3 min] Section asked again: Public_community_report.txt / Current Situation: number_unsourced: 3.5\n"}
+,{"stream_name":"stdout","time":8292.26714061,"data":"[138.1 min] Section kept with problems: Public_community_report.txt / Current Situation: number_unsourced: 3.5\n"}
+,{"stream_name":"stdout","time":8292.26719779,"data":"[138.1 min] Number guard: Public_community_report.txt / Current Situation: replaced 3.5, 3.5, 3.5\n"}
+,{"stream_name":"stdout","time":8324.730374228,"data":"[138.6 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":8353.437642024,"data":"[139.1 min] Section kept with problems: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":8388.674456259,"data":"[139.7 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":8426.402897038,"data":"[140.3 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":8444.834747313,"data":"[140.6 min] Report finished: Public_community_report.txt after 4.5 min\n"}
+,{"stream_name":"stdout","time":8479.970585227,"data":"[141.2 min] Section asked again: Reconstruction_plan.txt / Executive Summary: number_unsourced: 2011, 3.5\n"}
+,{"stream_name":"stdout","time":8509.754441883,"data":"[141.7 min] Section kept with problems: Reconstruction_plan.txt / Executive Summary: number_unsourced: 2011, 3.5\n"}
+,{"stream_name":"stdout","time":8509.754527137,"data":"[141.7 min] Number guard: Reconstruction_plan.txt / Executive Summary: replaced 2011, 3.5\n"}
+,{"stream_name":"stdout","time":8544.822833724,"data":"[142.3 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation; number_misused: 216\n"}
+,{"stream_name":"stdout","time":8598.918317392,"data":"[143.2 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: number_misused: 216\n"}
+,{"stream_name":"stdout","time":8598.918379553,"data":"[143.2 min] Number guard: Reconstruction_plan.txt / Assessment of Damage: replaced 216\n"}
+,{"stream_name":"stdout","time":8650.655101399,"data":"[144.0 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: id_without_brackets: SPHERE-1-p4, SPHERE-5-p1, INSARAG2B-6.3.1, INSARAG2B-6.3.4-p1, SPHERE-5-p2\n"}
+,{"stream_name":"stdout","time":8798.145723444,"data":"[146.5 min] Report finished: Reconstruction_plan.txt after 5.9 min\n"}
+,{"stream_name":"stdout","time":8798.145780965,"data":"[146.5 min] Fixed flow finished: 6 reports in reports/offline, scene joplin_tornado_00000147_post_disaster.png, grades by the code\n"}
+,{"stream_name":"stdout","time":8798.145787548,"data":"[146.5 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":8798.145792721,"data":"[146.5 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":8798.145797575,"data":"[146.5 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":8798.145802936,"data":"[146.5 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/3b-instruct/run_joplin_tornado_00000147_post_disaster\n"}
+,{"stream_name":"stdout","time":8800.50022272,"data":"[146.5 min] joplin_tornado_00000147_post_disaster.png: flow exit code 0, pass rules exit code 0, 20.1 min\n"}
+,{"stream_name":"stdout","time":8800.500278188,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":8800.500285336,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":8800.500290944,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":8800.500296079,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":8800.500301057,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":8800.500306111,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":8800.500327642,"data":"\n"}
+,{"stream_name":"stdout","time":8800.500332023,"data":"[146.5 min] ===== 3b-instruct: noto_earthquake_post_162.png (earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":8806.924614933,"data":"[146.6 min] Local model: qwen2.5-3b-instruct at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":8806.924656583,"data":"[146.6 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":8806.924661857,"data":"[146.6 min] DisasTeller flow: fixed, with C4's damage facts (scene noto_earthquake_post_162.png, earthquake, rows: outline)\n"}
+,{"stream_name":"stdout","time":8806.924666886,"data":"[146.6 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":8816.284861929,"data":"[146.8 min] Guideline index loaded in 9.4 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":8816.28489182,"data":"[146.8 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":8816.900110714,"data":"[146.8 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":8872.451804565,"data":"[147.7 min] Report finished: Expert_team_report.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":8939.397426932,"data":"[148.8 min] Report finished: Alerts_team_report_for_social_media.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":9031.959508332,"data":"[150.4 min] Section asked again: Emergency_team_report.txt / Hospitals: id_not_shown: SPHERE-3\n"}
+,{"stream_name":"stdout","time":9087.649562116,"data":"[151.3 min] Report finished: Emergency_team_report.txt after 2.5 min\n"}
+,{"stream_name":"stdout","time":9170.443117683,"data":"[152.7 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":9212.668303916,"data":"[153.4 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: no_citation\n"}
+,{"stream_name":"stdout","time":9254.386921168,"data":"[154.1 min] Section asked again: Emergency_service_human_resource_allocation.txt / Allocation Plan: no_citation\n"}
+,{"stream_name":"stdout","time":9343.987850109,"data":"[155.6 min] Report finished: Emergency_service_human_resource_allocation.txt after 4.3 min\n"}
+,{"stream_name":"stdout","time":9431.340476284,"data":"[157.0 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":9496.795530883,"data":"[158.1 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation; number_unsourced: 119\n"}
+,{"stream_name":"stdout","time":9531.081622018,"data":"[158.7 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":9549.018075665,"data":"[159.0 min] Report finished: Public_community_report.txt after 3.4 min\n"}
+,{"stream_name":"stdout","time":9629.629274071,"data":"[160.3 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: id_without_brackets: SPHERE-2-p1, SPHERE-2-p2, SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4, SPHERE-5-p1\n"}
+,{"stream_name":"stdout","time":9738.113184632,"data":"[162.2 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: id_not_shown: SPHERE-5-p\n"}
+,{"stream_name":"stdout","time":9846.221936672,"data":"[164.0 min] Section asked again: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":9948.705934402,"data":"[165.7 min] Report finished: Reconstruction_plan.txt after 6.7 min\n"}
+,{"stream_name":"stdout","time":9948.705971411,"data":"[165.7 min] Fixed flow finished: 6 reports in reports/offline, scene noto_earthquake_post_162.png, grades by the code\n"}
+,{"stream_name":"stdout","time":9948.705977715,"data":"[165.7 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":9948.705983145,"data":"[165.7 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":9948.705989353,"data":"[165.7 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":9948.705994376,"data":"[165.7 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/3b-instruct/run_noto_earthquake_post_162\n"}
+,{"stream_name":"stdout","time":9950.741649215,"data":"[165.7 min] noto_earthquake_post_162.png: flow exit code 0, pass rules exit code 0, 19.17 min\n"}
+,{"stream_name":"stdout","time":9950.741687,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":9950.741693446,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":9950.741698409,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":9950.741702981,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":9950.741707327,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":9950.741711852,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":9950.741716715,"data":"\n"}
+,{"stream_name":"stdout","time":9950.741721149,"data":"[165.7 min] ===== 3b-instruct: hawaii_wildfire_post_646.png (wildfire, rows: outline)\n"}
+,{"stream_name":"stdout","time":9956.972624651,"data":"[165.8 min] Local model: qwen2.5-3b-instruct at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":9956.97266157,"data":"[165.8 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":9956.972667235,"data":"[165.8 min] DisasTeller flow: fixed, with C4's damage facts (scene hawaii_wildfire_post_646.png, wildfire, rows: outline)\n"}
+,{"stream_name":"stdout","time":9956.972672584,"data":"[165.8 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":9966.229133564,"data":"[166.0 min] Guideline index loaded in 9.3 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":9966.229166404,"data":"[166.0 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":9966.830878927,"data":"[166.0 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":10025.344261411,"data":"[166.9 min] Report finished: Expert_team_report.txt after 1.1 min\n"}
+,{"stream_name":"stdout","time":10100.068742477,"data":"[168.2 min] Report finished: Alerts_team_report_for_social_media.txt after 1.2 min\n"}
+,{"stream_name":"stdout","time":10147.992409328,"data":"[169.0 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":10255.12261993,"data":"[170.8 min] Report finished: Emergency_team_report.txt after 2.6 min\n"}
+,{"stream_name":"stdout","time":10462.740443454,"data":"[174.2 min] Report finished: Emergency_service_human_resource_allocation.txt after 3.5 min\n"}
+,{"stream_name":"stdout","time":10569.786293415,"data":"[176.0 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":10602.872060259,"data":"[176.6 min] Section kept with problems: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":10646.614641905,"data":"[177.3 min] Section asked again: Public_community_report.txt / Public Advisory: contact: 911; no_citation; number_unsourced: 911\n"}
+,{"stream_name":"stdout","time":10690.207021784,"data":"[178.0 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":10705.152712506,"data":"[178.3 min] Report finished: Public_community_report.txt after 4.0 min\n"}
+,{"stream_name":"stdout","time":10835.928535776,"data":"[180.5 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":10890.166848646,"data":"[181.4 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":10991.178344602,"data":"[183.0 min] Report finished: Reconstruction_plan.txt after 4.8 min\n"}
+,{"stream_name":"stdout","time":10991.178616756,"data":"[183.0 min] Fixed flow finished: 6 reports in reports/offline, scene hawaii_wildfire_post_646.png, grades by the code\n"}
+,{"stream_name":"stdout","time":10991.178632354,"data":"[183.0 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":10991.178637299,"data":"[183.0 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":10991.178641648,"data":"[183.0 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":10991.178645906,"data":"[183.0 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/3b-instruct/run_hawaii_wildfire_post_646\n"}
+,{"stream_name":"stdout","time":10993.249631815,"data":"[183.1 min] hawaii_wildfire_post_646.png: flow exit code 0, pass rules exit code 0, 17.38 min\n"}
+,{"stream_name":"stdout","time":10993.24966535,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":10993.249671119,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":10993.249676059,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":10993.249680849,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":10993.249685618,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":10993.24968987,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":10993.249694354,"data":"\n"}
+,{"stream_name":"stdout","time":10993.249698418,"data":"[183.1 min] ===== 3b-instruct: beriut_explosion_post_16.png (explosion, rows: outline)\n"}
+,{"stream_name":"stdout","time":10999.472863719,"data":"[183.2 min] Local model: qwen2.5-3b-instruct at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":10999.472901492,"data":"[183.2 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":10999.472906121,"data":"[183.2 min] DisasTeller flow: fixed, with C4's damage facts (scene beriut_explosion_post_16.png, explosion, rows: outline)\n"}
+,{"stream_name":"stdout","time":10999.472909437,"data":"[183.2 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":11008.532852196,"data":"[183.3 min] Guideline index loaded in 9.1 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":11008.532887404,"data":"[183.3 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":11009.040798836,"data":"[183.3 min] Labelled map saved: reports/offline/4_anotated.png (5 labels)\n"}
+,{"stream_name":"stdout","time":11047.590507028,"data":"[184.0 min] Section asked again: Expert_team_report.txt / Description of the estimated damage: number_wrong: 280,750 pixels\n"}
+,{"stream_name":"stdout","time":11075.239453924,"data":"[184.4 min] Section kept with problems: Expert_team_report.txt / Description of the estimated damage: number_wrong: 280,750 pixels\n"}
+,{"stream_name":"stdout","time":11075.239492366,"data":"[184.4 min] Number guard: Expert_team_report.txt / Description of the estimated damage: replaced 280,750 pixels\n"}
+,{"stream_name":"stdout","time":11092.288964146,"data":"[184.7 min] Section asked again: Expert_team_report.txt / Conclusion: number_wrong: 280,750 pixels\n"}
+,{"stream_name":"stdout","time":11108.795405697,"data":"[185.0 min] Section kept with problems: Expert_team_report.txt / Conclusion: number_wrong: 280,750 pixels\n"}
+,{"stream_name":"stdout","time":11108.795572975,"data":"[185.0 min] Number guard: Expert_team_report.txt / Conclusion: replaced 280,750 pixels\n"}
+,{"stream_name":"stdout","time":11108.795583502,"data":"[185.0 min] Report finished: Expert_team_report.txt after 1.8 min\n"}
+,{"stream_name":"stdout","time":11143.991775703,"data":"[185.6 min] Report finished: Alerts_team_report_for_social_media.txt after 0.6 min\n"}
+,{"stream_name":"stdout","time":11238.061760979,"data":"[187.2 min] Report finished: Emergency_team_report.txt after 1.6 min\n"}
+,{"stream_name":"stdout","time":11310.135122278,"data":"[188.4 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: id_without_brackets: INSARAG2B-6.2-p2, INSARAG2B-5.8, INSARAG2B-7.2, INSARAG2B-5.7.1-p3, INSARAG3-1\n"}
+,{"stream_name":"stdout","time":11350.457957084,"data":"[189.0 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: id_without_brackets: INSARAG2B-6.2-p2, INSARAG2B-5.8, INSARAG2B-7.2, INSARAG2B-5.7.1-p3, INSARAG3-1\n"}
+,{"stream_name":"stdout","time":11394.30189996,"data":"[189.8 min] Section asked again: Emergency_service_human_resource_allocation.txt / Allocation Plan: no_citation\n"}
+,{"stream_name":"stdout","time":11438.017811059,"data":"[190.5 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Allocation Plan: no_citation\n"}
+,{"stream_name":"stdout","time":11485.508483534,"data":"[191.3 min] Report finished: Emergency_service_human_resource_allocation.txt after 4.1 min\n"}
+,{"stream_name":"stdout","time":11626.538998514,"data":"[193.6 min] Report finished: Public_community_report.txt after 2.4 min\n"}
+,{"stream_name":"stdout","time":11701.75713909,"data":"[194.9 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: number_unsourced: 3.5\n"}
+,{"stream_name":"stdout","time":11756.508948665,"data":"[195.8 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: number_unsourced: 3.5\n"}
+,{"stream_name":"stdout","time":11756.508994865,"data":"[195.8 min] Number guard: Reconstruction_plan.txt / Assessment of Damage: replaced 3.5\n"}
+,{"stream_name":"stdout","time":11853.091983193,"data":"[197.4 min] Section asked again: Reconstruction_plan.txt / Plan of Action: no_citation; number_unsourced: 30, 60, 90\n"}
+,{"stream_name":"stdout","time":11906.710973468,"data":"[198.3 min] Section kept with problems: Reconstruction_plan.txt / Plan of Action: no_citation; number_unsourced: 30, 60\n"}
+,{"stream_name":"stdout","time":11906.711009171,"data":"[198.3 min] Number guard: Reconstruction_plan.txt / Plan of Action: replaced 30, 60\n"}
+,{"stream_name":"stdout","time":11945.892841711,"data":"[199.0 min] Report finished: Reconstruction_plan.txt after 5.3 min\n"}
+,{"stream_name":"stdout","time":11945.892874505,"data":"[199.0 min] Fixed flow finished: 6 reports in reports/offline, scene beriut_explosion_post_16.png, grades by the code\n"}
+,{"stream_name":"stdout","time":11945.892889392,"data":"[199.0 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":11945.892892901,"data":"[199.0 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":11945.892895936,"data":"[199.0 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":11945.892899213,"data":"[199.0 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/3b-instruct/run_beriut_explosion_post_16\n"}
+,{"stream_name":"stdout","time":11947.915119541,"data":"[199.0 min] beriut_explosion_post_16.png: flow exit code 0, pass rules exit code 0, 15.91 min\n"}
+,{"stream_name":"stdout","time":11947.915161332,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":11947.915184039,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":11947.915187807,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":11947.915192748,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":11947.915199355,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":11947.915201686,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":11947.915204054,"data":"\n"}
+,{"stream_name":"stdout","time":11947.915206181,"data":"[199.0 min] ===== 3b-instruct: palu_tsunami_00000180_post_disaster.png (tsunami, rows: patch)\n"}
+,{"stream_name":"stdout","time":11954.163710698,"data":"[199.1 min] Local model: qwen2.5-3b-instruct at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":11954.163747442,"data":"[199.1 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":11954.163752041,"data":"[199.1 min] DisasTeller flow: fixed, with C4's damage facts (scene palu_tsunami_00000180_post_disaster.png, tsunami, rows: patch)\n"}
+,{"stream_name":"stdout","time":11954.163756131,"data":"[199.1 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":11963.221471246,"data":"[199.2 min] Guideline index loaded in 9.1 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":11963.221498347,"data":"[199.2 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":11963.887617693,"data":"[199.3 min] Labelled map saved: reports/offline/4_anotated.png (5 labels)\n"}
+,{"stream_name":"stdout","time":11980.231609852,"data":"[199.5 min] Section asked again: Expert_team_report.txt / Overview: contact: 400-459\n"}
+,{"stream_name":"stdout","time":12041.996177891,"data":"[200.6 min] Report finished: Expert_team_report.txt after 1.5 min\n"}
+,{"stream_name":"stdout","time":12093.546758606,"data":"[201.4 min] Report finished: Alerts_team_report_for_social_media.txt after 0.9 min\n"}
+,{"stream_name":"stdout","time":12141.283889288,"data":"[202.2 min] Section asked again: Emergency_team_report.txt / Emergency shelters: id_without_brackets: SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4\n"}
+,{"stream_name":"stdout","time":12184.441263919,"data":"[202.9 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: id_without_brackets: SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4\n"}
+,{"stream_name":"stdout","time":12228.119555285,"data":"[203.7 min] Section asked again: Emergency_team_report.txt / Hospitals: id_without_brackets: SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4, INSARAG3-5.2-p1, INSARAG2B-4.3-p3, INSARAG3-6.2-p2\n"}
+,{"stream_name":"stdout","time":12271.81709578,"data":"[204.4 min] Section kept with problems: Emergency_team_report.txt / Hospitals: id_without_brackets: SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4, INSARAG3-5.2-p1, INSARAG2B-4.3-p3, INSARAG3-6.2-p2\n"}
+,{"stream_name":"stdout","time":12287.356098955,"data":"[204.6 min] Report finished: Emergency_team_report.txt after 3.2 min\n"}
+,{"stream_name":"stdout","time":12363.637017937,"data":"[205.9 min] Section asked again: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: id_without_brackets: INSARAG2B-3.10-p1, INSARAG2B-7.2, SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4, INSARAG2B-5.7.1-p1, INSARA\n"}
+,{"stream_name":"stdout","time":12402.830828529,"data":"[206.6 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Human Resource Requirements: id_without_brackets: INSARAG2B-3.10-p1, INSARAG2B-7.2, SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4, INSARAG2B-5.7.1-p1,\n"}
+,{"stream_name":"stdout","time":12456.665363923,"data":"[207.5 min] Section asked again: Emergency_service_human_resource_allocation.txt / Allocation Plan: id_without_brackets: INSARAG2B-5.7.1-p1, INSARAG2B-5.7.1-p3, INSARAG2B-7.2, SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4\n"}
+,{"stream_name":"stdout","time":12511.445938504,"data":"[208.4 min] Section kept with problems: Emergency_service_human_resource_allocation.txt / Allocation Plan: id_without_brackets: INSARAG2B-5.7.1-p1, INSARAG2B-5.7.1-p3, INSARAG2B-7.2, SPHERE-3-p1, SPHERE-3-p2, SPHERE-3-p4\n"}
+,{"stream_name":"stdout","time":12564.406823982,"data":"[209.3 min] Report finished: Emergency_service_human_resource_allocation.txt after 4.6 min\n"}
+,{"stream_name":"stdout","time":12592.418355019,"data":"[209.7 min] Section asked again: Public_community_report.txt / Introduction: number_unsourced: 10\n"}
+,{"stream_name":"stdout","time":12609.29447017,"data":"[210.0 min] Section kept with problems: Public_community_report.txt / Introduction: number_unsourced: 10\n"}
+,{"stream_name":"stdout","time":12609.294522212,"data":"[210.0 min] Number guard: Public_community_report.txt / Introduction: replaced 10\n"}
+,{"stream_name":"stdout","time":12675.46101347,"data":"[211.1 min] Section asked again: Public_community_report.txt / Resource Allocation: number_unsourced: 15, 10\n"}
+,{"stream_name":"stdout","time":12708.429942783,"data":"[211.7 min] Section kept with problems: Public_community_report.txt / Resource Allocation: number_unsourced: 15, 10\n"}
+,{"stream_name":"stdout","time":12708.430011989,"data":"[211.7 min] Number guard: Public_community_report.txt / Resource Allocation: replaced 15, 10, 10, 10\n"}
+,{"stream_name":"stdout","time":12767.06692548,"data":"[212.6 min] Report finished: Public_community_report.txt after 3.4 min\n"}
+,{"stream_name":"stdout","time":12842.936627189,"data":"[213.9 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":12897.729447706,"data":"[214.8 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":13044.346563538,"data":"[217.3 min] Report finished: Reconstruction_plan.txt after 4.6 min\n"}
+,{"stream_name":"stdout","time":13044.346598936,"data":"[217.3 min] Fixed flow finished: 6 reports in reports/offline, scene palu_tsunami_00000180_post_disaster.png, grades by the code\n"}
+,{"stream_name":"stdout","time":13044.346604505,"data":"[217.3 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":13044.346609161,"data":"[217.3 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":13044.346613477,"data":"[217.3 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":13044.346617676,"data":"[217.3 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/3b-instruct/run_palu_tsunami_00000180_post_disaster\n"}
+,{"stream_name":"stdout","time":13046.478262205,"data":"[217.3 min] palu_tsunami_00000180_post_disaster.png: flow exit code 0, pass rules exit code 0, 18.31 min\n"}
+,{"stream_name":"stdout","time":13046.478293422,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":13046.478296678,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":13046.478299222,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":13046.478302232,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":13046.478318137,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":13046.478321996,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":13046.478325996,"data":"\n"}
+,{"stream_name":"stdout","time":13046.478329724,"data":"[217.3 min] ===== 3b-instruct: moore_tornado_00000045_post_disaster.png (tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":13052.973970317,"data":"[217.4 min] Local model: qwen2.5-3b-instruct at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":13052.974008072,"data":"[217.4 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":13052.974012772,"data":"[217.4 min] DisasTeller flow: fixed, with C4's damage facts (scene moore_tornado_00000045_post_disaster.png, tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":13052.974015993,"data":"[217.4 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":13062.363182469,"data":"[217.6 min] Guideline index loaded in 9.4 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":13062.363254135,"data":"[217.6 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":13062.985237142,"data":"[217.6 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":13103.921174417,"data":"[218.3 min] Section asked again: Expert_team_report.txt / Description of the estimated damage: number_wrong: 55,000,400 pixels, 58,910 pixels\n"}
+,{"stream_name":"stdout","time":13132.544396015,"data":"[218.7 min] Section kept with problems: Expert_team_report.txt / Description of the estimated damage: number_wrong: 55,000,400 pixels, 58,910 pixels\n"}
+,{"stream_name":"stdout","time":13132.544435487,"data":"[218.7 min] Number guard: Expert_team_report.txt / Description of the estimated damage: replaced 55,000,400 pixels, 58,910 pixels\n"}
+,{"stream_name":"stdout","time":13147.123362083,"data":"[219.0 min] Section asked again: Expert_team_report.txt / Conclusion: number_wrong: 55,000 pixels\n"}
+,{"stream_name":"stdout","time":13161.938793354,"data":"[219.2 min] Section kept with problems: Expert_team_report.txt / Conclusion: number_wrong: 55,000 pixels\n"}
+,{"stream_name":"stdout","time":13161.938847066,"data":"[219.2 min] Number guard: Expert_team_report.txt / Conclusion: replaced 55,000 pixels\n"}
+,{"stream_name":"stdout","time":13161.938854717,"data":"[219.2 min] Report finished: Expert_team_report.txt after 1.8 min\n"}
+,{"stream_name":"stdout","time":13220.559518949,"data":"[220.2 min] Report finished: Alerts_team_report_for_social_media.txt after 1.0 min\n"}
+,{"stream_name":"stdout","time":13268.954659703,"data":"[221.0 min] Section asked again: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":13314.433891739,"data":"[221.8 min] Section kept with problems: Emergency_team_report.txt / Emergency shelters: no_citation\n"}
+,{"stream_name":"stdout","time":13352.009178819,"data":"[222.4 min] Section asked again: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":13387.775425142,"data":"[223.0 min] Section kept with problems: Emergency_team_report.txt / Hospitals: no_citation\n"}
+,{"stream_name":"stdout","time":13403.325991946,"data":"[223.2 min] Report finished: Emergency_team_report.txt after 3.0 min\n"}
+,{"stream_name":"stdout","time":13585.228311575,"data":"[226.3 min] Report finished: Emergency_service_human_resource_allocation.txt after 3.0 min\n"}
+,{"stream_name":"stdout","time":13694.495300184,"data":"[228.1 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation\n"}
+,{"stream_name":"stdout","time":13767.015493473,"data":"[229.3 min] Section asked again: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":13809.778511743,"data":"[230.0 min] Section kept with problems: Public_community_report.txt / Public Advisory: no_citation\n"}
+,{"stream_name":"stdout","time":13826.898631886,"data":"[230.3 min] Report finished: Public_community_report.txt after 4.0 min\n"}
+,{"stream_name":"stdout","time":13950.712192365,"data":"[232.4 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":14004.319378741,"data":"[233.3 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":14057.765943262,"data":"[234.2 min] Section asked again: Reconstruction_plan.txt / Plan of Action: no_citation; number_unsourced: 500, 200, 150, 30, 75, 120, 250, 25, 40\n"}
+,{"stream_name":"stdout","time":14111.274800573,"data":"[235.0 min] Section kept with problems: Reconstruction_plan.txt / Plan of Action: no_citation\n"}
+,{"stream_name":"stdout","time":14142.222932192,"data":"[235.6 min] Report finished: Reconstruction_plan.txt after 5.3 min\n"}
+,{"stream_name":"stdout","time":14142.223000137,"data":"[235.6 min] Fixed flow finished: 6 reports in reports/offline, scene moore_tornado_00000045_post_disaster.png, grades by the code\n"}
+,{"stream_name":"stdout","time":14142.223008309,"data":"[235.6 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":14142.223014131,"data":"[235.6 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":14142.223019066,"data":"[235.6 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":14142.223024234,"data":"[235.6 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/3b-instruct/run_moore_tornado_00000045_post_disaster\n"}
+,{"stream_name":"stdout","time":14144.256935068,"data":"[235.6 min] moore_tornado_00000045_post_disaster.png: flow exit code 0, pass rules exit code 0, 18.3 min\n"}
+,{"stream_name":"stdout","time":14144.256974736,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":14144.256981285,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":14144.256986426,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":14144.256990703,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":14144.256995029,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":14144.257000123,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":14144.25700537,"data":"\n"}
+,{"stream_name":"stdout","time":14144.257009511,"data":"[235.6 min] ===== 3b-instruct: tuscaloosa_tornado_00000037_post_disaster.png (tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":14150.477486975,"data":"[235.7 min] Local model: qwen2.5-3b-instruct at http://127.0.0.1:8000/v1 (hosted_vllm)\n"}
+,{"stream_name":"stdout","time":14150.477524427,"data":"[235.7 min] DisasTeller mode: offline\n"}
+,{"stream_name":"stdout","time":14150.47752867,"data":"[235.7 min] DisasTeller flow: fixed, with C4's damage facts (scene tuscaloosa_tornado_00000037_post_disaster.png, tornado, rows: patch)\n"}
+,{"stream_name":"stdout","time":14150.477531404,"data":"[235.7 min] Photo tool: off (T2b); the facts have no photo descriptions\n"}
+,{"stream_name":"stdout","time":14159.451547081,"data":"[235.8 min] Guideline index loaded in 9.0 s (numpy + torch), once per run\n"}
+,{"stream_name":"stdout","time":14159.451577171,"data":"[235.8 min] Grades found: 3, by the code (destroyed G5, damaged G2-G4, intact at most G1; EMS-98 IDs {1: 'EMS98-masonry-grade-1', 2: 'EMS98-masonry-grade-2', 3: 'EMS98-masonry-grade-3', 4: 'EMS98-masonry-grade-4', 5: 'EMS98-masonry-\n"}
+,{"stream_name":"stdout","time":14160.045891976,"data":"[235.9 min] Labelled map saved: reports/offline/4_anotated.png (6 labels)\n"}
+,{"stream_name":"stdout","time":14176.597629164,"data":"[236.1 min] Section asked again: Expert_team_report.txt / Overview: number_wrong: 54%\n"}
+,{"stream_name":"stdout","time":14191.92824307,"data":"[236.4 min] Section kept as first written: Expert_team_report.txt / Overview: the second answer adds: number_wrong: 54%, 13%\n"}
+,{"stream_name":"stdout","time":14191.928269825,"data":"[236.4 min] Section kept with problems: Expert_team_report.txt / Overview: number_wrong: 54%\n"}
+,{"stream_name":"stdout","time":14191.928275957,"data":"[236.4 min] Number guard: Expert_team_report.txt / Overview: replaced 54%\n"}
+,{"stream_name":"stdout","time":14221.487585114,"data":"[236.9 min] Section asked again: Expert_team_report.txt / Description of the estimated damage: number_wrong: 200,002 pixels\n"}
+,{"stream_name":"stdout","time":14250.578314872,"data":"[237.4 min] Section kept with problems: Expert_team_report.txt / Description of the estimated damage: number_wrong: 200,002 pixels\n"}
+,{"stream_name":"stdout","time":14250.578367544,"data":"[237.4 min] Number guard: Expert_team_report.txt / Description of the estimated damage: replaced 200,002 pixels\n"}
+,{"stream_name":"stdout","time":14272.272047285,"data":"[237.7 min] Report finished: Expert_team_report.txt after 2.0 min\n"}
+,{"stream_name":"stdout","time":14307.901893467,"data":"[238.3 min] Section asked again: Alerts_team_report_for_social_media.txt / Danger area alert: number_wrong: 200,002 pixels\n"}
+,{"stream_name":"stdout","time":14374.461528468,"data":"[239.4 min] Report finished: Alerts_team_report_for_social_media.txt after 1.7 min\n"}
+,{"stream_name":"stdout","time":14467.720202602,"data":"[241.0 min] Report finished: Emergency_team_report.txt after 1.6 min\n"}
+,{"stream_name":"stdout","time":14636.839426667,"data":"[243.8 min] Report finished: Emergency_service_human_resource_allocation.txt after 2.8 min\n"}
+,{"stream_name":"stdout","time":14730.835569563,"data":"[245.4 min] Section asked again: Public_community_report.txt / Resource Allocation: no_citation; number_unsourced: 10, 15\n"}
+,{"stream_name":"stdout","time":14793.473198982,"data":"[246.4 min] Section asked again: Public_community_report.txt / Public Advisory: contact: 911; number_unsourced: 911\n"}
+,{"stream_name":"stdout","time":14849.956763717,"data":"[247.4 min] Report finished: Public_community_report.txt after 3.6 min\n"}
+,{"stream_name":"stdout","time":14936.519246651,"data":"[248.8 min] Section asked again: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":14990.296112649,"data":"[249.7 min] Section kept with problems: Reconstruction_plan.txt / Assessment of Damage: no_citation\n"}
+,{"stream_name":"stdout","time":15043.248864556,"data":"[250.6 min] Section asked again: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":15095.433495267,"data":"[251.4 min] Section kept with problems: Reconstruction_plan.txt / Reconstruction Needs: no_citation\n"}
+,{"stream_name":"stdout","time":15188.060958318,"data":"[253.0 min] Report finished: Reconstruction_plan.txt after 5.6 min\n"}
+,{"stream_name":"stdout","time":15188.061028746,"data":"[253.0 min] Fixed flow finished: 6 reports in reports/offline, scene tuscaloosa_tornado_00000037_post_disaster.png, grades by the code\n"}
+,{"stream_name":"stdout","time":15188.061039122,"data":"[253.0 min] Network log: 2 lookups and connections; on this computer: ['127.0.0.1']\n"}
+,{"stream_name":"stdout","time":15188.0610437,"data":"[253.0 min] Outside this computer: none\n"}
+,{"stream_name":"stdout","time":15188.06104792,"data":"[253.0 min] Gemini libraries loaded: none\n"}
+,{"stream_name":"stdout","time":15188.061052504,"data":"[253.0 min] Main script finished: True. Wrote netlog.json and run_log.txt in /kaggle/working/t2b/3b-instruct/run_tuscaloosa_tornado_00000037_post_disaster\n"}
+,{"stream_name":"stdout","time":15190.03617808,"data":"[253.0 min] tuscaloosa_tornado_00000037_post_disaster.png: flow exit code 0, pass rules exit code 0, 17.43 min\n"}
+,{"stream_name":"stdout","time":15190.036242647,"data":"PASS  1. The run finished\n"}
+,{"stream_name":"stdout","time":15190.036250628,"data":"PASS  2. All six reports, each starting 'Mode: offline', each 50+ words\n"}
+,{"stream_name":"stdout","time":15190.03625527,"data":"PASS  3. Nothing went outside this computer\n"}
+,{"stream_name":"stdout","time":15190.036259351,"data":"PASS  4. No Gemini library was loaded\n"}
+,{"stream_name":"stdout","time":15190.036263294,"data":"PASS  5. Every model question got an answer\n"}
+,{"stream_name":"stdout","time":15190.036267533,"data":"PASSED as a practice run (internet on); the proof needs internet off\n"}
+,{"stream_name":"stdout","time":15190.817086519,"data":"[253.0 min] server stopped; GPU memory now ['Tesla T4, 0 MiB, 15360 MiB', 'Tesla T4, 0 MiB, 15360 MiB']\n"}
+,{"stream_name":"stdout","time":15190.880340046,"data":"[253.0 min] writer 3b-instruct: 10 of 10 scenes passed the five pass rules, 180.1 min for the scenes\n"}
+,{"stream_name":"stdout","time":15192.297583371,"data":"{\n"}
+,{"stream_name":"stdout","time":15192.297613253,"data":" \"smoke_test\": false,\n"}
+,{"stream_name":"stdout","time":15192.297620577,"data":" \"internet\": \"on\",\n"}
+,{"stream_name":"stdout","time":15192.297629879,"data":" \"flow\": \"t2b\",\n"}
+,{"stream_name":"stdout","time":15192.297633234,"data":" \"scenes\": [\n"}
+,{"stream_name":"stdout","time":15192.297636292,"data":"  \"libya_flood_post_90.png\",\n"}
+,{"stream_name":"stdout","time":15192.297639347,"data":"  \"turkey_earthquake4_post_327.png\",\n"}
+,{"stream_name":"stdout","time":15192.297642378,"data":"  \"santa_rosa_wildfire_00000155_post_disaster.png\",\n"}
+,{"stream_name":"stdout","time":15192.297645412,"data":"  \"joplin_tornado_00000147_post_disaster.png\",\n"}
+,{"stream_name":"stdout","time":15192.297651393,"data":"  \"noto_earthquake_post_162.png\",\n"}
+,{"stream_name":"stdout","time":15192.297655687,"data":"  \"hawaii_wildfire_post_646.png\",\n"}
+,{"stream_name":"stdout","time":15192.29767699,"data":"  \"beriut_explosion_post_16.png\",\n"}
+,{"stream_name":"stdout","time":15192.297681675,"data":"  \"palu_tsunami_00000180_post_disaster.png\",\n"}
+,{"stream_name":"stdout","time":15192.297686747,"data":"  \"moore_tornado_00000045_post_disaster.png\",\n"}
+,{"stream_name":"stdout","time":15192.29769189,"data":"  \"tuscaloosa_tornado_00000037_post_disaster.png\"\n"}
+,{"stream_name":"stdout","time":15192.297709223,"data":" ],\n"}
+,{"stream_name":"stdout","time":15192.297712835,"data":" \"results\": {\n"}
+,{"stream_name":"stdout","time":15192.297716332,"data":"  \"7b\": {\n"}
+,{"stream_name":"stdout","time":15192.297719934,"data":"   \"libya_flood_post_90.png\": {\n"}
+,{"stream_name":"stdout","time":15192.297723591,"data":"    \"run_dir\": \"/kaggle/working/t2b/7b/run_libya_flood_post_90\",\n"}
+,{"stream_name":"stdout","time":15192.297727265,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297730824,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297734312,"data":"    \"minutes\": 6.43\n"}
+,{"stream_name":"stdout","time":15192.297737821,"data":"   },\n"}
+,{"stream_name":"stdout","time":15192.297741187,"data":"   \"turkey_earthquake4_post_327.png\": {\n"}
+,{"stream_name":"stdout","time":15192.297744856,"data":"    \"run_dir\": \"/kaggle/working/t2b/7b/run_turkey_earthquake4_post_327\",\n"}
+,{"stream_name":"stdout","time":15192.297750362,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297757925,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297760325,"data":"    \"minutes\": 6.35\n"}
+,{"stream_name":"stdout","time":15192.297762618,"data":"   },\n"}
+,{"stream_name":"stdout","time":15192.297780373,"data":"   \"santa_rosa_wildfire_00000155_post_disaster.png\": {\n"}
+,{"stream_name":"stdout","time":15192.297784899,"data":"    \"run_dir\": \"/kaggle/working/t2b/7b/run_santa_rosa_wildfire_00000155_post_disaster\",\n"}
+,{"stream_name":"stdout","time":15192.297789213,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297793123,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297796921,"data":"    \"minutes\": 6.74\n"}
+,{"stream_name":"stdout","time":15192.297800437,"data":"   },\n"}
+,{"stream_name":"stdout","time":15192.297803797,"data":"   \"joplin_tornado_00000147_post_disaster.png\": {\n"}
+,{"stream_name":"stdout","time":15192.297807385,"data":"    \"run_dir\": \"/kaggle/working/t2b/7b/run_joplin_tornado_00000147_post_disaster\",\n"}
+,{"stream_name":"stdout","time":15192.297811021,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297814482,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297817906,"data":"    \"minutes\": 5.93\n"}
+,{"stream_name":"stdout","time":15192.297821479,"data":"   },\n"}
+,{"stream_name":"stdout","time":15192.297824834,"data":"   \"noto_earthquake_post_162.png\": {\n"}
+,{"stream_name":"stdout","time":15192.297828383,"data":"    \"run_dir\": \"/kaggle/working/t2b/7b/run_noto_earthquake_post_162\",\n"}
+,{"stream_name":"stdout","time":15192.297832032,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297835491,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297838879,"data":"    \"minutes\": 5.44\n"}
+,{"stream_name":"stdout","time":15192.297842352,"data":"   },\n"}
+,{"stream_name":"stdout","time":15192.297845705,"data":"   \"hawaii_wildfire_post_646.png\": {\n"}
+,{"stream_name":"stdout","time":15192.29784935,"data":"    \"run_dir\": \"/kaggle/working/t2b/7b/run_hawaii_wildfire_post_646\",\n"}
+,{"stream_name":"stdout","time":15192.297858836,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297864443,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297868247,"data":"    \"minutes\": 5.15\n"}
+,{"stream_name":"stdout","time":15192.297871761,"data":"   },\n"}
+,{"stream_name":"stdout","time":15192.297875705,"data":"   \"beriut_explosion_post_16.png\": {\n"}
+,{"stream_name":"stdout","time":15192.297885127,"data":"    \"run_dir\": \"/kaggle/working/t2b/7b/run_beriut_explosion_post_16\",\n"}
+,{"stream_name":"stdout","time":15192.297888713,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297892035,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.29789537,"data":"    \"minutes\": 7.19\n"}
+,{"stream_name":"stdout","time":15192.297898794,"data":"   },\n"}
+,{"stream_name":"stdout","time":15192.297901976,"data":"   \"palu_tsunami_00000180_post_disaster.png\": {\n"}
+,{"stream_name":"stdout","time":15192.297905254,"data":"    \"run_dir\": \"/kaggle/working/t2b/7b/run_palu_tsunami_00000180_post_disaster\",\n"}
+,{"stream_name":"stdout","time":15192.297908691,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297912749,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297919631,"data":"    \"minutes\": 5.97\n"}
+,{"stream_name":"stdout","time":15192.297923333,"data":"   },\n"}
+,{"stream_name":"stdout","time":15192.297926717,"data":"   \"moore_tornado_00000045_post_disaster.png\": {\n"}
+,{"stream_name":"stdout","time":15192.297941085,"data":"    \"run_dir\": \"/kaggle/working/t2b/7b/run_moore_tornado_00000045_post_disaster\",\n"}
+,{"stream_name":"stdout","time":15192.29794475,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297948135,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297951457,"data":"    \"minutes\": 6.2\n"}
+,{"stream_name":"stdout","time":15192.297955835,"data":"   },\n"}
+,{"stream_name":"stdout","time":15192.297959561,"data":"   \"tuscaloosa_tornado_00000037_post_disaster.png\": {\n"}
+,{"stream_name":"stdout","time":15192.297963346,"data":"    \"run_dir\": \"/kaggle/working/t2b/7b/run_tuscaloosa_tornado_00000037_post_disaster\",\n"}
+,{"stream_name":"stdout","time":15192.297967015,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.29797029,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297973567,"data":"    \"minutes\": 6.85\n"}
+,{"stream_name":"stdout","time":15192.29797681,"data":"   }\n"}
+,{"stream_name":"stdout","time":15192.297979918,"data":"  },\n"}
+,{"stream_name":"stdout","time":15192.297983025,"data":"  \"3b-instruct\": {\n"}
+,{"stream_name":"stdout","time":15192.297986278,"data":"   \"libya_flood_post_90.png\": {\n"}
+,{"stream_name":"stdout","time":15192.297989571,"data":"    \"run_dir\": \"/kaggle/working/t2b/3b-instruct/run_libya_flood_post_90\",\n"}
+,{"stream_name":"stdout","time":15192.297993098,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297996364,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.297999675,"data":"    \"minutes\": 19.3\n"}
+,{"stream_name":"stdout","time":15192.298002914,"data":"   },\n"}
+,{"stream_name":"stdout","time":15192.298006078,"data":"   \"turkey_earthquake4_post_327.png\": {\n"}
+,{"stream_name":"stdout","time":15192.2980094,"data":"    \"run_dir\": \"/kaggle/working/t2b/3b-instruct/run_turkey_earthquake4_post_327\",\n"}
+,{"stream_name":"stdout","time":15192.298012845,"data":"    \"flow_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.298016337,"data":"    \"check_exit_code\": 0,\n"}
+,{"stream_name":"stdout","time":15192.298026071,"data":"    \"minutes\": 18.92\n"}
+,{"stream_name":"stdout","time":15192.298028658,"data":"   },\n"}
+,{"stream_name":"stdout","time":15192.298030757,"data":"   \"santa_rosa_wildfire_00000155_post_disaster.png\": {\n"}
+,{"stream_name":"stdout","time":15192.298032966,"data":"    \"run_dir\": \"/kaggle/working/t2b/3b-instruct/run_sa\n"}
+,{"stream_name":"stdout","time":15192.298038926,"data":"Zip: /kaggle/working/t2b_full_internet_on.zip\n"}
+,{"stream_name":"stderr","time":15195.236874546,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":15195.236916398,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":15195.39888467,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":15195.398910711,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":15196.274493334,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":15196.411272569,"data":"[NbConvertApp] Writing 195251 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":15199.196943181,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":15199.823533446,"data":"[NbConvertApp] Writing 516079 bytes to __results__.html\n"}
+]

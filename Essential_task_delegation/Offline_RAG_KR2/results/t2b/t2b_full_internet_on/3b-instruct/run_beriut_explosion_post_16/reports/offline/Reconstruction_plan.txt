@@ -1,0 +1,134 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The explosion in Beriut has resulted in severe damage to nearly all buildings, with 8 out of 10 buildings classified as Grade 5 destruction under the EMS-98 guidelines, indicating total or near-total collapse. The hot spots in the northeast and southeast corners of the photo show the most concentrated damage, while open ground areas in the northwest and west provide some safety buffer zones. The Emergency Service Team has identified Safe Areas 1, 2, and 3 as suitable for establishing emergency shelters and medical points, with adequate living space and essential services. Immediate transportation recovery is crucial, focusing on reopening roads in Safe Areas 1 and 2 to the north-western outskirts of the city and the road leading from Safe Area 3 to the western region. The Reconstruction Plan Report aims to guide the government and policymakers in developing a comprehensive strategy for rebuilding and rehabilitating the affected areas, incorporating Sphere standards for shelter and settlement, EMS-98 damage grading, and INSARAG guidelines for victim marking and medical evacuation. Urgent attention is required to clear debris, stabilize structures, and establish safe zones for humanitarian operations.
+
+## Assessment of Damage
+The explosion in Beriut has led to severe damage across nearly all buildings, with 8 out of 10 buildings classified as Grade 5 destruction under the EMS-98 guidelines, indicating total or near-total collapse. The hot spots in the northeast and southeast corners of the photo, specifically around coordinates (871, 225) and (991, 840), show the most concentrated damage. The damage map reveals that 2 buildings were assessed as suffering moderate to very heavy damage (Grades 2 to 4), characterized by cracks in walls, fall of plaster, and partial structural failures. No buildings were found intact, suggesting minimal to negligible damage.
+
+#### Detailed Analysis
+
+**Hot Spot 1:**
+Located at coordinates (871, 225), this area is estimated to be in EMS-98 Grade 5 destruction, indicating total or near-total collapse. It covers a zone of approximately 287,383 pixels and is the most dangerous zone. The damage includes hair-line cracks in walls and the fall of small pieces of plaster. This area is critical for immediate clearance and stabilization to ensure safe access and rescue operations.
+
+**Hot Spot 2:**
+Situated at coordinates (991, 840), this area is also assessed as Grade 5 destruction, covering a zone of roughly (number not available offline). The damage includes cracks in walls and the fall of plaster. This area poses significant risks due to collapsed structures and unstable debris. Immediate attention is required to clear this zone to facilitate rescue and recovery efforts.
+
+**Safe Areas:**
+While the hot spots are the most dangerous, there are three safe areas where open ground provides some buffer against the estimated damage:
+- **Safe Area 1:** Located around (100, 100), the north-west of the photo, approximately 519 pixels from the nearest estimated damage. This area is relatively safe but should still be checked on the ground before use.
+- **Safe Area 2:** Positioned around (100, 250), the north-west of the photo, about 483 pixels from the nearest estimated damage. Like Safe Area 1, this area is safe but requires ground verification.
+- **Safe Area 3:** Situated around (100, 400), the west of the photo, approximately 464 pixels from the nearest estimated damage. This area is also considered safe but should be checked before entering.
+
+#### Damage Grading and Sphere Standards
+
+According to the EMS-98 guidelines, the buildings in Beriut are categorized as follows:
+- **Grade 5 Destruction (EMS-98):** Total or near-total collapse, as seen in Hot Spot 1 and Hot Spot 2. This necessitates immediate clearance and stabilization to remove large debris and ensure safe access.
+- **Grade 2 to 4 Damage (EMS-98):** Moderate to very heavy damage, including cracks in walls, fall of plaster, and partial structural failures. These areas require thorough assessment and stabilization to mitigate risks.
+
+The Sphere standards emphasize the importance of ensuring safe and structurally sound shelters and settlements. For example, Sphere Section [SPHERE-3-p1] recommends a minimum living space of (number not available offline) square meters per person, which is crucial for establishing emergency shelters in Safe Areas 1, 2, and 3. Adequate living space must be ensured, with consideration for privacy and dignity, as outlined in Sphere Section [SPHERE-3-p1]. Additionally, Sphere Section [SPHERE-3-p4] emphasizes the need for promoting safety
+
+## Reconstruction Needs
+To address the severe damage caused by the explosion in Beriut, the reconstruction plan must prioritize the repair, retrofit, or rebuild of structures based on the EMS-98 guidelines and Sphere standards. The hot spots in the northeast and southeast corners of the photo, particularly Hot Spot 1 and Hot Spot 2, require immediate attention due to the total or near-total collapse of buildings. These areas necessitate the removal of large debris, stabilization of structures, and clearance to ensure safe access and rescue operations.
+
+#### Repair and Retrofit
+
+For the buildings in Hot Spot 1 and Hot Spot 2, which are classified as Grade 5 destruction under the EMS-98 guidelines, repair and retrofit are essential. According to Sphere Section [SPHERE-5-p2], technical assistance is crucial to ensure that the repairs meet the agreed safe building practices. Local authorities and affected communities should be involved in the planning and execution of repairs to promote safer building practices and reduce future risks. The repair process should adhere to building codes and standards, and local expertise should be leveraged to enhance the quality and safety of the rebuilt structures.
+
+#### Rebuild
+
+Safe Areas 1, 2, and 3, which are relatively safe but require further assessment, will serve as the foundation for rebuilding efforts. These areas should be prioritized for the construction of new shelters and medical facilities. Based on Sphere Section [SPHERE-3-p1], the minimum living space per person should be at least (number not available offline) square meters. Adequate living space must be ensured, with consideration for privacy and dignity. The Sphere standards also emphasize the importance of promoting safety and protection, as outlined in Sphere Section [SPHERE-3-p4].
+
+#### Materials and Human Resources
+
+The reconstruction effort will require specialized materials and skilled labor. Local authorities and building professionals should be consulted to agree on building practices and materials, and to find the required expertise for quality assurance. Local authorities and local professionals should be supported in the building process to ensure that the rebuilt structures meet the necessary standards and specifications. Local labor should be hired to maintain and upgrade shelters, and locally available, sustainable, and familiar technologies, tools, and materials should be encouraged.
+
+#### Coordination and Logistics
+
+Coordination with local authorities and community members is essential to ensure that the chosen locations are culturally and socially acceptable and meet the necessary safety and protection standards. Immediate clearance of debris and stabilization of structures in the hot spots are necessary to facilitate the safe establishment of emergency shelters and medical facilities in the identified safe areas. Logistics staff should be involved in setting up base hygiene procedures and ensuring that health checks and personnel monitoring are conducted regularly.
+
+In summary, the reconstruction plan must focus on repairing and retrofitting buildings in the hot spots, rebuilding safe areas, and ensuring that the process adheres to Sphere standards and local contexts. Adequate technical assistance and local involvement are critical to achieving safe and sustainable outcomes.
+
+## Plan of Action
+To effectively manage the reconstruction efforts in Beriut, the following plan of action is proposed, prioritizing the repair, retrofit, or rebuild of structures based on the EMS-98 guidelines and Sphere standards.
+
+#### Immediate Clearing and Stabilization
+
+1. **Clearing Hot Spots (Hot Spot 1 and Hot Spot 2)**
+   - **Objective:** Remove large debris and stabilize structures to ensure safe access and rescue operations.
+   - **Resource Allocation:** Specialized machinery and teams equipped with safety gear.
+   - **Coordination:** Local authorities and emergency services will lead the clearance efforts, with support from international teams specializing in debris management.
+   - **Timeline:** Within 7 days.
+
+2. **Establishment of Safe Zones**
+   - **Objective:** Identify and verify Safe Areas 1, 2, and 3 as suitable for emergency shelters and medical facilities.
+   - **Resource Allocation:** Temporary shelters, medical tents, and essential supplies.
+   - **Coordination:** Local authorities, community leaders, and international aid organizations will collaborate to ensure the safety and accessibility of these areas.
+   - **Timeline:** Within 10 days.
+
+#### Repair and Retrofit
+
+3. **Repair of Hot Spot 1 and Hot Spot 2**
+   - **Objective:** Restore buildings in Hot Spot 1 and Hot Spot 2 to a sound working condition.
+   - **Resource Allocation:** Structural engineers, construction workers, and specialized tools.
+   - **Coordination:** Local authorities and affected communities will be involved in the repair process to promote safer building practices.
+   - **Timeline:** Within (number not available offline) days.
+
+4. **Retrofitting Safe Areas 1, 2, and 3**
+   - **Objective:** Strengthen and modify the structures in Safe Areas 1, 2, and 3 to make them more resistant to future hazards.
+   - **Resource Allocation:** Engineers, architects, and local contractors.
+   - **Coordination:** Local authorities and affected communities will be involved in the retrofitting process to ensure compliance with building codes and standards.
+   - **Timeline:** Within (number not available offline) days.
+
+#### Construction and Rehabilitation
+
+5. **Construction of New Shelters and Medical Facilities**
+   - **Objective:** Build new shelters and medical facilities in Safe Areas 1, 2, and 3 to accommodate displaced individuals.
+   - **Resource Allocation:** Skilled labor, construction materials, and essential supplies.
+   - **Coordination:** Local authorities, community leaders, and international aid organizations will collaborate to ensure the construction process adheres to Sphere standards.
+   - **Timeline:** Ongoing, with follow-up assessments every 3 months.
+
+#### Technical Assistance and Capacity Building
+
+6. **Technical Assistance and Training**
+   - **Objective:** Provide technical assistance and training to affected communities and local authorities to ensure long-term sustainability.
+   - **Resource Allocation:** Experts, trainers, and educational materials.
+   - **Coordination:** Local authorities and affected communities will be involved in the training process.
+   - **Timeline:** Ongoing, with regular reviews and adjustments.
+
+#### Coordination and Logistics
+
+7. **Logistics and Base Management**
+   - **Objective:** Ensure smooth logistics and base management for ongoing operations.
+   - **Resource Allocation:** Supply chains, logistics teams, and base hygiene procedures.
+   - **Coordination:** Logistics staff will work closely with local authorities and community leaders to manage supplies and ensure hygiene standards.
+   - **Timeline:** Ongoing, with regular reviews and adjustments.
+
+#### Monitoring and Evaluation
+
+8. **Monitoring and Evaluation**
+   - **Objective:** Continuously monitor the progress and effectiveness of the reconstruction efforts.
+   - **Resource Allocation:** Monitoring teams and
+Inspect
+
+## Recommendations
+To support effective and efficient reconstruction, we recommend prioritizing immediate clearance and stabilization of the hot spots, followed by the repair and retrofit of buildings in these areas. Funding should be allocated to cover the costs of specialized machinery, safety gear, and expert teams for debris removal and structural stabilization. For the rebuilding phase, resources should be directed towards constructing new shelters and medical facilities in safe areas, ensuring adherence to Sphere standards and local building codes. Policy-wise, collaboration between local authorities, international aid organizations, and affected communities is crucial. This includes engaging local expertise and promoting safer building practices through technical assistance and capacity-building programs. Additionally, robust monitoring and evaluation frameworks should be established to track progress and ensure continuous improvement. Adequate funding and coordination will be essential to implement these recommendations effectively.
+
+## Appendices
+#### Disaster Grade of Each Place
+- **Hot Spot 1:** EMS-98 Grade 5, total or near-total collapse [EMS98-masonry-grade-5]
+- **Hot Spot 2:** EMS-98 Grade 5, total or near-total collapse [EMS98-masonry-grade-5]
+- **Safe Area 1:** EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+- **Safe Area 2:** EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+- **Safe Area 3:** EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+#### Guideline Sections Used
+- [EMS98-2.3-p2] (EMS-98, p. 41-48) for understanding vulnerability factors affecting building performance.
+- [SPHERE-3-p1] (Sphere Handbook 2018, Shelter and Settlement, p. 281-283) for debris removal and environmental sustainability.
+- [SPHERE-3-p4] (Sphere Handbook 2018, Shelter and Settlement, p. 281-283) for return and transit support.
+- [SPHERE-5-p2] (Sphere Handbook 2018, Shelter and Settlement, p. 297-300) for technical assistance and capacity building.
+- [INSARAG2B-6.3.1] (INSARAG Guidelines 2020, Vol. II Manual B Operations, p. 49) for victim marking methods.
+
+This appendix provides the disaster grade classification for each location and references the key guidelines used in the reconstruction plan.

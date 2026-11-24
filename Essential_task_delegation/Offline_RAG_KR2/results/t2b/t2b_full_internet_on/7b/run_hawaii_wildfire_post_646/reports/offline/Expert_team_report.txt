@@ -1,0 +1,18 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The wildfire caused widespread destruction, with 86% of buildings completely destroyed, classified as EMS-98 Grade 5, indicating total or near total collapse. Only 14% of buildings remained intact, while 1% sustained moderate to very heavy damage, with significant structural and non-structural impacts. The hotspots indicate high fire density, particularly in the south and southwest regions, consistent with the extensive damage observed. Safe areas remain distant from the affected zones, suggesting limited impact on natural terrain.
+
+## Description of the estimated damage
+The wildfire caused widespread destruction, with 86% of buildings completely destroyed, classified as EMS-98 Grade 5, indicating total or near total collapse. Only 14% of buildings remained intact, while 1% sustained moderate to very heavy damage, with significant structural and non-structural impacts. The hotspots indicate high fire density, particularly in the south and southwest regions, consistent with the extensive damage observed. Safe areas remain distant from the affected zones, suggesting limited impact on natural terrain.
+
+## Disaster grade of each location
+The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:
+- Buildings estimated destroyed: 165: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Buildings estimated damaged: 1: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Buildings estimated intact: 26: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The wildfire has caused severe destruction, with 86% of buildings completely destroyed and 14% remaining intact. The hotspots in the south and southwest regions indicate high fire density, necessitating immediate attention to these areas for debris clearance and safety assessments. The remaining intact structures should be inspected for residual damage, while efforts must focus on securing the destroyed buildings' sites to prevent further hazards.

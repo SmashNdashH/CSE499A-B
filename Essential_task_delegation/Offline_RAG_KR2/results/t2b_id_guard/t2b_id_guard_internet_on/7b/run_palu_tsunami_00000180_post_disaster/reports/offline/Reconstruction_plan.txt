@@ -1,0 +1,31 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The tsunami caused significant destruction, with 52% of the area completely devastated, requiring immediate attention to rebuild and stabilize the affected regions. Hotspots in the north-east and east, marked by zones of high density, indicate critical areas where structural collapse and debris require urgent removal and clearance operations. Efforts must focus on securing these zones to prevent further risks and begin reconstruction efforts. Safe areas in the south-west, such as those around (100, 923), (250, 923), and (100, 773), remain unaffected and are recommended for shelter and recovery activities.
+
+## Assessment of Damage
+The tsunami caused significant destruction, with (number not available offline) of the observed area classified as destroyed, indicating total or near-total collapse of structures. The hotspots in the north-east and east, marked by zones of high density, show critical areas where structural collapse and debris require urgent removal and clearance operations. Safe areas in the south-west, such as those around (100, 923), (250, 923), and (100, 773), remain unaffected and are recommended for shelter and recovery activities. The disaster grades of the estimated damage patches, as per the EMS-98 classification, indicate that (number not available offline) of the area was classified as destroyed (Grade 5), 13% as damaged (Grades 2 to 4), and (number not available offline) as intact (Grade 1). These findings align with the Sphere Handbook 2018 guidelines for disaster response.
+
+## Reconstruction Needs
+The reconstruction needs for the affected area involve prioritizing the safe zones in the south-west, such as those around (100, 923), (250, 923), and (100, 773), for shelter and recovery activities. Given the significant destruction in the north-east and east, efforts should focus on clearing debris and stabilizing the area to prevent further risks. For the destroyed and damaged buildings, repairs and retrofits are necessary to restore structural integrity, adhering to the Sphere Handbook 2018 guidelines on shelter and settlement [SPHERE-5-p1]. Local expertise and community involvement are crucial for ensuring the safety and quality of rebuilding efforts. While specific staff, shelter, and supply numbers are not available offline, the reconstruction plan should emphasize the importance of engaging affected populations in the rebuilding process to enhance resilience and sustainability.
+
+## Plan of Action
+The reconstruction plan will proceed in the following stages:
+
+1. **Debris Removal and Safety Measures:** Prioritize the safe zones in the south-west to remove debris from the damaged areas in the north-east and east. Utilize specialized equipment and teams to ensure debris is cleared efficiently and safely. Engage local authorities to monitor the process and ensure compliance with safety protocols. This phase will lay the groundwork for subsequent reconstruction efforts.
+
+2. **Structural Assessments and Repairs:** Conduct on-site assessments to determine the extent of structural damage in the destroyed and damaged buildings. Based on the findings, initiate repairs and retrofits using locally available materials and skilled labor. Adhere to the Sphere Handbook 2018 guidelines on shelter and settlement [SPHERE-5-p1] to ensure durability and safety. Engage affected communities in the planning and execution to foster ownership and resilience.
+
+3. **Community Engagement and Capacity Building:** Organize community workshops and training sessions to educate residents on rebuilding practices and safety measures. Develop capacity-building programs to strengthen local expertise in construction and disaster preparedness. This will empower the community to participate effectively in reconstruction and mitigate future risks.
+
+4. **Monitoring and Evaluation:** Implement a continuous monitoring system to track progress and address any unforeseen challenges. Collaborate with local authorities to establish oversight mechanisms and ensure compliance with building codes and safety standards. Regularly review and adjust the reconstruction plan based on feedback and evolving conditions.
+
+By following these steps, we aim to restore functionality and safety in the affected area while fostering long-term resilience through community involvement and structured reconstruction efforts.
+
+## Recommendations
+To support effective and efficient reconstruction, the government should allocate resources for debris removal and safety measures in the south-west, ensuring specialized equipment and teams are deployed. Funding should prioritize structural assessments and repairs for destroyed and damaged buildings, utilizing locally available materials and skilled labor. Community engagement is crucial, with financial support for capacity-building programs to educate residents on rebuilding practices and disaster preparedness. Additionally, continuous monitoring and evaluation should be conducted to track progress and address unforeseen challenges, ensuring compliance with building codes and safety standards.
+
+## Appendices
+The disaster grades of the estimated damage patches, as per the EMS-98 classification, indicate that 49 of the area was classified as destroyed (Grade 5), 13% as damaged (Grades 2 to 4), and 35% as intact (Grade 1). These findings align with the Sphere Handbook 2018 guidelines for disaster response [SPHERE-5-p1]. The labelled map shows the distribution of intact, damaged, and destroyed areas, with hotspots in the north-east and east and safe areas in the south-west.

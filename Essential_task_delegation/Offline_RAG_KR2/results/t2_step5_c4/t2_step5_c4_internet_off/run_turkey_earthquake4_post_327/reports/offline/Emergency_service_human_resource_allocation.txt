@@ -1,0 +1,24 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Emergency Service Team Human Resource Allocation Report
+
+## Introduction
+The earthquake caused significant damage, with 32 buildings completely destroyed and 11 more suffering moderate to heavy damage. Debris was scattered across several zones, particularly in the north-west and north-east regions, and the road network was disrupted due to water accumulation. Open-space ground also showed signs of flooding. Safe areas are located in the south-east of the photo, providing sufficient space for emergency shelters.
+
+## Current Situation
+The earthquake has caused severe structural damage, with 32 buildings completely destroyed and 11 more suffering moderate to heavy damage. Debris is densely concentrated in the north-west and north-east regions, posing significant safety risks. The road network in these areas is disrupted by water accumulation, hindering access. Open-space ground shows signs of flooding. Immediate needs include clearing debris, stabilizing partially collapsed structures, and restoring accessibility to facilitate emergency response and aid delivery. Safe areas in the south-east provide temporary shelter options.
+
+## Human Resource Requirements
+The human resource requirements for this emergency response include 1 international USAR team to conduct Level 2 Assessment and Level 3 Rapid Search and Rescue operations in the north-west and north-east regions, as per [INSARAG2B-5.7.1-p3]. Additionally, 1 medical team is needed to establish a triage point and manage patient care in the affected area, aligning with [INSARAG2B-3.10-p1]. For logistical support, 1 team is required to clear debris and restore road access, utilizing the marking and signaling system for coordination, as outlined in [INSARAG2B-6.2-p1]. All teams must be equipped with necessary tools and adhere to safety protocols, ensuring effective and ethical operations.
+
+## Allocation Plan
+The allocation plan for the emergency response involves deploying 1 international USAR team to conduct Level 2 Assessment and Level 3 Rapid Search and Rescue operations in the north-west and north-east regions, as per [INSARAG2B-5.7.1-p3]. Additionally, 1 medical team is needed to establish a triage point and manage patient care in the affected area, aligning with [INSARAG2B-3.10-p1]. For logistical support, 1 team is required to clear debris and restore road access, utilizing the marking and signaling system for coordination, as outlined in [INSARAG2B-6.2-p1]. All teams must be equipped with necessary tools and adhere to safety protocols, ensuring effective and ethical operations.
+
+## Challenges and Considerations
+The allocation of resources faces challenges such as potential transportation disruptions due to road blockages caused by water accumulation and debris. Additionally, local authorities may impose restrictions on access to certain areas, complicating the deployment of teams. As the situation evolves, continuous communication with local authorities and adjustments to the allocation plan will be crucial to ensure timely and effective response. Regular feedback from the field will guide the reallocation of resources to address emerging needs effectively.
+
+## Recommendations
+Given the high concentration of structural damage in the north-west and north-east regions, it is recommended to deploy additional international USAR teams to conduct Level 2 Assessment and Level 3 Rapid Search and Rescue operations. This will ensure comprehensive coverage and reduce delays in identifying viable worksites. Furthermore, establishing multiple triage points in these areas will facilitate efficient patient management. To address logistical challenges, coordinating with local authorities to clear debris and restore road access is essential. Providing real-time updates and adjusting the allocation plan based on evolving conditions will enhance the effectiveness of the response.
+
+## Conclusion
+The earthquake has caused significant structural damage, with 32 buildings completely destroyed and 11 more suffering moderate to heavy damage. Immediate efforts include clearing debris, stabilizing partially collapsed structures, and restoring road access to facilitate emergency response and aid delivery. Safe areas in the south-east provide temporary shelter options. The allocation of 1 international USAR team for Level 2 Assessment and Level 3 Rapid Search and Rescue, along with 1 medical team for triage and patient care, and 1 logistical team for debris clearance and road restoration, is underway. Continuous communication and adjustments to the allocation plan will ensure effective and ethical operations.

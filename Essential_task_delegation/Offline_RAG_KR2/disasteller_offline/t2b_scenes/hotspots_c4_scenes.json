@@ -1,0 +1,822 @@
+[
+ {
+  "image": "beriut_explosion_post_16.png",
+  "event": "beriut_explosion",
+  "source": "other",
+  "method": "find-then-grade",
+  "clean": true,
+  "pred_damaged_px": 31504,
+  "pred_destroyed_px": 112724,
+  "hot_spots": [
+   {
+    "rank": 1,
+    "point_xy": [
+     871,
+     225
+    ],
+    "area_px": 287383,
+    "peak": 0.937,
+    "edge_px": 152,
+    "where": "north-east",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 2,
+    "point_xy": [
+     991,
+     840
+    ],
+    "area_px": 28075,
+    "peak": 0.919,
+    "edge_px": 32,
+    "where": "south-east",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   }
+  ],
+  "safe_areas": [
+   {
+    "rank": 1,
+    "xy": [
+     100,
+     100
+    ],
+    "distance_px": 519,
+    "edge_px": 100,
+    "where": "north-west",
+    "on_gt_building": false
+   },
+   {
+    "rank": 2,
+    "xy": [
+     100,
+     250
+    ],
+    "distance_px": 483,
+    "edge_px": 100,
+    "where": "north-west",
+    "on_gt_building": false
+   },
+   {
+    "rank": 3,
+    "xy": [
+     100,
+     400
+    ],
+    "distance_px": 464,
+    "edge_px": 100,
+    "where": "west",
+    "on_gt_building": false
+   }
+  ]
+ },
+ {
+  "image": "hawaii_wildfire_post_646.png",
+  "event": "hawaii_wildfire",
+  "source": "other",
+  "method": "find-then-grade",
+  "clean": true,
+  "pred_damaged_px": 6352,
+  "pred_destroyed_px": 195262,
+  "hot_spots": [
+   {
+    "rank": 1,
+    "point_xy": [
+     545,
+     845
+    ],
+    "area_px": 377369,
+    "peak": 0.778,
+    "edge_px": 178,
+    "where": "south",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 2,
+    "point_xy": [
+     140,
+     741
+    ],
+    "area_px": 176705,
+    "peak": 0.83,
+    "edge_px": 140,
+    "where": "south-west",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 3,
+    "point_xy": [
+     456,
+     240
+    ],
+    "area_px": 34542,
+    "peak": 0.749,
+    "edge_px": 240,
+    "where": "north",
+    "on_gt_destroyed": false,
+    "on_gt_damage": false,
+    "point_on_gt_destroyed": false,
+    "point_on_gt_damage": false
+   }
+  ],
+  "safe_areas": [
+   {
+    "rank": 1,
+    "xy": [
+     844,
+     100
+    ],
+    "distance_px": 280,
+    "edge_px": 100,
+    "where": "north-east",
+    "on_gt_building": false
+   },
+   {
+    "rank": 2,
+    "xy": [
+     701,
+     146
+    ],
+    "distance_px": 218,
+    "edge_px": 146,
+    "where": "north-east",
+    "on_gt_building": false
+   },
+   {
+    "rank": 3,
+    "xy": [
+     847,
+     254
+    ],
+    "distance_px": 147,
+    "edge_px": 176,
+    "where": "north-east",
+    "on_gt_building": false
+   }
+  ]
+ },
+ {
+  "image": "joplin_tornado_00000147_post_disaster.png",
+  "event": "joplin_tornado",
+  "source": "xBD",
+  "method": "R11",
+  "clean": true,
+  "pred_damaged_px": 20824,
+  "pred_destroyed_px": 234262,
+  "hot_spots": [
+   {
+    "rank": 1,
+    "point_xy": [
+     43,
+     991
+    ],
+    "area_px": 961544,
+    "peak": 0.788,
+    "edge_px": 32,
+    "where": "south-west",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   }
+  ],
+  "safe_areas": [
+   {
+    "rank": 1,
+    "xy": [
+     818,
+     214
+    ],
+    "distance_px": 94,
+    "edge_px": 205,
+    "where": "north-east",
+    "on_gt_building": false
+   },
+   {
+    "rank": 2,
+    "xy": [
+     112,
+     801
+    ],
+    "distance_px": 64,
+    "edge_px": 112,
+    "where": "south-west",
+    "on_gt_building": false
+   },
+   {
+    "rank": 3,
+    "xy": [
+     632,
+     816
+    ],
+    "distance_px": 51,
+    "edge_px": 207,
+    "where": "south",
+    "on_gt_building": false
+   }
+  ]
+ },
+ {
+  "image": "libya_flood_post_90.png",
+  "event": "libya_flood",
+  "source": "other",
+  "method": "find-then-grade",
+  "clean": true,
+  "pred_damaged_px": 8079,
+  "pred_destroyed_px": 43185,
+  "hot_spots": [
+   {
+    "rank": 1,
+    "point_xy": [
+     902,
+     685
+    ],
+    "area_px": 42481,
+    "peak": 0.975,
+    "edge_px": 121,
+    "where": "south-east",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 2,
+    "point_xy": [
+     565,
+     766
+    ],
+    "area_px": 34727,
+    "peak": 0.935,
+    "edge_px": 257,
+    "where": "south",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 3,
+    "point_xy": [
+     682,
+     991
+    ],
+    "area_px": 11537,
+    "peak": 0.854,
+    "edge_px": 32,
+    "where": "south",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   }
+  ],
+  "safe_areas": [
+   {
+    "rank": 1,
+    "xy": [
+     493,
+     273
+    ],
+    "distance_px": 420,
+    "edge_px": 273,
+    "where": "north",
+    "on_gt_building": false
+   },
+   {
+    "rank": 2,
+    "xy": [
+     466,
+     100
+    ],
+    "distance_px": 398,
+    "edge_px": 100,
+    "where": "north",
+    "on_gt_building": true
+   },
+   {
+    "rank": 3,
+    "xy": [
+     627,
+     341
+    ],
+    "distance_px": 353,
+    "edge_px": 341,
+    "where": "north",
+    "on_gt_building": true
+   }
+  ]
+ },
+ {
+  "image": "moore_tornado_00000045_post_disaster.png",
+  "event": "moore_tornado",
+  "source": "xBD",
+  "method": "R11",
+  "clean": true,
+  "pred_damaged_px": 77161,
+  "pred_destroyed_px": 121710,
+  "hot_spots": [
+   {
+    "rank": 1,
+    "point_xy": [
+     528,
+     712
+    ],
+    "area_px": 550004,
+    "peak": 0.98,
+    "edge_px": 311,
+    "where": "south",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 2,
+    "point_xy": [
+     265,
+     861
+    ],
+    "area_px": 15069,
+    "peak": 0.447,
+    "edge_px": 162,
+    "where": "south-west",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 3,
+    "point_xy": [
+     67,
+     704
+    ],
+    "area_px": 5891,
+    "peak": 0.129,
+    "edge_px": 67,
+    "where": "south-west",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   }
+  ],
+  "safe_areas": [
+   {
+    "rank": 1,
+    "xy": [
+     100,
+     165
+    ],
+    "distance_px": 304,
+    "edge_px": 100,
+    "where": "north-west",
+    "on_gt_building": false
+   },
+   {
+    "rank": 2,
+    "xy": [
+     195,
+     282
+    ],
+    "distance_px": 212,
+    "edge_px": 195,
+    "where": "north-west",
+    "on_gt_building": false
+   },
+   {
+    "rank": 3,
+    "xy": [
+     236,
+     101
+    ],
+    "distance_px": 165,
+    "edge_px": 101,
+    "where": "north-west",
+    "on_gt_building": false
+   }
+  ]
+ },
+ {
+  "image": "noto_earthquake_post_162.png",
+  "event": "noto_earthquake",
+  "source": "other",
+  "method": "find-then-grade",
+  "clean": true,
+  "pred_damaged_px": 15943,
+  "pred_destroyed_px": 11989,
+  "hot_spots": [
+   {
+    "rank": 1,
+    "point_xy": [
+     32,
+     235
+    ],
+    "area_px": 41162,
+    "peak": 0.524,
+    "edge_px": 32,
+    "where": "north-west",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 2,
+    "point_xy": [
+     53,
+     551
+    ],
+    "area_px": 12309,
+    "peak": 0.407,
+    "edge_px": 53,
+    "where": "west",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 3,
+    "point_xy": [
+     284,
+     462
+    ],
+    "area_px": 16899,
+    "peak": 0.171,
+    "edge_px": 284,
+    "where": "west",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   }
+  ],
+  "safe_areas": [
+   {
+    "rank": 1,
+    "xy": [
+     923,
+     923
+    ],
+    "distance_px": 637,
+    "edge_px": 100,
+    "where": "south-east",
+    "on_gt_building": true
+   },
+   {
+    "rank": 2,
+    "xy": [
+     773,
+     923
+    ],
+    "distance_px": 576,
+    "edge_px": 100,
+    "where": "south-east",
+    "on_gt_building": false
+   },
+   {
+    "rank": 3,
+    "xy": [
+     923,
+     773
+    ],
+    "distance_px": 513,
+    "edge_px": 100,
+    "where": "south-east",
+    "on_gt_building": true
+   }
+  ]
+ },
+ {
+  "image": "palu_tsunami_00000180_post_disaster.png",
+  "event": "palu_tsunami",
+  "source": "xBD",
+  "method": "R11",
+  "clean": true,
+  "pred_damaged_px": 4694,
+  "pred_destroyed_px": 192517,
+  "hot_spots": [
+   {
+    "rank": 1,
+    "point_xy": [
+     991,
+     234
+    ],
+    "area_px": 387778,
+    "peak": 0.927,
+    "edge_px": 32,
+    "where": "north-east",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 2,
+    "point_xy": [
+     760,
+     595
+    ],
+    "area_px": 77265,
+    "peak": 0.785,
+    "edge_px": 263,
+    "where": "east",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   }
+  ],
+  "safe_areas": [
+   {
+    "rank": 1,
+    "xy": [
+     100,
+     923
+    ],
+    "distance_px": 459,
+    "edge_px": 100,
+    "where": "south-west",
+    "on_gt_building": false
+   },
+   {
+    "rank": 2,
+    "xy": [
+     250,
+     923
+    ],
+    "distance_px": 400,
+    "edge_px": 100,
+    "where": "south-west",
+    "on_gt_building": false
+   },
+   {
+    "rank": 3,
+    "xy": [
+     100,
+     773
+    ],
+    "distance_px": 323,
+    "edge_px": 100,
+    "where": "south-west",
+    "on_gt_building": false
+   }
+  ]
+ },
+ {
+  "image": "santa_rosa_wildfire_00000155_post_disaster.png",
+  "event": "santa_rosa_wildfire",
+  "source": "xBD",
+  "method": "R11",
+  "clean": true,
+  "pred_damaged_px": 1554,
+  "pred_destroyed_px": 240950,
+  "hot_spots": [
+   {
+    "rank": 1,
+    "point_xy": [
+     991,
+     779
+    ],
+    "area_px": 684835,
+    "peak": 0.817,
+    "edge_px": 32,
+    "where": "south-east",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   }
+  ],
+  "safe_areas": [
+   {
+    "rank": 1,
+    "xy": [
+     100,
+     923
+    ],
+    "distance_px": 386,
+    "edge_px": 100,
+    "where": "south-west",
+    "on_gt_building": false
+   },
+   {
+    "rank": 2,
+    "xy": [
+     100,
+     773
+    ],
+    "distance_px": 300,
+    "edge_px": 100,
+    "where": "south-west",
+    "on_gt_building": false
+   },
+   {
+    "rank": 3,
+    "xy": [
+     250,
+     923
+    ],
+    "distance_px": 251,
+    "edge_px": 100,
+    "where": "south-west",
+    "on_gt_building": false
+   }
+  ]
+ },
+ {
+  "image": "turkey_earthquake4_post_327.png",
+  "event": "turkey_earthquake",
+  "source": "other",
+  "method": "find-then-grade",
+  "clean": true,
+  "pred_damaged_px": 44850,
+  "pred_destroyed_px": 134112,
+  "hot_spots": [
+   {
+    "rank": 1,
+    "point_xy": [
+     320,
+     32
+    ],
+    "area_px": 403997,
+    "peak": 0.937,
+    "edge_px": 32,
+    "where": "north-west",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 2,
+    "point_xy": [
+     48,
+     593
+    ],
+    "area_px": 22107,
+    "peak": 0.899,
+    "edge_px": 48,
+    "where": "west",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 3,
+    "point_xy": [
+     991,
+     32
+    ],
+    "area_px": 28381,
+    "peak": 0.8,
+    "edge_px": 32,
+    "where": "north-east",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   }
+  ],
+  "safe_areas": [
+   {
+    "rank": 1,
+    "xy": [
+     917,
+     923
+    ],
+    "distance_px": 412,
+    "edge_px": 100,
+    "where": "south-east",
+    "on_gt_building": false
+   },
+   {
+    "rank": 2,
+    "xy": [
+     821,
+     807
+    ],
+    "distance_px": 311,
+    "edge_px": 202,
+    "where": "south-east",
+    "on_gt_building": true
+   },
+   {
+    "rank": 3,
+    "xy": [
+     722,
+     694
+    ],
+    "distance_px": 254,
+    "edge_px": 301,
+    "where": "south-east",
+    "on_gt_building": true
+   }
+  ]
+ },
+ {
+  "image": "tuscaloosa_tornado_00000037_post_disaster.png",
+  "event": "tuscaloosa_tornado",
+  "source": "xBD",
+  "method": "R11",
+  "clean": true,
+  "pred_damaged_px": 60219,
+  "pred_destroyed_px": 77509,
+  "hot_spots": [
+   {
+    "rank": 1,
+    "point_xy": [
+     774,
+     531
+    ],
+    "area_px": 223555,
+    "peak": 0.626,
+    "edge_px": 249,
+    "where": "east",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 2,
+    "point_xy": [
+     41,
+     750
+    ],
+    "area_px": 200020,
+    "peak": 0.413,
+    "edge_px": 41,
+    "where": "south-west",
+    "on_gt_destroyed": true,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": true,
+    "point_on_gt_damage": true
+   },
+   {
+    "rank": 3,
+    "point_xy": [
+     717,
+     888
+    ],
+    "area_px": 66243,
+    "peak": 0.364,
+    "edge_px": 135,
+    "where": "south-east",
+    "on_gt_destroyed": false,
+    "on_gt_damage": true,
+    "point_on_gt_destroyed": false,
+    "point_on_gt_damage": false
+   }
+  ],
+  "safe_areas": [
+   {
+    "rank": 1,
+    "xy": [
+     346,
+     119
+    ],
+    "distance_px": 146,
+    "edge_px": 119,
+    "where": "north",
+    "on_gt_building": true
+   },
+   {
+    "rank": 2,
+    "xy": [
+     359,
+     454
+    ],
+    "distance_px": 131,
+    "edge_px": 359,
+    "where": "centre",
+    "on_gt_building": false
+   },
+   {
+    "rank": 3,
+    "xy": [
+     416,
+     650
+    ],
+    "distance_px": 124,
+    "edge_px": 373,
+    "where": "centre",
+    "on_gt_building": false
+   }
+  ]
+ }
+]

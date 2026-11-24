@@ -1,0 +1,18 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The wildfire caused extensive destruction, with 96% of the area classified as destroyed, indicating total or near-total collapse of structures. Three additional areas sustained moderate to very heavy damage, showing significant structural and non-structural impacts. Only 45 intact areas remained unaffected, with negligible to slight damage. The disaster grades align with severe structural and non-structural damage, as per the EMS-98 guidelines.
+
+## Description of the photos and the estimated damage
+The wildfire caused extensive destruction, with 96% of the area classified as destroyed, indicating total or near-total collapse of structures. Three additional areas sustained moderate to very heavy damage, showing significant structural and non-structural impacts. Only 45 intact areas remained unaffected, with negligible to slight damage. The disaster grades align with severe structural and non-structural damage, as per the EMS-98 guidelines.
+
+## Disaster grade of each location
+The disaster grades of the estimated areas, written from the damage model's table by the code, not by the language model:
+- Destroyed areas: 96: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Damaged areas: 3: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Intact areas: 45: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The wildfire caused catastrophic destruction, with 96% of the area classified as destroyed, indicating total or near-total collapse of structures. The remaining three areas sustained moderate to very heavy damage, showing significant structural and non-structural impacts. Immediate attention should focus on clearing debris from the hot spot 1 in the south-east of the photo to prevent further hazards and enable safe access for rescue operations. Additionally, efforts must prioritize stabilizing the damaged structures to prevent further collapse and ensure safety for affected residents.

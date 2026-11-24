@@ -1,0 +1,102 @@
+{
+ "libya_flood_post_90.png": {
+  "before_image": "libya_flood_pre_90.png",
+  "event": "libya_flood",
+  "disaster": "flood",
+  "source": "other",
+  "kind": "outline",
+  "method": "find-then-grade, grader seed 42",
+  "width": 1024,
+  "height": 1024
+ },
+ "turkey_earthquake4_post_327.png": {
+  "before_image": "turkey_earthquake4_pre_327.png",
+  "event": "turkey_earthquake",
+  "disaster": "earthquake",
+  "source": "other",
+  "kind": "outline",
+  "method": "find-then-grade, grader seed 42",
+  "width": 1024,
+  "height": 1024
+ },
+ "santa_rosa_wildfire_00000155_post_disaster.png": {
+  "before_image": "santa_rosa_wildfire_00000155_pre_disaster.png",
+  "event": "santa_rosa_wildfire",
+  "disaster": "wildfire",
+  "source": "xBD",
+  "kind": "patch",
+  "method": "R11 (pixel model)",
+  "width": 1024,
+  "height": 1024
+ },
+ "joplin_tornado_00000147_post_disaster.png": {
+  "before_image": "joplin_tornado_00000147_pre_disaster.png",
+  "event": "joplin_tornado",
+  "disaster": "tornado",
+  "source": "xBD",
+  "kind": "patch",
+  "method": "R11 (pixel model)",
+  "width": 1024,
+  "height": 1024
+ },
+ "noto_earthquake_post_162.png": {
+  "before_image": "noto_earthquake_pre_162.png",
+  "event": "noto_earthquake",
+  "disaster": "earthquake",
+  "source": "other",
+  "kind": "outline",
+  "method": "find-then-grade, grader seed 42",
+  "width": 1024,
+  "height": 1024
+ },
+ "hawaii_wildfire_post_646.png": {
+  "before_image": "hawaii_wildfire_pre_646.png",
+  "event": "hawaii_wildfire",
+  "disaster": "wildfire",
+  "source": "other",
+  "kind": "outline",
+  "method": "find-then-grade, grader seed 42",
+  "width": 1024,
+  "height": 1024
+ },
+ "beriut_explosion_post_16.png": {
+  "before_image": "beriut_explosion_pre_16.png",
+  "event": "beriut_explosion",
+  "disaster": "explosion",
+  "source": "other",
+  "kind": "outline",
+  "method": "find-then-grade, grader seed 42",
+  "width": 1024,
+  "height": 1024
+ },
+ "palu_tsunami_00000180_post_disaster.png": {
+  "before_image": "palu_tsunami_00000180_pre_disaster.png",
+  "event": "palu_tsunami",
+  "disaster": "tsunami",
+  "source": "xBD",
+  "kind": "patch",
+  "method": "R11 (pixel model)",
+  "width": 1024,
+  "height": 1024
+ },
+ "moore_tornado_00000045_post_disaster.png": {
+  "before_image": "moore_tornado_00000045_pre_disaster.png",
+  "event": "moore_tornado",
+  "disaster": "tornado",
+  "source": "xBD",
+  "kind": "patch",
+  "method": "R11 (pixel model)",
+  "width": 1024,
+  "height": 1024
+ },
+ "tuscaloosa_tornado_00000037_post_disaster.png": {
+  "before_image": "tuscaloosa_tornado_00000037_pre_disaster.png",
+  "event": "tuscaloosa_tornado",
+  "disaster": "tornado",
+  "source": "xBD",
+  "kind": "patch",
+  "method": "R11 (pixel model)",
+  "width": 1024,
+  "height": 1024
+ }
+}

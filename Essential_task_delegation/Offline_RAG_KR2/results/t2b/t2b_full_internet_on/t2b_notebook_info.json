@@ -1,0 +1,281 @@
+{
+  "smoke_test": false,
+  "internet": "on",
+  "flow": "t2b",
+  "scenes": [
+    "libya_flood_post_90.png",
+    "turkey_earthquake4_post_327.png",
+    "santa_rosa_wildfire_00000155_post_disaster.png",
+    "joplin_tornado_00000147_post_disaster.png",
+    "noto_earthquake_post_162.png",
+    "hawaii_wildfire_post_646.png",
+    "beriut_explosion_post_16.png",
+    "palu_tsunami_00000180_post_disaster.png",
+    "moore_tornado_00000045_post_disaster.png",
+    "tuscaloosa_tornado_00000037_post_disaster.png"
+  ],
+  "results": {
+    "7b": {
+      "libya_flood_post_90.png": {
+        "run_dir": "/kaggle/working/t2b/7b/run_libya_flood_post_90",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 6.43
+      },
+      "turkey_earthquake4_post_327.png": {
+        "run_dir": "/kaggle/working/t2b/7b/run_turkey_earthquake4_post_327",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 6.35
+      },
+      "santa_rosa_wildfire_00000155_post_disaster.png": {
+        "run_dir": "/kaggle/working/t2b/7b/run_santa_rosa_wildfire_00000155_post_disaster",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 6.74
+      },
+      "joplin_tornado_00000147_post_disaster.png": {
+        "run_dir": "/kaggle/working/t2b/7b/run_joplin_tornado_00000147_post_disaster",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 5.93
+      },
+      "noto_earthquake_post_162.png": {
+        "run_dir": "/kaggle/working/t2b/7b/run_noto_earthquake_post_162",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 5.44
+      },
+      "hawaii_wildfire_post_646.png": {
+        "run_dir": "/kaggle/working/t2b/7b/run_hawaii_wildfire_post_646",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 5.15
+      },
+      "beriut_explosion_post_16.png": {
+        "run_dir": "/kaggle/working/t2b/7b/run_beriut_explosion_post_16",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 7.19
+      },
+      "palu_tsunami_00000180_post_disaster.png": {
+        "run_dir": "/kaggle/working/t2b/7b/run_palu_tsunami_00000180_post_disaster",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 5.97
+      },
+      "moore_tornado_00000045_post_disaster.png": {
+        "run_dir": "/kaggle/working/t2b/7b/run_moore_tornado_00000045_post_disaster",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 6.2
+      },
+      "tuscaloosa_tornado_00000037_post_disaster.png": {
+        "run_dir": "/kaggle/working/t2b/7b/run_tuscaloosa_tornado_00000037_post_disaster",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 6.85
+      }
+    },
+    "3b-instruct": {
+      "libya_flood_post_90.png": {
+        "run_dir": "/kaggle/working/t2b/3b-instruct/run_libya_flood_post_90",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 19.3
+      },
+      "turkey_earthquake4_post_327.png": {
+        "run_dir": "/kaggle/working/t2b/3b-instruct/run_turkey_earthquake4_post_327",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 18.92
+      },
+      "santa_rosa_wildfire_00000155_post_disaster.png": {
+        "run_dir": "/kaggle/working/t2b/3b-instruct/run_santa_rosa_wildfire_00000155_post_disaster",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 15.34
+      },
+      "joplin_tornado_00000147_post_disaster.png": {
+        "run_dir": "/kaggle/working/t2b/3b-instruct/run_joplin_tornado_00000147_post_disaster",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 20.1
+      },
+      "noto_earthquake_post_162.png": {
+        "run_dir": "/kaggle/working/t2b/3b-instruct/run_noto_earthquake_post_162",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 19.17
+      },
+      "hawaii_wildfire_post_646.png": {
+        "run_dir": "/kaggle/working/t2b/3b-instruct/run_hawaii_wildfire_post_646",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 17.38
+      },
+      "beriut_explosion_post_16.png": {
+        "run_dir": "/kaggle/working/t2b/3b-instruct/run_beriut_explosion_post_16",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 15.91
+      },
+      "palu_tsunami_00000180_post_disaster.png": {
+        "run_dir": "/kaggle/working/t2b/3b-instruct/run_palu_tsunami_00000180_post_disaster",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 18.31
+      },
+      "moore_tornado_00000045_post_disaster.png": {
+        "run_dir": "/kaggle/working/t2b/3b-instruct/run_moore_tornado_00000045_post_disaster",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 18.3
+      },
+      "tuscaloosa_tornado_00000037_post_disaster.png": {
+        "run_dir": "/kaggle/working/t2b/3b-instruct/run_tuscaloosa_tornado_00000037_post_disaster",
+        "flow_exit_code": 0,
+        "check_exit_code": 0,
+        "minutes": 17.43
+      }
+    }
+  },
+  "writers": {
+    "7b": {
+      "repo": "AbrarAlam/disasterm3-qwen2.5vl7b-l0s2-mergedFP",
+      "commit": "def8f6c81889ffb68904afdc90c3a1389697d73b",
+      "served_name": "disasterm3-7b",
+      "sees_pictures": true,
+      "generation_config": {
+        "bos_token_id": 151643,
+        "do_sample": true,
+        "eos_token_id": [
+          151645,
+          151643
+        ],
+        "pad_token_id": 151643,
+        "repetition_penalty": 1.05,
+        "temperature": 1e-06,
+        "transformers_version": "5.16.1"
+      },
+      "server_overrides": null,
+      "load_minutes": 4.0,
+      "scenes_minutes": 62.3,
+      "server_log_lines": [
+        "(Worker_TP0 pid=293) INFO 11-21 01:34:01 [model_runner.py:302] Model loading took 7.9 GiB and 66.550624 seconds",
+        "(Worker_TP1 pid=294) INFO 11-21 01:34:01 [model_runner.py:302] Model loading took 7.9 GiB and 66.561575 seconds",
+        "(Worker_TP0 pid=293) INFO 11-21 01:34:09 [gpu_worker.py:538] Available KV cache memory: 5.29 GiB",
+        "(EngineCore pid=267) INFO 11-21 01:34:09 [kv_cache_utils.py:2146] GPU KV cache size: 198,176 tokens",
+        "(EngineCore pid=267) INFO 11-21 01:34:09 [kv_cache_utils.py:2147] Maximum concurrency for 32,768 tokens per request: 6.05x",
+        "e been overridden by the model's `generation_config.json`: `{'repetition_penalty': 1.05, 'temperature': 1e-06}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`."
+      ],
+      "smoke_tests": {
+        "text": "A building damage grade is an assessment of the extent of structural and non-structural damage to a building after an event such as an earthquake or hurricane.",
+        "fixed flow": "OK"
+      }
+    },
+    "3b-instruct": {
+      "repo": "Qwen/Qwen2.5-3B-Instruct",
+      "commit": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "served_name": "qwen2.5-3b-instruct",
+      "sees_pictures": false,
+      "generation_config": {
+        "bos_token_id": 151643,
+        "pad_token_id": 151643,
+        "do_sample": true,
+        "eos_token_id": [
+          151645,
+          151643
+        ],
+        "repetition_penalty": 1.05,
+        "temperature": 0.7,
+        "top_p": 0.8,
+        "top_k": 20,
+        "transformers_version": "4.37.0"
+      },
+      "server_overrides": {
+        "top_p": 1.0,
+        "top_k": -1
+      },
+      "load_minutes": 1.8,
+      "scenes_minutes": 180.1,
+      "server_log_lines": [
+        "', 'max_model_len': 32768, 'enforce_eager': True, 'served_model_name': ['qwen2.5-3b-instruct'], 'override_generation_config': {'top_p': 1.0, 'top_k': -1}, 'tensor_parallel_size': 2, 'max_num_seqs': 8}",
+        "(Worker_TP0 pid=1245) INFO 11-21 02:39:26 [model_runner.py:302] Model loading took 2.94 GiB and 4.571611 seconds",
+        "(Worker_TP1 pid=1246) INFO 11-21 02:39:26 [model_runner.py:302] Model loading took 2.94 GiB and 4.633666 seconds",
+        "(Worker_TP0 pid=1245) INFO 11-21 02:39:32 [gpu_worker.py:538] Available KV cache memory: 10.32 GiB",
+        "(EngineCore pid=1219) INFO 11-21 02:39:32 [kv_cache_utils.py:2146] GPU KV cache size: 601,264 tokens",
+        "(EngineCore pid=1219) INFO 11-21 02:39:32 [kv_cache_utils.py:2147] Maximum concurrency for 32,768 tokens per request: 18.35x",
+        "model's `generation_config.json`: `{'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': -1, 'top_p': 1.0}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`."
+      ],
+      "smoke_tests": {
+        "text": "A building damage grade is a classification system used to assess the extent of structural and non-structural damage to buildings following an event such as an earthquake or flood.",
+        "fixed flow": "OK"
+      }
+    }
+  },
+  "minutes": 253.0,
+  "max_model_len": 32768,
+  "versions": {
+    "vllm": "0.25.1",
+    "crewai": "1.15.2",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.20.2",
+    "openai": "2.54.0",
+    "numpy": "2.1.3",
+    "pillow": "13.0.0",
+    "huggingface_hub": "1.33.0"
+  },
+  "code_packed": "2026-11-21 06:33:03",
+  "code_git_commit": "1a5f38094",
+  "code_uncommitted_changes": true,
+  "code_files_found_at": {
+    "DisasterManagement_teamwork_simulation.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/DisasterManagement_teamwork_simulation.py",
+    "Disaster_image/Global_image/2.jpg": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/Disaster_image/Global_image/2.jpg",
+    "Disaster_image/Local_image/Picture1.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/Disaster_image/Local_image/Picture1.png",
+    "Disaster_image/Local_image/Picture2.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/Disaster_image/Local_image/Picture2.png",
+    "Disaster_image/Local_image/Picture3.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/Disaster_image/Local_image/Picture3.png",
+    "Disaster_image/Local_image/Picture4.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/Disaster_image/Local_image/Picture4.png",
+    "Disaster_image/Local_image/Picture5.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/Disaster_image/Local_image/Picture5.png",
+    "Disaster_image/Local_image/Picture6.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/Disaster_image/Local_image/Picture6.png",
+    "c4_scenes/buildings_c4_scenes.sqlite": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/c4_scenes/buildings_c4_scenes.sqlite",
+    "c4_scenes/hotspots_c4_scenes.json": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/c4_scenes/hotspots_c4_scenes.json",
+    "c4_scenes/scenes.json": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/c4_scenes/scenes.json",
+    "check_run.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/check_run.py",
+    "disasteller_inputs.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/disasteller_inputs.py",
+    "fixed_flow.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/fixed_flow.py",
+    "fixed_flow_c4.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/fixed_flow_c4.py",
+    "global_annotation_tool.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/global_annotation_tool.py",
+    "global_img_tool.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/global_img_tool.py",
+    "local_img_tool.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/local_img_tool.py",
+    "local_model.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/local_model.py",
+    "number_check.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/number_check.py",
+    "pdf_search_tool.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/pdf_search_tool.py",
+    "run_with_netlog.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/run_with_netlog.py",
+    "t2b_flow.py": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_flow.py",
+    "t2b_scenes/buildings_c4_scenes.sqlite": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/buildings_c4_scenes.sqlite",
+    "t2b_scenes/hotspots_c4_scenes.json": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/hotspots_c4_scenes.json",
+    "t2b_scenes/photos/beriut_explosion_post_16.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/beriut_explosion_post_16.png",
+    "t2b_scenes/photos/beriut_explosion_pre_16.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/beriut_explosion_pre_16.png",
+    "t2b_scenes/photos/hawaii_wildfire_post_646.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/hawaii_wildfire_post_646.png",
+    "t2b_scenes/photos/hawaii_wildfire_pre_646.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/hawaii_wildfire_pre_646.png",
+    "t2b_scenes/photos/joplin_tornado_00000147_post_disaster.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/joplin_tornado_00000147_post_disaster.png",
+    "t2b_scenes/photos/joplin_tornado_00000147_pre_disaster.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/joplin_tornado_00000147_pre_disaster.png",
+    "t2b_scenes/photos/libya_flood_post_90.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/libya_flood_post_90.png",
+    "t2b_scenes/photos/libya_flood_pre_90.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/libya_flood_pre_90.png",
+    "t2b_scenes/photos/moore_tornado_00000045_post_disaster.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/moore_tornado_00000045_post_disaster.png",
+    "t2b_scenes/photos/moore_tornado_00000045_pre_disaster.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/moore_tornado_00000045_pre_disaster.png",
+    "t2b_scenes/photos/noto_earthquake_post_162.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/noto_earthquake_post_162.png",
+    "t2b_scenes/photos/noto_earthquake_pre_162.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/noto_earthquake_pre_162.png",
+    "t2b_scenes/photos/palu_tsunami_00000180_post_disaster.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/palu_tsunami_00000180_post_disaster.png",
+    "t2b_scenes/photos/palu_tsunami_00000180_pre_disaster.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/palu_tsunami_00000180_pre_disaster.png",
+    "t2b_scenes/photos/santa_rosa_wildfire_00000155_post_disaster.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/santa_rosa_wildfire_00000155_post_disaster.png",
+    "t2b_scenes/photos/santa_rosa_wildfire_00000155_pre_disaster.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/santa_rosa_wildfire_00000155_pre_disaster.png",
+    "t2b_scenes/photos/turkey_earthquake4_post_327.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/turkey_earthquake4_post_327.png",
+    "t2b_scenes/photos/turkey_earthquake4_pre_327.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/turkey_earthquake4_pre_327.png",
+    "t2b_scenes/photos/tuscaloosa_tornado_00000037_post_disaster.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/tuscaloosa_tornado_00000037_post_disaster.png",
+    "t2b_scenes/photos/tuscaloosa_tornado_00000037_pre_disaster.png": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/photos/tuscaloosa_tornado_00000037_pre_disaster.png",
+    "t2b_scenes/pip_constraints.txt": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/pip_constraints.txt",
+    "t2b_scenes/scenes.json": "/kaggle/input/datasets/tamannamou123/disasteller-offline-t2b/t2b_scenes/scenes.json"
+  }
+}

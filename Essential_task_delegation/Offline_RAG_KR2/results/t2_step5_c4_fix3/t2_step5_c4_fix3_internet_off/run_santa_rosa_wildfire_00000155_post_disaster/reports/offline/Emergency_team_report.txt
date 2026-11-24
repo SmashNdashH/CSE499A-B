@@ -1,0 +1,12 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Emergency Service Team Report: Shelters, Hospitals and Transportation Recovery
+
+## Emergency shelters
+Based on the Sphere Handbook 2018 guidelines, the safe areas identified in the post-disaster analysis, particularly those in the south-west of the photo, are suitable for establishing emergency shelters. These areas are 386, 300, and 251 pixels from the nearest estimated damage, ensuring they are safe from the wildfire's impact. According to the guidelines, each affected household should have a minimum of 45 square meters of living space in and around their shelters to perform daily activities. Given the destruction of the built environment, it is critical to provide adequate space for essential household and livelihood activities, respecting local culture and lifestyles. The location and settlement planning standard emphasizes maintaining privacy and dignity, ensuring that each household shelter opens onto common space or a screened area, not onto the entrance of another shelter. Therefore, these safe areas will serve as viable locations for emergency shelters, adhering to the Sphere Handbook 2018 recommendations.
+
+## Hospitals
+Given the extensive destruction caused by the wildfire, no intact hospitals or medical facilities are present in the affected area. Consequently, no medical points are available for setting up in the current scenario. According to the INSARAG guidelines [INSARAG3-6.2-p2], medical evacuation plans must be checked, and risk assessments conducted for emergency situations. Since no medical facilities are operational, the focus should be on ensuring that any rescued individuals are transported to nearby functional medical centers. If no such centers are available, arrangements must be made to transport casualties to neighboring regions or specialized facilities. In the absence of staff, teams, or shelters, the priority should be on securing safe transportation for injured individuals to receive immediate medical attention.
+
+## Immediate transportation recovery
+The immediate transportation recovery should prioritize reopening the road encircled by the destroyed built environment in the south-east of the photo. This is crucial for clearing debris and facilitating access for rescue operations and debris removal. Ensuring the road is passable will enable efficient movement of emergency responders and supplies to the affected area, thereby mitigating further hazards and supporting the recovery process.

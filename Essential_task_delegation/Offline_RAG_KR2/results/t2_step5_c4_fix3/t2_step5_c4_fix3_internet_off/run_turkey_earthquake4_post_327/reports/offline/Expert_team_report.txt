@@ -1,0 +1,18 @@
+Mode: offline, fixed flow, with C4's damage facts
+
+# Expert Team Report: Post-Disaster Satellite Photos, Estimated Damage and Disaster Grades
+
+## Overview
+The earthquake caused significant structural damage to 32 buildings, classified as EMS-98 Grade 5, with total or near-total collapse. Additionally, 11 buildings sustained moderate to very heavy damage, categorized as Grades 2 to 4. The remaining 54 buildings remained intact with negligible to slight damage. The disaster primarily affected the built environment, with no visible impacts on the road network or open-space ground.
+
+## Description of the photos and the estimated damage
+The pre-earthquake photo (turkey_earthquake4_pre_327.png) shows no visible damage to buildings, roads, or open-space ground. The post-earthquake photo (turkey_earthquake4_post_327.png) reveals widespread structural damage to buildings, with debris scattered across the affected zones. Roads appear inundated, with visible water accumulation disrupting their surface. Open-space ground shows signs of flooding as well, with water pooling in areas that were previously dry. The estimated damage facts indicate 32 buildings were destroyed, 11 buildings sustained moderate to very heavy damage, and 54 buildings remained intact with negligible to slight damage. Hot spots of dense damage are concentrated in three areas: the north-west, west, and north-east of the photo, while safe areas are located in the south-east, with distances from the nearest estimated damage ranging from 254 to 412 pixels.
+
+## Disaster grade of each location
+The disaster grades of the estimated buildings, written from the damage model's table by the code, not by the language model:
+- Buildings estimated destroyed: 32: EMS-98 Grade 5, destruction [EMS98-masonry-grade-5]
+- Buildings estimated damaged: 11: EMS-98 Grades 2 to 4, moderate to very heavy damage [EMS98-masonry-grade-2] [EMS98-masonry-grade-3] [EMS98-masonry-grade-4]
+- Buildings estimated intact: 54: no visible damage, at most EMS-98 Grade 1, negligible to slight damage [EMS98-masonry-grade-1]
+
+## Conclusion
+The estimated damage indicates that the earthquake caused severe destruction to 32 buildings, classified as EMS-98 Grade 5, with total or near-total collapse. This highlights the critical need for immediate assistance in these hotspots, particularly in the north-west, west, and north-east of the photo, where the highest concentration of structural damage is evident. Efforts should focus on clearing debris, stabilizing partially collapsed structures, and ensuring safety for affected residents. Additionally, efforts must address the inundation of roads and open-space ground to restore accessibility and prevent further environmental degradation.

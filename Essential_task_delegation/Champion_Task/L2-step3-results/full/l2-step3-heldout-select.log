@@ -1,0 +1,32 @@
+[{"stream_name":"stderr","time":6.661653043,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.661692179,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.661696356,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.661699041,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.20791837,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.207948543,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.207960095,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.207962692,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":17.88068395,"data":"✓ {'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'peft': '0.22.0'}, python 3.13.16; torchao: not installed\n"}
+,{"stream_name":"stdout","time":17.882602854,"data":"  GPUs: ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":44.016666396,"data":"✓ L2 step 3: models ('base', 'b', 'c'); images at most 602,112 pixels\n"}
+,{"stream_name":"stdout","time":431.454454189,"data":"✓ 1,962 held-out questions {'BDC': 682, 'BBR': 385, 'DRE': 363, 'DSR': 348, 'ORR': 100, 'DTR': 84}; in the primary score: 1,669\n"}
+,{"stream_name":"stdout","time":3195.272254409,"data":"✓ base: 1,962 answers in 46.1 min; first: ['D, C', 'A, B, E, F, G', 'F, G', 'D, E, H']\n"}
+,{"stream_name":"stdout","time":5869.443471942,"data":"✓ b: 1,962 answers in 44.6 min; first: ['A, C, D', 'A, B, C, F, G', 'D, E, F', 'C, E, H']\n"}
+,{"stream_name":"stdout","time":8538.419942001,"data":"✓ c: 1,962 answers in 44.5 min; first: ['D, C', 'A, B, G, F', 'D, E, H', 'C, E, H']\n"}
+,{"stream_name":"stdout","time":8538.626472426,"data":"model  primary_%  all_%  DTR_%  BBR_%  BDC_%  DRE_%  DSR_%  ORR_%  counting_largest_above_20_%  middle_picked_above_20_%  bdc_median_count_error_%\n"}
+,{"stream_name":"stdout","time":8538.626502638,"data":" base      27.80  26.71  66.67   6.75  30.94  24.24  38.79    8.0                        20.48                      20.5                      20.0\n"}
+,{"stream_name":"stdout","time":8538.626509419,"data":"    b      35.95  31.24  77.38  24.94  21.99  31.96  50.57   10.0                         4.44                       4.4                      38.8\n"}
+,{"stream_name":"stdout","time":8538.626515022,"data":"    c      45.12  44.24  73.81  19.22  53.23  48.48  41.95   47.0                        39.25                      39.2                       0.0\n"}
+,{"stream_name":"stdout","time":8538.626520426,"data":"For scale, on the same counting questions: {'no_image_rule_on_counting_%': 56.08, 'always_middle_on_counting_%': 42.78, 'always_middle_largest_above_20_%': 100.0}\n"}
+,{"stream_name":"stdout","time":8538.62652611,"data":"\n"}
+,{"stream_name":"stdout","time":8538.626531559,"data":"Winner: (c): primary accuracy 35.95% (b) against 45.12% (c), exact McNemar p = 0.0000\n"}
+,{"stream_name":"stdout","time":8538.704470117,"data":"✓ Wrote /kaggle/working/L2S3: selection.json, scores.csv, per_question.csv, README.md\n"}
+,{"stream_name":"stderr","time":8544.319512351,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":8544.319544087,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":8544.460811079,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":8544.46086457,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":8545.192650221,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":8545.298259926,"data":"[NbConvertApp] Writing 314313 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":8547.775451571,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":8548.372121143,"data":"[NbConvertApp] Writing 611301 bytes to __results__.html\n"}
+]

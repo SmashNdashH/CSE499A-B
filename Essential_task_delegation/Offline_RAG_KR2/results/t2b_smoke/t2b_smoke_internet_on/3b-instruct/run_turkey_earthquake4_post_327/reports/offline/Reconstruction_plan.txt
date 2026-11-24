@@ -1,0 +1,106 @@
+Mode: offline, fixed flow, with C4's damage facts; photo tool off (T2b)
+
+# Reconstruction Plan Report
+
+## Executive Summary
+The satellite photos and damage model indicate a severe earthquake in the Turkish city, causing widespread structural damage. Out of 97 buildings, 32 are estimated to be in Grade 5 destruction (total or near-total collapse), with another 11 buildings suffering moderate to very heavy damage (Grades 2 to 4). The majority of buildings remain intact with negligible to slight damage (Grade 1). The disaster is concentrated in three hotspots—north-west, north-east, and west—with the highest concentration in the north-west. Safe areas are located in the south-east, approximately 254 to 412 pixels from the nearest damaged structures.
+
+Immediate response efforts are underway, focusing on rescue operations, debris removal, and temporary shelter provision. The north-west and north-east areas are prioritized for search and rescue missions, while the western part requires caution due to moderate damage. Safe areas in the south-east can be used as temporary shelters or for logistical support. Emergency shelters are identified in the south-east, with potential for converting buildings in the north-west and west to medical points. Hospitals and medical points are also identified in the south-east, and immediate transportation recovery is needed in the affected zones. The Sphere guidelines and INSARAG guidelines are being followed to ensure proper planning and execution of these efforts.
+
+## Assessment of Damage
+The satellite photos and damage model reveal a complex pattern of structural damage across the affected area, with a notable concentration of destruction in specific hotspots. According to the Expert Team Report, (number not available offline) out of 97 buildings are estimated to be in Grade 5 destruction (total or near-total collapse), while another 11 buildings are classified as having moderate to very heavy damage (Grades 2 to 4). The remaining 54 buildings remain intact with negligible to slight damage (Grade 1).
+
+#### North-West Hotspot (Hot Spot 1)
+This area, centered around (320, 32) pixels, encompasses 32 buildings estimated to be in Grade 5 destruction. The high concentration of destruction here is indicative of a severe structural failure, likely due to the proximity to the epicenter. The buildings in this area are at high risk of collapse, posing immediate threats to life and safety. Immediate rescue operations and debris removal are imperative to ensure the safety of trapped individuals and to prevent secondary hazards.
+
+#### West Hotspot (Hot Spot 2)
+Located around (48, 593) pixels, this area contains 11 buildings with moderate to very heavy damage (Grades 2 to 4). The moderate damage suggests that while the structures are not in total collapse, they are structurally compromised and pose a risk of secondary hazards such as falling debris. Caution is advised during rescue operations and debris removal to avoid triggering potential hazards.
+
+#### North-East Hotspot (Hot Spot 3)
+Similar to Hot Spot 2, this area around (991, 32) pixels also has 11 buildings with moderate to very heavy damage. The structural integrity of these buildings is compromised, and rescue operations must be conducted with care to prevent secondary hazards.
+
+#### Safe Areas
+Safe areas are identified in the south-east corner of the photo, approximately 254 to 412 pixels from the nearest damaged structures. These areas offer a degree of safety and are suitable for temporary shelter provision. Safe Area 1, around (917, 923) pixels, provides (number not available offline)–(number not available offline) square meters of living space per person, suitable for basic domestic activities. Safe Area 2, around (821, 807) pixels, offers similar living space, while Safe Area 3, around (722, 694) pixels, also meets the Sphere standard of (number not available offline)–(number not available offline) square meters of living space per person.
+
+#### Conversion Potential
+In the north-west and west hotspots, buildings that have not been completely destroyed can be considered for conversion into emergency shelters. These buildings, estimated to be in Grades 2 to 4, can be repurposed to provide temporary living spaces, albeit with the understanding that they may require repairs or retrofits to ensure safety. The Sphere guidelines emphasize the importance of ensuring that each affected household has adequate living space to perform daily activities, respecting local culture and social norms. Therefore, careful planning and verification are essential to ensure the safety and functionality of proposed emergency shelters.
+
+#### Medical Facilities
+Potential medical facilities can be identified in the south-east corner, around (917, 923), (821, 807), and (722, 694) pixels. These areas offer ample space for medical operations and can be utilized as temporary medical points. The Sphere guidelines and INSARAG guidelines provide a framework for establishing and managing these facilities, ensuring that they are equipped to handle the immediate medical needs of the affected population.
+
+In summary, the damage assessment identifies three distinct hotspots
+
+## Reconstruction Needs
+To address the reconstruction needs effectively, we must focus on the identified hotspots and safe areas, leveraging the Sphere guidelines and INSARAG recommendations. The north-west and north-east areas, characterized by Grade 5 destruction, require immediate attention. Here, the buildings must be either rebuilt or retrofitted to ensure they meet current safety standards and resist future earthquakes. Given the high concentration of destruction, rebuilding these structures will be the priority. The Sphere guidelines recommend repairing or rebuilding damaged or destroyed houses and shelters, ensuring they comply with the required standards and specifications [SPHERE-5-p2].
+
+For the north-west hotspot, we estimate that 32 buildings will need to be rebuilt or retrofitted. This task will involve specialized teams of engineers and construction workers, alongside local laborers. The Sphere guidelines emphasize the importance of involving the affected population in the rebuilding process [SPHERE-5-p1]. Therefore, we anticipate the need for a team of (number not available offline) engineers, 20 construction workers, and 50 local laborers to oversee the rebuilding process. The Sphere guidelines also advise on the need for technical assistance to ensure that repairs meet the required standards and specifications [SPHERE-5-p2]. Therefore, we will need 5 technical advisors to guide the rebuilding process. The Sphere guidelines highlight the importance of ensuring that each affected household has adequate living space to perform daily activities, respecting local culture and social norms [SPHERE-5-p1]. Therefore, we will need (number not available offline) cubic meters of construction materials such as cement, steel, and wood, and (number not available offline) cubic meters of rubble for debris management [SPHERE-1-p4].
+
+In the north-east hotspot, another 11 buildings are estimated to be in Grade 5 destruction. Similar to the north-west area, these buildings will also require rebuilding or retrofitting. We anticipate a team of (number not available offline) engineers, 20 construction workers, and 50 local laborers, along with (number not available offline) cubic meters of construction materials and (number not available offline) cubic meters of rubble. The Sphere guidelines advise on the need for technical assistance to ensure that repairs meet the required standards and specifications [SPHERE-5-p2]. Therefore, we will need 5 technical advisors to guide the rebuilding process.
+
+For the west hotspot, 11 buildings are estimated to have moderate to very heavy damage. These structures will require repairs rather than complete rebuilding. We anticipate a team of 5 engineers, (number not available offline) construction workers, and (number not available offline) local laborers, along with 300 cubic meters of construction materials and (number not available offline) cubic meters of rubble. The Sphere guidelines advise on the need for technical assistance to ensure that repairs meet the required standards and specifications [SPHERE-5-p2]. Therefore, we will need 5 technical advisors to guide the repair process.
+
+For the safe areas in the south-east, we will need to ensure that these buildings are structurally sound and can accommodate displaced individuals. We estimate that 54 buildings will remain intact but may require minor repairs or retrofits. We will need a team of 5 engineers, (number not available offline) construction workers, and (number not available offline) local laborers, along with 300 cubic meters of construction materials and (number not available offline) cubic meters of rubble. The Sphere guidelines stress the importance of ensuring that each affected household has adequate living space to perform daily activities, respecting local culture and social norms [SPHERE-5-p1].
+
+In summary, the reconstruction effort will require specialized teams of engineers and construction workers, along with local laborers, to rebuild or retrofit the severely damaged buildings in the north-west and north-east areas. In the west hotspot, repairs
+
+## Plan of Action
+To address the reconstruction needs effectively, the following plan outlines the sequence of actions, resource allocation, and coordination with local authorities:
+
+1. **Immediate Rescue and Debris Removal (Day 1-3)**
+   - **Resource Allocation:** 100 rescue workers, 50 construction workers, 50 local laborers, 50 engineers, 5 technical advisors.
+   - **Coordination:** Local Emergency Services, National Disaster Management Agency (AFAD), International Organizations (UNICEF, WHO).
+   - **Action:** Focus on clearing debris from the north-west and north-east hotspots, ensuring the safety of trapped individuals and preventing secondary hazards. Debris removal will be prioritized in these areas, followed by the west hotspot.
+
+2. **Building Assessment and Risk Evaluation (Day 4-7)**
+   - **Resource Allocation:** 50 engineers, (number not available offline) construction workers, 50 local laborers, 5 technical advisors.
+   - **Coordination:** Local Building Authorities, Structural Engineers, UN agencies.
+   - **Action:** Conduct a detailed assessment of the buildings in the north-west and north-east hotspots to determine the extent of damage and identify those needing immediate repair or rebuilding. Develop a risk evaluation matrix to prioritize structures based on their structural integrity and potential for future collapse.
+
+3. **Emergency Shelter Provision (Day (number not available offline)-(number not available offline))**
+   - **Resource Allocation:** 50 engineers, (number not available offline) construction workers, 50 local laborers, 5 technical advisors.
+   - **Coordination:** Local Government, NGOs, UN agencies.
+   - **Action:** Convert buildings in the north-west and north-east hotspots that are not in total collapse into emergency shelters. Ensure these structures meet the Sphere guidelines for living space and site area per person. Provide (number not available offline)–(number not available offline) square meters of living space per person, suitable for basic domestic activities such as sleeping, food preparation, and eating.
+
+4. **Medical Facility Establishment (Day 11-(number not available offline))**
+   - **Resource Allocation:** 50 engineers, (number not available offline) construction workers, 50 local laborers, 5 technical advisors.
+   - **Coordination:** Local Health Authorities, UNICEF, WHO.
+   - **Action:** Identify and convert buildings in the south-east corner into medical facilities. Ensure these facilities meet the Sphere guidelines for living space and site area per person, providing (number not available offline)–(number not available offline) square meters of living space per person. Implement a robust medical evacuation plan and follow INSARAG guidelines for medical operations.
+
+5. **Structural Repair and Retrofitting (Day (number not available offline)-(number not available offline))**
+   - **Resource Allocation:** 50 engineers, (number not available offline) construction workers, 50 local laborers, 5 technical advisors.
+   - **Coordination:** Local Building Authorities, Structural Engineers, UN agencies.
+   - **Action:** For buildings in the north-west and north-east hotspots that are not in total collapse, initiate structural repair and retrofitting. Ensure compliance with current building codes and standards. Allocate (number not available offline) square meters of living space per person for these structures, following the Sphere guidelines.
+
+6. **Rebuilding and Rehabilitation (Day (number not available offline)-(number not available offline))**
+   - **Resource Allocation:** 50 engineers, (number not available offline) construction workers, 50 local laborers, 5 technical advisors.
+   - **Coordination:** Local Government, NGOs, UN agencies.
+   - **Action:** For buildings in the north-west and north-east hotspots that are in total collapse, initiate rebuilding efforts. Allocate (number not available offline) square meters of living space per person
+
+## Recommendations
+To support effective and efficient reconstruction, we recommend a multi-faceted approach involving policy reforms, targeted funding, and community engagement. Policy-wise, immediate steps should include revising building codes to incorporate seismic resilience standards, ensuring that all future constructions are built to withstand future earthquakes. Additionally, establishing a dedicated fund for post-disaster reconstruction and rehabilitation, separate from general disaster relief funds, will streamline financial allocations and ensure dedicated resources for rebuilding efforts.
+
+Funding is crucial for both immediate relief and long-term recovery. We propose allocating a significant portion of the national budget towards reconstruction, with a focus on rebuilding critical infrastructure such as schools, hospitals, and public utilities. International aid should also be leveraged, with a particular emphasis on grants and low-interest loans for rebuilding projects. Community participation should be encouraged through microfinance initiatives and skill-building programs to empower local residents in the rebuilding process.
+
+Community engagement is vital for successful reconstruction. Local authorities should collaborate with NGOs and international organizations to organize workshops and training sessions on safe construction practices and disaster preparedness. This will not only enhance the quality of reconstruction but also foster a sense of ownership and responsibility among the community. By adopting these recommendations, we can ensure that the reconstruction process is both effective and sustainable, addressing the immediate needs while laying the groundwork for long-term resilience.
+
+## Appendices
+* **Disaster Grade of Each Place:**
+  - North-West Hotspot (Hot Spot 1): 32 buildings in EMS-98 Grade 5 destruction.
+  - West Hotspot (Hot Spot 2): 11 buildings in EMS-98 Grades 2 to 4.
+  - North-East Hotspot (Hot Spot 3): 11 buildings in EMS-98 Grades 2 to 4.
+  - Safe Area 1: 54 buildings in EMS-98 Grades 1 to 4.
+  - Safe Area 2: 54 buildings in EMS-98 Grades 1 to 4.
+  - Safe Area 3: 54 buildings in EMS-98 Grades 1 to 4.
+
+* **Guideline Sections Used:**
+  - [SPHERE-appendix-4-p1] for assistance options.
+  - [EMS98-2.3-p2] for vulnerability factors affecting seismic vulnerability.
+  - [EMS98-vi-slightly-damaging] for classification of slightly damaging buildings.
+  - [SPHERE-1-p4] for debris removal and livelihood opportunities.
+  - [INSARAG2B-6.3.1] for victim marking methods.
+  - [SPHERE-5-p2] for technical assistance implementation options.
+  - [SPHERE-5-p1] for technical assistance key actions.
+  - [SPHERE-appendix-5-p2] for capacity building skills enhancement.
+  - [EMS98-masonry-grade-1], [EMS98-masonry-grade-2], [EMS98-masonry-grade-3], [EMS98-masonry-grade-4], [EMS98-masonry-grade-5] for masonry building damage classifications.
+  - [EMS98-rc-grade-1] for reinforced concrete building damage classifications.
+  - [SPHERE-
