@@ -244,6 +244,13 @@ Both can live in one Next.js project, with a story page and a demo page: one des
     - **A requirement for running it anywhere in half precision (fp16, or 4 bits with fp16 compute):** the last block of its vision part, `visual.blocks.31.mlp.down_proj`, must run at full precision. Without that, about 3% of photos make it overflow, and the answer comes out as exclamation marks.
     - The fix is in `l2-step4-winner-benchmark.ipynb`'s cell 2b. The same overflow stopped the 3B's training until L2 step 2b (19 Nov).
     - Full precision (fp32) on a laptop CPU doesn't overflow, but it's slower. L3 step 6 (the laptop) is still open.
+    - *(24 Nov) Measured with the fix:*
+      - *The 4-bit 3B averages 44.49% on the benchmark's six tasks, against our 7B's 39.20%. It leads on counting and relational reasoning, and trails on disaster type, bearing bodies and scene.*
+      - *It takes 1.72 s per question at 3.03 GB peak; the 4-bit 7B takes 4.83 s at 8.64 GB.*
+      - *Two ways to run the field model's questions:*
+        - *the 3B alone (fits "about 6 GB");*
+        - *a per-task split that sends disaster type, bearing bodies and scene to the 7B: 48.15% against 45.04% on the reporting half, but both models loaded, about 11 GB.*
+      - *Abrar's call. Ledger, L3.*
 - **Stretch: uploads on the public site with no server (decided 24 Oct: try it).**
   - ONNX Runtime Web can run an ONNX model in the visitor's browser, so their images never leave their device.
   - Only the segmenter, counts and heatmap could run this way, not the report.

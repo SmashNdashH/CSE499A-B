@@ -1,0 +1,13 @@
+set,method,share_by_3b_%,accuracy_%,s_per_question
+reporting half,7B alone,0.0,39.313,4.825
+reporting half,3B alone (4 bits),100.0,45.04,1.719
+reporting half,hand-off at 0.0000,100.0,45.04,1.719
+reporting half,perfect hand-off (either right),,54.984,
+"reporting half, clean",7B alone,0.0,39.2,4.825
+"reporting half, clean",3B alone (4 bits),100.0,44.908,1.719
+"reporting half, clean",hand-off at 0.0000,100.0,44.908,1.719
+"reporting half, clean",perfect hand-off (either right),,54.917,
+choosing half,7B alone,0.0,39.068,4.825
+choosing half,3B alone (4 bits),100.0,43.935,1.719
+choosing half,hand-off at 0.0000,100.0,43.935,1.719
+choosing half,perfect hand-off (either right),,54.414,

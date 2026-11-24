@@ -1,0 +1,7 @@
+,BDC,DRE,questions
+"our 3B (b), soft labels",32.22,31.41,2002
+"our 3B (c), the 7B's answers",57.39,48.14,2002
+our 3B (c) in 4 bits,53.85,51.15,2002
+our first 7B (CSE499A),32.07,34.55,2002
+our 7B (L0 step 2),31.97,34.81,2002
+blind rule,40.91,30.06,2002

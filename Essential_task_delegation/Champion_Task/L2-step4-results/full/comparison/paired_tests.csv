@@ -1,0 +1,29 @@
+A,B,task,questions,only_A_right,only_B_right,A_minus_B_points,p,beyond_chance
+"our 3B (c), the 7B's answers","our 3B (b), soft labels",DTR,353,17,23,-1.7,0.42959050784338615,False
+"our 3B (c), the 7B's answers","our 3B (b), soft labels",BBR,2006,87,194,-5.33,1.5477634626343697e-10,True
+"our 3B (c), the 7B's answers","our 3B (b), soft labels",BDC,3583,1359,289,29.86,1.047548282405437e-165,True
+"our 3B (c), the 7B's answers","our 3B (b), soft labels",DRE,1868,594,238,19.06,6.895583242819437e-36,True
+"our 3B (c), the 7B's answers","our 3B (b), soft labels",DSR,2007,126,157,-1.54,0.07434854654313808,False
+"our 3B (c), the 7B's answers","our 3B (b), soft labels",ORR,858,245,11,27.27,1.1272110287252922e-58,True
+"our 3B (c), the 7B's answers","our 3B (b), soft labels",all six,10675,2428,912,14.2,4.6695404882133775e-157,True
+"our 3B (c), the 7B's answers",our 7B (L0 step 2),DTR,353,23,75,-14.73,1.3172242120654852e-07,True
+"our 3B (c), the 7B's answers",our 7B (L0 step 2),BBR,2006,161,228,-3.34,0.0007973304160026932,True
+"our 3B (c), the 7B's answers",our 7B (L0 step 2),BDC,3583,797,99,19.48,3.1734976449486287e-136,True
+"our 3B (c), the 7B's answers",our 7B (L0 step 2),DRE,1868,326,72,13.6,1.0719185520011164e-39,True
+"our 3B (c), the 7B's answers",our 7B (L0 step 2),DSR,2007,221,323,-5.08,1.4102184862419135e-05,True
+"our 3B (c), the 7B's answers",our 7B (L0 step 2),ORR,858,204,55,17.37,2.5740931832346056e-21,True
+"our 3B (c), the 7B's answers",our 7B (L0 step 2),all six,10675,1732,852,8.24,2.6273641240087493e-68,True
+our 3B (c) in 4 bits,"our 3B (c), the 7B's answers",DTR,353,13,9,1.13,0.5234670639038086,False
+our 3B (c) in 4 bits,"our 3B (c), the 7B's answers",BBR,2006,84,86,-0.1,0.9388949735923949,False
+our 3B (c) in 4 bits,"our 3B (c), the 7B's answers",BDC,3583,52,110,-1.62,6.058495675070991e-06,True
+our 3B (c) in 4 bits,"our 3B (c), the 7B's answers",DRE,1868,75,36,2.09,0.0002718177522028418,True
+our 3B (c) in 4 bits,"our 3B (c), the 7B's answers",DSR,2007,150,165,-0.75,0.4302693306168298,False
+our 3B (c) in 4 bits,"our 3B (c), the 7B's answers",ORR,858,65,33,3.73,0.0016005802102081266,True
+our 3B (c) in 4 bits,"our 3B (c), the 7B's answers",all six,10675,439,439,0.0,1.0,False
+our 7B (L0 step 2),our first 7B (CSE499A),DTR,353,5,1,1.13,0.21875,False
+our 7B (L0 step 2),our first 7B (CSE499A),BBR,2006,24,43,-0.95,0.027119992403126347,True
+our 7B (L0 step 2),our first 7B (CSE499A),BDC,3583,40,32,0.22,0.4095793959270717,False
+our 7B (L0 step 2),our first 7B (CSE499A),DRE,1868,22,10,0.64,0.050102459732443094,False
+our 7B (L0 step 2),our first 7B (CSE499A),DSR,2007,34,26,0.4,0.36629400670329104,False
+our 7B (L0 step 2),our first 7B (CSE499A),ORR,858,33,3,3.5,2.2721360437572002e-07,True
+our 7B (L0 step 2),our first 7B (CSE499A),all six,10675,158,115,0.4,0.010889404296732156,True

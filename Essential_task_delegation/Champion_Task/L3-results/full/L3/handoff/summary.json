@@ -1,0 +1,92 @@
+{
+ "temperature": 2.0,
+ "threshold": 0.0,
+ "target_choosing_%": 38.06824873047836,
+ "standard_error_points": 0.8,
+ "calibration": {
+  "temperature": 2.0,
+  "at_list_end": false,
+  "ece_T1": 0.4034,
+  "ece_chosen_T": 0.1229,
+  "rc_auc_T1": 0.4035,
+  "rc_auc_chosen_T": 0.3906,
+  "rc_auc_random": 0.5916,
+  "rc_auc_best": 0.2259,
+  "mean_confidence_T1": 0.8112,
+  "accuracy_3b": 0.4084
+ },
+ "both_loaded_gb": 11.06,
+ "speed": {
+  "7b_nf4": {
+   "questions": 60,
+   "weights_gpu_gb": 5.91,
+   "footprint_gb": 5.78,
+   "peak_gpu_gb": 8.64,
+   "s_per_question_mean": 4.825,
+   "s_per_question_median": 5.715,
+   "tokens_per_s": 0.59
+  },
+  "3b_fp16": {
+   "questions": 60,
+   "weights_gpu_gb": 7.53,
+   "footprint_gb": 7.52,
+   "peak_gpu_gb": 8.13,
+   "s_per_question_mean": 1.62,
+   "s_per_question_median": 1.859,
+   "tokens_per_s": 2.12,
+   "disk_gb": 7.51
+  },
+  "3b_nf4": {
+   "questions": 60,
+   "weights_gpu_gb": 2.42,
+   "footprint_gb": 2.35,
+   "peak_gpu_gb": 3.03,
+   "s_per_question_mean": 1.719,
+   "s_per_question_median": 1.913,
+   "tokens_per_s": 2.04,
+   "disk_gb": 2.4
+  }
+ },
+ "expectations": [
+  {
+   "expectation (23 Nov)": "4-bit 3B weights about 2-3 GB",
+   "result": "2.42 GB",
+   "met": true
+  },
+  {
+   "expectation (23 Nov)": "4-bit 3B peak under 4 GB, one question at a time",
+   "result": "3.03 GB",
+   "met": true
+  },
+  {
+   "expectation (23 Nov)": "4-bit 7B peak about 6-7 GB at full size",
+   "result": "8.64 GB",
+   "met": false
+  },
+  {
+   "expectation (23 Nov)": "4-bit 3B slower than fp16 3B",
+   "result": "1.719 s against 1.62 s",
+   "met": true
+  },
+  {
+   "expectation (23 Nov)": "4-bit 3B faster than 4-bit 7B",
+   "result": "1.719 s against 4.825 s",
+   "met": true
+  },
+  {
+   "expectation (23 Nov)": "overconfident at temperature 1: ECE above 0.05",
+   "result": "ECE 0.4034",
+   "met": true
+  },
+  {
+   "expectation (23 Nov)": "a temperature above 1 chosen",
+   "result": "2.0",
+   "met": true
+  },
+  {
+   "expectation (23 Nov)": "4 bits cost at most about 2 points on most tasks",
+   "result": "changes [1.13, -0.1, -1.62, 2.09, -0.75, 3.73]",
+   "met": true
+  }
+ ]
+}

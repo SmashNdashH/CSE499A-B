@@ -234,6 +234,7 @@ Across these papers, specialist models are good at finding and counting, VLMs ar
 - **How we use it (KR4):**
   - QLoRA is for training and AWQ is for running the model. Compress the distilled 3B with AWQ.
   - Report memory (target 6 GB or less), tokens per second and per-task accuracy loss against the 7B.
+  - *(24 Nov, measured: in NF4 the 3B loses nothing overall against fp16 (439 questions went each way of 10,675), uses 2.42 GB for its weights and peaks at 3.03 GB, and is 6% slower than fp16 per question on a T4.)*
   - *(23 Nov: L3 uses bitsandbytes NF4 instead. AutoAWQ's authors stopped maintaining it in 2025, and NF4 is the 4-bit setting H2b measured. NF4 saves the memory but not AWQ's speed: on a T4 it is expected to be slower than fp16. Qwen's own AWQ build is of the base 3B, without our training. AWQ of our merged 3B through a maintained tool (llm-compressor) stays open, worth it only if GPU speed matters. Ledger, L3.)*
 
 ### 4.10 Grace, a two-tier VLM system
@@ -248,6 +249,11 @@ Across these papers, specialist models are good at finding and counting, VLMs ar
 - **How we use it (O4):**
   - Apply the same confidence check to our field 3B and base 7B. When the 3B isn't confident, queue the question for the 7B.
   - Report how many questions stay on the 3B, the accuracy against the 7B alone, and the latency. That turns "two tiers" into a measured result.
+  - *(24 Nov, L3: measured. Grace's confidence (the geometric mean of the answer's token probabilities) was used, calibrated first as TimeSpot advises (§4.15).*
+    - *The confidence is overconfident: mean 0.81 against 0.41 accuracy, calibration error 0.40. Temperature 2.0 brings the error to 0.12.*
+    - *It ranks answers well: the 10% most confident are wrong 14.9% of the time, against 59.2% overall.*
+    - *Unlike Grace's 2B, our 3B is more accurate than our 7B on average (45.0% against 39.3%), so by our fixed rule it answers every question. That's 2.8× faster per question (1.72 s against 4.83 s on a T4).*
+    - *Splitting by task instead of by confidence (the 7B for disaster type, bearing bodies and scene) reaches 48.15%, but needs both models loaded. Ledger, L3.)*
 
 ### 4.11 EfficientSAM3
 - **Source:** arXiv 2511.15833; weights on GitHub.
@@ -411,6 +417,7 @@ Across these papers, specialist models are good at finding and counting, VLMs ar
 - *(c)'s lead comes from counting and relational reasoning, the tasks its extra teacher pass covered. (b) is ahead on disaster type, bearing bodies and scene recognition.*
 - *(b)'s building counting fell below the untrained 3B's (22.0% against 30.9%).*
 - *On the held-out counting questions whose options don't give the answer away, (c) gets 56.4%, against 39.0% for a rule that never sees the photo.*
+- *(24 Nov, the benchmark: (c) 43.74% and (b) 32.47% on the six tasks, against our 7B's 39.20%. The student learned from the teacher's checked answers only, and beats it on counting and relational reasoning; it trails on disaster type, bearing bodies and scene.)*
 
 *[Results](Champion_Task/L2-step3-results/full/L2S3/README.md); ledger, L2 step 2.)*
 

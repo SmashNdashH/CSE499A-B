@@ -1565,6 +1565,28 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
         - On the 3,562 fair questions, (c) gets 52.3%, our 7B 33.2% and the blind rule 36.2%. That's 847 against 167 and 1,059 against 484 questions only one side got right, p < 10⁻⁴⁸.
         - **By the rule fixed before the run, the counting lead is more than the options' pattern.**
     - **Rerun with the fix** (decision rows, 23 Nov): (c) and (b) at once on account 2. The smoke test adds 12 questions that overflowed.
+  - **Run 5 again, with the fix (24 Nov).**
+    - **Kaggle:**
+      - Smoke test: version 3, queued 15:12–23:15 on 23 Nov (Kaggle had no T4s on any account), then passed. The 12 questions that had overflowed now get real answers from both 3Bs; [saved](Champion_Task/L2-step4-results/smoke-with-fix/L2S4/README.md).
+      - Full run: version 4, 23:17–03:40, (c) and (b) at once, one per T4 (4.35 h of quota for both).
+      - [Results](Champion_Task/L2-step4-results/full/L2S4/README.md); the first run is kept in `full-before-fix/`.
+    - **Against the expectation fixed before the rerun:** no answer overflows (0 for each 3B, against 327); every task at least the first run's (all six rose, by 0.15 to 3.12 points). Both met.
+    - **Accuracy (%) on the 10,675 optical questions:**
+
+      | | DTR | BBR | BDC | DRE | DSR | ORR | Mean |
+      |---|---|---|---|---|---|---|---|
+      | (c) | 62.04 | 16.65 | 49.79 | 46.63 | 35.38 | 51.98 | **43.74** |
+      | (b), scored after the choice | 63.74 | 21.98 | 19.93 | 27.57 | 36.92 | 24.71 | 32.47 |
+      | our 7B | 76.77 | 19.99 | 30.31 | 33.03 | 40.46 | 34.62 | 39.20 |
+
+    - **Against the expectation fixed 8 Nov** ("below the new 7B on most tasks"): missed. (c) is below on three tasks (disaster type, bearing bodies, scene) and above on three (both counting tasks, relational reasoning).
+    - **The checks** ([l2-step4b-clean-and-options-check.ipynb](Champion_Task/l2-step4b-clean-and-options-check.ipynb), PC; [results](Champion_Task/L2-step4-results/full/checks/README.md)):
+      - **Clean:** without the 186 copied questions, (c) 43.43%, our 7B 38.99%. The largest move is 1.11 points (DTR), and no task changes which model is ahead.
+      - **Counting, on the 3,562 fair questions:** (c) 53.34%, our 7B 33.21%, the blind rule 36.16%. That's 871 against 154 and 1,083 against 471 questions only one side got right (p < 10⁻⁵⁴). By the rule fixed before the run, the counting lead is more than the options' pattern. (c) picks the middle on pattern questions 40.0% of the time against the 7B's 27.5%; the expectation "at least 1.5 times as often" missed narrowly.
+    - **Every model, side by side** ([l2-step4c-model-comparison.ipynb](Champion_Task/l2-step4c-model-comparison.ipynb), PC, Abrar's request; [results](Champion_Task/L2-step4-results/full/comparison/README.md)):
+      - **Paired over all questions:** (c) beats (b) by 14.2 points (2,428 against 912 questions only one got right, p ≈ 10⁻¹⁵⁶). It beats our 7B by 8.2 points (1,732 against 852, p ≈ 10⁻⁶⁸).
+      - **Against the paper's models:** the 3B (c) averages above DisasterM3's own fine-tuned 7B (43.74% against 40.45%), from counting and relational reasoning. It is 21.6 points below it on disaster type.
+      - **(b)'s soft labels:** it beats the untrained models (32.47% against 26.25% and 31.17%), but its building counting (19.93%) is below the untrained 3B's (29.9%), as on the held-out questions.
   - **Session 6 (b), account 2, stalled at step 141 (21 Nov, 18:56):** the two GPUs waited on each other for 30 minutes (an NCCL collective timeout), and the session was killed. It had pushed checkpoints 100–140; checkpoint-140 has the same file sizes as checkpoint-130. The runner stopped (b) at 18:59. On 22 Nov at 12:09 its record was set to step 140 and session 7 started on account 3. The cause is unknown and may recur; each stall costs at most the steps since the last checkpoint (10) and the session's remaining time. (b) is now due about Mon 23 Nov, morning; (c) reached checkpoint-200 of 211 by 22 Nov, 12:30.
 
 ### L3 · The winning 3B in 4 bits and its hand-off to the 7B (built 23 Nov)
@@ -1618,6 +1640,34 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
   - **The overflow:** 220 answers overflowed (the same layer as run 5). Their NaN confidences stopped `l3-handoff-calibration.ipynb`, which now refuses any confidence that isn't a number.
   - **The check that missed it:** `greedy_ok` (each chosen token the top score) passes NaN scores, because argmax of NaNs picks token 0, the token generate chose. Each answer now also records `finite`.
   - **Rerun with the fix** on account 3 (decision row); the smoke test adds 12 questions that overflowed. The hand-off waits for it.
+- **Rerun with the fix (24 Nov).**
+  - **Kaggle:**
+    - Smoke test: version 3, queued 15:16–23:15 on 23 Nov, then passed. 0 overflowed answers, every score a number, and the 12 that had overflowed answered; [saved](Champion_Task/L3-results/smoke-with-fix/L3/README.md).
+    - Full run: version 4, 23:25–03:39, 4.2 h.
+    - [Results](Champion_Task/L3-results/full/L3/README.md); the first run is kept in `full-before-fix/`.
+  - **One question at a time on one T4:**
+
+    | | Weights | Peak | Seconds per question |
+    |---|---|---|---|
+    | 4-bit 3B | 2.42 GB | **3.03 GB** | 1.72 |
+    | fp16 3B | 7.52 GB | 8.10 GB | 1.62 |
+    | 4-bit 7B (full size) | 5.91 GB | 8.64 GB | 4.83 |
+
+    The 4-bit 3B is 2.8 times faster than the 4-bit 7B.
+  - **Accuracy in 4 bits:** mean of six 44.49% (DTR 63.17, BBR 16.55, BDC 48.17, DRE 48.72, DSR 34.63, ORR 55.71). Against fp16 (run 5), task changes are from −1.62 to +3.73 points. Over all questions, 439 went each way, so there's no overall difference (p = 1.0). They gave the same answer on 56–91% of questions per task.
+  - **The hand-off, by the rule fixed 23 Nov** ([l3-handoff-calibration.ipynb](Champion_Task/l3-handoff-calibration.ipynb), PC; [results](Champion_Task/L3-results/full/L3/handoff/README.md)):
+    - **Calibration:** overconfident at temperature 1 (mean confidence 0.81 against 0.41 accuracy; ECE 0.403). The temperature chosen on the choosing half is 2.0, which brings ECE to 0.123 on the reporting half.
+    - **Ranking:** the risk–coverage area is 0.391 (random order 0.592, the best possible 0.226). Among the 10% most confident answers, 14.9% are wrong, against 59.2% over all.
+    - **Threshold:** 0. The 3B alone (43.9% on the choosing half) is already above the 7B's 39.1% minus 1 point, so by the rule it answers every question.
+    - **Reporting half:** 3B 45.04% against the 7B's 39.31%, at 1.72 s per question against 4.83 s. If each question went to whichever model got it right, accuracy would be 54.98%.
+  - **A follow-up, its rule stated before computing (24 Nov):** per task, the model more accurate on the choosing half answers.
+    - The choosing half picked the 7B for disaster type, bearing bodies and scene, and the 3B for building counting, road damage and relational reasoning.
+    - On the reporting half: **48.15%**, against 45.04% for the 3B alone and 39.31% for the 7B. The 3B answers 59.3% of the questions.
+    - The cost: the 7B must be loaded too (about 11 GB with both), outside "about 6 GB". Abrar's call whether the field system uses it.
+  - **Against the expectations:**
+    - Met: the 3B's weights 2–3 GB and peak under 4 GB; 4 bits slower than fp16 and faster than the 7B; at most about 2 points lost on most tasks; overconfident at temperature 1; a temperature above 1 chosen; no overflow; accuracy at least the first run's.
+    - Missed: the 4-bit 7B's peak, 8.64 GB against 6–7 GB, because of its full-size photos. Also speed within 5% of the first run: the 3B was 6% faster this time, and so was the 7B, which has no fix, so it's the machine.
+  - **What remains:** L3 step 6, the laptop with no GPU.
 
 ## 8. Housekeeping
 

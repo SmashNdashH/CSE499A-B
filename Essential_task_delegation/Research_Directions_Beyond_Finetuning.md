@@ -438,7 +438,7 @@ A caveat: on these questions, a rule that never looks at the image scores 66.98%
 0. **Done (18 October): R9, R10 and R9's second seed.** R9 (sampler + copy-paste) is the best Destroyed recipe, but its two-seed mean is 0.2971 with TTA, so the gate is not claimed and fine-tuning is closed. Next is the E1 diagnosis (Phase2_Plan §3), which needs no training.
 1. **SAM 3 test E3** (about 2 days, no training). It decides whether the SAM 3 direction is viable.
 2. **A pre + post input run** for the U-Net (lever 1). It's one change, tested with the same noise-bar method as R1–R8.
-3. **An edge benchmark**: INT8 U-Net and 4-bit 3B VLM, with latency, memory and accuracy.
+3. **An edge benchmark**: INT8 U-Net and 4-bit 3B VLM, with latency, memory and accuracy. *Status (24 Nov): both measured. The 8-bit before-and-after U-Net (L1c, the R11 model) is 33.2 MB, takes 1.75 s per image on a CPU and loses 0.0014 Destroyed IoU. The 4-bit 3B (L3) peaks at 3.03 GB on one T4, takes 1.72 s per question and averages 44.49% on the six tasks, against 39.20% for our 7B. Still open: the 3B on a laptop with no GPU (L3 step 6). Details: Task_Ledger, L1c and L3.*
 4. **RAG plus the agent layer**, to build the offline DisasTeller (O3).
 5. **Find-then-grade object-level damage** (R16), if E3 passes.
 6. **Diffusion-generated data and PNNs** as future work in the report.

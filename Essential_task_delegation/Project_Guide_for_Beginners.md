@@ -50,7 +50,7 @@ This file explains the whole project from zero: what it is, the data, every part
 | **O1:** damage map | Mean IoU above 0.52 and destroyed-building IoU above 0.30 | **Met** by the chosen method, C4: destroyed IoU 0.350 and mean IoU 0.588 on the 605 clean validation pairs; 0.430 and 0.556 on the 2,007 unseen test pairs | [E7 step 2c](Champion_Task/E7-results/step2c/README.md) |
 | **O2:** counting and the language model's benchmark | Building counting above the base model's 34.2%, and all six benchmark tasks re-scored | **Met on the measure promised** (35.34% from C4's map), but that measure is flawed (a rule that never looks at the photo gets 66.98%), so count error is reported beside it. All six tasks re-scored (our 7B: 39.20% mean) | [E7 step 3](Champion_Task/E7-results/step3/README.md), [the flaw](Champion_Task/benchmark-option-rule-check.ipynb), [L0 step 2](Champion_Task/L0-step2-results/new-partA/L0S2/README.md) |
 | **O3:** one offline system | The report system on our own model, with the damage map, counts and heatmap, internet off | **Met:** the whole chain ran offline on two test pairs; 0 wrong numbers out of 178; made-up guideline IDs blocked | [T2 step 7](Offline_RAG_KR2/results/t2_step7/README.md), [ID guard](Offline_RAG_KR2/results/t2b_id_guard/README.md) |
-| **O4:** field model | A small segmenter and a distilled 3B language model in about 6 GB | **Segmenter met** (33 MB, 8-bit). **3B trained and chosen;** in 4 bits it uses 2.42 GB of GPU memory for its weights and 3.01 GB at its peak. Its benchmark scores are being re-measured (Part 8) | [L1b](Champion_Task/L1B-results/L1b/README.md), [L2 step 3](Champion_Task/L2-step3-results/full/L2S3/README.md), [L3](Champion_Task/L3-results/full-before-fix/L3/README.md) |
+| **O4:** field model | A small segmenter and a distilled 3B language model in about 6 GB | **Met.** Segmenter: 33 MB, 8-bit. The 3B: in 4 bits it peaks at 3.03 GB and averages 44.49% on the six benchmark tasks, against our 7B's 39.20% | [L1b](Champion_Task/L1B-results/L1b/README.md), [comparison](Champion_Task/L2-step4-results/full/comparison/README.md), [L3](Champion_Task/L3-results/full/L3/README.md) |
 
 ---
 
@@ -385,8 +385,8 @@ Three methods were built. The system uses a mix of two.
 | 8-bit after-only U-Net | R9 exported to ONNX and stored in 8 bits, with the first and last convolutions and two decoder convolutions kept in fp32 | 33 MB; 1.6 s per photo on a 4-thread CPU (1.43× the fp32 ONNX); destroyed IoU down only 0.0003; in a browser, the same map as a native run on 100% of pixels in 3–5 s | [L1b](Champion_Task/L1B-results/L1b/README.md) |
 | 8-bit before-and-after U-Net (the website's model since 18 Nov) | R11, the same recipe | 33.2 MB; 1.75 s per pair; destroyed IoU down 0.0014 | [L1c](Champion_Task/L1C-results/L1c/README.md) |
 | The 3B, option (c) | Qwen2.5-VL-3B with a LoRA adapter trained one epoch on the 7B's checked answers (53,032 training entries) | Chosen over (b) on held-out questions: 45.12% against 35.95% | [L2 step 3](Champion_Task/L2-step3-results/full/L2S3/README.md) |
-| The 3B in 4 bits | The same, loaded in 4 bits (bitsandbytes NF4) | 2.42 GB of weights, 3.01 GB peak, 1.8 s per question on one T4 | [L3](Champion_Task/L3-results/full-before-fix/L3/README.md) |
-| The hand-off | The 3B answers; if its confidence is low, the question goes to the 7B. The threshold is set by a rule fixed before the run | Waiting for the rerun (Part 8) | [l3-handoff-calibration.ipynb](Champion_Task/l3-handoff-calibration.ipynb) |
+| The 3B in 4 bits | The same, loaded in 4 bits (bitsandbytes NF4), with the overflow fix | 2.42 GB of weights, 3.03 GB peak, 1.72 s per question on one T4; 44.49% on the six tasks, no loss against normal precision | [L3](Champion_Task/L3-results/full/L3/README.md) |
+| The hand-off | The 3B answers; if its confidence is low, the question goes to the 7B. The threshold is set by a rule fixed before the run | The confidence needed calibrating (temperature 2.0). Because the 3B alone beats the 7B on average, the rule lets the 3B answer everything. A per-task split (the 7B for disaster type, bearing bodies and scene) would reach 48.15% against 45.04%, with both models loaded | [hand-off](Champion_Task/L3-results/full/L3/handoff/README.md) |
 
 ### 5.8 The website
 
@@ -595,22 +595,24 @@ So the system uses fixed queries only. [H2b](Champion_Task/H2b-results/H2b/READM
 
 ### 7.9 Every 7B and 3B on the benchmark's six tasks
 
-Accuracy (%) on the 10,675 optical questions. The 3B (c) rows are from the first runs, before the overflow fix (327 and 220 answers lost, scored wrong), so they are slightly too low; the fixed reruns are running (Part 8). The 3B (b) has no benchmark score yet.
+Accuracy (%) on the 10,675 optical questions, with the overflow fix (24 Nov). Source: [the comparison](Champion_Task/L2-step4-results/full/comparison/README.md).
 
 | Model | DTR | BBR | BDC | DRE | DSR | ORR | Mean |
 |---|---|---|---|---|---|---|---|
 | Qwen2.5-VL-3B, untrained (paper) | 56.1 | 5.7 | 29.9 | 21.2 | 30.8 | 13.8 | 26.2 |
-| Our 3B (c), before the fix | 58.92 | 16.10 | 48.20 | 44.70 | 35.23 | 51.63 | 42.46 |
-| Our 3B (c) in 4 bits, before the fix | 60.06 | 16.15 | 47.20 | 47.86 | 34.43 | 55.83 | 43.59 |
+| Our 3B (b), soft labels | 63.74 | 21.98 | 19.93 | 27.57 | 36.92 | 24.71 | 32.47 |
+| Our 3B (c), the 7B's answers | 62.04 | 16.65 | 49.79 | 46.63 | 35.38 | 51.98 | 43.74 |
+| Our 3B (c) in 4 bits | 63.17 | 16.55 | 48.17 | 48.72 | 34.63 | 55.71 | 44.49 |
 | Qwen2.5-VL-7B, untrained (paper) | 66.6 | 4.7 | 34.2 | 29.3 | 28.3 | 23.9 | 31.2 |
 | Our first 7B (CSE499A), full size | 75.64 | 20.94 | 30.09 | 32.39 | 40.06 | 31.12 | 38.37 |
 | Our 7B (L0 step 2), full size | 76.77 | 19.99 | 30.31 | 33.03 | 40.46 | 34.62 | 39.20 |
 | DisasterM3's fine-tuned 7B (paper) | 83.6 | 21.5 | 34.3 | 29.4 | 37.7 | 36.2 | 40.4 |
 
 - **What the 3B's numbers mean:** it beats its 7B teacher on counting and relational reasoning, and trails it on disaster type, bearing bodies and scene. It learned from the 7B's *checked* answers, with counting and relational questions re-answered with the options shown.
-- **Is the counting lead real?** On the 3,562 counting questions whose options don't give the answer away, the 3B got 52.3%, our 7B 33.2% and the blind rule 36.2%, both gaps far beyond chance (checked on the first runs). [Checks](Champion_Task/L2-step4-results/full-before-fix/checks/README.md).
-- **Clean scores:** dropping the 186 copied questions moves every score by at most 1.19 points.
-- **Sources:** the paper's Table 2 (`others/lit review_research papers/DisasterM3.md`), [L0 step 1](Champion_Task/L0-step1-results/L0S1/README.md), [L0 step 2](Champion_Task/L0-step2-results/new-partA/L0S2/README.md), [run 5](Champion_Task/L2-step4-results/full-before-fix/L2S4/README.md), [L3](Champion_Task/L3-results/full-before-fix/L3/README.md).
+- **Is the counting lead real?** On the 3,562 counting questions whose options don't give the answer away, the 3B got 53.3%, our 7B 33.2% and the blind rule 36.2%, both gaps far beyond chance. [Checks](Champion_Task/L2-step4-results/full/checks/README.md).
+- **Paired over all questions:** the 3B (c) beats (b) by 14.2 points and our 7B by 8.2 points, both beyond chance. 4 bits and normal precision are level (439 questions each way).
+- **Clean scores:** dropping the 186 copied questions moves every score by at most 1.11 points, and no task changes which model is ahead.
+- **Sources:** the paper's Table 2 (`others/lit review_research papers/DisasterM3.md`), [L0 step 1](Champion_Task/L0-step1-results/L0S1/README.md), [L0 step 2](Champion_Task/L0-step2-results/new-partA/L0S2/README.md), [run 5](Champion_Task/L2-step4-results/full/L2S4/README.md), [L3](Champion_Task/L3-results/full/L3/README.md). The first runs, before the fix, are kept in `full-before-fix/`.
 
 ### 7.10 Choosing between the two 3Bs (L2 run 4, 1,962 held-out training questions)
 
@@ -630,13 +632,13 @@ Accuracy (%) on the 10,675 optical questions. The 3B (c) rows are from the first
 | R11 in 8 bits (ONNX) | 33.2 MB | 1.75 s per pair (4-thread CPU) | destroyed IoU −0.0014 | [L1c](Champion_Task/L1C-results/L1c/README.md) |
 | EfficientSAM3 (3 small finders) | about 100M parameters each | 0.6–0.7 s per photo on a T4 | building IoU 0.010–0.054 against SAM 3's 0.630: not usable | [L4](Champion_Task/L4-results/L4/README.md) |
 
-One question at a time on one T4 GPU (L3's first run, 60 questions; the timed questions never overflowed, so these stand):
+One question at a time on one T4 GPU (L3 with the overflow fix, 60 questions):
 
 | Model | GPU memory, weights | GPU memory, peak | Seconds per question |
 |---|---|---|---|
-| 3B (c), 4 bits | 2.42 GB | **3.01 GB** | 1.83 |
-| 3B (c), fp16 | 7.52 GB | 8.10 GB | 1.73 |
-| Our 7B, 4 bits, full-size photos | 5.91 GB | 8.64 GB | 5.19 |
+| 3B (c), 4 bits | 2.42 GB | **3.03 GB** | 1.72 |
+| 3B (c), fp16 | 7.52 GB | 8.10 GB | 1.62 |
+| Our 7B, 4 bits, full-size photos | 5.91 GB | 8.64 GB | 4.83 |
 
 ### 7.12 Tests that didn't help (kept so nobody repeats them)
 
@@ -656,19 +658,9 @@ One question at a time on one T4 GPU (L3's first run, 60 questions; the timed qu
 
 ## Part 8. What is running now, and what remains
 
-### 8.1 Running now (24 Nov, from about 23:20 on 23 Nov)
+### 8.1 Running now: nothing (24 Nov, 04:30)
 
-| Run | What it does | Account | Expected end |
-|---|---|---|---|
-| L2 run 5, rerun with the overflow fix | Both 3Bs, (c) and (b), on the 10,675 benchmark questions, one per GPU | acc2 | about 03:30–05:30 |
-| L3, rerun with the fix | The 3B (c) in 4 bits: memory, speed, and every answer with its confidence | acc3 | about 04:00–05:30 |
-
-**Right after, on the PC (a few minutes):**
-1. Save both runs in `L2-step4-results/full/` and `L3-results/full/`.
-2. Run `l2-step4b-clean-and-options-check.ipynb`: the clean scores and the counting check on the fixed answers.
-3. Run `l3-handoff-calibration.ipynb`: the 3B's confidence, and the threshold for handing questions to the 7B.
-4. Run `l2-step4c-model-comparison.ipynb`: the full comparison of every 7B and 3B (Part 7.9, with (b), the clean scores and the paired tests).
-5. Update the core documents.
+The two reruns with the overflow fix finished at 03:39 and 03:40. They're saved in `L2-step4-results/full/` and `L3-results/full/`, and the three PC notebooks ran: the checks, the hand-off and the comparison (Parts 7.9–7.11).
 
 ### 8.2 Open tasks
 

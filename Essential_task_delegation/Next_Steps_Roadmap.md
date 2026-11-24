@@ -953,6 +953,13 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
 *Run 5 (the benchmark) runs on account 2 and L3's full run on account 3, from 09:33. [Results](Champion_Task/L2-step3-results/full/L2S3/README.md); ledger, L2 step 2.)*
 
 *(23 Nov, 15:30: both benchmark runs lost answers to a half-precision overflow: run 5 lost 327 and L3 220, scored wrong. It's L2 step 2b's overflow, whose fix the evaluation notebooks lacked. Both are rerun with the fix, and (b) is scored too, for Abrar's comparison of every model. Run 4's choice stands. Ledger, L2 step 2 and L3.)*
+
+*(24 Nov, 03:40: the reruns are done, with 0 overflowed answers.*
+- *Mean of the six tasks: (c) 43.74%, (b) 32.47%, our 7B 39.20%, DisasterM3's own fine-tuned 7B 40.45%.*
+- *(c) leads on both counting tasks and relational reasoning, and trails the 7B on the other three.*
+- *On the fair counting questions it gets 53.3% against the 7B's 33.2% and the blind rule's 36.2%.*
+
+*[Comparison](Champion_Task/L2-step4-results/full/comparison/README.md); ledger, L2 step 2.)*
   - **Built 8 Nov, dry-run checked on the PC:** [l2-step1b-soft-labels](Champion_Task/l2-step1b-soft-labels.ipynb) (account 3; **running 18 Nov**), [l2-step1c-options-rerun](Champion_Task/l2-step1c-options-rerun.ipynb) (account 2; **done 18 Nov: 806 kept of 2,249 answered, [results](Champion_Task/L2-step1-results/options-rerun/L2S1c/README.md)**), [l2-step2-train-3b](Champion_Task/l2-step2-train-3b.ipynb) (`MODE` b on account 3, c ready now), [l2-step3-heldout-select](Champion_Task/l2-step3-heldout-select.ipynb) and [l2-step4-winner-benchmark](Champion_Task/l2-step4-winner-benchmark.ipynb) (account 2). Run steps in the tracker; details in the [ledger](Task_Ledger.md), L2 step 2.
 
 ### L2b · Explanations as a second skill ("why?" on request)
@@ -982,6 +989,12 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
   - *[l3-handoff-calibration.ipynb](Champion_Task/l3-handoff-calibration.ipynb), on the PC: the calibration and threshold, from that run and the 7B's saved answers.*
 
   *4 bits come through bitsandbytes NF4, not AutoAWQ, which is no longer maintained. The rule and expectation are fixed in both notebooks' first cells. The smoke test passed (07:33–07:42): the 4-bit 3B peaks at 3.01 GB on one T4. The full run starts once L2 run 4 names the winner. Step 6, the laptop CPU, is still open. Ledger, L3.)*
+- *(24 Nov: steps 1–5 done, rerun with the overflow fix.*
+  - *The 4-bit 3B scores 44.49% on the six tasks, no loss against fp16 overall. One question at a time on a T4 it peaks at 3.03 GB and takes 1.72 s; the 4-bit 7B takes 8.64 GB and 4.83 s.*
+  - *The confidence is overconfident (calibration error 0.40), and temperature 2.0 brings it to 0.12.*
+  - *By the rule fixed 23 Nov, the 3B answers everything, since it beats the 7B alone.*
+  - *A per-task split, its rule stated before computing, reaches 48.15%: the 7B answers disaster type, bearing bodies and scene. But it needs both models loaded, about 11 GB: Abrar's call.*
+  - *Step 6, the laptop CPU, is still open. [Results](Champion_Task/L3-results/full/L3/handoff/README.md); ledger, L3.)*
 
 ### L4 · EfficientSAM3 against SAM 3
 - **Source:** [Paper] EfficientSAM3 (its paper reports no results yet, so we measure) and [Plan] the edge step of the SAM 3 test plan (Research_Directions §7.4).
