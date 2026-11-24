@@ -1,0 +1,6 @@
+count from,median_error,mean_error,exact_%,answered_%
+C4 raw count,2.0,3.78,13.2,100.0
+C4 nearest option,1.0,2.46,42.2,100.0
+blind rule,1.0,2.2,40.9,100.0
+our 7B,3.0,4.55,32.0,100.0
+3B (c),0.0,1.95,57.4,100.0

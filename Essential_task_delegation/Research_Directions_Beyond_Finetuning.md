@@ -394,6 +394,8 @@ So the chain turns the map into a building table, answers counts with fixed quer
 
 A caveat: on these questions, a rule that never looks at the image scores 66.98% (benchmark-option-rule-check.ipynb). Accuracy there can't show counting ability, so counts are also judged by their error against the true masks.
 
+*(25 Nov, E7 step 3c: on the fair questions, whose largest option is 20 or less, the distilled 3B picks the right count more often than C4's map, 57.45% against 42.2%, and C4 is no better than the blind rule. The reports still take their counts from the table, because they need counts per building, area and grade. Whether the 3B counts without options is untested.)*
+
 ### 8.8 Our supervisor's two suggestions: super-resolution and reinforcement learning (recorded 17 Nov)
 
 **Super-resolution (SR): a sharper picture before a model reads it.**

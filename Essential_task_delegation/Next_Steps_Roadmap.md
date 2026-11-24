@@ -48,7 +48,7 @@ What each finished task found, and the decisions it led to, are in [Task_Ledger.
 | Claim | Model behind it |
 |---|---|
 | Destroyed-building target on clean data (0.3065, mean of three graders) | SAM 3 + the step-5 grader |
-| Best counting (32.96%; 32.47% on clean questions; **7 Nov: a rule that never sees the image scores 66.98%, so this doesn't show counting ability; see the ledger, §7**) | R11's per-building table |
+| Best counting (32.96%; 32.47% on clean questions; **7 Nov: a rule that never sees the image scores 66.98%, so this doesn't show counting ability; see the ledger, §7**). *19 Nov: C4's map 35.34%. 25 Nov: on the fair questions (largest option 20 or less) C4 is no better than that rule, 42.2% against 40.9%, and the 3B (c) scores 57.45% ([E7 step 3c](Champion_Task/E7-results/step3c/README.md))* | R11's per-building table; since 19 Nov, C4's |
 | Field model (33 MB, CPU) | R9 in 8-bit integers |
 
 Checked on 4 Nov: R11's table and T1's hot spots share only 7 images (2,437 images with buildings in the table, 645 with hot spots), so today no report can draw on both for almost any image. More parts would add hand-offs and edge cases. The next job is one chain, measured as one.
@@ -345,7 +345,7 @@ These apply to every task, so an agent doesn't have to rediscover them.
   - All six checks passed; C4's test scores reproduce (0.4295 destroyed-building IoU against 0.4296).
   - **Table:** 125,439 rows. On the sharper photos, 57,849 outlines, 24.5% more rows than E7 step 2's joined blobs (touching buildings separated; expected 5–20%). On xBD photos, 67,590 patches of R11's pixels.
   - **Hot spots:** marked points within 20 px of real damage 0.569 on the 2,007 clean pairs (expected 0.70–0.85: missed), but 0.827 on the 687 photos with destroyed buildings (T1 v3 on validation: 0.851). The shortfall is on photos without destroyed buildings.
-  - **Counting, beside:** C4 34.89% on E5's clean questions, against R11's 32.53% and find-then-grade's 32.70%, beyond chance (p < 0.0001 and 0.0034); 35.34% on all 3,580, above O2's 34.2% bar, with the option flaw stated beside it.
+  - **Counting, beside:** C4 34.89% on E5's clean questions, against R11's 32.53% and find-then-grade's 32.70%, beyond chance (p < 0.0001 and 0.0034); 35.34% on all 3,580, above O2's 34.2% bar, with the option flaw stated beside it. *(25 Nov, step 3c: on the 2,000 fair questions C4 is no better than the blind rule, 42.2% against 40.9% (p = 0.46); the 3B (c) scores 57.45%. [Results](Champion_Task/E7-results/step3c/README.md).)*
 - **Next: Ridita's T2 step 5** reads `E7-results/step3/buildings_c4.sqlite` and `hotspots.json`. Optional checks on the PC (Abrar's call): counting from the outline rows; the hot-spot shortfall's cause; a stricter hot-spot rule tuned on validation. *(20 Nov: step 5 done by Abrar; see T2, step 5.)*
 - **Step 3b done (20 Nov, PC, 6.0 min, at Abrar's request): the three optional checks; every guess missed.** [Results](Champion_Task/E7-results/step3b/README.md).
   - **Counting from the rows:** 33.18% against the joined blobs' 34.89% (p < 0.0001). The benchmark's true count joins touching buildings, so separate rows overshoot it. O2's figure stays the blobs'.

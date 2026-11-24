@@ -1,0 +1,8 @@
+A,B,A_%,B_%,only_A_right,only_B_right,p
+C4 (blobs),blind rule,42.2,40.9,585,559,0.46
+C4 (blobs),our 7B,42.2,32.0,519,315,1.62e-12
+3B (c),C4 (blobs),57.45,42.2,616,311,6.99e-24
+3B (c),blind rule,57.45,40.9,616,285,9.79e-29
+R11 alone,blind rule,41.55,40.9,573,560,0.721
+find-then-grade alone,blind rule,40.25,40.9,574,587,0.725
+C4 (building table),blind rule,42.1,40.9,585,561,0.497

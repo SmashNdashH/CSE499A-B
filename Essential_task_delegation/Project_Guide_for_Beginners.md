@@ -48,7 +48,7 @@ This file explains the whole project from zero: what it is, the data, every part
 | Goal | Target | Status on 24 Nov 2026 | Main evidence |
 |---|---|---|---|
 | **O1:** damage map | Mean IoU above 0.52 and destroyed-building IoU above 0.30 | **Met** by the chosen method, C4: destroyed IoU 0.350 and mean IoU 0.588 on the 605 clean validation pairs; 0.430 and 0.556 on the 2,007 unseen test pairs | [E7 step 2c](Champion_Task/E7-results/step2c/README.md) |
-| **O2:** counting and the language model's benchmark | Building counting above the base model's 34.2%, and all six benchmark tasks re-scored | **Met on the measure promised** (35.34% from C4's map), but that measure is flawed (a rule that never looks at the photo gets 66.98%), so count error is reported beside it. All six tasks re-scored (our 7B: 39.20% mean) | [E7 step 3](Champion_Task/E7-results/step3/README.md), [the flaw](Champion_Task/benchmark-option-rule-check.ipynb), [L0 step 2](Champion_Task/L0-step2-results/new-partA/L0S2/README.md) |
+| **O2:** counting and the language model's benchmark | Building counting above the base model's 34.2%, and all six benchmark tasks re-scored | **Met as written, but it doesn't show that C4 counts.** C4's map scores 35.34%, above 34.2%, yet a rule that never looks at the photo gets 66.98% on these questions. On the 2,000 fair ones (largest option 20 or less), C4 scores 42.2%, no better than that rule's 40.9% (p = 0.46), though ahead of our 7B's 32.0%. **The distilled 3B (c) scores 57.45% there,** ahead of both beyond chance and of any rule that picks by option position (at most 40.9%), and its counts are the closest. All six tasks re-scored (the 3B: 43.74% mean; our 7B: 39.20%) | [E7 step 3](Champion_Task/E7-results/step3/README.md), [the fair questions (E7 step 3c)](Champion_Task/E7-results/step3c/README.md), [the flaw](Champion_Task/benchmark-option-rule-check.ipynb), [every model](Champion_Task/L2-step4-results/full/comparison/README.md) |
 | **O3:** one offline system | The report system on our own model, with the damage map, counts and heatmap, internet off | **Met:** the whole chain ran offline on two test pairs; 0 wrong numbers out of 178; made-up guideline IDs blocked | [T2 step 7](Offline_RAG_KR2/results/t2_step7/README.md), [ID guard](Offline_RAG_KR2/results/t2b_id_guard/README.md) |
 | **O4:** field model | A small segmenter and a distilled 3B language model in about 6 GB | **Met.** Segmenter: 33 MB, 8-bit. The 3B: in 4 bits it peaks at 3.03 GB and averages 44.49% on the six benchmark tasks, against our 7B's 39.20% | [L1b](Champion_Task/L1B-results/L1b/README.md), [comparison](Champion_Task/L2-step4-results/full/comparison/README.md), [L3](Champion_Task/L3-results/full/L3/README.md) |
 
@@ -334,7 +334,7 @@ Three methods were built. The system uses a mix of two.
 | How | On the sharper photos, one row per building that SAM 3 outlined; on xBD photos, one row per connected patch of the U-Net's pixels (at least 20 px). A column `kind` says which |
 | Output | `buildings_c4.sqlite` (SQLite database): 125,439 rows on 2,065 test photos (57,849 outlines, 67,590 patches). Columns: class, area, centre, box, distance to the nearest destroyed building (in pixels: DisasterM3 gives no ground scale) |
 | Counting | Fixed queries written and checked by hand. No language model counts: H2b showed none can be trusted to write the queries (Part 7.8) |
-| Result | 35.34% of the benchmark's 3,580 askable counting questions (34.89% without copied photos), above the 34.2% target. Accuracy is flawed here (Part 3.3) |
+| Result | 35.34% of the benchmark's 3,580 askable counting questions (34.89% without copied photos), above the 34.2% target. Accuracy is flawed here (Part 3.3): on the 2,000 fair questions, whose largest option is 20 or less, C4 scores 42.2%, no better than the blind rule's 40.9% (E7 step 3c, 25 Nov) |
 | Files | [E7 step 3](Champion_Task/E7-results/step3/README.md), [E7 step 3b](Champion_Task/E7-results/step3b/README.md), [H2](Champion_Task/H2-results/H2/README.md) |
 
 ### 5.3 The danger heatmap
@@ -548,6 +548,8 @@ Sources: [E5](Champion_Task/E5-results/E5/README.md), [E7 step 2](Champion_Task/
 | C4's table, one row per building | E7 step 3b | 33.18% (touching buildings count as one in the benchmark's truth) | [E7 step 3b](Champion_Task/E7-results/step3b/README.md) |
 | The blind rule (never sees the photo) | — | 66.98% | [check](Champion_Task/benchmark-option-rule-check.ipynb) |
 | Base Qwen2.5-VL-7B (the target) | The paper | 34.2% | DisasterM3 paper, Table 2 |
+| **On the 2,000 fair questions** (largest option 20 or less): C4's map | E7 step 3c | 42.2%, no better than the blind rule's 40.9% there (p = 0.46); our 7B 32.0% | [E7 step 3c](Champion_Task/E7-results/step3c/README.md) |
+| On the fair questions: the 3B (c) | E7 step 3c | **57.45%**, ahead of C4 and the blind rule beyond chance; no rule that picks by option position gets above 40.9% | [E7 step 3c](Champion_Task/E7-results/step3c/README.md) |
 
 ### 7.6 The danger heatmap
 

@@ -798,6 +798,25 @@ The website's "Try it" page keeps running Method 1 in the visitor's browser, bec
 - **Why these measures:** A uses the benchmark's own scoring (accuracy, plus count error) on the same 3,580 questions. B splits the change into two stages, so each stage changes one thing: the maps, or the photos. C was chosen on validation only and judged once on test, by a bar fixed before.
 - **What else could be used:** for A, true per-building outlines on the sharper photos would show whether the rows count real buildings better than the benchmark's blobs do; the sharper photos' sources have no such outlines. For B and C, map changes tested on validation and confirmed on test (none planned).
 
+### E7 step 3c · C4's counting on the fair questions (run 25 Nov, PC, no GPU)
+- **What:** every counter scored only on the benchmark's fair building-counting questions, those whose largest option is 20 or less (2,000 of 3,580), where the middle option isn't always right. From saved answers: E7 step 3b's per-question file and L2 step 4b's. [Notebook](Champion_Task/e7-step3c-fair-counting.ipynb), [results](Champion_Task/E7-results/step3c/README.md).
+- **Why:** goal 2's 35.34% clears the promised 34.2%, but a rule that never looks at the photo scores 66.98% on these questions, so the number alone can't show counting. L2 step 4b split the 3B's counting this way on 23 Nov; C4, the counter goal 2 is about, hadn't been.
+- **The rule, stated before computing (25 Nov):** L2 step 4b's test applied to C4. Its lead is more than the options' pattern only if, on the fair questions, it beats the blind rule beyond chance (exact McNemar, p < 0.05). The numbers were first seen in a quick check the same day, and the notebook reproduces them. No expectation was fixed in advance, so none is claimed.
+- **Result:**
+
+  | On the 2,000 fair questions | Right | Mean count error (buildings) |
+  |---|---|---|
+  | C4 (blobs) | 42.20% | 2.46 |
+  | blind rule | 40.90% | 2.20 |
+  | our 7B | 32.00% | 4.55 |
+  | **3B (c)** | **57.45%** | **1.95** |
+
+  - **The rule fails:** C4 against the blind rule, only C4 right on 585, only the rule on 559 (p = 0.46). R11 alone (41.55%) and find-then-grade alone (40.25%) are no better either. C4 is ahead of our 7B (p ≈ 10⁻¹²).
+  - **The 3B counts best:** ahead of C4 (p ≈ 10⁻²³) and the blind rule (p ≈ 10⁻²⁸). No rule that picks by option position alone gets above 40.9% (always the second smallest), so its lead is more than a position pattern.
+  - C4's raw count, before taking the nearest option, is off by 3.78 on average (median 2); the true counts there have a median of 4.
+- **What it leads to:** goal 2 is met as written, and is now reported with this beside it. Where the options don't give the answer away, the counter that beats a blind rule is the distilled 3B, not the map. The reports still take their counts from C4's building table, since they need counts per building, area and grade, which a multiple-choice answer can't give. Untested: the 3B's counts without options.
+- **What else could be used:** Tamanna's H5 (count ranges) gives an option-free counting score. The base 7B's own fair-question score would need a GPU run, since its answers per question aren't saved.
+
 ### T2 step 5 · The reports read C4's facts (run 20 Nov, Kaggle account 3, 19 min)
 - **What:** [t2_step5_c4_run.ipynb](Offline_RAG_KR2/t2_step5_c4_run.ipynb); [results](Offline_RAG_KR2/results/t2_step5_c4/README.md). Built by Abrar on 20 Nov in new files only, so Ridita's code stays hers: [fixed_flow_c4.py](Offline_RAG_KR2/disasteller_offline/fixed_flow_c4.py) (her fixed flow, imported unchanged, plus C4's facts), [make_c4_scenes.py](Offline_RAG_KR2/make_c4_scenes.py) and [make_t2_step5_upload.py](Offline_RAG_KR2/make_t2_step5_upload.py).
   - **The facts:** every report's facts start with C4's facts for one before-and-after pair, read through Ridita's bridge (`disasteller_inputs.py`, unchanged): the counts by damage state, the hot spots and the safe areas, each called an estimate. On xBD photos the counts are of areas, since a patch can hold several touching buildings.
