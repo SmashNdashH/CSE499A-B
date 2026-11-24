@@ -143,6 +143,7 @@ Checked on 4 Nov: R11's table and T1's hot spots share only 7 images (2,437 imag
 | H2c | Free-form questions, second try: question–SQL pairs, fine-tuning, an agreement gate, a new test (fallback: the system as it was) | Paper: EHRSQL 2024, TrustSQL | O3, O4 | Data (CPU) + adapter training + eval notebook | ~5–10 | L2 (or the 7B), H2b | Abrar |
 | H3 | VLM input upgrades (before + after, numbered marks, crops) | Paper: TEOChat, GeoPixel, ImageRAG; Tamanna Plan 2 | O2 | Variants in H1 | ~6 each | H1 | Tamanna |
 | H4 | GEOBench-VLM external counting test | Paper: GEOBench-VLM | O2 | Eval notebook | ~1 | H1 | Aryan |
+| H5 | Honest count ranges: a likely range for every count | Tamanna Plan 3; Paper: split conformal prediction (Angelopoulos and Bates, 2021) | O2, O3 | CPU | 0 | E7 (C4) | Tamanna |
 | T2 | DisasTeller on local models | Plan | O3 | GPU notebook | ~2 | — | Ridita |
 | T2b | Who writes the report: the 7B or a small text model (added 4 Nov) | Plan; evidence from H2b and L2's smoke test | O3, O4 | Eval notebook | ~3–4 | T2 steps 5 and 7, E7 | Ridita |
 | T3 | Unified offline demo and public showcase (Vercel website) | Plan + Tamanna Plan 3 | O3 | Website (Vercel) + local API | ~1 | H2, T1, T2 | Abrar (decided 24 Oct) |
@@ -713,6 +714,18 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
     - **Overlap:** 119 of 210 pairs are in DisasterM3 Instruct; 91 clean pairs are scored.
     - **On the 182 clean questions:** accuracy, ours 36.3% against the 7B's 50.0% (the 7B ahead); closer count, ours 110 times against 54 (ours ahead). The question-type rule gets 77.5% on them.
     - **So GEOBench's xBD counting can't support the claim either way.** O2 stays on DisasterM3's clean benchmark. Our 7B's disaster type falls from 61–72% on leaked pairs to 35–46% on clean ones.
+
+### H5 · Honest count ranges (Tamanna's Plan 3, approved 24 Nov)
+- **Source:** [Plan] Tamanna's [Plan 3](Tamanna_task_2/Plan_3/Plan_3_Honest_Count_Ranges.md); [Paper] split conformal prediction (Angelopoulos and Bates, 2021), per group (Mondrian).
+- **Goal:** O2 (a counting score that answer options can't inflate) and O3 (every count in the reports and on the website says how sure it is).
+- **What:** every count C4 prints gets a likely range, for example "about 52 (likely 9 to 95)", set on validation per hazard and widened when R11 and the grader disagree. CPU only.
+- **Approved 24 Nov (Abrar's go), with three changes before the test run:**
+  1. honest wording: 78% on photos with destroyed buildings beside the 92% overall; no "99.7%" from 5 photos; 1.56× on destroyed beside 3.15×;
+  2. a zero is worded "none found" (about 1 in 8 "0 to 0" ranges hides a destroyed building);
+  3. `ranges.json` and `question_ranges.json` committed before any test file is opened.
+- **Steps:** her plan's section 6: reproduce (done on the PC, 24 Nov), extend on validation and freeze the variant by her rule, build `count_ranges.py`, then one test run. Her section 7 fixes the expectations and the keep rule: the ranges go into reports and the website only if photo-level test coverage is at least 0.85.
+- **Test files:** private Kaggle dataset `tamannamou123/h5-inputs` (R11's test maps and E6's four-class masks).
+- **Checked 24 Nov:** her pilot reproduces to 3 decimals; split by photo, 3.12× instead of 3.15× ([ledger, H5](Task_Ledger.md#h5--honest-count-ranges-tamannas-plan-3-approved-24-nov)).
 
 ### T2 · DisasTeller on local models
 - **Source:** [Plan] the CSE499A future work "DisasTeller backend swap" and KR3.

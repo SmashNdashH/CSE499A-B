@@ -136,7 +136,7 @@ The letters say what kind of task it is. Use them to find files; when you explai
 | E | Evaluation and diagnosis, no training | E1 (where errors go), E5 (leaks), E6 (test set), E7 (the chain scored as one) |
 | D5 | Converting extra xBD data | D5, D5b |
 | R16 | Find-then-grade | R16, R16b, R16c steps 1–8 |
-| H | Counting and questions (the "hybrid" part) | H1 (counting), H2 (building table), H2b (SQL agent test), H4 (outside benchmark) |
+| H | Counting and questions (the "hybrid" part) | H1 (counting), H2 (building table), H2b (SQL agent test), H4 (outside benchmark), H5 (count ranges) |
 | T | Products: heatmap, reports, website | T1 (heatmap), T2 (reports), T2b (who writes), T3 (website) |
 | L | Language model and field models | L0 (better 7B), L0b (7B vision test), L1 (8-bit U-Net), L2 (3B), L3 (4-bit 3B), L4 (small finder) |
 | O | The four goals | O1 to O4 |
@@ -669,7 +669,8 @@ The two reruns with the overflow fix finished at 03:39 and 03:40. They're saved 
 | L3 step 6 | Memory and speed of the 3B (and the chain) on a laptop with no GPU | Abrar | Not started |
 | Blind reading (T2b) | Abrar fills `reading_sheet.md`; then the writers are revealed beside Gemini's verdict | Abrar | In progress |
 | Report quality beyond numbers | From the blind reading | Abrar, Ridita | Next |
-| Layer 3 steps 1–6 | Baselines, pix2pix, optional diffusion, test pairs | Ridita | Step 1 next |
+| Layer 3 steps 2–6 | pix2pix, optional diffusion, test pairs (step 1, the baselines, done 23 Nov) | Ridita | Step 2a waits for Abrar's go |
+| H5 | A likely range for every count (Tamanna's Plan 3): validation checks, the frozen ranges, then one test run | Tamanna | Approved 24 Nov; her pilot reproduced on the PC |
 | T3 website | The real gallery export wired in, deploy to Vercel, phone and booth-laptop tests | Aryan | Open |
 | Booth live mode | A small local API (FastAPI) for the models that can't run in a browser | — | Not started |
 | L2b | "Why?" explanations as a second skill for the 3B | — | Not started |
