@@ -1681,7 +1681,15 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
   - **Against the expectations:**
     - Met: the 3B's weights 2–3 GB and peak under 4 GB; 4 bits slower than fp16 and faster than the 7B; at most about 2 points lost on most tasks; overconfident at temperature 1; a temperature above 1 chosen; no overflow; accuracy at least the first run's.
     - Missed: the 4-bit 7B's peak, 8.64 GB against 6–7 GB, because of its full-size photos. Also speed within 5% of the first run: the 3B was 6% faster this time, and so was the 7B, which has no fix, so it's the machine.
-  - **What remains:** L3 step 6, the laptop with no GPU.
+  - **Step 6, the laptop with no GPU (run 24–25 Nov on this PC, 8.5 h)** ([l3-step6-laptop-cpu.ipynb](Champion_Task/l3-step6-laptop-cpu.ipynb), [results](Champion_Task/L3-results/laptop/README.md); questions and photos by [l3-step6-download-inputs.py](Champion_Task/l3-step6-download-inputs.py)):
+    - **What:** the same 3B (c), merged and converted for llama.cpp b12237 (the language part in 4 bits, Q4_K_M; the image part in 16 bits; 3.27 GB of files), run on the CPU of an ASUS Vivobook (Core i9-13900H, 14 cores, 16 GB, no NVIDIA GPU).
+    - **Why:** goal 4 asks for a 3B "in about 6 GB", and every earlier number came from a Kaggle T4.
+    - **How:** 360 questions, the 60 L3 timed (the first 10 per task) and 300 more (50 per task, seed 0), asked as on the T4: the same prompts and scorer, photos at most 602,112 pixels, greedy, at most 32 new tokens, one at a time. Each answer is compared with the T4's 4-bit answer to the same question.
+    - **Results:** peak memory 4.67 GB. 84.0 s per question on the timed 60 (median 96.7 s), 82.6 s over all 360. Accuracy 39.72% against the T4's 40.83% (only the laptop right on 14, only the T4 on 18, exact McNemar p = 0.597); the same answer on 80.3%; no garbled or empty answers.
+    - **Where the time goes:** reading the photos, about 47 s each (52 s for one-photo questions, 98 s for two-photo ones). The answer itself takes under 1 s. The photos reach the model at the T4's size (911 prompt tokens with one photo, 1,601 with two).
+    - **Against the expectation (24 Nov):** met: a peak of at most 6 GB, no difference beyond chance, no garbled answers. Missed: 10–60 s per question (84 s).
+    - **Fixed on the way:** loading the processor needed torchvision, which this PC's Python doesn't have, so the processor's files are copied unchanged from the base model. The merge itself had finished and was kept.
+    - **What it leads to:** the 3B fits a laptop and answers as on the T4, so goal 4 holds on the target machine. At about 50 s per photo it suits background work (reports, batches), not live questions. Untested ways to speed it up: fewer image tokens, the image part in 8 bits, fewer threads, or the laptop's Intel graphics. Abrar's call.
 
 ## 8. Housekeeping
 

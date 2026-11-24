@@ -1,0 +1,361 @@
+id,set,task,answer,seconds,prompt_tokens,prompt_ms,answer_tokens,answer_ms,memory_gb_after,truth,correct,t4_answer,t4_correct,same_answer,garbled
+disaster_type_0,speed,DTR,A,100.079,1584,99637.346,2,222.749,3.942,E,False,A,False,True,False
+disaster_type_2,speed,DTR,C,94.659,1583,94246.721,2,186.874,3.852,C,True,C,True,True,False
+disaster_type_4,speed,DTR,C,96.648,1583,96282.068,2,159.595,3.861,D,False,C,False,True,False
+disaster_type_6,speed,DTR,D,95.682,1583,95254.963,2,193.167,3.921,B,False,D,False,True,False
+disaster_type_8,speed,DTR,E,99.247,1583,98880.77,2,175.381,3.974,D,False,B,False,False,False
+disaster_type_10,speed,DTR,B,95.631,1583,95291.055,2,152.322,4.033,C,False,B,False,True,False
+disaster_type_11,speed,DTR,C,96.364,1583,95946.209,2,229.95,4.097,E,False,C,False,True,False
+disaster_type_13,speed,DTR,B,98.262,1584,97917.171,2,154.957,4.059,E,False,D,False,False,False
+disaster_type_15,speed,DTR,C,107.587,1584,107242.369,2,158.742,4.06,C,True,C,True,True,False
+disaster_type_17,speed,DTR,C,113.723,1584,112959.832,2,484.373,3.571,E,False,C,False,True,False
+bearing_body_0,speed,BBR,"B, E, G",112.204,1618,110212.476,6,1500.891,3.698,"B, E, F, G.",False,"B, E, G",False,True,False
+bearing_body_2,speed,BBR,"F,G,H",112.601,1614,111274.347,4,1081.087,3.757,"E, F, G, H.",False,"F, E, G, H",True,False,False
+bearing_body_4,speed,BBR,"E, B, H, F, G",110.446,1617,108490.995,10,1680.503,3.82,"B, E, F, G, H.",True,"B, E, G, H",False,False,False
+bearing_body_6,speed,BBR,"A, E, G, H",103.366,1617,101925.413,8,1184.844,3.876,"A, E, G, H.",True,"A, E, G, H",True,True,False
+bearing_body_8,speed,BBR,"G, H",99.235,1617,98304.771,4,700.523,3.941,"G, H.",True,"F, H",False,False,False
+bearing_body_9,speed,BBR,"A, B, D, E",102.27,1617,100665.747,8,1376.998,4.0,"A, B, D.",False,D,False,False,False
+bearing_body_11,speed,BBR,"B, E, G, H",103.875,1618,102339.871,8,1368.156,4.0,"B, E, G.",False,"B, E, G, H",False,True,False
+bearing_body_12,speed,BBR,"B, E, H",101.662,1616,100578.636,6,791.461,3.93,"A, B, E, F, H.",False,"B, E, H",False,True,False
+bearing_body_14,speed,BBR,"H, G, E, F",100.748,1617,99252.979,8,1292.142,3.935,"A, G, H.",False,"B, H, G, H",False,False,False
+bearing_body_16,speed,BBR,"F, D",96.447,1619,95581.536,4,641.889,3.991,"F, H.",False,F,False,False,False
+building_damage_counting_0,speed,BDC,C,98.587,1602,98145.732,2,183.502,3.894,A,False,C,False,True,False
+building_damage_counting_2,speed,BDC,C,98.998,1595,98275.144,2,153.61,3.926,B,False,C,False,True,False
+building_damage_counting_4,speed,BDC,C,96.55,1596,95786.891,2,192.375,3.867,A,False,E,False,False,False
+building_damage_counting_6,speed,BDC,E,94.133,1597,93351.817,2,137.975,3.818,A,False,E,False,True,False
+building_damage_counting_8,speed,BDC,B,97.812,1593,97416.087,2,226.253,3.884,B,True,B,True,True,False
+building_damage_counting_9,speed,BDC,C,96.904,1594,96556.317,2,168.262,3.936,C,True,C,True,True,False
+building_damage_counting_11,speed,BDC,B,104.428,1596,103597.1,2,217.321,4.0,C,False,B,False,True,False
+building_damage_counting_13,speed,BDC,E,101.377,1595,100405.936,2,175.495,3.821,E,True,E,True,True,False
+building_damage_counting_15,speed,BDC,C,98.209,1595,97455.234,2,154.156,3.883,C,True,C,True,True,False
+building_damage_counting_17,speed,BDC,E,106.401,1592,105930.616,2,210.75,3.944,E,True,E,True,True,False
+road_damage_counting_0,speed,DRE,D,109.667,1607,108867.022,2,183.786,3.808,C,False,D,False,True,False
+road_damage_counting_2,speed,DRE,B,96.711,1607,95948.532,2,171.029,3.876,A,False,B,False,True,False
+road_damage_counting_4,speed,DRE,D,99.167,1607,97916.674,2,416.198,3.76,D,True,D,True,True,False
+road_damage_counting_6,speed,DRE,B,108.932,1606,107812.519,2,517.049,3.166,B,True,B,True,True,False
+road_damage_counting_7,speed,DRE,B,105.442,1608,104307.024,2,194.292,3.84,A,False,B,False,True,False
+road_damage_counting_9,speed,DRE,B,98.494,1607,98098.911,2,153.54,3.767,E,False,E,True,False,False
+road_damage_counting_10,speed,DRE,D,97.629,1611,96756.636,2,181.413,3.828,D,True,D,True,True,False
+road_damage_counting_12,speed,DRE,D,97.015,1604,96183.207,2,175.988,3.887,C,False,D,False,True,False
+road_damage_counting_14,speed,DRE,D,96.514,1607,95736.112,2,174.378,3.945,A,False,B,False,False,False
+road_damage_counting_15,speed,DRE,B,95.352,1611,94638.484,2,156.399,4.011,C,False,B,False,True,False
+landuse_0,speed,DSR,"D, H",46.68,865,45844.914,4,649.796,4.065,"C, D, H.",False,"D, H",False,True,False
+landuse_1,speed,DSR,"A,G,H",48.414,867,47879.345,4,407.353,4.093,"A, D, F, G, H.",False,"A, C, G, H",False,False,False
+landuse_2,speed,DSR,"A, G",46.295,863,45763.279,4,415.221,4.123,"A, D, G.",False,"A, G",False,True,False
+landuse_3,speed,DSR,"D, H",47.157,873,46518.45,4,505.703,4.158,"D, G, H.",False,"D, H, G",True,False,False
+landuse_4,speed,DSR,H,47.428,865,47099.228,2,176.481,4.187,"D, H.",False,H,False,True,False
+landuse_5,speed,DSR,"A, B, F, H",47.972,862,46811.938,8,1011.714,4.217,"A, F, H.",False,"A, B, F, H",False,True,False
+landuse_6,speed,DSR,"C,D,H",47.161,865,46593.93,4,478.965,4.247,"C, D.",False,"A, C, D, G, H",False,False,False
+landuse_7,speed,DSR,"E,F,G",47.966,868,47395.855,4,450.937,4.278,"E, F, G.",True,"A, E, F, G",False,False,False
+landuse_8,speed,DSR,"B, C, E, F, G",50.129,867,48471.541,10,1554.947,4.316,"B, C, G.",False,"A, B, C, E, F, G",False,False,False
+landuse_9,speed,DSR,"B, C, H",50.347,866,49391.625,6,841.014,4.286,"A, B, H.",False,"B, C, H",False,True,False
+relational_reasoning_qa_0,speed,ORR,E,50.637,954,50291.736,2,159.807,4.324,A,False,A,True,False,False
+relational_reasoning_qa_1,speed,ORR,E,49.512,956,49238.372,2,141.552,4.33,A,False,E,False,True,False
+relational_reasoning_qa_2,speed,ORR,E,51.491,964,51230.491,2,143.912,4.33,C,False,D,False,False,False
+relational_reasoning_qa_6,speed,ORR,B,49.474,962,49201.481,2,139.92,4.366,A,False,B,False,True,False
+relational_reasoning_qa_7,speed,ORR,A,52.286,969,51965.604,2,184.586,4.367,E,False,E,True,False,False
+relational_reasoning_qa_8,speed,ORR,A,59.727,971,59378.248,2,204.413,4.251,A,True,A,True,True,False
+relational_reasoning_qa_12,speed,ORR,B,57.687,955,57260.797,2,272.045,3.989,A,False,B,False,True,False
+relational_reasoning_qa_13,speed,ORR,B,53.058,957,52770.462,2,149.787,3.8,A,False,B,False,True,False
+relational_reasoning_qa_14,speed,ORR,D,49.038,951,48748.439,2,166.284,3.803,B,False,D,False,True,False
+relational_reasoning_qa_18,speed,ORR,E,50.9,950,50611.719,2,155.337,3.832,A,False,E,False,True,False
+bearing_body_476,accuracy,BBR,"H, E",94.132,1616,93411.124,4,515.901,3.891,"C, E, H.",False,"H, E",False,True,False
+bearing_body_1385,accuracy,BBR,"A, E, G",100.477,1619,99077.933,6,1091.319,3.922,"A, D, G.",False,"A, E, G",False,True,False
+bearing_body_804,accuracy,BBR,"B, E, F",92.193,1616,91165.195,6,782.97,3.993,"A, B, E, F.",False,"B, E, F",False,True,False
+bearing_body_1554,accuracy,BBR,"A, B, C, E",97.425,1612,96140.622,8,1068.071,3.903,"A, B, C.",False,"A, B, C, E",False,True,False
+bearing_body_940,accuracy,BBR,"B, D",98.13,1614,96971.316,4,957.619,3.965,"B, D.",True,"B, D",True,True,False
+bearing_body_2130,accuracy,BBR,"H, D",98.323,1615,97494.2,4,525.342,4.016,"C, D, F, H.",False,"H, D, C",False,False,False
+bearing_body_1962,accuracy,BBR,H,92.638,1612,92268.207,2,181.447,4.078,"A, F, G, H.",False,H,False,True,False
+bearing_body_838,accuracy,BBR,"G, H",96.782,1615,96078.33,4,442.209,4.144,G.,False,G,True,False,False
+bearing_body_2086,accuracy,BBR,"A, B, E",96.344,1616,95209.703,6,857.636,4.083,"A, B, D, E.",False,"A, B, E",False,True,False
+bearing_body_53,accuracy,BBR,"F, C",94.925,1616,94224.88,4,427.713,4.151,"A, C, F.",False,F,False,False,False
+bearing_body_1461,accuracy,BBR,"G, E",93.944,1614,93202.717,4,553.038,4.201,"A, C, E, G.",False,"G, E",False,True,False
+bearing_body_1035,accuracy,BBR,"D, H",95.261,1616,94498.493,4,515.324,4.261,"A, B, D, G, H.",False,"D, H",False,True,False
+bearing_body_320,accuracy,BBR,"E, B, F",94.563,1617,93148.328,6,1216.036,4.328,"B, E.",False,"B, E, F",False,True,False
+bearing_body_262,accuracy,BBR,"F, E, H",103.121,1617,102065.568,6,813.209,4.271,"B, E, F.",False,"F, E, H",False,True,False
+bearing_body_1010,accuracy,BBR,"E, G",101.024,1617,100256.213,4,569.925,4.278,"B, F, G.",False,"E, G",False,True,False
+bearing_body_996,accuracy,BBR,"D, E, F",94.881,1618,93802.89,6,812.222,4.334,"A, B, D, E.",False,"D, B, E",False,False,False
+bearing_body_523,accuracy,BBR,"D, E, H",108.515,1616,107188.875,6,1093.96,3.901,"B, D, E, H.",False,"D, E, H",False,True,False
+bearing_body_2310,accuracy,BBR,"C, E",102.184,1619,101140.701,4,570.889,3.699,"D, E.",False,"C, E",False,True,False
+bearing_body_712,accuracy,BBR,"C, E, G",98.668,1616,97570.087,6,854.713,3.77,"A, C, D, E, G.",False,"C, G",False,False,False
+bearing_body_819,accuracy,BBR,"D, E, F",96.978,1617,95811.982,6,904.306,3.83,"B, D, E, F.",False,"D, E, F",False,True,False
+bearing_body_2268,accuracy,BBR,"B, E, G",95.315,1614,94341.596,6,761.922,3.885,"B, E, F, G.",False,"B, D, G",False,False,False
+bearing_body_1048,accuracy,BBR,"E, F, H",93.654,1616,92698.293,6,767.624,3.942,"A, E, F, H.",False,"E, F, H",False,True,False
+bearing_body_1455,accuracy,BBR,"G, E",93.603,1617,92965.9,4,436.685,4.005,"A, B, C, E, F, G.",False,"E, G",False,True,False
+bearing_body_2342,accuracy,BBR,"A, D, F, H",92.884,1617,91631.481,8,1036.515,4.065,"A, D, H.",False,"A, D, F, H",False,True,False
+bearing_body_1146,accuracy,BBR,"G, E",96.52,1614,95856.908,4,460.566,4.125,"B, C, E, G.",False,G,False,False,False
+bearing_body_1916,accuracy,BBR,"F, G",94.976,1617,94312.562,4,426.762,4.185,"B, F.",False,"F, G",False,True,False
+bearing_body_560,accuracy,BBR,"D, F, H",96.717,1616,95741.862,6,770.118,4.249,"A, D, H.",False,"D, F, H",False,True,False
+bearing_body_1070,accuracy,BBR,"E, F, G, H",95.358,1618,94115.333,8,1042.222,4.301,"C, E, F, G, H.",False,"E, F, G, H",False,True,False
+bearing_body_623,accuracy,BBR,F,94.435,1619,94056.695,2,162.646,4.364,F.,True,F,True,True,False
+bearing_body_1381,accuracy,BBR,"C, F, G",98.804,1615,97788.397,6,831.997,4.421,"A, C, F.",False,"C, F, G",False,True,False
+bearing_body_863,accuracy,BBR,"E, F, G",96.305,1616,95185.891,6,866.205,4.482,"C, E, F, G, H.",False,"E, F, G",False,True,False
+bearing_body_959,accuracy,BBR,"F, E",95.775,1617,95028.834,4,526.248,4.546,"B, D, E, F.",False,"E, F,",False,True,False
+bearing_body_1521,accuracy,BBR,"H, G",95.357,1615,94601.336,4,511.061,4.553,"D, H.",False,"H, D",True,False,False
+bearing_body_2113,accuracy,BBR,"F,G",95.869,1615,95180.66,3,346.067,4.13,"C, E, F, G.",False,"F, G",False,True,False
+bearing_body_1254,accuracy,BBR,"B, E, G",101.168,1616,99975.348,6,935.336,4.18,"B, C, D, E, G.",False,"B, E, D",False,False,False
+bearing_body_498,accuracy,BBR,"D, G",96.659,1616,95740.038,4,622.348,4.102,"C, D, G, H.",False,"D, H",False,False,False
+bearing_body_1509,accuracy,BBR,"E,F",95.788,1614,94980.553,3,678.83,4.167,"C, E, F.",False,"E, F",False,True,False
+bearing_body_227,accuracy,BBR,G,94.683,1615,94249.098,2,183.072,4.118,"A, C, F, G.",False,G,False,True,False
+bearing_body_583,accuracy,BBR,"B, C, F, G, H",99.441,1619,97585.996,10,1577.703,4.184,"C, E, F, G, H.",False,"B, C, F, G, H",False,True,False
+bearing_body_822,accuracy,BBR,"B, G, H",97.896,1618,96665.939,6,994.019,4.235,"B, C, F, G, H.",False,"B, G, H",False,True,False
+bearing_body_71,accuracy,BBR,"F, H",96.522,1615,95759.056,4,471.363,4.294,"F, G, H.",False,"F, H",False,True,False
+bearing_body_1306,accuracy,BBR,"G, E, C, H",96.147,1616,94797.069,8,1149.309,4.355,"A, C, E, G, H.",False,"G, E, C, H",False,True,False
+bearing_body_1434,accuracy,BBR,"B, C, D, G, H",96.571,1617,94931.858,10,1422.52,4.175,"B, C, D, G, H.",True,"B, C, D, H",False,False,False
+bearing_body_51,accuracy,BBR,"A, E, F",96.098,1612,95016.017,6,845.434,4.237,"A, E, G.",False,"A, E, G",True,False,False
+bearing_body_759,accuracy,BBR,"E, F, H",95.86,1617,94852.92,6,761.72,4.292,"A, E, F, H.",False,"F, E, H",False,True,False
+bearing_body_639,accuracy,BBR,"A, B, E, H",97.858,1617,96468.252,8,1140.183,4.229,"B, D, E.",False,"A, B, E",False,False,False
+bearing_body_432,accuracy,BBR,"B, G",94.722,1617,94038.494,4,443.398,3.998,"B, E, G.",False,"B, G",False,True,False
+bearing_body_360,accuracy,BBR,"C, D, F, H",96.658,1614,95043.656,8,1393.116,4.061,"B, C, D, H.",False,"C, D, F, H",False,True,False
+bearing_body_1850,accuracy,BBR,"F,G",93.968,1618,93357.58,3,352.677,4.117,"A, B, D, F, G, H.",False,"F, G",False,True,False
+bearing_body_1535,accuracy,BBR,"A, B, C, H",95.999,1618,94580.407,8,1167.352,4.197,"A, B, H.",False,"A, B, C, H",False,True,False
+building_damage_counting_1667,accuracy,BDC,C,103.583,1596,103138.594,2,197.53,4.24,A,False,C,False,True,False
+building_damage_counting_103,accuracy,BDC,B,108.578,1597,108032.248,2,245.44,3.993,C,False,B,False,True,False
+building_damage_counting_3004,accuracy,BDC,C,109.773,1592,108988.528,2,434.278,3.77,B,False,C,False,True,False
+building_damage_counting_581,accuracy,BDC,C,108.795,1598,108242.183,2,266.22,3.826,A,False,C,False,True,False
+building_damage_counting_3559,accuracy,BDC,B,105.14,1592,104247.218,2,630.285,3.894,A,False,B,False,True,False
+building_damage_counting_848,accuracy,BDC,D,101.452,1594,100994.535,2,186.503,3.943,D,True,D,True,True,False
+building_damage_counting_1387,accuracy,BDC,E,108.03,1597,106684.531,2,1067.494,3.507,E,True,E,True,True,False
+building_damage_counting_3662,accuracy,BDC,D,98.446,1593,97843.604,2,166.433,3.695,C,False,E,False,False,False
+building_damage_counting_4860,accuracy,BDC,B,97.808,1592,97282.998,2,230.261,3.765,B,True,D,False,False,False
+building_damage_counting_762,accuracy,BDC,C,93.412,1597,92961.66,2,194.518,3.828,B,False,C,False,True,False
+building_damage_counting_1950,accuracy,BDC,B,96.817,1597,96374.034,2,164.888,3.884,C,False,B,False,True,False
+building_damage_counting_265,accuracy,BDC,C,94.148,1592,93786.736,2,163.4,3.938,A,False,B,False,False,False
+building_damage_counting_993,accuracy,BDC,D,96.356,1597,96011.579,2,152.153,3.99,D,True,D,True,True,False
+building_damage_counting_3486,accuracy,BDC,C,97.371,1590,96941.01,2,174.689,4.052,C,True,C,True,True,False
+building_damage_counting_4962,accuracy,BDC,D,95.655,1589,95261.926,2,151.489,4.111,D,True,D,True,True,False
+building_damage_counting_929,accuracy,BDC,C,94.858,1602,94451.756,2,171.083,4.18,B,False,C,False,True,False
+building_damage_counting_1754,accuracy,BDC,C,93.081,1599,92702.17,2,148.542,4.235,A,False,C,False,True,False
+building_damage_counting_1603,accuracy,BDC,D,94.15,1594,93791.611,2,167.29,4.273,D,True,D,True,True,False
+building_damage_counting_49,accuracy,BDC,C,93.955,1600,93501.228,2,147.137,4.127,B,False,C,False,True,False
+building_damage_counting_1546,accuracy,BDC,C,95.421,1599,95049.46,2,173.413,4.131,B,False,C,False,True,False
+building_damage_counting_2797,accuracy,BDC,D,95.296,1592,94559.896,2,509.878,4.188,D,True,D,True,True,False
+building_damage_counting_287,accuracy,BDC,E,103.035,1593,102397.818,2,387.808,4.249,E,True,E,True,True,False
+building_damage_counting_1889,accuracy,BDC,C,94.275,1598,93816.517,2,207.638,4.06,B,False,C,False,True,False
+building_damage_counting_2778,accuracy,BDC,B,95.621,1591,95002.166,2,177.189,4.13,E,False,B,False,True,False
+building_damage_counting_3789,accuracy,BDC,E,94.091,1590,93673.99,2,192.475,4.182,C,False,E,False,True,False
+building_damage_counting_949,accuracy,BDC,C,94.377,1595,93980.712,2,144.828,4.245,B,False,C,False,True,False
+building_damage_counting_2944,accuracy,BDC,B,95.227,1592,94840.559,2,206.082,4.291,A,False,C,False,False,False
+building_damage_counting_4712,accuracy,BDC,E,94.685,1588,94238.651,2,176.807,4.35,E,True,E,True,True,False
+building_damage_counting_4949,accuracy,BDC,D,94.854,1592,94446.933,2,172.417,4.327,D,True,D,True,True,False
+building_damage_counting_77,accuracy,BDC,D,93.338,1599,92909.75,2,152.918,4.304,D,True,D,True,True,False
+building_damage_counting_4399,accuracy,BDC,D,93.521,1588,93163.811,2,179.044,4.341,D,True,D,True,True,False
+building_damage_counting_2221,accuracy,BDC,C,98.729,1602,98264.143,2,162.426,4.013,B,False,C,False,True,False
+building_damage_counting_1567,accuracy,BDC,B,96.34,1600,95716.079,2,402.106,4.064,C,False,B,False,True,False
+building_damage_counting_297,accuracy,BDC,D,92.052,1601,91640.929,2,149.484,4.129,D,True,D,True,True,False
+building_damage_counting_4183,accuracy,BDC,D,95.695,1592,95250.277,2,222.363,4.183,C,False,D,False,True,False
+building_damage_counting_4203,accuracy,BDC,D,97.399,1591,96998.963,2,169.412,4.173,D,True,D,True,True,False
+building_damage_counting_453,accuracy,BDC,E,98.233,1595,97794.636,2,178.791,4.192,E,True,E,True,True,False
+building_damage_counting_2033,accuracy,BDC,E,105.355,1595,104946.949,2,170.923,3.968,E,True,E,True,True,False
+building_damage_counting_2485,accuracy,BDC,E,99.161,1597,98667.955,2,160.964,3.713,E,True,E,True,True,False
+building_damage_counting_3995,accuracy,BDC,C,97.605,1589,97201.098,2,181.196,3.782,C,True,C,True,True,False
+building_damage_counting_4939,accuracy,BDC,B,101.135,1589,100721.907,2,159.957,3.835,A,False,D,False,False,False
+building_damage_counting_4861,accuracy,BDC,D,94.737,1593,94229.574,2,243.951,3.885,D,True,D,True,True,False
+building_damage_counting_396,accuracy,BDC,D,95.82,1594,95390.827,2,163.867,3.95,C,False,D,False,True,False
+building_damage_counting_4142,accuracy,BDC,C,96.443,1589,96106.871,2,172.185,4.008,C,True,C,True,True,False
+building_damage_counting_4823,accuracy,BDC,B,96.364,1593,95940.333,2,160.534,4.063,B,True,D,False,False,False
+building_damage_counting_4906,accuracy,BDC,E,96.295,1589,95876.117,2,197.918,4.112,E,True,E,True,True,False
+building_damage_counting_497,accuracy,BDC,E,94.994,1600,94581.161,2,161.618,4.182,E,True,E,True,True,False
+building_damage_counting_3552,accuracy,BDC,E,100.908,1592,100502.603,2,172.159,4.228,E,True,D,False,False,False
+building_damage_counting_4543,accuracy,BDC,E,99.333,1591,98908.1,2,169.434,3.865,E,True,E,True,True,False
+building_damage_counting_2145,accuracy,BDC,B,95.315,1595,94937.586,2,157.898,3.938,C,False,B,False,True,False
+road_damage_counting_2064,accuracy,DRE,D,95.783,1607,95355.444,2,185.954,3.984,A,False,D,False,True,False
+road_damage_counting_935,accuracy,DRE,B,95.861,1608,95432.395,2,161.013,3.903,C,False,B,False,True,False
+road_damage_counting_1452,accuracy,DRE,B,94.645,1605,94270.632,2,180.2,3.962,D,False,B,False,True,False
+road_damage_counting_340,accuracy,DRE,C,93.998,1612,93457.451,2,301.469,4.01,A,False,C,False,True,False
+road_damage_counting_2104,accuracy,DRE,B,96.095,1607,95596.432,2,194.769,4.085,A,False,B,False,True,False
+road_damage_counting_1470,accuracy,DRE,B,94.12,1607,93751.916,2,145.836,4.141,B,True,C,False,False,False
+road_damage_counting_2028,accuracy,DRE,D,94.926,1606,94597.747,2,169.073,4.2,D,True,D,True,True,False
+road_damage_counting_874,accuracy,DRE,B,96.561,1609,96014.373,2,315.61,4.254,C,False,B,False,True,False
+road_damage_counting_853,accuracy,DRE,D,106.199,1613,105762.902,2,174.104,4.317,E,False,D,False,True,False
+road_damage_counting_584,accuracy,DRE,D,99.527,1610,99107.464,2,175.253,3.876,E,False,B,False,False,False
+road_damage_counting_1341,accuracy,DRE,B,97.23,1606,96858.371,2,171.851,3.937,E,False,B,False,True,False
+road_damage_counting_912,accuracy,DRE,D,93.816,1606,93477.253,2,143.996,3.996,D,True,D,True,True,False
+road_damage_counting_393,accuracy,DRE,B,97.216,1606,96789.783,2,185.351,3.994,C,False,C,True,False,False
+road_damage_counting_1871,accuracy,DRE,D,97.356,1608,96907.837,2,199.551,4.013,E,False,D,False,True,False
+road_damage_counting_1764,accuracy,DRE,D,102.055,1612,101487.462,2,191.776,3.974,D,True,D,True,True,False
+road_damage_counting_306,accuracy,DRE,C,99.004,1606,98568.765,2,189.453,4.04,C,True,C,True,True,False
+road_damage_counting_2158,accuracy,DRE,C,103.714,1608,103252.779,2,181.574,4.093,C,True,C,True,True,False
+road_damage_counting_887,accuracy,DRE,D,100.402,1608,99942.395,2,189.492,3.861,A,False,C,False,False,False
+road_damage_counting_458,accuracy,DRE,D,97.854,1609,97065.448,2,154.422,3.898,D,True,D,True,True,False
+road_damage_counting_1232,accuracy,DRE,D,98.113,1606,97731.877,2,170.061,3.948,A,False,D,False,True,False
+road_damage_counting_456,accuracy,DRE,D,93.329,1608,92934.486,2,153.175,3.991,D,True,D,True,True,False
+road_damage_counting_900,accuracy,DRE,B,96.88,1611,96482.872,2,160.204,4.062,C,False,B,False,True,False
+road_damage_counting_1984,accuracy,DRE,B,93.183,1607,92772.423,2,169.168,4.109,D,False,B,False,True,False
+road_damage_counting_49,accuracy,DRE,D,100.524,1605,99950.922,2,296.393,4.073,C,False,D,False,True,False
+road_damage_counting_2100,accuracy,DRE,D,103.375,1606,102754.607,2,223.02,4.084,A,False,D,False,True,False
+road_damage_counting_1323,accuracy,DRE,B,98.835,1608,98397.642,2,179.294,4.145,A,False,B,False,True,False
+road_damage_counting_788,accuracy,DRE,B,105.434,1609,104938.077,2,219.315,4.199,B,True,B,True,True,False
+road_damage_counting_1433,accuracy,DRE,D,102.938,1612,102477.471,2,163.676,4.042,E,False,D,False,True,False
+road_damage_counting_1790,accuracy,DRE,C,97.3,1610,96876.309,2,174.105,3.917,A,False,C,False,True,False
+road_damage_counting_1715,accuracy,DRE,B,95.59,1610,95187.034,2,148.359,3.934,C,False,B,False,True,False
+road_damage_counting_2040,accuracy,DRE,B,97.041,1607,96669.091,2,172.597,3.989,B,True,B,True,True,False
+road_damage_counting_1854,accuracy,DRE,D,95.03,1608,94559.182,2,163.733,4.055,D,True,D,True,True,False
+road_damage_counting_1325,accuracy,DRE,C,94.358,1607,94012.535,2,156.93,4.117,C,True,C,True,True,False
+road_damage_counting_587,accuracy,DRE,B,95.563,1607,95197.481,2,172.986,4.165,C,False,B,False,True,False
+road_damage_counting_240,accuracy,DRE,B,96.871,1606,96437.77,2,163.261,4.126,B,True,B,True,True,False
+road_damage_counting_95,accuracy,DRE,D,98.228,1610,97748.57,2,175.409,4.191,D,True,D,True,True,False
+road_damage_counting_1250,accuracy,DRE,D,98.833,1608,98415.561,2,171.518,4.239,D,True,D,True,True,False
+road_damage_counting_1530,accuracy,DRE,B,99.025,1609,98595.68,2,189.382,4.246,A,False,B,False,True,False
+road_damage_counting_884,accuracy,DRE,B,97.903,1612,97464.313,2,179.476,4.304,C,False,B,False,True,False
+road_damage_counting_1980,accuracy,DRE,B,96.542,1608,96073.549,2,158.416,4.352,E,False,B,False,True,False
+road_damage_counting_109,accuracy,DRE,B,96.069,1610,95641.517,2,172.127,4.424,A,False,B,False,True,False
+road_damage_counting_256,accuracy,DRE,D,95.146,1607,94757.237,2,162.573,4.471,B,False,B,True,False,False
+road_damage_counting_1126,accuracy,DRE,B,97.057,1608,96665.989,2,184.374,4.337,C,False,B,False,True,False
+road_damage_counting_362,accuracy,DRE,D,96.516,1611,96114.515,2,155.594,4.264,D,True,D,True,True,False
+road_damage_counting_343,accuracy,DRE,D,107.051,1609,106087.382,2,214.008,4.08,D,True,D,True,True,False
+road_damage_counting_267,accuracy,DRE,E,104.161,1609,103763.368,2,160.644,3.861,E,True,E,True,True,False
+road_damage_counting_1283,accuracy,DRE,B,97.841,1606,97392.98,2,176.701,3.925,B,True,B,True,True,False
+road_damage_counting_1991,accuracy,DRE,E,106.881,1606,106300.745,2,357.913,3.802,E,True,E,True,True,False
+road_damage_counting_1365,accuracy,DRE,C,112.779,1608,112331.382,2,187.114,3.858,B,False,C,False,True,False
+road_damage_counting_1559,accuracy,DRE,D,112.939,1607,112436.338,2,282.806,3.922,D,True,D,True,True,False
+landuse_1774,accuracy,DSR,"D, G",55.935,866,55205.335,4,522.362,3.982,"A, D, G.",False,"D, G",False,True,False
+landuse_1133,accuracy,DSR,"A, C, G",55.62,865,54256.178,6,1200.592,3.997,"A, C, G.",True,"A, C, G",True,True,False
+landuse_790,accuracy,DSR,"D, E, G",52.021,864,50141.445,6,1730.622,4.032,"B, D, E, G.",False,"D, E, B",False,False,False
+landuse_1952,accuracy,DSR,"F,G",53.669,863,52599.547,3,908.663,4.065,"F, G.",True,"F, G",True,True,False
+landuse_395,accuracy,DSR,"A, E, F, G, H",53.608,873,51982.802,10,1480.115,4.105,"A, E, F, G, H.",True,"A, E, F, G, H",True,True,False
+landuse_1188,accuracy,DSR,"B, A",49.481,863,48841.415,4,517.642,4.137,"A, B.",True,B,False,False,False
+landuse_346,accuracy,DSR,"D, E, F, G, H",61.657,868,59904.08,10,1619.172,4.148,"A, D, E, F, G.",False,"D, E, F, G, H",False,True,False
+landuse_408,accuracy,DSR,"F,G",53.934,867,53269.958,3,473.305,3.859,"A, F, G.",False,"F, G",False,True,False
+landuse_68,accuracy,DSR,"H, D, E",54.558,865,53239.89,6,1129.742,3.69,"C, D, H.",False,"H, D, E",False,True,False
+landuse_1252,accuracy,DSR,"C, D, H",57.262,875,56121.441,6,984.026,3.725,"C, D, H.",True,"C, D, H",True,True,False
+landuse_208,accuracy,DSR,"B, G, D, H",55.426,866,54255.369,8,1020.55,3.751,"B, D, G.",False,"B, D, G, H",False,True,False
+landuse_300,accuracy,DSR,"A,E,F",52.875,862,52081.592,4,665.638,3.79,"A, D, E.",False,"A, E",False,False,False
+landuse_1166,accuracy,DSR,"F, G",55.041,865,54263.447,4,639.568,3.81,F.,False,"F, G",False,True,False
+landuse_590,accuracy,DSR,"A, C, H",57.969,866,56626.005,6,1170.792,3.854,"A, H.",False,"A, C, H",False,True,False
+landuse_1340,accuracy,DSR,"B, C, G, H",54.638,872,53383.735,8,1118.328,3.883,"B, C, G, H.",True,"B, C, G",False,False,False
+landuse_1249,accuracy,DSR,"D,E,H",47.736,866,47161.403,4,454.365,3.915,"D, E, H.",True,"D, E, H",True,True,False
+landuse_41,accuracy,DSR,"D, G",56.538,866,55826.9,4,557.072,3.948,"D, G.",True,"D, G",True,True,False
+landuse_1597,accuracy,DSR,"H, B, E, F, H",54.061,866,52369.871,10,1519.907,3.98,"B, C, D, E, F, H.",False,H,False,False,False
+landuse_546,accuracy,DSR,"A, D, G",58.999,862,57947.505,6,932.066,4.008,"A, D.",False,"A, D, G",False,True,False
+landuse_568,accuracy,DSR,"A, G",57.042,874,55930.594,4,949.558,3.782,"A, C, G.",False,"A, G",False,True,False
+landuse_1041,accuracy,DSR,"A,F,G,H",55.085,864,54118.887,5,696.003,3.816,"A, B, C, F.",False,"A, B, C, F, H",False,False,False
+landuse_302,accuracy,DSR,"B, D, E, G, H",55.37,863,53485.997,10,1763.073,3.839,"A, B, D.",False,"B, D, E, G, H",False,True,False
+landuse_114,accuracy,DSR,"B, E, C",63.016,864,61621.248,6,1236.109,3.873,"B, C, E.",True,"B, C, E",True,True,False
+landuse_376,accuracy,DSR,"C, F",57.963,876,56968.511,4,859.706,3.906,"C, F.",True,"C, F",True,True,False
+landuse_809,accuracy,DSR,"B, E, G",56.255,864,55029.431,6,1059.281,3.945,"B, E, G.",True,"B, E, G",True,True,False
+landuse_218,accuracy,DSR,"C, F, G",56.838,864,55320.61,6,1372.586,3.68,"C, F, G.",True,"C, F, G",True,True,False
+landuse_1189,accuracy,DSR,"D, C, E",53.655,867,52563.222,6,939.776,3.714,"C, D.",False,"D, C",True,False,False
+landuse_1071,accuracy,DSR,"B, D, E, F",55.737,865,54362.552,8,1228.674,3.745,"B, D, E, F.",True,"D, E, F",False,False,False
+landuse_1006,accuracy,DSR,A,50.194,867,49877.877,2,180.593,3.779,"A, C.",False,A,False,True,False
+landuse_1317,accuracy,DSR,"G, F",53.712,865,53054.292,4,514.906,3.812,"A, G.",False,"G, F, C",False,False,False
+landuse_599,accuracy,DSR,"D, G, F",51.455,864,50524.724,6,773.932,3.844,"D, F.",False,"D, F, G",False,True,False
+landuse_1759,accuracy,DSR,"D, E, G",47.413,863,46503.336,6,746.793,3.872,"D, E, G.",True,"D, E, G",True,True,False
+landuse_1527,accuracy,DSR,"B, G",48.604,865,47949.568,4,501.114,3.903,"B, G.",True,"B, G",True,True,False
+landuse_1360,accuracy,DSR,"A, D",49.457,864,48586.79,4,717.513,3.94,"A, C, D.",False,"A, D",False,True,False
+landuse_812,accuracy,DSR,"F, E",47.418,866,46871.375,4,428.005,3.972,"E, F.",True,F,False,False,False
+landuse_205,accuracy,DSR,"B, D, G",47.289,865,46464.967,6,694.679,4.004,"B, D, F, G.",False,"B, D, G",False,True,False
+landuse_1136,accuracy,DSR,H,49.051,876,48757.012,2,159.723,4.039,"B, F, H.",False,"H, B, F,",True,False,False
+landuse_121,accuracy,DSR,"C,D,G",48.751,867,48152.511,4,493.46,4.059,"C, D, G.",True,"C, D, G",True,True,False
+landuse_1104,accuracy,DSR,"B, C, G",48.06,867,47184.764,6,749.284,4.098,"B, C, G.",True,"B, C, G",True,True,False
+landuse_909,accuracy,DSR,"G, B, E, F, H",47.944,867,46368.921,10,1447.254,4.131,"B, G.",False,"G, B,",True,False,False
+landuse_667,accuracy,DSR,"A, B, C, D, E, F, G",51.6,866,49303.761,14,2138.899,4.161,"A, B, C, E, G.",False,"A, B, C, D, E, F, G",False,True,False
+landuse_1742,accuracy,DSR,"A, B, E, H",49.945,864,48704.594,8,1085.81,4.187,"A, B, D, H.",False,"H, E",False,False,False
+landuse_1732,accuracy,DSR,"E, A, C, H",49.214,863,47885.678,8,1173.795,4.224,"C, E.",False,"E, C,",True,False,False
+landuse_890,accuracy,DSR,"A, B, E, G, F",49.591,866,48000.675,10,1469.832,4.259,"B, D, E, G.",False,"A, B, G, E",False,False,False
+landuse_795,accuracy,DSR,"A, B, C",52.497,866,51553.805,6,803.592,4.29,"A, C.",False,"A, B, C",False,True,False
+landuse_80,accuracy,DSR,"B, D, G",48.732,864,47917.221,6,686.449,4.322,"B, D, G.",True,"B, D, G",True,True,False
+landuse_712,accuracy,DSR,"B, C, D, F, H",48.215,865,46782.916,10,1288.48,4.35,"B, C, D, F, G.",False,"B, C, D, F, G, H",False,False,False
+landuse_1132,accuracy,DSR,"D, H",50.506,863,49159.823,4,1235.479,4.386,"C, D, H.",False,"D, H",False,True,False
+landuse_1175,accuracy,DSR,A,49.119,867,48806.396,2,171.112,4.42,"A, C.",False,A,False,True,False
+landuse_1603,accuracy,DSR,"E, F",47.994,866,47393.163,4,454.259,4.447,"E, F.",True,"E, F",True,True,False
+disaster_type_43,accuracy,DTR,A,94.649,1583,94228.116,2,182.404,4.508,A,True,A,True,True,False
+disaster_type_353,accuracy,DTR,E,96.122,1584,95688.523,2,161.567,4.455,A,False,E,False,True,False
+disaster_type_401,accuracy,DTR,D,95.172,1584,94771.041,2,159.404,4.49,E,False,A,False,False,False
+disaster_type_254,accuracy,DTR,A,100.099,1584,99703.277,2,182.763,4.415,A,True,A,True,True,False
+disaster_type_123,accuracy,DTR,B,106.541,1584,106103.093,2,203.198,4.166,B,True,B,True,True,False
+disaster_type_259,accuracy,DTR,D,94.428,1584,93593.336,2,177.01,4.23,D,True,D,True,True,False
+disaster_type_32,accuracy,DTR,B,98.582,1583,98171.854,2,154.36,4.105,D,False,B,False,True,False
+disaster_type_406,accuracy,DTR,A,94.639,1583,94245.445,2,178.897,4.152,A,True,A,True,True,False
+disaster_type_47,accuracy,DTR,D,97.153,1583,96282.109,2,147.62,3.763,C,False,D,False,True,False
+disaster_type_331,accuracy,DTR,E,95.592,1583,95124.318,2,239.177,3.818,D,False,E,False,True,False
+disaster_type_59,accuracy,DTR,D,94.161,1583,93781.389,2,154.942,3.872,A,False,D,False,True,False
+disaster_type_140,accuracy,DTR,D,93.947,1584,93604.228,2,162.603,3.934,C,False,D,False,True,False
+disaster_type_114,accuracy,DTR,D,93.718,1584,93343.673,2,152.654,3.992,E,False,D,False,True,False
+disaster_type_113,accuracy,DTR,A,94.113,1583,93778.357,2,170.964,4.061,A,True,A,True,True,False
+disaster_type_393,accuracy,DTR,C,97.038,1583,96595.622,2,175.377,4.111,C,True,C,True,True,False
+disaster_type_209,accuracy,DTR,E,95.74,1584,95390.012,2,169.498,4.168,E,True,E,True,True,False
+disaster_type_39,accuracy,DTR,E,93.779,1583,92922.257,2,157.517,4.228,A,False,E,False,True,False
+disaster_type_329,accuracy,DTR,D,95.96,1583,95597.905,2,151.922,4.293,A,False,D,False,True,False
+disaster_type_333,accuracy,DTR,A,92.998,1584,92638.78,2,146.134,4.355,E,False,A,False,True,False
+disaster_type_63,accuracy,DTR,E,98.113,1584,97711.939,2,169.114,4.399,B,False,E,False,True,False
+disaster_type_276,accuracy,DTR,B,103.855,1584,103454.792,2,178.14,3.883,B,True,B,True,True,False
+disaster_type_359,accuracy,DTR,E,97.765,1583,97332.617,2,155.73,3.851,E,True,E,True,True,False
+disaster_type_224,accuracy,DTR,D,101.886,1584,101528.157,2,177.985,3.782,D,True,D,True,True,False
+disaster_type_84,accuracy,DTR,D,104.468,1583,103958.917,2,218.81,3.832,C,False,D,False,True,False
+disaster_type_90,accuracy,DTR,E,96.371,1583,95979.62,2,178.366,3.902,E,True,E,True,True,False
+disaster_type_312,accuracy,DTR,D,97.732,1584,97334.214,2,123.334,3.754,D,True,D,True,True,False
+disaster_type_100,accuracy,DTR,E,88.147,1583,87636.466,2,115.445,3.827,E,True,E,True,True,False
+disaster_type_292,accuracy,DTR,E,85.171,1583,84653.727,2,113.712,3.874,E,True,E,True,True,False
+disaster_type_191,accuracy,DTR,C,86.698,1583,86112.711,2,114.439,3.938,C,True,C,True,True,False
+disaster_type_339,accuracy,DTR,C,84.143,1584,83627.249,2,122.463,4.004,C,True,C,True,True,False
+disaster_type_223,accuracy,DTR,D,84.399,1584,83946.425,2,116.984,4.055,D,True,D,True,True,False
+disaster_type_206,accuracy,DTR,E,85.739,1583,85202.976,2,130.587,4.108,C,False,E,False,True,False
+disaster_type_218,accuracy,DTR,E,85.215,1584,84712.794,2,114.221,4.179,E,True,E,True,True,False
+disaster_type_97,accuracy,DTR,B,84.943,1583,84436.219,2,122.156,4.233,D,False,B,False,True,False
+disaster_type_51,accuracy,DTR,B,85.537,1583,85041.246,2,115.619,4.282,B,True,B,True,True,False
+disaster_type_139,accuracy,DTR,B,100.298,1584,99735.443,2,178.074,4.347,C,False,E,False,False,False
+disaster_type_246,accuracy,DTR,A,104.195,1583,103782.202,2,182.129,4.04,A,True,A,True,True,False
+disaster_type_109,accuracy,DTR,E,98.419,1584,97980.33,2,162.278,3.829,E,True,E,True,True,False
+disaster_type_146,accuracy,DTR,C,96.584,1583,96194.149,2,203.05,3.89,C,True,C,True,True,False
+disaster_type_129,accuracy,DTR,B,95.205,1583,94783.592,2,181.802,3.959,B,True,B,True,True,False
+disaster_type_309,accuracy,DTR,A,96.299,1583,95930.871,2,162.932,4.01,A,True,A,True,True,False
+disaster_type_169,accuracy,DTR,E,106.031,1583,105557.804,2,201.88,4.011,C,False,C,True,False,False
+disaster_type_273,accuracy,DTR,E,102.087,1583,101665.569,2,185.1,3.995,C,False,E,False,True,False
+disaster_type_341,accuracy,DTR,C,96.306,1584,95966.907,2,164.046,4.059,C,True,C,True,True,False
+disaster_type_141,accuracy,DTR,B,93.797,1583,93422.489,2,147.372,4.053,B,True,B,True,True,False
+disaster_type_249,accuracy,DTR,C,99.797,1584,99427.5,2,168.375,3.991,C,True,C,True,True,False
+disaster_type_225,accuracy,DTR,D,95.799,1583,95413.701,2,176.825,4.034,D,True,D,True,True,False
+disaster_type_419,accuracy,DTR,E,95.958,1584,95538.714,2,186.71,4.093,E,True,E,True,True,False
+disaster_type_137,accuracy,DTR,E,94.388,1583,93999.336,2,156.694,4.148,B,False,D,False,False,False
+disaster_type_142,accuracy,DTR,E,95.622,1584,95227.271,2,161.463,4.222,A,False,E,False,True,False
+relational_reasoning_qa_706,accuracy,ORR,A,49.148,961,48785.859,2,140.717,4.267,A,True,A,True,True,False
+relational_reasoning_qa_607,accuracy,ORR,B,51.221,947,50886.677,2,154.544,4.307,E,False,B,False,True,False
+relational_reasoning_qa_255,accuracy,ORR,B,50.028,952,49697.648,2,166.177,4.271,B,True,A,False,False,False
+relational_reasoning_qa_167,accuracy,ORR,B,52.396,950,52089.523,2,149.373,4.309,B,True,B,True,True,False
+relational_reasoning_qa_562,accuracy,ORR,D,57.239,942,56911.706,2,179.668,4.282,E,False,D,False,True,False
+relational_reasoning_qa_678,accuracy,ORR,C,53.039,966,52666.22,2,187.732,4.09,C,True,C,True,True,False
+relational_reasoning_qa_436,accuracy,ORR,A,52.419,958,52065.101,2,170.121,4.125,A,True,A,True,True,False
+relational_reasoning_qa_918,accuracy,ORR,D,50.111,964,49766.246,2,178.281,4.161,E,False,D,False,True,False
+relational_reasoning_qa_406,accuracy,ORR,E,51.595,964,51211.263,2,212.804,4.198,A,False,E,False,True,False
+relational_reasoning_qa_548,accuracy,ORR,E,50.383,962,49982.902,2,227.335,4.218,C,False,E,False,True,False
+relational_reasoning_qa_749,accuracy,ORR,B,51.954,966,51614.481,2,158.19,3.941,C,False,B,False,True,False
+relational_reasoning_qa_306,accuracy,ORR,B,49.601,956,49088.658,2,368.572,3.974,B,True,B,True,True,False
+relational_reasoning_qa_441,accuracy,ORR,A,51.576,968,51204.652,2,174.681,4.012,D,False,D,True,False,False
+relational_reasoning_qa_574,accuracy,ORR,E,50.195,943,49818.914,2,195.837,4.049,E,True,E,True,True,False
+relational_reasoning_qa_122,accuracy,ORR,E,49.204,943,48910.518,2,146.065,4.084,E,True,E,True,True,False
+relational_reasoning_qa_1010,accuracy,ORR,B,58.637,965,58290.293,2,192.508,4.119,A,False,A,True,False,False
+relational_reasoning_qa_843,accuracy,ORR,D,51.707,954,51326.598,2,174.042,4.091,D,True,D,True,True,False
+relational_reasoning_qa_530,accuracy,ORR,B,53.423,969,53081.687,2,159.065,4.124,B,True,B,True,True,False
+relational_reasoning_qa_53,accuracy,ORR,A,54.07,962,53167.537,2,756.041,4.157,E,False,A,False,True,False
+relational_reasoning_qa_579,accuracy,ORR,D,56.048,949,55685.198,2,176.412,4.171,D,True,D,True,True,False
+relational_reasoning_qa_225,accuracy,ORR,E,56.369,949,56001.559,2,186.616,4.205,A,False,E,False,True,False
+relational_reasoning_qa_847,accuracy,ORR,D,52.847,966,52494.472,2,178.885,4.241,D,True,D,True,True,False
+relational_reasoning_qa_95,accuracy,ORR,C,52.975,946,52651.749,2,163.197,4.279,C,True,C,True,True,False
+relational_reasoning_qa_960,accuracy,ORR,D,49.789,941,49483.119,2,167.036,4.315,D,True,D,True,True,False
+relational_reasoning_qa_908,accuracy,ORR,B,52.026,952,51728.415,2,152.443,4.346,A,False,B,False,True,False
+relational_reasoning_qa_741,accuracy,ORR,B,50.882,953,50592.18,2,158.941,4.382,E,False,B,False,True,False
+relational_reasoning_qa_838,accuracy,ORR,C,53.617,957,53291.394,2,178.596,4.409,C,True,C,True,True,False
+relational_reasoning_qa_556,accuracy,ORR,C,52.837,944,52481.5,2,155.623,3.889,A,False,C,False,True,False
+relational_reasoning_qa_535,accuracy,ORR,E,50.696,954,50313.439,2,158.558,3.93,E,True,E,True,True,False
+relational_reasoning_qa_370,accuracy,ORR,D,51.232,953,50883.126,2,195.486,3.967,A,False,D,False,True,False
+relational_reasoning_qa_246,accuracy,ORR,B,51.654,961,51280.064,2,191.509,4.002,A,False,B,False,True,False
+relational_reasoning_qa_969,accuracy,ORR,E,51.348,944,51006.727,2,169.583,4.038,B,False,B,True,False,False
+relational_reasoning_qa_925,accuracy,ORR,B,54.059,951,53714.686,2,188.665,4.07,A,False,B,False,True,False
+relational_reasoning_qa_108,accuracy,ORR,E,52.095,953,51780.236,2,159.107,4.108,E,True,E,True,True,False
+relational_reasoning_qa_325,accuracy,ORR,C,52.13,959,51687.326,2,161.423,4.029,C,True,C,True,True,False
+relational_reasoning_qa_630,accuracy,ORR,D,49.282,935,49001.117,2,162.331,4.062,C,False,A,False,False,False
+relational_reasoning_qa_188,accuracy,ORR,A,50.972,947,50663.864,2,173.417,4.01,A,True,E,False,False,False
+relational_reasoning_qa_330,accuracy,ORR,B,52.875,962,52533.102,2,180.921,3.834,B,True,B,True,True,False
+relational_reasoning_qa_488,accuracy,ORR,B,51.113,960,50753.319,2,172.928,3.871,D,False,B,False,True,False
+relational_reasoning_qa_209,accuracy,ORR,A,50.871,955,50437.576,2,288.692,3.88,E,False,A,False,True,False
+relational_reasoning_qa_795,accuracy,ORR,E,52.98,959,52618.095,2,199.694,3.911,B,False,A,False,False,False
+relational_reasoning_qa_671,accuracy,ORR,B,51.278,954,50968.335,2,161.1,3.95,B,True,B,True,True,False
+relational_reasoning_qa_139,accuracy,ORR,E,51.611,944,51274.506,2,191.583,3.987,E,True,E,True,True,False
+relational_reasoning_qa_118,accuracy,ORR,B,52.357,951,52048.147,2,180.101,4.009,D,False,B,False,True,False
+relational_reasoning_qa_318,accuracy,ORR,A,55.193,964,54634.576,2,406.622,4.041,A,True,A,True,True,False
+relational_reasoning_qa_603,accuracy,ORR,D,52.716,954,52331.72,2,176.467,4.009,D,True,D,True,True,False
+relational_reasoning_qa_984,accuracy,ORR,E,51.048,956,50684.866,2,180.013,3.978,E,True,E,True,True,False
+relational_reasoning_qa_785,accuracy,ORR,C,54.452,962,53946.788,2,263.926,3.727,C,True,C,True,True,False
+relational_reasoning_qa_982,accuracy,ORR,B,58.348,977,57975.181,2,177.343,3.729,B,True,B,True,True,False
+relational_reasoning_qa_102,accuracy,ORR,D,57.554,943,57110.416,2,253.576,3.768,D,True,D,True,True,False

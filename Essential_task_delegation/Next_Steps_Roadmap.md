@@ -1007,7 +1007,7 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
   - *The confidence is overconfident (calibration error 0.40), and temperature 2.0 brings it to 0.12.*
   - *By the rule fixed 23 Nov, the 3B answers everything, since it beats the 7B alone.*
   - *A per-task split, its rule stated before computing, reaches 48.15%: the 7B answers disaster type, bearing bodies and scene. But it needs both models loaded, about 11 GB: Abrar's call.*
-  - *Step 6, the laptop CPU, is still open. [Results](Champion_Task/L3-results/full/L3/handoff/README.md); ledger, L3.)*
+  - *Step 6, the laptop CPU, done 25 Nov ([l3-step6-laptop-cpu.ipynb](Champion_Task/l3-step6-laptop-cpu.ipynb), llama.cpp b12237): 4.67 GB at peak and 39.72% against the T4's 40.83% on the same 360 questions (no difference beyond chance), but 84 s per question, mostly reading the photos (about 47 s each). [Laptop results](Champion_Task/L3-results/laptop/README.md); ledger, L3.)*
 
 ### L4 · EfficientSAM3 against SAM 3
 - **Source:** [Paper] EfficientSAM3 (its paper reports no results yet, so we measure) and [Plan] the edge step of the SAM 3 test plan (Research_Directions §7.4).

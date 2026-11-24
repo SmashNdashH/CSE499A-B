@@ -1,0 +1,55 @@
+{
+ "machine": {
+  "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+  "cores": 14,
+  "threads": 20,
+  "memory_gb": 16.8,
+  "windows": "Windows-11-10.0.26200-SP0",
+  "on_battery": false,
+  "python": "3.13.5",
+  "llama_cpp": "b12237",
+  "base_model": "Qwen/Qwen2.5-VL-3B-Instruct@66285546d2b821cf421d4f5eb2576359d3770cd3",
+  "adapter": "AbrarAlam/disasterm3-qwen25vl3b-l2@13ce20ba6d0a13dc5a5ddf2ad09e0704897e4d5c (c/final)",
+  "llama_cpp_zip_sha256": "1472bc5767155a77811395c7a5504283e3eb7c0aedff113e42d485d3ae00f8c7"
+ },
+ "model_files": {
+  "3b-c-Q4_K_M.gguf": {
+   "gb": 1.93,
+   "sha256": "986e3ded28b312d2e954af3fe9661e860501759898214faeb55a018fabc84cd3"
+  },
+  "mmproj-3b-c-f16.gguf": {
+   "gb": 1.338,
+   "sha256": "dd9219a4401c596ca9a5f67a108e218847801ea250b1ec2dc7932facda8adeda"
+  }
+ },
+ "disk_gb": 3.27,
+ "load_s": 14.8,
+ "threads": "14",
+ "memory": {
+  "peak_working_set_gb": 4.67,
+  "peak_sampled_gb": 4.62,
+  "peak_private_gb": 12.15
+ },
+ "speed": {
+  "questions": 60,
+  "s_per_question_mean": 84.04,
+  "s_per_question_median": 96.68,
+  "t4_s_per_question_mean": 1.719,
+  "prompt_tokens_mean": 1371.4,
+  "prompt_tokens_per_s": 16.5,
+  "answer_tokens_per_s": 7.5,
+  "same_answer_as_t4_speed_run_pct": 70.0
+ },
+ "accuracy_pct": {
+  "laptop": 39.72,
+  "t4": 40.83
+ },
+ "mcnemar": {
+  "only_laptop_right": 14,
+  "only_t4_right": 18,
+  "p": 0.5966148958541453
+ },
+ "same_answer_pct": 80.3,
+ "garbled": 0,
+ "server_command": "llama-server.exe -m 3b-c-Q4_K_M.gguf --mmproj mmproj-3b-c-f16.gguf --host 127.0.0.1 --port 8091 -c 4096 -np 1 --jinja --image-max-tokens 768"
+}

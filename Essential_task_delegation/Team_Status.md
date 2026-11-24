@@ -77,7 +77,7 @@ Every part below has been tested, but until 19 Nov each with its own model and i
 *- **Counting:** on the counting questions whose options don't give the answer away, it gets 53.3% against the 7B's 33.2%.*
 *- **(b):** 32.47%.*
 *- **In 4 bits:** 1.72 s per question against the 7B's 4.83 s, at 3.03 GB peak.*
-*- **O4's 3B part is met.** [Comparison](Champion_Task/L2-step4-results/full/comparison/README.md).)* |
+*- **O4's 3B part is met.** [Comparison](Champion_Task/L2-step4-results/full/comparison/README.md).)* *(25 Nov, on a laptop with no GPU (L3 step 6, llama.cpp on the CPU): the 4-bit 3B peaks at 4.67 GB and answers as on the T4, 39.72% against 40.83% on the same 360 questions (no difference beyond chance), but takes about 84 s per question, mostly reading the photos (about 47 s each). So it suits background work, not live answers. [Laptop results](Champion_Task/L3-results/laptop/README.md).)* |
 
 ## 3. Results since update 4 (they go into update 5)
 
@@ -193,7 +193,7 @@ Every part below has been tested, but until 19 Nov each with its own model and i
 5. A final internet-off run of the whole chain.
 6. The website's live demo runs that chain.
 
-**In parallel:** the 3B's training runs, and the website's gallery and deploy. The showcase is around 15 Dec.
+**In parallel:** the website's gallery and deploy, and our supervisor's review of the whole repository. The review's findings are in [Repo_Review.md](Repo_Review.md) (step 1 of 4 done, 24 Nov), including any in your folders. *(The 3B's training ended 23 Nov; its benchmark, hand-off and laptop test are done, section 2.)* The showcase is around 15 Dec.
 
 ### Noman
 - **The four wireframe images are gone,** and your later pushes of 17 Nov fixed the numbers, names and claims in your review's sections 2 and 4, plus the README and the gallery. I checked every number against its source file: they all match. Thanks.
@@ -204,7 +204,7 @@ Every part below has been tested, but until 19 Nov each with its own model and i
 - **Your own site:** the showcase website replaces it, so nothing more is needed there except one thing still missing: add one line to the top of its README saying it's an early prototype whose numbers aren't kept up to date (review, section 7.4).
 - **The roadmap suggests you on the 3B:** L2, then L3, a 4-bit 3B that passes a question to the 7B when it's unsure.
   - L2's five notebooks are built and waiting to run. They push checkpoints to Abrar's Hugging Face account, so ask Abrar before you run any.
-  - L3 starts once L2 has picked its 3B. *(23 Nov: Abrar built L3 and runs it: [the Kaggle notebook](Champion_Task/l3-4bit-3b-handoff.ipynb) and [the PC notebook](Champion_Task/l3-handoff-calibration.ipynb). Its smoke test passed; L2 chose (c) at 09:31, and L3's full run with it runs on account 3. Ask Abrar before running either.)* *(24 Nov: L3's steps 1–5 are done, rerun with an overflow fix. The 4-bit 3B averages 44.49% on the six tasks at 3.03 GB peak and 1.72 s per question; by the fixed rule it answers every question itself. Open: step 6, the 3B on a laptop with no GPU. [Hand-off results](Champion_Task/L3-results/full/L3/handoff/README.md).)* *(23 Nov, 15:30: the first benchmark runs of the 3B lost about 2–3% of answers to a half-precision overflow in its vision part, the one L2 step 2b fixed for training. Both are rerun with the fix. If you ever run this 3B in fp16 or 4 bits, keep `visual.blocks.31.mlp.down_proj` at full precision: see cell 2b of `l2-step4-winner-benchmark.ipynb`.)*
+  - L3 starts once L2 has picked its 3B. *(23 Nov: Abrar built L3 and runs it: [the Kaggle notebook](Champion_Task/l3-4bit-3b-handoff.ipynb) and [the PC notebook](Champion_Task/l3-handoff-calibration.ipynb). Its smoke test passed; L2 chose (c) at 09:31, and L3's full run with it runs on account 3. Ask Abrar before running either.)* *(24 Nov: L3's steps 1–5 are done, rerun with an overflow fix. The 4-bit 3B averages 44.49% on the six tasks at 3.03 GB peak and 1.72 s per question; by the fixed rule it answers every question itself. [Hand-off results](Champion_Task/L3-results/full/L3/handoff/README.md).)* *(25 Nov: step 6 is done. On a laptop with no GPU the 4-bit 3B peaks at 4.67 GB and keeps the T4's accuracy, but takes about 84 s per question. [Laptop results](Champion_Task/L3-results/laptop/README.md).)* *(23 Nov, 15:30: the first benchmark runs of the 3B lost about 2–3% of answers to a half-precision overflow in its vision part, the one L2 step 2b fixed for training. Both are rerun with the fix. If you ever run this 3B in fp16 or 4 bits, keep `visual.blocks.31.mlp.down_proj` at full precision: see cell 2b of `l2-step4-winner-benchmark.ipynb`.)*
 
 ### Aryan
 - **Your review's fixes:** you pushed them on 17 Nov, with a change list ([CHANGES.md](Aryan_Task/CHANGES.md)). Abrar checks them against the review's section 8 ([Review_and_Fix_List.md](Aryan_Task/Review_and_Fix_List.md)) next.

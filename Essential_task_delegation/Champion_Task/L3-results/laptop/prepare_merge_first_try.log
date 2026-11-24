@@ -1,0 +1,36 @@
+[ERROR] `loss` is part of Qwen2_5_VLCausalLMOutputWithPast.__init__'s signature, but not documented. Make sure to add it to the docstring of the function in D:\CSE499AB_project\cse499\Lib\site-packages\transformers\models\qwen2_5_vl\modeling_qwen2_5_vl.py.
+[ERROR] `logits` is part of Qwen2_5_VLCausalLMOutputWithPast.__init__'s signature, but not documented. Make sure to add it to the docstring of the function in D:\CSE499AB_project\cse499\Lib\site-packages\transformers\models\qwen2_5_vl\modeling_qwen2_5_vl.py.
+Loading weights:   0%|          | 0/824 [00:00<?, ?it/s]Loading weights:  20%|##        | 166/824 [00:00<00:00, 1657.16it/s]Loading weights:  40%|####      | 332/824 [00:00<00:00, 1562.34it/s]Loading weights:  59%|#####9    | 489/824 [00:00<00:00, 1393.78it/s]Loading weights:  77%|#######6  | 631/824 [00:00<00:00, 1324.72it/s]Loading weights:  93%|#########2| 765/824 [00:00<00:00, 1199.84it/s]Loading weights: 100%|##########| 824/824 [00:00<00:00, 1300.98it/s]
+D:\CSE499AB_project\cse499\Lib\site-packages\peft\config.py:220: UserWarning: Unexpected keyword arguments ['astra_config', 'kasa_config', 'monteclora_config', 'velora_config'] for class LoraConfig, these are ignored. This probably means that you're loading a configuration file that was saved using a higher version of the library and additional parameters have been introduced since. It is highly recommended to upgrade the PEFT version before continuing (e.g. by running `pip install -U peft`).
+  warnings.warn(
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [14:56<00:00, 895.88s/it]Writing model shards: 100%|##########| 1/1 [14:56<00:00, 896.49s/it]
+Traceback (most recent call last):
+  File [35m"<string>"[0m, line [35m9[0m, in [35m<module>[0m
+    [31mAutoProcessor.from_pretrained[0m[1;31m(base)[0m.save_pretrained(out)
+    [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^[0m
+  File [35m"D:\CSE499AB_project\cse499\Lib\site-packages\transformers\models\auto\processing_auto.py"[0m, line [35m327[0m, in [35mfrom_pretrained[0m
+    return [31mprocessor_class.from_pretrained[0m[1;31m([0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31mpretrained_model_name_or_path, trust_remote_code=trust_remote_code, **kwargs[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"D:\CSE499AB_project\cse499\Lib\site-packages\transformers\processing_utils.py"[0m, line [35m1715[0m, in [35mfrom_pretrained[0m
+    args = cls._get_arguments_from_pretrained(pretrained_model_name_or_path, processor_dict, **kwargs)
+  File [35m"D:\CSE499AB_project\cse499\Lib\site-packages\transformers\processing_utils.py"[0m, line [35m1844[0m, in [35m_get_arguments_from_pretrained[0m
+    sub_processor = auto_processor_class.from_pretrained(
+        pretrained_model_name_or_path, subfolder=subfolder, **kwargs
+    )
+  File [35m"D:\CSE499AB_project\cse499\Lib\site-packages\transformers\models\auto\video_processing_auto.py"[0m, line [35m372[0m, in [35mfrom_pretrained[0m
+    return [1;31mvideo_processor_class.from_pretrained[0m(pretrained_model_name_or_path, *inputs, **kwargs)
+           [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"D:\CSE499AB_project\cse499\Lib\site-packages\transformers\utils\import_utils.py"[0m, line [35m2090[0m, in [35m__getattribute__[0m
+    [31mrequires_backends[0m[1;31m(cls, cls._backends)[0m
+    [31m~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"D:\CSE499AB_project\cse499\Lib\site-packages\transformers\utils\import_utils.py"[0m, line [35m2076[0m, in [35mrequires_backends[0m
+    raise ImportError("".join(failed))
+[1;35mImportError[0m: [35m
+Qwen2VLVideoProcessor requires the Torchvision library but it was not found in your environment. Check out the instructions on the
+installation page: https://pytorch.org/get-started/locally/ and follow the ones that match your environment.
+Please note that you may need to restart your runtime after installation.
+[0m

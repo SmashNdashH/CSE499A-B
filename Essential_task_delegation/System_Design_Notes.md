@@ -243,7 +243,7 @@ Both can live in one Next.js project, with a story page and a demo page: one des
     - On one T4, one question at a time: 2.42 GB for its weights in 4 bits, 3.01 GB at peak, 1.8 s per question.
     - **A requirement for running it anywhere in half precision (fp16, or 4 bits with fp16 compute):** the last block of its vision part, `visual.blocks.31.mlp.down_proj`, must run at full precision. Without that, about 3% of photos make it overflow, and the answer comes out as exclamation marks.
     - The fix is in `l2-step4-winner-benchmark.ipynb`'s cell 2b. The same overflow stopped the 3B's training until L2 step 2b (19 Nov).
-    - Full precision (fp32) on a laptop CPU doesn't overflow, but it's slower. L3 step 6 (the laptop) is still open.
+    - On a laptop CPU nothing overflows (L3 step 6, 25 Nov: llama.cpp, the language part in 4 bits, the image part in 16 bits). The 3B peaks at 4.67 GB and answers as on the T4 (39.7% against 40.8% on 360 questions), but takes about 84 s per question, mostly reading the photos (about 47 s each). That suits background work, not live answers.
     - *(24 Nov) Measured with the fix:*
       - *The 4-bit 3B averages 44.49% on the benchmark's six tasks, against our 7B's 39.20%. It leads on counting and relational reasoning, and trails on disaster type, bearing bodies and scene.*
       - *It takes 1.72 s per question at 3.03 GB peak; the 4-bit 7B takes 4.83 s at 8.64 GB.*

@@ -640,6 +640,8 @@ One question at a time on one T4 GPU (L3 with the overflow fix, 60 questions):
 | 3B (c), fp16 | 7.52 GB | 8.10 GB | 1.62 |
 | Our 7B, 4 bits, full-size photos | 5.91 GB | 8.64 GB | 4.83 |
 
+On a laptop with no GPU (L3 step 6, 25 Nov; llama.cpp on the CPU, 360 questions): the 3B (c) in 4 bits uses 3.27 GB of files and **4.67 GB** of memory at peak, and takes **84 s** per question, about 47 s per photo. Its accuracy matches the T4's on the same questions (39.72% against 40.83%, no difference beyond chance). [Results](Champion_Task/L3-results/laptop/README.md).
+
 ### 7.12 Tests that didn't help (kept so nobody repeats them)
 
 | Test | Idea | Result | Source |
@@ -666,7 +668,7 @@ The two reruns with the overflow fix finished at 03:39 and 03:40. They're saved 
 
 | Task | What is left | Who | Status |
 |---|---|---|---|
-| L3 step 6 | Memory and speed of the 3B (and the chain) on a laptop with no GPU | Abrar | Not started |
+| L3 step 6 | Memory and speed of the 3B (and the chain) on a laptop with no GPU | Abrar | **The 3B done 25 Nov:** 4.67 GB, the same accuracy as on the T4, 84 s per question ([results](Champion_Task/L3-results/laptop/README.md)). Open: whether to speed it up, and the whole chain's speed on the laptop |
 | Blind reading (T2b) | Abrar fills `reading_sheet.md`; then the writers are revealed beside Gemini's verdict | Abrar | In progress |
 | Report quality beyond numbers | From the blind reading | Abrar, Ridita | Next |
 | Layer 3 steps 2–6 | pix2pix, optional diffusion, test pairs (step 1, the baselines, done 23 Nov) | Ridita | Step 2a waits for Abrar's go |
@@ -683,7 +685,7 @@ The two reruns with the overflow fix finished at 03:39 and 03:40. They're saved 
 | Item | What | When |
 |---|---|---|
 | Update 6 | Draft in `others/CSE499B_update_6_draft.tex` (two pages); teammates' sections marked in red. Kept local, not on GitHub (Abrar, 24 Nov) | Due Wed 25 Nov |
-| The supervisor's instruction | Go through every part of the code and the GitHub repository. Make a one-minute video demo of the project's functionality from the user's point of view, recorded by screen capture | Next |
+| The supervisor's instruction | Go through every part of the code and the GitHub repository. Make a one-minute video demo of the project's functionality from the user's point of view, recorded by screen capture | The video is done (below). The review: step 1 of 4 done (24 Nov), findings in [Repo_Review.md](Repo_Review.md) |
 | The one-minute video | **Done (24 Nov):** [`others/CSE499B_1-min_video_demonstration.mp4`](../others/CSE499B_1-min_video_demonstration.mp4), linked at the top of the README instead of update 6; made by the scripts in `T3_Website/scripts/demo-video/` | Done |
 | README | **Done (24 Nov):** a categorised list of the files and folders in `Essential_task_delegation/` | Done |
 | Final report, poster, rehearsal | Wait until the system works and Abrar says go | Before the showcase |
