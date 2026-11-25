@@ -1,0 +1,5 @@
+expectation (25 Nov),result,met
+at least 95% of the answers contain a number,99.9%,True
+the exact count on 30–50% of questions,21.9%,False
+"snapped to the nearest option, right on 45–57% (test 1 passes)","35.6%, test 1 fails",False
+"a mean error of 2–3 buildings, below C4's raw 3.78 (test 2 passes)","4.12, test 2 fails",False

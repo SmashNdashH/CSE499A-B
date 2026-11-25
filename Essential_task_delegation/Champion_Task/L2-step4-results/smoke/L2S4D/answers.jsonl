@@ -1,0 +1,16 @@
+{"id": "building_damage_counting_8", "model": "c", "answer": "1", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_9", "model": "c", "answer": "1", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_13", "model": "c", "answer": "2", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_15", "model": "c", "answer": "1", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_17", "model": "c", "answer": "5", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_21", "model": "c", "answer": "11", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_25", "model": "c", "answer": "1", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_121", "model": "c", "answer": "2", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_122", "model": "c", "answer": "11", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_124", "model": "c", "answer": "5", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_125", "model": "c", "answer": "2", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_127", "model": "c", "answer": "The number of buildings that remained intact after the disaster is 10.", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_129", "model": "c", "answer": "2", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_131", "model": "c", "answer": "10", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_132", "model": "c", "answer": "11", "fix": "visual.blocks.31.mlp.down_proj"}
+{"id": "building_damage_counting_135", "model": "c", "answer": "1", "fix": "visual.blocks.31.mlp.down_proj"}

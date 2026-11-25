@@ -342,6 +342,47 @@ Both can live in one Next.js project, with a story page and a demo page: one des
   - The bridge `disasteller_inputs.py` reads safe areas with keys T1 v3's file doesn't have (`point_xy`, `dist_to_damage_px` instead of `xy`, `distance_px`), so every safe area would print at (0, 0), 0 px away; it also titles model estimates "GROUND TRUTH" and hard-codes R11 and T1 v3 as the sources. In Aryan's review, §7.2–7.5.
   - **xBD's original label files carry a ground resolution and coordinates.** A sample of 12 `*_post_disaster.json` files under `data/` gives `gsd` from 1.25 to 2.82 m per pixel and each building as a longitude/latitude polygon. DisasterM3's masks carry neither, and the Turkey pairs aren't from xBD. So metres would be possible for xBD pairs (560 of the 645 validation pairs), after checking that DisasterM3's xBD images are the same tiles. The site keeps pixels until Abrar decides.
 
+### 4.7 A visitor's own photos: what they get, and the text gap (found 25 Nov)
+- **What runs on them in the browser** ("Try it", checked in the code):
+  - the 8-bit before-and-after U-Net, one view, no TTA. On the 605 clean validation pairs it scores mIoU 0.5733 and destroyed IoU 0.2630, against the gallery maps' 0.5805 and 0.2692 at full precision with TTA;
+  - the before/after slider with the map on top;
+  - the buildings (connected patches of one class, at least 20 pixels), counts, hot spots and safe areas;
+  - the 3D damage city;
+  - the fixed questions answered from the table;
+  - downloads of the mask and the map.
+- **What doesn't run:**
+  - find-then-grade, because SAM 3 needs a GPU, so touching buildings merge into one patch;
+  - written guidance, and any report.
+  - The guideline passages shown are fixed quotes from the 11 Nov proof run, not advice about the visitor's photos.
+- **The Reports page shows DisasTeller's own six sample reports,** about ground photos from Wajima, Japan, not our satellite photos. Our chain's 12 reports of 20 Nov aren't on the site (T2 step 5, run 4: two test pairs, offline, 0 wrong numbers).
+- **Ways to add text, cheapest first** (Abrar's call; the site is Aryan's build):
+
+  | Option | What the visitor gets | Cost and catch |
+  |---|---|---|
+  | 1. Written guidance from code, in the browser (recommended) | A short paragraph and a "look here first" list from their own map: counts by grade, the top hot spots and what's in them, the safe areas, the limits | About half a day. Instant and offline, and its numbers come straight from the table. It isn't written by an AI model, and it says so |
+  | 2. Our chain's reports on the site | The 12 reports of 20 Nov, beside the maps of their two test pairs | A few hours, no model needed. A real report about our photos, but not about the visitor's |
+  | 3. A real report on uploads, through the booth laptop's helper program | Our chain's six reports for the visitor's pair | About 6 minutes per pair on a T4-class GPU. On a laptop without one, likely tens of minutes (an estimate, untested). Needs a GPU laptop at the booth |
+  | 4. A small language model in the browser | An AI-written report | A 1–2 GB download, slow on phones. In T2b a small text model made five times our 7B's contradictions (15 against 3). Not recommended |
+- **Also possible:** TTA in the browser as an optional "more accurate" setting. Each run would take about 8 times longer (about 30–40 s) for roughly +0.007 mIoU.
+
+### 4.8 Who the system serves, and which photos it reads (noted 25 Nov)
+- **Built for the planning level of search and rescue.** The users are rescue coordinators who need, within hours, which buildings collapsed, how many and where to search first, often offline on a laptop (README). It isn't a tool for a rescuer at one building.
+- **Its input is satellite photos, or aerial photos taken straight down.** For the before-and-after model, both photos must show the same place at the same size and angle, because it compares them pixel by pixel.
+  - After major disasters such imagery is released free through public programmes: the International Charter "Space and Major Disasters", the EU's Copernicus emergency mapping and Maxar's open-data releases, with UNOSAT for UN coordination.
+  - Today it mostly reaches responders as maps that analysts draw. Our system turns the raw images into the map, counts, hot spots and reports on one laptop, offline.
+- **Why phone photos can't do this job:**
+  - A ground photo shows one building's side, at an angle, so it can't give area-wide counts or where to search across a town.
+  - Our U-Nets and VLMs were trained and tested only on satellite images. On phone photos they're untested, and the U-Net would fail.
+  - A phone photo can give a description. DisasTeller's original reports came from six ground photos with a general model (Gemini); our 7B's quality on such photos is unmeasured.
+- **Drones are the middle ground.** Many search-and-rescue teams fly them, and a photo taken straight down is close to what our models read, at far finer detail: a few centimetres per pixel, against roughly 0.5–3 m in our satellite photos (xBD's label files list 1.25–2.82 m). It needs resizing to satellite scale, or training on drone data. RescueNet and FloodNet have building-damage labels from drones; both are listed in the CSE499A README.
+- **No before-photo:** R9, the after-only U-Net, covers it today, and Layer 3 tests generated before-photos.
+- **Options, cheapest first (Abrar's call):**
+  1. **State the scope plainly** in the final report and on the website: the planning level, satellite or straight-down aerial images, not ground photos. Worth doing whatever else is chosen.
+  2. **Let "Try it" take an after-photo alone,** with R9. The site's code already has that variant.
+  3. **Test drone photos:** R9 on RescueNet's labelled straight-down images, for a real score; train on them if it's poor. Needs GPU time.
+  4. **A ground-photo path:** our 7B describes phone photos for the reports. A description, never a map, and it needs its own test.
+- **In short:** it isn't only for teams with their own satellites; it suits any coordinator who can get free post-disaster imagery. The rescuer with a phone stays unserved, and option 3 is the realistic way towards field teams.
+
 ## 5. Beyond Layer 1: the day-1 Layers 2–5
 
 The day-1 proposal stacked five layers and marked only Layer 1 as this project:

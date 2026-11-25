@@ -1,0 +1,21 @@
+{
+ "questions": 16,
+ "asked": 16,
+ "smoke_test": true,
+ "model": "c",
+ "fix": "visual.blocks.31.mlp.down_proj",
+ "with_a_number_pct": 100.0,
+ "letter_only_answers": 0,
+ "exact_pct": 12.5,
+ "within_1_pct": 43.75,
+ "nearest_option_right_pct": 43.75,
+ "mean_abs_error": 2.44,
+ "median_abs_error": 2.0,
+ "overflowed": 0,
+ "minutes": 0.5,
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2",
+  "peft": "0.22.0"
+ }
+}

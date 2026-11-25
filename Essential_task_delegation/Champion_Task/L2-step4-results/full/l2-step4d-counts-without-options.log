@@ -1,0 +1,74 @@
+[{"stream_name":"stderr","time":8.338781523,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":8.3388566,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":9.416342234,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.416406972,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.416413398,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.416417996,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.055775769,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.05582556,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.055832026,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.055835866,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":24.665204455,"data":"✓ {'torch': '2.11.0+cu130', 'transformers': '5.20.2', 'peft': '0.22.0'}, python 3.13.16; torchao: not installed\n"}
+,{"stream_name":"stdout","time":24.667669035,"data":"  GPUs: ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":55.514041126,"data":"✓ L2 step 4d: the winner is (c): primary accuracy 35.95% (b) against 45.12% (c), exact McNemar p = 0.0000\n"}
+,{"stream_name":"stdout","time":55.540333037,"data":"✓ The fix: visual.blocks.31.mlp.down_proj in fp32, the vision part under fp16 autocast; answering ['c'], one per GPU\n"}
+,{"stream_name":"stdout","time":56.732856371,"data":"✓ 2,002 fair building-counting questions; 0 with an image missing (scored wrong)\n"}
+,{"stream_name":"stdout","time":56.732889831,"data":"Analyze both the pre-disaster and post-disaster images to answer the following question.\n"}
+,{"stream_name":"stdout","time":56.732895553,"data":"\n"}
+,{"stream_name":"stdout","time":56.732899788,"data":"pre-disaster image:\n"}
+,{"stream_name":"stdout","time":56.73290409,"data":"\u003cimage\u003e\n"}
+,{"stream_name":"stdout","time":56.732909403,"data":"\n"}
+,{"stream_name":"stdout","time":56.732914149,"data":"post-disaster image:\n"}
+,{"stream_name":"stdout","time":56.732919314,"data":"\u003cimage\u003e\n"}
+,{"stream_name":"stdout","time":56.732924286,"data":"\n"}
+,{"stream_name":"stdout","time":56.732928488,"data":"Question: Enumerate the total intact buildings that survived the disaster event.\n"}
+,{"stream_name":"stdout","time":56.732932863,"data":"\n"}
+,{"stream_name":"stdout","time":56.732937018,"data":"Your task is to respond with ONLY the number (e.g., 7). Do not include any explanation or other text.\n"}
+,{"stream_name":"stdout","time":3714.242611596,"data":"✓ 2,002 answered in 59.9 min; the first: ['1', '1', '2', '1', '5', '11', '1', '2']\n"}
+,{"stream_name":"stdout","time":3714.335734816,"data":"{\n"}
+,{"stream_name":"stdout","time":3714.335765703,"data":" \"questions\": 2002,\n"}
+,{"stream_name":"stdout","time":3714.335772846,"data":" \"asked\": 2002,\n"}
+,{"stream_name":"stdout","time":3714.335793281,"data":" \"smoke_test\": false,\n"}
+,{"stream_name":"stdout","time":3714.335797815,"data":" \"model\": \"c\",\n"}
+,{"stream_name":"stdout","time":3714.335802179,"data":" \"fix\": \"visual.blocks.31.mlp.down_proj\",\n"}
+,{"stream_name":"stdout","time":3714.335807008,"data":" \"with_a_number_pct\": 99.9,\n"}
+,{"stream_name":"stdout","time":3714.335811553,"data":" \"letter_only_answers\": 0,\n"}
+,{"stream_name":"stdout","time":3714.335815475,"data":" \"exact_pct\": 21.88,\n"}
+,{"stream_name":"stdout","time":3714.335819269,"data":" \"within_1_pct\": 40.16,\n"}
+,{"stream_name":"stdout","time":3714.335823518,"data":" \"nearest_option_right_pct\": 35.56,\n"}
+,{"stream_name":"stdout","time":3714.335827872,"data":" \"mean_abs_error\": 4.12,\n"}
+,{"stream_name":"stdout","time":3714.335832575,"data":" \"median_abs_error\": 2.0,\n"}
+,{"stream_name":"stdout","time":3714.335836177,"data":" \"overflowed\": 0,\n"}
+,{"stream_name":"stdout","time":3714.335840133,"data":" \"minutes\": 59.9,\n"}
+,{"stream_name":"stdout","time":3714.335844703,"data":" \"versions\": {\n"}
+,{"stream_name":"stdout","time":3714.335848843,"data":"  \"torch\": \"2.11.0+cu130\",\n"}
+,{"stream_name":"stdout","time":3714.335853546,"data":"  \"transformers\": \"5.20.2\",\n"}
+,{"stream_name":"stdout","time":3714.335858086,"data":"  \"peft\": \"0.22.0\"\n"}
+,{"stream_name":"stdout","time":3714.335862029,"data":" }\n"}
+,{"stream_name":"stdout","time":3714.33586563,"data":"}\n"}
+,{"stream_name":"stdout","time":3714.335869503,"data":"                          id  truth_value                                                                 answer  number  nearest_right\n"}
+,{"stream_name":"stdout","time":3714.335873823,"data":"  building_damage_counting_8          2.0                                                                      1     1.0           True\n"}
+,{"stream_name":"stdout","time":3714.335877999,"data":"  building_damage_counting_9          2.0                                                                      1     1.0           True\n"}
+,{"stream_name":"stdout","time":3714.335882209,"data":" building_damage_counting_13          3.0                                                                      2     2.0           True\n"}
+,{"stream_name":"stdout","time":3714.335887132,"data":" building_damage_counting_15          1.0                                                                      1     1.0           True\n"}
+,{"stream_name":"stdout","time":3714.335891959,"data":" building_damage_counting_17          3.0                                                                      5     5.0           True\n"}
+,{"stream_name":"stdout","time":3714.335896661,"data":" building_damage_counting_21          8.0                                                                     11    11.0          False\n"}
+,{"stream_name":"stdout","time":3714.335901206,"data":" building_damage_counting_25          1.0                                                                      1     1.0           True\n"}
+,{"stream_name":"stdout","time":3714.335905515,"data":"building_damage_counting_121          9.0                                                                      2     2.0          False\n"}
+,{"stream_name":"stdout","time":3714.33590962,"data":"building_damage_counting_122          2.0                                                                     11    11.0          False\n"}
+,{"stream_name":"stdout","time":3714.335913749,"data":"building_damage_counting_124          8.0                                                                      5     5.0          False\n"}
+,{"stream_name":"stdout","time":3714.335920671,"data":"building_damage_counting_125          3.0                                                                      2     2.0          False\n"}
+,{"stream_name":"stdout","time":3714.335931507,"data":"building_damage_counting_127         12.0 The number of buildings that remained intact after the disaster is 10.    10.0          False\n"}
+,{"stream_name":"stdout","time":3714.335937271,"data":"building_damage_counting_129          5.0                                                                      2     2.0          False\n"}
+,{"stream_name":"stdout","time":3714.335942358,"data":"building_damage_counting_131          9.0                                                                     10    10.0           True\n"}
+,{"stream_name":"stdout","time":3714.335947543,"data":"building_damage_counting_132         14.0                                                                     11    11.0          False\n"}
+,{"stream_name":"stdout","time":3714.335952034,"data":"building_damage_counting_135          3.0                                                                      1     1.0          False\n"}
+,{"stream_name":"stderr","time":3720.464186519,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":3720.464242789,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":3720.64470459,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":3720.644744926,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":3721.525398807,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":3721.62400165,"data":"[NbConvertApp] Writing 240183 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":3724.16642034,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":3724.788166306,"data":"[NbConvertApp] Writing 562488 bytes to __results__.html\n"}
+]

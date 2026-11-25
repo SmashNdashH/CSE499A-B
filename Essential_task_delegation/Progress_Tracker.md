@@ -1,11 +1,16 @@
 # CSE499B progress tracker
 
 **Last updated:** 25 Nov 2026.
+- **25 Nov, 06:30: L2 step 4d is done (your go). Asked for a number with no options, the 3B doesn't count better than a blind rule** ([results](Champion_Task/L2-step4-results/full/no-options/README.md); [Kaggle notebook](Champion_Task/l2-step4d-counts-without-options.ipynb), account 2, 60 min after a 16-question smoke test; [PC comparison](Champion_Task/l2-step4d-compare.ipynb)).
+  - **The rule, fixed before the run, fails on both tests.** On the 2,000 fair building-counting questions, its number snapped to the nearest option is right on 35.6%, below the blind rule's 40.9% (p = 0.002, the rule ahead). Its number is closer to the true count than C4's raw count 824 times, farther 801 times (p = 0.59). The same on the clean questions.
+  - **Its numbers:** exact on 21.9%, within one building on 40.2%, mean error 4.12 (C4's raw count: 13.2%, 42.8%, 3.78). 99.9% of its answers contain a number.
+  - **So its 57.45% with options came from reading the options**, the meaning fixed before the run. On these questions no counter of ours has shown counting that a blind rule can't match: neither the map nor the 3B.
+  - **Against the expectation:** met: numbers in 99.9% of answers. Missed: exact 21.9% (expected 30–50%), 35.6% once snapped (45–57%), mean error 4.12 (2–3, below 3.78).
 - **25 Nov: goal 2's counting score, checked where the options don't give the answer away** ([E7 step 3c](Champion_Task/E7-results/step3c/README.md), from saved answers on the PC).
   - **The rule (L2 step 4b's test, applied to C4):** C4's lead over 34.2% is more than the options' pattern only if, on the fair questions (largest option 20 or less), it beats the blind rule beyond chance.
   - **It fails:** on the 2,000 fair questions C4 scores 42.2% against the blind rule's 40.9% (p = 0.46). R11 and find-then-grade alone are no better. C4 is ahead of our 7B (32.0%, p ≈ 10⁻¹²).
-  - **The 3B (c) counts best:** 57.45% on the fair questions, ahead of C4 (p ≈ 10⁻²³) and the blind rule (p ≈ 10⁻²⁸). No rule that picks by option position gets above 40.9%. Its chosen counts are the closest (mean error 1.95 buildings, against C4's 2.46 and the blind rule's 2.20).
-  - **So:** goal 2 is met as written (35.34%), and now reported with this beside it. The reports still take their counts from C4's table, which gives counts per building, area and grade. Untested: the 3B's counts without options.
+  - **The 3B (c) picks best when shown the options:** 57.45% on the fair questions at normal precision (53.90% in 4 bits), ahead of C4 (p ≈ 10⁻²³) and the blind rule (p ≈ 10⁻²⁸). No rule that picks by option position gets above 40.9%. Its chosen counts are the closest (mean error 1.95 buildings, against C4's 2.46 and the blind rule's 2.20).
+  - **So:** goal 2 is met as written (35.34%), and now reported with this beside it. The reports still take their counts from C4's table, which gives counts per building, area and grade. Without options the 3B doesn't count better (L2 step 4d, above).
 - **25 Nov, 04:34: the laptop test (L3 step 6) is done. The 4-bit 3B fits a laptop with no GPU and answers as on the T4, but slowly** ([results](Champion_Task/L3-results/laptop/README.md)).
   - **Memory:** 4.67 GB at peak (llama.cpp on the CPU, 3.27 GB of model files), inside goal 4's "about 6 GB".
   - **Accuracy:** 39.72% against the T4's 40.83% on the same 360 questions; only the laptop right on 14, only the T4 on 18 (p = 0.60). The same answer on 80%, and no garbled answers.
@@ -1025,6 +1030,17 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
 
 ## Needs you now
 
+- **5. Two calls on who the system serves and what visitors get (25 Nov).** Details: [System_Design_Notes §4.7–4.8](System_Design_Notes.md).
+  - **Text for a visitor's own photos.** Today they get the map, slider, buildings, hot spots, 3D city and fixed answers, but no written guidance and no report, and the Reports page shows DisasTeller's own sample reports, not ours. The site is Aryan's build: a brief to him, or I build it with your go.
+    1. written guidance from code in the browser (recommended, about half a day);
+    2. our 12 reports of 20 Nov on the site (a few hours);
+    3. real reports on uploads through the booth helper (needs a GPU laptop);
+    4. a small model in the browser (not recommended).
+  - **Phone photos and field teams.** The system serves coordinators with satellite or straight-down aerial images, not a rescuer with a phone.
+    1. say so plainly in the report and on the site (recommended in any case);
+    2. "Try it" with an after-photo alone (R9);
+    3. a drone test on RescueNet (GPU time);
+    4. the 7B describing phone photos for the reports (a description, never a map).
 - **4. Run 3: asking again doesn't stop the counts reused as staff numbers. How to fix it? (20 Nov, 20:15)** *(Decided 20 Nov, 21:44: both. Built, and run 4 runs; top of this file.)* [Run 3's results](Offline_RAG_KR2/results/t2_step5_c4_fix2/README.md).
   - **(1) Requests that don't ask for numbers the facts lack.** In the C4 flow's own copies of the three reports' specs (Ridita's file stays as it is), the staffing and shelter sections ask for the kinds of staff and shelters, by place, citing the guidelines. Their numbers are "not available offline" unless a guideline section gives one. This fixes the cause.
   - **(2) A last guard in the code.** A number still flagged after the second answer is replaced by "(number not available offline)", and the run log says so. This makes the result certain, at the cost of the code editing the model's text.
@@ -1748,7 +1764,7 @@ Caveat: C4 was picked as the best of 8 candidates on these validation pairs, so 
 **19 Nov, E7 step 3: counting from C4's map clears the bar** on the measure the review promised: 35.34% on the 3,580 askable optical counting questions and 34.89% on E5's clean ones, against the base 7B's 34.2%. It's ahead of R11 (32.53%) and find-then-grade (32.70%) on the clean questions beyond chance. Three limits go with it:
 - the answer options give the answer away (a rule that never sees the photo scores 66.98%), so the number can't show counting ability, and count error is reported beside it (mean 12.61 buildings, against 13.34 for R11);
 - the counts are E7 step 2's joined blobs, not the new outline rows;
-- C4 was chosen on destroyed buildings, not on counting. | Counting bar cleared on the promised measure (C4, 19 Nov), with the option flaw stated beside it; six tasks re-scored. **25 Nov (E7 step 3c): on the 2,000 fair questions C4 is no better than the blind rule (42.2% against 40.9%, p = 0.46); the 3B (c) scores 57.45%, the best counter** ([results](Champion_Task/E7-results/step3c/README.md)) |
+- C4 was chosen on destroyed buildings, not on counting. | Counting bar cleared on the promised measure (C4, 19 Nov), with the option flaw stated beside it; six tasks re-scored. **25 Nov (E7 step 3c): on the 2,000 fair questions C4 is no better than the blind rule (42.2% against 40.9%, p = 0.46); the 3B (c) picks best when shown the options, 57.45% (53.90% in 4 bits), but asked for a number with no options it does no better than the blind rule (L2 step 4d)** ([E7 step 3c](Champion_Task/E7-results/step3c/README.md), [L2 step 4d](Champion_Task/L2-step4-results/full/no-options/README.md)) |
 | O3 Offline report system | DisasTeller on our model, with damage map, counts and survivability heatmap | Damage map, counts and heatmap exist, but from different models and mostly different images (roadmap §1b). **DisasTeller on our 7B passed its offline proof run on 11 Nov** (fixed flow, internet off, six reports, nothing outside the machine); the reports' quality is still to be judged against July's Gemini reports. *(Judged 16 Nov by Ridita: ours cite checkable sections and make up fewer numbers; July's read the photos better and are more useful. A quality-fix run is built.)* *(17 Nov: the quality-fix run passed the offline proof again. 19 Nov, E7 step 3: the map, the building table and the hot spots now come from one method, C4, on the same 2,065 test photos; the reports read them from T2 step 5.)* | Offline proof done; the chain's facts exist from one method (19 Nov), the reports don't read them yet; report quality open |
 | O4 Edge model and distilled 3B | An edge-ready segmenter and a distilled 3B model | Edge segmenters done: R9's INT8 version (L1b) is 4× smaller (33 MB) and 1.43× faster than ONNX FP32, with Destroyed IoU down only 0.0003; R11's 6-channel INT8 version (L1c, 18 Nov) is 33.2 MB (`33,163,619` bytes) and 1.35× faster (`1,751 ms/image`), with Destroyed IoU down 0.0014 (0.0011 on the 605 clean pairs). The 3B distillation's step 1 is done with the new 7B (1,146 checked teacher answers), and step 1c (the options rerun for Mode c, 18 Nov) is done with 806 kept of 2,249; step 1b (soft labels for Mode b) is done (19 Nov, all 38,271). Both trainings wait for the half-precision fix that step 2b picks: Mode c's first training stopped on 18 Nov with every update skipped. Not measured yet: any VLM on a laptop CPU or a phone (L3 step 6). | Half met |
 

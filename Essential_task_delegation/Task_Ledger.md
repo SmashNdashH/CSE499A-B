@@ -809,12 +809,13 @@ The website's "Try it" page keeps running Method 1 in the visitor's browser, bec
   | C4 (blobs) | 42.20% | 2.46 |
   | blind rule | 40.90% | 2.20 |
   | our 7B | 32.00% | 4.55 |
-  | **3B (c)** | **57.45%** | **1.95** |
+  | **3B (c), normal precision** | **57.45%** | **1.95** |
+  | 3B (c), 4 bits | 53.90% | — |
 
   - **The rule fails:** C4 against the blind rule, only C4 right on 585, only the rule on 559 (p = 0.46). R11 alone (41.55%) and find-then-grade alone (40.25%) are no better either. C4 is ahead of our 7B (p ≈ 10⁻¹²).
-  - **The 3B counts best:** ahead of C4 (p ≈ 10⁻²³) and the blind rule (p ≈ 10⁻²⁸). No rule that picks by option position alone gets above 40.9% (always the second smallest), so its lead is more than a position pattern.
+  - **The 3B picks best when shown the options:** ahead of C4 (p ≈ 10⁻²³) and the blind rule (p ≈ 10⁻²⁸). No rule that picks by option position alone gets above 40.9% (always the second smallest), so its lead is more than a position pattern.
   - C4's raw count, before taking the nearest option, is off by 3.78 on average (median 2); the true counts there have a median of 4.
-- **What it leads to:** goal 2 is met as written, and is now reported with this beside it. Where the options don't give the answer away, the counter that beats a blind rule is the distilled 3B, not the map. The reports still take their counts from C4's building table, since they need counts per building, area and grade, which a multiple-choice answer can't give. Untested: the 3B's counts without options.
+- **What it leads to:** goal 2 is met as written, and is now reported with this beside it. Where the options don't give the answer away, only the distilled 3B beats a blind rule, and only when it sees the options: asked for a number with no options, it doesn't (L2 step 4d, §7). The reports still take their counts from C4's building table, since they need counts per building, area and grade, which a multiple-choice answer can't give.
 - **What else could be used:** Tamanna's H5 (count ranges) gives an option-free counting score. The base 7B's own fair-question score would need a GPU run, since its answers per question aren't saved.
 
 ### T2 step 5 · The reports read C4's facts (run 20 Nov, Kaggle account 3, 19 min)
@@ -1621,6 +1622,19 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
       - **Against the paper's models:** the 3B (c) averages above DisasterM3's own fine-tuned 7B (43.74% against 40.45%), from counting and relational reasoning. It is 21.6 points below it on disaster type.
       - **(b)'s soft labels:** it beats the untrained models (32.47% against 26.25% and 31.17%), but its building counting (19.93%) is below the untrained 3B's (29.9%), as on the held-out questions.
   - **Session 6 (b), account 2, stalled at step 141 (21 Nov, 18:56):** the two GPUs waited on each other for 30 minutes (an NCCL collective timeout), and the session was killed. It had pushed checkpoints 100–140; checkpoint-140 has the same file sizes as checkpoint-130. The runner stopped (b) at 18:59. On 22 Nov at 12:09 its record was set to step 140 and session 7 started on account 3. The cause is unknown and may recur; each stall costs at most the steps since the last checkpoint (10) and the session's remaining time. (b) is now due about Mon 23 Nov, morning; (c) reached checkpoint-200 of 211 by 22 Nov, 12:30.
+
+### L2 step 4d · The 3B's counts with no options shown (run 25 Nov, Kaggle account 2, 60 min)
+- **What:** the 3B (c) at normal precision, with the overflow fix, answered the benchmark's 2,002 fair building-counting questions (largest option 20 or less) **with no answer options**, asked for only a number. Then, on the PC, its numbers were compared with C4's counts and the blind rule. [Kaggle notebook](Champion_Task/l2-step4d-counts-without-options.ipynb) (its setup copied from L2 step 4's), [PC comparison](Champion_Task/l2-step4d-compare.ipynb), [results](Champion_Task/L2-step4-results/full/no-options/README.md). A 16-question smoke test ran first.
+- **Why:** with options the 3B was right on 57.45% of these questions, ahead of C4 and the blind rule (E7 step 3c). This shows whether it counts or only picks well among the options.
+- **The rule, fixed before the run:** the 3B counts if (1) its number, snapped to the nearest option, beats the blind rule beyond chance (exact McNemar) and (2) its number is closer to the truth than C4's raw count more often than not (sign test). If 1 fails, its lead with options came from the options.
+- **Result:**
+  - **Test 1 fails:** 35.6% against the blind rule's 40.9%; only the 3B right on 542, only the rule on 648 (p = 0.002, the rule ahead).
+  - **Test 2 fails:** closer than C4's raw count on 824 questions, farther on 801, tied on 375 (p = 0.59).
+  - The same on E5's clean questions (35.2% against 40.9%; 807 against 776).
+  - **Its numbers:** a number in 99.9% of answers. Exact on 21.9%, within one building on 40.2%, median error 2, mean 4.12 (C4's raw count: 13.2%, 42.8%, 2, 3.78). Its number points to the option it picked with options on only 35.0% of questions.
+- **Against the expectation (fixed before the run):** met: a number in at least 95% of answers. Missed: exact 21.9% (expected 30–50%), 35.6% once snapped (45–57%), mean error 4.12 (2–3, below C4's 3.78).
+- **What it leads to:** the 3B's 57.45% with options came from reading the options. They carry more than their position, and the 3B uses that. On these questions no counter of ours, neither the map nor the 3B, has shown counting that a blind rule can't match. Goal 2 stays "met as written" with this beside it, and the counts stay with C4's table.
+- **What else could be used:** H5's count ranges, an option-free score; counting on the larger scenes, where the options' pattern decides the multiple-choice score; or giving the 3B the table's numbers as text, as H1 V2 tried with the 7B (it lowered every task).
 
 ### L3 · The winning 3B in 4 bits and its hand-off to the 7B (built 23 Nov)
 - **What:** two notebooks.

@@ -1,0 +1,6 @@
+count from,answered_%,exact_%,within_1_%,median_error,mean_error
+"3B, no options (its number)",100.0,21.9,40.2,2.0,4.12
+"3B, with options (its pick)",100.0,57.4,68.4,0.0,1.95
+C4 raw count,100.0,13.2,42.8,2.0,3.78
+C4 nearest option,100.0,42.2,54.9,1.0,2.46
+blind rule,100.0,40.9,56.8,1.0,2.2

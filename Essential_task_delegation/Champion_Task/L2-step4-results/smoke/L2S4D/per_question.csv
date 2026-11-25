@@ -1,0 +1,17 @@
+id,prompt,values,truth_letter,truth_value,image_missing,answer,number,abs_error,exact,nearest_letter,nearest_right,overflowed
+building_damage_counting_8,Enumerate the total intact buildings that survived the disaster event.,"[4.0, 2.0, 9.0, 10.0, 19.0]",B,2.0,False,1,1.0,1.0,False,B,True,False
+building_damage_counting_9,What is the total number of undamaged buildings following the disaster?,"[3.0, 6.0, 2.0, 13.0, 19.0]",C,2.0,False,1,1.0,1.0,False,C,True,False
+building_damage_counting_13,How many buildings were left undamaged in the aftermath of the disaster?,"[4.0, 5.0, 13.0, 15.0, 3.0]",E,3.0,False,2,2.0,1.0,False,E,True,False
+building_damage_counting_15,How many buildings were left undamaged in the aftermath of the disaster?,"[2.0, 8.0, 1.0, 12.0, 16.0]",C,1.0,False,1,1.0,0.0,True,C,True,False
+building_damage_counting_17,Count the buildings that remained intact after the disaster occurred.,"[1.0, 8.0, 13.0, 17.0, 3.0]",E,3.0,False,5,5.0,2.0,False,E,True,False
+building_damage_counting_21,Count the buildings that remained intact after the disaster occurred.,"[2.0, 6.0, 13.0, 8.0, 18.0]",D,8.0,False,11,11.0,3.0,False,C,False,False
+building_damage_counting_25,What is the total number of undamaged buildings following the disaster?,"[2.0, 6.0, 11.0, 1.0, 19.0]",D,1.0,False,1,1.0,0.0,True,D,True,False
+building_damage_counting_121,What is the total number of undamaged buildings following the disaster?,"[9.0, 1.0, 7.0, 13.0, 17.0]",A,9.0,False,2,2.0,7.0,False,B,False,False
+building_damage_counting_122,What is the total number of undamaged buildings following the disaster?,"[4.0, 9.0, 2.0, 10.0, 19.0]",C,2.0,False,11,11.0,9.0,False,D,False,False
+building_damage_counting_124,Enumerate the total intact buildings that survived the disaster event.,"[4.0, 6.0, 8.0, 12.0, 16.0]",C,8.0,False,5,5.0,3.0,False,A,False,False
+building_damage_counting_125,What is the total number of undamaged buildings following the disaster?,"[2.0, 5.0, 3.0, 10.0, 18.0]",C,3.0,False,2,2.0,1.0,False,A,False,False
+building_damage_counting_127,Count the buildings that remained intact after the disaster occurred.,"[2.0, 9.0, 14.0, 12.0, 16.0]",D,12.0,False,The number of buildings that remained intact after the disaster is 10.,10.0,2.0,False,B,False,False
+building_damage_counting_129,Count the buildings that remained intact after the disaster occurred.,"[4.0, 5.0, 8.0, 14.0, 16.0]",B,5.0,False,2,2.0,3.0,False,A,False,False
+building_damage_counting_131,How many buildings were left undamaged in the aftermath of the disaster?,"[0.0, 9.0, 6.0, 12.0, 18.0]",B,9.0,False,10,10.0,1.0,False,B,True,False
+building_damage_counting_132,Count the buildings that remained intact after the disaster occurred.,"[1.0, 5.0, 13.0, 14.0, 15.0]",D,14.0,False,11,11.0,3.0,False,C,False,False
+building_damage_counting_135,How many buildings were left undamaged in the aftermath of the disaster?,"[1.0, 6.0, 10.0, 3.0, 16.0]",D,3.0,False,1,1.0,2.0,False,A,False,False
