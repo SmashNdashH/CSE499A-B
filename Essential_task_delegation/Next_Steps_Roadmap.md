@@ -838,14 +838,20 @@ R16's two parts are **the finding** (which buildings are there) and **the gradin
 - **Before building:** T2's reports; a gallery export (4–6 validation pairs with masks, building facts, heatmaps and each image's accuracy); L1 repeated on R11 (R11's own INT8 export); the browser test ([Champion_Task/T3-browser-test/](Champion_Task/T3-browser-test/README.md)) repeated on the booth laptop, and on a mid-range phone once the site is on Vercel with the COOP and COEP headers; a Vercel account linked to the repository; Abrar's choice of name and look. *(16 Nov: T2's reports exist; the look is chosen; the gallery export is to be written against [DATA_CONTRACT.md](T3_Website/DATA_CONTRACT.md); deployment is now by hand with the Vercel CLI, not linked to the repository.)*
 
   Live mode must run with internet off after setup. A container is optional, not a key result.
-- **Found 25 Nov (Abrar's questions; [design notes §4.7–4.8](System_Design_Notes.md)):**
-  - A visitor's own photos get the map, the before/after slider, the buildings, hot spots, the 3D city and the fixed questions, in the browser, but no written guidance and no report. The Reports page shows DisasTeller's own sample reports (ground photos from Wajima), not ours.
-  - **Options waiting for Abrar's call:**
-    1. written guidance from code in the browser (recommended, about half a day);
-    2. our chain's 12 reports of 20 Nov on the site (a few hours);
-    3. real reports on uploads through the booth helper (needs a GPU laptop);
-    4. a small model in the browser (not recommended).
-  - **Also noted:** an optional TTA setting; "Try it" with an after-photo alone (R9); a plain scope statement (the planning level, satellite or straight-down aerial images, not phone photos); a drone test on RescueNet.
+- **Found 25 Nov, from Abrar's questions** (full notes in [design notes §4.7–4.8](System_Design_Notes.md)):
+  - **What "Try it" gives:** a visitor's own before and after photos get a damage map, a before/after slider, the buildings found, hot spots, safe areas, a 3D view and answers to fixed questions, all in the browser.
+  - **What it doesn't:** no written guidance and no report, because writing one needs our 7B, which needs a GPU the public site doesn't have.
+  - **The Reports page:** it shows DisasTeller's own sample reports, about ground photos from Wajima, Japan, not ours.
+  - **Options waiting for Abrar's call, cheapest first:**
+    1. written guidance produced by code in the browser, from the visitor's own map (recommended; about half a day);
+    2. the 12 reports our own system wrote on 20 Nov for two test pairs, shown on the site (a few hours);
+    3. real reports for uploads, from our system on the booth laptop through a helper program not built yet (needs a GPU laptop to be quick);
+    4. a small language model inside the browser (not recommended).
+  - **Also noted:**
+    - an optional "more accurate" setting that averages 8 turned copies of the photos (about 8 times slower, for about +0.007 mIoU);
+    - "Try it" with an after-photo alone, using the after-only model (R9);
+    - a plain statement of who the system serves: rescue coordinators with satellite or straight-down aerial photos, not rescuers with phone photos;
+    - a test on drone photos with RescueNet's labels.
 
 ### L0 · A better 7B teacher before distilling
 - **Decided 19 Oct:** improve the 7B first, then distil (L2). A student learns from its teacher, and ours trails the paper's own fine-tune of the same model.

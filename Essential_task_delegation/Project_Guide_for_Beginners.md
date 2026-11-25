@@ -678,8 +678,8 @@ The two reruns with the overflow fix finished at 03:39 and 03:40. They're saved 
 | H5 | A likely range for every count (Tamanna's Plan 3): validation checks, the frozen ranges, then one test run | Tamanna | Approved 24 Nov; her pilot reproduced on the PC |
 | T3 website | The real gallery export wired in, deploy to Vercel, phone and booth-laptop tests | Aryan | Open |
 | Booth live mode | A small local API (FastAPI) for the models that can't run in a browser | — | Not started |
-| Text for visitors' own photos | Written guidance or reports on "Try it"; our own reports on the Reports page ([design notes §4.7](System_Design_Notes.md)) | Abrar's call; Aryan's site | Options noted 25 Nov |
-| Who the system serves | Say plainly: the planning level, satellite or straight-down aerial images, not phone photos; perhaps a drone test on RescueNet ([design notes §4.8](System_Design_Notes.md)) | Abrar's call | Options noted 25 Nov |
+| Text for visitors' own photos | "Try it" gives no written guidance or report, and the Reports page shows DisasTeller's sample reports, not ours. Four ways to add text, cheapest first, are in [design notes §4.7](System_Design_Notes.md) | Abrar decides; the website is Aryan's build | Options noted 25 Nov |
+| Who the system serves | Rescue coordinators with satellite or straight-down aerial photos, not rescuers with phone photos. This is to be said plainly in the report and on the site; four options, including a drone test, are in [design notes §4.8](System_Design_Notes.md) | Abrar decides | Options noted 25 Nov |
 | L2b | "Why?" explanations as a second skill for the 3B | — | Not started |
 | H2c | Free-form questions, second try | — | Not started |
 | H3, R13, R14, R15 | VLM input upgrades; BRIGHT footprints; rubble crops; a combined U-Net with a second seed | — | Not scheduled |

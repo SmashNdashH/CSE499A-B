@@ -222,10 +222,10 @@ Every part below has been tested, but until 19 Nov each with its own model and i
   - What's left is short: look at every page on a real phone, add a place for the supervisor line, and run the checks that wait for the gallery export and for 18 Nov.
   - **Noman may help.** He tests where nobody has yet (Firefox, a screen reader, a printer, Safari), then fixes only what Abrar picks. Before either of you edits a file, agree who has it.
 - **In counting work,** report count error, not only accuracy.
-- **(25 Nov) Two website gaps, for Abrar to decide on** ([System_Design_Notes §4.7](System_Design_Notes.md)):
-  - "Try it" gives no written guidance or report for a visitor's photos.
-  - The Reports page shows DisasTeller's own sample reports (ground photos from Wajima), not ours.
-  - The cheapest fixes are written guidance from code in the browser, and our chain's 12 reports of 20 Nov on the site. Wait for Abrar's go before building either.
+- **(25 Nov) Two website gaps, for Abrar to decide on** (full notes in [System_Design_Notes §4.7](System_Design_Notes.md)):
+  - "Try it" gives a visitor's photos a map, a 3D view and answers to fixed questions, but no written guidance and no report, since writing a report needs our 7B and a GPU.
+  - The Reports page shows DisasTeller's own sample reports, written about ground photos from Wajima, Japan, not reports from our system.
+  - The cheapest fixes: written guidance produced by code in the browser from the visitor's map, and the 12 reports our system wrote on 20 Nov for two test pairs, shown on the site. Wait for Abrar's go before building either.
 
 ### Ridita
 - **Started 18 Nov: Layer 3, generated before-photos** ([Layer3_Task/Layer3_Task_Brief.md](Layer3_Task/Layer3_Task_Brief.md)). Step 0's smoke test passed all 7 checks (6,443 pairs, 5,798 training and 645 validation with 560 xBD, 1,808,111 destroyed pixels, E5's 40 leaked pairs found again, 0 new leaks, 605 clean pairs); go given for Step 0's full run and Step 1's smoke test. `abrarmohammedtanzim/disasterm3-r11-r9-checkpoints` is shared with the Kaggle group for Step 1.

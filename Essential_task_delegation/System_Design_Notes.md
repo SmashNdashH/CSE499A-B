@@ -354,6 +354,7 @@ Both can live in one Next.js project, with a story page and a demo page: one des
   - find-then-grade, because SAM 3 needs a GPU, so touching buildings merge into one patch;
   - written guidance, and any report.
   - The guideline passages shown are fixed quotes from the 11 Nov proof run, not advice about the visitor's photos.
+- **Why there's no report:** our 7B writes the reports, from C4's facts, with the guideline search and the number and ID checks. A browser can't run that: the 7B needs a GPU, about 6–9 GB even in 4 bits, and the public site's host (Vercel) has none. On a Kaggle T4, one pair's six reports took about 5.7 minutes (T2 step 5, run 4, 20 Nov). On a laptop with no GPU, the 3B alone took about 84 s per question (L3 step 6).
 - **The Reports page shows DisasTeller's own six sample reports,** about ground photos from Wajima, Japan, not our satellite photos. Our chain's 12 reports of 20 Nov aren't on the site (T2 step 5, run 4: two test pairs, offline, 0 wrong numbers).
 - **Ways to add text, cheapest first** (Abrar's call; the site is Aryan's build):
 

@@ -1030,17 +1030,24 @@ Read-only checks also ran on your PC: the Turkey and counting breakdowns, dry ru
 
 ## Needs you now
 
-- **5. Two calls on who the system serves and what visitors get (25 Nov).** Details: [System_Design_Notes §4.7–4.8](System_Design_Notes.md).
-  - **Text for a visitor's own photos.** Today they get the map, slider, buildings, hot spots, 3D city and fixed answers, but no written guidance and no report, and the Reports page shows DisasTeller's own sample reports, not ours. The site is Aryan's build: a brief to him, or I build it with your go.
-    1. written guidance from code in the browser (recommended, about half a day);
-    2. our 12 reports of 20 Nov on the site (a few hours);
-    3. real reports on uploads through the booth helper (needs a GPU laptop);
-    4. a small model in the browser (not recommended).
-  - **Phone photos and field teams.** The system serves coordinators with satellite or straight-down aerial images, not a rescuer with a phone.
-    1. say so plainly in the report and on the site (recommended in any case);
-    2. "Try it" with an after-photo alone (R9);
-    3. a drone test on RescueNet (GPU time);
-    4. the 7B describing phone photos for the reports (a description, never a map).
+- **5. Two calls on who the system serves and what website visitors get (25 Nov).** The full notes, as explained to you, are in [System_Design_Notes §4.7–4.8](System_Design_Notes.md).
+  - **Text for a visitor's own photos.**
+    - **What they get:** on "Try it", a visitor's before and after photos get a damage map, a before/after slider, the buildings found, hot spots, safe areas, a 3D view and answers to fixed questions, all made in their browser.
+    - **What's missing:** no written guidance and no report, because writing one needs our 7B, which needs a GPU the public site doesn't have.
+    - **A separate gap:** the Reports page shows DisasTeller's own six sample reports, written about ground photos from Wajima, Japan, not reports from our system about our satellite photos.
+    - **Who builds it:** the website is Aryan's build, so a fix goes to him as a short brief, or I build it with your go.
+    - **The options, cheapest first:**
+      1. written guidance produced by code in the browser: a short paragraph and a "look here first" list from the visitor's own map, with numbers taken straight from the table (recommended; about half a day);
+      2. the 12 reports our own system wrote on 20 Nov for two test pairs, shown on the site beside those pairs' maps (a few hours; no model needed);
+      3. real reports for uploaded photos, written by our system on the booth laptop through a helper program that isn't built yet (about 6 minutes per pair with a GPU; likely tens of minutes without one);
+      4. a small language model inside the browser (a 1–2 GB download, and in the writer test a small model made five times our 7B's contradictions; not recommended).
+  - **Phone photos and field teams.**
+    - **The limit:** the system serves rescue coordinators who have satellite photos or aerial photos taken straight down. It can't read a rescuer's phone photo, which shows one building from the side.
+    - **The options, cheapest first:**
+      1. say this plainly in the final report and on the website (recommended in any case);
+      2. let "Try it" work with an after-photo alone, using our after-only model (R9), for when no before-photo exists;
+      3. test drone photos taken straight down, using RescueNet's labelled drone images for a real score (needs Kaggle GPU hours);
+      4. let our 7B describe phone photos for the reports (a description, never a map; needs its own test first).
 - **4. Run 3: asking again doesn't stop the counts reused as staff numbers. How to fix it? (20 Nov, 20:15)** *(Decided 20 Nov, 21:44: both. Built, and run 4 runs; top of this file.)* [Run 3's results](Offline_RAG_KR2/results/t2_step5_c4_fix2/README.md).
   - **(1) Requests that don't ask for numbers the facts lack.** In the C4 flow's own copies of the three reports' specs (Ridita's file stays as it is), the staffing and shelter sections ask for the kinds of staff and shelters, by place, citing the guidelines. Their numbers are "not available offline" unless a guideline section gives one. This fixes the cause.
   - **(2) A last guard in the code.** A number still flagged after the second answer is replaced by "(number not available offline)", and the run log says so. This makes the result certain, at the cost of the code editing the model's text.
