@@ -1184,6 +1184,11 @@ R16c's steps were renumbered 1–5 on 20 Oct (your decision): step 3 was first c
 - **Time:** Swin2SR 17.8 s and Real-ESRGAN 1.5 s per photo; 4.7 h in all (estimated 5.4).
 - **What it means, for our supervisor's suggestion:** the grader reads the 2× super-resolved crops worse than the ordinary ones, most of all on the small buildings that SR changes. The fair test is a grader retrained on SR crops, which would need every training photo super-resolved first: Swin2SR on 5,218 pairs is about 52 GPU hours, before about 2 h per grader seed. The clear drop doesn't justify that, so **SR is closed for the grader**. It stays a candidate only for showing photos to people.
 - **What else could be used:** a super-resolution model trained on satellite photos of our resolution (none packaged); or SR as a training-time augmentation, which has the same cost as retraining.
+- **What it gave us anyway:**
+  - a clear answer for our supervisor, decided by a rule written before the run;
+  - a dead end recorded, so nobody repeats it;
+  - the finding that most buildings in xBD photos are tiny (62% under 48 px), which explains why grading them is hard.
+  - On the five test photos, Real-ESRGAN's output strayed furthest from the real photo, about 25–36 dB against the original where plain bicubic enlargement scored 27–42. Swin2SR stayed close to plain enlargement, so it added little real information.
 
 **As built (20 Nov), with the plan fixed before the run:**
 - **What:** [r16c-step7-super-resolved-crops.ipynb](Champion_Task/r16c-step7-super-resolved-crops.ipynb), built at Abrar's go. It is our supervisor's super-resolution suggestion (Research_Directions §8.8, 17 Nov), as the clean test written there. It trains nothing: step 6's notebook is the model, with the alignment replaced by two super-resolution versions.

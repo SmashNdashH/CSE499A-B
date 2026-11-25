@@ -177,6 +177,30 @@ It passes by 0.0001, while Destroyed IoU moves by about 0.013 from the seed alon
 - R9's seed-42 model, for counts, heatmaps and reports. It has the best Destroyed IoU and recall at the same mIoU as R1.
 - R1 stays the mIoU reference.
 
+**Q: Your supervisor suggested super-resolution. Did it help?** *(R16c step 7, run 20 Nov; [results](Champion_Task/R16c-results/step7/README.md))*
+- **What we tried:** many buildings are tiny in satellite photos. In xBD photos, 62% of the real buildings are under 48 pixels on their longest side. So before the grader judged each small building, its photos were enlarged 2× by an AI super-resolution model, which invents extra detail: Swin2SR or Real-ESRGAN. Everything else stayed the same: the 605 clean validation pairs and all three grader seeds.
+- **What it got** (mean of the three grader seeds):
+
+  | Crops | Destroyed IoU | Grading on real buildings (macro F1) | Same, small buildings only |
+  |---|---|---|---|
+  | Ordinary (as before) | **0.3066** | **0.7324** | **0.7173** |
+  | Enlarged by Swin2SR | 0.3025 | 0.7152 | 0.6881 |
+  | Enlarged by Real-ESRGAN | 0.3006 | 0.7010 | 0.6640 |
+
+  Macro F1 is the average of the per-class F1 scores. F1 balances how many of a class's buildings are found against how many of the ones found are right.
+- **Both made it worse, beyond noise.**
+  - Swin2SR's change in destroyed IoU was −0.004, with a 95% range of −0.007 to −0.002, so none of 10,000 resamples showed a gain. By the rule fixed before the run, it fails.
+  - The hit was largest on the small buildings, the ones it was meant to help.
+  - It was also slow: Swin2SR took about 18 s per photo, Real-ESRGAN about 1.5 s.
+- **Why it likely hurt:**
+  1. **Mismatch:** the grader learned from ordinary crops, so the enlarged ones look unfamiliar to it.
+  2. **Invented detail:** super-resolution guesses at texture rather than recovering it. Real-ESRGAN strayed furthest from the real photo: about 25–36 dB against the original, where plain bicubic enlargement scored 27–42. Swin2SR stayed close to plain enlargement, so it added little real information. Detail lost in a pixel that covers 0.5–3 m of ground can't be brought back.
+- **What it gave us anyway:**
+  - a clear answer for our supervisor, decided by a rule written before the run;
+  - a dead end recorded, so nobody repeats it;
+  - a finding: most buildings in xBD photos are tiny, which explains why grading them is hard.
+- **Not tried:** a grader retrained on enlarged crops. It would need every training photo super-resolved first, about 52 GPU hours with Swin2SR, which the drop doesn't justify.
+
 ---
 
 ## 7. Pre-D4 ablations and the champion model

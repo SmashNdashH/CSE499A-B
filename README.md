@@ -196,7 +196,7 @@ All Senior Design I deliverables—proposal, updates 1 to 5, [final report (PDF)
 
 | File | What it is |
 |---|---|
-| [`Project_Guide_for_Beginners.md`](Essential_task_delegation/Project_Guide_for_Beginners.md) | The whole project explained from zero: the data, every part of the system, every step and decision, every result in tables, and what remains |
+| [`Project_Guide.md`](Essential_task_delegation/Project_Guide.md) | The whole project explained from zero: the data, every part of the system, every step and decision, every result in tables, and what remains |
 | [`Team_Status.md`](Essential_task_delegation/Team_Status.md) | Plain-language overview for the team: glossary, each part's best result, each member's tasks |
 | [`Progress_Tracker.md`](Essential_task_delegation/Progress_Tracker.md) | What happened, newest first; the run board; every task's status |
 | [`Task_Ledger.md`](Essential_task_delegation/Task_Ledger.md) | Every finished task: why it ran, the rule fixed before it, its result, what it decided |

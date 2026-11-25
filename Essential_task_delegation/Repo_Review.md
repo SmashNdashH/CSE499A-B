@@ -65,7 +65,7 @@ Not a finding: `Layer3_Task/Layer3_Task_Brief.md` matched only because it tells 
 | # | Where | What | Fix | Owner |
 |---|---|---|---|---|
 | P1 | `support/Tamanna/final_report_tamanna.tex`, 1 line | A personal e-mail address in a public repository | Her choice: keep or remove | Tamanna |
-| P2 | `Project_Guide_for_Beginners.md`, line 288 | A folder path that includes a Windows user name | Describe it as the shared helpers folder on Abrar's PC | Abrar |
+| P2 | `Project_Guide.md` (renamed from `Project_Guide_for_Beginners.md`), line 288 | A folder path that includes a Windows user name | Describe it as the shared helpers folder on Abrar's PC | Abrar |
 | P3 | 26 other files (118 lines), the most in `Progress_Tracker.md` (40 lines) | Abrar's project folder path, in run steps and in outputs of notebooks run on his PC | Tidy-up only: harmless, and notebook outputs stay as run | — |
 
 ### Notebooks

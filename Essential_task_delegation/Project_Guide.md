@@ -654,7 +654,7 @@ On a laptop with no GPU (L3 step 6, 25 Nov; llama.cpp on the CPU, 360 questions)
 | R12 | 1,619 extra xBD tiles | Within noise of R11 | [E4](Champion_Task/E4-results/E4/README.md) |
 | H1 V2 | A U-Net fact line before each 7B question | Lowered every task | [H1 V2](Champion_Task/H1-V2-results/) |
 | R16c step 6 | Aligned crops | 0.3048 against 0.3066 | [step 6](Champion_Task/R16c-results/step6/README.md) |
-| R16c step 7 | Super-resolved crops | Worse | [step 7](Champion_Task/R16c-results/step7/README.md) |
+| R16c step 7 | Our supervisor's idea: enlarge small buildings' crops 2× with an AI super-resolution model (Swin2SR or Real-ESRGAN) before the grader judges them | Slightly worse, beyond noise: destroyed IoU 0.3066 → 0.3025 and 0.3006, and grading on small buildings 0.717 → 0.688 and 0.664. The grader learned from ordinary crops, and the models invent texture rather than recover it | [step 7](Champion_Task/R16c-results/step7/README.md); the full answer in [the viva prep](Ablation_Study_Reference_and_QA_Prep.md) |
 | L0b, L0b step 2 | Train the 7B's vision part; combine it with the grader | 176 of 300 buildings right against the grader's 212; combinations lose | [L0b step 2](Champion_Task/L0b-results/step2/README.md) |
 | R16c step 8 | A readier "destroyed" | Lower destroyed IoU | [step 8](Champion_Task/R16c-results/step8/README.md) |
 | H4 | An outside counting benchmark | Can't decide anything: biased options, 57% overlap | [H4](Champion_Task/H4-results/H4/README.md) |

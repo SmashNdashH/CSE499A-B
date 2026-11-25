@@ -51,7 +51,7 @@
     - **A follow-up, rule stated before computing:** per task, the better model on the choosing half answers. That gives **48.2%**: the 7B takes disaster type, bearing bodies and scene, the 3B the rest (59% of questions). But it needs both models loaded (about 11 GB), so it's your call.
   - **Against the expectation of 8 Nov** ("below the 7B on most tasks"): missed. The 3B is below on three tasks, above on three.
   - Full detail in the ledger (L2 step 2 and L3).
-- **24 Nov, 00:45: a beginner's guide to the whole project:** [Project_Guide_for_Beginners.md](Project_Guide_for_Beginners.md). It covers the data, every part of the system, the folder and file map, every step and decision in order, every result in tables, and what remains. All 121 links checked.
+- **24 Nov, 00:45: a beginner's guide to the whole project:** [Project_Guide.md](Project_Guide.md). It covers the data, every part of the system, the folder and file map, every step and decision in order, every result in tables, and what remains. All 121 links checked.
 - **24 Nov, 03:30: the one-minute demo video is made, and the README is updated** (your supervisor's request).
   - **The video:** [`others/CSE499B_1-min_video_demonstration.mp4`](../others/CSE499B_1-min_video_demonstration.mp4), 60.0 s, 1920×1080, 30 fps, 19.3 MB, the same format as CSE499A's.
     - It is a screen recording of the showcase website, used as a visitor would, with a drawn pointer and a caption per scene: home and the before/after slider; how it works; Explore (a building's row, a count, a fixed question, the 3D view); Try it; the reports; a closing line.

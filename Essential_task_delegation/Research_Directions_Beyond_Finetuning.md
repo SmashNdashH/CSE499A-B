@@ -414,7 +414,7 @@ A caveat: on these questions, a rule that never looks at the image scores 66.98%
   - macro F1 on the true buildings falls from 0.732 to 0.715 and 0.701, most on the small buildings SR touches;
   - both drops are beyond noise.
 
-  The graders learned from ordinary crops, and Real-ESRGAN's invented texture hurts most. A grader retrained on SR crops would need about 52 GPU hours of Swin2SR on the training photos first, which the drop doesn't justify.
+  The graders learned from ordinary crops, and Real-ESRGAN's invented texture hurts most. A grader retrained on SR crops would need about 52 GPU hours of Swin2SR on the training photos first, which the drop doesn't justify. The test still gave us a clear answer, a dead end recorded so nobody repeats it, and a finding: 62% of the real buildings in xBD photos are under 48 px on their longest side, which is why grading them is hard. The full answer for the viva is in [Ablation_Study_Reference_and_QA_Prep.md](Ablation_Study_Reference_and_QA_Prep.md).
 
   **Built 20 Nov as R16c step 7** ([notebook](Champion_Task/r16c-step7-super-resolved-crops.ipynb); [the ledger](Task_Ledger.md)), ready to run on account 4. It tests two single-photo models at 2×: Swin2SR, trained for pixel accuracy, and Real-ESRGAN, GAN-trained, so the invented-texture risk below is measured. VRT, a video model at 4×, didn't fit single crops that need at most 2×. The rule is step 6's: the better version must beat today's crops on destroyed IoU by more than noise.
 - **Risk:** an SR model trained on ordinary photos invents texture. On rubble that can look like damage, or hide it.
