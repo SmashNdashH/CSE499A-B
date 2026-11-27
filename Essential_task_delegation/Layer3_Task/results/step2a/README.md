@@ -166,7 +166,7 @@ From [`summary.json`](summary.json) (`checks`) and the printout of the notebook'
 
 **Step 2b,** as the brief says: step 1's notebook again, with `BEFORE_SOURCE = ["real", "copy", "folder:<the generated pictures>"]` and version 3's output attached.
 - `real` and `copy` stay, so the run checks the reproduction again and gives test 3's baseline.
-- One added line unpacks the zip into that folder.
+- A few added lines check the zip's SHA-256 against this step's [`summary.json`](summary.json) and unpack it into that folder.
 - The smoke test comes first. If its checks pass, the full run follows without waiting, as Abrar asked on 26 Nov.
 - The bar stays 0.5604. The first cell's guess: R11 with the generated pictures stays below the bar, between `copy` (0.4046) and R9 (0.5402), with no gain on Turkey.
 
