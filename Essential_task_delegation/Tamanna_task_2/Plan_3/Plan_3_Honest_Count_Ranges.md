@@ -178,7 +178,9 @@ Four steps. Steps 1 to 3 use validation only. Step 4 is the one test run and the
 - The old demo file was restored in your copy.
 - **Left for you:** read section 4 until you can explain each part in your own words.
 
-### Step 2: extend on validation, then freeze the variant
+### Step 2: extend on validation, then freeze the variant (done 27 Nov)
+
+**Done:** [step2_validation.py](step2_validation.py); results in [README.md](README.md) and [step2_results/](step2_results/). Every check below passed. Destroyed: the rule picks **G** under all three grader seeds, now frozen. With each photo's event left out of calibration, G covers 0.917 overall and 0.765 on photos with destroyed buildings. "None found" hides destroyed buildings on 11.6% of "0 to 0" ranges (3.7% of them all), as Abrar measured. **Damaged: the rule picks no variant** (every median width is above 3), so that is an open question for Abrar (README, "Open question"). Until then, step 3 covers destroyed buildings only.
 
 All of this goes in one script that extends `pilot_count_ranges_c4.py`. It runs on the same files in about a minute.
 

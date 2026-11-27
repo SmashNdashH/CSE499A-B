@@ -1,0 +1,35 @@
+{
+  "task": "H5 step 2",
+  "date": "2026-11-27",
+  "alpha": 0.1,
+  "repeats": 300,
+  "grader_seed": 42,
+  "choice": {
+    "destroyed": "G",
+    "damaged": null
+  },
+  "no_choice_reason": {
+    "damaged": "no variant passes rule 2: every median width is above 3"
+  },
+  "choice_by_seed": {
+    "destroyed": {
+      "42": "G",
+      "43": "G",
+      "44": "G"
+    },
+    "damaged": {
+      "42": null,
+      "43": "C0",
+      "44": null
+    }
+  },
+  "rule": "plan section 6: overall coverage >= 0.88 and median width <= 3; highest coverage on photos with >= 5 of the class; within 0.02, fewest groups",
+  "data": "605 clean validation photos only; no test file read",
+  "inputs": [
+    "Champion_Task/E1-results/E1/gt/",
+    "Champion_Task/R16-results/R16/R11_tta/",
+    "Champion_Task/R16c-results/step5/instances_val.csv",
+    "Champion_Task/R16c-results/step5b/instances_val.csv",
+    "Champion_Task/E5-results/E5/leaked_pairs_40.csv"
+  ]
+}

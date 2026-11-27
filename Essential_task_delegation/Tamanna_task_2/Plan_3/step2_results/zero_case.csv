@@ -1,0 +1,3 @@
+cls,variant,seed,check_half_zero_ranges,check_half_share_hiding,check_half_share_of_all_buildings,all605_zero_ranges,all605_zero_hiding,all605_true_counts_hidden,all605_buildings_hidden,all605_buildings_total,chosen
+destroyed,G,42,70.24333333333334,0.11626195903500156,0.0371842795464303,116,11,3 2 1 1 1 1 1 1 1 1 1,14,1374,True
+damaged,G,42,12.376666666666667,0.12635384595348212,0.0012863593287073425,28,2,1 1,2,4348,False
