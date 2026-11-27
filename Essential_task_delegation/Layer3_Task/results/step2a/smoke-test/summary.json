@@ -1,0 +1,192 @@
+{
+ "task": "Layer 3 step 2a",
+ "smoke_test": true,
+ "session": 1,
+ "status": "done",
+ "minutes_this_session": 7.9,
+ "device": "Tesla T4",
+ "versions": {
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "torchvision": "0.26.0+cu130",
+  "numpy": "2.1.3",
+  "opencv": "4.14.0",
+  "pandas": "2.3.3",
+  "scikit-image": "0.25.2",
+  "lpips": "0.1.4",
+  "matplotlib": "3.10.0"
+ },
+ "config": {
+  "smoke_test": true,
+  "epochs": 3,
+  "pairs_per_epoch": 200,
+  "crop": 512,
+  "batch_size": 1,
+  "ngf": 64,
+  "ndf": 64,
+  "n_downs": 8,
+  "d_layers": 3,
+  "dropout": true,
+  "lambda_l1": 100.0,
+  "lr": 0.0002,
+  "beta1": 0.5,
+  "beta2": 0.999,
+  "amp": true,
+  "seed": 42,
+  "train_pairs": 5798,
+  "train_names_sha256": "c0d98652d814a1fb1f49624f4bdc704fd00a3baa07c71df8bc4fb2ad2c9d7517"
+ },
+ "parameters": {
+  "G": 54413955,
+  "D": 2768705
+ },
+ "discriminator_output": [
+  1,
+  1,
+  62,
+  62
+ ],
+ "epochs_done": 3,
+ "sessions": [
+  1
+ ],
+ "training_minutes": 1.0,
+ "minutes_per_epoch_mean": 0.33,
+ "smoke_proposal": {
+  "seconds_per_pair": 0.099,
+  "minutes_per_epoch": 9.6,
+  "epochs_for_two_sessions": 125,
+  "train_hours": 20.0,
+  "cap": 200
+ },
+ "resumed_from": null,
+ "step0_pairs_csv": "/kaggle/input/notebooks/riditaafrin/layer3-step0-pairs-and-checks/layer3-step0/pairs.csv",
+ "val_pairs_sharing_a_photo_with_training": 40,
+ "sample_pairs": [
+  {
+   "pair_index": 4657,
+   "after_image": "turkey_earthquake4_post_727.png",
+   "event": "turkey_earthquake"
+  },
+  {
+   "pair_index": 4694,
+   "after_image": "turkey_earthquake4_post_764.png",
+   "event": "turkey_earthquake"
+  },
+  {
+   "pair_index": 31,
+   "after_image": "beriut_explosion_post_32.png",
+   "event": "beriut_explosion"
+  },
+  {
+   "pair_index": 65,
+   "after_image": "hawaii_wildfire_post_995.png",
+   "event": "hawaii_wildfire"
+  },
+  {
+   "pair_index": 6197,
+   "after_image": "hurricane_harvey_00000298_post_disaster.png",
+   "event": "hurricane_harvey"
+  },
+  {
+   "pair_index": 1193,
+   "after_image": "kalehe_flooding_post_1008.png",
+   "event": "kalehe_flooding"
+  },
+  {
+   "pair_index": 6227,
+   "after_image": "midwest_flooding_00000287_post_disaster.png",
+   "event": "midwest_flooding"
+  },
+  {
+   "pair_index": 1737,
+   "after_image": "moore_tornado_00000129_post_disaster.png",
+   "event": "moore_tornado"
+  },
+  {
+   "pair_index": 2227,
+   "after_image": "palu_tsunami_00000059_post_disaster.png",
+   "event": "palu_tsunami"
+  },
+  {
+   "pair_index": 3422,
+   "after_image": "portugal_wildfire_00001782_post_disaster.png",
+   "event": "portugal_wildfire"
+  },
+  {
+   "pair_index": 3692,
+   "after_image": "santa_rosa_wildfire_00000361_post_disaster.png",
+   "event": "santa_rosa_wildfire"
+  },
+  {
+   "pair_index": 4060,
+   "after_image": "socal_fire_00000912_post_disaster.png",
+   "event": "socal_fire"
+  }
+ ],
+ "generation": {
+  "generator_final_sha256": "485046c1930c7dc2b531b9f879abc183812eacd77c1b91e2c0ecb87aff472fcd",
+  "minutes_generating": 0.3,
+  "zip_test": null,
+  "zip_sha256": "e9aaa8fa3c71aef53ec67198dd31cf775a4bb3c11784ed61d7aee08f7f1ed667",
+  "zip_mb": 20.4,
+  "pictures": 12,
+  "mode": "train mode (dropout on, per-picture batch norm), dropout seeded 42 + pair_index, fp32"
+ },
+ "copy_expected_from_pc": {
+  "605": {
+   "psnr": 18.243759,
+   "ssim": 0.458838,
+   "lpips": 0.461989
+  },
+  "12": {
+   "psnr": 16.788675,
+   "ssim": 0.377303,
+   "lpips": 0.469525
+  }
+ },
+ "similarity_clean": [
+  {
+   "pairs": "clean",
+   "group": "all",
+   "n_pairs": 12,
+   "generated_psnr": 17.230347,
+   "generated_ssim": 0.419281,
+   "generated_lpips": 0.670194,
+   "copy_psnr": 16.788675,
+   "copy_ssim": 0.377303,
+   "copy_lpips": 0.469525
+  },
+  {
+   "pairs": "clean",
+   "group": "Turkey",
+   "n_pairs": 2,
+   "generated_psnr": 13.610256,
+   "generated_ssim": 0.176276,
+   "generated_lpips": 0.683113,
+   "copy_psnr": 11.491354,
+   "copy_ssim": 0.117125,
+   "copy_lpips": 0.491414
+  },
+  {
+   "pairs": "clean",
+   "group": "not Turkey",
+   "n_pairs": 10,
+   "generated_psnr": 17.954365,
+   "generated_ssim": 0.467882,
+   "generated_lpips": 0.66761,
+   "copy_psnr": 17.848139,
+   "copy_ssim": 0.429339,
+   "copy_lpips": 0.465148
+  }
+ ],
+ "label": "Every generated picture is generated, not a photo.",
+ "checks": {
+  "1. Step 0's pairs.csv: its full run; 6,443 pairs, 5,798 / 645, 605 clean; 1024 x 1024": "passed",
+  "2. Training sees only training photos": "passed",
+  "3. Training ran all its epochs, every loss finite, and the loaded checkpoint matched": "passed",
+  "4. All 12 pictures in the zip: 1024 x 1024 RGB PNG, named like the after-photos, reading back exactly": "passed",
+  "5. The sample sheet: 12 clean validation pairs from 11 events, 2 of them Turkey": "passed",
+  "6. PSNR, SSIM and LPIPS finite; copy matches the PC on the 12 sample pairs": "passed"
+ }
+}
